@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package external;
+
+option go_package = "github.com/brocar/chirpstack-api/go/as/external";
+
+import "gw/gw.proto";
+
+
+enum RXWindow {
+	RX1 = 0;
+	RX2 = 1;
+}
+
+message UplinkFrameLog {
+    // TX information of the uplink.
+    gw.UplinkTXInfo tx_info = 1;
+
+    // RX information of the uplink.
+    repeated gw.UplinkRXInfo rx_info = 2;
+
+    // LoRaWAN PHYPayload.
+    string phy_payload_json = 3 [json_name = "phyPayloadJSON"];
+}
+
+message DownlinkFrameLog {
+    // TX information of the downlink.
+    gw.DownlinkTXInfo tx_info = 1;
+
+    // LoRaWAN PHYPayload.
+    string phy_payload_json = 2 [json_name = "phyPayloadJSON"];
+}
+

@@ -1,0 +1,228 @@
+syntax = "proto3";
+
+package integration;
+
+option go_package = "github.com/brocar/chirpstack-api/go/as/integration";
+
+import "common/common.proto";
+import "gw/gw.proto";
+
+enum ErrorType {
+    // Unknown type.
+    UNKNOWN = 0;
+
+    // Error related to the downlink payload size.
+    // Usually seen when the payload exceeded the maximum allowed payload size.
+    DOWNLINK_PAYLOAD_SIZE = 1;
+
+    // Error related to the downlink frame-counter.
+    // Usually seen when the frame-counter has already been used.
+    DOWNLINK_FCNT = 2;
+
+    // Uplink codec error.
+    UPLINK_CODEC = 3;
+
+    // Downlink codec error.
+    DOWNLINK_CODEC = 4;
+
+    // OTAA error.
+    OTAA = 5;
+
+    // Uplink frame-counter error.
+    UPLINK_FCNT = 6;
+
+    // Uplink MIC error.
+    UPLINK_MIC = 7;
+}
+
+// UplinkEvent is the message sent when an uplink payload has been received.
+message UplinkEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Receiving gateway RX info.
+    repeated gw.UplinkRXInfo rx_info = 5;
+
+    // TX info.
+    gw.UplinkTXInfo tx_info = 6;
+
+    // Device has ADR bit set.
+    bool adr = 7;
+
+    // Data-rate.
+    uint32 dr = 8;
+
+    // Frame counter.
+    uint32 f_cnt = 9;
+
+    // Frame port.
+    uint32 f_port = 10;
+
+    // FRMPayload data.
+    bytes data = 11;
+
+    // JSON string containing the decoded object.
+    // Note that this is only set when a codec is configured in the Device Profile.
+    string object_json = 12 [json_name = "objectJSON"];
+
+    // User-defined device tags.
+    map<string, string> tags = 13;
+}
+
+// JoinEvent is the message sent when a device joined the network.
+// Note that this is only sent after the first received uplink after the
+// device (re)activation.
+message JoinEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Device address.
+    bytes dev_addr = 5;
+
+    // Receiving gateway RX info.
+    repeated gw.UplinkRXInfo rx_info = 6;
+
+    // TX info.
+    gw.UplinkTXInfo tx_info = 7;
+
+    // Data-rate.
+    uint32 dr = 8;
+
+    // User-defined device tags.
+    map<string, string> tags = 9;
+}
+
+// AckEvent is the message sent when a confirmation on a confirmed downlink
+// has been received -or- when the downlink timed out.
+message AckEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Receiving gateway RX info.
+    repeated gw.UplinkRXInfo rx_info = 5;
+
+    // TX info.
+    gw.UplinkTXInfo tx_info = 6;
+
+    // Frame was acknowledged.
+    bool acknowledged = 7;
+
+    // Downlink frame counter to which the acknowledgement relates.
+    uint32 f_cnt = 8;
+
+    // User-defined device tags.
+    map<string, string> tags = 9;
+}
+
+// ErrorEvent is the message sent when an error occurred.
+message ErrorEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Error type.
+    ErrorType type = 5;
+
+    // Error message.
+    string error = 6;
+
+    // Downlink frame-counter (in case the downlink is related to a scheduled downlink).
+    uint32 f_cnt = 7;
+
+    // User-defined device tags.
+    map<string, string> tags = 8;
+}
+
+// StatusEvent is the message sent when a device-status mac-command was sent
+// by the device.
+message StatusEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Receiving gateway RX info.
+    repeated gw.UplinkRXInfo rx_info = 5;
+
+    // TX info.
+    gw.UplinkTXInfo tx_info = 6;
+
+    // The demodulation signal-to-noise ratio in dB for the last successfully
+    // received device-status request by the Network Server.
+    uint32 margin = 7;
+
+    // Device is connected to an external power source.
+    bool external_power_source = 8;
+
+    // Battery level is not available.
+    bool battery_level_unavailable = 9;
+
+    // Battery level.
+    float battery_level = 10;
+
+    // User-defined device tags.
+    map<string, string> tags = 11;
+}
+
+// LocationEvent is the message sent when a geolocation resolve was returned.
+message LocationEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Location.
+    common.Location location = 5;
+
+    // User-defined device tags.
+    map<string, string> tags = 6;
+}

@@ -1,0 +1,8 @@
+version: "2"
+services:
+  chirpstack-api-go:
+    build:
+      context: .
+      dockerfile: Dockerfile-go
+    volumes:
+      - ./:/chirpstack-api
