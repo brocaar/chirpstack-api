@@ -184,10 +184,12 @@ message StatusEvent {
     bytes dev_eui = 4 [json_name = "devEUI"];
 
     // Receiving gateway RX info.
-    repeated gw.UplinkRXInfo rx_info = 5;
+    // TODO: implement in NS.
+    // repeated gw.UplinkRXInfo rx_info = 5;
 
     // TX info.
-    gw.UplinkTXInfo tx_info = 6;
+    // TODO: implement in NS.
+    // gw.UplinkTXInfo tx_info = 6;
 
     // The demodulation signal-to-noise ratio in dB for the last successfully
     // received device-status request by the Network Server.
