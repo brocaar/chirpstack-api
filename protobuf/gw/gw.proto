@@ -372,3 +372,31 @@ message GatewayCommandExecResponse {
     // Error message.
     string error = 5;
 }
+
+// RawPacketForwarderEvent contains a raw packet-forwarder event.
+// It can be used to access packet-forwarder features that are not (fully)
+// integrated with the ChirpStack Gateway Bridge.
+message RawPacketForwarderEvent {
+    // Gateway ID.
+    bytes gateway_id = 1 [json_name = "gatewayID"];
+
+    // Raw ID (UUID).
+    bytes raw_id = 2 [json_name = "rawID"];
+
+    // Payload contains the raw payload.
+    bytes payload = 3;
+}
+
+// RawPacketForwarderEvent contains a raw packet-forwarder command.
+// It can be used to access packet-forwarder features that are not (fully)
+// integrated with the ChirpStack Gateway Bridge.
+message RawPacketForwarderCommand {
+    // Gateway ID.
+    bytes gateway_id = 1 [json_name = "gatewayID"];
+
+    // Raw ID (UUID).
+    bytes raw_id = 2 [json_name = "rawID"];
+
+    // Payload contains the raw payload.
+    bytes payload = 3;
+}
