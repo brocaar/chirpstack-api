@@ -1,9 +1,9 @@
-.PHONY: requirements common gw geo nc ns as as-integration as-external
+.PHONY: requirements common gw geo nc ns as as-integration as-external-api
 
 GRPC_GW_PATH := $(shell go list -f '{{ .Dir }}' github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway)
 GOOGLEAPIS_PATH := "$(GRPC_GW_PATH)/../third_party/googleapis"
 
-all: requirements common gw geo nc ns as as-integration as-external
+all: requirements common gw geo nc ns as as-integration as-external-api
 
 requirements:
 	@go mod download
@@ -32,36 +32,36 @@ as:
 as-integration:
 	protoc -I=../protobuf -I=../protobuf/as/integration --go_out=plugins=grpc,paths=source_relative:. as/integration/integration.proto
 
-as-external:
+as-external-api:
 	# gRPC
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/application.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/common.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/device.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/deviceProfile.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/deviceQueue.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/fuotaDeployment.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/gateway.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/gatewayProfile.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/internal.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/multicastGroup.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/networkServer.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/organization.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/profiles.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/serviceProfile.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --go_out=plugins=grpc,paths=source_relative:. as/external/user.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/application.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/common.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/device.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/deviceProfile.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/deviceQueue.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/fuotaDeployment.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/gateway.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/gatewayProfile.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/internal.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/multicastGroup.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/networkServer.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/organization.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/profiles.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/serviceProfile.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --go_out=plugins=grpc,paths=source_relative:. as/external/api/user.proto
 	
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/application.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/common.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/device.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/deviceProfile.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/deviceQueue.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/fuotaDeployment.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/gateway.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/gatewayProfile.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/internal.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/multicastGroup.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/networkServer.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/organization.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/profiles.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/serviceProfile.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/user.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/application.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/common.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/device.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/deviceProfile.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/deviceQueue.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/fuotaDeployment.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/gateway.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/gatewayProfile.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/internal.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/multicastGroup.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/networkServer.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/organization.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/profiles.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/serviceProfile.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api --grpc-gateway_out=paths=source_relative,logtostderr=true:. as/external/api/user.proto
