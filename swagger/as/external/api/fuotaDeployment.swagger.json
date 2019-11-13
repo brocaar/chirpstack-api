@@ -4,6 +4,10 @@
     "title": "as/external/api/fuotaDeployment.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -11,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/devices/{devEui}/fuota-deployments": {
+    "/api/devices/{dev_eui}/fuota-deployments": {
       "post": {
         "summary": "CreateForDevice creates a deployment for the given DevEUI.",
         "operationId": "CreateForDevice",
@@ -25,7 +29,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -95,7 +99,7 @@
         ]
       }
     },
-    "/api/fuota-deployments/{fuotaDeploymentId}/devices": {
+    "/api/fuota-deployments/{fuota_deployment_id}/devices": {
       "get": {
         "summary": "ListDeploymentDevices lists the devices (and status) for the given fuota deployment ID.",
         "operationId": "ListDeploymentDevices",
@@ -109,7 +113,7 @@
         },
         "parameters": [
           {
-            "name": "fuotaDeploymentId",
+            "name": "fuota_deployment_id",
             "description": "ID of the deployment (string formatted UUID).\nThis value will be automatically assigned on create.",
             "in": "path",
             "required": true,
@@ -137,7 +141,7 @@
         ]
       }
     },
-    "/api/fuota-deployments/{fuotaDeploymentId}/devices/{devEui}": {
+    "/api/fuota-deployments/{fuota_deployment_id}/devices/{dev_eui}": {
       "get": {
         "summary": "GetDeploymentDevice returns the deployment device.",
         "operationId": "GetDeploymentDevice",
@@ -151,14 +155,14 @@
         },
         "parameters": [
           {
-            "name": "fuotaDeploymentId",
+            "name": "fuota_deployment_id",
             "description": "ID of the deployment (string formatted UUID).\nThis value will be automatically assigned on create.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,

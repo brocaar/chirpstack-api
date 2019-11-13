@@ -4,6 +4,10 @@
     "title": "as/external/api/device.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -100,7 +104,7 @@
         ]
       }
     },
-    "/api/devices/{devEui}": {
+    "/api/devices/{dev_eui}": {
       "get": {
         "summary": "Get returns the device matching the given DevEUI.",
         "operationId": "Get",
@@ -114,7 +118,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -138,7 +142,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -150,7 +154,7 @@
         ]
       }
     },
-    "/api/devices/{devEui}/activation": {
+    "/api/devices/{dev_eui}/activation": {
       "get": {
         "summary": "GetActivation returns the current activation details of the device (OTAA and ABP).",
         "operationId": "GetActivation",
@@ -164,7 +168,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -188,7 +192,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -200,7 +204,7 @@
         ]
       }
     },
-    "/api/devices/{devEui}/events": {
+    "/api/devices/{dev_eui}/events": {
       "get": {
         "summary": "StreamEventLogs stream the device events (uplink payloads, ACKs, joins, errors).\n  * This endpoint is intended for debugging only.\n  * This endpoint does not work from a web-browser.",
         "operationId": "StreamEventLogs",
@@ -214,7 +218,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -226,7 +230,7 @@
         ]
       }
     },
-    "/api/devices/{devEui}/frames": {
+    "/api/devices/{dev_eui}/frames": {
       "get": {
         "summary": "StreamFrameLogs streams the uplink and downlink frame-logs for the given DevEUI.\n  * These are the raw LoRaWAN frames and this endpoint is intended for debugging only.\n  * This endpoint does not work from a web-browser.",
         "operationId": "StreamFrameLogs",
@@ -240,7 +244,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -252,7 +256,7 @@
         ]
       }
     },
-    "/api/devices/{devEui}/getRandomDevAddr": {
+    "/api/devices/{dev_eui}/getRandomDevAddr": {
       "post": {
         "summary": "GetRandomDevAddr returns a random DevAddr taking the NwkID prefix into account.",
         "operationId": "GetRandomDevAddr",
@@ -266,7 +270,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -278,7 +282,7 @@
         ]
       }
     },
-    "/api/devices/{devEui}/keys": {
+    "/api/devices/{dev_eui}/keys": {
       "get": {
         "summary": "GetKeys returns the device-keys for the given DevEUI.",
         "operationId": "GetKeys",
@@ -292,7 +296,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -316,7 +320,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -328,7 +332,7 @@
         ]
       }
     },
-    "/api/devices/{device.devEui}": {
+    "/api/devices/{device.dev_eui}": {
       "put": {
         "summary": "Update updates the device matching the given DevEUI.",
         "operationId": "Update",
@@ -342,7 +346,7 @@
         },
         "parameters": [
           {
-            "name": "device.devEui",
+            "name": "device.dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -362,7 +366,7 @@
         ]
       }
     },
-    "/api/devices/{deviceActivation.devEui}/activate": {
+    "/api/devices/{device_activation.dev_eui}/activate": {
       "post": {
         "summary": "Activate (re)activates the device (only when ABP is set to true).",
         "operationId": "Activate",
@@ -376,7 +380,7 @@
         },
         "parameters": [
           {
-            "name": "deviceActivation.devEui",
+            "name": "device_activation.dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -396,7 +400,7 @@
         ]
       }
     },
-    "/api/devices/{deviceKeys.devEui}/keys": {
+    "/api/devices/{device_keys.dev_eui}/keys": {
       "post": {
         "summary": "CreateKeys creates the given device-keys.",
         "operationId": "CreateKeys",
@@ -410,7 +414,7 @@
         },
         "parameters": [
           {
-            "name": "deviceKeys.devEui",
+            "name": "device_keys.dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -442,7 +446,7 @@
         },
         "parameters": [
           {
-            "name": "deviceKeys.devEui",
+            "name": "device_keys.dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,

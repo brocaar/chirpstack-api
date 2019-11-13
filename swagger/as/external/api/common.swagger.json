@@ -4,6 +4,10 @@
     "title": "as/external/api/common.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],

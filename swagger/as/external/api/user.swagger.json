@@ -4,6 +4,10 @@
     "title": "as/external/api/user.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -165,7 +169,7 @@
         ]
       }
     },
-    "/api/users/{userId}/password": {
+    "/api/users/{user_id}/password": {
       "put": {
         "summary": "UpdatePassword updates a password.",
         "operationId": "UpdatePassword",
@@ -179,7 +183,7 @@
         },
         "parameters": [
           {
-            "name": "userId",
+            "name": "user_id",
             "description": "User ID.",
             "in": "path",
             "required": true,

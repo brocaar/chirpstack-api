@@ -4,6 +4,10 @@
     "title": "as/external/api/gatewayProfile.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -79,7 +83,7 @@
         ]
       }
     },
-    "/api/gateway-profiles/{gatewayProfile.id}": {
+    "/api/gateway-profiles/{gateway_profile.id}": {
       "put": {
         "summary": "Update updates the given gateway-profile.",
         "operationId": "Update",
@@ -93,7 +97,7 @@
         },
         "parameters": [
           {
-            "name": "gatewayProfile.id",
+            "name": "gateway_profile.id",
             "description": "Gateway-profile ID (UUID string).",
             "in": "path",
             "required": true,

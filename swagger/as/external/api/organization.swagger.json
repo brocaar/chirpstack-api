@@ -4,6 +4,10 @@
     "title": "as/external/api/organization.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -165,7 +169,7 @@
         ]
       }
     },
-    "/api/organizations/{organizationId}/users": {
+    "/api/organizations/{organization_id}/users": {
       "get": {
         "summary": "Get organization's user list.",
         "operationId": "ListUsers",
@@ -179,7 +183,7 @@
         },
         "parameters": [
           {
-            "name": "organizationId",
+            "name": "organization_id",
             "description": "Organization ID.",
             "in": "path",
             "required": true,
@@ -208,7 +212,7 @@
         ]
       }
     },
-    "/api/organizations/{organizationId}/users/{userId}": {
+    "/api/organizations/{organization_id}/users/{user_id}": {
       "get": {
         "summary": "Get data for a particular organization user.",
         "operationId": "GetUser",
@@ -222,7 +226,7 @@
         },
         "parameters": [
           {
-            "name": "organizationId",
+            "name": "organization_id",
             "description": "Organization ID.",
             "in": "path",
             "required": true,
@@ -230,7 +234,7 @@
             "format": "int64"
           },
           {
-            "name": "userId",
+            "name": "user_id",
             "description": "User ID.",
             "in": "path",
             "required": true,
@@ -255,7 +259,7 @@
         },
         "parameters": [
           {
-            "name": "organizationId",
+            "name": "organization_id",
             "description": "Organization ID.",
             "in": "path",
             "required": true,
@@ -263,7 +267,7 @@
             "format": "int64"
           },
           {
-            "name": "userId",
+            "name": "user_id",
             "description": "User ID.",
             "in": "path",
             "required": true,
@@ -276,7 +280,7 @@
         ]
       }
     },
-    "/api/organizations/{organizationUser.organizationId}/users": {
+    "/api/organizations/{organization_user.organization_id}/users": {
       "post": {
         "summary": "Add a new user to an organization.",
         "operationId": "AddUser",
@@ -290,7 +294,7 @@
         },
         "parameters": [
           {
-            "name": "organizationUser.organizationId",
+            "name": "organization_user.organization_id",
             "description": "Organization ID.",
             "in": "path",
             "required": true,
@@ -311,7 +315,7 @@
         ]
       }
     },
-    "/api/organizations/{organizationUser.organizationId}/users/{organizationUser.userId}": {
+    "/api/organizations/{organization_user.organization_id}/users/{organization_user.user_id}": {
       "put": {
         "summary": "Update a user in an organization.",
         "operationId": "UpdateUser",
@@ -325,7 +329,7 @@
         },
         "parameters": [
           {
-            "name": "organizationUser.organizationId",
+            "name": "organization_user.organization_id",
             "description": "Organization ID.",
             "in": "path",
             "required": true,
@@ -333,7 +337,7 @@
             "format": "int64"
           },
           {
-            "name": "organizationUser.userId",
+            "name": "organization_user.user_id",
             "description": "User ID.",
             "in": "path",
             "required": true,

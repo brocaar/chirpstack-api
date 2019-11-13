@@ -4,6 +4,10 @@
     "title": "as/external/api/deviceQueue.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -11,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/devices/{devEui}/queue": {
+    "/api/devices/{dev_eui}/queue": {
       "get": {
         "summary": "List lists the items in the device-queue.",
         "operationId": "List",
@@ -25,7 +29,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -49,7 +53,7 @@
         },
         "parameters": [
           {
-            "name": "devEui",
+            "name": "dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,
@@ -61,7 +65,7 @@
         ]
       }
     },
-    "/api/devices/{deviceQueueItem.devEui}/queue": {
+    "/api/devices/{device_queue_item.dev_eui}/queue": {
       "post": {
         "summary": "Enqueue adds the given item to the device-queue.",
         "operationId": "Enqueue",
@@ -75,7 +79,7 @@
         },
         "parameters": [
           {
-            "name": "deviceQueueItem.devEui",
+            "name": "device_queue_item.dev_eui",
             "description": "Device EUI (HEX encoded).",
             "in": "path",
             "required": true,

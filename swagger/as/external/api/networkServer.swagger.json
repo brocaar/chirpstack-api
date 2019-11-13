@@ -4,6 +4,10 @@
     "title": "as/external/api/networkServer.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -131,7 +135,7 @@
         ]
       }
     },
-    "/api/network-servers/{networkServer.id}": {
+    "/api/network-servers/{network_server.id}": {
       "put": {
         "summary": "Update updates the given network-server.",
         "operationId": "Update",
@@ -145,7 +149,7 @@
         },
         "parameters": [
           {
-            "name": "networkServer.id",
+            "name": "network_server.id",
             "description": "Network-server ID.",
             "in": "path",
             "required": true,

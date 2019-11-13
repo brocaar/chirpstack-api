@@ -4,6 +4,10 @@
     "title": "as/external/api/serviceProfile.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -129,7 +133,7 @@
         ]
       }
     },
-    "/api/service-profiles/{serviceProfile.id}": {
+    "/api/service-profiles/{service_profile.id}": {
       "put": {
         "summary": "Update updates the given serviceprofile.",
         "operationId": "Update",
@@ -143,7 +147,7 @@
         },
         "parameters": [
           {
-            "name": "serviceProfile.id",
+            "name": "service_profile.id",
             "description": "Service-profile ID (UUID string).\nThis will be automatically set on create.",
             "in": "path",
             "required": true,

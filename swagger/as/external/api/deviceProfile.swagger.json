@@ -4,6 +4,10 @@
     "title": "as/external/api/deviceProfile.proto",
     "version": "version not set"
   },
+  "schemes": [
+    "http",
+    "https"
+  ],
   "consumes": [
     "application/json"
   ],
@@ -87,7 +91,7 @@
         ]
       }
     },
-    "/api/device-profiles/{deviceProfile.id}": {
+    "/api/device-profiles/{device_profile.id}": {
       "put": {
         "summary": "Update updates the given device-profile.",
         "operationId": "Update",
@@ -101,7 +105,7 @@
         },
         "parameters": [
           {
-            "name": "deviceProfile.id",
+            "name": "device_profile.id",
             "description": "Device-profile ID (UUID string).",
             "in": "path",
             "required": true,
