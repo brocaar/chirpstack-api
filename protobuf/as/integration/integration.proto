@@ -125,20 +125,14 @@ message AckEvent {
     // Device EUI.
     bytes dev_eui = 4 [json_name = "devEUI"];
 
-    // Receiving gateway RX info.
-    repeated gw.UplinkRXInfo rx_info = 5;
-
-    // TX info.
-    gw.UplinkTXInfo tx_info = 6;
-
     // Frame was acknowledged.
-    bool acknowledged = 7;
+    bool acknowledged = 5;
 
     // Downlink frame counter to which the acknowledgement relates.
-    uint32 f_cnt = 8;
+    uint32 f_cnt = 6;
 
     // User-defined device tags.
-    map<string, string> tags = 9;
+    map<string, string> tags = 7;
 }
 
 // ErrorEvent is the message sent when an error occurred.
@@ -183,29 +177,21 @@ message StatusEvent {
     // Device EUI.
     bytes dev_eui = 4 [json_name = "devEUI"];
 
-    // Receiving gateway RX info.
-    // TODO: implement in NS.
-    // repeated gw.UplinkRXInfo rx_info = 5;
-
-    // TX info.
-    // TODO: implement in NS.
-    // gw.UplinkTXInfo tx_info = 6;
-
     // The demodulation signal-to-noise ratio in dB for the last successfully
     // received device-status request by the Network Server.
-    uint32 margin = 7;
+    uint32 margin = 5;
 
     // Device is connected to an external power source.
-    bool external_power_source = 8;
+    bool external_power_source = 6;
 
     // Battery level is not available.
-    bool battery_level_unavailable = 9;
+    bool battery_level_unavailable = 7;
 
     // Battery level.
-    float battery_level = 10;
+    float battery_level = 8;
 
     // User-defined device tags.
-    map<string, string> tags = 11;
+    map<string, string> tags = 9;
 }
 
 // LocationEvent is the message sent when a geolocation resolve was returned.
