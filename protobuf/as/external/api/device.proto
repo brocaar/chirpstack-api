@@ -8,7 +8,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "common/common.proto";
-import "common.proto";
+import "as/external/api/common.proto";
 
 
 // DeviceService is the service managing the devices.

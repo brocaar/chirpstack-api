@@ -1,9 +1,13 @@
-.PHONY: go swagger
+.PHONY: go swagger js
 
-all: go swagger
+all:
+	docker-compose up
 
 go:
-	cd go && make
+	docker-compose run --rm chirpstack-api-go
 
 swagger:
-	cd swagger && make
+	docker-compose run --rm chirpstack-api-swagger
+
+js:
+	docker-compose run --rm chirpstack-api-js

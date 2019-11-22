@@ -1,13 +1,32 @@
 # ChirpStack API
 
-## Generate Go structs and clients
+## Generate client libraries, API docs, etc.
 
-```
-docker-compose run --rm chirpstack-api-go bash
+In order to generate client libraries for all of the available languages, you should have `docker` and `docker-compose`
+installed.
+
+All client libraries can be (re)generated with
+
+```sh
+make all
 ```
 
-Then within the Docker container:
+Client libraries/docs can also be generated individually if desired
 
-```
+**Go**
+
+```sh
 make go
+```
+
+**Javascript/Typescript**
+
+```sh
+make js
+```
+
+**Swagger Docs**
+
+```sh
+make swagger
 ```

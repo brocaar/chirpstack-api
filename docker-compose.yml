@@ -4,5 +4,20 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-go
+    command: bash -c "cd go && make all"
+    volumes:
+      - ./:/chirpstack-api
+  chirpstack-api-swagger:
+    build:
+      context: .
+      dockerfile: Dockerfile-go
+    command: bash -c "cd swagger && make all"
+    volumes:
+      - ./:/chirpstack-api
+  chirpstack-api-js:
+    build:
+      context: .
+      dockerfile: Dockerfile-js
+    command: bash -c "cd js && make all"
     volumes:
       - ./:/chirpstack-api
