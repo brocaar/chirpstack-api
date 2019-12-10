@@ -1,5 +1,6 @@
 .PHONY: requirements common gw geo nc ns as as-integration as-external-api
 
+VERSION := $(shell git describe --always |sed -e "s/^v//")
 GOOGLEAPIS_PATH := "/googleapis"
 
 PROTOC_PATH := ./node_modules/grpc-tools/bin/protoc
@@ -7,10 +8,13 @@ PROTOC_GEN_TS_PATH := ./node_modules/.bin/protoc-gen-ts
 PROTOC_GEN_GRPC_PATH := ./node_modules/.bin/grpc_tools_node_protoc_plugin
 PROTOC_ARGS := --plugin=protoc-gen-ts=$(PROTOC_GEN_TS_PATH) --plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) --js_out=import_style=commonjs,binary:. --ts_out=service=grpc-node:. --grpc_out=.
 
-all: requirements common gw geo nc ns as as-integration as-external-api google-api
+all: requirements version common gw geo nc ns as as-integration as-external-api google-api
 
 requirements:
 	yarn install
+
+version:
+	sed -i 's/"version.*/"version": "$(VERSION)",/g' ./package.json
 
 common:
 	protoc -I=../protobuf -I=../protobuf/common $(PROTOC_ARGS) ../protobuf/common/common.proto

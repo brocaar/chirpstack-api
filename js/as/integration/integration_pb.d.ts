@@ -154,16 +154,6 @@ export class AckEvent extends jspb.Message {
   getDevEui_asB64(): string;
   setDevEui(value: Uint8Array | string): void;
 
-  clearRxInfoList(): void;
-  getRxInfoList(): Array<gw_gw_pb.UplinkRXInfo>;
-  setRxInfoList(value: Array<gw_gw_pb.UplinkRXInfo>): void;
-  addRxInfo(value?: gw_gw_pb.UplinkRXInfo, index?: number): gw_gw_pb.UplinkRXInfo;
-
-  hasTxInfo(): boolean;
-  clearTxInfo(): void;
-  getTxInfo(): gw_gw_pb.UplinkTXInfo | undefined;
-  setTxInfo(value?: gw_gw_pb.UplinkTXInfo): void;
-
   getAcknowledged(): boolean;
   setAcknowledged(value: boolean): void;
 
@@ -188,8 +178,6 @@ export namespace AckEvent {
     applicationName: string,
     deviceName: string,
     devEui: Uint8Array | string,
-    rxInfoList: Array<gw_gw_pb.UplinkRXInfo.AsObject>,
-    txInfo?: gw_gw_pb.UplinkTXInfo.AsObject,
     acknowledged: boolean,
     fCnt: number,
     tagsMap: Array<[string, string]>,

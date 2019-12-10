@@ -1052,19 +1052,12 @@ proto.integration.JoinEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
  * @constructor
  */
 proto.integration.AckEvent = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.integration.AckEvent.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.integration.AckEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.integration.AckEvent.displayName = 'proto.integration.AckEvent';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.integration.AckEvent.repeatedFields_ = [5];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1097,9 +1090,6 @@ proto.integration.AckEvent.toObject = function(includeInstance, msg) {
     applicationName: msg.getApplicationName(),
     deviceName: msg.getDeviceName(),
     devEui: msg.getDevEui_asB64(),
-    rxInfoList: jspb.Message.toObjectList(msg.getRxInfoList(),
-    gw_gw_pb.UplinkRXInfo.toObject, includeInstance),
-    txInfo: (f = msg.getTxInfo()) && gw_gw_pb.UplinkTXInfo.toObject(includeInstance, f),
     acknowledged: msg.getAcknowledged(),
     fCnt: msg.getFCnt(),
     tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
@@ -1156,25 +1146,14 @@ proto.integration.AckEvent.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDevEui(value);
       break;
     case 5:
-      var value = new gw_gw_pb.UplinkRXInfo;
-      reader.readMessage(value,gw_gw_pb.UplinkRXInfo.deserializeBinaryFromReader);
-      msg.getRxInfoList().push(value);
-      msg.setRxInfoList(msg.getRxInfoList());
-      break;
-    case 6:
-      var value = new gw_gw_pb.UplinkTXInfo;
-      reader.readMessage(value,gw_gw_pb.UplinkTXInfo.deserializeBinaryFromReader);
-      msg.setTxInfo(value);
-      break;
-    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAcknowledged(value);
       break;
-    case 8:
+    case 6:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setFCnt(value);
       break;
-    case 9:
+    case 7:
       var value = msg.getTagsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
@@ -1246,39 +1225,23 @@ proto.integration.AckEvent.prototype.serializeBinaryToWriter = function (writer)
       f
     );
   }
-  f = this.getRxInfoList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      5,
-      f,
-      gw_gw_pb.UplinkRXInfo.serializeBinaryToWriter
-    );
-  }
-  f = this.getTxInfo();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      gw_gw_pb.UplinkTXInfo.serializeBinaryToWriter
-    );
-  }
   f = this.getAcknowledged();
   if (f) {
     writer.writeBool(
-      7,
+      5,
       f
     );
   }
   f = this.getFCnt();
   if (f !== 0) {
     writer.writeUint32(
-      8,
+      6,
       f
     );
   }
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -1377,99 +1340,46 @@ proto.integration.AckEvent.prototype.setDevEui = function(value) {
 
 
 /**
- * repeated gw.UplinkRXInfo rx_info = 5;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.gw.UplinkRXInfo>}
- */
-proto.integration.AckEvent.prototype.getRxInfoList = function() {
-  return /** @type{!Array.<!proto.gw.UplinkRXInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, gw_gw_pb.UplinkRXInfo, 5));
-};
-
-
-/** @param {Array.<!proto.gw.UplinkRXInfo>} value  */
-proto.integration.AckEvent.prototype.setRxInfoList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-proto.integration.AckEvent.prototype.clearRxInfoList = function() {
-  this.setRxInfoList([]);
-};
-
-
-/**
- * optional gw.UplinkTXInfo tx_info = 6;
- * @return {proto.gw.UplinkTXInfo}
- */
-proto.integration.AckEvent.prototype.getTxInfo = function() {
-  return /** @type{proto.gw.UplinkTXInfo} */ (
-    jspb.Message.getWrapperField(this, gw_gw_pb.UplinkTXInfo, 6));
-};
-
-
-/** @param {proto.gw.UplinkTXInfo|undefined} value  */
-proto.integration.AckEvent.prototype.setTxInfo = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-proto.integration.AckEvent.prototype.clearTxInfo = function() {
-  this.setTxInfo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return{!boolean}
- */
-proto.integration.AckEvent.prototype.hasTxInfo = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional bool acknowledged = 7;
+ * optional bool acknowledged = 5;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.integration.AckEvent.prototype.getAcknowledged = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 5, false));
 };
 
 
 /** @param {boolean} value  */
 proto.integration.AckEvent.prototype.setAcknowledged = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setField(this, 5, value);
 };
 
 
 /**
- * optional uint32 f_cnt = 8;
+ * optional uint32 f_cnt = 6;
  * @return {number}
  */
 proto.integration.AckEvent.prototype.getFCnt = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
 };
 
 
 /** @param {number} value  */
 proto.integration.AckEvent.prototype.setFCnt = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setField(this, 6, value);
 };
 
 
 /**
- * map<string, string> tags = 9;
+ * map<string, string> tags = 7;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.integration.AckEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
       null));
 };
 
@@ -1950,23 +1860,23 @@ proto.integration.StatusEvent.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setDevEui(value);
       break;
-    case 7:
+    case 5:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setMargin(value);
       break;
-    case 8:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setExternalPowerSource(value);
       break;
-    case 9:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBatteryLevelUnavailable(value);
       break;
-    case 10:
+    case 8:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setBatteryLevel(value);
       break;
-    case 11:
+    case 9:
       var value = msg.getTagsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
@@ -2041,34 +1951,34 @@ proto.integration.StatusEvent.prototype.serializeBinaryToWriter = function (writ
   f = this.getMargin();
   if (f !== 0) {
     writer.writeUint32(
-      7,
+      5,
       f
     );
   }
   f = this.getExternalPowerSource();
   if (f) {
     writer.writeBool(
-      8,
+      6,
       f
     );
   }
   f = this.getBatteryLevelUnavailable();
   if (f) {
     writer.writeBool(
-      9,
+      7,
       f
     );
   }
   f = this.getBatteryLevel();
   if (f !== 0.0) {
     writer.writeFloat(
-      10,
+      8,
       f
     );
   }
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -2167,78 +2077,78 @@ proto.integration.StatusEvent.prototype.setDevEui = function(value) {
 
 
 /**
- * optional uint32 margin = 7;
+ * optional uint32 margin = 5;
  * @return {number}
  */
 proto.integration.StatusEvent.prototype.getMargin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 7, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
 };
 
 
 /** @param {number} value  */
 proto.integration.StatusEvent.prototype.setMargin = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setField(this, 5, value);
 };
 
 
 /**
- * optional bool external_power_source = 8;
+ * optional bool external_power_source = 6;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.integration.StatusEvent.prototype.getExternalPowerSource = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 6, false));
 };
 
 
 /** @param {boolean} value  */
 proto.integration.StatusEvent.prototype.setExternalPowerSource = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setField(this, 6, value);
 };
 
 
 /**
- * optional bool battery_level_unavailable = 9;
+ * optional bool battery_level_unavailable = 7;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.integration.StatusEvent.prototype.getBatteryLevelUnavailable = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 7, false));
 };
 
 
 /** @param {boolean} value  */
 proto.integration.StatusEvent.prototype.setBatteryLevelUnavailable = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setField(this, 7, value);
 };
 
 
 /**
- * optional float battery_level = 10;
+ * optional float battery_level = 8;
  * @return {number}
  */
 proto.integration.StatusEvent.prototype.getBatteryLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 8, 0));
 };
 
 
 /** @param {number} value  */
 proto.integration.StatusEvent.prototype.setBatteryLevel = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setField(this, 8, value);
 };
 
 
 /**
- * map<string, string> tags = 11;
+ * map<string, string> tags = 9;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.integration.StatusEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
       null));
 };
 
