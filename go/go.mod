@@ -1,4 +1,4 @@
-module github.com/brocaar/chirpstack-api/go
+module github.com/brocaar/chirpstack-api/go/v3
 
 go 1.13
 
