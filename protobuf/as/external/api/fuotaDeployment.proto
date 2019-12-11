@@ -7,7 +7,7 @@ option go_package = "github.com/brocar/chirpstack-api/go/as/external/api";
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
-import "multicastGroup.proto";
+import "as/external/api/multicastGroup.proto";
 
 
 // FUOTADeploymentService is the service managing FUOTA deployments.

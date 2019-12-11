@@ -8,7 +8,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "common/common.proto";
 import "gw/gw.proto";
-import "profiles.proto";
+import "ns/profiles.proto";
 
 
 // NetworkServerService provides the network-server API methods.

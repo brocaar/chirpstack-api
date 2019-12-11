@@ -7,7 +7,7 @@ option go_package = "github.com/brocar/chirpstack-api/go/as/external/api";
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
-import "profiles.proto";
+import "as/external/api/profiles.proto";
 
 
 // ServiceProfileService is the service managing service-profiles.

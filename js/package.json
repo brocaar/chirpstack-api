@@ -1,0 +1,16 @@
+{
+  "name": "@chirpstack/chirpstack-api",
+  "version": "fa3c8b4",
+  "description": "Chirpstack JS and TS API",
+  "license": "MIT",
+  "devDependencies": {
+    "grpc-tools": "^1.8.0",
+    "ts-protoc-gen": "^0.12.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/google-protobuf": "^3.7.2",
+    "google-protobuf": "^3.10.0",
+    "grpc": "^1.24.2"
+  }
+}
