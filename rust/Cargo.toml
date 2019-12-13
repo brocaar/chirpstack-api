@@ -1,7 +1,11 @@
 [package]
 name = "chirpstack_api"
+description = "ChirpStack Protobuf / gRPC API definitions."
 version = "3.0.1-1-g2e16641"
 authors = ["Orne Brocaar <info@brocaar.com>"]
+license = "MIT"
+homepage = "https://www.chirpstack.io"
+repository = "https://github.com/brocaar/chirpstack-api"
 edition = "2018"
 
 [dependencies]

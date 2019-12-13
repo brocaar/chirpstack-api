@@ -1,4 +1,4 @@
-.PHONY: requirements common gw geo nc ns as as-integration as-external-api
+.PHONY: requirements common gw geo nc ns as as-integration as-external-api publish
 
 VERSION := $(shell git describe --always |sed -e "s/^go\///" |sed -e "s/^v//")
 GOOGLEAPIS_PATH := "/googleapis"
@@ -59,3 +59,6 @@ as-external-api:
 
 google-api:
 	protoc -I=$(GOOGLEAPIS_PATH) $(PROTOC_ARGS) $(GOOGLEAPIS_PATH)/google/api/*.proto
+
+publish: version
+	npm --access public publish

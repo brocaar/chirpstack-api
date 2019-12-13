@@ -65,3 +65,6 @@ as-external-api:
 	$(PROTOC_GEN) as/external/api/profiles.proto
 	$(PROTOC_GEN) as/external/api/serviceProfile.proto
 	$(PROTOC_GEN) as/external/api/user.proto
+
+publish: version
+	cargo publish
