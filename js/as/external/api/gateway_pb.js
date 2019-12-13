@@ -13,7 +13,7 @@ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var common_common_pb = require('../../../common/common_pb.js');
-var as_external_api_common_pb = require('../../../as/external/api/common_pb.js');
+var as_external_api_frameLog_pb = require('../../../as/external/api/frameLog_pb.js');
 goog.exportSymbol('proto.api.CreateGatewayRequest', null, global);
 goog.exportSymbol('proto.api.DeleteGatewayRequest', null, global);
 goog.exportSymbol('proto.api.Gateway', null, global);
@@ -4281,8 +4281,8 @@ proto.api.StreamGatewayFrameLogsResponse.prototype.toObject = function(opt_inclu
  */
 proto.api.StreamGatewayFrameLogsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uplinkFrame: (f = msg.getUplinkFrame()) && as_external_api_common_pb.UplinkFrameLog.toObject(includeInstance, f),
-    downlinkFrame: (f = msg.getDownlinkFrame()) && as_external_api_common_pb.DownlinkFrameLog.toObject(includeInstance, f)
+    uplinkFrame: (f = msg.getUplinkFrame()) && as_external_api_frameLog_pb.UplinkFrameLog.toObject(includeInstance, f),
+    downlinkFrame: (f = msg.getDownlinkFrame()) && as_external_api_frameLog_pb.DownlinkFrameLog.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4320,13 +4320,13 @@ proto.api.StreamGatewayFrameLogsResponse.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new as_external_api_common_pb.UplinkFrameLog;
-      reader.readMessage(value,as_external_api_common_pb.UplinkFrameLog.deserializeBinaryFromReader);
+      var value = new as_external_api_frameLog_pb.UplinkFrameLog;
+      reader.readMessage(value,as_external_api_frameLog_pb.UplinkFrameLog.deserializeBinaryFromReader);
       msg.setUplinkFrame(value);
       break;
     case 2:
-      var value = new as_external_api_common_pb.DownlinkFrameLog;
-      reader.readMessage(value,as_external_api_common_pb.DownlinkFrameLog.deserializeBinaryFromReader);
+      var value = new as_external_api_frameLog_pb.DownlinkFrameLog;
+      reader.readMessage(value,as_external_api_frameLog_pb.DownlinkFrameLog.deserializeBinaryFromReader);
       msg.setDownlinkFrame(value);
       break;
     default:
@@ -4372,7 +4372,7 @@ proto.api.StreamGatewayFrameLogsResponse.prototype.serializeBinaryToWriter = fun
     writer.writeMessage(
       1,
       f,
-      as_external_api_common_pb.UplinkFrameLog.serializeBinaryToWriter
+      as_external_api_frameLog_pb.UplinkFrameLog.serializeBinaryToWriter
     );
   }
   f = this.getDownlinkFrame();
@@ -4380,7 +4380,7 @@ proto.api.StreamGatewayFrameLogsResponse.prototype.serializeBinaryToWriter = fun
     writer.writeMessage(
       2,
       f,
-      as_external_api_common_pb.DownlinkFrameLog.serializeBinaryToWriter
+      as_external_api_frameLog_pb.DownlinkFrameLog.serializeBinaryToWriter
     );
   }
 };
@@ -4401,7 +4401,7 @@ proto.api.StreamGatewayFrameLogsResponse.prototype.cloneMessage = function() {
  */
 proto.api.StreamGatewayFrameLogsResponse.prototype.getUplinkFrame = function() {
   return /** @type{proto.api.UplinkFrameLog} */ (
-    jspb.Message.getWrapperField(this, as_external_api_common_pb.UplinkFrameLog, 1));
+    jspb.Message.getWrapperField(this, as_external_api_frameLog_pb.UplinkFrameLog, 1));
 };
 
 
@@ -4431,7 +4431,7 @@ proto.api.StreamGatewayFrameLogsResponse.prototype.hasUplinkFrame = function() {
  */
 proto.api.StreamGatewayFrameLogsResponse.prototype.getDownlinkFrame = function() {
   return /** @type{proto.api.DownlinkFrameLog} */ (
-    jspb.Message.getWrapperField(this, as_external_api_common_pb.DownlinkFrameLog, 2));
+    jspb.Message.getWrapperField(this, as_external_api_frameLog_pb.DownlinkFrameLog, 2));
 };
 
 

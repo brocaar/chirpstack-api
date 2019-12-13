@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "as/external/api/common.proto",
+    "title": "as/external/api/frameLog.proto",
     "version": "version not set"
   },
   "schemes": [

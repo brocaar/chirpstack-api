@@ -7,7 +7,7 @@ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js')
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var common_common_pb = require('../../../common/common_pb.js');
-var as_external_api_common_pb = require('../../../as/external/api/common_pb.js');
+var as_external_api_frameLog_pb = require('../../../as/external/api/frameLog_pb.js');
 
 function serialize_api_CreateGatewayRequest(arg) {
   if (!(arg instanceof as_external_api_gateway_pb.CreateGatewayRequest)) {

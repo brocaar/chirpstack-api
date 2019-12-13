@@ -6,7 +6,7 @@ import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as common_common_pb from "../../../common/common_pb";
-import * as as_external_api_common_pb from "../../../as/external/api/common_pb";
+import * as as_external_api_frameLog_pb from "../../../as/external/api/frameLog_pb";
 
 export class Device extends jspb.Message {
   getDevEui(): string;
@@ -653,13 +653,13 @@ export namespace StreamDeviceFrameLogsRequest {
 export class StreamDeviceFrameLogsResponse extends jspb.Message {
   hasUplinkFrame(): boolean;
   clearUplinkFrame(): void;
-  getUplinkFrame(): as_external_api_common_pb.UplinkFrameLog | undefined;
-  setUplinkFrame(value?: as_external_api_common_pb.UplinkFrameLog): void;
+  getUplinkFrame(): as_external_api_frameLog_pb.UplinkFrameLog | undefined;
+  setUplinkFrame(value?: as_external_api_frameLog_pb.UplinkFrameLog): void;
 
   hasDownlinkFrame(): boolean;
   clearDownlinkFrame(): void;
-  getDownlinkFrame(): as_external_api_common_pb.DownlinkFrameLog | undefined;
-  setDownlinkFrame(value?: as_external_api_common_pb.DownlinkFrameLog): void;
+  getDownlinkFrame(): as_external_api_frameLog_pb.DownlinkFrameLog | undefined;
+  setDownlinkFrame(value?: as_external_api_frameLog_pb.DownlinkFrameLog): void;
 
   getFrameCase(): StreamDeviceFrameLogsResponse.FrameCase;
   serializeBinary(): Uint8Array;
@@ -674,8 +674,8 @@ export class StreamDeviceFrameLogsResponse extends jspb.Message {
 
 export namespace StreamDeviceFrameLogsResponse {
   export type AsObject = {
-    uplinkFrame?: as_external_api_common_pb.UplinkFrameLog.AsObject,
-    downlinkFrame?: as_external_api_common_pb.DownlinkFrameLog.AsObject,
+    uplinkFrame?: as_external_api_frameLog_pb.UplinkFrameLog.AsObject,
+    downlinkFrame?: as_external_api_frameLog_pb.DownlinkFrameLog.AsObject,
   }
 
   export enum FrameCase {
