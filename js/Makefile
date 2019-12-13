@@ -1,6 +1,6 @@
 .PHONY: requirements common gw geo nc ns as as-integration as-external-api
 
-VERSION := $(shell git describe --always |sed -e "s/^v//")
+VERSION := $(shell git describe --always |sed -e "s/^go\///" |sed -e "s/^v//")
 GOOGLEAPIS_PATH := "/googleapis"
 
 PROTOC_PATH := ./node_modules/grpc-tools/bin/protoc

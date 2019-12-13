@@ -21,3 +21,10 @@ services:
     command: bash -c "cd js && make all"
     volumes:
       - ./:/chirpstack-api
+  chirpstack-api-rust:
+    build:
+      context: .
+      dockerfile: Dockerfile-rust
+    command: bash -c "cd rust && make all"
+    volumes:
+      - ./:/chirpstack-api

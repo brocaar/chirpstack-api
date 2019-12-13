@@ -1,0 +1,9 @@
+[package]
+name = "chirpstack_api"
+version = "3.0.1-1-g2e16641"
+authors = ["Orne Brocaar <info@brocaar.com>"]
+edition = "2018"
+
+[dependencies]
+protobuf = "2.8.1"
+grpc = "0.6.1"
