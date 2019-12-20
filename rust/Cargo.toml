@@ -8,6 +8,12 @@ homepage = "https://www.chirpstack.io"
 repository = "https://github.com/brocaar/chirpstack-api"
 edition = "2018"
 
+[features]
+default = ["grpc_support"]
+
+grpc_support = ["grpc"]
+
 [dependencies]
 protobuf = "2.8.1"
-grpc = "0.6.1"
+
+grpc = { version = "0.6.1", optional = true }
