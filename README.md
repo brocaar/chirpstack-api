@@ -1,32 +1,57 @@
 # ChirpStack API
 
-## Generate client libraries, API docs, etc.
+This repository contains the [Protobuf](https://developers.google.com/protocol-buffers/)
+and [gRPC](https://grpc.io/) API definitions for the [ChirpStack](https://www.chirpstack.io)
+components.
 
-In order to generate client libraries for all of the available languages, you should have `docker` and `docker-compose`
-installed.
+## Protobuf / gRPC structure
 
-All client libraries can be (re)generated with
+```
+protobuf             - Protobuf and gRPC source files
+├── as
+│   ├── external
+│   │   └── api      - Application Server External API definitions
+│   └── integration  - Application Server integration definitions
+├── common           - Definitions shared across ChirpStack components
+├── geo              - Geolocation Server API definitions
+├── gw               - LoRa gateway definitions
+├── nc               - Network Controller definitions
+└── ns               - Network Server definitions
+```
 
-```sh
+## Supported languages
+
+### Go
+
+Documentation: https://godoc.org/github.com/brocaar/chirpstack-api/go
+
+```bash
+go get github.com/brocaar/chirpstack-api/go/v3
+```
+
+### JavaScript / Typescript
+
+See: https://www.npmjs.com/package/@chirpstack/chirpstack-api.
+
+### Rust
+
+See: https://crates.io/crates/chirpstack_api.
+
+## Generating client libraries
+
+These instructions require [Docker](https://docs.docker.com/install/) and
+[Docker Compose](https://docs.docker.com/compose/install/) to be installed.
+
+```bash
+# (re)generate all client libraries
 make all
-```
 
-Client libraries/docs can also be generated individually if desired
-
-**Go**
-
-```sh
+# only (re)generate go client library
 make go
-```
 
-**Javascript/Typescript**
-
-```sh
+# only (re)generate JavaScript / Typescript
 make js
-```
 
-**Swagger Docs**
-
-```sh
+# only (re)generate Swagger definitions
 make swagger
 ```
