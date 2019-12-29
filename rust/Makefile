@@ -1,16 +1,15 @@
-.PHONY: requirements version common gw geo nc ns as as-integration as-external-api
+.PHONY: requirements version common gw geo nc ns as as-integration as-external-api test
 
-VERSION := $(shell git describe --always |sed -e "s/^go\///" |sed -e "s/^v//")
 PROTOC_ARGS := -I=../protobuf -I=/protobuf/src -I=/googleapis
 
-all: requirements version google common gw geo nc ns as as-integration as-external-api
+all: requirements version google common gw geo nc ns as as-integration as-external-api test
 
 requirements:
-	cargo install protobuf-codegen
-	cargo install grpc-compiler
+	cargo install --force protobuf-codegen
+	cargo install --force grpc-compiler
 
 version:
-	sed -i 's/version.*/version = "$(VERSION)"/g' ./Cargo.toml
+	sed -i 's/^version.*/version = "$(VERSION)"/g' ./Cargo.toml
 
 google:
 	mkdir -p src/gen/protobuf
@@ -65,6 +64,9 @@ as-external-api:
 	$(PROTOC_GEN) as/external/api/profiles.proto
 	$(PROTOC_GEN) as/external/api/serviceProfile.proto
 	$(PROTOC_GEN) as/external/api/user.proto
+
+test:
+	cargo test
 
 publish: version
 	cargo publish

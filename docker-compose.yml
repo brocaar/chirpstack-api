@@ -22,6 +22,8 @@ services:
     volumes:
       - ./:/chirpstack-api
   chirpstack-api-rust:
+    environment:
+      - VERSION=3.0.3
     build:
       context: .
       dockerfile: Dockerfile-rust
