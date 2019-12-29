@@ -288,6 +288,9 @@ export class UplinkRXInfo extends jspb.Message {
   getUplinkId_asB64(): string;
   setUplinkId(value: Uint8Array | string): void;
 
+  getCrcStatus(): CRCStatusMap[keyof CRCStatusMap];
+  setCrcStatus(value: CRCStatusMap[keyof CRCStatusMap]): void;
+
   getFineTimestampCase(): UplinkRXInfo.FineTimestampCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UplinkRXInfo.AsObject;
@@ -316,6 +319,7 @@ export namespace UplinkRXInfo {
     plainFineTimestamp?: PlainFineTimestamp.AsObject,
     context: Uint8Array | string,
     uplinkId: Uint8Array | string,
+    crcStatus: CRCStatusMap[keyof CRCStatusMap],
   }
 
   export enum FineTimestampCase {
@@ -925,4 +929,12 @@ export interface FineTimestampTypeMap {
 }
 
 export const FineTimestampType: FineTimestampTypeMap;
+
+export interface CRCStatusMap {
+  NO_CRC: 0;
+  BAD_CRC: 1;
+  CRC_OK: 2;
+}
+
+export const CRCStatus: CRCStatusMap;
 

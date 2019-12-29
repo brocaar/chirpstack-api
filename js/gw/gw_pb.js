@@ -12,6 +12,7 @@ var global = Function('return this')();
 var common_common_pb = require('../common/common_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
+goog.exportSymbol('proto.gw.CRCStatus', null, global);
 goog.exportSymbol('proto.gw.ChannelConfiguration', null, global);
 goog.exportSymbol('proto.gw.DelayTimingInfo', null, global);
 goog.exportSymbol('proto.gw.DownlinkFrame', null, global);
@@ -1796,7 +1797,8 @@ proto.gw.UplinkRXInfo.toObject = function(includeInstance, msg) {
     encryptedFineTimestamp: (f = msg.getEncryptedFineTimestamp()) && proto.gw.EncryptedFineTimestamp.toObject(includeInstance, f),
     plainFineTimestamp: (f = msg.getPlainFineTimestamp()) && proto.gw.PlainFineTimestamp.toObject(includeInstance, f),
     context: msg.getContext_asB64(),
-    uplinkId: msg.getUplinkId_asB64()
+    uplinkId: msg.getUplinkId_asB64(),
+    crcStatus: msg.getCrcStatus()
   };
 
   if (includeInstance) {
@@ -1897,6 +1899,10 @@ proto.gw.UplinkRXInfo.deserializeBinaryFromReader = function(msg, reader) {
     case 16:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setUplinkId(value);
+      break;
+    case 17:
+      var value = /** @type {!proto.gw.CRCStatus} */ (reader.readEnum());
+      msg.setCrcStatus(value);
       break;
     default:
       reader.skipField();
@@ -2043,6 +2049,13 @@ proto.gw.UplinkRXInfo.prototype.serializeBinaryToWriter = function (writer) {
   if (f.length > 0) {
     writer.writeBytes(
       16,
+      f
+    );
+  }
+  f = this.getCrcStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      17,
       f
     );
   }
@@ -2427,6 +2440,21 @@ proto.gw.UplinkRXInfo.prototype.getUplinkId_asU8 = function() {
 /** @param {!(string|Uint8Array)} value  */
 proto.gw.UplinkRXInfo.prototype.setUplinkId = function(value) {
   jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * optional CRCStatus crc_status = 17;
+ * @return {!proto.gw.CRCStatus}
+ */
+proto.gw.UplinkRXInfo.prototype.getCrcStatus = function() {
+  return /** @type {!proto.gw.CRCStatus} */ (jspb.Message.getFieldProto3(this, 17, 0));
+};
+
+
+/** @param {!proto.gw.CRCStatus} value  */
+proto.gw.UplinkRXInfo.prototype.setCrcStatus = function(value) {
+  jspb.Message.setField(this, 17, value);
 };
 
 
@@ -6992,6 +7020,15 @@ proto.gw.FineTimestampType = {
   NONE: 0,
   ENCRYPTED: 1,
   PLAIN: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.gw.CRCStatus = {
+  NO_CRC: 0,
+  BAD_CRC: 1,
+  CRC_OK: 2
 };
 
 goog.object.extend(exports, proto.gw);

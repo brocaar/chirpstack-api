@@ -649,6 +649,16 @@
       "default": "LORA",
       "title": "- LORA: LoRa\n - FSK: FSK"
     },
+    "gwCRCStatus": {
+      "type": "string",
+      "enum": [
+        "NO_CRC",
+        "BAD_CRC",
+        "CRC_OK"
+      ],
+      "default": "NO_CRC",
+      "description": " - NO_CRC: No CRC.\n - BAD_CRC: Bad CRC.\n - CRC_OK: CRC OK."
+    },
     "gwDelayTimingInfo": {
       "type": "object",
       "properties": {
@@ -894,6 +904,10 @@
           "type": "string",
           "format": "byte",
           "description": "Uplink ID (UUID bytes).\nUnique and random ID which can be used to correlate the uplink across multiple logs."
+        },
+        "crcStatus": {
+          "$ref": "#/definitions/gwCRCStatus",
+          "description": "CRC status."
         }
       }
     },

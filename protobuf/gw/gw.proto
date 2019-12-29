@@ -32,6 +32,17 @@ enum FineTimestampType {
     PLAIN = 2;
 }
 
+enum CRCStatus {
+    // No CRC.
+    NO_CRC = 0;
+
+    // Bad CRC.
+    BAD_CRC = 1;
+
+    // CRC OK.
+    CRC_OK = 2;
+}
+
 message UplinkTXInfo {
 	// Frequency (Hz).
 	uint32 frequency = 1;
@@ -172,6 +183,9 @@ message UplinkRXInfo {
     // Uplink ID (UUID bytes).
     // Unique and random ID which can be used to correlate the uplink across multiple logs.
     bytes uplink_id = 16 [json_name = "uplinkID"];
+
+    // CRC status.
+    CRCStatus crc_status = 17 [json_name = "crcStatus"];
 }
 
 message DownlinkTXInfo {
