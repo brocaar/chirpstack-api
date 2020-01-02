@@ -82,11 +82,11 @@ export namespace LoRaModulationInfo {
 }
 
 export class FSKModulationInfo extends jspb.Message {
-  getBandwidth(): number;
-  setBandwidth(value: number): void;
+  getFrequencyDeviation(): number;
+  setFrequencyDeviation(value: number): void;
 
-  getBitrate(): number;
-  setBitrate(value: number): void;
+  getDatarate(): number;
+  setDatarate(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FSKModulationInfo.AsObject;
@@ -100,8 +100,8 @@ export class FSKModulationInfo extends jspb.Message {
 
 export namespace FSKModulationInfo {
   export type AsObject = {
-    bandwidth: number,
-    bitrate: number,
+    frequencyDeviation: number,
+    datarate: number,
   }
 }
 

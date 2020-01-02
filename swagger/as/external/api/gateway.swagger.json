@@ -764,15 +764,15 @@
     "gwFSKModulationInfo": {
       "type": "object",
       "properties": {
-        "bandwidth": {
+        "frequencyDeviation": {
           "type": "integer",
           "format": "int64",
-          "description": "Bandwidth."
+          "description": "Frequency deviation."
         },
-        "bitrate": {
+        "datarate": {
           "type": "integer",
           "format": "int64",
-          "description": "Bitrate."
+          "description": "FSK datarate (bits / sec)."
         }
       }
     },

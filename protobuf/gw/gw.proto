@@ -74,11 +74,11 @@ message LoRaModulationInfo {
 }
 
 message FSKModulationInfo {
-    // Bandwidth.
-    uint32 bandwidth = 1;
+    // Frequency deviation.
+    uint32 frequency_deviation = 1;
 
-    // Bitrate.
-    uint32 bitrate = 2;
+    // FSK datarate (bits / sec).
+    uint32 datarate = 2;
 }
 
 message EncryptedFineTimestamp {

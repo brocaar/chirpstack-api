@@ -5,7 +5,7 @@ PROTOC_ARGS := -I=../protobuf -I=/protobuf/src -I=/googleapis
 all: requirements version google common gw geo nc ns as as-integration as-external-api test
 
 requirements:
-	cargo install --force protobuf-codegen
+	cargo install --force protobuf-codegen --version 2.8.1
 	cargo install --force grpc-compiler
 
 version:

@@ -626,8 +626,8 @@ proto.gw.FSKModulationInfo.prototype.toObject = function(opt_includeInstance) {
  */
 proto.gw.FSKModulationInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bandwidth: msg.getBandwidth(),
-    bitrate: msg.getBitrate()
+    frequencyDeviation: msg.getFrequencyDeviation(),
+    datarate: msg.getDatarate()
   };
 
   if (includeInstance) {
@@ -666,11 +666,11 @@ proto.gw.FSKModulationInfo.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setBandwidth(value);
+      msg.setFrequencyDeviation(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setBitrate(value);
+      msg.setDatarate(value);
       break;
     default:
       reader.skipField();
@@ -710,14 +710,14 @@ proto.gw.FSKModulationInfo.prototype.serializeBinary = function() {
  */
 proto.gw.FSKModulationInfo.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getBandwidth();
+  f = this.getFrequencyDeviation();
   if (f !== 0) {
     writer.writeUint32(
       1,
       f
     );
   }
-  f = this.getBitrate();
+  f = this.getDatarate();
   if (f !== 0) {
     writer.writeUint32(
       2,
@@ -737,31 +737,31 @@ proto.gw.FSKModulationInfo.prototype.cloneMessage = function() {
 
 
 /**
- * optional uint32 bandwidth = 1;
+ * optional uint32 frequency_deviation = 1;
  * @return {number}
  */
-proto.gw.FSKModulationInfo.prototype.getBandwidth = function() {
+proto.gw.FSKModulationInfo.prototype.getFrequencyDeviation = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
 };
 
 
 /** @param {number} value  */
-proto.gw.FSKModulationInfo.prototype.setBandwidth = function(value) {
+proto.gw.FSKModulationInfo.prototype.setFrequencyDeviation = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * optional uint32 bitrate = 2;
+ * optional uint32 datarate = 2;
  * @return {number}
  */
-proto.gw.FSKModulationInfo.prototype.getBitrate = function() {
+proto.gw.FSKModulationInfo.prototype.getDatarate = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
 };
 
 
 /** @param {number} value  */
-proto.gw.FSKModulationInfo.prototype.setBitrate = function(value) {
+proto.gw.FSKModulationInfo.prototype.setDatarate = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
