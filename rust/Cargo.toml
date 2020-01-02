@@ -14,6 +14,5 @@ default = ["grpc_support"]
 grpc_support = ["grpc"]
 
 [dependencies]
-protobuf = "2.8.1"
-
+protobuf = ">= 2.8.1, < 2.8.2"
 grpc = { version = "0.6.1", optional = true }
