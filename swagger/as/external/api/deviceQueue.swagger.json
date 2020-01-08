@@ -34,6 +34,14 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "countOnly",
+            "description": "Return only the count, not the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -160,7 +168,13 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/apiDeviceQueueItem"
-          }
+          },
+          "description": "The device queue items."
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Total number of items in the queue."
         }
       }
     }

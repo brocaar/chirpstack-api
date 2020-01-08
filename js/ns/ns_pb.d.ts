@@ -1266,6 +1266,9 @@ export class GetDeviceQueueItemsForDevEUIRequest extends jspb.Message {
   getDevEui_asB64(): string;
   setDevEui(value: Uint8Array | string): void;
 
+  getCountOnly(): boolean;
+  setCountOnly(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDeviceQueueItemsForDevEUIRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetDeviceQueueItemsForDevEUIRequest): GetDeviceQueueItemsForDevEUIRequest.AsObject;
@@ -1279,6 +1282,7 @@ export class GetDeviceQueueItemsForDevEUIRequest extends jspb.Message {
 export namespace GetDeviceQueueItemsForDevEUIRequest {
   export type AsObject = {
     devEui: Uint8Array | string,
+    countOnly: boolean,
   }
 }
 
@@ -1287,6 +1291,9 @@ export class GetDeviceQueueItemsForDevEUIResponse extends jspb.Message {
   getItemsList(): Array<DeviceQueueItem>;
   setItemsList(value: Array<DeviceQueueItem>): void;
   addItems(value?: DeviceQueueItem, index?: number): DeviceQueueItem;
+
+  getTotalCount(): number;
+  setTotalCount(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDeviceQueueItemsForDevEUIResponse.AsObject;
@@ -1301,6 +1308,7 @@ export class GetDeviceQueueItemsForDevEUIResponse extends jspb.Message {
 export namespace GetDeviceQueueItemsForDevEUIResponse {
   export type AsObject = {
     itemsList: Array<DeviceQueueItem.AsObject>,
+    totalCount: number,
   }
 }
 

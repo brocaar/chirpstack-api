@@ -903,6 +903,7 @@ impl ::protobuf::reflect::ProtobufValue for FlushDeviceQueueRequest {
 pub struct ListDeviceQueueItemsRequest {
     // message fields
     pub dev_eui: ::std::string::String,
+    pub count_only: bool,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -944,6 +945,21 @@ impl ListDeviceQueueItemsRequest {
     pub fn take_dev_eui(&mut self) -> ::std::string::String {
         ::std::mem::replace(&mut self.dev_eui, ::std::string::String::new())
     }
+
+    // bool count_only = 2;
+
+
+    pub fn get_count_only(&self) -> bool {
+        self.count_only
+    }
+    pub fn clear_count_only(&mut self) {
+        self.count_only = false;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_count_only(&mut self, v: bool) {
+        self.count_only = v;
+    }
 }
 
 impl ::protobuf::Message for ListDeviceQueueItemsRequest {
@@ -957,6 +973,13 @@ impl ::protobuf::Message for ListDeviceQueueItemsRequest {
             match field_number {
                 1 => {
                     ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.dev_eui)?;
+                },
+                2 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_bool()?;
+                    self.count_only = tmp;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -973,6 +996,9 @@ impl ::protobuf::Message for ListDeviceQueueItemsRequest {
         if !self.dev_eui.is_empty() {
             my_size += ::protobuf::rt::string_size(1, &self.dev_eui);
         }
+        if self.count_only != false {
+            my_size += 2;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -981,6 +1007,9 @@ impl ::protobuf::Message for ListDeviceQueueItemsRequest {
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
         if !self.dev_eui.is_empty() {
             os.write_string(1, &self.dev_eui)?;
+        }
+        if self.count_only != false {
+            os.write_bool(2, self.count_only)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -1029,6 +1058,11 @@ impl ::protobuf::Message for ListDeviceQueueItemsRequest {
                     |m: &ListDeviceQueueItemsRequest| { &m.dev_eui },
                     |m: &mut ListDeviceQueueItemsRequest| { &mut m.dev_eui },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBool>(
+                    "count_only",
+                    |m: &ListDeviceQueueItemsRequest| { &m.count_only },
+                    |m: &mut ListDeviceQueueItemsRequest| { &mut m.count_only },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<ListDeviceQueueItemsRequest>(
                     "ListDeviceQueueItemsRequest",
                     fields,
@@ -1052,6 +1086,7 @@ impl ::protobuf::Message for ListDeviceQueueItemsRequest {
 impl ::protobuf::Clear for ListDeviceQueueItemsRequest {
     fn clear(&mut self) {
         self.dev_eui.clear();
+        self.count_only = false;
         self.unknown_fields.clear();
     }
 }
@@ -1072,6 +1107,7 @@ impl ::protobuf::reflect::ProtobufValue for ListDeviceQueueItemsRequest {
 pub struct ListDeviceQueueItemsResponse {
     // message fields
     pub device_queue_items: ::protobuf::RepeatedField<DeviceQueueItem>,
+    pub total_count: i32,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -1112,6 +1148,21 @@ impl ListDeviceQueueItemsResponse {
     pub fn take_device_queue_items(&mut self) -> ::protobuf::RepeatedField<DeviceQueueItem> {
         ::std::mem::replace(&mut self.device_queue_items, ::protobuf::RepeatedField::new())
     }
+
+    // int32 total_count = 2;
+
+
+    pub fn get_total_count(&self) -> i32 {
+        self.total_count
+    }
+    pub fn clear_total_count(&mut self) {
+        self.total_count = 0;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_total_count(&mut self, v: i32) {
+        self.total_count = v;
+    }
 }
 
 impl ::protobuf::Message for ListDeviceQueueItemsResponse {
@@ -1131,6 +1182,13 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
                 1 => {
                     ::protobuf::rt::read_repeated_message_into(wire_type, is, &mut self.device_queue_items)?;
                 },
+                2 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_int32()?;
+                    self.total_count = tmp;
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -1147,6 +1205,9 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
             let len = value.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         };
+        if self.total_count != 0 {
+            my_size += ::protobuf::rt::value_size(2, self.total_count, ::protobuf::wire_format::WireTypeVarint);
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -1158,6 +1219,9 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         };
+        if self.total_count != 0 {
+            os.write_int32(2, self.total_count)?;
+        }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -1205,6 +1269,11 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
                     |m: &ListDeviceQueueItemsResponse| { &m.device_queue_items },
                     |m: &mut ListDeviceQueueItemsResponse| { &mut m.device_queue_items },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeInt32>(
+                    "total_count",
+                    |m: &ListDeviceQueueItemsResponse| { &m.total_count },
+                    |m: &mut ListDeviceQueueItemsResponse| { &mut m.total_count },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<ListDeviceQueueItemsResponse>(
                     "ListDeviceQueueItemsResponse",
                     fields,
@@ -1228,6 +1297,7 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
 impl ::protobuf::Clear for ListDeviceQueueItemsResponse {
     fn clear(&mut self) {
         self.device_queue_items.clear();
+        self.total_count = 0;
         self.unknown_fields.clear();
     }
 }
@@ -1255,98 +1325,108 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x12@\n\x11device_queue_item\x18\x01\x20\x01(\x0b2\x14.api.DeviceQueueIt\
     emR\x0fdeviceQueueItem\"5\n\x1eEnqueueDeviceQueueItemResponse\x12\x13\n\
     \x05f_cnt\x18\x01\x20\x01(\rR\x04fCnt\"2\n\x17FlushDeviceQueueRequest\
-    \x12\x17\n\x07dev_eui\x18\x01\x20\x01(\tR\x06devEUI\"6\n\x1bListDeviceQu\
-    eueItemsRequest\x12\x17\n\x07dev_eui\x18\x01\x20\x01(\tR\x06devEUI\"b\n\
-    \x1cListDeviceQueueItemsResponse\x12B\n\x12device_queue_items\x18\x01\
-    \x20\x03(\x0b2\x14.api.DeviceQueueItemR\x10deviceQueueItems2\xfc\x02\n\
-    \x12DeviceQueueService\x12\x8d\x01\n\x07Enqueue\x12\".api.EnqueueDeviceQ\
-    ueueItemRequest\x1a#.api.EnqueueDeviceQueueItemResponse\"9\x82\xd3\xe4\
-    \x93\x023\"./api/devices/{device_queue_item.dev_eui}/queue:\x01*\x12c\n\
-    \x05Flush\x12\x1c.api.FlushDeviceQueueRequest\x1a\x16.google.protobuf.Em\
-    pty\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/api/devices/{dev_eui}/queue\x12q\n\
-    \x04List\x12\x20.api.ListDeviceQueueItemsRequest\x1a!.api.ListDeviceQueu\
-    eItemsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/devices/{dev_eui}/\
-    queueB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apiJ\xa4\
-    \x11\n\x06\x12\x04\0\0R\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\
-    \x02\x12\x03\x02\x08\x0b\n\x08\n\x01\x08\x12\x03\x04\0N\n\t\n\x02\x08\
-    \x0b\x12\x03\x04\0N\n\t\n\x02\x03\0\x12\x03\x06\x07%\n\t\n\x02\x03\x01\
-    \x12\x03\x07\x07$\nQ\n\x02\x06\0\x12\x04\x0b\0!\x01\x1aE\x20DeviceQueueS\
-    ervice\x20is\x20the\x20service\x20managing\x20the\x20downlink\x20data\
-    \x20queue.\n\n\n\n\x03\x06\0\x01\x12\x03\x0b\x08\x1a\n@\n\x04\x06\0\x02\
-    \0\x12\x04\r\x04\x12\x05\x1a2\x20Enqueue\x20adds\x20the\x20given\x20item\
-    \x20to\x20the\x20device-queue.\n\n\x0c\n\x05\x06\0\x02\0\x01\x12\x03\r\
-    \x08\x0f\n\x0c\n\x05\x06\0\x02\0\x02\x12\x03\r\x10-\n\x0c\n\x05\x06\0\
-    \x02\0\x03\x12\x03\r8V\n\r\n\x05\x06\0\x02\0\x04\x12\x04\x0e\x08\x11\n\n\
-    \x11\n\t\x06\0\x02\0\x04\xb0\xca\xbc\"\x12\x04\x0e\x08\x11\n\n8\n\x04\
-    \x06\0\x02\x01\x12\x04\x15\x04\x19\x05\x1a*\x20Flush\x20flushes\x20the\
-    \x20downlink\x20device-queue.\n\n\x0c\n\x05\x06\0\x02\x01\x01\x12\x03\
-    \x15\x08\r\n\x0c\n\x05\x06\0\x02\x01\x02\x12\x03\x15\x0e%\n\x0c\n\x05\
-    \x06\0\x02\x01\x03\x12\x03\x150E\n\r\n\x05\x06\0\x02\x01\x04\x12\x04\x16\
-    \x08\x18\n\n\x11\n\t\x06\0\x02\x01\x04\xb0\xca\xbc\"\x12\x04\x16\x08\x18\
-    \n\n9\n\x04\x06\0\x02\x02\x12\x04\x1c\x04\x20\x05\x1a+\x20List\x20lists\
-    \x20the\x20items\x20in\x20the\x20device-queue.\n\n\x0c\n\x05\x06\0\x02\
-    \x02\x01\x12\x03\x1c\x08\x0c\n\x0c\n\x05\x06\0\x02\x02\x02\x12\x03\x1c\r\
-    (\n\x0c\n\x05\x06\0\x02\x02\x03\x12\x03\x1c3O\n\r\n\x05\x06\0\x02\x02\
-    \x04\x12\x04\x1d\x08\x1f\n\n\x11\n\t\x06\0\x02\x02\x04\xb0\xca\xbc\"\x12\
-    \x04\x1d\x08\x1f\n\n\n\n\x02\x04\0\x12\x04#\0:\x01\n\n\n\x03\x04\0\x01\
-    \x12\x03#\x08\x17\n(\n\x04\x04\0\x02\0\x12\x03%\x04.\x1a\x1b\x20Device\
-    \x20EUI\x20(HEX\x20encoded).\n\n\r\n\x05\x04\0\x02\0\x04\x12\x04%\x04#\
-    \x19\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03%\x04\n\n\x0c\n\x05\x04\0\x02\0\
-    \x01\x12\x03%\x0b\x12\n\x0c\n\x05\x04\0\x02\0\x03\x12\x03%\x15\x16\n\x0c\
-    \n\x05\x04\0\x02\0\x08\x12\x03%\x17-\n\x0c\n\x05\x04\0\x02\0\n\x12\x03%$\
-    ,\n\x96\x01\n\x04\x04\0\x02\x01\x12\x03)\x04\x17\x1a\x88\x01\x20Set\x20t\
-    his\x20to\x20true\x20when\x20an\x20acknowledgement\x20from\x20the\x20dev\
-    ice\x20is\x20required.\n\x20Please\x20note\x20that\x20this\x20must\x20no\
-    t\x20be\x20used\x20to\x20guarantee\x20a\x20delivery.\n\n\r\n\x05\x04\0\
-    \x02\x01\x04\x12\x04)\x04%.\n\x0c\n\x05\x04\0\x02\x01\x05\x12\x03)\x04\
-    \x08\n\x0c\n\x05\x04\0\x02\x01\x01\x12\x03)\t\x12\n\x0c\n\x05\x04\0\x02\
-    \x01\x03\x12\x03)\x15\x16\nQ\n\x04\x04\0\x02\x02\x12\x03-\x04\x15\x1aD\
-    \x20Downlink\x20frame-counter.\n\x20This\x20will\x20be\x20automatically\
-    \x20set\x20on\x20enquue.\n\n\r\n\x05\x04\0\x02\x02\x04\x12\x04-\x04)\x17\
-    \n\x0c\n\x05\x04\0\x02\x02\x05\x12\x03-\x04\n\n\x0c\n\x05\x04\0\x02\x02\
-    \x01\x12\x03-\x0b\x10\n\x0c\n\x05\x04\0\x02\x02\x03\x12\x03-\x13\x14\n'\
-    \n\x04\x04\0\x02\x03\x12\x030\x04\x16\x1a\x1a\x20FPort\x20used\x20(must\
-    \x20be\x20>\x200)\n\n\r\n\x05\x04\0\x02\x03\x04\x12\x040\x04-\x15\n\x0c\
-    \n\x05\x04\0\x02\x03\x05\x12\x030\x04\n\n\x0c\n\x05\x04\0\x02\x03\x01\
-    \x12\x030\x0b\x11\n\x0c\n\x05\x04\0\x02\x03\x03\x12\x030\x14\x15\np\n\
-    \x04\x04\0\x02\x04\x12\x034\x04\x13\x1ac\x20Base64\x20encoded\x20data.\n\
-    \x20Or\x20use\x20the\x20json_object\x20field\x20when\x20an\x20applicatio\
-    n\x20codec\x20has\x20been\x20configured.\n\n\r\n\x05\x04\0\x02\x04\x04\
-    \x12\x044\x040\x16\n\x0c\n\x05\x04\0\x02\x04\x05\x12\x034\x04\t\n\x0c\n\
-    \x05\x04\0\x02\x04\x01\x12\x034\n\x0e\n\x0c\n\x05\x04\0\x02\x04\x03\x12\
-    \x034\x11\x12\n\x92\x01\n\x04\x04\0\x02\x05\x12\x039\x04\x1b\x1a\x84\x01\
-    \x20JSON\x20object\x20(string).\n\x20Only\x20use\x20this\x20when\x20an\
-    \x20application\x20codec\x20has\x20been\x20configured\x20that\x20can\x20\
-    convert\n\x20this\x20object\x20into\x20binary\x20form.\n\n\r\n\x05\x04\0\
-    \x02\x05\x04\x12\x049\x044\x13\n\x0c\n\x05\x04\0\x02\x05\x05\x12\x039\
-    \x04\n\n\x0c\n\x05\x04\0\x02\x05\x01\x12\x039\x0b\x16\n\x0c\n\x05\x04\0\
-    \x02\x05\x03\x12\x039\x19\x1a\n\n\n\x02\x04\x01\x12\x04<\0?\x01\n\n\n\
-    \x03\x04\x01\x01\x12\x03<\x08%\n,\n\x04\x04\x01\x02\0\x12\x03>\x04*\x1a\
-    \x1f\x20Queue-item\x20object\x20to\x20enqueue.\n\n\r\n\x05\x04\x01\x02\0\
-    \x04\x12\x04>\x04<'\n\x0c\n\x05\x04\x01\x02\0\x06\x12\x03>\x04\x13\n\x0c\
-    \n\x05\x04\x01\x02\0\x01\x12\x03>\x14%\n\x0c\n\x05\x04\x01\x02\0\x03\x12\
-    \x03>()\n\n\n\x02\x04\x02\x12\x04A\0D\x01\n\n\n\x03\x04\x02\x01\x12\x03A\
-    \x08&\n6\n\x04\x04\x02\x02\0\x12\x03C\x04\x15\x1a)\x20Frame-counter\x20f\
-    or\x20the\x20enqueued\x20payload.\n\n\r\n\x05\x04\x02\x02\0\x04\x12\x04C\
-    \x04A(\n\x0c\n\x05\x04\x02\x02\0\x05\x12\x03C\x04\n\n\x0c\n\x05\x04\x02\
-    \x02\0\x01\x12\x03C\x0b\x10\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03C\x13\
-    \x14\n\n\n\x02\x04\x03\x12\x04F\0I\x01\n\n\n\x03\x04\x03\x01\x12\x03F\
-    \x08\x1f\n(\n\x04\x04\x03\x02\0\x12\x03H\x04.\x1a\x1b\x20Device\x20EUI\
-    \x20(HEX\x20encoded).\n\n\r\n\x05\x04\x03\x02\0\x04\x12\x04H\x04F!\n\x0c\
-    \n\x05\x04\x03\x02\0\x05\x12\x03H\x04\n\n\x0c\n\x05\x04\x03\x02\0\x01\
-    \x12\x03H\x0b\x12\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03H\x15\x16\n\x0c\n\
-    \x05\x04\x03\x02\0\x08\x12\x03H\x17-\n\x0c\n\x05\x04\x03\x02\0\n\x12\x03\
-    H$,\n\n\n\x02\x04\x04\x12\x04K\0N\x01\n\n\n\x03\x04\x04\x01\x12\x03K\x08\
-    #\n(\n\x04\x04\x04\x02\0\x12\x03M\x04.\x1a\x1b\x20Device\x20EUI\x20(HEX\
-    \x20encoded).\n\n\r\n\x05\x04\x04\x02\0\x04\x12\x04M\x04K%\n\x0c\n\x05\
-    \x04\x04\x02\0\x05\x12\x03M\x04\n\n\x0c\n\x05\x04\x04\x02\0\x01\x12\x03M\
-    \x0b\x12\n\x0c\n\x05\x04\x04\x02\0\x03\x12\x03M\x15\x16\n\x0c\n\x05\x04\
-    \x04\x02\0\x08\x12\x03M\x17-\n\x0c\n\x05\x04\x04\x02\0\n\x12\x03M$,\n\n\
-    \n\x02\x04\x05\x12\x04P\0R\x01\n\n\n\x03\x04\x05\x01\x12\x03P\x08$\n\x0b\
-    \n\x04\x04\x05\x02\0\x12\x03Q\x044\n\x0c\n\x05\x04\x05\x02\0\x04\x12\x03\
-    Q\x04\x0c\n\x0c\n\x05\x04\x05\x02\0\x06\x12\x03Q\r\x1c\n\x0c\n\x05\x04\
-    \x05\x02\0\x01\x12\x03Q\x1d/\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03Q23b\
-    \x06proto3\
+    \x12\x17\n\x07dev_eui\x18\x01\x20\x01(\tR\x06devEUI\"U\n\x1bListDeviceQu\
+    eueItemsRequest\x12\x17\n\x07dev_eui\x18\x01\x20\x01(\tR\x06devEUI\x12\
+    \x1d\n\ncount_only\x18\x02\x20\x01(\x08R\tcountOnly\"\x83\x01\n\x1cListD\
+    eviceQueueItemsResponse\x12B\n\x12device_queue_items\x18\x01\x20\x03(\
+    \x0b2\x14.api.DeviceQueueItemR\x10deviceQueueItems\x12\x1f\n\x0btotal_co\
+    unt\x18\x02\x20\x01(\x05R\ntotalCount2\xfc\x02\n\x12DeviceQueueService\
+    \x12\x8d\x01\n\x07Enqueue\x12\".api.EnqueueDeviceQueueItemRequest\x1a#.a\
+    pi.EnqueueDeviceQueueItemResponse\"9\x82\xd3\xe4\x93\x023\"./api/devices\
+    /{device_queue_item.dev_eui}/queue:\x01*\x12c\n\x05Flush\x12\x1c.api.Flu\
+    shDeviceQueueRequest\x1a\x16.google.protobuf.Empty\"$\x82\xd3\xe4\x93\
+    \x02\x1e*\x1c/api/devices/{dev_eui}/queue\x12q\n\x04List\x12\x20.api.Lis\
+    tDeviceQueueItemsRequest\x1a!.api.ListDeviceQueueItemsResponse\"$\x82\
+    \xd3\xe4\x93\x02\x1e\x12\x1c/api/devices/{dev_eui}/queueB9Z7github.com/b\
+    rocaar/chirpstack-api/go/v3/as/external/apiJ\xa0\x13\n\x06\x12\x04\0\0Y\
+    \x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\x08\x0b\
+    \n\x08\n\x01\x08\x12\x03\x04\0N\n\t\n\x02\x08\x0b\x12\x03\x04\0N\n\t\n\
+    \x02\x03\0\x12\x03\x06\x07%\n\t\n\x02\x03\x01\x12\x03\x07\x07$\nQ\n\x02\
+    \x06\0\x12\x04\x0b\0!\x01\x1aE\x20DeviceQueueService\x20is\x20the\x20ser\
+    vice\x20managing\x20the\x20downlink\x20data\x20queue.\n\n\n\n\x03\x06\0\
+    \x01\x12\x03\x0b\x08\x1a\n@\n\x04\x06\0\x02\0\x12\x04\r\x04\x12\x05\x1a2\
+    \x20Enqueue\x20adds\x20the\x20given\x20item\x20to\x20the\x20device-queue\
+    .\n\n\x0c\n\x05\x06\0\x02\0\x01\x12\x03\r\x08\x0f\n\x0c\n\x05\x06\0\x02\
+    \0\x02\x12\x03\r\x10-\n\x0c\n\x05\x06\0\x02\0\x03\x12\x03\r8V\n\r\n\x05\
+    \x06\0\x02\0\x04\x12\x04\x0e\x08\x11\n\n\x11\n\t\x06\0\x02\0\x04\xb0\xca\
+    \xbc\"\x12\x04\x0e\x08\x11\n\n8\n\x04\x06\0\x02\x01\x12\x04\x15\x04\x19\
+    \x05\x1a*\x20Flush\x20flushes\x20the\x20downlink\x20device-queue.\n\n\
+    \x0c\n\x05\x06\0\x02\x01\x01\x12\x03\x15\x08\r\n\x0c\n\x05\x06\0\x02\x01\
+    \x02\x12\x03\x15\x0e%\n\x0c\n\x05\x06\0\x02\x01\x03\x12\x03\x150E\n\r\n\
+    \x05\x06\0\x02\x01\x04\x12\x04\x16\x08\x18\n\n\x11\n\t\x06\0\x02\x01\x04\
+    \xb0\xca\xbc\"\x12\x04\x16\x08\x18\n\n9\n\x04\x06\0\x02\x02\x12\x04\x1c\
+    \x04\x20\x05\x1a+\x20List\x20lists\x20the\x20items\x20in\x20the\x20devic\
+    e-queue.\n\n\x0c\n\x05\x06\0\x02\x02\x01\x12\x03\x1c\x08\x0c\n\x0c\n\x05\
+    \x06\0\x02\x02\x02\x12\x03\x1c\r(\n\x0c\n\x05\x06\0\x02\x02\x03\x12\x03\
+    \x1c3O\n\r\n\x05\x06\0\x02\x02\x04\x12\x04\x1d\x08\x1f\n\n\x11\n\t\x06\0\
+    \x02\x02\x04\xb0\xca\xbc\"\x12\x04\x1d\x08\x1f\n\n\n\n\x02\x04\0\x12\x04\
+    #\0:\x01\n\n\n\x03\x04\0\x01\x12\x03#\x08\x17\n(\n\x04\x04\0\x02\0\x12\
+    \x03%\x04.\x1a\x1b\x20Device\x20EUI\x20(HEX\x20encoded).\n\n\r\n\x05\x04\
+    \0\x02\0\x04\x12\x04%\x04#\x19\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03%\x04\
+    \n\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03%\x0b\x12\n\x0c\n\x05\x04\0\x02\0\
+    \x03\x12\x03%\x15\x16\n\x0c\n\x05\x04\0\x02\0\x08\x12\x03%\x17-\n\x0c\n\
+    \x05\x04\0\x02\0\n\x12\x03%$,\n\x96\x01\n\x04\x04\0\x02\x01\x12\x03)\x04\
+    \x17\x1a\x88\x01\x20Set\x20this\x20to\x20true\x20when\x20an\x20acknowled\
+    gement\x20from\x20the\x20device\x20is\x20required.\n\x20Please\x20note\
+    \x20that\x20this\x20must\x20not\x20be\x20used\x20to\x20guarantee\x20a\
+    \x20delivery.\n\n\r\n\x05\x04\0\x02\x01\x04\x12\x04)\x04%.\n\x0c\n\x05\
+    \x04\0\x02\x01\x05\x12\x03)\x04\x08\n\x0c\n\x05\x04\0\x02\x01\x01\x12\
+    \x03)\t\x12\n\x0c\n\x05\x04\0\x02\x01\x03\x12\x03)\x15\x16\nQ\n\x04\x04\
+    \0\x02\x02\x12\x03-\x04\x15\x1aD\x20Downlink\x20frame-counter.\n\x20This\
+    \x20will\x20be\x20automatically\x20set\x20on\x20enquue.\n\n\r\n\x05\x04\
+    \0\x02\x02\x04\x12\x04-\x04)\x17\n\x0c\n\x05\x04\0\x02\x02\x05\x12\x03-\
+    \x04\n\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03-\x0b\x10\n\x0c\n\x05\x04\0\
+    \x02\x02\x03\x12\x03-\x13\x14\n'\n\x04\x04\0\x02\x03\x12\x030\x04\x16\
+    \x1a\x1a\x20FPort\x20used\x20(must\x20be\x20>\x200)\n\n\r\n\x05\x04\0\
+    \x02\x03\x04\x12\x040\x04-\x15\n\x0c\n\x05\x04\0\x02\x03\x05\x12\x030\
+    \x04\n\n\x0c\n\x05\x04\0\x02\x03\x01\x12\x030\x0b\x11\n\x0c\n\x05\x04\0\
+    \x02\x03\x03\x12\x030\x14\x15\np\n\x04\x04\0\x02\x04\x12\x034\x04\x13\
+    \x1ac\x20Base64\x20encoded\x20data.\n\x20Or\x20use\x20the\x20json_object\
+    \x20field\x20when\x20an\x20application\x20codec\x20has\x20been\x20config\
+    ured.\n\n\r\n\x05\x04\0\x02\x04\x04\x12\x044\x040\x16\n\x0c\n\x05\x04\0\
+    \x02\x04\x05\x12\x034\x04\t\n\x0c\n\x05\x04\0\x02\x04\x01\x12\x034\n\x0e\
+    \n\x0c\n\x05\x04\0\x02\x04\x03\x12\x034\x11\x12\n\x92\x01\n\x04\x04\0\
+    \x02\x05\x12\x039\x04\x1b\x1a\x84\x01\x20JSON\x20object\x20(string).\n\
+    \x20Only\x20use\x20this\x20when\x20an\x20application\x20codec\x20has\x20\
+    been\x20configured\x20that\x20can\x20convert\n\x20this\x20object\x20into\
+    \x20binary\x20form.\n\n\r\n\x05\x04\0\x02\x05\x04\x12\x049\x044\x13\n\
+    \x0c\n\x05\x04\0\x02\x05\x05\x12\x039\x04\n\n\x0c\n\x05\x04\0\x02\x05\
+    \x01\x12\x039\x0b\x16\n\x0c\n\x05\x04\0\x02\x05\x03\x12\x039\x19\x1a\n\n\
+    \n\x02\x04\x01\x12\x04<\0?\x01\n\n\n\x03\x04\x01\x01\x12\x03<\x08%\n,\n\
+    \x04\x04\x01\x02\0\x12\x03>\x04*\x1a\x1f\x20Queue-item\x20object\x20to\
+    \x20enqueue.\n\n\r\n\x05\x04\x01\x02\0\x04\x12\x04>\x04<'\n\x0c\n\x05\
+    \x04\x01\x02\0\x06\x12\x03>\x04\x13\n\x0c\n\x05\x04\x01\x02\0\x01\x12\
+    \x03>\x14%\n\x0c\n\x05\x04\x01\x02\0\x03\x12\x03>()\n\n\n\x02\x04\x02\
+    \x12\x04A\0D\x01\n\n\n\x03\x04\x02\x01\x12\x03A\x08&\n6\n\x04\x04\x02\
+    \x02\0\x12\x03C\x04\x15\x1a)\x20Frame-counter\x20for\x20the\x20enqueued\
+    \x20payload.\n\n\r\n\x05\x04\x02\x02\0\x04\x12\x04C\x04A(\n\x0c\n\x05\
+    \x04\x02\x02\0\x05\x12\x03C\x04\n\n\x0c\n\x05\x04\x02\x02\0\x01\x12\x03C\
+    \x0b\x10\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03C\x13\x14\n\n\n\x02\x04\
+    \x03\x12\x04F\0I\x01\n\n\n\x03\x04\x03\x01\x12\x03F\x08\x1f\n(\n\x04\x04\
+    \x03\x02\0\x12\x03H\x04.\x1a\x1b\x20Device\x20EUI\x20(HEX\x20encoded).\n\
+    \n\r\n\x05\x04\x03\x02\0\x04\x12\x04H\x04F!\n\x0c\n\x05\x04\x03\x02\0\
+    \x05\x12\x03H\x04\n\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x03H\x0b\x12\n\x0c\
+    \n\x05\x04\x03\x02\0\x03\x12\x03H\x15\x16\n\x0c\n\x05\x04\x03\x02\0\x08\
+    \x12\x03H\x17-\n\x0c\n\x05\x04\x03\x02\0\n\x12\x03H$,\n\n\n\x02\x04\x04\
+    \x12\x04K\0Q\x01\n\n\n\x03\x04\x04\x01\x12\x03K\x08#\n(\n\x04\x04\x04\
+    \x02\0\x12\x03M\x04.\x1a\x1b\x20Device\x20EUI\x20(HEX\x20encoded).\n\n\r\
+    \n\x05\x04\x04\x02\0\x04\x12\x04M\x04K%\n\x0c\n\x05\x04\x04\x02\0\x05\
+    \x12\x03M\x04\n\n\x0c\n\x05\x04\x04\x02\0\x01\x12\x03M\x0b\x12\n\x0c\n\
+    \x05\x04\x04\x02\0\x03\x12\x03M\x15\x16\n\x0c\n\x05\x04\x04\x02\0\x08\
+    \x12\x03M\x17-\n\x0c\n\x05\x04\x04\x02\0\n\x12\x03M$,\n9\n\x04\x04\x04\
+    \x02\x01\x12\x03P\x04\x18\x1a,\x20Return\x20only\x20the\x20count,\x20not\
+    \x20the\x20result-set.\n\n\r\n\x05\x04\x04\x02\x01\x04\x12\x04P\x04M.\n\
+    \x0c\n\x05\x04\x04\x02\x01\x05\x12\x03P\x04\x08\n\x0c\n\x05\x04\x04\x02\
+    \x01\x01\x12\x03P\t\x13\n\x0c\n\x05\x04\x04\x02\x01\x03\x12\x03P\x16\x17\
+    \n\n\n\x02\x04\x05\x12\x04S\0Y\x01\n\n\n\x03\x04\x05\x01\x12\x03S\x08$\n\
+    &\n\x04\x04\x05\x02\0\x12\x03U\x044\x1a\x19\x20The\x20device\x20queue\
+    \x20items.\n\n\x0c\n\x05\x04\x05\x02\0\x04\x12\x03U\x04\x0c\n\x0c\n\x05\
+    \x04\x05\x02\0\x06\x12\x03U\r\x1c\n\x0c\n\x05\x04\x05\x02\0\x01\x12\x03U\
+    \x1d/\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03U23\n2\n\x04\x04\x05\x02\x01\
+    \x12\x03X\x04\x1a\x1a%\x20Total\x20number\x20of\x20items\x20in\x20the\
+    \x20queue.\n\n\r\n\x05\x04\x05\x02\x01\x04\x12\x04X\x04U4\n\x0c\n\x05\
+    \x04\x05\x02\x01\x05\x12\x03X\x04\t\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\
+    \x03X\n\x15\n\x0c\n\x05\x04\x05\x02\x01\x03\x12\x03X\x18\x19b\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {

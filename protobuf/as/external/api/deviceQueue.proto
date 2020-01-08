@@ -76,8 +76,15 @@ message FlushDeviceQueueRequest {
 message ListDeviceQueueItemsRequest {
     // Device EUI (HEX encoded).
     string dev_eui = 1 [json_name = "devEUI"];
+
+    // Return only the count, not the result-set.
+    bool count_only = 2;
 }
 
 message ListDeviceQueueItemsResponse {
+    // The device queue items.
     repeated DeviceQueueItem device_queue_items = 1;
+
+    // Total number of items in the queue.
+    int32 total_count = 2;
 }

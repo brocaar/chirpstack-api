@@ -10239,7 +10239,8 @@ proto.ns.GetDeviceQueueItemsForDevEUIRequest.prototype.toObject = function(opt_i
  */
 proto.ns.GetDeviceQueueItemsForDevEUIRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    devEui: msg.getDevEui_asB64()
+    devEui: msg.getDevEui_asB64(),
+    countOnly: msg.getCountOnly()
   };
 
   if (includeInstance) {
@@ -10279,6 +10280,10 @@ proto.ns.GetDeviceQueueItemsForDevEUIRequest.deserializeBinaryFromReader = funct
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setDevEui(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCountOnly(value);
       break;
     default:
       reader.skipField();
@@ -10322,6 +10327,13 @@ proto.ns.GetDeviceQueueItemsForDevEUIRequest.prototype.serializeBinaryToWriter =
   if (f.length > 0) {
     writer.writeBytes(
       1,
+      f
+    );
+  }
+  f = this.getCountOnly();
+  if (f) {
+    writer.writeBool(
+      2,
       f
     );
   }
@@ -10373,6 +10385,23 @@ proto.ns.GetDeviceQueueItemsForDevEUIRequest.prototype.getDevEui_asU8 = function
 /** @param {!(string|Uint8Array)} value  */
 proto.ns.GetDeviceQueueItemsForDevEUIRequest.prototype.setDevEui = function(value) {
   jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional bool count_only = 2;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ns.GetDeviceQueueItemsForDevEUIRequest.prototype.getCountOnly = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 2, false));
+};
+
+
+/** @param {boolean} value  */
+proto.ns.GetDeviceQueueItemsForDevEUIRequest.prototype.setCountOnly = function(value) {
+  jspb.Message.setField(this, 2, value);
 };
 
 
@@ -10430,7 +10459,8 @@ proto.ns.GetDeviceQueueItemsForDevEUIResponse.prototype.toObject = function(opt_
 proto.ns.GetDeviceQueueItemsForDevEUIResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.ns.DeviceQueueItem.toObject, includeInstance)
+    proto.ns.DeviceQueueItem.toObject, includeInstance),
+    totalCount: msg.getTotalCount()
   };
 
   if (includeInstance) {
@@ -10472,6 +10502,10 @@ proto.ns.GetDeviceQueueItemsForDevEUIResponse.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.ns.DeviceQueueItem.deserializeBinaryFromReader);
       msg.getItemsList().push(value);
       msg.setItemsList(msg.getItemsList());
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalCount(value);
       break;
     default:
       reader.skipField();
@@ -10519,6 +10553,13 @@ proto.ns.GetDeviceQueueItemsForDevEUIResponse.prototype.serializeBinaryToWriter 
       proto.ns.DeviceQueueItem.serializeBinaryToWriter
     );
   }
+  f = this.getTotalCount();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -10551,6 +10592,21 @@ proto.ns.GetDeviceQueueItemsForDevEUIResponse.prototype.setItemsList = function(
 
 proto.ns.GetDeviceQueueItemsForDevEUIResponse.prototype.clearItemsList = function() {
   this.setItemsList([]);
+};
+
+
+/**
+ * optional int32 total_count = 2;
+ * @return {number}
+ */
+proto.ns.GetDeviceQueueItemsForDevEUIResponse.prototype.getTotalCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+};
+
+
+/** @param {number} value  */
+proto.ns.GetDeviceQueueItemsForDevEUIResponse.prototype.setTotalCount = function(value) {
+  jspb.Message.setField(this, 2, value);
 };
 
 

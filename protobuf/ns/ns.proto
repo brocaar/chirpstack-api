@@ -570,10 +570,17 @@ message FlushDeviceQueueForDevEUIRequest {
 message GetDeviceQueueItemsForDevEUIRequest {
     // DevEUI of the device.
     bytes dev_eui = 1;
+
+    // Return only the count, not the result-set.
+    bool count_only = 2;
 }
 
 message GetDeviceQueueItemsForDevEUIResponse {
+    // The device queue items.
     repeated DeviceQueueItem items = 1;
+
+    // Total number of items in the queue.
+    int32 total_count = 2;
 }
 
 message GetNextDownlinkFCntForDevEUIRequest {
