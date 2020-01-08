@@ -1118,7 +1118,7 @@ proto.api.ListDeviceQueueItemsResponse.deserializeBinaryFromReader = function(ms
       msg.setDeviceQueueItemsList(msg.getDeviceQueueItemsList());
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setTotalCount(value);
       break;
     default:
@@ -1169,7 +1169,7 @@ proto.api.ListDeviceQueueItemsResponse.prototype.serializeBinaryToWriter = funct
   }
   f = this.getTotalCount();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeUint32(
       2,
       f
     );
@@ -1210,7 +1210,7 @@ proto.api.ListDeviceQueueItemsResponse.prototype.clearDeviceQueueItemsList = fun
 
 
 /**
- * optional int32 total_count = 2;
+ * optional uint32 total_count = 2;
  * @return {number}
  */
 proto.api.ListDeviceQueueItemsResponse.prototype.getTotalCount = function() {

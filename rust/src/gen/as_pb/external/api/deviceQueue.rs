@@ -1107,7 +1107,7 @@ impl ::protobuf::reflect::ProtobufValue for ListDeviceQueueItemsRequest {
 pub struct ListDeviceQueueItemsResponse {
     // message fields
     pub device_queue_items: ::protobuf::RepeatedField<DeviceQueueItem>,
-    pub total_count: i32,
+    pub total_count: u32,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -1149,10 +1149,10 @@ impl ListDeviceQueueItemsResponse {
         ::std::mem::replace(&mut self.device_queue_items, ::protobuf::RepeatedField::new())
     }
 
-    // int32 total_count = 2;
+    // uint32 total_count = 2;
 
 
-    pub fn get_total_count(&self) -> i32 {
+    pub fn get_total_count(&self) -> u32 {
         self.total_count
     }
     pub fn clear_total_count(&mut self) {
@@ -1160,7 +1160,7 @@ impl ListDeviceQueueItemsResponse {
     }
 
     // Param is passed by value, moved
-    pub fn set_total_count(&mut self, v: i32) {
+    pub fn set_total_count(&mut self, v: u32) {
         self.total_count = v;
     }
 }
@@ -1186,7 +1186,7 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
                     if wire_type != ::protobuf::wire_format::WireTypeVarint {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
-                    let tmp = is.read_int32()?;
+                    let tmp = is.read_uint32()?;
                     self.total_count = tmp;
                 },
                 _ => {
@@ -1220,7 +1220,7 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
             v.write_to_with_cached_sizes(os)?;
         };
         if self.total_count != 0 {
-            os.write_int32(2, self.total_count)?;
+            os.write_uint32(2, self.total_count)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -1269,7 +1269,7 @@ impl ::protobuf::Message for ListDeviceQueueItemsResponse {
                     |m: &ListDeviceQueueItemsResponse| { &m.device_queue_items },
                     |m: &mut ListDeviceQueueItemsResponse| { &mut m.device_queue_items },
                 ));
-                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeInt32>(
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint32>(
                     "total_count",
                     |m: &ListDeviceQueueItemsResponse| { &m.total_count },
                     |m: &mut ListDeviceQueueItemsResponse| { &mut m.total_count },
@@ -1330,24 +1330,24 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x1d\n\ncount_only\x18\x02\x20\x01(\x08R\tcountOnly\"\x83\x01\n\x1cListD\
     eviceQueueItemsResponse\x12B\n\x12device_queue_items\x18\x01\x20\x03(\
     \x0b2\x14.api.DeviceQueueItemR\x10deviceQueueItems\x12\x1f\n\x0btotal_co\
-    unt\x18\x02\x20\x01(\x05R\ntotalCount2\xfc\x02\n\x12DeviceQueueService\
-    \x12\x8d\x01\n\x07Enqueue\x12\".api.EnqueueDeviceQueueItemRequest\x1a#.a\
-    pi.EnqueueDeviceQueueItemResponse\"9\x82\xd3\xe4\x93\x023\"./api/devices\
-    /{device_queue_item.dev_eui}/queue:\x01*\x12c\n\x05Flush\x12\x1c.api.Flu\
-    shDeviceQueueRequest\x1a\x16.google.protobuf.Empty\"$\x82\xd3\xe4\x93\
-    \x02\x1e*\x1c/api/devices/{dev_eui}/queue\x12q\n\x04List\x12\x20.api.Lis\
-    tDeviceQueueItemsRequest\x1a!.api.ListDeviceQueueItemsResponse\"$\x82\
-    \xd3\xe4\x93\x02\x1e\x12\x1c/api/devices/{dev_eui}/queueB9Z7github.com/b\
-    rocaar/chirpstack-api/go/v3/as/external/apiJ\xa0\x13\n\x06\x12\x04\0\0Y\
-    \x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\x08\x0b\
-    \n\x08\n\x01\x08\x12\x03\x04\0N\n\t\n\x02\x08\x0b\x12\x03\x04\0N\n\t\n\
-    \x02\x03\0\x12\x03\x06\x07%\n\t\n\x02\x03\x01\x12\x03\x07\x07$\nQ\n\x02\
-    \x06\0\x12\x04\x0b\0!\x01\x1aE\x20DeviceQueueService\x20is\x20the\x20ser\
-    vice\x20managing\x20the\x20downlink\x20data\x20queue.\n\n\n\n\x03\x06\0\
-    \x01\x12\x03\x0b\x08\x1a\n@\n\x04\x06\0\x02\0\x12\x04\r\x04\x12\x05\x1a2\
-    \x20Enqueue\x20adds\x20the\x20given\x20item\x20to\x20the\x20device-queue\
-    .\n\n\x0c\n\x05\x06\0\x02\0\x01\x12\x03\r\x08\x0f\n\x0c\n\x05\x06\0\x02\
-    \0\x02\x12\x03\r\x10-\n\x0c\n\x05\x06\0\x02\0\x03\x12\x03\r8V\n\r\n\x05\
+    unt\x18\x02\x20\x01(\rR\ntotalCount2\xfc\x02\n\x12DeviceQueueService\x12\
+    \x8d\x01\n\x07Enqueue\x12\".api.EnqueueDeviceQueueItemRequest\x1a#.api.E\
+    nqueueDeviceQueueItemResponse\"9\x82\xd3\xe4\x93\x023\"./api/devices/{de\
+    vice_queue_item.dev_eui}/queue:\x01*\x12c\n\x05Flush\x12\x1c.api.FlushDe\
+    viceQueueRequest\x1a\x16.google.protobuf.Empty\"$\x82\xd3\xe4\x93\x02\
+    \x1e*\x1c/api/devices/{dev_eui}/queue\x12q\n\x04List\x12\x20.api.ListDev\
+    iceQueueItemsRequest\x1a!.api.ListDeviceQueueItemsResponse\"$\x82\xd3\
+    \xe4\x93\x02\x1e\x12\x1c/api/devices/{dev_eui}/queueB9Z7github.com/broca\
+    ar/chirpstack-api/go/v3/as/external/apiJ\xa0\x13\n\x06\x12\x04\0\0Y\x01\
+    \n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\x08\x0b\n\
+    \x08\n\x01\x08\x12\x03\x04\0N\n\t\n\x02\x08\x0b\x12\x03\x04\0N\n\t\n\x02\
+    \x03\0\x12\x03\x06\x07%\n\t\n\x02\x03\x01\x12\x03\x07\x07$\nQ\n\x02\x06\
+    \0\x12\x04\x0b\0!\x01\x1aE\x20DeviceQueueService\x20is\x20the\x20service\
+    \x20managing\x20the\x20downlink\x20data\x20queue.\n\n\n\n\x03\x06\0\x01\
+    \x12\x03\x0b\x08\x1a\n@\n\x04\x06\0\x02\0\x12\x04\r\x04\x12\x05\x1a2\x20\
+    Enqueue\x20adds\x20the\x20given\x20item\x20to\x20the\x20device-queue.\n\
+    \n\x0c\n\x05\x06\0\x02\0\x01\x12\x03\r\x08\x0f\n\x0c\n\x05\x06\0\x02\0\
+    \x02\x12\x03\r\x10-\n\x0c\n\x05\x06\0\x02\0\x03\x12\x03\r8V\n\r\n\x05\
     \x06\0\x02\0\x04\x12\x04\x0e\x08\x11\n\n\x11\n\t\x06\0\x02\0\x04\xb0\xca\
     \xbc\"\x12\x04\x0e\x08\x11\n\n8\n\x04\x06\0\x02\x01\x12\x04\x15\x04\x19\
     \x05\x1a*\x20Flush\x20flushes\x20the\x20downlink\x20device-queue.\n\n\
@@ -1423,10 +1423,11 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x20items.\n\n\x0c\n\x05\x04\x05\x02\0\x04\x12\x03U\x04\x0c\n\x0c\n\x05\
     \x04\x05\x02\0\x06\x12\x03U\r\x1c\n\x0c\n\x05\x04\x05\x02\0\x01\x12\x03U\
     \x1d/\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x03U23\n2\n\x04\x04\x05\x02\x01\
-    \x12\x03X\x04\x1a\x1a%\x20Total\x20number\x20of\x20items\x20in\x20the\
+    \x12\x03X\x04\x1b\x1a%\x20Total\x20number\x20of\x20items\x20in\x20the\
     \x20queue.\n\n\r\n\x05\x04\x05\x02\x01\x04\x12\x04X\x04U4\n\x0c\n\x05\
-    \x04\x05\x02\x01\x05\x12\x03X\x04\t\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\
-    \x03X\n\x15\n\x0c\n\x05\x04\x05\x02\x01\x03\x12\x03X\x18\x19b\x06proto3\
+    \x04\x05\x02\x01\x05\x12\x03X\x04\n\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\
+    \x03X\x0b\x16\n\x0c\n\x05\x04\x05\x02\x01\x03\x12\x03X\x19\x1ab\x06proto\
+    3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {

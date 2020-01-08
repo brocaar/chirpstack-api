@@ -10289,7 +10289,7 @@ impl ::protobuf::reflect::ProtobufValue for GetDeviceQueueItemsForDevEUIRequest 
 pub struct GetDeviceQueueItemsForDevEUIResponse {
     // message fields
     pub items: ::protobuf::RepeatedField<DeviceQueueItem>,
-    pub total_count: i32,
+    pub total_count: u32,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -10331,10 +10331,10 @@ impl GetDeviceQueueItemsForDevEUIResponse {
         ::std::mem::replace(&mut self.items, ::protobuf::RepeatedField::new())
     }
 
-    // int32 total_count = 2;
+    // uint32 total_count = 2;
 
 
-    pub fn get_total_count(&self) -> i32 {
+    pub fn get_total_count(&self) -> u32 {
         self.total_count
     }
     pub fn clear_total_count(&mut self) {
@@ -10342,7 +10342,7 @@ impl GetDeviceQueueItemsForDevEUIResponse {
     }
 
     // Param is passed by value, moved
-    pub fn set_total_count(&mut self, v: i32) {
+    pub fn set_total_count(&mut self, v: u32) {
         self.total_count = v;
     }
 }
@@ -10368,7 +10368,7 @@ impl ::protobuf::Message for GetDeviceQueueItemsForDevEUIResponse {
                     if wire_type != ::protobuf::wire_format::WireTypeVarint {
                         return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
                     }
-                    let tmp = is.read_int32()?;
+                    let tmp = is.read_uint32()?;
                     self.total_count = tmp;
                 },
                 _ => {
@@ -10402,7 +10402,7 @@ impl ::protobuf::Message for GetDeviceQueueItemsForDevEUIResponse {
             v.write_to_with_cached_sizes(os)?;
         };
         if self.total_count != 0 {
-            os.write_int32(2, self.total_count)?;
+            os.write_uint32(2, self.total_count)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -10451,7 +10451,7 @@ impl ::protobuf::Message for GetDeviceQueueItemsForDevEUIResponse {
                     |m: &GetDeviceQueueItemsForDevEUIResponse| { &m.items },
                     |m: &mut GetDeviceQueueItemsForDevEUIResponse| { &mut m.items },
                 ));
-                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeInt32>(
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint32>(
                     "total_count",
                     |m: &GetDeviceQueueItemsForDevEUIResponse| { &m.total_count },
                     |m: &mut GetDeviceQueueItemsForDevEUIResponse| { &mut m.total_count },
@@ -17065,18 +17065,18 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     t\x12\x17\n\x07dev_eui\x18\x01\x20\x01(\x0cR\x06devEui\x12\x1d\n\ncount_\
     only\x18\x02\x20\x01(\x08R\tcountOnly\"r\n$GetDeviceQueueItemsForDevEUIR\
     esponse\x12)\n\x05items\x18\x01\x20\x03(\x0b2\x13.ns.DeviceQueueItemR\
-    \x05items\x12\x1f\n\x0btotal_count\x18\x02\x20\x01(\x05R\ntotalCount\">\
-    \n#GetNextDownlinkFCntForDevEUIRequest\x12\x17\n\x07dev_eui\x18\x01\x20\
-    \x01(\x0cR\x06devEui\";\n$GetNextDownlinkFCntForDevEUIResponse\x12\x13\n\
-    \x05f_cnt\x18\x01\x20\x01(\rR\x04fCnt\"A\n\x20StreamFrameLogsForGatewayR\
-    equest\x12\x1d\n\ngateway_id\x18\x01\x20\x01(\x0cR\tgatewayId\"\xa8\x01\
-    \n!StreamFrameLogsForGatewayResponse\x12>\n\x10uplink_frame_set\x18\x01\
-    \x20\x01(\x0b2\x12.gw.UplinkFrameSetH\0R\x0euplinkFrameSet\x12:\n\x0edow\
-    nlink_frame\x18\x02\x20\x01(\x0b2\x11.gw.DownlinkFrameH\0R\rdownlinkFram\
-    eB\x07\n\x05frame\":\n\x1fStreamFrameLogsForDeviceRequest\x12\x17\n\x07d\
-    ev_eui\x18\x01\x20\x01(\x0cR\x06devEui\"\xa7\x01\n\x20StreamFrameLogsFor\
-    DeviceResponse\x12>\n\x10uplink_frame_set\x18\x01\x20\x01(\x0b2\x12.gw.U\
-    plinkFrameSetH\0R\x0euplinkFrameSet\x12:\n\x0edownlink_frame\x18\x02\x20\
+    \x05items\x12\x1f\n\x0btotal_count\x18\x02\x20\x01(\rR\ntotalCount\">\n#\
+    GetNextDownlinkFCntForDevEUIRequest\x12\x17\n\x07dev_eui\x18\x01\x20\x01\
+    (\x0cR\x06devEui\";\n$GetNextDownlinkFCntForDevEUIResponse\x12\x13\n\x05\
+    f_cnt\x18\x01\x20\x01(\rR\x04fCnt\"A\n\x20StreamFrameLogsForGatewayReque\
+    st\x12\x1d\n\ngateway_id\x18\x01\x20\x01(\x0cR\tgatewayId\"\xa8\x01\n!St\
+    reamFrameLogsForGatewayResponse\x12>\n\x10uplink_frame_set\x18\x01\x20\
+    \x01(\x0b2\x12.gw.UplinkFrameSetH\0R\x0euplinkFrameSet\x12:\n\x0edownlin\
+    k_frame\x18\x02\x20\x01(\x0b2\x11.gw.DownlinkFrameH\0R\rdownlinkFrameB\
+    \x07\n\x05frame\":\n\x1fStreamFrameLogsForDeviceRequest\x12\x17\n\x07dev\
+    _eui\x18\x01\x20\x01(\x0cR\x06devEui\"\xa7\x01\n\x20StreamFrameLogsForDe\
+    viceResponse\x12>\n\x10uplink_frame_set\x18\x01\x20\x01(\x0b2\x12.gw.Upl\
+    inkFrameSetH\0R\x0euplinkFrameSet\x12:\n\x0edownlink_frame\x18\x02\x20\
     \x01(\x0b2\x11.gw.DownlinkFrameH\0R\rdownlinkFrameB\x07\n\x05frame\"V\n\
     \x12GetVersionResponse\x12\x18\n\x07version\x18\x01\x20\x01(\tR\x07versi\
     on\x12&\n\x06region\x18\x02\x20\x01(\x0e2\x0e.common.RegionR\x06region\"\
@@ -17932,11 +17932,11 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     eue\x20items.\n\n\r\n\x05\x04.\x02\0\x04\x12\x04\xc3\x04\x04\x0c\n\r\n\
     \x05\x04.\x02\0\x06\x12\x04\xc3\x04\r\x1c\n\r\n\x05\x04.\x02\0\x01\x12\
     \x04\xc3\x04\x1d\"\n\r\n\x05\x04.\x02\0\x03\x12\x04\xc3\x04%&\n3\n\x04\
-    \x04.\x02\x01\x12\x04\xc6\x04\x04\x1a\x1a%\x20Total\x20number\x20of\x20i\
+    \x04.\x02\x01\x12\x04\xc6\x04\x04\x1b\x1a%\x20Total\x20number\x20of\x20i\
     tems\x20in\x20the\x20queue.\n\n\x0f\n\x05\x04.\x02\x01\x04\x12\x06\xc6\
-    \x04\x04\xc3\x04'\n\r\n\x05\x04.\x02\x01\x05\x12\x04\xc6\x04\x04\t\n\r\n\
-    \x05\x04.\x02\x01\x01\x12\x04\xc6\x04\n\x15\n\r\n\x05\x04.\x02\x01\x03\
-    \x12\x04\xc6\x04\x18\x19\n\x0c\n\x02\x04/\x12\x06\xc9\x04\0\xcc\x04\x01\
+    \x04\x04\xc3\x04'\n\r\n\x05\x04.\x02\x01\x05\x12\x04\xc6\x04\x04\n\n\r\n\
+    \x05\x04.\x02\x01\x01\x12\x04\xc6\x04\x0b\x16\n\r\n\x05\x04.\x02\x01\x03\
+    \x12\x04\xc6\x04\x19\x1a\n\x0c\n\x02\x04/\x12\x06\xc9\x04\0\xcc\x04\x01\
     \n\x0b\n\x03\x04/\x01\x12\x04\xc9\x04\x08+\n%\n\x04\x04/\x02\0\x12\x04\
     \xcb\x04\x04\x16\x1a\x17\x20DevEUI\x20of\x20the\x20device.\n\n\x0f\n\x05\
     \x04/\x02\0\x04\x12\x06\xcb\x04\x04\xc9\x04-\n\r\n\x05\x04/\x02\0\x05\

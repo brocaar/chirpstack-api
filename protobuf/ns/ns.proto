@@ -580,7 +580,7 @@ message GetDeviceQueueItemsForDevEUIResponse {
     repeated DeviceQueueItem items = 1;
 
     // Total number of items in the queue.
-    int32 total_count = 2;
+    uint32 total_count = 2;
 }
 
 message GetNextDownlinkFCntForDevEUIRequest {

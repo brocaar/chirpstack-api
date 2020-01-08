@@ -173,7 +173,7 @@
         },
         "totalCount": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "description": "Total number of items in the queue."
         }
       }
