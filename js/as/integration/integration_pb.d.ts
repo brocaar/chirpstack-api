@@ -336,8 +336,9 @@ export interface ErrorTypeMap {
   UPLINK_CODEC: 3;
   DOWNLINK_CODEC: 4;
   OTAA: 5;
-  UPLINK_FCNT: 6;
+  UPLINK_FCNT_RESET: 6;
   UPLINK_MIC: 7;
+  UPLINK_FCNT_RETRANSMISSION: 8;
 }
 
 export const ErrorType: ErrorTypeMap;

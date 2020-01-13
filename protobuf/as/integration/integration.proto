@@ -28,11 +28,14 @@ enum ErrorType {
     // OTAA error.
     OTAA = 5;
 
-    // Uplink frame-counter error.
-    UPLINK_FCNT = 6;
+    // Uplink frame-counter was reset.
+    UPLINK_FCNT_RESET = 6;
 
     // Uplink MIC error.
     UPLINK_MIC = 7;
+
+    // Uplink frame-counter retransmission.
+    UPLINK_FCNT_RETRANSMISSION = 8;
 }
 
 // UplinkEvent is the message sent when an uplink payload has been received.
