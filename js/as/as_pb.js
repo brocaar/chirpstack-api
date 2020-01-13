@@ -2599,10 +2599,11 @@ proto.as.RXWindow = {
 proto.as.ErrorType = {
   GENERIC: 0,
   OTAA: 1,
-  DATA_UP_FCNT: 2,
+  DATA_UP_FCNT_RESET: 2,
   DATA_UP_MIC: 3,
   DEVICE_QUEUE_ITEM_SIZE: 4,
-  DEVICE_QUEUE_ITEM_FCNT: 5
+  DEVICE_QUEUE_ITEM_FCNT: 5,
+  DATA_UP_FCNT_RETRANSMISSION: 6
 };
 
 goog.object.extend(exports, proto.as);
