@@ -1,7 +1,7 @@
 // This file is generated. Do not edit
 // @generated
 
-// https://github.com/rust-lang/rust-clippy/issues/702
+// https://github.com/Manishearth/rust-clippy/issues/702
 #![allow(unknown_lints)]
 #![allow(clippy::all)]
 
@@ -56,6 +56,14 @@ pub trait ApplicationService {
 
     fn delete_things_board_integration(&self, o: ::grpc::RequestOptions, p: super::application::DeleteThingsBoardIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
 
+    fn create_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::CreateMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
+
+    fn get_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::GetMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::application::GetMyDevicesIntegrationResponse>;
+
+    fn update_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::UpdateMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
+
+    fn delete_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::DeleteMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
+
     fn list_integrations(&self, o: ::grpc::RequestOptions, p: super::application::ListIntegrationRequest) -> ::grpc::SingleResponse<super::application::ListIntegrationResponse>;
 }
 
@@ -80,6 +88,10 @@ pub struct ApplicationServiceClient {
     method_GetThingsBoardIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::GetThingsBoardIntegrationRequest, super::application::GetThingsBoardIntegrationResponse>>,
     method_UpdateThingsBoardIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::UpdateThingsBoardIntegrationRequest, super::empty::Empty>>,
     method_DeleteThingsBoardIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::DeleteThingsBoardIntegrationRequest, super::empty::Empty>>,
+    method_CreateMyDevicesIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::CreateMyDevicesIntegrationRequest, super::empty::Empty>>,
+    method_GetMyDevicesIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::GetMyDevicesIntegrationRequest, super::application::GetMyDevicesIntegrationResponse>>,
+    method_UpdateMyDevicesIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::UpdateMyDevicesIntegrationRequest, super::empty::Empty>>,
+    method_DeleteMyDevicesIntegration: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::DeleteMyDevicesIntegrationRequest, super::empty::Empty>>,
     method_ListIntegrations: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::application::ListIntegrationRequest, super::application::ListIntegrationResponse>>,
 }
 
@@ -189,6 +201,30 @@ impl ::grpc::ClientStub for ApplicationServiceClient {
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
             }),
+            method_CreateMyDevicesIntegration: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/api.ApplicationService/CreateMyDevicesIntegration".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_GetMyDevicesIntegration: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/api.ApplicationService/GetMyDevicesIntegration".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_UpdateMyDevicesIntegration: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/api.ApplicationService/UpdateMyDevicesIntegration".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_DeleteMyDevicesIntegration: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/api.ApplicationService/DeleteMyDevicesIntegration".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
             method_ListIntegrations: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
                 name: "/api.ApplicationService/ListIntegrations".to_string(),
                 streaming: ::grpc::rt::GrpcStreaming::Unary,
@@ -266,6 +302,22 @@ impl ApplicationService for ApplicationServiceClient {
 
     fn delete_things_board_integration(&self, o: ::grpc::RequestOptions, p: super::application::DeleteThingsBoardIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
         self.grpc_client.call_unary(o, p, self.method_DeleteThingsBoardIntegration.clone())
+    }
+
+    fn create_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::CreateMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
+        self.grpc_client.call_unary(o, p, self.method_CreateMyDevicesIntegration.clone())
+    }
+
+    fn get_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::GetMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::application::GetMyDevicesIntegrationResponse> {
+        self.grpc_client.call_unary(o, p, self.method_GetMyDevicesIntegration.clone())
+    }
+
+    fn update_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::UpdateMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
+        self.grpc_client.call_unary(o, p, self.method_UpdateMyDevicesIntegration.clone())
+    }
+
+    fn delete_my_devices_integration(&self, o: ::grpc::RequestOptions, p: super::application::DeleteMyDevicesIntegrationRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
+        self.grpc_client.call_unary(o, p, self.method_DeleteMyDevicesIntegration.clone())
     }
 
     fn list_integrations(&self, o: ::grpc::RequestOptions, p: super::application::ListIntegrationRequest) -> ::grpc::SingleResponse<super::application::ListIntegrationResponse> {
@@ -485,6 +537,54 @@ impl ApplicationServiceServer {
                     {
                         let handler_copy = handler_arc.clone();
                         ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.delete_things_board_integration(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/api.ApplicationService/CreateMyDevicesIntegration".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.create_my_devices_integration(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/api.ApplicationService/GetMyDevicesIntegration".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.get_my_devices_integration(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/api.ApplicationService/UpdateMyDevicesIntegration".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.update_my_devices_integration(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/api.ApplicationService/DeleteMyDevicesIntegration".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.delete_my_devices_integration(o, p))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(

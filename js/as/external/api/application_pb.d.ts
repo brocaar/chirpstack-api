@@ -803,10 +803,141 @@ export namespace DeleteThingsBoardIntegrationRequest {
   }
 }
 
+export class MyDevicesIntegration extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getEndpoint(): string;
+  setEndpoint(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MyDevicesIntegration.AsObject;
+  static toObject(includeInstance: boolean, msg: MyDevicesIntegration): MyDevicesIntegration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MyDevicesIntegration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MyDevicesIntegration;
+  static deserializeBinaryFromReader(message: MyDevicesIntegration, reader: jspb.BinaryReader): MyDevicesIntegration;
+}
+
+export namespace MyDevicesIntegration {
+  export type AsObject = {
+    applicationId: number,
+    endpoint: string,
+  }
+}
+
+export class CreateMyDevicesIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): MyDevicesIntegration | undefined;
+  setIntegration(value?: MyDevicesIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateMyDevicesIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateMyDevicesIntegrationRequest): CreateMyDevicesIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateMyDevicesIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateMyDevicesIntegrationRequest;
+  static deserializeBinaryFromReader(message: CreateMyDevicesIntegrationRequest, reader: jspb.BinaryReader): CreateMyDevicesIntegrationRequest;
+}
+
+export namespace CreateMyDevicesIntegrationRequest {
+  export type AsObject = {
+    integration?: MyDevicesIntegration.AsObject,
+  }
+}
+
+export class GetMyDevicesIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyDevicesIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyDevicesIntegrationRequest): GetMyDevicesIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyDevicesIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyDevicesIntegrationRequest;
+  static deserializeBinaryFromReader(message: GetMyDevicesIntegrationRequest, reader: jspb.BinaryReader): GetMyDevicesIntegrationRequest;
+}
+
+export namespace GetMyDevicesIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GetMyDevicesIntegrationResponse extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): MyDevicesIntegration | undefined;
+  setIntegration(value?: MyDevicesIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMyDevicesIntegrationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMyDevicesIntegrationResponse): GetMyDevicesIntegrationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetMyDevicesIntegrationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMyDevicesIntegrationResponse;
+  static deserializeBinaryFromReader(message: GetMyDevicesIntegrationResponse, reader: jspb.BinaryReader): GetMyDevicesIntegrationResponse;
+}
+
+export namespace GetMyDevicesIntegrationResponse {
+  export type AsObject = {
+    integration?: MyDevicesIntegration.AsObject,
+  }
+}
+
+export class UpdateMyDevicesIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): MyDevicesIntegration | undefined;
+  setIntegration(value?: MyDevicesIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateMyDevicesIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMyDevicesIntegrationRequest): UpdateMyDevicesIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateMyDevicesIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMyDevicesIntegrationRequest;
+  static deserializeBinaryFromReader(message: UpdateMyDevicesIntegrationRequest, reader: jspb.BinaryReader): UpdateMyDevicesIntegrationRequest;
+}
+
+export namespace UpdateMyDevicesIntegrationRequest {
+  export type AsObject = {
+    integration?: MyDevicesIntegration.AsObject,
+  }
+}
+
+export class DeleteMyDevicesIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteMyDevicesIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteMyDevicesIntegrationRequest): DeleteMyDevicesIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteMyDevicesIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteMyDevicesIntegrationRequest;
+  static deserializeBinaryFromReader(message: DeleteMyDevicesIntegrationRequest, reader: jspb.BinaryReader): DeleteMyDevicesIntegrationRequest;
+}
+
+export namespace DeleteMyDevicesIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
 export interface IntegrationKindMap {
   HTTP: 0;
   INFLUXDB: 1;
   THINGSBOARD: 2;
+  MYDEVICES: 3;
 }
 
 export const IntegrationKind: IntegrationKindMap;

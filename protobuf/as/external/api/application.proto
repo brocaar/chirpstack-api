@@ -136,6 +136,37 @@ service ApplicationService {
         };
     }
 
+    // CreateMyDevicesIntegration creates a MyDevices application-integration.
+    rpc CreateMyDevicesIntegration(CreateMyDevicesIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/applications/{integration.application_id}/integrations/mydevices"
+            body: "*"
+        };
+    }
+
+    // GetMyDevicesIntegration returns the MyDevices application-integration.
+    rpc GetMyDevicesIntegration(GetMyDevicesIntegrationRequest) returns (GetMyDevicesIntegrationResponse) {
+        option(google.api.http) = {
+            get: "/api/applications/{application_id}/integrations/mydevices"
+        };
+    }
+
+    // UpdateMyDevicesIntegration updates the MyDevices application-integration.
+    rpc UpdateMyDevicesIntegration(UpdateMyDevicesIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/applications/{integration.application_id}/integrations/mydevices"
+            body: "*"
+        };
+    }
+
+    // DeleteMyDevicesIntegration deletes the MyDevices application-integration.
+    rpc DeleteMyDevicesIntegration(DeleteMyDevicesIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/applications/{application_id}/integrations/mydevices"
+        };
+    }
+
+
 	// ListIntegrations lists all configured integrations.
 	rpc ListIntegrations(ListIntegrationRequest) returns (ListIntegrationResponse) {
 		option(google.api.http) = {
@@ -148,6 +179,7 @@ enum IntegrationKind {
 	HTTP = 0;
 	INFLUXDB = 1;
     THINGSBOARD = 2;
+    MYDEVICES = 3;
 }
 
 message Application {
@@ -423,6 +455,39 @@ message UpdateThingsBoardIntegrationRequest {
 }
 
 message DeleteThingsBoardIntegrationRequest {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message MyDevicesIntegration {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+
+    // MyDevices API endpoint.
+    string endpoint = 2;
+}
+
+message CreateMyDevicesIntegrationRequest {
+    // Integration object to create.
+    MyDevicesIntegration integration = 1;
+}
+
+message GetMyDevicesIntegrationRequest {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetMyDevicesIntegrationResponse {
+    // Integration object.
+    MyDevicesIntegration integration = 1;
+}
+
+message UpdateMyDevicesIntegrationRequest {
+    // Integration object.
+    MyDevicesIntegration integration = 1;
+}
+
+message DeleteMyDevicesIntegrationRequest {
 	// Application ID.
 	int64 application_id = 1 [json_name = "applicationID"];
 }

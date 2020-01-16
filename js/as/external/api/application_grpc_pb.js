@@ -50,6 +50,17 @@ function deserialize_api_CreateInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_CreateMyDevicesIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateMyDevicesIntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreateMyDevicesIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateMyDevicesIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_CreateThingsBoardIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.CreateThingsBoardIntegrationRequest)) {
     throw new Error('Expected argument of type api.CreateThingsBoardIntegrationRequest');
@@ -92,6 +103,17 @@ function serialize_api_DeleteInfluxDBIntegrationRequest(arg) {
 
 function deserialize_api_DeleteInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeleteMyDevicesIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeleteMyDevicesIntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeleteMyDevicesIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteMyDevicesIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeleteMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_DeleteThingsBoardIntegrationRequest(arg) {
@@ -169,6 +191,28 @@ function serialize_api_GetInfluxDBIntegrationResponse(arg) {
 
 function deserialize_api_GetInfluxDBIntegrationResponse(buffer_arg) {
   return as_external_api_application_pb.GetInfluxDBIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetMyDevicesIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetMyDevicesIntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetMyDevicesIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetMyDevicesIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetMyDevicesIntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetMyDevicesIntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetMyDevicesIntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetMyDevicesIntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetMyDevicesIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_GetThingsBoardIntegrationRequest(arg) {
@@ -268,6 +312,17 @@ function serialize_api_UpdateInfluxDBIntegrationRequest(arg) {
 
 function deserialize_api_UpdateInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.UpdateInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_UpdateMyDevicesIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdateMyDevicesIntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdateMyDevicesIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdateMyDevicesIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdateMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_UpdateThingsBoardIntegrationRequest(arg) {
@@ -496,6 +551,54 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_api_DeleteThingsBoardIntegrationRequest,
     requestDeserialize: deserialize_api_DeleteThingsBoardIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreateMyDevicesIntegration creates a MyDevices application-integration.
+  createMyDevicesIntegration: {
+    path: '/api.ApplicationService/CreateMyDevicesIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateMyDevicesIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreateMyDevicesIntegrationRequest,
+    requestDeserialize: deserialize_api_CreateMyDevicesIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetMyDevicesIntegration returns the MyDevices application-integration.
+  getMyDevicesIntegration: {
+    path: '/api.ApplicationService/GetMyDevicesIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetMyDevicesIntegrationRequest,
+    responseType: as_external_api_application_pb.GetMyDevicesIntegrationResponse,
+    requestSerialize: serialize_api_GetMyDevicesIntegrationRequest,
+    requestDeserialize: deserialize_api_GetMyDevicesIntegrationRequest,
+    responseSerialize: serialize_api_GetMyDevicesIntegrationResponse,
+    responseDeserialize: deserialize_api_GetMyDevicesIntegrationResponse,
+  },
+  // UpdateMyDevicesIntegration updates the MyDevices application-integration.
+  updateMyDevicesIntegration: {
+    path: '/api.ApplicationService/UpdateMyDevicesIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdateMyDevicesIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdateMyDevicesIntegrationRequest,
+    requestDeserialize: deserialize_api_UpdateMyDevicesIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeleteMyDevicesIntegration deletes the MyDevices application-integration.
+  deleteMyDevicesIntegration: {
+    path: '/api.ApplicationService/DeleteMyDevicesIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteMyDevicesIntegrationRequest,
+    requestDeserialize: deserialize_api_DeleteMyDevicesIntegrationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

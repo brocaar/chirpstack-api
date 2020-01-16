@@ -25,6 +25,10 @@ interface IApplicationServiceService extends grpc.ServiceDefinition<grpc.Untyped
   getThingsBoardIntegration: grpc.MethodDefinition<as_external_api_application_pb.GetThingsBoardIntegrationRequest, as_external_api_application_pb.GetThingsBoardIntegrationResponse>;
   updateThingsBoardIntegration: grpc.MethodDefinition<as_external_api_application_pb.UpdateThingsBoardIntegrationRequest, google_protobuf_empty_pb.Empty>;
   deleteThingsBoardIntegration: grpc.MethodDefinition<as_external_api_application_pb.DeleteThingsBoardIntegrationRequest, google_protobuf_empty_pb.Empty>;
+  createMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.CreateMyDevicesIntegrationRequest, google_protobuf_empty_pb.Empty>;
+  getMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.GetMyDevicesIntegrationRequest, as_external_api_application_pb.GetMyDevicesIntegrationResponse>;
+  updateMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.UpdateMyDevicesIntegrationRequest, google_protobuf_empty_pb.Empty>;
+  deleteMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, google_protobuf_empty_pb.Empty>;
   listIntegrations: grpc.MethodDefinition<as_external_api_application_pb.ListIntegrationRequest, as_external_api_application_pb.ListIntegrationResponse>;
 }
 
@@ -83,6 +87,18 @@ export class ApplicationServiceClient extends grpc.Client {
   deleteThingsBoardIntegration(argument: as_external_api_application_pb.DeleteThingsBoardIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   deleteThingsBoardIntegration(argument: as_external_api_application_pb.DeleteThingsBoardIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   deleteThingsBoardIntegration(argument: as_external_api_application_pb.DeleteThingsBoardIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  createMyDevicesIntegration(argument: as_external_api_application_pb.CreateMyDevicesIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  createMyDevicesIntegration(argument: as_external_api_application_pb.CreateMyDevicesIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  createMyDevicesIntegration(argument: as_external_api_application_pb.CreateMyDevicesIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  getMyDevicesIntegration(argument: as_external_api_application_pb.GetMyDevicesIntegrationRequest, callback: grpc.requestCallback<as_external_api_application_pb.GetMyDevicesIntegrationResponse>): grpc.ClientUnaryCall;
+  getMyDevicesIntegration(argument: as_external_api_application_pb.GetMyDevicesIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.GetMyDevicesIntegrationResponse>): grpc.ClientUnaryCall;
+  getMyDevicesIntegration(argument: as_external_api_application_pb.GetMyDevicesIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.GetMyDevicesIntegrationResponse>): grpc.ClientUnaryCall;
+  updateMyDevicesIntegration(argument: as_external_api_application_pb.UpdateMyDevicesIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  updateMyDevicesIntegration(argument: as_external_api_application_pb.UpdateMyDevicesIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  updateMyDevicesIntegration(argument: as_external_api_application_pb.UpdateMyDevicesIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteMyDevicesIntegration(argument: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteMyDevicesIntegration(argument: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteMyDevicesIntegration(argument: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
