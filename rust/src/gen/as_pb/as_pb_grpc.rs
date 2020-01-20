@@ -32,6 +32,8 @@ pub trait ApplicationServerService {
 
     fn handle_gateway_stats(&self, o: ::grpc::RequestOptions, p: super::as_pb::HandleGatewayStatsRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
 
+    fn handle_tx_ack(&self, o: ::grpc::RequestOptions, p: super::as_pb::HandleTxAckRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
+
     fn set_device_status(&self, o: ::grpc::RequestOptions, p: super::as_pb::SetDeviceStatusRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
 
     fn set_device_location(&self, o: ::grpc::RequestOptions, p: super::as_pb::SetDeviceLocationRequest) -> ::grpc::SingleResponse<super::empty::Empty>;
@@ -46,6 +48,7 @@ pub struct ApplicationServerServiceClient {
     method_HandleError: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::as_pb::HandleErrorRequest, super::empty::Empty>>,
     method_HandleDownlinkACK: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::as_pb::HandleDownlinkACKRequest, super::empty::Empty>>,
     method_HandleGatewayStats: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::as_pb::HandleGatewayStatsRequest, super::empty::Empty>>,
+    method_HandleTxAck: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::as_pb::HandleTxAckRequest, super::empty::Empty>>,
     method_SetDeviceStatus: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::as_pb::SetDeviceStatusRequest, super::empty::Empty>>,
     method_SetDeviceLocation: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::as_pb::SetDeviceLocationRequest, super::empty::Empty>>,
 }
@@ -80,6 +83,12 @@ impl ::grpc::ClientStub for ApplicationServerServiceClient {
             }),
             method_HandleGatewayStats: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
                 name: "/as.ApplicationServerService/HandleGatewayStats".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_HandleTxAck: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/as.ApplicationServerService/HandleTxAck".to_string(),
                 streaming: ::grpc::rt::GrpcStreaming::Unary,
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
@@ -119,6 +128,10 @@ impl ApplicationServerService for ApplicationServerServiceClient {
 
     fn handle_gateway_stats(&self, o: ::grpc::RequestOptions, p: super::as_pb::HandleGatewayStatsRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
         self.grpc_client.call_unary(o, p, self.method_HandleGatewayStats.clone())
+    }
+
+    fn handle_tx_ack(&self, o: ::grpc::RequestOptions, p: super::as_pb::HandleTxAckRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
+        self.grpc_client.call_unary(o, p, self.method_HandleTxAck.clone())
     }
 
     fn set_device_status(&self, o: ::grpc::RequestOptions, p: super::as_pb::SetDeviceStatusRequest) -> ::grpc::SingleResponse<super::empty::Empty> {
@@ -198,6 +211,18 @@ impl ApplicationServerServiceServer {
                     {
                         let handler_copy = handler_arc.clone();
                         ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.handle_gateway_stats(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/as.ApplicationServerService/HandleTxAck".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.handle_tx_ack(o, p))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(

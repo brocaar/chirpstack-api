@@ -333,6 +333,32 @@ export namespace HandleGatewayStatsRequest {
   }
 }
 
+export class HandleTxAckRequest extends jspb.Message {
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  getFCnt(): number;
+  setFCnt(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HandleTxAckRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HandleTxAckRequest): HandleTxAckRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HandleTxAckRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HandleTxAckRequest;
+  static deserializeBinaryFromReader(message: HandleTxAckRequest, reader: jspb.BinaryReader): HandleTxAckRequest;
+}
+
+export namespace HandleTxAckRequest {
+  export type AsObject = {
+    devEui: Uint8Array | string,
+    fCnt: number,
+  }
+}
+
 export interface RXWindowMap {
   RX1: 0;
   RX2: 1;

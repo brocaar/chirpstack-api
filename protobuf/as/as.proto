@@ -27,6 +27,9 @@ service ApplicationServerService {
     // HandleGatewayStats handles the given gateway stats.
     rpc HandleGatewayStats(HandleGatewayStatsRequest) returns (google.protobuf.Empty) {}
 
+    // HandleTXACK handles the TX acknowledgement.
+    rpc HandleTxAck(HandleTxAckRequest) returns (google.protobuf.Empty) {}
+
     // SetDeviceStatus updates the device-status for a device.
     rpc SetDeviceStatus(SetDeviceStatusRequest) returns (google.protobuf.Empty) {}
 
@@ -189,4 +192,12 @@ message HandleGatewayStatsRequest {
 
     // Downlink emitted.
     uint32 tx_packets_emitted = 8;
+}
+
+message HandleTxAckRequest {
+    // Device EUI (8 bytes).
+    bytes dev_eui = 1;
+
+    // Downlink frame-counter.
+    uint32 f_cnt = 2;
 }

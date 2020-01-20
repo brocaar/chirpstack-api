@@ -184,6 +184,47 @@ export namespace AckEvent {
   }
 }
 
+export class TxEvent extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getApplicationName(): string;
+  setApplicationName(value: string): void;
+
+  getDeviceName(): string;
+  setDeviceName(value: string): void;
+
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  getFCnt(): number;
+  setFCnt(value: number): void;
+
+  getTagsMap(): jspb.Map<string, string>;
+  clearTagsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TxEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: TxEvent): TxEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TxEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TxEvent;
+  static deserializeBinaryFromReader(message: TxEvent, reader: jspb.BinaryReader): TxEvent;
+}
+
+export namespace TxEvent {
+  export type AsObject = {
+    applicationId: number,
+    applicationName: string,
+    deviceName: string,
+    devEui: Uint8Array | string,
+    fCnt: number,
+    tagsMap: Array<[string, string]>,
+  }
+}
+
 export class ErrorEvent extends jspb.Message {
   getApplicationId(): number;
   setApplicationId(value: number): void;

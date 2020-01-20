@@ -52,6 +52,17 @@ function deserialize_as_HandleProprietaryUplinkRequest(buffer_arg) {
   return as_as_pb.HandleProprietaryUplinkRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_as_HandleTxAckRequest(arg) {
+  if (!(arg instanceof as_as_pb.HandleTxAckRequest)) {
+    throw new Error('Expected argument of type as.HandleTxAckRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_as_HandleTxAckRequest(buffer_arg) {
+  return as_as_pb.HandleTxAckRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_as_HandleUplinkDataRequest(arg) {
   if (!(arg instanceof as_as_pb.HandleUplinkDataRequest)) {
     throw new Error('Expected argument of type as.HandleUplinkDataRequest');
@@ -156,6 +167,18 @@ var ApplicationServerServiceService = exports.ApplicationServerServiceService = 
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_as_HandleGatewayStatsRequest,
     requestDeserialize: deserialize_as_HandleGatewayStatsRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // HandleTXACK handles the TX acknowledgement.
+  handleTxAck: {
+    path: '/as.ApplicationServerService/HandleTxAck',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_as_pb.HandleTxAckRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_as_HandleTxAckRequest,
+    requestDeserialize: deserialize_as_HandleTxAckRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

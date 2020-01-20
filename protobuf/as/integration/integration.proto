@@ -138,6 +138,29 @@ message AckEvent {
     map<string, string> tags = 7;
 }
 
+// TxEvent is the message sent when a downlink was acknowledged by the gateway
+// for transmission. As a downlink can be scheduled in the future, this event
+// does not confirm that the message has already been transmitted.
+message TxEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // Downlink frame-counter.
+    uint32 f_cnt = 5;
+
+    // User-defined device tags.
+    map<string, string> tags = 6;
+}
+
 // ErrorEvent is the message sent when an error occurred.
 message ErrorEvent {
     // Application ID.

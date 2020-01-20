@@ -13,6 +13,7 @@ interface IApplicationServerServiceService extends grpc.ServiceDefinition<grpc.U
   handleError: grpc.MethodDefinition<as_as_pb.HandleErrorRequest, google_protobuf_empty_pb.Empty>;
   handleDownlinkACK: grpc.MethodDefinition<as_as_pb.HandleDownlinkACKRequest, google_protobuf_empty_pb.Empty>;
   handleGatewayStats: grpc.MethodDefinition<as_as_pb.HandleGatewayStatsRequest, google_protobuf_empty_pb.Empty>;
+  handleTxAck: grpc.MethodDefinition<as_as_pb.HandleTxAckRequest, google_protobuf_empty_pb.Empty>;
   setDeviceStatus: grpc.MethodDefinition<as_as_pb.SetDeviceStatusRequest, google_protobuf_empty_pb.Empty>;
   setDeviceLocation: grpc.MethodDefinition<as_as_pb.SetDeviceLocationRequest, google_protobuf_empty_pb.Empty>;
 }
@@ -36,6 +37,9 @@ export class ApplicationServerServiceClient extends grpc.Client {
   handleGatewayStats(argument: as_as_pb.HandleGatewayStatsRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   handleGatewayStats(argument: as_as_pb.HandleGatewayStatsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   handleGatewayStats(argument: as_as_pb.HandleGatewayStatsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  handleTxAck(argument: as_as_pb.HandleTxAckRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  handleTxAck(argument: as_as_pb.HandleTxAckRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  handleTxAck(argument: as_as_pb.HandleTxAckRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   setDeviceStatus(argument: as_as_pb.SetDeviceStatusRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   setDeviceStatus(argument: as_as_pb.SetDeviceStatusRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   setDeviceStatus(argument: as_as_pb.SetDeviceStatusRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
