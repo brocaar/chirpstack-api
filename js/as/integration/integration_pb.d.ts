@@ -380,6 +380,7 @@ export interface ErrorTypeMap {
   UPLINK_FCNT_RESET: 6;
   UPLINK_MIC: 7;
   UPLINK_FCNT_RETRANSMISSION: 8;
+  DOWNLINK_GATEWAY: 9;
 }
 
 export const ErrorType: ErrorTypeMap;

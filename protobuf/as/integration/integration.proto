@@ -36,6 +36,9 @@ enum ErrorType {
 
     // Uplink frame-counter retransmission.
     UPLINK_FCNT_RETRANSMISSION = 8;
+
+    // Downlink gateway error.
+    DOWNLINK_GATEWAY = 9;
 }
 
 // UplinkEvent is the message sent when an uplink payload has been received.

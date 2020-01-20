@@ -43,13 +43,29 @@ enum RXWindow {
 }
 
 enum ErrorType {
+    // Generic error type.
     GENERIC = 0;
+
+    // OTAA error.
     OTAA = 1;
+
+    // Uplink frame-counter was reset.
     DATA_UP_FCNT_RESET = 2;
+
+    // Uplink MIC error.
     DATA_UP_MIC = 3;
+
+    // Downlink payload size error.
     DEVICE_QUEUE_ITEM_SIZE = 4;
+
+    // Downlink frame-counter error.
     DEVICE_QUEUE_ITEM_FCNT = 5;
+
+    // Uplink frame-counter retransmission.
     DATA_UP_FCNT_RETRANSMISSION = 6;
+
+    // Downlink gateway error.
+    DATA_DOWN_GATEWAY = 7;
 }
 
 

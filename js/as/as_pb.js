@@ -2814,7 +2814,8 @@ proto.as.ErrorType = {
   DATA_UP_MIC: 3,
   DEVICE_QUEUE_ITEM_SIZE: 4,
   DEVICE_QUEUE_ITEM_FCNT: 5,
-  DATA_UP_FCNT_RETRANSMISSION: 6
+  DATA_UP_FCNT_RETRANSMISSION: 6,
+  DATA_DOWN_GATEWAY: 7
 };
 
 goog.object.extend(exports, proto.as);
