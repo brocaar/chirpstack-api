@@ -324,6 +324,9 @@ message HTTPIntegration {
 
 	// The URL to call for location notifications.
 	string location_notification_url = 8 [json_name = "locationNotificationURL"];
+
+    // The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission).
+    string tx_ack_notification_url = 9 [json_name = "txAckNotificationURL"];
 }
 
 message CreateHTTPIntegrationRequest {

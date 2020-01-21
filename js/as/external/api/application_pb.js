@@ -2390,7 +2390,8 @@ proto.api.HTTPIntegration.toObject = function(includeInstance, msg) {
     ackNotificationUrl: msg.getAckNotificationUrl(),
     errorNotificationUrl: msg.getErrorNotificationUrl(),
     statusNotificationUrl: msg.getStatusNotificationUrl(),
-    locationNotificationUrl: msg.getLocationNotificationUrl()
+    locationNotificationUrl: msg.getLocationNotificationUrl(),
+    txAckNotificationUrl: msg.getTxAckNotificationUrl()
   };
 
   if (includeInstance) {
@@ -2460,6 +2461,10 @@ proto.api.HTTPIntegration.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setLocationNotificationUrl(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTxAckNotificationUrl(value);
       break;
     default:
       reader.skipField();
@@ -2553,6 +2558,13 @@ proto.api.HTTPIntegration.prototype.serializeBinaryToWriter = function (writer) 
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = this.getTxAckNotificationUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -2693,6 +2705,21 @@ proto.api.HTTPIntegration.prototype.getLocationNotificationUrl = function() {
 /** @param {string} value  */
 proto.api.HTTPIntegration.prototype.setLocationNotificationUrl = function(value) {
   jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * optional string tx_ack_notification_url = 9;
+ * @return {string}
+ */
+proto.api.HTTPIntegration.prototype.getTxAckNotificationUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 9, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.HTTPIntegration.prototype.setTxAckNotificationUrl = function(value) {
+  jspb.Message.setField(this, 9, value);
 };
 
 

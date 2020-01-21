@@ -894,6 +894,10 @@
         "locationNotificationURL": {
           "type": "string",
           "description": "The URL to call for location notifications."
+        },
+        "txAckNotificationURL": {
+          "type": "string",
+          "description": "The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission)."
         }
       }
     },
