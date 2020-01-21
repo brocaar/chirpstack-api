@@ -141,10 +141,10 @@ message AckEvent {
     map<string, string> tags = 7;
 }
 
-// TxEvent is the message sent when a downlink was acknowledged by the gateway
+// TxAckEvent is the message sent when a downlink was acknowledged by the gateway
 // for transmission. As a downlink can be scheduled in the future, this event
 // does not confirm that the message has already been transmitted.
-message TxEvent {
+message TxAckEvent {
     // Application ID.
     uint64 application_id = 1 [json_name = "applicationID"];
 

@@ -17,7 +17,7 @@ goog.exportSymbol('proto.integration.ErrorType', null, global);
 goog.exportSymbol('proto.integration.JoinEvent', null, global);
 goog.exportSymbol('proto.integration.LocationEvent', null, global);
 goog.exportSymbol('proto.integration.StatusEvent', null, global);
-goog.exportSymbol('proto.integration.TxEvent', null, global);
+goog.exportSymbol('proto.integration.TxAckEvent', null, global);
 goog.exportSymbol('proto.integration.UplinkEvent', null, global);
 
 /**
@@ -1396,12 +1396,12 @@ proto.integration.AckEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.integration.TxEvent = function(opt_data) {
+proto.integration.TxAckEvent = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.integration.TxEvent, jspb.Message);
+goog.inherits(proto.integration.TxAckEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.integration.TxEvent.displayName = 'proto.integration.TxEvent';
+  proto.integration.TxAckEvent.displayName = 'proto.integration.TxAckEvent';
 }
 
 
@@ -1416,8 +1416,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.integration.TxEvent.prototype.toObject = function(opt_includeInstance) {
-  return proto.integration.TxEvent.toObject(opt_includeInstance, this);
+proto.integration.TxAckEvent.prototype.toObject = function(opt_includeInstance) {
+  return proto.integration.TxAckEvent.toObject(opt_includeInstance, this);
 };
 
 
@@ -1426,10 +1426,10 @@ proto.integration.TxEvent.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.integration.TxEvent} msg The msg instance to transform.
+ * @param {!proto.integration.TxAckEvent} msg The msg instance to transform.
  * @return {!Object}
  */
-proto.integration.TxEvent.toObject = function(includeInstance, msg) {
+proto.integration.TxAckEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     applicationId: msg.getApplicationId(),
     applicationName: msg.getApplicationName(),
@@ -1450,23 +1450,23 @@ proto.integration.TxEvent.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.integration.TxEvent}
+ * @return {!proto.integration.TxAckEvent}
  */
-proto.integration.TxEvent.deserializeBinary = function(bytes) {
+proto.integration.TxAckEvent.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.integration.TxEvent;
-  return proto.integration.TxEvent.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.integration.TxAckEvent;
+  return proto.integration.TxAckEvent.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.integration.TxEvent} msg The message object to deserialize into.
+ * @param {!proto.integration.TxAckEvent} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.integration.TxEvent}
+ * @return {!proto.integration.TxAckEvent}
  */
-proto.integration.TxEvent.deserializeBinaryFromReader = function(msg, reader) {
+proto.integration.TxAckEvent.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1511,10 +1511,10 @@ proto.integration.TxEvent.deserializeBinaryFromReader = function(msg, reader) {
 /**
  * Class method variant: serializes the given message to binary data
  * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.integration.TxEvent} message
+ * @param {!proto.integration.TxAckEvent} message
  * @param {!jspb.BinaryWriter} writer
  */
-proto.integration.TxEvent.serializeBinaryToWriter = function(message, writer) {
+proto.integration.TxAckEvent.serializeBinaryToWriter = function(message, writer) {
   message.serializeBinaryToWriter(writer);
 };
 
@@ -1523,7 +1523,7 @@ proto.integration.TxEvent.serializeBinaryToWriter = function(message, writer) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.integration.TxEvent.prototype.serializeBinary = function() {
+proto.integration.TxAckEvent.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   this.serializeBinaryToWriter(writer);
   return writer.getResultBuffer();
@@ -1535,7 +1535,7 @@ proto.integration.TxEvent.prototype.serializeBinary = function() {
  * writing to the given BinaryWriter.
  * @param {!jspb.BinaryWriter} writer
  */
-proto.integration.TxEvent.prototype.serializeBinaryToWriter = function (writer) {
+proto.integration.TxAckEvent.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
   f = this.getApplicationId();
   if (f !== 0) {
@@ -1581,10 +1581,10 @@ proto.integration.TxEvent.prototype.serializeBinaryToWriter = function (writer) 
 
 /**
  * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.integration.TxEvent} The clone.
+ * @return {!proto.integration.TxAckEvent} The clone.
  */
-proto.integration.TxEvent.prototype.cloneMessage = function() {
-  return /** @type {!proto.integration.TxEvent} */ (jspb.Message.cloneMessage(this));
+proto.integration.TxAckEvent.prototype.cloneMessage = function() {
+  return /** @type {!proto.integration.TxAckEvent} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1592,13 +1592,13 @@ proto.integration.TxEvent.prototype.cloneMessage = function() {
  * optional uint64 application_id = 1;
  * @return {number}
  */
-proto.integration.TxEvent.prototype.getApplicationId = function() {
+proto.integration.TxAckEvent.prototype.getApplicationId = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
 };
 
 
 /** @param {number} value  */
-proto.integration.TxEvent.prototype.setApplicationId = function(value) {
+proto.integration.TxAckEvent.prototype.setApplicationId = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
@@ -1607,13 +1607,13 @@ proto.integration.TxEvent.prototype.setApplicationId = function(value) {
  * optional string application_name = 2;
  * @return {string}
  */
-proto.integration.TxEvent.prototype.getApplicationName = function() {
+proto.integration.TxAckEvent.prototype.getApplicationName = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
 /** @param {string} value  */
-proto.integration.TxEvent.prototype.setApplicationName = function(value) {
+proto.integration.TxAckEvent.prototype.setApplicationName = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
@@ -1622,13 +1622,13 @@ proto.integration.TxEvent.prototype.setApplicationName = function(value) {
  * optional string device_name = 3;
  * @return {string}
  */
-proto.integration.TxEvent.prototype.getDeviceName = function() {
+proto.integration.TxAckEvent.prototype.getDeviceName = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
 };
 
 
 /** @param {string} value  */
-proto.integration.TxEvent.prototype.setDeviceName = function(value) {
+proto.integration.TxAckEvent.prototype.setDeviceName = function(value) {
   jspb.Message.setField(this, 3, value);
 };
 
@@ -1637,7 +1637,7 @@ proto.integration.TxEvent.prototype.setDeviceName = function(value) {
  * optional bytes dev_eui = 4;
  * @return {!(string|Uint8Array)}
  */
-proto.integration.TxEvent.prototype.getDevEui = function() {
+proto.integration.TxAckEvent.prototype.getDevEui = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 4, ""));
 };
 
@@ -1647,7 +1647,7 @@ proto.integration.TxEvent.prototype.getDevEui = function() {
  * This is a type-conversion wrapper around `getDevEui()`
  * @return {string}
  */
-proto.integration.TxEvent.prototype.getDevEui_asB64 = function() {
+proto.integration.TxAckEvent.prototype.getDevEui_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getDevEui()));
 };
@@ -1660,14 +1660,14 @@ proto.integration.TxEvent.prototype.getDevEui_asB64 = function() {
  * This is a type-conversion wrapper around `getDevEui()`
  * @return {!Uint8Array}
  */
-proto.integration.TxEvent.prototype.getDevEui_asU8 = function() {
+proto.integration.TxAckEvent.prototype.getDevEui_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getDevEui()));
 };
 
 
 /** @param {!(string|Uint8Array)} value  */
-proto.integration.TxEvent.prototype.setDevEui = function(value) {
+proto.integration.TxAckEvent.prototype.setDevEui = function(value) {
   jspb.Message.setField(this, 4, value);
 };
 
@@ -1676,13 +1676,13 @@ proto.integration.TxEvent.prototype.setDevEui = function(value) {
  * optional uint32 f_cnt = 5;
  * @return {number}
  */
-proto.integration.TxEvent.prototype.getFCnt = function() {
+proto.integration.TxAckEvent.prototype.getFCnt = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
 };
 
 
 /** @param {number} value  */
-proto.integration.TxEvent.prototype.setFCnt = function(value) {
+proto.integration.TxAckEvent.prototype.setFCnt = function(value) {
   jspb.Message.setField(this, 5, value);
 };
 
@@ -1693,7 +1693,7 @@ proto.integration.TxEvent.prototype.setFCnt = function(value) {
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.integration.TxEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
+proto.integration.TxAckEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));

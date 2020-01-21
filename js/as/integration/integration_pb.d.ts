@@ -184,7 +184,7 @@ export namespace AckEvent {
   }
 }
 
-export class TxEvent extends jspb.Message {
+export class TxAckEvent extends jspb.Message {
   getApplicationId(): number;
   setApplicationId(value: number): void;
 
@@ -205,16 +205,16 @@ export class TxEvent extends jspb.Message {
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TxEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: TxEvent): TxEvent.AsObject;
+  toObject(includeInstance?: boolean): TxAckEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: TxAckEvent): TxAckEvent.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TxEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TxEvent;
-  static deserializeBinaryFromReader(message: TxEvent, reader: jspb.BinaryReader): TxEvent;
+  static serializeBinaryToWriter(message: TxAckEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TxAckEvent;
+  static deserializeBinaryFromReader(message: TxAckEvent, reader: jspb.BinaryReader): TxAckEvent;
 }
 
-export namespace TxEvent {
+export namespace TxAckEvent {
   export type AsObject = {
     applicationId: number,
     applicationName: string,

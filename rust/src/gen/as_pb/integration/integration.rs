@@ -1585,7 +1585,7 @@ impl ::protobuf::reflect::ProtobufValue for AckEvent {
 }
 
 #[derive(PartialEq,Clone,Default)]
-pub struct TxEvent {
+pub struct TxAckEvent {
     // message fields
     pub application_id: u64,
     pub application_name: ::std::string::String,
@@ -1598,14 +1598,14 @@ pub struct TxEvent {
     pub cached_size: ::protobuf::CachedSize,
 }
 
-impl<'a> ::std::default::Default for &'a TxEvent {
-    fn default() -> &'a TxEvent {
-        <TxEvent as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a TxAckEvent {
+    fn default() -> &'a TxAckEvent {
+        <TxAckEvent as ::protobuf::Message>::default_instance()
     }
 }
 
-impl TxEvent {
-    pub fn new() -> TxEvent {
+impl TxAckEvent {
+    pub fn new() -> TxAckEvent {
         ::std::default::Default::default()
     }
 
@@ -1717,7 +1717,7 @@ impl TxEvent {
         self.f_cnt = v;
     }
 
-    // repeated .integration.TxEvent.TagsEntry tags = 6;
+    // repeated .integration.TxAckEvent.TagsEntry tags = 6;
 
 
     pub fn get_tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
@@ -1743,7 +1743,7 @@ impl TxEvent {
     }
 }
 
-impl ::protobuf::Message for TxEvent {
+impl ::protobuf::Message for TxAckEvent {
     fn is_initialized(&self) -> bool {
         true
     }
@@ -1858,8 +1858,8 @@ impl ::protobuf::Message for TxEvent {
         Self::descriptor_static()
     }
 
-    fn new() -> TxEvent {
-        TxEvent::new()
+    fn new() -> TxAckEvent {
+        TxAckEvent::new()
     }
 
     fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
@@ -1872,36 +1872,36 @@ impl ::protobuf::Message for TxEvent {
                 let mut fields = ::std::vec::Vec::new();
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint64>(
                     "application_id",
-                    |m: &TxEvent| { &m.application_id },
-                    |m: &mut TxEvent| { &mut m.application_id },
+                    |m: &TxAckEvent| { &m.application_id },
+                    |m: &mut TxAckEvent| { &mut m.application_id },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
                     "application_name",
-                    |m: &TxEvent| { &m.application_name },
-                    |m: &mut TxEvent| { &mut m.application_name },
+                    |m: &TxAckEvent| { &m.application_name },
+                    |m: &mut TxAckEvent| { &mut m.application_name },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
                     "device_name",
-                    |m: &TxEvent| { &m.device_name },
-                    |m: &mut TxEvent| { &mut m.device_name },
+                    |m: &TxAckEvent| { &m.device_name },
+                    |m: &mut TxAckEvent| { &mut m.device_name },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBytes>(
                     "dev_eui",
-                    |m: &TxEvent| { &m.dev_eui },
-                    |m: &mut TxEvent| { &mut m.dev_eui },
+                    |m: &TxAckEvent| { &m.dev_eui },
+                    |m: &mut TxAckEvent| { &mut m.dev_eui },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeUint32>(
                     "f_cnt",
-                    |m: &TxEvent| { &m.f_cnt },
-                    |m: &mut TxEvent| { &mut m.f_cnt },
+                    |m: &TxAckEvent| { &m.f_cnt },
+                    |m: &mut TxAckEvent| { &mut m.f_cnt },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_map_accessor::<_, ::protobuf::types::ProtobufTypeString, ::protobuf::types::ProtobufTypeString>(
                     "tags",
-                    |m: &TxEvent| { &m.tags },
-                    |m: &mut TxEvent| { &mut m.tags },
+                    |m: &TxAckEvent| { &m.tags },
+                    |m: &mut TxAckEvent| { &mut m.tags },
                 ));
-                ::protobuf::reflect::MessageDescriptor::new::<TxEvent>(
-                    "TxEvent",
+                ::protobuf::reflect::MessageDescriptor::new::<TxAckEvent>(
+                    "TxAckEvent",
                     fields,
                     file_descriptor_proto()
                 )
@@ -1909,18 +1909,18 @@ impl ::protobuf::Message for TxEvent {
         }
     }
 
-    fn default_instance() -> &'static TxEvent {
-        static mut instance: ::protobuf::lazy::Lazy<TxEvent> = ::protobuf::lazy::Lazy {
+    fn default_instance() -> &'static TxAckEvent {
+        static mut instance: ::protobuf::lazy::Lazy<TxAckEvent> = ::protobuf::lazy::Lazy {
             lock: ::protobuf::lazy::ONCE_INIT,
-            ptr: 0 as *const TxEvent,
+            ptr: 0 as *const TxAckEvent,
         };
         unsafe {
-            instance.get(TxEvent::new)
+            instance.get(TxAckEvent::new)
         }
     }
 }
 
-impl ::protobuf::Clear for TxEvent {
+impl ::protobuf::Clear for TxAckEvent {
     fn clear(&mut self) {
         self.application_id = 0;
         self.application_name.clear();
@@ -1932,13 +1932,13 @@ impl ::protobuf::Clear for TxEvent {
     }
 }
 
-impl ::std::fmt::Debug for TxEvent {
+impl ::std::fmt::Debug for TxAckEvent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for TxEvent {
+impl ::protobuf::reflect::ProtobufValue for TxAckEvent {
     fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
@@ -3335,12 +3335,12 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x01(\x08R\x0cacknowledged\x12\x13\n\x05f_cnt\x18\x06\x20\x01(\rR\x04fCn\
     t\x123\n\x04tags\x18\x07\x20\x03(\x0b2\x1f.integration.AckEvent.TagsEntr\
     yR\x04tags\x1a7\n\tTagsEntry\x12\x10\n\x03key\x18\x01\x20\x01(\tR\x03key\
-    \x12\x14\n\x05value\x18\x02\x20\x01(\tR\x05value:\x028\x01\"\x97\x02\n\
-    \x07TxEvent\x12%\n\x0eapplication_id\x18\x01\x20\x01(\x04R\rapplicationI\
-    D\x12)\n\x10application_name\x18\x02\x20\x01(\tR\x0fapplicationName\x12\
+    \x12\x14\n\x05value\x18\x02\x20\x01(\tR\x05value:\x028\x01\"\x9d\x02\n\n\
+    TxAckEvent\x12%\n\x0eapplication_id\x18\x01\x20\x01(\x04R\rapplicationID\
+    \x12)\n\x10application_name\x18\x02\x20\x01(\tR\x0fapplicationName\x12\
     \x1f\n\x0bdevice_name\x18\x03\x20\x01(\tR\ndeviceName\x12\x17\n\x07dev_e\
     ui\x18\x04\x20\x01(\x0cR\x06devEUI\x12\x13\n\x05f_cnt\x18\x05\x20\x01(\r\
-    R\x04fCnt\x122\n\x04tags\x18\x06\x20\x03(\x0b2\x1e.integration.TxEvent.T\
+    R\x04fCnt\x125\n\x04tags\x18\x06\x20\x03(\x0b2!.integration.TxAckEvent.T\
     agsEntryR\x04tags\x1a7\n\tTagsEntry\x12\x10\n\x03key\x18\x01\x20\x01(\tR\
     \x03key\x12\x14\n\x05value\x18\x02\x20\x01(\tR\x05value:\x028\x01\"\xdf\
     \x02\n\nErrorEvent\x12%\n\x0eapplication_id\x18\x01\x20\x01(\x04R\rappli\
@@ -3375,7 +3375,7 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     \x12\n\x0eDOWNLINK_CODEC\x10\x04\x12\x08\n\x04OTAA\x10\x05\x12\x15\n\x11\
     UPLINK_FCNT_RESET\x10\x06\x12\x0e\n\nUPLINK_MIC\x10\x07\x12\x1e\n\x1aUPL\
     INK_FCNT_RETRANSMISSION\x10\x08\x12\x14\n\x10DOWNLINK_GATEWAY\x10\tB8Z6g\
-    ithub.com/brocaar/chirpstack-api/go/v3/as/integrationJ\xe1?\n\x07\x12\
+    ithub.com/brocaar/chirpstack-api/go/v3/as/integrationJ\xe4?\n\x07\x12\
     \x05\0\0\xf4\x01\x01\n\x08\n\x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\
     \x03\x02\x08\x13\n\x08\n\x01\x08\x12\x03\x04\0M\n\t\n\x02\x08\x0b\x12\
     \x03\x04\0M\n\t\n\x02\x03\0\x12\x03\x06\x07\x1c\n\t\n\x02\x03\x01\x12\
@@ -3541,16 +3541,16 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     ed\x20device\x20tags.\n\n\x0f\n\x05\x04\x02\x02\x06\x04\x12\x06\x8c\x01\
     \x04\x89\x01\x15\n\r\n\x05\x04\x02\x02\x06\x06\x12\x04\x8c\x01\x04\x17\n\
     \r\n\x05\x04\x02\x02\x06\x01\x12\x04\x8c\x01\x18\x1c\n\r\n\x05\x04\x02\
-    \x02\x06\x03\x12\x04\x8c\x01\x1f\x20\n\xe9\x01\n\x02\x04\x03\x12\x06\x92\
-    \x01\0\xa4\x01\x01\x1a\xda\x01\x20TxEvent\x20is\x20the\x20message\x20sen\
-    t\x20when\x20a\x20downlink\x20was\x20acknowledged\x20by\x20the\x20gatewa\
-    y\n\x20for\x20transmission.\x20As\x20a\x20downlink\x20can\x20be\x20sched\
-    uled\x20in\x20the\x20future,\x20this\x20event\n\x20does\x20not\x20confir\
-    m\x20that\x20the\x20message\x20has\x20already\x20been\x20transmitted.\n\
-    \n\x0b\n\x03\x04\x03\x01\x12\x04\x92\x01\x08\x0f\n\x1f\n\x04\x04\x03\x02\
-    \0\x12\x04\x94\x01\x04<\x1a\x11\x20Application\x20ID.\n\n\x0f\n\x05\x04\
-    \x03\x02\0\x04\x12\x06\x94\x01\x04\x92\x01\x11\n\r\n\x05\x04\x03\x02\0\
-    \x05\x12\x04\x94\x01\x04\n\n\r\n\x05\x04\x03\x02\0\x01\x12\x04\x94\x01\
+    \x02\x06\x03\x12\x04\x8c\x01\x1f\x20\n\xec\x01\n\x02\x04\x03\x12\x06\x92\
+    \x01\0\xa4\x01\x01\x1a\xdd\x01\x20TxAckEvent\x20is\x20the\x20message\x20\
+    sent\x20when\x20a\x20downlink\x20was\x20acknowledged\x20by\x20the\x20gat\
+    eway\n\x20for\x20transmission.\x20As\x20a\x20downlink\x20can\x20be\x20sc\
+    heduled\x20in\x20the\x20future,\x20this\x20event\n\x20does\x20not\x20con\
+    firm\x20that\x20the\x20message\x20has\x20already\x20been\x20transmitted.\
+    \n\n\x0b\n\x03\x04\x03\x01\x12\x04\x92\x01\x08\x12\n\x1f\n\x04\x04\x03\
+    \x02\0\x12\x04\x94\x01\x04<\x1a\x11\x20Application\x20ID.\n\n\x0f\n\x05\
+    \x04\x03\x02\0\x04\x12\x06\x94\x01\x04\x92\x01\x14\n\r\n\x05\x04\x03\x02\
+    \0\x05\x12\x04\x94\x01\x04\n\n\r\n\x05\x04\x03\x02\0\x01\x12\x04\x94\x01\
     \x0b\x19\n\r\n\x05\x04\x03\x02\0\x03\x12\x04\x94\x01\x1c\x1d\n\r\n\x05\
     \x04\x03\x02\0\x08\x12\x04\x94\x01\x1e;\n\r\n\x05\x04\x03\x02\0\n\x12\
     \x04\x94\x01+:\n!\n\x04\x04\x03\x02\x01\x12\x04\x97\x01\x04\x20\x1a\x13\
