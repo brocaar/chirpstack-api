@@ -182,6 +182,9 @@ message SetDeviceLocationRequest {
 
     // The location of the device.
     common.Location location = 2;
+
+    // Uplink IDs used for geolocation.
+    repeated bytes uplink_ids = 3;
 }
 
 message HandleGatewayStatsRequest {

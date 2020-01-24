@@ -260,6 +260,13 @@ export class SetDeviceLocationRequest extends jspb.Message {
   getLocation(): common_common_pb.Location | undefined;
   setLocation(value?: common_common_pb.Location): void;
 
+  clearUplinkIdsList(): void;
+  getUplinkIdsList(): Array<Uint8Array | string>;
+  getUplinkIdsList_asU8(): Array<Uint8Array>;
+  getUplinkIdsList_asB64(): Array<string>;
+  setUplinkIdsList(value: Array<Uint8Array | string>): void;
+  addUplinkIds(value: Uint8Array | string, index?: number): Uint8Array | string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetDeviceLocationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetDeviceLocationRequest): SetDeviceLocationRequest.AsObject;
@@ -274,6 +281,7 @@ export namespace SetDeviceLocationRequest {
   export type AsObject = {
     devEui: Uint8Array | string,
     location?: common_common_pb.Location.AsObject,
+    uplinkIdsList: Array<Uint8Array | string>,
   }
 }
 

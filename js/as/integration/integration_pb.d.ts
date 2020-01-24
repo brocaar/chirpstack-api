@@ -349,6 +349,13 @@ export class LocationEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  clearUplinkIdsList(): void;
+  getUplinkIdsList(): Array<Uint8Array | string>;
+  getUplinkIdsList_asU8(): Array<Uint8Array>;
+  getUplinkIdsList_asB64(): Array<string>;
+  setUplinkIdsList(value: Array<Uint8Array | string>): void;
+  addUplinkIds(value: Uint8Array | string, index?: number): Uint8Array | string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: LocationEvent): LocationEvent.AsObject;
@@ -367,6 +374,7 @@ export namespace LocationEvent {
     devEui: Uint8Array | string,
     location?: common_common_pb.Location.AsObject,
     tagsMap: Array<[string, string]>,
+    uplinkIdsList: Array<Uint8Array | string>,
   }
 }
 

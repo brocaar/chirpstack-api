@@ -2481,12 +2481,19 @@ proto.integration.StatusEvent.prototype.getTagsMap = function(opt_noLazyCreate) 
  * @constructor
  */
 proto.integration.LocationEvent = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.integration.LocationEvent.repeatedFields_, null);
 };
 goog.inherits(proto.integration.LocationEvent, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.integration.LocationEvent.displayName = 'proto.integration.LocationEvent';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.integration.LocationEvent.repeatedFields_ = [7];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2520,7 +2527,8 @@ proto.integration.LocationEvent.toObject = function(includeInstance, msg) {
     deviceName: msg.getDeviceName(),
     devEui: msg.getDevEui_asB64(),
     location: (f = msg.getLocation()) && common_common_pb.Location.toObject(includeInstance, f),
-    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
+    uplinkIdsList: msg.getUplinkIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -2583,6 +2591,11 @@ proto.integration.LocationEvent.deserializeBinaryFromReader = function(msg, read
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
          });
+      break;
+    case 7:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.getUplinkIdsList().push(value);
+      msg.setUplinkIdsList(msg.getUplinkIdsList());
       break;
     default:
       reader.skipField();
@@ -2661,6 +2674,13 @@ proto.integration.LocationEvent.prototype.serializeBinaryToWriter = function (wr
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getUplinkIdsList_asU8();
+  if (f.length > 0) {
+    writer.writeRepeatedBytes(
+      7,
+      f
+    );
   }
 };
 
@@ -2798,6 +2818,56 @@ proto.integration.LocationEvent.prototype.getTagsMap = function(opt_noLazyCreate
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * repeated bytes uplink_ids = 7;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!(Array<!Uint8Array>|Array<string>)}
+ */
+proto.integration.LocationEvent.prototype.getUplinkIdsList = function() {
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 7));
+};
+
+
+/**
+ * repeated bytes uplink_ids = 7;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * This is a type-conversion wrapper around `getUplinkIdsList()`
+ * @return {!Array.<string>}
+ */
+proto.integration.LocationEvent.prototype.getUplinkIdsList_asB64 = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+      this.getUplinkIdsList()));
+};
+
+
+/**
+ * repeated bytes uplink_ids = 7;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getUplinkIdsList()`
+ * @return {!Array.<!Uint8Array>}
+ */
+proto.integration.LocationEvent.prototype.getUplinkIdsList_asU8 = function() {
+  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getUplinkIdsList()));
+};
+
+
+/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+proto.integration.LocationEvent.prototype.setUplinkIdsList = function(value) {
+  jspb.Message.setField(this, 7, value || []);
+};
+
+
+proto.integration.LocationEvent.prototype.clearUplinkIdsList = function() {
+  jspb.Message.setField(this, 7, []);
 };
 
 

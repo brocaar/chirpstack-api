@@ -242,4 +242,7 @@ message LocationEvent {
 
     // User-defined device tags.
     map<string, string> tags = 6;
+
+    // Uplink IDs used for geolocation.
+    repeated bytes uplink_ids = 7 [json_name = "uplinkIDs"];
 }

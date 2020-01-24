@@ -1941,12 +1941,19 @@ proto.as.SetDeviceStatusRequest.prototype.setBatteryLevel = function(value) {
  * @constructor
  */
 proto.as.SetDeviceLocationRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.as.SetDeviceLocationRequest.repeatedFields_, null);
 };
 goog.inherits(proto.as.SetDeviceLocationRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.as.SetDeviceLocationRequest.displayName = 'proto.as.SetDeviceLocationRequest';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.as.SetDeviceLocationRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1976,7 +1983,8 @@ proto.as.SetDeviceLocationRequest.prototype.toObject = function(opt_includeInsta
 proto.as.SetDeviceLocationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     devEui: msg.getDevEui_asB64(),
-    location: (f = msg.getLocation()) && common_common_pb.Location.toObject(includeInstance, f)
+    location: (f = msg.getLocation()) && common_common_pb.Location.toObject(includeInstance, f),
+    uplinkIdsList: msg.getUplinkIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -2021,6 +2029,11 @@ proto.as.SetDeviceLocationRequest.deserializeBinaryFromReader = function(msg, re
       var value = new common_common_pb.Location;
       reader.readMessage(value,common_common_pb.Location.deserializeBinaryFromReader);
       msg.setLocation(value);
+      break;
+    case 3:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.getUplinkIdsList().push(value);
+      msg.setUplinkIdsList(msg.getUplinkIdsList());
       break;
     default:
       reader.skipField();
@@ -2073,6 +2086,13 @@ proto.as.SetDeviceLocationRequest.prototype.serializeBinaryToWriter = function (
       2,
       f,
       common_common_pb.Location.serializeBinaryToWriter
+    );
+  }
+  f = this.getUplinkIdsList_asU8();
+  if (f.length > 0) {
+    writer.writeRepeatedBytes(
+      3,
+      f
     );
   }
 };
@@ -2153,6 +2173,56 @@ proto.as.SetDeviceLocationRequest.prototype.clearLocation = function() {
  */
 proto.as.SetDeviceLocationRequest.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated bytes uplink_ids = 3;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!(Array<!Uint8Array>|Array<string>)}
+ */
+proto.as.SetDeviceLocationRequest.prototype.getUplinkIdsList = function() {
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 3));
+};
+
+
+/**
+ * repeated bytes uplink_ids = 3;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * This is a type-conversion wrapper around `getUplinkIdsList()`
+ * @return {!Array.<string>}
+ */
+proto.as.SetDeviceLocationRequest.prototype.getUplinkIdsList_asB64 = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+      this.getUplinkIdsList()));
+};
+
+
+/**
+ * repeated bytes uplink_ids = 3;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getUplinkIdsList()`
+ * @return {!Array.<!Uint8Array>}
+ */
+proto.as.SetDeviceLocationRequest.prototype.getUplinkIdsList_asU8 = function() {
+  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getUplinkIdsList()));
+};
+
+
+/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+proto.as.SetDeviceLocationRequest.prototype.setUplinkIdsList = function(value) {
+  jspb.Message.setField(this, 3, value || []);
+};
+
+
+proto.as.SetDeviceLocationRequest.prototype.clearUplinkIdsList = function() {
+  jspb.Message.setField(this, 3, []);
 };
 
 
