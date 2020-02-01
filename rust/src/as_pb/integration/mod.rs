@@ -1,1 +1,1 @@
-pub use super::super::gen::as_pb::integration::integration::*;
+tonic::include_proto!("as/integration");

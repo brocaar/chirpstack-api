@@ -1,10 +1,13 @@
-FROM rust:1.39-alpine
+FROM rust:1.41
 
 ENV PROJECT_PATH=/chirpstack-api
-RUN apk add --no-cache make git bash protobuf protobuf-dev
+RUN apt-get update && \
+	apt-get install -y make git bash && \
+	apt-get clean
 
-RUN git clone https://github.com/protocolbuffers/protobuf.git /protobuf
 RUN git clone https://github.com/googleapis/googleapis.git /googleapis
+
+RUN rustup component add rustfmt
 
 RUN mkdir -p $PROJECT_PATH
 COPY . $PROJECT_PATH

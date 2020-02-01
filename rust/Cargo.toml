@@ -1,7 +1,7 @@
 [package]
 name = "chirpstack_api"
 description = "ChirpStack Protobuf / gRPC API definitions."
-version = "3.0.15"
+version = "3.1.0"
 authors = ["Orne Brocaar <info@brocaar.com>"]
 license = "MIT"
 homepage = "https://www.chirpstack.io"
@@ -10,9 +10,14 @@ edition = "2018"
 
 [features]
 default = ["grpc_support"]
-
-grpc_support = ["grpc"]
+grpc_support = ["tonic/transport", "tokio"]
 
 [dependencies]
-protobuf = ">= 2.8.1, < 2.8.2"
-grpc = { version = "0.6.1", optional = true }
+prost = "0.6"
+prost-types = "0.6.1"
+
+tonic = { version = "0.1", features = ["codegen"], default-features = false }
+tokio = { version = "0.2", features = ["macros"], optional = true }
+
+[build-dependencies]
+tonic-build = "0.1.0"

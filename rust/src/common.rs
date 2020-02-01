@@ -1,1 +1,1 @@
-pub use super::gen::common::common::*;
+tonic::include_proto!("common/common");

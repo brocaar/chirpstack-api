@@ -1,1 +1,1 @@
-pub use super::gen::gw::gw::*;
+tonic::include_proto!("gw/gw");
