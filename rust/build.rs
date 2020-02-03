@@ -4,6 +4,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let out_dir = std::env::var("OUT_DIR").unwrap();
     let out_dir = Path::new(&out_dir);
 
+    let proto_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
+    let proto_dir = Path::new(&proto_dir);
+    let proto_dir = proto_dir.join("proto");
+
     std::fs::create_dir_all(out_dir.join("common")).unwrap();
     std::fs::create_dir_all(out_dir.join("gw")).unwrap();
     std::fs::create_dir_all(out_dir.join("geo")).unwrap();
@@ -15,13 +19,22 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .out_dir(out_dir.join("common"))
         .compile(
             &["common/common.proto"],
-            &["proto/chirpstack-api", "proto/google"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
         )?;
 
     tonic_build::configure()
         .out_dir(out_dir.join("gw"))
         .extern_path(".common", "crate::common")
-        .compile(&["gw/gw.proto"], &["proto/chirpstack-api", "proto/google"])?;
+        .compile(
+            &["gw/gw.proto"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
+        )?;
 
     tonic_build::configure()
         .out_dir(out_dir.join("geo"))
@@ -29,7 +42,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .extern_path(".gw", "crate::gw")
         .compile(
             &["geo/geo.proto"],
-            &["proto/chirpstack-api", "proto/google"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
         )?;
 
     tonic_build::configure()
@@ -56,7 +72,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 "as/external/api/user.proto",
                 "as/integration/integration.proto",
             ],
-            &["proto/chirpstack-api", "proto/google"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
         )?;
 
     tonic_build::configure()
@@ -65,14 +84,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .extern_path(".gw", "crate::gw")
         .compile(
             &["ns/ns.proto", "ns/profiles.proto"],
-            &["proto/chirpstack-api", "proto/google"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
         )?;
 
     tonic_build::configure()
         .out_dir(out_dir.join("nc"))
         .extern_path(".common", "crate::common")
         .extern_path(".gw", "crate::gw")
-        .compile(&["nc/nc.proto"], &["proto/chirpstack-api", "proto/google"])?;
+        .compile(
+            &["nc/nc.proto"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
+        )?;
 
     Ok(())
 }
