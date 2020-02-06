@@ -1832,7 +1832,8 @@ proto.api.ListDeviceRequest.toObject = function(includeInstance, msg) {
     applicationId: msg.getApplicationId(),
     search: msg.getSearch(),
     multicastGroupId: msg.getMulticastGroupId(),
-    serviceProfileId: msg.getServiceProfileId()
+    serviceProfileId: msg.getServiceProfileId(),
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -1892,6 +1893,12 @@ proto.api.ListDeviceRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setServiceProfileId(value);
+      break;
+    case 7:
+      var value = msg.getTagsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
       break;
     default:
       reader.skipField();
@@ -1972,6 +1979,10 @@ proto.api.ListDeviceRequest.prototype.serializeBinaryToWriter = function (writer
       6,
       f
     );
+  }
+  f = this.getTagsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -2072,6 +2083,19 @@ proto.api.ListDeviceRequest.prototype.getServiceProfileId = function() {
 /** @param {string} value  */
 proto.api.ListDeviceRequest.prototype.setServiceProfileId = function(value) {
   jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * map<string, string> tags = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.ListDeviceRequest.prototype.getTagsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
 };
 
 

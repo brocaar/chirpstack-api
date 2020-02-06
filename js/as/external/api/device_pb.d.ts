@@ -259,6 +259,8 @@ export class ListDeviceRequest extends jspb.Message {
   getServiceProfileId(): string;
   setServiceProfileId(value: string): void;
 
+  getTagsMap(): jspb.Map<string, string>;
+  clearTagsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDeviceRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDeviceRequest): ListDeviceRequest.AsObject;
@@ -277,6 +279,7 @@ export namespace ListDeviceRequest {
     search: string,
     multicastGroupId: string,
     serviceProfileId: string,
+    tagsMap: Array<[string, string]>,
   }
 }
 
