@@ -1,1 +1,9 @@
-python/proto/*
+# hidden files
+.*
+
+# rust
+/rust/target
+
+
+# python
+/python/proto

@@ -9,7 +9,7 @@ requirements:
 	pip install grpcio-tools
 
 version:
-	sed -i 's/version.*/version = "$(VERSION)",/g' ./setup.py
+	sed -i 's/version.*/version = "$(VERSION)",/g' ./src/setup.py
 
 pre-build:
 	rm -rf proto
@@ -22,32 +22,32 @@ pre-build:
 	sed -i 's@^import "gw/@$(PACKAGE_NAME)gw/@g' `find proto/chirpstack-api -type f -name "*.proto*"`
 	sed -i 's@^import "as_pb/@$(PACKAGE_NAME)as_pb/@g' `find proto/chirpstack-api -type f -name "*.proto*"`
 	sed -i 's@^import "ns/@$(PACKAGE_NAME)ns/@g' `find proto/chirpstack-api -type f -name "*.proto*"`
-	mkdir -p src/gen
+	mkdir -p src
 
 common:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen proto/chirpstack-api/common/common.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/common/common.proto
 
 gw:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen proto/chirpstack-api/gw/gw.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/gw/gw.proto
 
 geo:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen --grpc_python_out=./src/gen proto/chirpstack-api/geo/geo.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=./src proto/chirpstack-api/geo/geo.proto
 
 nc:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen --grpc_python_out=./src/gen proto/chirpstack-api/nc/nc.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=./src proto/chirpstack-api/nc/nc.proto
 
 ns:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen proto/chirpstack-api/ns/profiles.proto
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen --grpc_python_out=src/gen proto/chirpstack-api/ns/ns.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/ns/profiles.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/ns/ns.proto
 
 as:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen --grpc_python_out=src/gen proto/chirpstack-api/as_pb/as_pb.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/as_pb/as_pb.proto
 
 as-integration:
-	python -m grpc_tools.protoc -I=proto --python_out=src/gen proto/chirpstack-api/as_pb/integration/integration.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/as_pb/integration/integration.proto
 
 as-external-api:
-	$(eval PROTOC_GEN := python -m grpc_tools.protoc -I=proto -I=$(GOOGLEAPIS_PATH) --python_out=src/gen --grpc_python_out=src/gen)
+	$(eval PROTOC_GEN := python -m grpc_tools.protoc -I=proto -I=$(GOOGLEAPIS_PATH) --python_out=src --grpc_python_out=src)
 
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/application.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/frameLog.proto
