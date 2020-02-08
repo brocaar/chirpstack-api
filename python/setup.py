@@ -8,7 +8,7 @@ REQUIREMENTS = [
 
 setup(
     name='chirpstack-api',
-    version = "3.0.2-23-g96e4024"
+    version = "3.0.2-23-g96e4024",
     author='Orne Brocaar',
     author_email='info@brocaar.com',
     license='MIT',

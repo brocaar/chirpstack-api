@@ -9,7 +9,7 @@ requirements:
 	pip install grpcio-tools
 
 version:
-	sed -i 's/version.*/version = "$(VERSION)"/g' ./setup.py
+	sed -i 's/version.*/version = "$(VERSION)",/g' ./setup.py
 
 pre-build:
 	rm -rf proto
