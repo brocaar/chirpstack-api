@@ -6,4 +6,7 @@
 
 
 # python
-/python/proto
+/python/proto/
+/python/src/*.egg-info/
+/python/src/build/
+/python/src/dist/
