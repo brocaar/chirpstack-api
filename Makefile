@@ -1,4 +1,4 @@
-.PHONY: go swagger js rust
+.PHONY: go swagger js rust python
 
 all:
 	docker-compose up
@@ -14,3 +14,6 @@ js:
 
 rust:
 	docker-compose run --rm chirpstack-api-rust
+
+python:
+	docker-compose run --rm chirpstack-api-python

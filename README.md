@@ -52,6 +52,9 @@ make go
 # only (re)generate JavaScript / Typescript
 make js
 
+# only (re)generate Python client library
+make python
+
 # only (re)generate Swagger definitions
 make swagger
 ```
