@@ -34,7 +34,7 @@ services:
       - ./:/chirpstack-api
   chirpstack-api-python:
     environment:
-      - VERSION=3.1.2
+      - VERSION=3.1.4
     build:
       context: .
       dockerfile: Dockerfile-python
