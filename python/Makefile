@@ -1,4 +1,3 @@
-VERSION := $(shell git describe --always |sed -e "s/^go\///" |sed -e "s/^v//")
 GOOGLEAPIS_PATH := "/googleapis"
 IMPORT_AS := import \"as_pb/
 PACKAGE_NAME := import \"chirpstack-api/
