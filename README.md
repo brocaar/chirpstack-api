@@ -33,6 +33,10 @@ go get github.com/brocaar/chirpstack-api/go/v3
 
 See: https://www.npmjs.com/package/@chirpstack/chirpstack-api.
 
+### Python
+
+See: https://pypi.org/project/chirpstack-api/.
+
 ### Rust
 
 See: https://crates.io/crates/chirpstack_api.
