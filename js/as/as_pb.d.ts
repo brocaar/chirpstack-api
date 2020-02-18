@@ -318,6 +318,8 @@ export class HandleGatewayStatsRequest extends jspb.Message {
   getTxPacketsEmitted(): number;
   setTxPacketsEmitted(value: number): void;
 
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HandleGatewayStatsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: HandleGatewayStatsRequest): HandleGatewayStatsRequest.AsObject;
@@ -338,6 +340,7 @@ export namespace HandleGatewayStatsRequest {
     rxPacketsReceivedOk: number,
     txPacketsReceived: number,
     txPacketsEmitted: number,
+    metadataMap: Array<[string, string]>,
   }
 }
 

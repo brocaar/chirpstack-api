@@ -2279,7 +2279,8 @@ proto.as.HandleGatewayStatsRequest.toObject = function(includeInstance, msg) {
     rxPacketsReceived: msg.getRxPacketsReceived(),
     rxPacketsReceivedOk: msg.getRxPacketsReceivedOk(),
     txPacketsReceived: msg.getTxPacketsReceived(),
-    txPacketsEmitted: msg.getTxPacketsEmitted()
+    txPacketsEmitted: msg.getTxPacketsEmitted(),
+    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -2349,6 +2350,12 @@ proto.as.HandleGatewayStatsRequest.deserializeBinaryFromReader = function(msg, r
     case 8:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setTxPacketsEmitted(value);
+      break;
+    case 9:
+      var value = msg.getMetadataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
       break;
     default:
       reader.skipField();
@@ -2445,6 +2452,10 @@ proto.as.HandleGatewayStatsRequest.prototype.serializeBinaryToWriter = function 
       8,
       f
     );
+  }
+  f = this.getMetadataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -2653,6 +2664,19 @@ proto.as.HandleGatewayStatsRequest.prototype.getTxPacketsEmitted = function() {
 /** @param {number} value  */
 proto.as.HandleGatewayStatsRequest.prototype.setTxPacketsEmitted = function(value) {
   jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * map<string, string> metadata = 9;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.as.HandleGatewayStatsRequest.prototype.getMetadataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      null));
 };
 
 

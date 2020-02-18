@@ -211,6 +211,9 @@ message HandleGatewayStatsRequest {
 
     // Downlink emitted.
     uint32 tx_packets_emitted = 8;
+
+    // Gateway metadata.
+    map<string, string> metadata = 9;
 }
 
 message HandleTxAckRequest {
