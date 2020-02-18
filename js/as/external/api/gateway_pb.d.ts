@@ -42,8 +42,8 @@ export class Gateway extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
-  getVariablesMap(): jspb.Map<string, string>;
-  clearVariablesMap(): void;
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Gateway.AsObject;
   static toObject(includeInstance: boolean, msg: Gateway): Gateway.AsObject;
@@ -66,7 +66,7 @@ export namespace Gateway {
     gatewayProfileId: string,
     boardsList: Array<GatewayBoard.AsObject>,
     tagsMap: Array<[string, string]>,
-    variablesMap: Array<[string, string]>,
+    metadataMap: Array<[string, string]>,
   }
 }
 

@@ -111,7 +111,7 @@ message Gateway {
     map<string, string> tags = 10;
 
     // Metadata (provided by the gateway).
-    map<string, string> variables = 11;
+    map<string, string> metadata = 11;
 }
 
 message GatewayBoard {
