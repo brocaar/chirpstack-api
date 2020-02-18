@@ -94,7 +94,9 @@ proto.api.Gateway.toObject = function(includeInstance, msg) {
     networkServerId: msg.getNetworkServerId(),
     gatewayProfileId: msg.getGatewayProfileId(),
     boardsList: jspb.Message.toObjectList(msg.getBoardsList(),
-    proto.api.GatewayBoard.toObject, includeInstance)
+    proto.api.GatewayBoard.toObject, includeInstance),
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
+    variablesMap: (f = msg.getVariablesMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -169,6 +171,18 @@ proto.api.Gateway.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.api.GatewayBoard.deserializeBinaryFromReader);
       msg.getBoardsList().push(value);
       msg.setBoardsList(msg.getBoardsList());
+      break;
+    case 10:
+      var value = msg.getTagsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
+      break;
+    case 11:
+      var value = msg.getVariablesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
       break;
     default:
       reader.skipField();
@@ -272,6 +286,14 @@ proto.api.Gateway.prototype.serializeBinaryToWriter = function (writer) {
       f,
       proto.api.GatewayBoard.serializeBinaryToWriter
     );
+  }
+  f = this.getTagsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getVariablesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -442,6 +464,32 @@ proto.api.Gateway.prototype.setBoardsList = function(value) {
 
 proto.api.Gateway.prototype.clearBoardsList = function() {
   this.setBoardsList([]);
+};
+
+
+/**
+ * map<string, string> tags = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.Gateway.prototype.getTagsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<string, string> variables = 11;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.Gateway.prototype.getVariablesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      null));
 };
 
 
