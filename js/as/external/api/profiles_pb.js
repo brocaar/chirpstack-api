@@ -883,7 +883,8 @@ proto.api.DeviceProfile.toObject = function(includeInstance, msg) {
     payloadEncoderScript: msg.getPayloadEncoderScript(),
     payloadDecoderScript: msg.getPayloadDecoderScript(),
     geolocBufferTtl: msg.getGeolocBufferTtl(),
-    geolocMinBufferSize: msg.getGeolocMinBufferSize()
+    geolocMinBufferSize: msg.getGeolocMinBufferSize(),
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -1031,6 +1032,12 @@ proto.api.DeviceProfile.deserializeBinaryFromReader = function(msg, reader) {
     case 28:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setGeolocMinBufferSize(value);
+      break;
+    case 29:
+      var value = msg.getTagsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
       break;
     default:
       reader.skipField();
@@ -1265,6 +1272,10 @@ proto.api.DeviceProfile.prototype.serializeBinaryToWriter = function (writer) {
       28,
       f
     );
+  }
+  f = this.getTagsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(29, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -1710,6 +1721,19 @@ proto.api.DeviceProfile.prototype.getGeolocMinBufferSize = function() {
 /** @param {number} value  */
 proto.api.DeviceProfile.prototype.setGeolocMinBufferSize = function(value) {
   jspb.Message.setField(this, 28, value);
+};
+
+
+/**
+ * map<string, string> tags = 29;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.api.DeviceProfile.prototype.getTagsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 29, opt_noLazyCreate,
+      null));
 };
 
 

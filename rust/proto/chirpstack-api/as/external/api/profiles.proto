@@ -179,4 +179,7 @@ message DeviceProfile {
     // When > 0, geolocation will only be performed when the buffer has
     // at least the given size.
     uint32 geoloc_min_buffer_size = 28;
+
+    // User defined tags.
+    map<string, string> tags = 29;
 }

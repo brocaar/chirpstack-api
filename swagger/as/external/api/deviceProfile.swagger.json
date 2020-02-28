@@ -332,6 +332,13 @@
           "type": "integer",
           "format": "int64",
           "description": "Geolocation minimum buffer size.\nWhen \u003e 0, geolocation will only be performed when the buffer has\nat least the given size."
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "User defined tags."
         }
       }
     },

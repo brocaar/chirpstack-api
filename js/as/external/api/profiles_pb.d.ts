@@ -200,6 +200,8 @@ export class DeviceProfile extends jspb.Message {
   getGeolocMinBufferSize(): number;
   setGeolocMinBufferSize(value: number): void;
 
+  getTagsMap(): jspb.Map<string, string>;
+  clearTagsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeviceProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DeviceProfile): DeviceProfile.AsObject;
@@ -240,6 +242,7 @@ export namespace DeviceProfile {
     payloadDecoderScript: string,
     geolocBufferTtl: number,
     geolocMinBufferSize: number,
+    tagsMap: Array<[string, string]>,
   }
 }
 

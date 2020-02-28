@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
-  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/profiles.proto\x12\x03\x61pi\"\xfd\x04\n\x0eServiceProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x15 \x01(\t\x12\'\n\x0forganization_id\x18\x16 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x17 \x01(\x03R\x0fnetworkServerID\x12\x0f\n\x07ul_rate\x18\x02 \x01(\r\x12\x16\n\x0eul_bucket_size\x18\x03 \x01(\r\x12\'\n\x0eul_rate_policy\x18\x04 \x01(\x0e\x32\x0f.api.RatePolicy\x12\x0f\n\x07\x64l_rate\x18\x05 \x01(\r\x12\x16\n\x0e\x64l_bucket_size\x18\x06 \x01(\r\x12\'\n\x0e\x64l_rate_policy\x18\x07 \x01(\x0e\x32\x0f.api.RatePolicy\x12&\n\x0f\x61\x64\x64_gw_metadata\x18\x08 \x01(\x08R\raddGWMetaData\x12\x1b\n\x13\x64\x65v_status_req_freq\x18\t \x01(\r\x12!\n\x19report_dev_status_battery\x18\n \x01(\x08\x12 \n\x18report_dev_status_margin\x18\x0b \x01(\x08\x12\x0e\n\x06\x64r_min\x18\x0c \x01(\r\x12\x0e\n\x06\x64r_max\x18\r \x01(\r\x12\x14\n\x0c\x63hannel_mask\x18\x0e \x01(\x0c\x12\x12\n\npr_allowed\x18\x0f \x01(\x08\x12\x12\n\nhr_allowed\x18\x10 \x01(\x08\x12\x12\n\nra_allowed\x18\x11 \x01(\x08\x12\x13\n\x0bnwk_geo_loc\x18\x12 \x01(\x08\x12\x1d\n\ntarget_per\x18\x13 \x01(\rR\ttargetPER\x12(\n\x10min_gw_diversity\x18\x14 \x01(\rR\x0eminGWDiversity\"\xa9\x06\n\rDeviceProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x15 \x01(\t\x12\'\n\x0forganization_id\x18\x16 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x17 \x01(\x03R\x0fnetworkServerID\x12\x18\n\x10supports_class_b\x18\x02 \x01(\x08\x12\x17\n\x0f\x63lass_b_timeout\x18\x03 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x04 \x01(\r\x12 \n\x0cping_slot_dr\x18\x05 \x01(\rR\npingSlotDR\x12\x16\n\x0eping_slot_freq\x18\x06 \x01(\r\x12\x18\n\x10supports_class_c\x18\x07 \x01(\x08\x12\x17\n\x0f\x63lass_c_timeout\x18\x08 \x01(\r\x12\x13\n\x0bmac_version\x18\t \x01(\t\x12\x1b\n\x13reg_params_revision\x18\n \x01(\t\x12\x12\n\nrx_delay_1\x18\x0b \x01(\r\x12#\n\x0erx_dr_offset_1\x18\x0c \x01(\rR\x0brxDROffset1\x12\"\n\rrx_datarate_2\x18\r \x01(\rR\x0brxDataRate2\x12\x11\n\trx_freq_2\x18\x0e \x01(\r\x12\x1c\n\x14\x66\x61\x63tory_preset_freqs\x18\x0f \x03(\r\x12\x19\n\x08max_eirp\x18\x10 \x01(\rR\x07maxEIRP\x12\x16\n\x0emax_duty_cycle\x18\x11 \x01(\r\x12\x15\n\rsupports_join\x18\x12 \x01(\x08\x12\x11\n\trf_region\x18\x13 \x01(\t\x12/\n\x14supports_32bit_f_cnt\x18\x14 \x01(\x08R\x11supports32BitFCnt\x12\x15\n\rpayload_codec\x18\x18 \x01(\t\x12\x1e\n\x16payload_encoder_script\x18\x19 \x01(\t\x12\x1e\n\x16payload_decoder_script\x18\x1a \x01(\t\x12*\n\x11geoloc_buffer_ttl\x18\x1b \x01(\rR\x0fgeolocBufferTTL\x12\x1e\n\x16geoloc_min_buffer_size\x18\x1c \x01(\r* \n\nRatePolicy\x12\x08\n\x04\x44ROP\x10\x00\x12\x08\n\x04MARK\x10\x01\x42\x39Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/profiles.proto\x12\x03\x61pi\"\xfd\x04\n\x0eServiceProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x15 \x01(\t\x12\'\n\x0forganization_id\x18\x16 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x17 \x01(\x03R\x0fnetworkServerID\x12\x0f\n\x07ul_rate\x18\x02 \x01(\r\x12\x16\n\x0eul_bucket_size\x18\x03 \x01(\r\x12\'\n\x0eul_rate_policy\x18\x04 \x01(\x0e\x32\x0f.api.RatePolicy\x12\x0f\n\x07\x64l_rate\x18\x05 \x01(\r\x12\x16\n\x0e\x64l_bucket_size\x18\x06 \x01(\r\x12\'\n\x0e\x64l_rate_policy\x18\x07 \x01(\x0e\x32\x0f.api.RatePolicy\x12&\n\x0f\x61\x64\x64_gw_metadata\x18\x08 \x01(\x08R\raddGWMetaData\x12\x1b\n\x13\x64\x65v_status_req_freq\x18\t \x01(\r\x12!\n\x19report_dev_status_battery\x18\n \x01(\x08\x12 \n\x18report_dev_status_margin\x18\x0b \x01(\x08\x12\x0e\n\x06\x64r_min\x18\x0c \x01(\r\x12\x0e\n\x06\x64r_max\x18\r \x01(\r\x12\x14\n\x0c\x63hannel_mask\x18\x0e \x01(\x0c\x12\x12\n\npr_allowed\x18\x0f \x01(\x08\x12\x12\n\nhr_allowed\x18\x10 \x01(\x08\x12\x12\n\nra_allowed\x18\x11 \x01(\x08\x12\x13\n\x0bnwk_geo_loc\x18\x12 \x01(\x08\x12\x1d\n\ntarget_per\x18\x13 \x01(\rR\ttargetPER\x12(\n\x10min_gw_diversity\x18\x14 \x01(\rR\x0eminGWDiversity\"\x82\x07\n\rDeviceProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x15 \x01(\t\x12\'\n\x0forganization_id\x18\x16 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x17 \x01(\x03R\x0fnetworkServerID\x12\x18\n\x10supports_class_b\x18\x02 \x01(\x08\x12\x17\n\x0f\x63lass_b_timeout\x18\x03 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x04 \x01(\r\x12 \n\x0cping_slot_dr\x18\x05 \x01(\rR\npingSlotDR\x12\x16\n\x0eping_slot_freq\x18\x06 \x01(\r\x12\x18\n\x10supports_class_c\x18\x07 \x01(\x08\x12\x17\n\x0f\x63lass_c_timeout\x18\x08 \x01(\r\x12\x13\n\x0bmac_version\x18\t \x01(\t\x12\x1b\n\x13reg_params_revision\x18\n \x01(\t\x12\x12\n\nrx_delay_1\x18\x0b \x01(\r\x12#\n\x0erx_dr_offset_1\x18\x0c \x01(\rR\x0brxDROffset1\x12\"\n\rrx_datarate_2\x18\r \x01(\rR\x0brxDataRate2\x12\x11\n\trx_freq_2\x18\x0e \x01(\r\x12\x1c\n\x14\x66\x61\x63tory_preset_freqs\x18\x0f \x03(\r\x12\x19\n\x08max_eirp\x18\x10 \x01(\rR\x07maxEIRP\x12\x16\n\x0emax_duty_cycle\x18\x11 \x01(\r\x12\x15\n\rsupports_join\x18\x12 \x01(\x08\x12\x11\n\trf_region\x18\x13 \x01(\t\x12/\n\x14supports_32bit_f_cnt\x18\x14 \x01(\x08R\x11supports32BitFCnt\x12\x15\n\rpayload_codec\x18\x18 \x01(\t\x12\x1e\n\x16payload_encoder_script\x18\x19 \x01(\t\x12\x1e\n\x16payload_decoder_script\x18\x1a \x01(\t\x12*\n\x11geoloc_buffer_ttl\x18\x1b \x01(\rR\x0fgeolocBufferTTL\x12\x1e\n\x16geoloc_min_buffer_size\x18\x1c \x01(\r\x12*\n\x04tags\x18\x1d \x03(\x0b\x32\x1c.api.DeviceProfile.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01* \n\nRatePolicy\x12\x08\n\x04\x44ROP\x10\x00\x12\x08\n\x04MARK\x10\x01\x42\x39Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
 )
 
 _RATEPOLICY = _descriptor.EnumDescriptor(
@@ -39,8 +39,8 @@ _RATEPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1509,
-  serialized_end=1541,
+  serialized_start=1598,
+  serialized_end=1630,
 )
 _sym_db.RegisterEnumDescriptor(_RATEPOLICY)
 
@@ -234,6 +234,43 @@ _SERVICEPROFILE = _descriptor.Descriptor(
   serialized_end=695,
 )
 
+
+_DEVICEPROFILE_TAGSENTRY = _descriptor.Descriptor(
+  name='TagsEntry',
+  full_name='api.DeviceProfile.TagsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.DeviceProfile.TagsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.DeviceProfile.TagsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1553,
+  serialized_end=1596,
+)
 
 _DEVICEPROFILE = _descriptor.Descriptor(
   name='DeviceProfile',
@@ -438,10 +475,17 @@ _DEVICEPROFILE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='api.DeviceProfile.tags', index=28,
+      number=29, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_DEVICEPROFILE_TAGSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -451,11 +495,13 @@ _DEVICEPROFILE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=698,
-  serialized_end=1507,
+  serialized_end=1596,
 )
 
 _SERVICEPROFILE.fields_by_name['ul_rate_policy'].enum_type = _RATEPOLICY
 _SERVICEPROFILE.fields_by_name['dl_rate_policy'].enum_type = _RATEPOLICY
+_DEVICEPROFILE_TAGSENTRY.containing_type = _DEVICEPROFILE
+_DEVICEPROFILE.fields_by_name['tags'].message_type = _DEVICEPROFILE_TAGSENTRY
 DESCRIPTOR.message_types_by_name['ServiceProfile'] = _SERVICEPROFILE
 DESCRIPTOR.message_types_by_name['DeviceProfile'] = _DEVICEPROFILE
 DESCRIPTOR.enum_types_by_name['RatePolicy'] = _RATEPOLICY
@@ -469,12 +515,21 @@ ServiceProfile = _reflection.GeneratedProtocolMessageType('ServiceProfile', (_me
 _sym_db.RegisterMessage(ServiceProfile)
 
 DeviceProfile = _reflection.GeneratedProtocolMessageType('DeviceProfile', (_message.Message,), {
+
+  'TagsEntry' : _reflection.GeneratedProtocolMessageType('TagsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DEVICEPROFILE_TAGSENTRY,
+    '__module__' : 'chirpstack_api.as_pb.external.api.profiles_pb2'
+    # @@protoc_insertion_point(class_scope:api.DeviceProfile.TagsEntry)
+    })
+  ,
   'DESCRIPTOR' : _DEVICEPROFILE,
   '__module__' : 'chirpstack_api.as_pb.external.api.profiles_pb2'
   # @@protoc_insertion_point(class_scope:api.DeviceProfile)
   })
 _sym_db.RegisterMessage(DeviceProfile)
+_sym_db.RegisterMessage(DeviceProfile.TagsEntry)
 
 
 DESCRIPTOR._options = None
+_DEVICEPROFILE_TAGSENTRY._options = None
 # @@protoc_insertion_point(module_scope)
