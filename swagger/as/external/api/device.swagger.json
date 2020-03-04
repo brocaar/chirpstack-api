@@ -1126,6 +1126,11 @@
         "crcStatus": {
           "$ref": "#/definitions/gwCRCStatus",
           "description": "CRC status."
+        },
+        "foff": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Frequency offset from the centre frequency"
         }
       }
     },

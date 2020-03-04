@@ -1798,7 +1798,8 @@ proto.gw.UplinkRXInfo.toObject = function(includeInstance, msg) {
     plainFineTimestamp: (f = msg.getPlainFineTimestamp()) && proto.gw.PlainFineTimestamp.toObject(includeInstance, f),
     context: msg.getContext_asB64(),
     uplinkId: msg.getUplinkId_asB64(),
-    crcStatus: msg.getCrcStatus()
+    crcStatus: msg.getCrcStatus(),
+    frequencyOffset: msg.getFrequencyOffset()
   };
 
   if (includeInstance) {
@@ -1903,6 +1904,10 @@ proto.gw.UplinkRXInfo.deserializeBinaryFromReader = function(msg, reader) {
     case 17:
       var value = /** @type {!proto.gw.CRCStatus} */ (reader.readEnum());
       msg.setCrcStatus(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFrequencyOffset(value);
       break;
     default:
       reader.skipField();
@@ -2056,6 +2061,13 @@ proto.gw.UplinkRXInfo.prototype.serializeBinaryToWriter = function (writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       17,
+      f
+    );
+  }
+  f = this.getFrequencyOffset();
+  if (f !== 0) {
+    writer.writeInt32(
+      18,
       f
     );
   }
@@ -2455,6 +2467,21 @@ proto.gw.UplinkRXInfo.prototype.getCrcStatus = function() {
 /** @param {!proto.gw.CRCStatus} value  */
 proto.gw.UplinkRXInfo.prototype.setCrcStatus = function(value) {
   jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * optional int32 frequency_offset = 18;
+ * @return {number}
+ */
+proto.gw.UplinkRXInfo.prototype.getFrequencyOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 18, 0));
+};
+
+
+/** @param {number} value  */
+proto.gw.UplinkRXInfo.prototype.setFrequencyOffset = function(value) {
+  jspb.Message.setField(this, 18, value);
 };
 
 

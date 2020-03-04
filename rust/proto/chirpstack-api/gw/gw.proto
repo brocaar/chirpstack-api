@@ -186,6 +186,10 @@ message UplinkRXInfo {
 
     // CRC status.
     CRCStatus crc_status = 17 [json_name = "crcStatus"];
+
+    // Frequency offset from the centre frequency
+    int32 frequency_offset = 18 [json_name = "foff"];
+
 }
 
 message DownlinkTXInfo {
