@@ -35,6 +35,21 @@ class InternalServiceStub(object):
         request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchRequest.SerializeToString,
         response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchResponse.FromString,
         )
+    self.CreateAPIKey = channel.unary_unary(
+        '/api.InternalService/CreateAPIKey',
+        request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.CreateAPIKeyRequest.SerializeToString,
+        response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.CreateAPIKeyResponse.FromString,
+        )
+    self.DeleteAPIKey = channel.unary_unary(
+        '/api.InternalService/DeleteAPIKey',
+        request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.DeleteAPIKeyRequest.SerializeToString,
+        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        )
+    self.ListAPIKeys = channel.unary_unary(
+        '/api.InternalService/ListAPIKeys',
+        request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysRequest.SerializeToString,
+        response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysResponse.FromString,
+        )
 
 
 class InternalServiceServicer(object):
@@ -69,6 +84,27 @@ class InternalServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateAPIKey(self, request, context):
+    """CreateAPIKey creates the given API key.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteAPIKey(self, request, context):
+    """DeleteAPIKey deletes the API key.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListAPIKeys(self, request, context):
+    """ListAPIKeys lists the available API keys.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_InternalServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -91,6 +127,21 @@ def add_InternalServiceServicer_to_server(servicer, server):
           servicer.GlobalSearch,
           request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchRequest.FromString,
           response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchResponse.SerializeToString,
+      ),
+      'CreateAPIKey': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateAPIKey,
+          request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.CreateAPIKeyRequest.FromString,
+          response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.CreateAPIKeyResponse.SerializeToString,
+      ),
+      'DeleteAPIKey': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteAPIKey,
+          request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.DeleteAPIKeyRequest.FromString,
+          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+      ),
+      'ListAPIKeys': grpc.unary_unary_rpc_method_handler(
+          servicer.ListAPIKeys,
+          request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysRequest.FromString,
+          response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

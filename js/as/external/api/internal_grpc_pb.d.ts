@@ -12,6 +12,9 @@ interface IInternalServiceService extends grpc.ServiceDefinition<grpc.UntypedSer
   profile: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, as_external_api_internal_pb.ProfileResponse>;
   branding: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, as_external_api_internal_pb.BrandingResponse>;
   globalSearch: grpc.MethodDefinition<as_external_api_internal_pb.GlobalSearchRequest, as_external_api_internal_pb.GlobalSearchResponse>;
+  createAPIKey: grpc.MethodDefinition<as_external_api_internal_pb.CreateAPIKeyRequest, as_external_api_internal_pb.CreateAPIKeyResponse>;
+  deleteAPIKey: grpc.MethodDefinition<as_external_api_internal_pb.DeleteAPIKeyRequest, google_protobuf_empty_pb.Empty>;
+  listAPIKeys: grpc.MethodDefinition<as_external_api_internal_pb.ListAPIKeysRequest, as_external_api_internal_pb.ListAPIKeysResponse>;
 }
 
 export const InternalServiceService: IInternalServiceService;
@@ -30,4 +33,13 @@ export class InternalServiceClient extends grpc.Client {
   globalSearch(argument: as_external_api_internal_pb.GlobalSearchRequest, callback: grpc.requestCallback<as_external_api_internal_pb.GlobalSearchResponse>): grpc.ClientUnaryCall;
   globalSearch(argument: as_external_api_internal_pb.GlobalSearchRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.GlobalSearchResponse>): grpc.ClientUnaryCall;
   globalSearch(argument: as_external_api_internal_pb.GlobalSearchRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.GlobalSearchResponse>): grpc.ClientUnaryCall;
+  createAPIKey(argument: as_external_api_internal_pb.CreateAPIKeyRequest, callback: grpc.requestCallback<as_external_api_internal_pb.CreateAPIKeyResponse>): grpc.ClientUnaryCall;
+  createAPIKey(argument: as_external_api_internal_pb.CreateAPIKeyRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.CreateAPIKeyResponse>): grpc.ClientUnaryCall;
+  createAPIKey(argument: as_external_api_internal_pb.CreateAPIKeyRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.CreateAPIKeyResponse>): grpc.ClientUnaryCall;
+  deleteAPIKey(argument: as_external_api_internal_pb.DeleteAPIKeyRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteAPIKey(argument: as_external_api_internal_pb.DeleteAPIKeyRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteAPIKey(argument: as_external_api_internal_pb.DeleteAPIKeyRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  listAPIKeys(argument: as_external_api_internal_pb.ListAPIKeysRequest, callback: grpc.requestCallback<as_external_api_internal_pb.ListAPIKeysResponse>): grpc.ClientUnaryCall;
+  listAPIKeys(argument: as_external_api_internal_pb.ListAPIKeysRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.ListAPIKeysResponse>): grpc.ClientUnaryCall;
+  listAPIKeys(argument: as_external_api_internal_pb.ListAPIKeysRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.ListAPIKeysResponse>): grpc.ClientUnaryCall;
 }

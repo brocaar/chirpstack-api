@@ -40,6 +40,92 @@ service InternalService {
 			get: "/api/internal/search"
 		};
 	}
+
+    // CreateAPIKey creates the given API key.
+    rpc CreateAPIKey(CreateAPIKeyRequest) returns (CreateAPIKeyResponse) {
+        option(google.api.http) = {
+            post: "/api/internal/api-keys"
+            body: "*"
+        };
+    }
+
+    // DeleteAPIKey deletes the API key.
+    rpc DeleteAPIKey(DeleteAPIKeyRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/internal/api-keys/{id}"
+        };
+    }
+
+    // ListAPIKeys lists the available API keys.
+    rpc ListAPIKeys(ListAPIKeysRequest) returns (ListAPIKeysResponse) {
+        option(google.api.http) = {
+            get: "/api/internal/api-keys"
+        };
+    }
+}
+
+message APIKey {
+    // API key ID.
+    // This value will be automatically generated on create.
+    string id = 1;
+
+    // Name.
+    string name = 2;
+
+    // Is global admin key.
+    bool is_admin = 3;
+
+    // Organization ID.
+    // In case this API key is to manage resources within a single organization
+    // set this to the ID of this organization.
+    int64 organization_id = 4 [json_name = "organizationID"];
+
+    // Application ID.
+    // In case the API key is to manage resources within an application, set
+    // this to the ID of this application.message
+    int64 application_id = 5 [json_name = "applicationID"];
+}
+
+message CreateAPIKeyRequest {
+    // The API key to create.
+    APIKey api_key = 1;
+}
+
+message CreateAPIKeyResponse {
+    // API key ID.
+    string id = 1;
+
+    // JWT token for this API Key.
+    string jwt_token = 2;
+}
+
+message DeleteAPIKeyRequest {
+    // API key ID.
+    string id = 1;
+}
+
+message ListAPIKeysRequest {
+    // Max number of items to return.
+    int64 limit = 1;
+
+    // Offset in the result-set (for pagination).
+    int64 offset = 2;
+
+    // Return only admin keys.
+    bool is_admin = 3;
+
+    // Filter on organization ID.
+    int64 organization_id = 4 [json_name = "organizationID"];
+
+    // Filter on application ID.
+    int64 application_id = 5 [json_name = "applicationID"];
+}
+
+message ListAPIKeysResponse {
+    // Total number of API keys.
+    int64 total_count = 1;
+
+    repeated APIKey result = 2;
 }
 
 message ProfileSettings {

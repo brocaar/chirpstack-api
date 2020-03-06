@@ -19,6 +19,39 @@ function deserialize_api_BrandingResponse(buffer_arg) {
   return as_external_api_internal_pb.BrandingResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_CreateAPIKeyRequest(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.CreateAPIKeyRequest)) {
+    throw new Error('Expected argument of type api.CreateAPIKeyRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateAPIKeyRequest(buffer_arg) {
+  return as_external_api_internal_pb.CreateAPIKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_CreateAPIKeyResponse(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.CreateAPIKeyResponse)) {
+    throw new Error('Expected argument of type api.CreateAPIKeyResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateAPIKeyResponse(buffer_arg) {
+  return as_external_api_internal_pb.CreateAPIKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeleteAPIKeyRequest(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.DeleteAPIKeyRequest)) {
+    throw new Error('Expected argument of type api.DeleteAPIKeyRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteAPIKeyRequest(buffer_arg) {
+  return as_external_api_internal_pb.DeleteAPIKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GlobalSearchRequest(arg) {
   if (!(arg instanceof as_external_api_internal_pb.GlobalSearchRequest)) {
     throw new Error('Expected argument of type api.GlobalSearchRequest');
@@ -39,6 +72,28 @@ function serialize_api_GlobalSearchResponse(arg) {
 
 function deserialize_api_GlobalSearchResponse(buffer_arg) {
   return as_external_api_internal_pb.GlobalSearchResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_ListAPIKeysRequest(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.ListAPIKeysRequest)) {
+    throw new Error('Expected argument of type api.ListAPIKeysRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_ListAPIKeysRequest(buffer_arg) {
+  return as_external_api_internal_pb.ListAPIKeysRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_ListAPIKeysResponse(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.ListAPIKeysResponse)) {
+    throw new Error('Expected argument of type api.ListAPIKeysResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_ListAPIKeysResponse(buffer_arg) {
+  return as_external_api_internal_pb.ListAPIKeysResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_LoginRequest(arg) {
@@ -135,6 +190,42 @@ var InternalServiceService = exports.InternalServiceService = {
     requestDeserialize: deserialize_api_GlobalSearchRequest,
     responseSerialize: serialize_api_GlobalSearchResponse,
     responseDeserialize: deserialize_api_GlobalSearchResponse,
+  },
+  // CreateAPIKey creates the given API key.
+  createAPIKey: {
+    path: '/api.InternalService/CreateAPIKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_internal_pb.CreateAPIKeyRequest,
+    responseType: as_external_api_internal_pb.CreateAPIKeyResponse,
+    requestSerialize: serialize_api_CreateAPIKeyRequest,
+    requestDeserialize: deserialize_api_CreateAPIKeyRequest,
+    responseSerialize: serialize_api_CreateAPIKeyResponse,
+    responseDeserialize: deserialize_api_CreateAPIKeyResponse,
+  },
+  // DeleteAPIKey deletes the API key.
+  deleteAPIKey: {
+    path: '/api.InternalService/DeleteAPIKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_internal_pb.DeleteAPIKeyRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteAPIKeyRequest,
+    requestDeserialize: deserialize_api_DeleteAPIKeyRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // ListAPIKeys lists the available API keys.
+  listAPIKeys: {
+    path: '/api.InternalService/ListAPIKeys',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_internal_pb.ListAPIKeysRequest,
+    responseType: as_external_api_internal_pb.ListAPIKeysResponse,
+    requestSerialize: serialize_api_ListAPIKeysRequest,
+    requestDeserialize: deserialize_api_ListAPIKeysRequest,
+    responseSerialize: serialize_api_ListAPIKeysResponse,
+    responseDeserialize: deserialize_api_ListAPIKeysResponse,
   },
 };
 

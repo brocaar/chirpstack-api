@@ -7,6 +7,170 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as as_external_api_user_pb from "../../../as/external/api/user_pb";
 
+export class APIKey extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getIsAdmin(): boolean;
+  setIsAdmin(value: boolean): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKey.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKey): APIKey.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: APIKey, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKey;
+  static deserializeBinaryFromReader(message: APIKey, reader: jspb.BinaryReader): APIKey;
+}
+
+export namespace APIKey {
+  export type AsObject = {
+    id: string,
+    name: string,
+    isAdmin: boolean,
+    organizationId: number,
+    applicationId: number,
+  }
+}
+
+export class CreateAPIKeyRequest extends jspb.Message {
+  hasApiKey(): boolean;
+  clearApiKey(): void;
+  getApiKey(): APIKey | undefined;
+  setApiKey(value?: APIKey): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAPIKeyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAPIKeyRequest): CreateAPIKeyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAPIKeyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAPIKeyRequest;
+  static deserializeBinaryFromReader(message: CreateAPIKeyRequest, reader: jspb.BinaryReader): CreateAPIKeyRequest;
+}
+
+export namespace CreateAPIKeyRequest {
+  export type AsObject = {
+    apiKey?: APIKey.AsObject,
+  }
+}
+
+export class CreateAPIKeyResponse extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getJwtToken(): string;
+  setJwtToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAPIKeyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAPIKeyResponse): CreateAPIKeyResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAPIKeyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAPIKeyResponse;
+  static deserializeBinaryFromReader(message: CreateAPIKeyResponse, reader: jspb.BinaryReader): CreateAPIKeyResponse;
+}
+
+export namespace CreateAPIKeyResponse {
+  export type AsObject = {
+    id: string,
+    jwtToken: string,
+  }
+}
+
+export class DeleteAPIKeyRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAPIKeyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAPIKeyRequest): DeleteAPIKeyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAPIKeyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAPIKeyRequest;
+  static deserializeBinaryFromReader(message: DeleteAPIKeyRequest, reader: jspb.BinaryReader): DeleteAPIKeyRequest;
+}
+
+export namespace DeleteAPIKeyRequest {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class ListAPIKeysRequest extends jspb.Message {
+  getLimit(): number;
+  setLimit(value: number): void;
+
+  getOffset(): number;
+  setOffset(value: number): void;
+
+  getIsAdmin(): boolean;
+  setIsAdmin(value: boolean): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAPIKeysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAPIKeysRequest): ListAPIKeysRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAPIKeysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAPIKeysRequest;
+  static deserializeBinaryFromReader(message: ListAPIKeysRequest, reader: jspb.BinaryReader): ListAPIKeysRequest;
+}
+
+export namespace ListAPIKeysRequest {
+  export type AsObject = {
+    limit: number,
+    offset: number,
+    isAdmin: boolean,
+    organizationId: number,
+    applicationId: number,
+  }
+}
+
+export class ListAPIKeysResponse extends jspb.Message {
+  getTotalCount(): number;
+  setTotalCount(value: number): void;
+
+  clearResultList(): void;
+  getResultList(): Array<APIKey>;
+  setResultList(value: Array<APIKey>): void;
+  addResult(value?: APIKey, index?: number): APIKey;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAPIKeysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAPIKeysResponse): ListAPIKeysResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAPIKeysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAPIKeysResponse;
+  static deserializeBinaryFromReader(message: ListAPIKeysResponse, reader: jspb.BinaryReader): ListAPIKeysResponse;
+}
+
+export namespace ListAPIKeysResponse {
+  export type AsObject = {
+    totalCount: number,
+    resultList: Array<APIKey.AsObject>,
+  }
+}
+
 export class ProfileSettings extends jspb.Message {
   getDisableAssignExistingUsers(): boolean;
   setDisableAssignExistingUsers(value: boolean): void;

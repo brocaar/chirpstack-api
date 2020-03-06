@@ -15,6 +15,116 @@
     "application/json"
   ],
   "paths": {
+    "/api/internal/api-keys": {
+      "get": {
+        "summary": "ListAPIKeys lists the available API keys.",
+        "operationId": "ListAPIKeys",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiListAPIKeysResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Max number of items to return.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in the result-set (for pagination).",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "isAdmin",
+            "description": "Return only admin keys.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
+          },
+          {
+            "name": "organizationID",
+            "description": "Filter on organization ID.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "applicationID",
+            "description": "Filter on application ID.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "InternalService"
+        ]
+      },
+      "post": {
+        "summary": "CreateAPIKey creates the given API key.",
+        "operationId": "CreateAPIKey",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiCreateAPIKeyResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreateAPIKeyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "InternalService"
+        ]
+      }
+    },
+    "/api/internal/api-keys/{id}": {
+      "delete": {
+        "summary": "DeleteAPIKey deletes the API key.",
+        "operationId": "DeleteAPIKey",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "API key ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "InternalService"
+        ]
+      }
+    },
     "/api/internal/branding": {
       "get": {
         "summary": "Get the branding for the UI",
@@ -120,6 +230,34 @@
     }
   },
   "definitions": {
+    "apiAPIKey": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "API key ID.\nThis value will be automatically generated on create."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Is global admin key."
+        },
+        "organizationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Organization ID.\nIn case this API key is to manage resources within a single organization\nset this to the ID of this organization."
+        },
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "title": "Application ID.\nIn case the API key is to manage resources within an application, set\nthis to the ID of this application.message"
+        }
+      }
+    },
     "apiBrandingResponse": {
       "type": "object",
       "properties": {
@@ -134,6 +272,28 @@
         "footer": {
           "type": "string",
           "description": "Footer html."
+        }
+      }
+    },
+    "apiCreateAPIKeyRequest": {
+      "type": "object",
+      "properties": {
+        "apiKey": {
+          "$ref": "#/definitions/apiAPIKey",
+          "description": "The API key to create."
+        }
+      }
+    },
+    "apiCreateAPIKeyResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "API key ID."
+        },
+        "jwtToken": {
+          "type": "string",
+          "description": "JWT token for this API Key."
         }
       }
     },
@@ -193,6 +353,22 @@
         "gatewayName": {
           "type": "string",
           "description": "Gateway name."
+        }
+      }
+    },
+    "apiListAPIKeysResponse": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "string",
+          "format": "int64",
+          "description": "Total number of API keys."
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiAPIKey"
+          }
         }
       }
     },
