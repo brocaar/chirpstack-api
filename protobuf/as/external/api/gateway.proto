@@ -112,6 +112,9 @@ message Gateway {
 
     // Metadata (provided by the gateway).
     map<string, string> metadata = 11;
+
+	//Mqtt_key for gateway authentification
+    string mqtt_key = 12;
 }
 
 message GatewayBoard {

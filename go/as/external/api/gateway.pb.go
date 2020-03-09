@@ -55,6 +55,8 @@ type Gateway struct {
 	Tags map[string]string `protobuf:"bytes,10,rep,name=tags,proto3" json:"tags,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Metadata (provided by the gateway).
 	Metadata             map[string]string `protobuf:"bytes,11,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	//Mqtt Key for gateway authentification
+	MqttKey              string            `protobuf:"bytes,10,opt,name=mqtt_key,json=mqttKey,proto3" json:"mqtt_key,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -160,6 +162,13 @@ func (m *Gateway) GetMetadata() map[string]string {
 		return m.Metadata
 	}
 	return nil
+}
+
+func (m *Gateway) GetMqttKey() string {
+	if m != nil {
+		return m.MqttKey
+	}
+	return ""
 }
 
 type GatewayBoard struct {
