@@ -4042,7 +4042,9 @@ func init() {
 	proto.RegisterType((*GetMulticastQueueItemsForMulticastGroupResponse)(nil), "ns.GetMulticastQueueItemsForMulticastGroupResponse")
 }
 
-func init() { proto.RegisterFile("ns/ns.proto", fileDescriptor_412103b9b2fd26a9) }
+func init() {
+	proto.RegisterFile("ns/ns.proto", fileDescriptor_412103b9b2fd26a9)
+}
 
 var fileDescriptor_412103b9b2fd26a9 = []byte{
 	// 3077 bytes of a gzipped FileDescriptorProto
@@ -4243,11 +4245,11 @@ var fileDescriptor_412103b9b2fd26a9 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // NetworkServerServiceClient is the client API for NetworkServerService service.
 //
@@ -4353,10 +4355,10 @@ type NetworkServerServiceClient interface {
 }
 
 type networkServerServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewNetworkServerServiceClient(cc *grpc.ClientConn) NetworkServerServiceClient {
+func NewNetworkServerServiceClient(cc grpc.ClientConnInterface) NetworkServerServiceClient {
 	return &networkServerServiceClient{cc}
 }
 

@@ -792,7 +792,9 @@ func init() {
 	proto.RegisterType((*HandleTxAckRequest)(nil), "as.HandleTxAckRequest")
 }
 
-func init() { proto.RegisterFile("as/as.proto", fileDescriptor_1d6d0f577a60e27d) }
+func init() {
+	proto.RegisterFile("as/as.proto", fileDescriptor_1d6d0f577a60e27d)
+}
 
 var fileDescriptor_1d6d0f577a60e27d = []byte{
 	// 1224 bytes of a gzipped FileDescriptorProto
@@ -877,11 +879,11 @@ var fileDescriptor_1d6d0f577a60e27d = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // ApplicationServerServiceClient is the client API for ApplicationServerService service.
 //
@@ -906,10 +908,10 @@ type ApplicationServerServiceClient interface {
 }
 
 type applicationServerServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewApplicationServerServiceClient(cc *grpc.ClientConn) ApplicationServerServiceClient {
+func NewApplicationServerServiceClient(cc grpc.ClientConnInterface) ApplicationServerServiceClient {
 	return &applicationServerServiceClient{cc}
 }
 

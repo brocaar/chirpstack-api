@@ -577,7 +577,9 @@ func init() {
 	proto.RegisterType((*RoutingProfile)(nil), "ns.RoutingProfile")
 }
 
-func init() { proto.RegisterFile("ns/profiles.proto", fileDescriptor_ee79be696a10f18b) }
+func init() {
+	proto.RegisterFile("ns/profiles.proto", fileDescriptor_ee79be696a10f18b)
+}
 
 var fileDescriptor_ee79be696a10f18b = []byte{
 	// 1000 bytes of a gzipped FileDescriptorProto

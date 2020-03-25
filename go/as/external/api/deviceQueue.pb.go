@@ -343,7 +343,9 @@ func init() {
 	proto.RegisterType((*ListDeviceQueueItemsResponse)(nil), "api.ListDeviceQueueItemsResponse")
 }
 
-func init() { proto.RegisterFile("as/external/api/deviceQueue.proto", fileDescriptor_6bc7c26115164240) }
+func init() {
+	proto.RegisterFile("as/external/api/deviceQueue.proto", fileDescriptor_6bc7c26115164240)
+}
 
 var fileDescriptor_6bc7c26115164240 = []byte{
 	// 549 bytes of a gzipped FileDescriptorProto
@@ -386,11 +388,11 @@ var fileDescriptor_6bc7c26115164240 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // DeviceQueueServiceClient is the client API for DeviceQueueService service.
 //
@@ -405,10 +407,10 @@ type DeviceQueueServiceClient interface {
 }
 
 type deviceQueueServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewDeviceQueueServiceClient(cc *grpc.ClientConn) DeviceQueueServiceClient {
+func NewDeviceQueueServiceClient(cc grpc.ClientConnInterface) DeviceQueueServiceClient {
 	return &deviceQueueServiceClient{cc}
 }
 

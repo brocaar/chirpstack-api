@@ -311,7 +311,9 @@ func init() {
 	proto.RegisterType((*ResolveMultiFrameTDOAResponse)(nil), "geo.ResolveMultiFrameTDOAResponse")
 }
 
-func init() { proto.RegisterFile("geo/geo.proto", fileDescriptor_d1967117b7b016d8) }
+func init() {
+	proto.RegisterFile("geo/geo.proto", fileDescriptor_d1967117b7b016d8)
+}
 
 var fileDescriptor_d1967117b7b016d8 = []byte{
 	// 439 bytes of a gzipped FileDescriptorProto
@@ -347,11 +349,11 @@ var fileDescriptor_d1967117b7b016d8 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // GeolocationServerServiceClient is the client API for GeolocationServerService service.
 //
@@ -365,10 +367,10 @@ type GeolocationServerServiceClient interface {
 }
 
 type geolocationServerServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewGeolocationServerServiceClient(cc *grpc.ClientConn) GeolocationServerServiceClient {
+func NewGeolocationServerServiceClient(cc grpc.ClientConnInterface) GeolocationServerServiceClient {
 	return &geolocationServerServiceClient{cc}
 }
 

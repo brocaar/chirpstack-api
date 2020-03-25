@@ -1121,11 +1121,11 @@ var fileDescriptor_ba1ee9b21d0ef74e = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // MulticastGroupServiceClient is the client API for MulticastGroupService service.
 //
@@ -1154,10 +1154,10 @@ type MulticastGroupServiceClient interface {
 }
 
 type multicastGroupServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewMulticastGroupServiceClient(cc *grpc.ClientConn) MulticastGroupServiceClient {
+func NewMulticastGroupServiceClient(cc grpc.ClientConnInterface) MulticastGroupServiceClient {
 	return &multicastGroupServiceClient{cc}
 }
 

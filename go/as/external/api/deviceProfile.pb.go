@@ -549,11 +549,11 @@ var fileDescriptor_d0dcf865cca06987 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // DeviceProfileServiceClient is the client API for DeviceProfileService service.
 //
@@ -572,10 +572,10 @@ type DeviceProfileServiceClient interface {
 }
 
 type deviceProfileServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewDeviceProfileServiceClient(cc *grpc.ClientConn) DeviceProfileServiceClient {
+func NewDeviceProfileServiceClient(cc grpc.ClientConnInterface) DeviceProfileServiceClient {
 	return &deviceProfileServiceClient{cc}
 }
 

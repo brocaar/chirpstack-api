@@ -864,7 +864,9 @@ func init() {
 	proto.RegisterMapType((map[string]string)(nil), "integration.LocationEvent.TagsEntry")
 }
 
-func init() { proto.RegisterFile("as/integration/integration.proto", fileDescriptor_5ba82681be587591) }
+func init() {
+	proto.RegisterFile("as/integration/integration.proto", fileDescriptor_5ba82681be587591)
+}
 
 var fileDescriptor_5ba82681be587591 = []byte{
 	// 925 bytes of a gzipped FileDescriptorProto

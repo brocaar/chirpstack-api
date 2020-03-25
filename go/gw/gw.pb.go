@@ -1923,7 +1923,9 @@ func init() {
 	proto.RegisterType((*RawPacketForwarderCommand)(nil), "gw.RawPacketForwarderCommand")
 }
 
-func init() { proto.RegisterFile("gw/gw.proto", fileDescriptor_b93a753e2b32e8e7) }
+func init() {
+	proto.RegisterFile("gw/gw.proto", fileDescriptor_b93a753e2b32e8e7)
+}
 
 var fileDescriptor_b93a753e2b32e8e7 = []byte{
 	// 1819 bytes of a gzipped FileDescriptorProto

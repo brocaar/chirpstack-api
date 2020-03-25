@@ -733,7 +733,9 @@ func init() {
 	proto.RegisterType((*UpdateUserPasswordRequest)(nil), "api.UpdateUserPasswordRequest")
 }
 
-func init() { proto.RegisterFile("as/external/api/user.proto", fileDescriptor_213a97a4df8a40e1) }
+func init() {
+	proto.RegisterFile("as/external/api/user.proto", fileDescriptor_213a97a4df8a40e1)
+}
 
 var fileDescriptor_213a97a4df8a40e1 = []byte{
 	// 850 bytes of a gzipped FileDescriptorProto
@@ -795,11 +797,11 @@ var fileDescriptor_213a97a4df8a40e1 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // UserServiceClient is the client API for UserService service.
 //
@@ -820,10 +822,10 @@ type UserServiceClient interface {
 }
 
 type userServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient {
+func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 

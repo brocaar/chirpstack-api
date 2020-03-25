@@ -1974,7 +1974,9 @@ func init() {
 	proto.RegisterType((*DeleteMyDevicesIntegrationRequest)(nil), "api.DeleteMyDevicesIntegrationRequest")
 }
 
-func init() { proto.RegisterFile("as/external/api/application.proto", fileDescriptor_0774996cc1ba5bfc) }
+func init() {
+	proto.RegisterFile("as/external/api/application.proto", fileDescriptor_0774996cc1ba5bfc)
+}
 
 var fileDescriptor_0774996cc1ba5bfc = []byte{
 	// 1823 bytes of a gzipped FileDescriptorProto
@@ -2096,11 +2098,11 @@ var fileDescriptor_0774996cc1ba5bfc = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // ApplicationServiceClient is the client API for ApplicationService service.
 //
@@ -2153,10 +2155,10 @@ type ApplicationServiceClient interface {
 }
 
 type applicationServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewApplicationServiceClient(cc *grpc.ClientConn) ApplicationServiceClient {
+func NewApplicationServiceClient(cc grpc.ClientConnInterface) ApplicationServiceClient {
 	return &applicationServiceClient{cc}
 }
 

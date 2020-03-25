@@ -322,7 +322,9 @@ func init() {
 	proto.RegisterType((*HandleUplinkMACCommandRequest)(nil), "nc.HandleUplinkMACCommandRequest")
 }
 
-func init() { proto.RegisterFile("nc/nc.proto", fileDescriptor_7dd10f8ea2e14d19) }
+func init() {
+	proto.RegisterFile("nc/nc.proto", fileDescriptor_7dd10f8ea2e14d19)
+}
 
 var fileDescriptor_7dd10f8ea2e14d19 = []byte{
 	// 612 bytes of a gzipped FileDescriptorProto
@@ -369,11 +371,11 @@ var fileDescriptor_7dd10f8ea2e14d19 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // NetworkControllerServiceClient is the client API for NetworkControllerService service.
 //
@@ -391,10 +393,10 @@ type NetworkControllerServiceClient interface {
 }
 
 type networkControllerServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewNetworkControllerServiceClient(cc *grpc.ClientConn) NetworkControllerServiceClient {
+func NewNetworkControllerServiceClient(cc grpc.ClientConnInterface) NetworkControllerServiceClient {
 	return &networkControllerServiceClient{cc}
 }
 

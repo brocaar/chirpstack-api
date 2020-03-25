@@ -162,7 +162,9 @@ func init() {
 	proto.RegisterType((*DownlinkFrameLog)(nil), "api.DownlinkFrameLog")
 }
 
-func init() { proto.RegisterFile("as/external/api/frameLog.proto", fileDescriptor_d215818867a60801) }
+func init() {
+	proto.RegisterFile("as/external/api/frameLog.proto", fileDescriptor_d215818867a60801)
+}
 
 var fileDescriptor_d215818867a60801 = []byte{
 	// 311 bytes of a gzipped FileDescriptorProto

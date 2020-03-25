@@ -1547,7 +1547,9 @@ func init() {
 	proto.RegisterType((*StreamDeviceEventLogsResponse)(nil), "api.StreamDeviceEventLogsResponse")
 }
 
-func init() { proto.RegisterFile("as/external/api/device.proto", fileDescriptor_57ec3c2ed36f7cf9) }
+func init() {
+	proto.RegisterFile("as/external/api/device.proto", fileDescriptor_57ec3c2ed36f7cf9)
+}
 
 var fileDescriptor_57ec3c2ed36f7cf9 = []byte{
 	// 1751 bytes of a gzipped FileDescriptorProto
@@ -1665,11 +1667,11 @@ var fileDescriptor_57ec3c2ed36f7cf9 = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // DeviceServiceClient is the client API for DeviceService service.
 //
@@ -1712,10 +1714,10 @@ type DeviceServiceClient interface {
 }
 
 type deviceServiceClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewDeviceServiceClient(cc *grpc.ClientConn) DeviceServiceClient {
+func NewDeviceServiceClient(cc grpc.ClientConnInterface) DeviceServiceClient {
 	return &deviceServiceClient{cc}
 }
 
