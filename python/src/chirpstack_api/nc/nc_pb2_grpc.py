@@ -30,6 +30,11 @@ class NetworkControllerServiceStub(object):
         request_serializer=chirpstack__api_dot_nc_dot_nc__pb2.HandleUplinkMACCommandRequest.SerializeToString,
         response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
         )
+    self.HandleRejectedUplinkFrameSet = channel.unary_unary(
+        '/nc.NetworkControllerService/HandleRejectedUplinkFrameSet',
+        request_serializer=chirpstack__api_dot_nc_dot_nc__pb2.HandleRejectedUplinkFrameSetRequest.SerializeToString,
+        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        )
 
 
 class NetworkControllerServiceServicer(object):
@@ -60,6 +65,15 @@ class NetworkControllerServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def HandleRejectedUplinkFrameSet(self, request, context):
+    """HandleRejectedUplinkFrameSet handles a rejected uplink.
+    And uplink can be rejected in the case the device has not (yet) been
+    provisioned, because of invalid frame-counter, MIC, ...
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_NetworkControllerServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -76,6 +90,11 @@ def add_NetworkControllerServiceServicer_to_server(servicer, server):
       'HandleUplinkMACCommand': grpc.unary_unary_rpc_method_handler(
           servicer.HandleUplinkMACCommand,
           request_deserializer=chirpstack__api_dot_nc_dot_nc__pb2.HandleUplinkMACCommandRequest.FromString,
+          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+      ),
+      'HandleRejectedUplinkFrameSet': grpc.unary_unary_rpc_method_handler(
+          servicer.HandleRejectedUplinkFrameSet,
+          request_deserializer=chirpstack__api_dot_nc_dot_nc__pb2.HandleRejectedUplinkFrameSetRequest.FromString,
           response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
       ),
   }

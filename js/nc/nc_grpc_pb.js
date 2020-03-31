@@ -28,6 +28,17 @@ function deserialize_nc_HandleDownlinkMetaDataRequest(buffer_arg) {
   return nc_nc_pb.HandleDownlinkMetaDataRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_nc_HandleRejectedUplinkFrameSetRequest(arg) {
+  if (!(arg instanceof nc_nc_pb.HandleRejectedUplinkFrameSetRequest)) {
+    throw new Error('Expected argument of type nc.HandleRejectedUplinkFrameSetRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_nc_HandleRejectedUplinkFrameSetRequest(buffer_arg) {
+  return nc_nc_pb.HandleRejectedUplinkFrameSetRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_nc_HandleUplinkMACCommandRequest(arg) {
   if (!(arg instanceof nc_nc_pb.HandleUplinkMACCommandRequest)) {
     throw new Error('Expected argument of type nc.HandleUplinkMACCommandRequest');
@@ -89,6 +100,20 @@ var NetworkControllerServiceService = exports.NetworkControllerServiceService = 
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_nc_HandleUplinkMACCommandRequest,
     requestDeserialize: deserialize_nc_HandleUplinkMACCommandRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // HandleRejectedUplinkFrameSet handles a rejected uplink.
+  // And uplink can be rejected in the case the device has not (yet) been
+  // provisioned, because of invalid frame-counter, MIC, ...
+  handleRejectedUplinkFrameSet: {
+    path: '/nc.NetworkControllerService/HandleRejectedUplinkFrameSet',
+    requestStream: false,
+    responseStream: false,
+    requestType: nc_nc_pb.HandleRejectedUplinkFrameSetRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_nc_HandleRejectedUplinkFrameSetRequest,
+    requestDeserialize: deserialize_nc_HandleRejectedUplinkFrameSetRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

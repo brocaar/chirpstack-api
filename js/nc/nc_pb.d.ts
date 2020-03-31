@@ -139,6 +139,28 @@ export namespace HandleUplinkMACCommandRequest {
   }
 }
 
+export class HandleRejectedUplinkFrameSetRequest extends jspb.Message {
+  hasFrameSet(): boolean;
+  clearFrameSet(): void;
+  getFrameSet(): gw_gw_pb.UplinkFrameSet | undefined;
+  setFrameSet(value?: gw_gw_pb.UplinkFrameSet): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HandleRejectedUplinkFrameSetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HandleRejectedUplinkFrameSetRequest): HandleRejectedUplinkFrameSetRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HandleRejectedUplinkFrameSetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HandleRejectedUplinkFrameSetRequest;
+  static deserializeBinaryFromReader(message: HandleRejectedUplinkFrameSetRequest, reader: jspb.BinaryReader): HandleRejectedUplinkFrameSetRequest;
+}
+
+export namespace HandleRejectedUplinkFrameSetRequest {
+  export type AsObject = {
+    frameSet?: gw_gw_pb.UplinkFrameSet.AsObject,
+  }
+}
+
 export interface MTypeMap {
   UNKNOWN: 0;
   JOIN_REQUEST: 1;

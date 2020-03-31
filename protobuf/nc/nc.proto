@@ -9,14 +9,14 @@ import "gw/gw.proto";
 
 
 enum MType {
-    UNKNOWN = 0;
-    JOIN_REQUEST = 1;
-    JOIN_ACCEPT = 2;
-    UNCONFIRMED_DATA_UP = 3;
-    UNCONFIRMED_DATA_DOWN = 4;
-    CONFIRMED_DATA_UP = 5;
-    CONFIRMED_DATA_DOWN = 6;
-    REJOIN_REQUEST = 7;
+	UNKNOWN = 0;
+	JOIN_REQUEST = 1;
+	JOIN_ACCEPT = 2;
+	UNCONFIRMED_DATA_UP = 3;
+	UNCONFIRMED_DATA_DOWN = 4;
+	CONFIRMED_DATA_UP = 5;
+	CONFIRMED_DATA_DOWN = 6;
+	REJOIN_REQUEST = 7;
 }
 
 
@@ -25,14 +25,19 @@ service NetworkControllerService {
 	// HandleUplinkMetaData handles uplink meta-rata.
 	rpc HandleUplinkMetaData(HandleUplinkMetaDataRequest) returns (google.protobuf.Empty) {}
 
-    // HandleDownlinkMetaData handles downlink meta-data.
-    rpc HandleDownlinkMetaData(HandleDownlinkMetaDataRequest) returns (google.protobuf.Empty) {}
+	// HandleDownlinkMetaData handles downlink meta-data.
+	rpc HandleDownlinkMetaData(HandleDownlinkMetaDataRequest) returns (google.protobuf.Empty) {}
 
 	// HandleUplinkMACCommand handles an uplink mac-command.
 	// This method will only be called in case the mac-command request was
 	// enqueued throught the API or when the CID is >= 0x80 (proprietary
 	// mac-command range).
 	rpc HandleUplinkMACCommand(HandleUplinkMACCommandRequest) returns (google.protobuf.Empty) {}
+
+	// HandleRejectedUplinkFrameSet handles a rejected uplink.
+	// And uplink can be rejected in the case the device has not (yet) been
+	// provisioned, because of invalid frame-counter, MIC, ...
+	rpc HandleRejectedUplinkFrameSet(HandleRejectedUplinkFrameSetRequest) returns (google.protobuf.Empty) {}
 }
 
 message HandleUplinkMetaDataRequest {
@@ -45,40 +50,40 @@ message HandleUplinkMetaDataRequest {
 	// RX meta-data.
 	repeated gw.UplinkRXInfo rx_info = 3;
 
-    // PHYPayload byte count.
-    uint32 phy_payload_byte_count = 4;
+	// PHYPayload byte count.
+	uint32 phy_payload_byte_count = 4;
 
-    // MAC-Command byte count.
-    uint32 mac_command_byte_count = 5;
+	// MAC-Command byte count.
+	uint32 mac_command_byte_count = 5;
 
-    // Application payload byte count.
-    uint32 application_payload_byte_count = 6;
+	// Application payload byte count.
+	uint32 application_payload_byte_count = 6;
 
-    // Message type.
-    MType message_type = 7;
+	// Message type.
+	MType message_type = 7;
 }
 
 message HandleDownlinkMetaDataRequest {
-    // Device EUI (8 bytes).
-    bytes dev_eui = 1;
+	// Device EUI (8 bytes).
+	bytes dev_eui = 1;
 
-    // Multicast Group ID (UUID).
-    bytes multicast_group_id = 2;
+	// Multicast Group ID (UUID).
+	bytes multicast_group_id = 2;
 
-    // TX meta-data.
-    gw.DownlinkTXInfo tx_info = 3;
+	// TX meta-data.
+	gw.DownlinkTXInfo tx_info = 3;
 
-    // PHYPayload byte count.
-    uint32 phy_payload_byte_count = 4;
+	// PHYPayload byte count.
+	uint32 phy_payload_byte_count = 4;
 
-    // MAC-Command byte count.
-    uint32 mac_command_byte_count = 5;
+	// MAC-Command byte count.
+	uint32 mac_command_byte_count = 5;
 
-    // Application payload byte count.
-    uint32 application_payload_byte_count = 6;
+	// Application payload byte count.
+	uint32 application_payload_byte_count = 6;
 
-    // Message type.
-    MType message_type = 7;
+	// Message type.
+	MType message_type = 7;
 }
 
 message HandleUplinkMACCommandRequest {
@@ -90,4 +95,8 @@ message HandleUplinkMACCommandRequest {
 
 	// MAC-command payload(s).
 	repeated bytes commands = 6;
+}
+
+message HandleRejectedUplinkFrameSetRequest {
+	gw.UplinkFrameSet frame_set = 1;
 }

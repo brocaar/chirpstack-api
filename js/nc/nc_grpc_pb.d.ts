@@ -11,6 +11,7 @@ interface INetworkControllerServiceService extends grpc.ServiceDefinition<grpc.U
   handleUplinkMetaData: grpc.MethodDefinition<nc_nc_pb.HandleUplinkMetaDataRequest, google_protobuf_empty_pb.Empty>;
   handleDownlinkMetaData: grpc.MethodDefinition<nc_nc_pb.HandleDownlinkMetaDataRequest, google_protobuf_empty_pb.Empty>;
   handleUplinkMACCommand: grpc.MethodDefinition<nc_nc_pb.HandleUplinkMACCommandRequest, google_protobuf_empty_pb.Empty>;
+  handleRejectedUplinkFrameSet: grpc.MethodDefinition<nc_nc_pb.HandleRejectedUplinkFrameSetRequest, google_protobuf_empty_pb.Empty>;
 }
 
 export const NetworkControllerServiceService: INetworkControllerServiceService;
@@ -26,4 +27,7 @@ export class NetworkControllerServiceClient extends grpc.Client {
   handleUplinkMACCommand(argument: nc_nc_pb.HandleUplinkMACCommandRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   handleUplinkMACCommand(argument: nc_nc_pb.HandleUplinkMACCommandRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   handleUplinkMACCommand(argument: nc_nc_pb.HandleUplinkMACCommandRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  handleRejectedUplinkFrameSet(argument: nc_nc_pb.HandleRejectedUplinkFrameSetRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  handleRejectedUplinkFrameSet(argument: nc_nc_pb.HandleRejectedUplinkFrameSetRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  handleRejectedUplinkFrameSet(argument: nc_nc_pb.HandleRejectedUplinkFrameSetRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
 }
