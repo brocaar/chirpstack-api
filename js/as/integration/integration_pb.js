@@ -2177,7 +2177,7 @@ proto.integration.StatusEvent.deserializeBinaryFromReader = function(msg, reader
       msg.setDevEui(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setMargin(value);
       break;
     case 6:
@@ -2266,7 +2266,7 @@ proto.integration.StatusEvent.prototype.serializeBinaryToWriter = function (writ
   }
   f = this.getMargin();
   if (f !== 0) {
-    writer.writeUint32(
+    writer.writeInt32(
       5,
       f
     );
@@ -2393,7 +2393,7 @@ proto.integration.StatusEvent.prototype.setDevEui = function(value) {
 
 
 /**
- * optional uint32 margin = 5;
+ * optional int32 margin = 5;
  * @return {number}
  */
 proto.integration.StatusEvent.prototype.getMargin = function() {

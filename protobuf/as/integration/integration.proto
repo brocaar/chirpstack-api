@@ -208,7 +208,7 @@ message StatusEvent {
 
     // The demodulation signal-to-noise ratio in dB for the last successfully
     // received device-status request by the Network Server.
-    uint32 margin = 5;
+    int32 margin = 5;
 
     // Device is connected to an external power source.
     bool external_power_source = 6;
