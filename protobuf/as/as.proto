@@ -111,6 +111,9 @@ message HandleUplinkDataRequest {
     // This field is only set on the first uplink frame when the security
     // context has changed (e.g. a new OTAA (re)activation).
     DeviceActivationContext device_activation_context = 10;
+
+    // Uplink was of type confirmed.
+    bool confirmed_uplink = 11;
 }
 
 message HandleProprietaryUplinkRequest {

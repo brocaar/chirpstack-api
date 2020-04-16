@@ -314,7 +314,8 @@ proto.as.HandleUplinkDataRequest.toObject = function(includeInstance, msg) {
     rxInfoList: jspb.Message.toObjectList(msg.getRxInfoList(),
     gw_gw_pb.UplinkRXInfo.toObject, includeInstance),
     data: msg.getData_asB64(),
-    deviceActivationContext: (f = msg.getDeviceActivationContext()) && proto.as.DeviceActivationContext.toObject(includeInstance, f)
+    deviceActivationContext: (f = msg.getDeviceActivationContext()) && proto.as.DeviceActivationContext.toObject(includeInstance, f),
+    confirmedUplink: msg.getConfirmedUplink()
   };
 
   if (includeInstance) {
@@ -394,6 +395,10 @@ proto.as.HandleUplinkDataRequest.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.as.DeviceActivationContext;
       reader.readMessage(value,proto.as.DeviceActivationContext.deserializeBinaryFromReader);
       msg.setDeviceActivationContext(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConfirmedUplink(value);
       break;
     default:
       reader.skipField();
@@ -504,6 +509,13 @@ proto.as.HandleUplinkDataRequest.prototype.serializeBinaryToWriter = function (w
       10,
       f,
       proto.as.DeviceActivationContext.serializeBinaryToWriter
+    );
+  }
+  f = this.getConfirmedUplink();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
     );
   }
 };
@@ -777,6 +789,23 @@ proto.as.HandleUplinkDataRequest.prototype.clearDeviceActivationContext = functi
  */
 proto.as.HandleUplinkDataRequest.prototype.hasDeviceActivationContext = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool confirmed_uplink = 11;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.as.HandleUplinkDataRequest.prototype.getConfirmedUplink = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 11, false));
+};
+
+
+/** @param {boolean} value  */
+proto.as.HandleUplinkDataRequest.prototype.setConfirmedUplink = function(value) {
+  jspb.Message.setField(this, 11, value);
 };
 
 

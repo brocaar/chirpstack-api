@@ -82,6 +82,12 @@ message UplinkEvent {
 
     // User-defined device tags.
     map<string, string> tags = 13;
+
+    // Uplink was of type confirmed.
+    bool confirmed_uplink = 14;
+
+    // Device address.
+    bytes dev_addr = 15;
 }
 
 // JoinEvent is the message sent when a device joined the network.

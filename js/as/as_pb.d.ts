@@ -78,6 +78,9 @@ export class HandleUplinkDataRequest extends jspb.Message {
   getDeviceActivationContext(): DeviceActivationContext | undefined;
   setDeviceActivationContext(value?: DeviceActivationContext): void;
 
+  getConfirmedUplink(): boolean;
+  setConfirmedUplink(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HandleUplinkDataRequest.AsObject;
   static toObject(includeInstance: boolean, msg: HandleUplinkDataRequest): HandleUplinkDataRequest.AsObject;
@@ -100,6 +103,7 @@ export namespace HandleUplinkDataRequest {
     rxInfoList: Array<gw_gw_pb.UplinkRXInfo.AsObject>,
     data: Uint8Array | string,
     deviceActivationContext?: DeviceActivationContext.AsObject,
+    confirmedUplink: boolean,
   }
 }
 

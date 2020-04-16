@@ -52,6 +52,14 @@ export class UplinkEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  getConfirmedUplink(): boolean;
+  setConfirmedUplink(value: boolean): void;
+
+  getDevAddr(): Uint8Array | string;
+  getDevAddr_asU8(): Uint8Array;
+  getDevAddr_asB64(): string;
+  setDevAddr(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UplinkEvent.AsObject;
   static toObject(includeInstance: boolean, msg: UplinkEvent): UplinkEvent.AsObject;
@@ -77,6 +85,8 @@ export namespace UplinkEvent {
     data: Uint8Array | string,
     objectJson: string,
     tagsMap: Array<[string, string]>,
+    confirmedUplink: boolean,
+    devAddr: Uint8Array | string,
   }
 }
 

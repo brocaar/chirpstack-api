@@ -85,7 +85,9 @@ proto.integration.UplinkEvent.toObject = function(includeInstance, msg) {
     fPort: msg.getFPort(),
     data: msg.getData_asB64(),
     objectJson: msg.getObjectJson(),
-    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
+    confirmedUplink: msg.getConfirmedUplink(),
+    devAddr: msg.getDevAddr_asB64()
   };
 
   if (includeInstance) {
@@ -178,6 +180,14 @@ proto.integration.UplinkEvent.deserializeBinaryFromReader = function(msg, reader
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
          });
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConfirmedUplink(value);
+      break;
+    case 15:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevAddr(value);
       break;
     default:
       reader.skipField();
@@ -306,6 +316,20 @@ proto.integration.UplinkEvent.prototype.serializeBinaryToWriter = function (writ
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getConfirmedUplink();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
+    );
+  }
+  f = this.getDevAddr_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      15,
+      f
+    );
   }
 };
 
@@ -582,6 +606,62 @@ proto.integration.UplinkEvent.prototype.getTagsMap = function(opt_noLazyCreate) 
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * optional bool confirmed_uplink = 14;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.integration.UplinkEvent.prototype.getConfirmedUplink = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 14, false));
+};
+
+
+/** @param {boolean} value  */
+proto.integration.UplinkEvent.prototype.setConfirmedUplink = function(value) {
+  jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * optional bytes dev_addr = 15;
+ * @return {!(string|Uint8Array)}
+ */
+proto.integration.UplinkEvent.prototype.getDevAddr = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 15, ""));
+};
+
+
+/**
+ * optional bytes dev_addr = 15;
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {string}
+ */
+proto.integration.UplinkEvent.prototype.getDevAddr_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevAddr()));
+};
+
+
+/**
+ * optional bytes dev_addr = 15;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {!Uint8Array}
+ */
+proto.integration.UplinkEvent.prototype.getDevAddr_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevAddr()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.integration.UplinkEvent.prototype.setDevAddr = function(value) {
+  jspb.Message.setField(this, 15, value);
 };
 
 

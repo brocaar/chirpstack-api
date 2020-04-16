@@ -6,827 +6,1585 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NetworkServerServiceStub(object):
-  """NetworkServerService provides the network-server API methods.
-  """
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
+    """NetworkServerService provides the network-server API methods.
     """
-    self.CreateServiceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/CreateServiceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileResponse.FromString,
-        )
-    self.GetServiceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/GetServiceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileResponse.FromString,
-        )
-    self.UpdateServiceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateServiceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateServiceProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteServiceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteServiceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteServiceProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.CreateRoutingProfile = channel.unary_unary(
-        '/ns.NetworkServerService/CreateRoutingProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileResponse.FromString,
-        )
-    self.GetRoutingProfile = channel.unary_unary(
-        '/ns.NetworkServerService/GetRoutingProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileResponse.FromString,
-        )
-    self.UpdateRoutingProfile = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateRoutingProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateRoutingProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteRoutingProfile = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteRoutingProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteRoutingProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.CreateDeviceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/CreateDeviceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileResponse.FromString,
-        )
-    self.GetDeviceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/GetDeviceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileResponse.FromString,
-        )
-    self.UpdateDeviceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateDeviceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteDeviceProfile = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteDeviceProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.CreateDevice = channel.unary_unary(
-        '/ns.NetworkServerService/CreateDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetDevice = channel.unary_unary(
-        '/ns.NetworkServerService/GetDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceResponse.FromString,
-        )
-    self.UpdateDevice = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteDevice = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.ActivateDevice = channel.unary_unary(
-        '/ns.NetworkServerService/ActivateDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.ActivateDeviceRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeactivateDevice = channel.unary_unary(
-        '/ns.NetworkServerService/DeactivateDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeactivateDeviceRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetDeviceActivation = channel.unary_unary(
-        '/ns.NetworkServerService/GetDeviceActivation',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationResponse.FromString,
-        )
-    self.CreateDeviceQueueItem = channel.unary_unary(
-        '/ns.NetworkServerService/CreateDeviceQueueItem',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceQueueItemRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.FlushDeviceQueueForDevEUI = channel.unary_unary(
-        '/ns.NetworkServerService/FlushDeviceQueueForDevEUI',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushDeviceQueueForDevEUIRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetDeviceQueueItemsForDevEUI = channel.unary_unary(
-        '/ns.NetworkServerService/GetDeviceQueueItemsForDevEUI',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIResponse.FromString,
-        )
-    self.GetNextDownlinkFCntForDevEUI = channel.unary_unary(
-        '/ns.NetworkServerService/GetNextDownlinkFCntForDevEUI',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIResponse.FromString,
-        )
-    self.GetRandomDevAddr = channel.unary_unary(
-        '/ns.NetworkServerService/GetRandomDevAddr',
-        request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRandomDevAddrResponse.FromString,
-        )
-    self.CreateMACCommandQueueItem = channel.unary_unary(
-        '/ns.NetworkServerService/CreateMACCommandQueueItem',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMACCommandQueueItemRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.SendProprietaryPayload = channel.unary_unary(
-        '/ns.NetworkServerService/SendProprietaryPayload',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.SendProprietaryPayloadRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.CreateGateway = channel.unary_unary(
-        '/ns.NetworkServerService/CreateGateway',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetGateway = channel.unary_unary(
-        '/ns.NetworkServerService/GetGateway',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayResponse.FromString,
-        )
-    self.UpdateGateway = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateGateway',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteGateway = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteGateway',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.CreateGatewayProfile = channel.unary_unary(
-        '/ns.NetworkServerService/CreateGatewayProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileResponse.FromString,
-        )
-    self.GetGatewayProfile = channel.unary_unary(
-        '/ns.NetworkServerService/GetGatewayProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileResponse.FromString,
-        )
-    self.UpdateGatewayProfile = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateGatewayProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteGatewayProfile = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteGatewayProfile',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayProfileRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetGatewayStats = channel.unary_unary(
-        '/ns.NetworkServerService/GetGatewayStats',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsResponse.FromString,
-        )
-    self.StreamFrameLogsForGateway = channel.unary_stream(
-        '/ns.NetworkServerService/StreamFrameLogsForGateway',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayResponse.FromString,
-        )
-    self.StreamFrameLogsForDevice = channel.unary_stream(
-        '/ns.NetworkServerService/StreamFrameLogsForDevice',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceResponse.FromString,
-        )
-    self.CreateMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/CreateMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupResponse.FromString,
-        )
-    self.GetMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/GetMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupResponse.FromString,
-        )
-    self.UpdateMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/UpdateMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateMulticastGroupRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.DeleteMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/DeleteMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteMulticastGroupRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.AddDeviceToMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/AddDeviceToMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.AddDeviceToMulticastGroupRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.RemoveDeviceFromMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/RemoveDeviceFromMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.RemoveDeviceFromMulticastGroupRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.EnqueueMulticastQueueItem = channel.unary_unary(
-        '/ns.NetworkServerService/EnqueueMulticastQueueItem',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.EnqueueMulticastQueueItemRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.FlushMulticastQueueForMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/FlushMulticastQueueForMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushMulticastQueueForMulticastGroupRequest.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetMulticastQueueItemsForMulticastGroup = channel.unary_unary(
-        '/ns.NetworkServerService/GetMulticastQueueItemsForMulticastGroup',
-        request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupRequest.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupResponse.FromString,
-        )
-    self.GetVersion = channel.unary_unary(
-        '/ns.NetworkServerService/GetVersion',
-        request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-        response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetVersionResponse.FromString,
-        )
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateServiceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/CreateServiceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileResponse.FromString,
+                )
+        self.GetServiceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/GetServiceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileResponse.FromString,
+                )
+        self.UpdateServiceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateServiceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateServiceProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteServiceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteServiceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteServiceProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateRoutingProfile = channel.unary_unary(
+                '/ns.NetworkServerService/CreateRoutingProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileResponse.FromString,
+                )
+        self.GetRoutingProfile = channel.unary_unary(
+                '/ns.NetworkServerService/GetRoutingProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileResponse.FromString,
+                )
+        self.UpdateRoutingProfile = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateRoutingProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateRoutingProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteRoutingProfile = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteRoutingProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteRoutingProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateDeviceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/CreateDeviceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileResponse.FromString,
+                )
+        self.GetDeviceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/GetDeviceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileResponse.FromString,
+                )
+        self.UpdateDeviceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateDeviceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteDeviceProfile = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteDeviceProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateDevice = channel.unary_unary(
+                '/ns.NetworkServerService/CreateDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetDevice = channel.unary_unary(
+                '/ns.NetworkServerService/GetDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceResponse.FromString,
+                )
+        self.UpdateDevice = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteDevice = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ActivateDevice = channel.unary_unary(
+                '/ns.NetworkServerService/ActivateDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.ActivateDeviceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeactivateDevice = channel.unary_unary(
+                '/ns.NetworkServerService/DeactivateDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeactivateDeviceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetDeviceActivation = channel.unary_unary(
+                '/ns.NetworkServerService/GetDeviceActivation',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationResponse.FromString,
+                )
+        self.CreateDeviceQueueItem = channel.unary_unary(
+                '/ns.NetworkServerService/CreateDeviceQueueItem',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceQueueItemRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.FlushDeviceQueueForDevEUI = channel.unary_unary(
+                '/ns.NetworkServerService/FlushDeviceQueueForDevEUI',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushDeviceQueueForDevEUIRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetDeviceQueueItemsForDevEUI = channel.unary_unary(
+                '/ns.NetworkServerService/GetDeviceQueueItemsForDevEUI',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIResponse.FromString,
+                )
+        self.GetNextDownlinkFCntForDevEUI = channel.unary_unary(
+                '/ns.NetworkServerService/GetNextDownlinkFCntForDevEUI',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIResponse.FromString,
+                )
+        self.GetRandomDevAddr = channel.unary_unary(
+                '/ns.NetworkServerService/GetRandomDevAddr',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRandomDevAddrResponse.FromString,
+                )
+        self.CreateMACCommandQueueItem = channel.unary_unary(
+                '/ns.NetworkServerService/CreateMACCommandQueueItem',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMACCommandQueueItemRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.SendProprietaryPayload = channel.unary_unary(
+                '/ns.NetworkServerService/SendProprietaryPayload',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.SendProprietaryPayloadRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateGateway = channel.unary_unary(
+                '/ns.NetworkServerService/CreateGateway',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetGateway = channel.unary_unary(
+                '/ns.NetworkServerService/GetGateway',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayResponse.FromString,
+                )
+        self.UpdateGateway = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateGateway',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteGateway = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteGateway',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateGatewayProfile = channel.unary_unary(
+                '/ns.NetworkServerService/CreateGatewayProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileResponse.FromString,
+                )
+        self.GetGatewayProfile = channel.unary_unary(
+                '/ns.NetworkServerService/GetGatewayProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileResponse.FromString,
+                )
+        self.UpdateGatewayProfile = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateGatewayProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteGatewayProfile = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteGatewayProfile',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayProfileRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetGatewayStats = channel.unary_unary(
+                '/ns.NetworkServerService/GetGatewayStats',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsResponse.FromString,
+                )
+        self.StreamFrameLogsForGateway = channel.unary_stream(
+                '/ns.NetworkServerService/StreamFrameLogsForGateway',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayResponse.FromString,
+                )
+        self.StreamFrameLogsForDevice = channel.unary_stream(
+                '/ns.NetworkServerService/StreamFrameLogsForDevice',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceResponse.FromString,
+                )
+        self.CreateMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/CreateMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupResponse.FromString,
+                )
+        self.GetMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/GetMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupResponse.FromString,
+                )
+        self.UpdateMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/UpdateMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateMulticastGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/DeleteMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteMulticastGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.AddDeviceToMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/AddDeviceToMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.AddDeviceToMulticastGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.RemoveDeviceFromMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/RemoveDeviceFromMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.RemoveDeviceFromMulticastGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.EnqueueMulticastQueueItem = channel.unary_unary(
+                '/ns.NetworkServerService/EnqueueMulticastQueueItem',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.EnqueueMulticastQueueItemRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.FlushMulticastQueueForMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/FlushMulticastQueueForMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushMulticastQueueForMulticastGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetMulticastQueueItemsForMulticastGroup = channel.unary_unary(
+                '/ns.NetworkServerService/GetMulticastQueueItemsForMulticastGroup',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupResponse.FromString,
+                )
+        self.GetVersion = channel.unary_unary(
+                '/ns.NetworkServerService/GetVersion',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetVersionResponse.FromString,
+                )
 
 
 class NetworkServerServiceServicer(object):
-  """NetworkServerService provides the network-server API methods.
-  """
-
-  def CreateServiceProfile(self, request, context):
-    """CreateServiceProfile creates the given service-profile.
+    """NetworkServerService provides the network-server API methods.
     """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
-  def GetServiceProfile(self, request, context):
-    """GetServiceProfile returns the service-profile matching the given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateServiceProfile(self, request, context):
+        """CreateServiceProfile creates the given service-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateServiceProfile(self, request, context):
-    """UpdateServiceProfile updates the given service-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetServiceProfile(self, request, context):
+        """GetServiceProfile returns the service-profile matching the given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteServiceProfile(self, request, context):
-    """DeleteServiceProfile deletes the service-profile matching the given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateServiceProfile(self, request, context):
+        """UpdateServiceProfile updates the given service-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateRoutingProfile(self, request, context):
-    """CreateRoutingProfile creates the given routing-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteServiceProfile(self, request, context):
+        """DeleteServiceProfile deletes the service-profile matching the given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetRoutingProfile(self, request, context):
-    """GetRoutingProfile returns the routing-profile matching the given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateRoutingProfile(self, request, context):
+        """CreateRoutingProfile creates the given routing-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateRoutingProfile(self, request, context):
-    """UpdateRoutingProfile updates the given routing-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetRoutingProfile(self, request, context):
+        """GetRoutingProfile returns the routing-profile matching the given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteRoutingProfile(self, request, context):
-    """DeleteRoutingProfile deletes the routing-profile matching the given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateRoutingProfile(self, request, context):
+        """UpdateRoutingProfile updates the given routing-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateDeviceProfile(self, request, context):
-    """CreateDeviceProfile creates the given device-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteRoutingProfile(self, request, context):
+        """DeleteRoutingProfile deletes the routing-profile matching the given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetDeviceProfile(self, request, context):
-    """GetDeviceProfile returns the device-profile matching the given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateDeviceProfile(self, request, context):
+        """CreateDeviceProfile creates the given device-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateDeviceProfile(self, request, context):
-    """UpdateDeviceProfile updates the given device-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetDeviceProfile(self, request, context):
+        """GetDeviceProfile returns the device-profile matching the given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteDeviceProfile(self, request, context):
-    """DeleteDeviceProfile deletes the device-profile matching the given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateDeviceProfile(self, request, context):
+        """UpdateDeviceProfile updates the given device-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateDevice(self, request, context):
-    """CreateDevice creates the given device.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteDeviceProfile(self, request, context):
+        """DeleteDeviceProfile deletes the device-profile matching the given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetDevice(self, request, context):
-    """GetDevice returns the device matching the given DevEUI.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateDevice(self, request, context):
+        """CreateDevice creates the given device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateDevice(self, request, context):
-    """UpdateDevice updates the given device.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetDevice(self, request, context):
+        """GetDevice returns the device matching the given DevEUI.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteDevice(self, request, context):
-    """DeleteDevice deletes the device matching the given DevEUI.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateDevice(self, request, context):
+        """UpdateDevice updates the given device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def ActivateDevice(self, request, context):
-    """ActivateDevice activates a device (ABP).
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteDevice(self, request, context):
+        """DeleteDevice deletes the device matching the given DevEUI.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeactivateDevice(self, request, context):
-    """DeactivateDevice de-activates a device.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def ActivateDevice(self, request, context):
+        """ActivateDevice activates a device (ABP).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetDeviceActivation(self, request, context):
-    """GetDeviceActivation returns the device activation details.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeactivateDevice(self, request, context):
+        """DeactivateDevice de-activates a device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateDeviceQueueItem(self, request, context):
-    """CreateDeviceQueueItem creates the given device-queue item.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetDeviceActivation(self, request, context):
+        """GetDeviceActivation returns the device activation details.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def FlushDeviceQueueForDevEUI(self, request, context):
-    """FlushDeviceQueueForDevEUI flushes the device-queue for the given DevEUI.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateDeviceQueueItem(self, request, context):
+        """CreateDeviceQueueItem creates the given device-queue item.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetDeviceQueueItemsForDevEUI(self, request, context):
-    """GetDeviceQueueItemsForDevEUI returns all device-queue items for the given DevEUI.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def FlushDeviceQueueForDevEUI(self, request, context):
+        """FlushDeviceQueueForDevEUI flushes the device-queue for the given DevEUI.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetNextDownlinkFCntForDevEUI(self, request, context):
-    """GetNextDownlinkFCntForDevEUI returns the next FCnt that must be used.
-    This also takes device-queue items for the given DevEUI into consideration.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetDeviceQueueItemsForDevEUI(self, request, context):
+        """GetDeviceQueueItemsForDevEUI returns all device-queue items for the given DevEUI.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetRandomDevAddr(self, request, context):
-    """GetRandomDevAddr returns a random DevAddr taking the NwkID prefix into account.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetNextDownlinkFCntForDevEUI(self, request, context):
+        """GetNextDownlinkFCntForDevEUI returns the next FCnt that must be used.
+        This also takes device-queue items for the given DevEUI into consideration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateMACCommandQueueItem(self, request, context):
-    """CreateMACCommandQueueItem adds the downlink mac-command to the queue.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetRandomDevAddr(self, request, context):
+        """GetRandomDevAddr returns a random DevAddr taking the NwkID prefix into account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def SendProprietaryPayload(self, request, context):
-    """SendProprietaryPayload send a payload using the 'Proprietary' LoRaWAN message-type.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateMACCommandQueueItem(self, request, context):
+        """CreateMACCommandQueueItem adds the downlink mac-command to the queue.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateGateway(self, request, context):
-    """CreateGateway creates the given gateway.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def SendProprietaryPayload(self, request, context):
+        """SendProprietaryPayload send a payload using the 'Proprietary' LoRaWAN message-type.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetGateway(self, request, context):
-    """GetGateway returns data for a particular gateway.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateGateway(self, request, context):
+        """CreateGateway creates the given gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateGateway(self, request, context):
-    """UpdateGateway updates an existing gateway.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetGateway(self, request, context):
+        """GetGateway returns data for a particular gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteGateway(self, request, context):
-    """DeleteGateway deletes a gateway.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateGateway(self, request, context):
+        """UpdateGateway updates an existing gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateGatewayProfile(self, request, context):
-    """CreateGatewayProfile creates the given gateway-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteGateway(self, request, context):
+        """DeleteGateway deletes a gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetGatewayProfile(self, request, context):
-    """GetGatewayProfile returns the gateway-profile given an id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateGatewayProfile(self, request, context):
+        """CreateGatewayProfile creates the given gateway-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateGatewayProfile(self, request, context):
-    """UpdateGatewayProfile updates the given gateway-profile.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetGatewayProfile(self, request, context):
+        """GetGatewayProfile returns the gateway-profile given an id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteGatewayProfile(self, request, context):
-    """DeleteGatewayProfile deletes the gateway-profile matching a given id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateGatewayProfile(self, request, context):
+        """UpdateGatewayProfile updates the given gateway-profile.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetGatewayStats(self, request, context):
-    """GetGatewayStats returns stats of an existing gateway.
-    Deprecated (stats are forwarded to Application Server API).
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteGatewayProfile(self, request, context):
+        """DeleteGatewayProfile deletes the gateway-profile matching a given id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def StreamFrameLogsForGateway(self, request, context):
-    """StreamFrameLogsForGateway returns a stream of frames seen by the given gateway.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetGatewayStats(self, request, context):
+        """GetGatewayStats returns stats of an existing gateway.
+        Deprecated (stats are forwarded to Application Server API).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def StreamFrameLogsForDevice(self, request, context):
-    """StreamFrameLogsForDevice returns a stream of frames seen by the given device.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def StreamFrameLogsForGateway(self, request, context):
+        """StreamFrameLogsForGateway returns a stream of frames seen by the given gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def CreateMulticastGroup(self, request, context):
-    """CreateMulticastGroup creates the given multicast-group.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def StreamFrameLogsForDevice(self, request, context):
+        """StreamFrameLogsForDevice returns a stream of frames seen by the given device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetMulticastGroup(self, request, context):
-    """GetMulticastGroup returns the multicast-group given an id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def CreateMulticastGroup(self, request, context):
+        """CreateMulticastGroup creates the given multicast-group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def UpdateMulticastGroup(self, request, context):
-    """UpdateMulticastGroup updates the given multicast-group.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetMulticastGroup(self, request, context):
+        """GetMulticastGroup returns the multicast-group given an id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def DeleteMulticastGroup(self, request, context):
-    """DeleteMulticastGroup deletes a multicast-group given an id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def UpdateMulticastGroup(self, request, context):
+        """UpdateMulticastGroup updates the given multicast-group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def AddDeviceToMulticastGroup(self, request, context):
-    """AddDeviceToMulticastGroup adds the given device to the given multicast-group.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def DeleteMulticastGroup(self, request, context):
+        """DeleteMulticastGroup deletes a multicast-group given an id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def RemoveDeviceFromMulticastGroup(self, request, context):
-    """RemoveDeviceFromMulticastGroup removes the given device from the given multicast-group.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def AddDeviceToMulticastGroup(self, request, context):
+        """AddDeviceToMulticastGroup adds the given device to the given multicast-group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def EnqueueMulticastQueueItem(self, request, context):
-    """EnqueueMulticastQueueItem enqueues the given multicast queue-item and
-    increments the frame-counter after enqueueing.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def RemoveDeviceFromMulticastGroup(self, request, context):
+        """RemoveDeviceFromMulticastGroup removes the given device from the given multicast-group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def FlushMulticastQueueForMulticastGroup(self, request, context):
-    """FlushMulticastQueueForMulticastGroup flushes the multicast device-queue given a multicast-group id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def EnqueueMulticastQueueItem(self, request, context):
+        """EnqueueMulticastQueueItem enqueues the given multicast queue-item and
+        increments the frame-counter after enqueueing.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetMulticastQueueItemsForMulticastGroup(self, request, context):
-    """GetMulticastQueueItemsForMulticastGroup returns the queue-items given a multicast-group id.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def FlushMulticastQueueForMulticastGroup(self, request, context):
+        """FlushMulticastQueueForMulticastGroup flushes the multicast device-queue given a multicast-group id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GetVersion(self, request, context):
-    """GetVersion returns the ChirpStack Network Server version.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetMulticastQueueItemsForMulticastGroup(self, request, context):
+        """GetMulticastQueueItemsForMulticastGroup returns the queue-items given a multicast-group id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetVersion(self, request, context):
+        """GetVersion returns the ChirpStack Network Server version.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_NetworkServerServiceServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'CreateServiceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateServiceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileResponse.SerializeToString,
-      ),
-      'GetServiceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.GetServiceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileResponse.SerializeToString,
-      ),
-      'UpdateServiceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateServiceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateServiceProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteServiceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteServiceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteServiceProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'CreateRoutingProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateRoutingProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileResponse.SerializeToString,
-      ),
-      'GetRoutingProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.GetRoutingProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileResponse.SerializeToString,
-      ),
-      'UpdateRoutingProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateRoutingProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateRoutingProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteRoutingProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteRoutingProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteRoutingProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'CreateDeviceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateDeviceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileResponse.SerializeToString,
-      ),
-      'GetDeviceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDeviceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileResponse.SerializeToString,
-      ),
-      'UpdateDeviceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateDeviceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteDeviceProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteDeviceProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'CreateDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceResponse.SerializeToString,
-      ),
-      'UpdateDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'ActivateDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.ActivateDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.ActivateDeviceRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeactivateDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.DeactivateDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeactivateDeviceRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetDeviceActivation': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDeviceActivation,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationResponse.SerializeToString,
-      ),
-      'CreateDeviceQueueItem': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateDeviceQueueItem,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceQueueItemRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'FlushDeviceQueueForDevEUI': grpc.unary_unary_rpc_method_handler(
-          servicer.FlushDeviceQueueForDevEUI,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushDeviceQueueForDevEUIRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetDeviceQueueItemsForDevEUI': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDeviceQueueItemsForDevEUI,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIResponse.SerializeToString,
-      ),
-      'GetNextDownlinkFCntForDevEUI': grpc.unary_unary_rpc_method_handler(
-          servicer.GetNextDownlinkFCntForDevEUI,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIResponse.SerializeToString,
-      ),
-      'GetRandomDevAddr': grpc.unary_unary_rpc_method_handler(
-          servicer.GetRandomDevAddr,
-          request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRandomDevAddrResponse.SerializeToString,
-      ),
-      'CreateMACCommandQueueItem': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateMACCommandQueueItem,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMACCommandQueueItemRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'SendProprietaryPayload': grpc.unary_unary_rpc_method_handler(
-          servicer.SendProprietaryPayload,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.SendProprietaryPayloadRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'CreateGateway': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateGateway,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetGateway': grpc.unary_unary_rpc_method_handler(
-          servicer.GetGateway,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayResponse.SerializeToString,
-      ),
-      'UpdateGateway': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateGateway,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteGateway': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteGateway,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'CreateGatewayProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateGatewayProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileResponse.SerializeToString,
-      ),
-      'GetGatewayProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.GetGatewayProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileResponse.SerializeToString,
-      ),
-      'UpdateGatewayProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateGatewayProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteGatewayProfile': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteGatewayProfile,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayProfileRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetGatewayStats': grpc.unary_unary_rpc_method_handler(
-          servicer.GetGatewayStats,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsResponse.SerializeToString,
-      ),
-      'StreamFrameLogsForGateway': grpc.unary_stream_rpc_method_handler(
-          servicer.StreamFrameLogsForGateway,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayResponse.SerializeToString,
-      ),
-      'StreamFrameLogsForDevice': grpc.unary_stream_rpc_method_handler(
-          servicer.StreamFrameLogsForDevice,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceResponse.SerializeToString,
-      ),
-      'CreateMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupResponse.SerializeToString,
-      ),
-      'GetMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.GetMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupResponse.SerializeToString,
-      ),
-      'UpdateMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateMulticastGroupRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'DeleteMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteMulticastGroupRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'AddDeviceToMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.AddDeviceToMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.AddDeviceToMulticastGroupRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'RemoveDeviceFromMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.RemoveDeviceFromMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.RemoveDeviceFromMulticastGroupRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'EnqueueMulticastQueueItem': grpc.unary_unary_rpc_method_handler(
-          servicer.EnqueueMulticastQueueItem,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.EnqueueMulticastQueueItemRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'FlushMulticastQueueForMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.FlushMulticastQueueForMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushMulticastQueueForMulticastGroupRequest.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetMulticastQueueItemsForMulticastGroup': grpc.unary_unary_rpc_method_handler(
-          servicer.GetMulticastQueueItemsForMulticastGroup,
-          request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupRequest.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupResponse.SerializeToString,
-      ),
-      'GetVersion': grpc.unary_unary_rpc_method_handler(
-          servicer.GetVersion,
-          request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-          response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetVersionResponse.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'ns.NetworkServerService', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'CreateServiceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateServiceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileResponse.SerializeToString,
+            ),
+            'GetServiceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetServiceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileResponse.SerializeToString,
+            ),
+            'UpdateServiceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateServiceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateServiceProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteServiceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteServiceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteServiceProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateRoutingProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateRoutingProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileResponse.SerializeToString,
+            ),
+            'GetRoutingProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRoutingProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileResponse.SerializeToString,
+            ),
+            'UpdateRoutingProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateRoutingProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateRoutingProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteRoutingProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteRoutingProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteRoutingProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateDeviceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDeviceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileResponse.SerializeToString,
+            ),
+            'GetDeviceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDeviceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileResponse.SerializeToString,
+            ),
+            'UpdateDeviceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDeviceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteDeviceProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDeviceProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateDevice': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetDevice': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceResponse.SerializeToString,
+            ),
+            'UpdateDevice': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteDevice': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ActivateDevice': grpc.unary_unary_rpc_method_handler(
+                    servicer.ActivateDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.ActivateDeviceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeactivateDevice': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeactivateDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeactivateDeviceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetDeviceActivation': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDeviceActivation,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationResponse.SerializeToString,
+            ),
+            'CreateDeviceQueueItem': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDeviceQueueItem,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceQueueItemRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'FlushDeviceQueueForDevEUI': grpc.unary_unary_rpc_method_handler(
+                    servicer.FlushDeviceQueueForDevEUI,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushDeviceQueueForDevEUIRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetDeviceQueueItemsForDevEUI': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDeviceQueueItemsForDevEUI,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIResponse.SerializeToString,
+            ),
+            'GetNextDownlinkFCntForDevEUI': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNextDownlinkFCntForDevEUI,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIResponse.SerializeToString,
+            ),
+            'GetRandomDevAddr': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRandomDevAddr,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetRandomDevAddrResponse.SerializeToString,
+            ),
+            'CreateMACCommandQueueItem': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateMACCommandQueueItem,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMACCommandQueueItemRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SendProprietaryPayload': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendProprietaryPayload,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.SendProprietaryPayloadRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateGateway': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateGateway,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetGateway': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGateway,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayResponse.SerializeToString,
+            ),
+            'UpdateGateway': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateGateway,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteGateway': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteGateway,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateGatewayProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateGatewayProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileResponse.SerializeToString,
+            ),
+            'GetGatewayProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGatewayProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileResponse.SerializeToString,
+            ),
+            'UpdateGatewayProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateGatewayProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteGatewayProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteGatewayProfile,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayProfileRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetGatewayStats': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGatewayStats,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsResponse.SerializeToString,
+            ),
+            'StreamFrameLogsForGateway': grpc.unary_stream_rpc_method_handler(
+                    servicer.StreamFrameLogsForGateway,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayResponse.SerializeToString,
+            ),
+            'StreamFrameLogsForDevice': grpc.unary_stream_rpc_method_handler(
+                    servicer.StreamFrameLogsForDevice,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceResponse.SerializeToString,
+            ),
+            'CreateMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupResponse.SerializeToString,
+            ),
+            'GetMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupResponse.SerializeToString,
+            ),
+            'UpdateMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.UpdateMulticastGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteMulticastGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'AddDeviceToMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddDeviceToMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.AddDeviceToMulticastGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'RemoveDeviceFromMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveDeviceFromMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.RemoveDeviceFromMulticastGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'EnqueueMulticastQueueItem': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnqueueMulticastQueueItem,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.EnqueueMulticastQueueItemRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'FlushMulticastQueueForMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.FlushMulticastQueueForMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.FlushMulticastQueueForMulticastGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetMulticastQueueItemsForMulticastGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMulticastQueueItemsForMulticastGroup,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupResponse.SerializeToString,
+            ),
+            'GetVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetVersion,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GetVersionResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'ns.NetworkServerService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class NetworkServerService(object):
+    """NetworkServerService provides the network-server API methods.
+    """
+
+    @staticmethod
+    def CreateServiceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateServiceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetServiceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetServiceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateServiceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateServiceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateServiceProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteServiceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteServiceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteServiceProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateRoutingProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateRoutingProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRoutingProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetRoutingProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateRoutingProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateRoutingProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateRoutingProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteRoutingProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteRoutingProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteRoutingProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDeviceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateDeviceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDeviceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetDeviceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDeviceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateDeviceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDeviceProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteDeviceProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ActivateDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/ActivateDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.ActivateDeviceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeactivateDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeactivateDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeactivateDeviceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDeviceActivation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetDeviceActivation',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDeviceQueueItem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateDeviceQueueItem',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceQueueItemRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FlushDeviceQueueForDevEUI(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/FlushDeviceQueueForDevEUI',
+            chirpstack__api_dot_ns_dot_ns__pb2.FlushDeviceQueueForDevEUIRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDeviceQueueItemsForDevEUI(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetDeviceQueueItemsForDevEUI',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNextDownlinkFCntForDevEUI(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetNextDownlinkFCntForDevEUI',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRandomDevAddr(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetRandomDevAddr',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetRandomDevAddrResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateMACCommandQueueItem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateMACCommandQueueItem',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateMACCommandQueueItemRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendProprietaryPayload(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/SendProprietaryPayload',
+            chirpstack__api_dot_ns_dot_ns__pb2.SendProprietaryPayloadRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateGateway(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateGateway',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGateway(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetGateway',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateGateway(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateGateway',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteGateway(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteGateway',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateGatewayProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateGatewayProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGatewayProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetGatewayProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateGatewayProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateGatewayProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteGatewayProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteGatewayProfile',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayProfileRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGatewayStats(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetGatewayStats',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StreamFrameLogsForGateway(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/ns.NetworkServerService/StreamFrameLogsForGateway',
+            chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StreamFrameLogsForDevice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/ns.NetworkServerService/StreamFrameLogsForDevice',
+            chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/CreateMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/UpdateMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.UpdateMulticastGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.DeleteMulticastGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddDeviceToMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/AddDeviceToMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.AddDeviceToMulticastGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveDeviceFromMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/RemoveDeviceFromMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.RemoveDeviceFromMulticastGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EnqueueMulticastQueueItem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/EnqueueMulticastQueueItem',
+            chirpstack__api_dot_ns_dot_ns__pb2.EnqueueMulticastQueueItemRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FlushMulticastQueueForMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/FlushMulticastQueueForMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.FlushMulticastQueueForMulticastGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMulticastQueueItemsForMulticastGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetMulticastQueueItemsForMulticastGroup',
+            chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GetVersion',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GetVersionResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
