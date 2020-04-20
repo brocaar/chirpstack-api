@@ -593,6 +593,32 @@ message GetNextDownlinkFCntForDevEUIResponse {
     uint32 f_cnt = 1;
 }
 
+message UplinkFrameLog {
+    // PHYPayload.
+    bytes phy_payload = 1;
+
+    // TX meta-data.
+    gw.UplinkTXInfo tx_info = 2;
+
+    // RX meta-data.
+    repeated gw.UplinkRXInfo rx_info = 3;
+}
+
+message DownlinkFrameLog {
+    // PHYPayload.
+    bytes phy_payload = 1;
+
+    // TX meta-data.
+    gw.DownlinkTXInfo tx_info = 2;
+
+    // Token (uint16 value).
+    // Deprecated: replaced by downlink_id.
+    uint32 token = 3;
+
+    // Downlink ID (UUID).
+    bytes downlink_id = 4 [json_name = "downlinkID"];
+}
+
 message StreamFrameLogsForGatewayRequest {
     // MAC address of the gateway.
     bytes gateway_id = 1;
@@ -601,10 +627,10 @@ message StreamFrameLogsForGatewayRequest {
 message StreamFrameLogsForGatewayResponse {
     oneof frame {
         // Contains an uplink frame.
-        gw.UplinkFrameSet uplink_frame_set = 1;
+        UplinkFrameLog uplink_frame_set = 1;
 
         // Contains a downlink frame.
-        gw.DownlinkFrame downlink_frame = 2;
+        DownlinkFrameLog downlink_frame = 2;
     }
 }
 
@@ -616,10 +642,10 @@ message StreamFrameLogsForDeviceRequest {
 message StreamFrameLogsForDeviceResponse {
     oneof frame {
         // Contains an uplink frame.
-        gw.UplinkFrameSet uplink_frame_set = 1;
+        UplinkFrameLog uplink_frame_set = 1;
 
         // Contains a downlink frame.
-        gw.DownlinkFrame downlink_frame = 2;
+        DownlinkFrameLog downlink_frame = 2;
     }
 }
 

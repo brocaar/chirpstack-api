@@ -573,6 +573,11 @@ export class DownlinkFrame extends jspb.Message {
   getDownlinkId_asB64(): string;
   setDownlinkId(value: Uint8Array | string): void;
 
+  clearItemsList(): void;
+  getItemsList(): Array<DownlinkFrameItem>;
+  setItemsList(value: Array<DownlinkFrameItem>): void;
+  addItems(value?: DownlinkFrameItem, index?: number): DownlinkFrameItem;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownlinkFrame.AsObject;
   static toObject(includeInstance: boolean, msg: DownlinkFrame): DownlinkFrame.AsObject;
@@ -589,6 +594,35 @@ export namespace DownlinkFrame {
     txInfo?: DownlinkTXInfo.AsObject,
     token: number,
     downlinkId: Uint8Array | string,
+    itemsList: Array<DownlinkFrameItem.AsObject>,
+  }
+}
+
+export class DownlinkFrameItem extends jspb.Message {
+  getPhyPayload(): Uint8Array | string;
+  getPhyPayload_asU8(): Uint8Array;
+  getPhyPayload_asB64(): string;
+  setPhyPayload(value: Uint8Array | string): void;
+
+  hasTxInfo(): boolean;
+  clearTxInfo(): void;
+  getTxInfo(): DownlinkTXInfo | undefined;
+  setTxInfo(value?: DownlinkTXInfo): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownlinkFrameItem.AsObject;
+  static toObject(includeInstance: boolean, msg: DownlinkFrameItem): DownlinkFrameItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownlinkFrameItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownlinkFrameItem;
+  static deserializeBinaryFromReader(message: DownlinkFrameItem, reader: jspb.BinaryReader): DownlinkFrameItem;
+}
+
+export namespace DownlinkFrameItem {
+  export type AsObject = {
+    phyPayload: Uint8Array | string,
+    txInfo?: DownlinkTXInfo.AsObject,
   }
 }
 
@@ -609,6 +643,11 @@ export class DownlinkTXAck extends jspb.Message {
   getDownlinkId_asB64(): string;
   setDownlinkId(value: Uint8Array | string): void;
 
+  clearItemsList(): void;
+  getItemsList(): Array<DownlinkTXAckItem>;
+  setItemsList(value: Array<DownlinkTXAckItem>): void;
+  addItems(value?: DownlinkTXAckItem, index?: number): DownlinkTXAckItem;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownlinkTXAck.AsObject;
   static toObject(includeInstance: boolean, msg: DownlinkTXAck): DownlinkTXAck.AsObject;
@@ -625,6 +664,27 @@ export namespace DownlinkTXAck {
     token: number,
     error: string,
     downlinkId: Uint8Array | string,
+    itemsList: Array<DownlinkTXAckItem.AsObject>,
+  }
+}
+
+export class DownlinkTXAckItem extends jspb.Message {
+  getStatus(): TxAckStatusMap[keyof TxAckStatusMap];
+  setStatus(value: TxAckStatusMap[keyof TxAckStatusMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownlinkTXAckItem.AsObject;
+  static toObject(includeInstance: boolean, msg: DownlinkTXAckItem): DownlinkTXAckItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownlinkTXAckItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownlinkTXAckItem;
+  static deserializeBinaryFromReader(message: DownlinkTXAckItem, reader: jspb.BinaryReader): DownlinkTXAckItem;
+}
+
+export namespace DownlinkTXAckItem {
+  export type AsObject = {
+    status: TxAckStatusMap[keyof TxAckStatusMap],
   }
 }
 
@@ -937,4 +997,18 @@ export interface CRCStatusMap {
 }
 
 export const CRCStatus: CRCStatusMap;
+
+export interface TxAckStatusMap {
+  IGNORED: 0;
+  OK: 1;
+  TOO_LATE: 2;
+  TOO_EARLY: 3;
+  COLLISION_PACKET: 4;
+  COLLISION_BEACON: 5;
+  TX_FREQ: 6;
+  TX_POWER: 7;
+  GPS_UNLOCKED: 8;
+}
+
+export const TxAckStatus: TxAckStatusMap;
 

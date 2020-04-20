@@ -43,6 +43,35 @@ enum CRCStatus {
     CRC_OK = 2;
 }
 
+enum TxAckStatus {
+    // Ignored (when a previous item was already emitted).
+    IGNORED = 0;
+
+    // Packet has been programmed for downlink.
+    OK = 1;
+
+    // Rejected because it was already too late to program this packet for downlink.
+    TOO_LATE = 2;
+
+    // Rejected because downlink packet timestamp is too much in advance.
+    TOO_EARLY = 3;
+
+    // Rejected because there was already a packet programmed in requested timeframe.
+    COLLISION_PACKET = 4;
+
+    // Rejected because there was already a beacon planned in requested timeframe.
+    COLLISION_BEACON = 5;
+
+    // Rejected because requested frequency is not supported by TX RF chain.
+    TX_FREQ = 6;
+
+    // Rejected because requested power is not supported by gateway.
+    TX_POWER = 7;
+
+    // Rejected because GPS is unlocked, so GPS timestamp cannot be used.
+    GPS_UNLOCKED = 8;
+}
+
 message UplinkTXInfo {
 	// Frequency (Hz).
 	uint32 frequency = 1;
@@ -274,17 +303,34 @@ message UplinkFrameSet {
 
 message DownlinkFrame {
     // PHYPayload.
+    // Deprecated: replaced by items.
     bytes phy_payload = 1;
 
     // TX meta-data.
+    // Deprecated: replaced by items.
     DownlinkTXInfo tx_info = 2;
 
     // Token (uint16 value).
-    // Deprecated: will be replaced by downlink_id.
+    // Deprecated: replaced by downlink_id.
     uint32 token = 3;
 
     // Downlink ID (UUID).
     bytes downlink_id = 4 [json_name = "downlinkID"];
+
+    // Downlink frame items.
+    // This makes it possible to send multiple downlink opportunities to the
+    // gateway at once (e.g. RX1 and RX2 in LoRaWAN). The first item has the
+    // highest priority, the last the lowest. The gateway will emit at most
+    // one item.
+    repeated DownlinkFrameItem items = 5;
+}
+
+message DownlinkFrameItem {
+    // PHYPayload.
+    bytes phy_payload = 1;
+
+    // TX meta-data.
+    DownlinkTXInfo tx_info = 2;
 }
 
 message DownlinkTXAck {
@@ -292,13 +338,26 @@ message DownlinkTXAck {
     bytes gateway_id = 1 [json_name = "gatewayID"];
 
     // Token (uint16 value).
+    // Deprecated: replaced by downlink_id.
     uint32 token = 2;
 
     // Error.
+    // Deprecated: replaced by items.
     string error = 3;
 
     // Downlink ID (UUID).
     bytes downlink_id = 4 [json_name = "downlinkID"];
+
+    // Downlink frame items.
+    // This list has the same length as the request and indicates which
+    // downlink frame has been emitted of the requested list (or why it failed).
+    // Note that at most one item has a positive acknowledgement.
+    repeated DownlinkTXAckItem items = 5;
+}
+
+message DownlinkTXAckItem {
+    // The Ack status of this item.
+    TxAckStatus status = 1; 
 }
 
 message GatewayConfiguration {
