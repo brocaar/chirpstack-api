@@ -1379,7 +1379,8 @@ proto.api.ServiceProfileListItem.toObject = function(includeInstance, msg) {
     organizationId: msg.getOrganizationId(),
     networkServerId: msg.getNetworkServerId(),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    networkServerName: msg.getNetworkServerName()
   };
 
   if (includeInstance) {
@@ -1441,6 +1442,10 @@ proto.api.ServiceProfileListItem.deserializeBinaryFromReader = function(msg, rea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNetworkServerName(value);
       break;
     default:
       reader.skipField();
@@ -1522,6 +1527,13 @@ proto.api.ServiceProfileListItem.prototype.serializeBinaryToWriter = function (w
       6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = this.getNetworkServerName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
     );
   }
 };
@@ -1653,6 +1665,21 @@ proto.api.ServiceProfileListItem.prototype.clearUpdatedAt = function() {
  */
 proto.api.ServiceProfileListItem.prototype.hasUpdatedAt = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string network_server_name = 7;
+ * @return {string}
+ */
+proto.api.ServiceProfileListItem.prototype.getNetworkServerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 7, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.ServiceProfileListItem.prototype.setNetworkServerName = function(value) {
+  jspb.Message.setField(this, 7, value);
 };
 
 

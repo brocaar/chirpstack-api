@@ -375,7 +375,7 @@
         },
         "networkServerName": {
           "type": "string",
-          "title": "Network-server name"
+          "description": "Network-server name."
         }
       }
     },
