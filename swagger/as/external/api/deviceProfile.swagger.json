@@ -372,6 +372,10 @@
           "type": "string",
           "format": "date-time",
           "description": "Last update timestamp."
+        },
+        "networkServerName": {
+          "type": "string",
+          "title": "Network-server name"
         }
       }
     },

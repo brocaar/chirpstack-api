@@ -104,6 +104,9 @@ message DeviceProfileListItem {
 
     // Last update timestamp.
     google.protobuf.Timestamp updated_at = 6;
+
+    // Network-server name
+    string network_server_name = 7;
 }
 
 message ListDeviceProfileRequest {
