@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
-  serialized_pb=b'\n5chirpstack-api/as_pb/external/api/deviceProfile.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/profiles.proto\"H\n\x1a\x43reateDeviceProfileRequest\x12*\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x12.api.DeviceProfile\")\n\x1b\x43reateDeviceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\t\"%\n\x17GetDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xa6\x01\n\x18GetDeviceProfileResponse\x12*\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x12.api.DeviceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"H\n\x1aUpdateDeviceProfileRequest\x12*\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x12.api.DeviceProfile\"(\n\x1a\x44\x65leteDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xe6\x01\n\x15\x44\x65viceProfileListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x04 \x01(\x03R\x0fnetworkServerID\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x89\x01\n\x18ListDeviceProfileRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\x03R\rapplicationID\"\\\n\x19ListDeviceProfileResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12*\n\x06result\x18\x02 \x03(\x0b\x32\x1a.api.DeviceProfileListItem2\xae\x04\n\x14\x44\x65viceProfileService\x12l\n\x06\x43reate\x12\x1f.api.CreateDeviceProfileRequest\x1a .api.CreateDeviceProfileResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/device-profiles:\x01*\x12\x65\n\x03Get\x12\x1c.api.GetDeviceProfileRequest\x1a\x1d.api.GetDeviceProfileResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/device-profiles/{id}\x12v\n\x06Update\x12\x1f.api.UpdateDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"3\x82\xd3\xe4\x93\x02-\x1a(/api/device-profiles/{device_profile.id}:\x01*\x12\x64\n\x06\x44\x65lete\x12\x1f.api.DeleteDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"!\x82\xd3\xe4\x93\x02\x1b*\x19/api/device-profiles/{id}\x12\x63\n\x04List\x12\x1d.api.ListDeviceProfileRequest\x1a\x1e.api.ListDeviceProfileResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/device-profilesB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n5chirpstack-api/as_pb/external/api/deviceProfile.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/profiles.proto\"H\n\x1a\x43reateDeviceProfileRequest\x12*\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x12.api.DeviceProfile\")\n\x1b\x43reateDeviceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\t\"%\n\x17GetDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xa6\x01\n\x18GetDeviceProfileResponse\x12*\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x12.api.DeviceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"H\n\x1aUpdateDeviceProfileRequest\x12*\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x12.api.DeviceProfile\"(\n\x1a\x44\x65leteDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x83\x02\n\x15\x44\x65viceProfileListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x04 \x01(\x03R\x0fnetworkServerID\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13network_server_name\x18\x07 \x01(\t\"\x89\x01\n\x18ListDeviceProfileRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x04 \x01(\x03R\rapplicationID\"\\\n\x19ListDeviceProfileResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12*\n\x06result\x18\x02 \x03(\x0b\x32\x1a.api.DeviceProfileListItem2\xae\x04\n\x14\x44\x65viceProfileService\x12l\n\x06\x43reate\x12\x1f.api.CreateDeviceProfileRequest\x1a .api.CreateDeviceProfileResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/device-profiles:\x01*\x12\x65\n\x03Get\x12\x1c.api.GetDeviceProfileRequest\x1a\x1d.api.GetDeviceProfileResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/device-profiles/{id}\x12v\n\x06Update\x12\x1f.api.UpdateDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"3\x82\xd3\xe4\x93\x02-\x1a(/api/device-profiles/{device_profile.id}:\x01*\x12\x64\n\x06\x44\x65lete\x12\x1f.api.DeleteDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"!\x82\xd3\xe4\x93\x02\x1b*\x19/api/device-profiles/{id}\x12\x63\n\x04List\x12\x1d.api.ListDeviceProfileRequest\x1a\x1e.api.ListDeviceProfileResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/device-profilesB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_profiles__pb2.DESCRIPTOR,])
 
@@ -278,6 +278,13 @@ _DEVICEPROFILELISTITEM = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='network_server_name', full_name='api.DeviceProfileListItem.network_server_name', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -291,7 +298,7 @@ _DEVICEPROFILELISTITEM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=646,
-  serialized_end=876,
+  serialized_end=905,
 )
 
 
@@ -342,8 +349,8 @@ _LISTDEVICEPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=879,
-  serialized_end=1016,
+  serialized_start=908,
+  serialized_end=1045,
 )
 
 
@@ -380,8 +387,8 @@ _LISTDEVICEPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1018,
-  serialized_end=1110,
+  serialized_start=1047,
+  serialized_end=1139,
 )
 
 _CREATEDEVICEPROFILEREQUEST.fields_by_name['device_profile'].message_type = chirpstack__api_dot_as__pb_dot_external_dot_api_dot_profiles__pb2._DEVICEPROFILE
@@ -475,8 +482,8 @@ _DEVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1113,
-  serialized_end=1671,
+  serialized_start=1142,
+  serialized_end=1700,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

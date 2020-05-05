@@ -196,6 +196,9 @@ export class ServiceProfileListItem extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getNetworkServerName(): string;
+  setNetworkServerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceProfileListItem.AsObject;
   static toObject(includeInstance: boolean, msg: ServiceProfileListItem): ServiceProfileListItem.AsObject;
@@ -214,6 +217,7 @@ export namespace ServiceProfileListItem {
     networkServerId: number,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    networkServerName: string,
   }
 }
 

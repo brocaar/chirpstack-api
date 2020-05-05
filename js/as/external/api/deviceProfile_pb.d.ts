@@ -168,6 +168,9 @@ export class DeviceProfileListItem extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getNetworkServerName(): string;
+  setNetworkServerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeviceProfileListItem.AsObject;
   static toObject(includeInstance: boolean, msg: DeviceProfileListItem): DeviceProfileListItem.AsObject;
@@ -186,6 +189,7 @@ export namespace DeviceProfileListItem {
     networkServerId: number,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    networkServerName: string,
   }
 }
 
