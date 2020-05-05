@@ -32,4 +32,7 @@ message DownlinkFrameLog {
 
     // LoRaWAN PHYPayload.
     string phy_payload_json = 2 [json_name = "phyPayloadJSON"];
+
+    // Gateway ID.
+    string gateway_id = 3 [json_name = "gatewayID"];
 }

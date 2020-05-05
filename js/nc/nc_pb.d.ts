@@ -83,6 +83,11 @@ export class HandleDownlinkMetaDataRequest extends jspb.Message {
   getMessageType(): MTypeMap[keyof MTypeMap];
   setMessageType(value: MTypeMap[keyof MTypeMap]): void;
 
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HandleDownlinkMetaDataRequest.AsObject;
   static toObject(includeInstance: boolean, msg: HandleDownlinkMetaDataRequest): HandleDownlinkMetaDataRequest.AsObject;
@@ -102,6 +107,7 @@ export namespace HandleDownlinkMetaDataRequest {
     macCommandByteCount: number,
     applicationPayloadByteCount: number,
     messageType: MTypeMap[keyof MTypeMap],
+    gatewayId: Uint8Array | string,
   }
 }
 

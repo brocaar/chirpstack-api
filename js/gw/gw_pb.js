@@ -16,7 +16,9 @@ goog.exportSymbol('proto.gw.CRCStatus', null, global);
 goog.exportSymbol('proto.gw.ChannelConfiguration', null, global);
 goog.exportSymbol('proto.gw.DelayTimingInfo', null, global);
 goog.exportSymbol('proto.gw.DownlinkFrame', null, global);
+goog.exportSymbol('proto.gw.DownlinkFrameItem', null, global);
 goog.exportSymbol('proto.gw.DownlinkTXAck', null, global);
+goog.exportSymbol('proto.gw.DownlinkTXAckItem', null, global);
 goog.exportSymbol('proto.gw.DownlinkTXInfo', null, global);
 goog.exportSymbol('proto.gw.DownlinkTiming', null, global);
 goog.exportSymbol('proto.gw.EncryptedFineTimestamp', null, global);
@@ -34,6 +36,7 @@ goog.exportSymbol('proto.gw.LoRaModulationInfo', null, global);
 goog.exportSymbol('proto.gw.PlainFineTimestamp', null, global);
 goog.exportSymbol('proto.gw.RawPacketForwarderCommand', null, global);
 goog.exportSymbol('proto.gw.RawPacketForwarderEvent', null, global);
+goog.exportSymbol('proto.gw.TxAckStatus', null, global);
 goog.exportSymbol('proto.gw.UplinkFrame', null, global);
 goog.exportSymbol('proto.gw.UplinkFrameSet', null, global);
 goog.exportSymbol('proto.gw.UplinkRXInfo', null, global);
@@ -4158,12 +4161,19 @@ proto.gw.UplinkFrameSet.prototype.clearRxInfoList = function() {
  * @constructor
  */
 proto.gw.DownlinkFrame = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.gw.DownlinkFrame.repeatedFields_, null);
 };
 goog.inherits(proto.gw.DownlinkFrame, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.gw.DownlinkFrame.displayName = 'proto.gw.DownlinkFrame';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.gw.DownlinkFrame.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4195,7 +4205,10 @@ proto.gw.DownlinkFrame.toObject = function(includeInstance, msg) {
     phyPayload: msg.getPhyPayload_asB64(),
     txInfo: (f = msg.getTxInfo()) && proto.gw.DownlinkTXInfo.toObject(includeInstance, f),
     token: msg.getToken(),
-    downlinkId: msg.getDownlinkId_asB64()
+    downlinkId: msg.getDownlinkId_asB64(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    proto.gw.DownlinkFrameItem.toObject, includeInstance),
+    gatewayId: msg.getGatewayId_asB64()
   };
 
   if (includeInstance) {
@@ -4248,6 +4261,16 @@ proto.gw.DownlinkFrame.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setDownlinkId(value);
+      break;
+    case 5:
+      var value = new proto.gw.DownlinkFrameItem;
+      reader.readMessage(value,proto.gw.DownlinkFrameItem.deserializeBinaryFromReader);
+      msg.getItemsList().push(value);
+      msg.setItemsList(msg.getItemsList());
+      break;
+    case 6:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setGatewayId(value);
       break;
     default:
       reader.skipField();
@@ -4313,6 +4336,21 @@ proto.gw.DownlinkFrame.prototype.serializeBinaryToWriter = function (writer) {
   if (f.length > 0) {
     writer.writeBytes(
       4,
+      f
+    );
+  }
+  f = this.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.gw.DownlinkFrameItem.serializeBinaryToWriter
+    );
+  }
+  f = this.getGatewayId_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      6,
       f
     );
   }
@@ -4451,6 +4489,295 @@ proto.gw.DownlinkFrame.prototype.setDownlinkId = function(value) {
 };
 
 
+/**
+ * repeated DownlinkFrameItem items = 5;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.gw.DownlinkFrameItem>}
+ */
+proto.gw.DownlinkFrame.prototype.getItemsList = function() {
+  return /** @type{!Array.<!proto.gw.DownlinkFrameItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.gw.DownlinkFrameItem, 5));
+};
+
+
+/** @param {Array.<!proto.gw.DownlinkFrameItem>} value  */
+proto.gw.DownlinkFrame.prototype.setItemsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+proto.gw.DownlinkFrame.prototype.clearItemsList = function() {
+  this.setItemsList([]);
+};
+
+
+/**
+ * optional bytes gateway_id = 6;
+ * @return {!(string|Uint8Array)}
+ */
+proto.gw.DownlinkFrame.prototype.getGatewayId = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+};
+
+
+/**
+ * optional bytes gateway_id = 6;
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {string}
+ */
+proto.gw.DownlinkFrame.prototype.getGatewayId_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getGatewayId()));
+};
+
+
+/**
+ * optional bytes gateway_id = 6;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {!Uint8Array}
+ */
+proto.gw.DownlinkFrame.prototype.getGatewayId_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getGatewayId()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.gw.DownlinkFrame.prototype.setGatewayId = function(value) {
+  jspb.Message.setField(this, 6, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.gw.DownlinkFrameItem = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.gw.DownlinkFrameItem, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.gw.DownlinkFrameItem.displayName = 'proto.gw.DownlinkFrameItem';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.gw.DownlinkFrameItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.gw.DownlinkFrameItem.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.gw.DownlinkFrameItem} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.gw.DownlinkFrameItem.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    phyPayload: msg.getPhyPayload_asB64(),
+    txInfo: (f = msg.getTxInfo()) && proto.gw.DownlinkTXInfo.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.gw.DownlinkFrameItem}
+ */
+proto.gw.DownlinkFrameItem.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.gw.DownlinkFrameItem;
+  return proto.gw.DownlinkFrameItem.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.gw.DownlinkFrameItem} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.gw.DownlinkFrameItem}
+ */
+proto.gw.DownlinkFrameItem.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setPhyPayload(value);
+      break;
+    case 2:
+      var value = new proto.gw.DownlinkTXInfo;
+      reader.readMessage(value,proto.gw.DownlinkTXInfo.deserializeBinaryFromReader);
+      msg.setTxInfo(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.gw.DownlinkFrameItem} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.gw.DownlinkFrameItem.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.gw.DownlinkFrameItem.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.gw.DownlinkFrameItem.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getPhyPayload_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
+  }
+  f = this.getTxInfo();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.gw.DownlinkTXInfo.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.gw.DownlinkFrameItem} The clone.
+ */
+proto.gw.DownlinkFrameItem.prototype.cloneMessage = function() {
+  return /** @type {!proto.gw.DownlinkFrameItem} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional bytes phy_payload = 1;
+ * @return {!(string|Uint8Array)}
+ */
+proto.gw.DownlinkFrameItem.prototype.getPhyPayload = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/**
+ * optional bytes phy_payload = 1;
+ * This is a type-conversion wrapper around `getPhyPayload()`
+ * @return {string}
+ */
+proto.gw.DownlinkFrameItem.prototype.getPhyPayload_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getPhyPayload()));
+};
+
+
+/**
+ * optional bytes phy_payload = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getPhyPayload()`
+ * @return {!Uint8Array}
+ */
+proto.gw.DownlinkFrameItem.prototype.getPhyPayload_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getPhyPayload()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.gw.DownlinkFrameItem.prototype.setPhyPayload = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional DownlinkTXInfo tx_info = 2;
+ * @return {proto.gw.DownlinkTXInfo}
+ */
+proto.gw.DownlinkFrameItem.prototype.getTxInfo = function() {
+  return /** @type{proto.gw.DownlinkTXInfo} */ (
+    jspb.Message.getWrapperField(this, proto.gw.DownlinkTXInfo, 2));
+};
+
+
+/** @param {proto.gw.DownlinkTXInfo|undefined} value  */
+proto.gw.DownlinkFrameItem.prototype.setTxInfo = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.gw.DownlinkFrameItem.prototype.clearTxInfo = function() {
+  this.setTxInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.gw.DownlinkFrameItem.prototype.hasTxInfo = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -4463,12 +4790,19 @@ proto.gw.DownlinkFrame.prototype.setDownlinkId = function(value) {
  * @constructor
  */
 proto.gw.DownlinkTXAck = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.gw.DownlinkTXAck.repeatedFields_, null);
 };
 goog.inherits(proto.gw.DownlinkTXAck, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.gw.DownlinkTXAck.displayName = 'proto.gw.DownlinkTXAck';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.gw.DownlinkTXAck.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4500,7 +4834,9 @@ proto.gw.DownlinkTXAck.toObject = function(includeInstance, msg) {
     gatewayId: msg.getGatewayId_asB64(),
     token: msg.getToken(),
     error: msg.getError(),
-    downlinkId: msg.getDownlinkId_asB64()
+    downlinkId: msg.getDownlinkId_asB64(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    proto.gw.DownlinkTXAckItem.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4552,6 +4888,12 @@ proto.gw.DownlinkTXAck.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setDownlinkId(value);
+      break;
+    case 5:
+      var value = new proto.gw.DownlinkTXAckItem;
+      reader.readMessage(value,proto.gw.DownlinkTXAckItem.deserializeBinaryFromReader);
+      msg.getItemsList().push(value);
+      msg.setItemsList(msg.getItemsList());
       break;
     default:
       reader.skipField();
@@ -4617,6 +4959,14 @@ proto.gw.DownlinkTXAck.prototype.serializeBinaryToWriter = function (writer) {
     writer.writeBytes(
       4,
       f
+    );
+  }
+  f = this.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.gw.DownlinkTXAckItem.serializeBinaryToWriter
     );
   }
 };
@@ -4736,6 +5086,188 @@ proto.gw.DownlinkTXAck.prototype.getDownlinkId_asU8 = function() {
 /** @param {!(string|Uint8Array)} value  */
 proto.gw.DownlinkTXAck.prototype.setDownlinkId = function(value) {
   jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * repeated DownlinkTXAckItem items = 5;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.gw.DownlinkTXAckItem>}
+ */
+proto.gw.DownlinkTXAck.prototype.getItemsList = function() {
+  return /** @type{!Array.<!proto.gw.DownlinkTXAckItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.gw.DownlinkTXAckItem, 5));
+};
+
+
+/** @param {Array.<!proto.gw.DownlinkTXAckItem>} value  */
+proto.gw.DownlinkTXAck.prototype.setItemsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+proto.gw.DownlinkTXAck.prototype.clearItemsList = function() {
+  this.setItemsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.gw.DownlinkTXAckItem = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.gw.DownlinkTXAckItem, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.gw.DownlinkTXAckItem.displayName = 'proto.gw.DownlinkTXAckItem';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.gw.DownlinkTXAckItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.gw.DownlinkTXAckItem.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.gw.DownlinkTXAckItem} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.gw.DownlinkTXAckItem.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: msg.getStatus()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.gw.DownlinkTXAckItem}
+ */
+proto.gw.DownlinkTXAckItem.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.gw.DownlinkTXAckItem;
+  return proto.gw.DownlinkTXAckItem.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.gw.DownlinkTXAckItem} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.gw.DownlinkTXAckItem}
+ */
+proto.gw.DownlinkTXAckItem.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.gw.TxAckStatus} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.gw.DownlinkTXAckItem} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.gw.DownlinkTXAckItem.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.gw.DownlinkTXAckItem.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.gw.DownlinkTXAckItem.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.gw.DownlinkTXAckItem} The clone.
+ */
+proto.gw.DownlinkTXAckItem.prototype.cloneMessage = function() {
+  return /** @type {!proto.gw.DownlinkTXAckItem} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional TxAckStatus status = 1;
+ * @return {!proto.gw.TxAckStatus}
+ */
+proto.gw.DownlinkTXAckItem.prototype.getStatus = function() {
+  return /** @type {!proto.gw.TxAckStatus} */ (jspb.Message.getFieldProto3(this, 1, 0));
+};
+
+
+/** @param {!proto.gw.TxAckStatus} value  */
+proto.gw.DownlinkTXAckItem.prototype.setStatus = function(value) {
+  jspb.Message.setField(this, 1, value);
 };
 
 
@@ -7029,6 +7561,21 @@ proto.gw.CRCStatus = {
   NO_CRC: 0,
   BAD_CRC: 1,
   CRC_OK: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.gw.TxAckStatus = {
+  IGNORED: 0,
+  OK: 1,
+  TOO_LATE: 2,
+  TOO_EARLY: 3,
+  COLLISION_PACKET: 4,
+  COLLISION_BEACON: 5,
+  TX_FREQ: 6,
+  TX_POWER: 7,
+  GPS_UNLOCKED: 8
 };
 
 goog.object.extend(exports, proto.gw);

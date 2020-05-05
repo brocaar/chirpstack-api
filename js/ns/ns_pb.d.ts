@@ -1354,6 +1354,84 @@ export namespace GetNextDownlinkFCntForDevEUIResponse {
   }
 }
 
+export class UplinkFrameLog extends jspb.Message {
+  getPhyPayload(): Uint8Array | string;
+  getPhyPayload_asU8(): Uint8Array;
+  getPhyPayload_asB64(): string;
+  setPhyPayload(value: Uint8Array | string): void;
+
+  hasTxInfo(): boolean;
+  clearTxInfo(): void;
+  getTxInfo(): gw_gw_pb.UplinkTXInfo | undefined;
+  setTxInfo(value?: gw_gw_pb.UplinkTXInfo): void;
+
+  clearRxInfoList(): void;
+  getRxInfoList(): Array<gw_gw_pb.UplinkRXInfo>;
+  setRxInfoList(value: Array<gw_gw_pb.UplinkRXInfo>): void;
+  addRxInfo(value?: gw_gw_pb.UplinkRXInfo, index?: number): gw_gw_pb.UplinkRXInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UplinkFrameLog.AsObject;
+  static toObject(includeInstance: boolean, msg: UplinkFrameLog): UplinkFrameLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UplinkFrameLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UplinkFrameLog;
+  static deserializeBinaryFromReader(message: UplinkFrameLog, reader: jspb.BinaryReader): UplinkFrameLog;
+}
+
+export namespace UplinkFrameLog {
+  export type AsObject = {
+    phyPayload: Uint8Array | string,
+    txInfo?: gw_gw_pb.UplinkTXInfo.AsObject,
+    rxInfoList: Array<gw_gw_pb.UplinkRXInfo.AsObject>,
+  }
+}
+
+export class DownlinkFrameLog extends jspb.Message {
+  getPhyPayload(): Uint8Array | string;
+  getPhyPayload_asU8(): Uint8Array;
+  getPhyPayload_asB64(): string;
+  setPhyPayload(value: Uint8Array | string): void;
+
+  hasTxInfo(): boolean;
+  clearTxInfo(): void;
+  getTxInfo(): gw_gw_pb.DownlinkTXInfo | undefined;
+  setTxInfo(value?: gw_gw_pb.DownlinkTXInfo): void;
+
+  getToken(): number;
+  setToken(value: number): void;
+
+  getDownlinkId(): Uint8Array | string;
+  getDownlinkId_asU8(): Uint8Array;
+  getDownlinkId_asB64(): string;
+  setDownlinkId(value: Uint8Array | string): void;
+
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownlinkFrameLog.AsObject;
+  static toObject(includeInstance: boolean, msg: DownlinkFrameLog): DownlinkFrameLog.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownlinkFrameLog, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownlinkFrameLog;
+  static deserializeBinaryFromReader(message: DownlinkFrameLog, reader: jspb.BinaryReader): DownlinkFrameLog;
+}
+
+export namespace DownlinkFrameLog {
+  export type AsObject = {
+    phyPayload: Uint8Array | string,
+    txInfo?: gw_gw_pb.DownlinkTXInfo.AsObject,
+    token: number,
+    downlinkId: Uint8Array | string,
+    gatewayId: Uint8Array | string,
+  }
+}
+
 export class StreamFrameLogsForGatewayRequest extends jspb.Message {
   getGatewayId(): Uint8Array | string;
   getGatewayId_asU8(): Uint8Array;
@@ -1379,13 +1457,13 @@ export namespace StreamFrameLogsForGatewayRequest {
 export class StreamFrameLogsForGatewayResponse extends jspb.Message {
   hasUplinkFrameSet(): boolean;
   clearUplinkFrameSet(): void;
-  getUplinkFrameSet(): gw_gw_pb.UplinkFrameSet | undefined;
-  setUplinkFrameSet(value?: gw_gw_pb.UplinkFrameSet): void;
+  getUplinkFrameSet(): UplinkFrameLog | undefined;
+  setUplinkFrameSet(value?: UplinkFrameLog): void;
 
   hasDownlinkFrame(): boolean;
   clearDownlinkFrame(): void;
-  getDownlinkFrame(): gw_gw_pb.DownlinkFrame | undefined;
-  setDownlinkFrame(value?: gw_gw_pb.DownlinkFrame): void;
+  getDownlinkFrame(): DownlinkFrameLog | undefined;
+  setDownlinkFrame(value?: DownlinkFrameLog): void;
 
   getFrameCase(): StreamFrameLogsForGatewayResponse.FrameCase;
   serializeBinary(): Uint8Array;
@@ -1400,8 +1478,8 @@ export class StreamFrameLogsForGatewayResponse extends jspb.Message {
 
 export namespace StreamFrameLogsForGatewayResponse {
   export type AsObject = {
-    uplinkFrameSet?: gw_gw_pb.UplinkFrameSet.AsObject,
-    downlinkFrame?: gw_gw_pb.DownlinkFrame.AsObject,
+    uplinkFrameSet?: UplinkFrameLog.AsObject,
+    downlinkFrame?: DownlinkFrameLog.AsObject,
   }
 
   export enum FrameCase {
@@ -1436,13 +1514,13 @@ export namespace StreamFrameLogsForDeviceRequest {
 export class StreamFrameLogsForDeviceResponse extends jspb.Message {
   hasUplinkFrameSet(): boolean;
   clearUplinkFrameSet(): void;
-  getUplinkFrameSet(): gw_gw_pb.UplinkFrameSet | undefined;
-  setUplinkFrameSet(value?: gw_gw_pb.UplinkFrameSet): void;
+  getUplinkFrameSet(): UplinkFrameLog | undefined;
+  setUplinkFrameSet(value?: UplinkFrameLog): void;
 
   hasDownlinkFrame(): boolean;
   clearDownlinkFrame(): void;
-  getDownlinkFrame(): gw_gw_pb.DownlinkFrame | undefined;
-  setDownlinkFrame(value?: gw_gw_pb.DownlinkFrame): void;
+  getDownlinkFrame(): DownlinkFrameLog | undefined;
+  setDownlinkFrame(value?: DownlinkFrameLog): void;
 
   getFrameCase(): StreamFrameLogsForDeviceResponse.FrameCase;
   serializeBinary(): Uint8Array;
@@ -1457,8 +1535,8 @@ export class StreamFrameLogsForDeviceResponse extends jspb.Message {
 
 export namespace StreamFrameLogsForDeviceResponse {
   export type AsObject = {
-    uplinkFrameSet?: gw_gw_pb.UplinkFrameSet.AsObject,
-    downlinkFrame?: gw_gw_pb.DownlinkFrame.AsObject,
+    uplinkFrameSet?: UplinkFrameLog.AsObject,
+    downlinkFrame?: DownlinkFrameLog.AsObject,
   }
 
   export enum FrameCase {
