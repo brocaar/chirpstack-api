@@ -679,6 +679,10 @@
         "phyPayloadJSON": {
           "type": "string",
           "description": "LoRaWAN PHYPayload."
+        },
+        "gatewayID": {
+          "type": "string",
+          "description": "Gateway ID."
         }
       }
     },
@@ -892,7 +896,7 @@
         "gatewayID": {
           "type": "string",
           "format": "byte",
-          "description": "Gateway ID."
+          "description": "Gateway ID.\nDeprecated: replaced by gateway_id in DownlinkFrame."
         },
         "frequency": {
           "type": "integer",

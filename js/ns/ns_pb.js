@@ -11276,7 +11276,8 @@ proto.ns.DownlinkFrameLog.toObject = function(includeInstance, msg) {
     phyPayload: msg.getPhyPayload_asB64(),
     txInfo: (f = msg.getTxInfo()) && gw_gw_pb.DownlinkTXInfo.toObject(includeInstance, f),
     token: msg.getToken(),
-    downlinkId: msg.getDownlinkId_asB64()
+    downlinkId: msg.getDownlinkId_asB64(),
+    gatewayId: msg.getGatewayId_asB64()
   };
 
   if (includeInstance) {
@@ -11329,6 +11330,10 @@ proto.ns.DownlinkFrameLog.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setDownlinkId(value);
+      break;
+    case 5:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setGatewayId(value);
       break;
     default:
       reader.skipField();
@@ -11394,6 +11399,13 @@ proto.ns.DownlinkFrameLog.prototype.serializeBinaryToWriter = function (writer) 
   if (f.length > 0) {
     writer.writeBytes(
       4,
+      f
+    );
+  }
+  f = this.getGatewayId_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      5,
       f
     );
   }
@@ -11529,6 +11541,45 @@ proto.ns.DownlinkFrameLog.prototype.getDownlinkId_asU8 = function() {
 /** @param {!(string|Uint8Array)} value  */
 proto.ns.DownlinkFrameLog.prototype.setDownlinkId = function(value) {
   jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * optional bytes gateway_id = 5;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.DownlinkFrameLog.prototype.getGatewayId = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 5, ""));
+};
+
+
+/**
+ * optional bytes gateway_id = 5;
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {string}
+ */
+proto.ns.DownlinkFrameLog.prototype.getGatewayId_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getGatewayId()));
+};
+
+
+/**
+ * optional bytes gateway_id = 5;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {!Uint8Array}
+ */
+proto.ns.DownlinkFrameLog.prototype.getGatewayId_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getGatewayId()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.DownlinkFrameLog.prototype.setGatewayId = function(value) {
+  jspb.Message.setField(this, 5, value);
 };
 
 

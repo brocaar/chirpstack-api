@@ -84,6 +84,9 @@ message HandleDownlinkMetaDataRequest {
 
 	// Message type.
 	MType message_type = 7;
+
+    // Gateway ID.
+    bytes gateway_id = 8;
 }
 
 message HandleUplinkMACCommandRequest {

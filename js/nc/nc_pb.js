@@ -449,7 +449,8 @@ proto.nc.HandleDownlinkMetaDataRequest.toObject = function(includeInstance, msg)
     phyPayloadByteCount: msg.getPhyPayloadByteCount(),
     macCommandByteCount: msg.getMacCommandByteCount(),
     applicationPayloadByteCount: msg.getApplicationPayloadByteCount(),
-    messageType: msg.getMessageType()
+    messageType: msg.getMessageType(),
+    gatewayId: msg.getGatewayId_asB64()
   };
 
   if (includeInstance) {
@@ -514,6 +515,10 @@ proto.nc.HandleDownlinkMetaDataRequest.deserializeBinaryFromReader = function(ms
     case 7:
       var value = /** @type {!proto.nc.MType} */ (reader.readEnum());
       msg.setMessageType(value);
+      break;
+    case 8:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setGatewayId(value);
       break;
     default:
       reader.skipField();
@@ -600,6 +605,13 @@ proto.nc.HandleDownlinkMetaDataRequest.prototype.serializeBinaryToWriter = funct
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = this.getGatewayId_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      8,
       f
     );
   }
@@ -780,6 +792,45 @@ proto.nc.HandleDownlinkMetaDataRequest.prototype.getMessageType = function() {
 /** @param {!proto.nc.MType} value  */
 proto.nc.HandleDownlinkMetaDataRequest.prototype.setMessageType = function(value) {
   jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * optional bytes gateway_id = 8;
+ * @return {!(string|Uint8Array)}
+ */
+proto.nc.HandleDownlinkMetaDataRequest.prototype.getGatewayId = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 8, ""));
+};
+
+
+/**
+ * optional bytes gateway_id = 8;
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {string}
+ */
+proto.nc.HandleDownlinkMetaDataRequest.prototype.getGatewayId_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getGatewayId()));
+};
+
+
+/**
+ * optional bytes gateway_id = 8;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {!Uint8Array}
+ */
+proto.nc.HandleDownlinkMetaDataRequest.prototype.getGatewayId_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getGatewayId()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.nc.HandleDownlinkMetaDataRequest.prototype.setGatewayId = function(value) {
+  jspb.Message.setField(this, 8, value);
 };
 
 

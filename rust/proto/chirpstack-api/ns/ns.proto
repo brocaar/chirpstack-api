@@ -617,6 +617,9 @@ message DownlinkFrameLog {
 
     // Downlink ID (UUID).
     bytes downlink_id = 4 [json_name = "downlinkID"];
+
+    // Gateway ID.
+    bytes gateway_id = 5 [json_name = "gatewayID"];
 }
 
 message StreamFrameLogsForGatewayRequest {

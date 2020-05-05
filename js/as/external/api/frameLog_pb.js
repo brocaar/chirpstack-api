@@ -312,7 +312,8 @@ proto.api.DownlinkFrameLog.prototype.toObject = function(opt_includeInstance) {
 proto.api.DownlinkFrameLog.toObject = function(includeInstance, msg) {
   var f, obj = {
     txInfo: (f = msg.getTxInfo()) && gw_gw_pb.DownlinkTXInfo.toObject(includeInstance, f),
-    phyPayloadJson: msg.getPhyPayloadJson()
+    phyPayloadJson: msg.getPhyPayloadJson(),
+    gatewayId: msg.getGatewayId()
   };
 
   if (includeInstance) {
@@ -357,6 +358,10 @@ proto.api.DownlinkFrameLog.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhyPayloadJson(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGatewayId(value);
       break;
     default:
       reader.skipField();
@@ -408,6 +413,13 @@ proto.api.DownlinkFrameLog.prototype.serializeBinaryToWriter = function (writer)
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = this.getGatewayId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -465,6 +477,21 @@ proto.api.DownlinkFrameLog.prototype.getPhyPayloadJson = function() {
 /** @param {string} value  */
 proto.api.DownlinkFrameLog.prototype.setPhyPayloadJson = function(value) {
   jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional string gateway_id = 3;
+ * @return {string}
+ */
+proto.api.DownlinkFrameLog.prototype.getGatewayId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.DownlinkFrameLog.prototype.setGatewayId = function(value) {
+  jspb.Message.setField(this, 3, value);
 };
 
 

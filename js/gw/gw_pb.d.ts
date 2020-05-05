@@ -578,6 +578,11 @@ export class DownlinkFrame extends jspb.Message {
   setItemsList(value: Array<DownlinkFrameItem>): void;
   addItems(value?: DownlinkFrameItem, index?: number): DownlinkFrameItem;
 
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownlinkFrame.AsObject;
   static toObject(includeInstance: boolean, msg: DownlinkFrame): DownlinkFrame.AsObject;
@@ -595,6 +600,7 @@ export namespace DownlinkFrame {
     token: number,
     downlinkId: Uint8Array | string,
     itemsList: Array<DownlinkFrameItem.AsObject>,
+    gatewayId: Uint8Array | string,
   }
 }
 

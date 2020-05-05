@@ -48,6 +48,9 @@ export class DownlinkFrameLog extends jspb.Message {
   getPhyPayloadJson(): string;
   setPhyPayloadJson(value: string): void;
 
+  getGatewayId(): string;
+  setGatewayId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownlinkFrameLog.AsObject;
   static toObject(includeInstance: boolean, msg: DownlinkFrameLog): DownlinkFrameLog.AsObject;
@@ -62,6 +65,7 @@ export namespace DownlinkFrameLog {
   export type AsObject = {
     txInfo?: gw_gw_pb.DownlinkTXInfo.AsObject,
     phyPayloadJson: string,
+    gatewayId: string,
   }
 }
 

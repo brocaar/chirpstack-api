@@ -1407,6 +1407,11 @@ export class DownlinkFrameLog extends jspb.Message {
   getDownlinkId_asB64(): string;
   setDownlinkId(value: Uint8Array | string): void;
 
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownlinkFrameLog.AsObject;
   static toObject(includeInstance: boolean, msg: DownlinkFrameLog): DownlinkFrameLog.AsObject;
@@ -1423,6 +1428,7 @@ export namespace DownlinkFrameLog {
     txInfo?: gw_gw_pb.DownlinkTXInfo.AsObject,
     token: number,
     downlinkId: Uint8Array | string,
+    gatewayId: Uint8Array | string,
   }
 }
 

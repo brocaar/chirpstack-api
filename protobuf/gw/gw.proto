@@ -219,6 +219,7 @@ message UplinkRXInfo {
 
 message DownlinkTXInfo {
     // Gateway ID.
+    // Deprecated: replaced by gateway_id in DownlinkFrame.
     bytes gateway_id = 1 [json_name = "gatewayID"];
 
     // TX frequency (in Hz).
@@ -323,6 +324,9 @@ message DownlinkFrame {
     // highest priority, the last the lowest. The gateway will emit at most
     // one item.
     repeated DownlinkFrameItem items = 5;
+
+    // Gateway ID.
+    bytes gateway_id = 6 [json_name = "gatewayID"];
 }
 
 message DownlinkFrameItem {
