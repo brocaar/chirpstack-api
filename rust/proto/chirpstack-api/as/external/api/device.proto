@@ -80,7 +80,7 @@ service DeviceService {
         };
     };
 
-    // Activate (re)activates the device (only when ABP is set to true).
+    // Activate (re)activates the device with the given parameters (for ABP or for importing OTAA activations).
     rpc Activate(ActivateDeviceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             post: "/api/devices/{device_activation.dev_eui}/activate"

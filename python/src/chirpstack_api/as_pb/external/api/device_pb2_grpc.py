@@ -160,7 +160,7 @@ class DeviceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Activate(self, request, context):
-        """Activate (re)activates the device (only when ABP is set to true).
+        """Activate (re)activates the device with the given parameters (for ABP or for importing OTAA activations).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

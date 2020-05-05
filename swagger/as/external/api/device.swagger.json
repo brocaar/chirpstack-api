@@ -368,7 +368,7 @@
     },
     "/api/devices/{device_activation.dev_eui}/activate": {
       "post": {
-        "summary": "Activate (re)activates the device (only when ABP is set to true).",
+        "summary": "Activate (re)activates the device with the given parameters (for ABP or for importing OTAA activations).",
         "operationId": "Activate",
         "responses": {
           "200": {

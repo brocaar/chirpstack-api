@@ -373,7 +373,7 @@ var DeviceServiceService = exports.DeviceServiceService = {
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
-  // Activate (re)activates the device (only when ABP is set to true).
+  // Activate (re)activates the device with the given parameters (for ABP or for importing OTAA activations).
   activate: {
     path: '/api.DeviceService/Activate',
     requestStream: false,

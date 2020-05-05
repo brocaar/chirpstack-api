@@ -1695,7 +1695,7 @@ type DeviceServiceClient interface {
 	UpdateKeys(ctx context.Context, in *UpdateDeviceKeysRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	// DeleteKeys deletes the device-keys for the given DevEUI.
 	DeleteKeys(ctx context.Context, in *DeleteDeviceKeysRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	// Activate (re)activates the device (only when ABP is set to true).
+	// Activate (re)activates the device with the given parameters (for ABP or for importing OTAA activations).
 	Activate(ctx context.Context, in *ActivateDeviceRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	// Deactivate de-activates the device.
 	Deactivate(ctx context.Context, in *DeactivateDeviceRequest, opts ...grpc.CallOption) (*empty.Empty, error)
@@ -1922,7 +1922,7 @@ type DeviceServiceServer interface {
 	UpdateKeys(context.Context, *UpdateDeviceKeysRequest) (*empty.Empty, error)
 	// DeleteKeys deletes the device-keys for the given DevEUI.
 	DeleteKeys(context.Context, *DeleteDeviceKeysRequest) (*empty.Empty, error)
-	// Activate (re)activates the device (only when ABP is set to true).
+	// Activate (re)activates the device with the given parameters (for ABP or for importing OTAA activations).
 	Activate(context.Context, *ActivateDeviceRequest) (*empty.Empty, error)
 	// Deactivate de-activates the device.
 	Deactivate(context.Context, *DeactivateDeviceRequest) (*empty.Empty, error)
