@@ -290,8 +290,8 @@ export class OrganizationUser extends jspb.Message {
   getIsGatewayAdmin(): boolean;
   setIsGatewayAdmin(value: boolean): void;
 
-  getUsername(): string;
-  setUsername(value: string): void;
+  getEmail(): string;
+  setEmail(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrganizationUser.AsObject;
@@ -310,7 +310,7 @@ export namespace OrganizationUser {
     isAdmin: boolean,
     isDeviceAdmin: boolean,
     isGatewayAdmin: boolean,
-    username: string,
+    email: string,
   }
 }
 
@@ -318,8 +318,8 @@ export class OrganizationUserListItem extends jspb.Message {
   getUserId(): number;
   setUserId(value: number): void;
 
-  getUsername(): string;
-  setUsername(value: string): void;
+  getEmail(): string;
+  setEmail(value: string): void;
 
   getIsAdmin(): boolean;
   setIsAdmin(value: boolean): void;
@@ -353,7 +353,7 @@ export class OrganizationUserListItem extends jspb.Message {
 export namespace OrganizationUserListItem {
   export type AsObject = {
     userId: number,
-    username: string,
+    email: string,
     isAdmin: boolean,
     isDeviceAdmin: boolean,
     isGatewayAdmin: boolean,

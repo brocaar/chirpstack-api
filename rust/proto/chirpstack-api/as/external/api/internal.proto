@@ -27,13 +27,6 @@ service InternalService {
 		};
 	}
 
-	// Get the branding for the UI
-	rpc Branding(google.protobuf.Empty) returns (BrandingResponse) {
-		option(google.api.http) = {
-			get: "/api/internal/branding"
-		};
-	}
-
 	// Perform a global search.
 	rpc GlobalSearch(GlobalSearchRequest) returns (GlobalSearchResponse) {
 		option(google.api.http) = {
@@ -60,6 +53,20 @@ service InternalService {
     rpc ListAPIKeys(ListAPIKeysRequest) returns (ListAPIKeysResponse) {
         option(google.api.http) = {
             get: "/api/internal/api-keys"
+        };
+    }
+
+    // Get the global settings.
+    rpc Settings(google.protobuf.Empty) returns (SettingsResponse) {
+        option(google.api.http) = {
+            get: "/api/internal/settings"
+        };
+    }
+
+    // OpenID Connect login.
+    rpc OpenIDConnectLogin(OpenIDConnectLoginRequest) returns (OpenIDConnectLoginResponse) {
+        option(google.api.http) = {
+            get: "/api/internal/oidc/login"
         };
     }
 }
@@ -128,12 +135,6 @@ message ListAPIKeysResponse {
     repeated APIKey result = 2;
 }
 
-message ProfileSettings {
-	// Existing users in the system can not be assigned to organizations and
-	// application and can not be listed by non global admin users.
-	bool disable_assign_existing_users = 1;
-}
-
 // Defines an organization to which an user is associated.
 message OrganizationLink {
     // Organization ID.
@@ -179,9 +180,6 @@ message ProfileResponse {
     
     // Organizations to which the user is associated.
     repeated OrganizationLink organizations = 3;
-    
-    // Profile settings.
-	ProfileSettings settings = 4;
 }
 
 message GlobalSearchRequest {
@@ -231,13 +229,42 @@ message GlobalSearchResult {
 	string gateway_name = 10;
 }
 
-message BrandingResponse {
-    // Logo html.
-    string logo = 1;
-    
+message SettingsResponse {
+    // Branding settings.
+    Branding branding = 2;
+
+    // OpenID Connect settings.
+    OpenIDConnect openid_connect = 3;
+}
+
+message Branding {
     // Registration html.
-    string registration = 2;
+    string registration = 1;
     
     // Footer html.
-	string footer = 3;
+	string footer = 2;
+}
+
+message OpenIDConnect {
+    // Enable OpenID Connect authentication.
+    bool enabled = 1;
+
+    // Login url.
+    string login_url = 2 [json_name = "loginURL"];
+
+    // Login label.
+    string login_label = 3;
+}
+
+message OpenIDConnectLoginRequest {
+    // OpenID Connect callback code.
+    string code = 1;
+
+    // OpenID Connect callback state.
+    string state = 2;
+}
+
+message OpenIDConnectLoginResponse {
+    // JWT token to use for authentication.
+    string jwt_token = 1;
 }

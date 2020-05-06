@@ -543,9 +543,9 @@
           "format": "boolean",
           "description": "User is able to modify gateways."
         },
-        "username": {
+        "email": {
           "type": "string",
-          "description": "Username (only used on get)."
+          "description": "Email (only used on get)."
         }
       }
     },
@@ -555,11 +555,11 @@
         "userID": {
           "type": "string",
           "format": "int64",
-          "description": "User ID."
+          "description": "User ID.\nThis is not used on create, you must set the user email address\nassociated with the user to add an user to an organization."
         },
-        "username": {
+        "email": {
           "type": "string",
-          "description": "Username."
+          "description": "Email."
         },
         "isAdmin": {
           "type": "boolean",

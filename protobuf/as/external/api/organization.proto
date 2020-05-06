@@ -193,16 +193,18 @@ message OrganizationUser {
     // User is able to modify gateways.
     bool is_gateway_admin = 6;
 
-	// Username (only used on get).
-	string username = 4;
+	// Email (only used on get).
+	string email = 4;
 }
 
 message OrganizationUserListItem {
 	// User ID.
+    // This is not used on create, you must set the user email address
+    // associated with the user to add an user to an organization.
 	int64 user_id = 1 [json_name = "userID"];
 
-	// Username.
-	string username = 2;
+	// Email.
+	string email = 2;
 
 	// User is admin within the context of the organization.
     // There is no need to set the is_device_admin and is_gateway_admin flags.

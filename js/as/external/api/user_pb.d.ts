@@ -10,9 +10,6 @@ export class User extends jspb.Message {
   getId(): number;
   setId(value: number): void;
 
-  getUsername(): string;
-  setUsername(value: string): void;
-
   getSessionTtl(): number;
   setSessionTtl(value: number): void;
 
@@ -41,7 +38,6 @@ export class User extends jspb.Message {
 export namespace User {
   export type AsObject = {
     id: number,
-    username: string,
     sessionTtl: number,
     isAdmin: boolean,
     isActive: boolean,
@@ -54,8 +50,8 @@ export class UserListItem extends jspb.Message {
   getId(): number;
   setId(value: number): void;
 
-  getUsername(): string;
-  setUsername(value: string): void;
+  getEmail(): string;
+  setEmail(value: string): void;
 
   getSessionTtl(): number;
   setSessionTtl(value: number): void;
@@ -89,7 +85,7 @@ export class UserListItem extends jspb.Message {
 export namespace UserListItem {
   export type AsObject = {
     id: number,
-    username: string,
+    email: string,
     sessionTtl: number,
     isAdmin: boolean,
     isActive: boolean,
@@ -285,9 +281,6 @@ export class ListUserRequest extends jspb.Message {
   getOffset(): number;
   setOffset(value: number): void;
 
-  getSearch(): string;
-  setSearch(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListUserRequest): ListUserRequest.AsObject;
@@ -302,7 +295,6 @@ export namespace ListUserRequest {
   export type AsObject = {
     limit: number,
     offset: number,
-    search: string,
   }
 }
 

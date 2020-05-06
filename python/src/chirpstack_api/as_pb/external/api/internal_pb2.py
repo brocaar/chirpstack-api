@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
-  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/internal.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a,chirpstack-api/as_pb/external/api/user.proto\"\x84\x01\n\x06\x41PIKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"3\n\x13\x43reateAPIKeyRequest\x12\x1c\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x0b.api.APIKey\"5\n\x14\x43reateAPIKeyResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tjwt_token\x18\x02 \x01(\t\"!\n\x13\x44\x65leteAPIKeyRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x95\x01\n\x12ListAPIKeysRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"G\n\x13ListAPIKeysResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x1b\n\x06result\x18\x02 \x03(\x0b\x32\x0b.api.APIKey\"8\n\x0fProfileSettings\x12%\n\x1d\x64isable_assign_existing_users\x18\x01 \x01(\x08\"\xfb\x01\n\x10OrganizationLink\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\rLoginResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t\"\x80\x01\n\x0fProfileResponse\x12\x17\n\x04user\x18\x01 \x01(\x0b\x32\t.api.User\x12,\n\rorganizations\x18\x03 \x03(\x0b\x32\x15.api.OrganizationLink\x12&\n\x08settings\x18\x04 \x01(\x0b\x32\x14.api.ProfileSettings\"D\n\x13GlobalSearchRequest\x12\x0e\n\x06search\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06offset\x18\x03 \x01(\x03\"?\n\x14GlobalSearchResponse\x12\'\n\x06result\x18\x01 \x03(\x0b\x32\x17.api.GlobalSearchResult\"\xa8\x02\n\x12GlobalSearchResult\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x04 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12$\n\x0e\x64\x65vice_dev_eui\x18\x07 \x01(\tR\x0c\x64\x65viceDevEUI\x12\x13\n\x0b\x64\x65vice_name\x18\x08 \x01(\t\x12\x1f\n\x0bgateway_mac\x18\t \x01(\tR\ngatewayMAC\x12\x14\n\x0cgateway_name\x18\n \x01(\t\"F\n\x10\x42randingResponse\x12\x0c\n\x04logo\x18\x01 \x01(\t\x12\x14\n\x0cregistration\x18\x02 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x03 \x01(\t2\xa8\x05\n\x0fInternalService\x12N\n\x05Login\x12\x11.api.LoginRequest\x1a\x12.api.LoginResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/internal/login:\x01*\x12V\n\x07Profile\x12\x16.google.protobuf.Empty\x1a\x14.api.ProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/internal/profile\x12Y\n\x08\x42randing\x12\x16.google.protobuf.Empty\x1a\x15.api.BrandingResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/branding\x12\x61\n\x0cGlobalSearch\x12\x18.api.GlobalSearchRequest\x1a\x19.api.GlobalSearchResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/internal/search\x12\x66\n\x0c\x43reateAPIKey\x12\x18.api.CreateAPIKeyRequest\x1a\x19.api.CreateAPIKeyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/api/internal/api-keys:\x01*\x12\x65\n\x0c\x44\x65leteAPIKey\x12\x18.api.DeleteAPIKeyRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/internal/api-keys/{id}\x12`\n\x0bListAPIKeys\x12\x17.api.ListAPIKeysRequest\x1a\x18.api.ListAPIKeysResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/api-keysB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/internal.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a,chirpstack-api/as_pb/external/api/user.proto\"\x84\x01\n\x06\x41PIKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"3\n\x13\x43reateAPIKeyRequest\x12\x1c\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x0b.api.APIKey\"5\n\x14\x43reateAPIKeyResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tjwt_token\x18\x02 \x01(\t\"!\n\x13\x44\x65leteAPIKeyRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x95\x01\n\x12ListAPIKeysRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"G\n\x13ListAPIKeysResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x1b\n\x06result\x18\x02 \x03(\x0b\x32\x0b.api.APIKey\"\xfb\x01\n\x10OrganizationLink\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\rLoginResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t\"X\n\x0fProfileResponse\x12\x17\n\x04user\x18\x01 \x01(\x0b\x32\t.api.User\x12,\n\rorganizations\x18\x03 \x03(\x0b\x32\x15.api.OrganizationLink\"D\n\x13GlobalSearchRequest\x12\x0e\n\x06search\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06offset\x18\x03 \x01(\x03\"?\n\x14GlobalSearchResponse\x12\'\n\x06result\x18\x01 \x03(\x0b\x32\x17.api.GlobalSearchResult\"\xa8\x02\n\x12GlobalSearchResult\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x04 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12$\n\x0e\x64\x65vice_dev_eui\x18\x07 \x01(\tR\x0c\x64\x65viceDevEUI\x12\x13\n\x0b\x64\x65vice_name\x18\x08 \x01(\t\x12\x1f\n\x0bgateway_mac\x18\t \x01(\tR\ngatewayMAC\x12\x14\n\x0cgateway_name\x18\n \x01(\t\"_\n\x10SettingsResponse\x12\x1f\n\x08\x62randing\x18\x02 \x01(\x0b\x32\r.api.Branding\x12*\n\x0eopenid_connect\x18\x03 \x01(\x0b\x32\x12.api.OpenIDConnect\"0\n\x08\x42randing\x12\x14\n\x0cregistration\x18\x01 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x02 \x01(\t\"R\n\rOpenIDConnect\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1b\n\tlogin_url\x18\x02 \x01(\tR\x08loginURL\x12\x13\n\x0blogin_label\x18\x03 \x01(\t\"8\n\x19OpenIDConnectLoginRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x1aOpenIDConnectLoginResponse\x12\x11\n\tjwt_token\x18\x01 \x01(\t2\xa1\x06\n\x0fInternalService\x12N\n\x05Login\x12\x11.api.LoginRequest\x1a\x12.api.LoginResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/internal/login:\x01*\x12V\n\x07Profile\x12\x16.google.protobuf.Empty\x1a\x14.api.ProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/internal/profile\x12\x61\n\x0cGlobalSearch\x12\x18.api.GlobalSearchRequest\x1a\x19.api.GlobalSearchResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/internal/search\x12\x66\n\x0c\x43reateAPIKey\x12\x18.api.CreateAPIKeyRequest\x1a\x19.api.CreateAPIKeyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/api/internal/api-keys:\x01*\x12\x65\n\x0c\x44\x65leteAPIKey\x12\x18.api.DeleteAPIKeyRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/internal/api-keys/{id}\x12`\n\x0bListAPIKeys\x12\x17.api.ListAPIKeysRequest\x1a\x18.api.ListAPIKeysResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/api-keys\x12Y\n\x08Settings\x12\x16.google.protobuf.Empty\x1a\x15.api.SettingsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/settings\x12w\n\x12OpenIDConnectLogin\x12\x1e.api.OpenIDConnectLoginRequest\x1a\x1f.api.OpenIDConnectLoginResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/internal/oidc/loginB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.DESCRIPTOR,])
 
@@ -285,37 +285,6 @@ _LISTAPIKEYSRESPONSE = _descriptor.Descriptor(
 )
 
 
-_PROFILESETTINGS = _descriptor.Descriptor(
-  name='ProfileSettings',
-  full_name='api.ProfileSettings',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disable_assign_existing_users', full_name='api.ProfileSettings.disable_assign_existing_users', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=698,
-  serialized_end=754,
-)
-
-
 _ORGANIZATIONLINK = _descriptor.Descriptor(
   name='OrganizationLink',
   full_name='api.OrganizationLink',
@@ -384,8 +353,8 @@ _ORGANIZATIONLINK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=757,
-  serialized_end=1008,
+  serialized_start=699,
+  serialized_end=950,
 )
 
 
@@ -422,8 +391,8 @@ _LOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1060,
+  serialized_start=952,
+  serialized_end=1002,
 )
 
 
@@ -453,8 +422,8 @@ _LOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1062,
-  serialized_end=1090,
+  serialized_start=1004,
+  serialized_end=1032,
 )
 
 
@@ -479,13 +448,6 @@ _PROFILERESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='settings', full_name='api.ProfileResponse.settings', index=2,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -498,8 +460,8 @@ _PROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1093,
-  serialized_end=1221,
+  serialized_start=1034,
+  serialized_end=1122,
 )
 
 
@@ -543,8 +505,8 @@ _GLOBALSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1223,
-  serialized_end=1291,
+  serialized_start=1124,
+  serialized_end=1192,
 )
 
 
@@ -574,8 +536,8 @@ _GLOBALSEARCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1293,
-  serialized_end=1356,
+  serialized_start=1194,
+  serialized_end=1257,
 )
 
 
@@ -668,34 +630,110 @@ _GLOBALSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1359,
-  serialized_end=1655,
+  serialized_start=1260,
+  serialized_end=1556,
 )
 
 
-_BRANDINGRESPONSE = _descriptor.Descriptor(
-  name='BrandingResponse',
-  full_name='api.BrandingResponse',
+_SETTINGSRESPONSE = _descriptor.Descriptor(
+  name='SettingsResponse',
+  full_name='api.SettingsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='logo', full_name='api.BrandingResponse.logo', index=0,
+      name='branding', full_name='api.SettingsResponse.branding', index=0,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='openid_connect', full_name='api.SettingsResponse.openid_connect', index=1,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1558,
+  serialized_end=1653,
+)
+
+
+_BRANDING = _descriptor.Descriptor(
+  name='Branding',
+  full_name='api.Branding',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='registration', full_name='api.Branding.registration', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='registration', full_name='api.BrandingResponse.registration', index=1,
+      name='footer', full_name='api.Branding.footer', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1655,
+  serialized_end=1703,
+)
+
+
+_OPENIDCONNECT = _descriptor.Descriptor(
+  name='OpenIDConnect',
+  full_name='api.OpenIDConnect',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
     _descriptor.FieldDescriptor(
-      name='footer', full_name='api.BrandingResponse.footer', index=2,
+      name='enabled', full_name='api.OpenIDConnect.enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='login_url', full_name='api.OpenIDConnect.login_url', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='loginURL', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='login_label', full_name='api.OpenIDConnect.login_label', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -713,8 +751,77 @@ _BRANDINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1657,
-  serialized_end=1727,
+  serialized_start=1705,
+  serialized_end=1787,
+)
+
+
+_OPENIDCONNECTLOGINREQUEST = _descriptor.Descriptor(
+  name='OpenIDConnectLoginRequest',
+  full_name='api.OpenIDConnectLoginRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='code', full_name='api.OpenIDConnectLoginRequest.code', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='api.OpenIDConnectLoginRequest.state', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1789,
+  serialized_end=1845,
+)
+
+
+_OPENIDCONNECTLOGINRESPONSE = _descriptor.Descriptor(
+  name='OpenIDConnectLoginResponse',
+  full_name='api.OpenIDConnectLoginResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jwt_token', full_name='api.OpenIDConnectLoginResponse.jwt_token', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1847,
+  serialized_end=1894,
 )
 
 _CREATEAPIKEYREQUEST.fields_by_name['api_key'].message_type = _APIKEY
@@ -723,15 +830,15 @@ _ORGANIZATIONLINK.fields_by_name['created_at'].message_type = google_dot_protobu
 _ORGANIZATIONLINK.fields_by_name['updated_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _PROFILERESPONSE.fields_by_name['user'].message_type = chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2._USER
 _PROFILERESPONSE.fields_by_name['organizations'].message_type = _ORGANIZATIONLINK
-_PROFILERESPONSE.fields_by_name['settings'].message_type = _PROFILESETTINGS
 _GLOBALSEARCHRESPONSE.fields_by_name['result'].message_type = _GLOBALSEARCHRESULT
+_SETTINGSRESPONSE.fields_by_name['branding'].message_type = _BRANDING
+_SETTINGSRESPONSE.fields_by_name['openid_connect'].message_type = _OPENIDCONNECT
 DESCRIPTOR.message_types_by_name['APIKey'] = _APIKEY
 DESCRIPTOR.message_types_by_name['CreateAPIKeyRequest'] = _CREATEAPIKEYREQUEST
 DESCRIPTOR.message_types_by_name['CreateAPIKeyResponse'] = _CREATEAPIKEYRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteAPIKeyRequest'] = _DELETEAPIKEYREQUEST
 DESCRIPTOR.message_types_by_name['ListAPIKeysRequest'] = _LISTAPIKEYSREQUEST
 DESCRIPTOR.message_types_by_name['ListAPIKeysResponse'] = _LISTAPIKEYSRESPONSE
-DESCRIPTOR.message_types_by_name['ProfileSettings'] = _PROFILESETTINGS
 DESCRIPTOR.message_types_by_name['OrganizationLink'] = _ORGANIZATIONLINK
 DESCRIPTOR.message_types_by_name['LoginRequest'] = _LOGINREQUEST
 DESCRIPTOR.message_types_by_name['LoginResponse'] = _LOGINRESPONSE
@@ -739,7 +846,11 @@ DESCRIPTOR.message_types_by_name['ProfileResponse'] = _PROFILERESPONSE
 DESCRIPTOR.message_types_by_name['GlobalSearchRequest'] = _GLOBALSEARCHREQUEST
 DESCRIPTOR.message_types_by_name['GlobalSearchResponse'] = _GLOBALSEARCHRESPONSE
 DESCRIPTOR.message_types_by_name['GlobalSearchResult'] = _GLOBALSEARCHRESULT
-DESCRIPTOR.message_types_by_name['BrandingResponse'] = _BRANDINGRESPONSE
+DESCRIPTOR.message_types_by_name['SettingsResponse'] = _SETTINGSRESPONSE
+DESCRIPTOR.message_types_by_name['Branding'] = _BRANDING
+DESCRIPTOR.message_types_by_name['OpenIDConnect'] = _OPENIDCONNECT
+DESCRIPTOR.message_types_by_name['OpenIDConnectLoginRequest'] = _OPENIDCONNECTLOGINREQUEST
+DESCRIPTOR.message_types_by_name['OpenIDConnectLoginResponse'] = _OPENIDCONNECTLOGINRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 APIKey = _reflection.GeneratedProtocolMessageType('APIKey', (_message.Message,), {
@@ -783,13 +894,6 @@ ListAPIKeysResponse = _reflection.GeneratedProtocolMessageType('ListAPIKeysRespo
   # @@protoc_insertion_point(class_scope:api.ListAPIKeysResponse)
   })
 _sym_db.RegisterMessage(ListAPIKeysResponse)
-
-ProfileSettings = _reflection.GeneratedProtocolMessageType('ProfileSettings', (_message.Message,), {
-  'DESCRIPTOR' : _PROFILESETTINGS,
-  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
-  # @@protoc_insertion_point(class_scope:api.ProfileSettings)
-  })
-_sym_db.RegisterMessage(ProfileSettings)
 
 OrganizationLink = _reflection.GeneratedProtocolMessageType('OrganizationLink', (_message.Message,), {
   'DESCRIPTOR' : _ORGANIZATIONLINK,
@@ -840,12 +944,40 @@ GlobalSearchResult = _reflection.GeneratedProtocolMessageType('GlobalSearchResul
   })
 _sym_db.RegisterMessage(GlobalSearchResult)
 
-BrandingResponse = _reflection.GeneratedProtocolMessageType('BrandingResponse', (_message.Message,), {
-  'DESCRIPTOR' : _BRANDINGRESPONSE,
+SettingsResponse = _reflection.GeneratedProtocolMessageType('SettingsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _SETTINGSRESPONSE,
   '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
-  # @@protoc_insertion_point(class_scope:api.BrandingResponse)
+  # @@protoc_insertion_point(class_scope:api.SettingsResponse)
   })
-_sym_db.RegisterMessage(BrandingResponse)
+_sym_db.RegisterMessage(SettingsResponse)
+
+Branding = _reflection.GeneratedProtocolMessageType('Branding', (_message.Message,), {
+  'DESCRIPTOR' : _BRANDING,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.Branding)
+  })
+_sym_db.RegisterMessage(Branding)
+
+OpenIDConnect = _reflection.GeneratedProtocolMessageType('OpenIDConnect', (_message.Message,), {
+  'DESCRIPTOR' : _OPENIDCONNECT,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.OpenIDConnect)
+  })
+_sym_db.RegisterMessage(OpenIDConnect)
+
+OpenIDConnectLoginRequest = _reflection.GeneratedProtocolMessageType('OpenIDConnectLoginRequest', (_message.Message,), {
+  'DESCRIPTOR' : _OPENIDCONNECTLOGINREQUEST,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.OpenIDConnectLoginRequest)
+  })
+_sym_db.RegisterMessage(OpenIDConnectLoginRequest)
+
+OpenIDConnectLoginResponse = _reflection.GeneratedProtocolMessageType('OpenIDConnectLoginResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OPENIDCONNECTLOGINRESPONSE,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.OpenIDConnectLoginResponse)
+  })
+_sym_db.RegisterMessage(OpenIDConnectLoginResponse)
 
 
 DESCRIPTOR._options = None
@@ -856,8 +988,8 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1730,
-  serialized_end=2410,
+  serialized_start=1897,
+  serialized_end=2698,
   methods=[
   _descriptor.MethodDescriptor(
     name='Login',
@@ -878,18 +1010,9 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=b'\202\323\344\223\002\027\022\025/api/internal/profile',
   ),
   _descriptor.MethodDescriptor(
-    name='Branding',
-    full_name='api.InternalService.Branding',
-    index=2,
-    containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    output_type=_BRANDINGRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\022\026/api/internal/branding',
-  ),
-  _descriptor.MethodDescriptor(
     name='GlobalSearch',
     full_name='api.InternalService.GlobalSearch',
-    index=3,
+    index=2,
     containing_service=None,
     input_type=_GLOBALSEARCHREQUEST,
     output_type=_GLOBALSEARCHRESPONSE,
@@ -898,7 +1021,7 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateAPIKey',
     full_name='api.InternalService.CreateAPIKey',
-    index=4,
+    index=3,
     containing_service=None,
     input_type=_CREATEAPIKEYREQUEST,
     output_type=_CREATEAPIKEYRESPONSE,
@@ -907,7 +1030,7 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteAPIKey',
     full_name='api.InternalService.DeleteAPIKey',
-    index=5,
+    index=4,
     containing_service=None,
     input_type=_DELETEAPIKEYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -916,11 +1039,29 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListAPIKeys',
     full_name='api.InternalService.ListAPIKeys',
-    index=6,
+    index=5,
     containing_service=None,
     input_type=_LISTAPIKEYSREQUEST,
     output_type=_LISTAPIKEYSRESPONSE,
     serialized_options=b'\202\323\344\223\002\030\022\026/api/internal/api-keys',
+  ),
+  _descriptor.MethodDescriptor(
+    name='Settings',
+    full_name='api.InternalService.Settings',
+    index=6,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_SETTINGSRESPONSE,
+    serialized_options=b'\202\323\344\223\002\030\022\026/api/internal/settings',
+  ),
+  _descriptor.MethodDescriptor(
+    name='OpenIDConnectLogin',
+    full_name='api.InternalService.OpenIDConnectLogin',
+    index=7,
+    containing_service=None,
+    input_type=_OPENIDCONNECTLOGINREQUEST,
+    output_type=_OPENIDCONNECTLOGINRESPONSE,
+    serialized_options=b'\202\323\344\223\002\032\022\030/api/internal/oidc/login',
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_INTERNALSERVICE)

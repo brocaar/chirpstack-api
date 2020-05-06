@@ -2165,7 +2165,7 @@ proto.api.OrganizationUser.toObject = function(includeInstance, msg) {
     isAdmin: msg.getIsAdmin(),
     isDeviceAdmin: msg.getIsDeviceAdmin(),
     isGatewayAdmin: msg.getIsGatewayAdmin(),
-    username: msg.getUsername()
+    email: msg.getEmail()
   };
 
   if (includeInstance) {
@@ -2224,7 +2224,7 @@ proto.api.OrganizationUser.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setEmail(value);
       break;
     default:
       reader.skipField();
@@ -2299,7 +2299,7 @@ proto.api.OrganizationUser.prototype.serializeBinaryToWriter = function (writer)
       f
     );
   }
-  f = this.getUsername();
+  f = this.getEmail();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -2400,16 +2400,16 @@ proto.api.OrganizationUser.prototype.setIsGatewayAdmin = function(value) {
 
 
 /**
- * optional string username = 4;
+ * optional string email = 4;
  * @return {string}
  */
-proto.api.OrganizationUser.prototype.getUsername = function() {
+proto.api.OrganizationUser.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
 };
 
 
 /** @param {string} value  */
-proto.api.OrganizationUser.prototype.setUsername = function(value) {
+proto.api.OrganizationUser.prototype.setEmail = function(value) {
   jspb.Message.setField(this, 4, value);
 };
 
@@ -2461,7 +2461,7 @@ proto.api.OrganizationUserListItem.prototype.toObject = function(opt_includeInst
 proto.api.OrganizationUserListItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: msg.getUserId(),
-    username: msg.getUsername(),
+    email: msg.getEmail(),
     isAdmin: msg.getIsAdmin(),
     isDeviceAdmin: msg.getIsDeviceAdmin(),
     isGatewayAdmin: msg.getIsGatewayAdmin(),
@@ -2509,7 +2509,7 @@ proto.api.OrganizationUserListItem.deserializeBinaryFromReader = function(msg, r
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setEmail(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2578,7 +2578,7 @@ proto.api.OrganizationUserListItem.prototype.serializeBinaryToWriter = function 
       f
     );
   }
-  f = this.getUsername();
+  f = this.getEmail();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2650,16 +2650,16 @@ proto.api.OrganizationUserListItem.prototype.setUserId = function(value) {
 
 
 /**
- * optional string username = 2;
+ * optional string email = 2;
  * @return {string}
  */
-proto.api.OrganizationUserListItem.prototype.getUsername = function() {
+proto.api.OrganizationUserListItem.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
 /** @param {string} value  */
-proto.api.OrganizationUserListItem.prototype.setUsername = function(value) {
+proto.api.OrganizationUserListItem.prototype.setEmail = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 

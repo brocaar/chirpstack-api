@@ -25,11 +25,6 @@ class InternalServiceStub(object):
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
                 response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ProfileResponse.FromString,
                 )
-        self.Branding = channel.unary_unary(
-                '/api.InternalService/Branding',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.BrandingResponse.FromString,
-                )
         self.GlobalSearch = channel.unary_unary(
                 '/api.InternalService/GlobalSearch',
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchRequest.SerializeToString,
@@ -50,6 +45,16 @@ class InternalServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysRequest.SerializeToString,
                 response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysResponse.FromString,
                 )
+        self.Settings = channel.unary_unary(
+                '/api.InternalService/Settings',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.SettingsResponse.FromString,
+                )
+        self.OpenIDConnectLogin = channel.unary_unary(
+                '/api.InternalService/OpenIDConnectLogin',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginResponse.FromString,
+                )
 
 
 class InternalServiceServicer(object):
@@ -65,13 +70,6 @@ class InternalServiceServicer(object):
 
     def Profile(self, request, context):
         """Get the current user's profile
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Branding(self, request, context):
-        """Get the branding for the UI
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -105,6 +103,20 @@ class InternalServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Settings(self, request, context):
+        """Get the global settings.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def OpenIDConnectLogin(self, request, context):
+        """OpenID Connect login.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InternalServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -117,11 +129,6 @@ def add_InternalServiceServicer_to_server(servicer, server):
                     servicer.Profile,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                     response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ProfileResponse.SerializeToString,
-            ),
-            'Branding': grpc.unary_unary_rpc_method_handler(
-                    servicer.Branding,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.BrandingResponse.SerializeToString,
             ),
             'GlobalSearch': grpc.unary_unary_rpc_method_handler(
                     servicer.GlobalSearch,
@@ -142,6 +149,16 @@ def add_InternalServiceServicer_to_server(servicer, server):
                     servicer.ListAPIKeys,
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysRequest.FromString,
                     response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysResponse.SerializeToString,
+            ),
+            'Settings': grpc.unary_unary_rpc_method_handler(
+                    servicer.Settings,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.SettingsResponse.SerializeToString,
+            ),
+            'OpenIDConnectLogin': grpc.unary_unary_rpc_method_handler(
+                    servicer.OpenIDConnectLogin,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -183,22 +200,6 @@ class InternalService(object):
         return grpc.experimental.unary_unary(request, target, '/api.InternalService/Profile',
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ProfileResponse.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Branding(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.InternalService/Branding',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.BrandingResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -263,5 +264,37 @@ class InternalService(object):
         return grpc.experimental.unary_unary(request, target, '/api.InternalService/ListAPIKeys',
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Settings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.InternalService/Settings',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.SettingsResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OpenIDConnectLogin(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.InternalService/OpenIDConnectLogin',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

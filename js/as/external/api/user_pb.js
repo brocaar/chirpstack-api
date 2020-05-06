@@ -71,7 +71,6 @@ proto.api.User.prototype.toObject = function(opt_includeInstance) {
 proto.api.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: msg.getId(),
-    username: msg.getUsername(),
     sessionTtl: msg.getSessionTtl(),
     isAdmin: msg.getIsAdmin(),
     isActive: msg.getIsActive(),
@@ -116,10 +115,6 @@ proto.api.User.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -186,13 +181,6 @@ proto.api.User.prototype.serializeBinaryToWriter = function (writer) {
       f
     );
   }
-  f = this.getUsername();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = this.getSessionTtl();
   if (f !== 0) {
     writer.writeInt32(
@@ -252,21 +240,6 @@ proto.api.User.prototype.getId = function() {
 /** @param {number} value  */
 proto.api.User.prototype.setId = function(value) {
   jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * optional string username = 2;
- * @return {string}
- */
-proto.api.User.prototype.getUsername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
-};
-
-
-/** @param {string} value  */
-proto.api.User.prototype.setUsername = function(value) {
-  jspb.Message.setField(this, 2, value);
 };
 
 
@@ -396,7 +369,7 @@ proto.api.UserListItem.prototype.toObject = function(opt_includeInstance) {
 proto.api.UserListItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: msg.getId(),
-    username: msg.getUsername(),
+    email: msg.getEmail(),
     sessionTtl: msg.getSessionTtl(),
     isAdmin: msg.getIsAdmin(),
     isActive: msg.getIsActive(),
@@ -444,7 +417,7 @@ proto.api.UserListItem.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setEmail(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -513,7 +486,7 @@ proto.api.UserListItem.prototype.serializeBinaryToWriter = function (writer) {
       f
     );
   }
-  f = this.getUsername();
+  f = this.getEmail();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -585,16 +558,16 @@ proto.api.UserListItem.prototype.setId = function(value) {
 
 
 /**
- * optional string username = 2;
+ * optional string email = 2;
  * @return {string}
  */
-proto.api.UserListItem.prototype.getUsername = function() {
+proto.api.UserListItem.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
 /** @param {string} value  */
-proto.api.UserListItem.prototype.setUsername = function(value) {
+proto.api.UserListItem.prototype.setEmail = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
@@ -2167,8 +2140,7 @@ proto.api.ListUserRequest.prototype.toObject = function(opt_includeInstance) {
 proto.api.ListUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     limit: msg.getLimit(),
-    offset: msg.getOffset(),
-    search: msg.getSearch()
+    offset: msg.getOffset()
   };
 
   if (includeInstance) {
@@ -2212,10 +2184,6 @@ proto.api.ListUserRequest.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setOffset(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSearch(value);
       break;
     default:
       reader.skipField();
@@ -2269,13 +2237,6 @@ proto.api.ListUserRequest.prototype.serializeBinaryToWriter = function (writer) 
       f
     );
   }
-  f = this.getSearch();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
@@ -2315,21 +2276,6 @@ proto.api.ListUserRequest.prototype.getOffset = function() {
 /** @param {number} value  */
 proto.api.ListUserRequest.prototype.setOffset = function(value) {
   jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * optional string search = 3;
- * @return {string}
- */
-proto.api.ListUserRequest.prototype.getSearch = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
-};
-
-
-/** @param {string} value  */
-proto.api.ListUserRequest.prototype.setSearch = function(value) {
-  jspb.Message.setField(this, 3, value);
 };
 
 

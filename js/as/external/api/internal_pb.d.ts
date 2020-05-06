@@ -171,26 +171,6 @@ export namespace ListAPIKeysResponse {
   }
 }
 
-export class ProfileSettings extends jspb.Message {
-  getDisableAssignExistingUsers(): boolean;
-  setDisableAssignExistingUsers(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProfileSettings.AsObject;
-  static toObject(includeInstance: boolean, msg: ProfileSettings): ProfileSettings.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ProfileSettings, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProfileSettings;
-  static deserializeBinaryFromReader(message: ProfileSettings, reader: jspb.BinaryReader): ProfileSettings;
-}
-
-export namespace ProfileSettings {
-  export type AsObject = {
-    disableAssignExistingUsers: boolean,
-  }
-}
-
 export class OrganizationLink extends jspb.Message {
   getOrganizationId(): number;
   setOrganizationId(value: number): void;
@@ -294,11 +274,6 @@ export class ProfileResponse extends jspb.Message {
   setOrganizationsList(value: Array<OrganizationLink>): void;
   addOrganizations(value?: OrganizationLink, index?: number): OrganizationLink;
 
-  hasSettings(): boolean;
-  clearSettings(): void;
-  getSettings(): ProfileSettings | undefined;
-  setSettings(value?: ProfileSettings): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProfileResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ProfileResponse): ProfileResponse.AsObject;
@@ -313,7 +288,6 @@ export namespace ProfileResponse {
   export type AsObject = {
     user?: as_external_api_user_pb.User.AsObject,
     organizationsList: Array<OrganizationLink.AsObject>,
-    settings?: ProfileSettings.AsObject,
   }
 }
 
@@ -423,10 +397,35 @@ export namespace GlobalSearchResult {
   }
 }
 
-export class BrandingResponse extends jspb.Message {
-  getLogo(): string;
-  setLogo(value: string): void;
+export class SettingsResponse extends jspb.Message {
+  hasBranding(): boolean;
+  clearBranding(): void;
+  getBranding(): Branding | undefined;
+  setBranding(value?: Branding): void;
 
+  hasOpenidConnect(): boolean;
+  clearOpenidConnect(): void;
+  getOpenidConnect(): OpenIDConnect | undefined;
+  setOpenidConnect(value?: OpenIDConnect): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SettingsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SettingsResponse): SettingsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SettingsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SettingsResponse;
+  static deserializeBinaryFromReader(message: SettingsResponse, reader: jspb.BinaryReader): SettingsResponse;
+}
+
+export namespace SettingsResponse {
+  export type AsObject = {
+    branding?: Branding.AsObject,
+    openidConnect?: OpenIDConnect.AsObject,
+  }
+}
+
+export class Branding extends jspb.Message {
   getRegistration(): string;
   setRegistration(value: string): void;
 
@@ -434,20 +433,91 @@ export class BrandingResponse extends jspb.Message {
   setFooter(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BrandingResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BrandingResponse): BrandingResponse.AsObject;
+  toObject(includeInstance?: boolean): Branding.AsObject;
+  static toObject(includeInstance: boolean, msg: Branding): Branding.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BrandingResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BrandingResponse;
-  static deserializeBinaryFromReader(message: BrandingResponse, reader: jspb.BinaryReader): BrandingResponse;
+  static serializeBinaryToWriter(message: Branding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Branding;
+  static deserializeBinaryFromReader(message: Branding, reader: jspb.BinaryReader): Branding;
 }
 
-export namespace BrandingResponse {
+export namespace Branding {
   export type AsObject = {
-    logo: string,
     registration: string,
     footer: string,
+  }
+}
+
+export class OpenIDConnect extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): void;
+
+  getLoginUrl(): string;
+  setLoginUrl(value: string): void;
+
+  getLoginLabel(): string;
+  setLoginLabel(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OpenIDConnect.AsObject;
+  static toObject(includeInstance: boolean, msg: OpenIDConnect): OpenIDConnect.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OpenIDConnect, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OpenIDConnect;
+  static deserializeBinaryFromReader(message: OpenIDConnect, reader: jspb.BinaryReader): OpenIDConnect;
+}
+
+export namespace OpenIDConnect {
+  export type AsObject = {
+    enabled: boolean,
+    loginUrl: string,
+    loginLabel: string,
+  }
+}
+
+export class OpenIDConnectLoginRequest extends jspb.Message {
+  getCode(): string;
+  setCode(value: string): void;
+
+  getState(): string;
+  setState(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OpenIDConnectLoginRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: OpenIDConnectLoginRequest): OpenIDConnectLoginRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OpenIDConnectLoginRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OpenIDConnectLoginRequest;
+  static deserializeBinaryFromReader(message: OpenIDConnectLoginRequest, reader: jspb.BinaryReader): OpenIDConnectLoginRequest;
+}
+
+export namespace OpenIDConnectLoginRequest {
+  export type AsObject = {
+    code: string,
+    state: string,
+  }
+}
+
+export class OpenIDConnectLoginResponse extends jspb.Message {
+  getJwtToken(): string;
+  setJwtToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OpenIDConnectLoginResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OpenIDConnectLoginResponse): OpenIDConnectLoginResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OpenIDConnectLoginResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OpenIDConnectLoginResponse;
+  static deserializeBinaryFromReader(message: OpenIDConnectLoginResponse, reader: jspb.BinaryReader): OpenIDConnectLoginResponse;
+}
+
+export namespace OpenIDConnectLoginResponse {
+  export type AsObject = {
+    jwtToken: string,
   }
 }
 

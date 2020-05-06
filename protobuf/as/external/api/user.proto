@@ -63,9 +63,6 @@ message User {
 	// Will be set automatically on create.
 	int64 id = 1;
 
-	// Username of the user.
-	string username = 2;
-
 	// The session timeout, in minutes.
 	int32 session_ttl = 3 [json_name = "sessionTTL"];
 
@@ -87,8 +84,8 @@ message UserListItem {
 	// Will be set automatically on create.
 	int64 id = 1;
 
-	// Username of the user.
-	string username = 2;
+	// Email of the user.
+	string email = 2;
 
 	// The session timeout, in minutes.
 	int32 session_ttl = 3 [json_name = "sessionTTL"];
@@ -170,9 +167,6 @@ message ListUserRequest {
 
 	// Offset in the result-set (for pagination).
 	int64 offset = 2;
-
-	// When provided, the given string will be used to search on username.
-	string search = 3;
 }
 
 message ListUserResponse {

@@ -8,17 +8,6 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var as_external_api_user_pb = require('../../../as/external/api/user_pb.js');
 
-function serialize_api_BrandingResponse(arg) {
-  if (!(arg instanceof as_external_api_internal_pb.BrandingResponse)) {
-    throw new Error('Expected argument of type api.BrandingResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_api_BrandingResponse(buffer_arg) {
-  return as_external_api_internal_pb.BrandingResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_api_CreateAPIKeyRequest(arg) {
   if (!(arg instanceof as_external_api_internal_pb.CreateAPIKeyRequest)) {
     throw new Error('Expected argument of type api.CreateAPIKeyRequest');
@@ -118,6 +107,28 @@ function deserialize_api_LoginResponse(buffer_arg) {
   return as_external_api_internal_pb.LoginResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_OpenIDConnectLoginRequest(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.OpenIDConnectLoginRequest)) {
+    throw new Error('Expected argument of type api.OpenIDConnectLoginRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_OpenIDConnectLoginRequest(buffer_arg) {
+  return as_external_api_internal_pb.OpenIDConnectLoginRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_OpenIDConnectLoginResponse(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.OpenIDConnectLoginResponse)) {
+    throw new Error('Expected argument of type api.OpenIDConnectLoginResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_OpenIDConnectLoginResponse(buffer_arg) {
+  return as_external_api_internal_pb.OpenIDConnectLoginResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_ProfileResponse(arg) {
   if (!(arg instanceof as_external_api_internal_pb.ProfileResponse)) {
     throw new Error('Expected argument of type api.ProfileResponse');
@@ -127,6 +138,17 @@ function serialize_api_ProfileResponse(arg) {
 
 function deserialize_api_ProfileResponse(buffer_arg) {
   return as_external_api_internal_pb.ProfileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_SettingsResponse(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.SettingsResponse)) {
+    throw new Error('Expected argument of type api.SettingsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_SettingsResponse(buffer_arg) {
+  return as_external_api_internal_pb.SettingsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_google_protobuf_Empty(arg) {
@@ -166,18 +188,6 @@ var InternalServiceService = exports.InternalServiceService = {
     requestDeserialize: deserialize_google_protobuf_Empty,
     responseSerialize: serialize_api_ProfileResponse,
     responseDeserialize: deserialize_api_ProfileResponse,
-  },
-  // Get the branding for the UI
-  branding: {
-    path: '/api.InternalService/Branding',
-    requestStream: false,
-    responseStream: false,
-    requestType: google_protobuf_empty_pb.Empty,
-    responseType: as_external_api_internal_pb.BrandingResponse,
-    requestSerialize: serialize_google_protobuf_Empty,
-    requestDeserialize: deserialize_google_protobuf_Empty,
-    responseSerialize: serialize_api_BrandingResponse,
-    responseDeserialize: deserialize_api_BrandingResponse,
   },
   // Perform a global search.
   globalSearch: {
@@ -226,6 +236,30 @@ var InternalServiceService = exports.InternalServiceService = {
     requestDeserialize: deserialize_api_ListAPIKeysRequest,
     responseSerialize: serialize_api_ListAPIKeysResponse,
     responseDeserialize: deserialize_api_ListAPIKeysResponse,
+  },
+  // Get the global settings.
+  settings: {
+    path: '/api.InternalService/Settings',
+    requestStream: false,
+    responseStream: false,
+    requestType: google_protobuf_empty_pb.Empty,
+    responseType: as_external_api_internal_pb.SettingsResponse,
+    requestSerialize: serialize_google_protobuf_Empty,
+    requestDeserialize: deserialize_google_protobuf_Empty,
+    responseSerialize: serialize_api_SettingsResponse,
+    responseDeserialize: deserialize_api_SettingsResponse,
+  },
+  // OpenID Connect login.
+  openIDConnectLogin: {
+    path: '/api.InternalService/OpenIDConnectLogin',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_internal_pb.OpenIDConnectLoginRequest,
+    responseType: as_external_api_internal_pb.OpenIDConnectLoginResponse,
+    requestSerialize: serialize_api_OpenIDConnectLoginRequest,
+    requestDeserialize: deserialize_api_OpenIDConnectLoginRequest,
+    responseSerialize: serialize_api_OpenIDConnectLoginResponse,
+    responseDeserialize: deserialize_api_OpenIDConnectLoginResponse,
   },
 };
 

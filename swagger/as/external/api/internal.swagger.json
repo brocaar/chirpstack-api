@@ -125,23 +125,6 @@
         ]
       }
     },
-    "/api/internal/branding": {
-      "get": {
-        "summary": "Get the branding for the UI",
-        "operationId": "Branding",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiBrandingResponse"
-            }
-          }
-        },
-        "tags": [
-          "InternalService"
-        ]
-      }
-    },
     "/api/internal/login": {
       "post": {
         "summary": "Log in a user",
@@ -162,6 +145,39 @@
             "schema": {
               "$ref": "#/definitions/apiLoginRequest"
             }
+          }
+        ],
+        "tags": [
+          "InternalService"
+        ]
+      }
+    },
+    "/api/internal/oidc/login": {
+      "get": {
+        "summary": "OpenID Connect login.",
+        "operationId": "OpenIDConnectLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiOpenIDConnectLoginResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "description": "OpenID Connect callback code.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "description": "OpenID Connect callback state.",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "tags": [
@@ -227,6 +243,23 @@
           "InternalService"
         ]
       }
+    },
+    "/api/internal/settings": {
+      "get": {
+        "summary": "Get the global settings.",
+        "operationId": "Settings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiSettingsResponse"
+            }
+          }
+        },
+        "tags": [
+          "InternalService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -258,13 +291,9 @@
         }
       }
     },
-    "apiBrandingResponse": {
+    "apiBranding": {
       "type": "object",
       "properties": {
-        "logo": {
-          "type": "string",
-          "description": "Logo html."
-        },
         "registration": {
           "type": "string",
           "description": "Registration html."
@@ -394,6 +423,33 @@
         }
       }
     },
+    "apiOpenIDConnect": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Enable OpenID Connect authentication."
+        },
+        "loginURL": {
+          "type": "string",
+          "description": "Login url."
+        },
+        "loginLabel": {
+          "type": "string",
+          "description": "Login label."
+        }
+      }
+    },
+    "apiOpenIDConnectLoginResponse": {
+      "type": "object",
+      "properties": {
+        "jwtToken": {
+          "type": "string",
+          "description": "JWT token to use for authentication."
+        }
+      }
+    },
     "apiOrganizationLink": {
       "type": "object",
       "properties": {
@@ -447,20 +503,19 @@
             "$ref": "#/definitions/apiOrganizationLink"
           },
           "description": "Organizations to which the user is associated."
-        },
-        "settings": {
-          "$ref": "#/definitions/apiProfileSettings",
-          "description": "Profile settings."
         }
       }
     },
-    "apiProfileSettings": {
+    "apiSettingsResponse": {
       "type": "object",
       "properties": {
-        "disableAssignExistingUsers": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "Existing users in the system can not be assigned to organizations and\napplication and can not be listed by non global admin users."
+        "branding": {
+          "$ref": "#/definitions/apiBranding",
+          "description": "Branding settings."
+        },
+        "openidConnect": {
+          "$ref": "#/definitions/apiOpenIDConnect",
+          "description": "OpenID Connect settings."
         }
       }
     },
@@ -471,10 +526,6 @@
           "type": "string",
           "format": "int64",
           "description": "User ID.\nWill be set automatically on create."
-        },
-        "username": {
-          "type": "string",
-          "description": "Username of the user."
         },
         "sessionTTL": {
           "type": "integer",
