@@ -541,6 +541,11 @@
             "type": "string"
           },
           "description": "Tags (user defined).\nThese tags are exposed in the event payloads or to integration. Tags are\nintended for aggregation and filtering."
+        },
+        "isDisabled": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Device is disabled."
         }
       }
     },

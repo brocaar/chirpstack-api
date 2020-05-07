@@ -3641,7 +3641,8 @@ proto.ns.Device.toObject = function(includeInstance, msg) {
     serviceProfileId: msg.getServiceProfileId_asB64(),
     routingProfileId: msg.getRoutingProfileId_asB64(),
     skipFCntCheck: msg.getSkipFCntCheck(),
-    referenceAltitude: msg.getReferenceAltitude()
+    referenceAltitude: msg.getReferenceAltitude(),
+    isDisabled: msg.getIsDisabled()
   };
 
   if (includeInstance) {
@@ -3701,6 +3702,10 @@ proto.ns.Device.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setReferenceAltitude(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDisabled(value);
       break;
     default:
       reader.skipField();
@@ -3779,6 +3784,13 @@ proto.ns.Device.prototype.serializeBinaryToWriter = function (writer) {
   if (f !== 0.0) {
     writer.writeDouble(
       6,
+      f
+    );
+  }
+  f = this.getIsDisabled();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -3979,6 +3991,23 @@ proto.ns.Device.prototype.getReferenceAltitude = function() {
 /** @param {number} value  */
 proto.ns.Device.prototype.setReferenceAltitude = function(value) {
   jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * optional bool is_disabled = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ns.Device.prototype.getIsDisabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 7, false));
+};
+
+
+/** @param {boolean} value  */
+proto.ns.Device.prototype.setIsDisabled = function(value) {
+  jspb.Message.setField(this, 7, value);
 };
 
 

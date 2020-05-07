@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ns',
   syntax='proto3',
   serialized_options=b'Z$github.com/brocaar/chirpstack-api/ns',
-  serialized_pb=b'\n\x1a\x63hirpstack-api/ns/ns.proto\x12\x02ns\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\x1a chirpstack-api/ns/profiles.proto\"J\n\x1b\x43reateServiceProfileRequest\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\"*\n\x1c\x43reateServiceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetServiceProfileResponse\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateServiceProfileRequest\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\")\n\x1b\x44\x65leteServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"J\n\x1b\x43reateRoutingProfileRequest\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\"*\n\x1c\x43reateRoutingProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetRoutingProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetRoutingProfileResponse\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateRoutingProfileRequest\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\")\n\x1b\x44\x65leteRoutingProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"G\n\x1a\x43reateDeviceProfileRequest\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\")\n\x1b\x43reateDeviceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"%\n\x17GetDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa5\x01\n\x18GetDeviceProfileResponse\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"G\n\x1aUpdateDeviceProfileRequest\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\"(\n\x1a\x44\x65leteDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa2\x01\n\x06\x44\x65vice\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x19\n\x11\x64\x65vice_profile_id\x18\x02 \x01(\x0c\x12\x1a\n\x12service_profile_id\x18\x03 \x01(\x0c\x12\x1a\n\x12routing_profile_id\x18\x04 \x01(\x0c\x12\x18\n\x10skip_f_cnt_check\x18\x05 \x01(\x08\x12\x1a\n\x12reference_altitude\x18\x06 \x01(\x01\"1\n\x13\x43reateDeviceRequest\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\"#\n\x10GetDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\x8f\x01\n\x11GetDeviceResponse\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"1\n\x13UpdateDeviceRequest\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\"&\n\x13\x44\x65leteDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\xd6\x01\n\x10\x44\x65viceActivation\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\x0c\x12\x17\n\x0fs_nwk_s_int_key\x18\x03 \x01(\x0c\x12\x17\n\x0f\x66_nwk_s_int_key\x18\x04 \x01(\x0c\x12\x15\n\rnwk_s_enc_key\x18\x05 \x01(\x0c\x12\x10\n\x08\x66_cnt_up\x18\x06 \x01(\r\x12\x14\n\x0cn_f_cnt_down\x18\x07 \x01(\r\x12\x14\n\x0c\x61_f_cnt_down\x18\x08 \x01(\r\x12\x18\n\x10skip_f_cnt_check\x18\t \x01(\x08\"H\n\x15\x41\x63tivateDeviceRequest\x12/\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x14.ns.DeviceActivation\"*\n\x17\x44\x65\x61\x63tivateDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"-\n\x1aGetDeviceActivationRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"N\n\x1bGetDeviceActivationResponse\x12/\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x14.ns.DeviceActivation\",\n\x18GetRandomDevAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\"R\n CreateMACCommandQueueItemRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x0b\n\x03\x63id\x18\x04 \x01(\r\x12\x10\n\x08\x63ommands\x18\x05 \x03(\x0c\"\x96\x01\n\x1dSendProprietaryPayloadRequest\x12\x13\n\x0bmac_payload\x18\x01 \x01(\x0c\x12\x0b\n\x03mic\x18\x02 \x01(\x0c\x12\x14\n\x0cgateway_macs\x18\x03 \x03(\x0c\x12\x1e\n\x16polarization_inversion\x18\x04 \x01(\x08\x12\x11\n\tfrequency\x18\x05 \x01(\r\x12\n\n\x02\x64r\x18\x06 \x01(\r\"\x93\x01\n\x07Gateway\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\"\n\x08location\x18\x02 \x01(\x0b\x32\x10.common.Location\x12\x1a\n\x12gateway_profile_id\x18\x03 \x01(\x0c\x12 \n\x06\x62oards\x18\x04 \x03(\x0b\x32\x10.ns.GatewayBoard\x12\x1a\n\x12routing_profile_id\x18\x05 \x01(\x0c\";\n\x0cGatewayBoard\x12\x0f\n\x07\x66pga_id\x18\x01 \x01(\x0c\x12\x1a\n\x12\x66ine_timestamp_key\x18\x02 \x01(\x0c\"4\n\x14\x43reateGatewayRequest\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\"\x1f\n\x11GetGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xf7\x01\n\x12GetGatewayResponse\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rfirst_seen_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"4\n\x14UpdateGatewayRequest\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\"\"\n\x14\x44\x65leteGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xb3\x01\n\x0cGatewayStats\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13rx_packets_received\x18\x02 \x01(\x05\x12\x1e\n\x16rx_packets_received_ok\x18\x03 \x01(\x05\x12\x1b\n\x13tx_packets_received\x18\x04 \x01(\x05\x12\x1a\n\x12tx_packets_emitted\x18\x05 \x01(\x05\"\xbf\x01\n\x16GetGatewayStatsRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\x12)\n\x08interval\x18\x02 \x01(\x0e\x32\x17.ns.AggregationInterval\x12\x33\n\x0fstart_timestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rend_timestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\";\n\x17GetGatewayStatsResponse\x12 \n\x06result\x18\x01 \x03(\x0b\x32\x10.ns.GatewayStats\"{\n\x0f\x44\x65viceQueueItem\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x13\n\x0b\x66rm_payload\x18\x02 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12\x0e\n\x06\x66_port\x18\x04 \x01(\r\x12\x11\n\tconfirmed\x18\x05 \x01(\x08\x12\x10\n\x08\x64\x65v_addr\x18\x06 \x01(\x0c\"A\n\x1c\x43reateDeviceQueueItemRequest\x12!\n\x04item\x18\x01 \x01(\x0b\x32\x13.ns.DeviceQueueItem\"3\n FlushDeviceQueueForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"J\n#GetDeviceQueueItemsForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x12\n\ncount_only\x18\x02 \x01(\x08\"_\n$GetDeviceQueueItemsForDevEUIResponse\x12\"\n\x05items\x18\x01 \x03(\x0b\x32\x13.ns.DeviceQueueItem\x12\x13\n\x0btotal_count\x18\x02 \x01(\r\"6\n#GetNextDownlinkFCntForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"5\n$GetNextDownlinkFCntForDevEUIResponse\x12\r\n\x05\x66_cnt\x18\x01 \x01(\r\"k\n\x0eUplinkFrameLog\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"\x9b\x01\n\x10\x44ownlinkFrameLog\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12\r\n\x05token\x18\x03 \x01(\r\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12\x1d\n\ngateway_id\x18\x05 \x01(\x0cR\tgatewayID\"6\n StreamFrameLogsForGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\"\x8c\x01\n!StreamFrameLogsForGatewayResponse\x12.\n\x10uplink_frame_set\x18\x01 \x01(\x0b\x32\x12.ns.UplinkFrameLogH\x00\x12.\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x14.ns.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"2\n\x1fStreamFrameLogsForDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\x8b\x01\n StreamFrameLogsForDeviceResponse\x12.\n\x10uplink_frame_set\x18\x01 \x01(\x0b\x32\x12.ns.UplinkFrameLogH\x00\x12.\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x14.ns.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"E\n\x12GetVersionResponse\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x1e\n\x06region\x18\x02 \x01(\x0e\x32\x0e.common.Region\"f\n\x0eGatewayProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08\x63hannels\x18\x02 \x03(\r\x12\x36\n\x0e\x65xtra_channels\x18\x03 \x03(\x0b\x32\x1e.ns.GatewayProfileExtraChannel\"\x96\x01\n\x1aGatewayProfileExtraChannel\x12&\n\nmodulation\x18\x01 \x01(\x0e\x32\x12.common.Modulation\x12\x11\n\tfrequency\x18\x02 \x01(\r\x12\x11\n\tbandwidth\x18\x03 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x04 \x01(\r\x12\x19\n\x11spreading_factors\x18\x05 \x03(\r\"J\n\x1b\x43reateGatewayProfileRequest\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\"*\n\x1c\x43reateGatewayProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetGatewayProfileResponse\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateGatewayProfileRequest\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\")\n\x1b\x44\x65leteGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xef\x01\n\x0eMulticastGroup\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0f\n\x07mc_addr\x18\x02 \x01(\x0c\x12\x14\n\x0cmc_nwk_s_key\x18\x03 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x04 \x01(\r\x12*\n\ngroup_type\x18\x05 \x01(\x0e\x32\x16.ns.MulticastGroupType\x12\n\n\x02\x64r\x18\x06 \x01(\r\x12\x11\n\tfrequency\x18\x07 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x08 \x01(\r\x12\x1a\n\x12service_profile_id\x18\t \x01(\x0c\x12\x1a\n\x12routing_profile_id\x18\n \x01(\x0c\"J\n\x1b\x43reateMulticastGroupRequest\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\"*\n\x1c\x43reateMulticastGroupResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetMulticastGroupResponse\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateMulticastGroupRequest\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\")\n\x1b\x44\x65leteMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"O\n AddDeviceToMulticastGroupRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1a\n\x12multicast_group_id\x18\x02 \x01(\x0c\"T\n%RemoveDeviceFromMulticastGroupRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1a\n\x12multicast_group_id\x18\x02 \x01(\x0c\"d\n\x12MulticastQueueItem\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x13\n\x0b\x66rm_payload\x18\x04 \x01(\x0c\"X\n EnqueueMulticastQueueItemRequest\x12\x34\n\x14multicast_queue_item\x18\x01 \x01(\x0b\x32\x16.ns.MulticastQueueItem\"I\n+FlushMulticastQueueForMulticastGroupRequest\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\"L\n.GetMulticastQueueItemsForMulticastGroupRequest\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\"h\n/GetMulticastQueueItemsForMulticastGroupResponse\x12\x35\n\x15multicast_queue_items\x18\x01 \x03(\x0b\x32\x16.ns.MulticastQueueItem*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01*l\n\x13\x41ggregationInterval\x12\n\n\x06SECOND\x10\x00\x12\n\n\x06MINUTE\x10\x01\x12\x08\n\x04HOUR\x10\x02\x12\x07\n\x03\x44\x41Y\x10\x03\x12\x08\n\x04WEEK\x10\x04\x12\t\n\x05MONTH\x10\x05\x12\x0b\n\x07QUARTER\x10\x06\x12\x08\n\x04YEAR\x10\x07*.\n\x12MulticastGroupType\x12\x0b\n\x07\x43LASS_C\x10\x00\x12\x0b\n\x07\x43LASS_B\x10\x01\x32\xec\x1f\n\x14NetworkServerService\x12[\n\x14\x43reateServiceProfile\x12\x1f.ns.CreateServiceProfileRequest\x1a .ns.CreateServiceProfileResponse\"\x00\x12R\n\x11GetServiceProfile\x12\x1c.ns.GetServiceProfileRequest\x1a\x1d.ns.GetServiceProfileResponse\"\x00\x12Q\n\x14UpdateServiceProfile\x12\x1f.ns.UpdateServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteServiceProfile\x12\x1f.ns.DeleteServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x14\x43reateRoutingProfile\x12\x1f.ns.CreateRoutingProfileRequest\x1a .ns.CreateRoutingProfileResponse\"\x00\x12R\n\x11GetRoutingProfile\x12\x1c.ns.GetRoutingProfileRequest\x1a\x1d.ns.GetRoutingProfileResponse\"\x00\x12Q\n\x14UpdateRoutingProfile\x12\x1f.ns.UpdateRoutingProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteRoutingProfile\x12\x1f.ns.DeleteRoutingProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n\x13\x43reateDeviceProfile\x12\x1e.ns.CreateDeviceProfileRequest\x1a\x1f.ns.CreateDeviceProfileResponse\"\x00\x12O\n\x10GetDeviceProfile\x12\x1b.ns.GetDeviceProfileRequest\x1a\x1c.ns.GetDeviceProfileResponse\"\x00\x12O\n\x13UpdateDeviceProfile\x12\x1e.ns.UpdateDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12O\n\x13\x44\x65leteDeviceProfile\x12\x1e.ns.DeleteDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x41\n\x0c\x43reateDevice\x12\x17.ns.CreateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12:\n\tGetDevice\x12\x14.ns.GetDeviceRequest\x1a\x15.ns.GetDeviceResponse\"\x00\x12\x41\n\x0cUpdateDevice\x12\x17.ns.UpdateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x41\n\x0c\x44\x65leteDevice\x12\x17.ns.DeleteDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x45\n\x0e\x41\x63tivateDevice\x12\x19.ns.ActivateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12I\n\x10\x44\x65\x61\x63tivateDevice\x12\x1b.ns.DeactivateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n\x13GetDeviceActivation\x12\x1e.ns.GetDeviceActivationRequest\x1a\x1f.ns.GetDeviceActivationResponse\"\x00\x12S\n\x15\x43reateDeviceQueueItem\x12 .ns.CreateDeviceQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x46lushDeviceQueueForDevEUI\x12$.ns.FlushDeviceQueueForDevEUIRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\x1cGetDeviceQueueItemsForDevEUI\x12\'.ns.GetDeviceQueueItemsForDevEUIRequest\x1a(.ns.GetDeviceQueueItemsForDevEUIResponse\"\x00\x12s\n\x1cGetNextDownlinkFCntForDevEUI\x12\'.ns.GetNextDownlinkFCntForDevEUIRequest\x1a(.ns.GetNextDownlinkFCntForDevEUIResponse\"\x00\x12J\n\x10GetRandomDevAddr\x12\x16.google.protobuf.Empty\x1a\x1c.ns.GetRandomDevAddrResponse\"\x00\x12[\n\x19\x43reateMACCommandQueueItem\x12$.ns.CreateMACCommandQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12U\n\x16SendProprietaryPayload\x12!.ns.SendProprietaryPayloadRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x43\n\rCreateGateway\x12\x18.ns.CreateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12=\n\nGetGateway\x12\x15.ns.GetGatewayRequest\x1a\x16.ns.GetGatewayResponse\"\x00\x12\x43\n\rUpdateGateway\x12\x18.ns.UpdateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x43\n\rDeleteGateway\x12\x18.ns.DeleteGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x14\x43reateGatewayProfile\x12\x1f.ns.CreateGatewayProfileRequest\x1a .ns.CreateGatewayProfileResponse\"\x00\x12R\n\x11GetGatewayProfile\x12\x1c.ns.GetGatewayProfileRequest\x1a\x1d.ns.GetGatewayProfileResponse\"\x00\x12Q\n\x14UpdateGatewayProfile\x12\x1f.ns.UpdateGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteGatewayProfile\x12\x1f.ns.DeleteGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12L\n\x0fGetGatewayStats\x12\x1a.ns.GetGatewayStatsRequest\x1a\x1b.ns.GetGatewayStatsResponse\"\x00\x12l\n\x19StreamFrameLogsForGateway\x12$.ns.StreamFrameLogsForGatewayRequest\x1a%.ns.StreamFrameLogsForGatewayResponse\"\x00\x30\x01\x12i\n\x18StreamFrameLogsForDevice\x12#.ns.StreamFrameLogsForDeviceRequest\x1a$.ns.StreamFrameLogsForDeviceResponse\"\x00\x30\x01\x12[\n\x14\x43reateMulticastGroup\x12\x1f.ns.CreateMulticastGroupRequest\x1a .ns.CreateMulticastGroupResponse\"\x00\x12R\n\x11GetMulticastGroup\x12\x1c.ns.GetMulticastGroupRequest\x1a\x1d.ns.GetMulticastGroupResponse\"\x00\x12Q\n\x14UpdateMulticastGroup\x12\x1f.ns.UpdateMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteMulticastGroup\x12\x1f.ns.DeleteMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x41\x64\x64\x44\x65viceToMulticastGroup\x12$.ns.AddDeviceToMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x65\n\x1eRemoveDeviceFromMulticastGroup\x12).ns.RemoveDeviceFromMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x45nqueueMulticastQueueItem\x12$.ns.EnqueueMulticastQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12q\n$FlushMulticastQueueForMulticastGroup\x12/.ns.FlushMulticastQueueForMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x94\x01\n\'GetMulticastQueueItemsForMulticastGroup\x12\x32.ns.GetMulticastQueueItemsForMulticastGroupRequest\x1a\x33.ns.GetMulticastQueueItemsForMulticastGroupResponse\"\x00\x12>\n\nGetVersion\x12\x16.google.protobuf.Empty\x1a\x16.ns.GetVersionResponse\"\x00\x42&Z$github.com/brocaar/chirpstack-api/nsb\x06proto3'
+  serialized_pb=b'\n\x1a\x63hirpstack-api/ns/ns.proto\x12\x02ns\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\x1a chirpstack-api/ns/profiles.proto\"J\n\x1b\x43reateServiceProfileRequest\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\"*\n\x1c\x43reateServiceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetServiceProfileResponse\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateServiceProfileRequest\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\")\n\x1b\x44\x65leteServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"J\n\x1b\x43reateRoutingProfileRequest\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\"*\n\x1c\x43reateRoutingProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetRoutingProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetRoutingProfileResponse\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateRoutingProfileRequest\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\")\n\x1b\x44\x65leteRoutingProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"G\n\x1a\x43reateDeviceProfileRequest\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\")\n\x1b\x43reateDeviceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"%\n\x17GetDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa5\x01\n\x18GetDeviceProfileResponse\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"G\n\x1aUpdateDeviceProfileRequest\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\"(\n\x1a\x44\x65leteDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xb7\x01\n\x06\x44\x65vice\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x19\n\x11\x64\x65vice_profile_id\x18\x02 \x01(\x0c\x12\x1a\n\x12service_profile_id\x18\x03 \x01(\x0c\x12\x1a\n\x12routing_profile_id\x18\x04 \x01(\x0c\x12\x18\n\x10skip_f_cnt_check\x18\x05 \x01(\x08\x12\x1a\n\x12reference_altitude\x18\x06 \x01(\x01\x12\x13\n\x0bis_disabled\x18\x07 \x01(\x08\"1\n\x13\x43reateDeviceRequest\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\"#\n\x10GetDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\x8f\x01\n\x11GetDeviceResponse\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"1\n\x13UpdateDeviceRequest\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\"&\n\x13\x44\x65leteDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\xd6\x01\n\x10\x44\x65viceActivation\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\x0c\x12\x17\n\x0fs_nwk_s_int_key\x18\x03 \x01(\x0c\x12\x17\n\x0f\x66_nwk_s_int_key\x18\x04 \x01(\x0c\x12\x15\n\rnwk_s_enc_key\x18\x05 \x01(\x0c\x12\x10\n\x08\x66_cnt_up\x18\x06 \x01(\r\x12\x14\n\x0cn_f_cnt_down\x18\x07 \x01(\r\x12\x14\n\x0c\x61_f_cnt_down\x18\x08 \x01(\r\x12\x18\n\x10skip_f_cnt_check\x18\t \x01(\x08\"H\n\x15\x41\x63tivateDeviceRequest\x12/\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x14.ns.DeviceActivation\"*\n\x17\x44\x65\x61\x63tivateDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"-\n\x1aGetDeviceActivationRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"N\n\x1bGetDeviceActivationResponse\x12/\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x14.ns.DeviceActivation\",\n\x18GetRandomDevAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\"R\n CreateMACCommandQueueItemRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x0b\n\x03\x63id\x18\x04 \x01(\r\x12\x10\n\x08\x63ommands\x18\x05 \x03(\x0c\"\x96\x01\n\x1dSendProprietaryPayloadRequest\x12\x13\n\x0bmac_payload\x18\x01 \x01(\x0c\x12\x0b\n\x03mic\x18\x02 \x01(\x0c\x12\x14\n\x0cgateway_macs\x18\x03 \x03(\x0c\x12\x1e\n\x16polarization_inversion\x18\x04 \x01(\x08\x12\x11\n\tfrequency\x18\x05 \x01(\r\x12\n\n\x02\x64r\x18\x06 \x01(\r\"\x93\x01\n\x07Gateway\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\"\n\x08location\x18\x02 \x01(\x0b\x32\x10.common.Location\x12\x1a\n\x12gateway_profile_id\x18\x03 \x01(\x0c\x12 \n\x06\x62oards\x18\x04 \x03(\x0b\x32\x10.ns.GatewayBoard\x12\x1a\n\x12routing_profile_id\x18\x05 \x01(\x0c\";\n\x0cGatewayBoard\x12\x0f\n\x07\x66pga_id\x18\x01 \x01(\x0c\x12\x1a\n\x12\x66ine_timestamp_key\x18\x02 \x01(\x0c\"4\n\x14\x43reateGatewayRequest\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\"\x1f\n\x11GetGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xf7\x01\n\x12GetGatewayResponse\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rfirst_seen_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"4\n\x14UpdateGatewayRequest\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\"\"\n\x14\x44\x65leteGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xb3\x01\n\x0cGatewayStats\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13rx_packets_received\x18\x02 \x01(\x05\x12\x1e\n\x16rx_packets_received_ok\x18\x03 \x01(\x05\x12\x1b\n\x13tx_packets_received\x18\x04 \x01(\x05\x12\x1a\n\x12tx_packets_emitted\x18\x05 \x01(\x05\"\xbf\x01\n\x16GetGatewayStatsRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\x12)\n\x08interval\x18\x02 \x01(\x0e\x32\x17.ns.AggregationInterval\x12\x33\n\x0fstart_timestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rend_timestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\";\n\x17GetGatewayStatsResponse\x12 \n\x06result\x18\x01 \x03(\x0b\x32\x10.ns.GatewayStats\"{\n\x0f\x44\x65viceQueueItem\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x13\n\x0b\x66rm_payload\x18\x02 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12\x0e\n\x06\x66_port\x18\x04 \x01(\r\x12\x11\n\tconfirmed\x18\x05 \x01(\x08\x12\x10\n\x08\x64\x65v_addr\x18\x06 \x01(\x0c\"A\n\x1c\x43reateDeviceQueueItemRequest\x12!\n\x04item\x18\x01 \x01(\x0b\x32\x13.ns.DeviceQueueItem\"3\n FlushDeviceQueueForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"J\n#GetDeviceQueueItemsForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x12\n\ncount_only\x18\x02 \x01(\x08\"_\n$GetDeviceQueueItemsForDevEUIResponse\x12\"\n\x05items\x18\x01 \x03(\x0b\x32\x13.ns.DeviceQueueItem\x12\x13\n\x0btotal_count\x18\x02 \x01(\r\"6\n#GetNextDownlinkFCntForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"5\n$GetNextDownlinkFCntForDevEUIResponse\x12\r\n\x05\x66_cnt\x18\x01 \x01(\r\"k\n\x0eUplinkFrameLog\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"\x9b\x01\n\x10\x44ownlinkFrameLog\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12\r\n\x05token\x18\x03 \x01(\r\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12\x1d\n\ngateway_id\x18\x05 \x01(\x0cR\tgatewayID\"6\n StreamFrameLogsForGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\"\x8c\x01\n!StreamFrameLogsForGatewayResponse\x12.\n\x10uplink_frame_set\x18\x01 \x01(\x0b\x32\x12.ns.UplinkFrameLogH\x00\x12.\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x14.ns.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"2\n\x1fStreamFrameLogsForDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\x8b\x01\n StreamFrameLogsForDeviceResponse\x12.\n\x10uplink_frame_set\x18\x01 \x01(\x0b\x32\x12.ns.UplinkFrameLogH\x00\x12.\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x14.ns.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"E\n\x12GetVersionResponse\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x1e\n\x06region\x18\x02 \x01(\x0e\x32\x0e.common.Region\"f\n\x0eGatewayProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08\x63hannels\x18\x02 \x03(\r\x12\x36\n\x0e\x65xtra_channels\x18\x03 \x03(\x0b\x32\x1e.ns.GatewayProfileExtraChannel\"\x96\x01\n\x1aGatewayProfileExtraChannel\x12&\n\nmodulation\x18\x01 \x01(\x0e\x32\x12.common.Modulation\x12\x11\n\tfrequency\x18\x02 \x01(\r\x12\x11\n\tbandwidth\x18\x03 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x04 \x01(\r\x12\x19\n\x11spreading_factors\x18\x05 \x03(\r\"J\n\x1b\x43reateGatewayProfileRequest\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\"*\n\x1c\x43reateGatewayProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetGatewayProfileResponse\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateGatewayProfileRequest\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\")\n\x1b\x44\x65leteGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xef\x01\n\x0eMulticastGroup\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0f\n\x07mc_addr\x18\x02 \x01(\x0c\x12\x14\n\x0cmc_nwk_s_key\x18\x03 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x04 \x01(\r\x12*\n\ngroup_type\x18\x05 \x01(\x0e\x32\x16.ns.MulticastGroupType\x12\n\n\x02\x64r\x18\x06 \x01(\r\x12\x11\n\tfrequency\x18\x07 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x08 \x01(\r\x12\x1a\n\x12service_profile_id\x18\t \x01(\x0c\x12\x1a\n\x12routing_profile_id\x18\n \x01(\x0c\"J\n\x1b\x43reateMulticastGroupRequest\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\"*\n\x1c\x43reateMulticastGroupResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetMulticastGroupResponse\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateMulticastGroupRequest\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\")\n\x1b\x44\x65leteMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"O\n AddDeviceToMulticastGroupRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1a\n\x12multicast_group_id\x18\x02 \x01(\x0c\"T\n%RemoveDeviceFromMulticastGroupRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1a\n\x12multicast_group_id\x18\x02 \x01(\x0c\"d\n\x12MulticastQueueItem\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x13\n\x0b\x66rm_payload\x18\x04 \x01(\x0c\"X\n EnqueueMulticastQueueItemRequest\x12\x34\n\x14multicast_queue_item\x18\x01 \x01(\x0b\x32\x16.ns.MulticastQueueItem\"I\n+FlushMulticastQueueForMulticastGroupRequest\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\"L\n.GetMulticastQueueItemsForMulticastGroupRequest\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\"h\n/GetMulticastQueueItemsForMulticastGroupResponse\x12\x35\n\x15multicast_queue_items\x18\x01 \x03(\x0b\x32\x16.ns.MulticastQueueItem*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01*l\n\x13\x41ggregationInterval\x12\n\n\x06SECOND\x10\x00\x12\n\n\x06MINUTE\x10\x01\x12\x08\n\x04HOUR\x10\x02\x12\x07\n\x03\x44\x41Y\x10\x03\x12\x08\n\x04WEEK\x10\x04\x12\t\n\x05MONTH\x10\x05\x12\x0b\n\x07QUARTER\x10\x06\x12\x08\n\x04YEAR\x10\x07*.\n\x12MulticastGroupType\x12\x0b\n\x07\x43LASS_C\x10\x00\x12\x0b\n\x07\x43LASS_B\x10\x01\x32\xec\x1f\n\x14NetworkServerService\x12[\n\x14\x43reateServiceProfile\x12\x1f.ns.CreateServiceProfileRequest\x1a .ns.CreateServiceProfileResponse\"\x00\x12R\n\x11GetServiceProfile\x12\x1c.ns.GetServiceProfileRequest\x1a\x1d.ns.GetServiceProfileResponse\"\x00\x12Q\n\x14UpdateServiceProfile\x12\x1f.ns.UpdateServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteServiceProfile\x12\x1f.ns.DeleteServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x14\x43reateRoutingProfile\x12\x1f.ns.CreateRoutingProfileRequest\x1a .ns.CreateRoutingProfileResponse\"\x00\x12R\n\x11GetRoutingProfile\x12\x1c.ns.GetRoutingProfileRequest\x1a\x1d.ns.GetRoutingProfileResponse\"\x00\x12Q\n\x14UpdateRoutingProfile\x12\x1f.ns.UpdateRoutingProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteRoutingProfile\x12\x1f.ns.DeleteRoutingProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n\x13\x43reateDeviceProfile\x12\x1e.ns.CreateDeviceProfileRequest\x1a\x1f.ns.CreateDeviceProfileResponse\"\x00\x12O\n\x10GetDeviceProfile\x12\x1b.ns.GetDeviceProfileRequest\x1a\x1c.ns.GetDeviceProfileResponse\"\x00\x12O\n\x13UpdateDeviceProfile\x12\x1e.ns.UpdateDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12O\n\x13\x44\x65leteDeviceProfile\x12\x1e.ns.DeleteDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x41\n\x0c\x43reateDevice\x12\x17.ns.CreateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12:\n\tGetDevice\x12\x14.ns.GetDeviceRequest\x1a\x15.ns.GetDeviceResponse\"\x00\x12\x41\n\x0cUpdateDevice\x12\x17.ns.UpdateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x41\n\x0c\x44\x65leteDevice\x12\x17.ns.DeleteDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x45\n\x0e\x41\x63tivateDevice\x12\x19.ns.ActivateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12I\n\x10\x44\x65\x61\x63tivateDevice\x12\x1b.ns.DeactivateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n\x13GetDeviceActivation\x12\x1e.ns.GetDeviceActivationRequest\x1a\x1f.ns.GetDeviceActivationResponse\"\x00\x12S\n\x15\x43reateDeviceQueueItem\x12 .ns.CreateDeviceQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x46lushDeviceQueueForDevEUI\x12$.ns.FlushDeviceQueueForDevEUIRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\x1cGetDeviceQueueItemsForDevEUI\x12\'.ns.GetDeviceQueueItemsForDevEUIRequest\x1a(.ns.GetDeviceQueueItemsForDevEUIResponse\"\x00\x12s\n\x1cGetNextDownlinkFCntForDevEUI\x12\'.ns.GetNextDownlinkFCntForDevEUIRequest\x1a(.ns.GetNextDownlinkFCntForDevEUIResponse\"\x00\x12J\n\x10GetRandomDevAddr\x12\x16.google.protobuf.Empty\x1a\x1c.ns.GetRandomDevAddrResponse\"\x00\x12[\n\x19\x43reateMACCommandQueueItem\x12$.ns.CreateMACCommandQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12U\n\x16SendProprietaryPayload\x12!.ns.SendProprietaryPayloadRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x43\n\rCreateGateway\x12\x18.ns.CreateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12=\n\nGetGateway\x12\x15.ns.GetGatewayRequest\x1a\x16.ns.GetGatewayResponse\"\x00\x12\x43\n\rUpdateGateway\x12\x18.ns.UpdateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x43\n\rDeleteGateway\x12\x18.ns.DeleteGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x14\x43reateGatewayProfile\x12\x1f.ns.CreateGatewayProfileRequest\x1a .ns.CreateGatewayProfileResponse\"\x00\x12R\n\x11GetGatewayProfile\x12\x1c.ns.GetGatewayProfileRequest\x1a\x1d.ns.GetGatewayProfileResponse\"\x00\x12Q\n\x14UpdateGatewayProfile\x12\x1f.ns.UpdateGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteGatewayProfile\x12\x1f.ns.DeleteGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12L\n\x0fGetGatewayStats\x12\x1a.ns.GetGatewayStatsRequest\x1a\x1b.ns.GetGatewayStatsResponse\"\x00\x12l\n\x19StreamFrameLogsForGateway\x12$.ns.StreamFrameLogsForGatewayRequest\x1a%.ns.StreamFrameLogsForGatewayResponse\"\x00\x30\x01\x12i\n\x18StreamFrameLogsForDevice\x12#.ns.StreamFrameLogsForDeviceRequest\x1a$.ns.StreamFrameLogsForDeviceResponse\"\x00\x30\x01\x12[\n\x14\x43reateMulticastGroup\x12\x1f.ns.CreateMulticastGroupRequest\x1a .ns.CreateMulticastGroupResponse\"\x00\x12R\n\x11GetMulticastGroup\x12\x1c.ns.GetMulticastGroupRequest\x1a\x1d.ns.GetMulticastGroupResponse\"\x00\x12Q\n\x14UpdateMulticastGroup\x12\x1f.ns.UpdateMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteMulticastGroup\x12\x1f.ns.DeleteMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x41\x64\x64\x44\x65viceToMulticastGroup\x12$.ns.AddDeviceToMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x65\n\x1eRemoveDeviceFromMulticastGroup\x12).ns.RemoveDeviceFromMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x45nqueueMulticastQueueItem\x12$.ns.EnqueueMulticastQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12q\n$FlushMulticastQueueForMulticastGroup\x12/.ns.FlushMulticastQueueForMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x94\x01\n\'GetMulticastQueueItemsForMulticastGroup\x12\x32.ns.GetMulticastQueueItemsForMulticastGroupRequest\x1a\x33.ns.GetMulticastQueueItemsForMulticastGroupResponse\"\x00\x12>\n\nGetVersion\x12\x16.google.protobuf.Empty\x1a\x16.ns.GetVersionResponse\"\x00\x42&Z$github.com/brocaar/chirpstack-api/nsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,chirpstack__api_dot_ns_dot_profiles__pb2.DESCRIPTOR,])
 
@@ -45,8 +45,8 @@ _RXWINDOW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7119,
-  serialized_end=7147,
+  serialized_start=7140,
+  serialized_end=7168,
 )
 _sym_db.RegisterEnumDescriptor(_RXWINDOW)
 
@@ -92,8 +92,8 @@ _AGGREGATIONINTERVAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7149,
-  serialized_end=7257,
+  serialized_start=7170,
+  serialized_end=7278,
 )
 _sym_db.RegisterEnumDescriptor(_AGGREGATIONINTERVAL)
 
@@ -115,8 +115,8 @@ _MULTICASTGROUPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7259,
-  serialized_end=7305,
+  serialized_start=7280,
+  serialized_end=7326,
 )
 _sym_db.RegisterEnumDescriptor(_MULTICASTGROUPTYPE)
 
@@ -785,6 +785,13 @@ _DEVICE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='is_disabled', full_name='ns.Device.is_disabled', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -798,7 +805,7 @@ _DEVICE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1533,
-  serialized_end=1695,
+  serialized_end=1716,
 )
 
 
@@ -828,8 +835,8 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1697,
-  serialized_end=1746,
+  serialized_start=1718,
+  serialized_end=1767,
 )
 
 
@@ -859,8 +866,8 @@ _GETDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1748,
-  serialized_end=1783,
+  serialized_start=1769,
+  serialized_end=1804,
 )
 
 
@@ -904,8 +911,8 @@ _GETDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1786,
-  serialized_end=1929,
+  serialized_start=1807,
+  serialized_end=1950,
 )
 
 
@@ -935,8 +942,8 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1931,
-  serialized_end=1980,
+  serialized_start=1952,
+  serialized_end=2001,
 )
 
 
@@ -966,8 +973,8 @@ _DELETEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1982,
-  serialized_end=2020,
+  serialized_start=2003,
+  serialized_end=2041,
 )
 
 
@@ -1053,8 +1060,8 @@ _DEVICEACTIVATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2023,
-  serialized_end=2237,
+  serialized_start=2044,
+  serialized_end=2258,
 )
 
 
@@ -1084,8 +1091,8 @@ _ACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2239,
-  serialized_end=2311,
+  serialized_start=2260,
+  serialized_end=2332,
 )
 
 
@@ -1115,8 +1122,8 @@ _DEACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2313,
-  serialized_end=2355,
+  serialized_start=2334,
+  serialized_end=2376,
 )
 
 
@@ -1146,8 +1153,8 @@ _GETDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2357,
-  serialized_end=2402,
+  serialized_start=2378,
+  serialized_end=2423,
 )
 
 
@@ -1177,8 +1184,8 @@ _GETDEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2404,
-  serialized_end=2482,
+  serialized_start=2425,
+  serialized_end=2503,
 )
 
 
@@ -1208,8 +1215,8 @@ _GETRANDOMDEVADDRRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2484,
-  serialized_end=2528,
+  serialized_start=2505,
+  serialized_end=2549,
 )
 
 
@@ -1253,8 +1260,8 @@ _CREATEMACCOMMANDQUEUEITEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2530,
-  serialized_end=2612,
+  serialized_start=2551,
+  serialized_end=2633,
 )
 
 
@@ -1319,8 +1326,8 @@ _SENDPROPRIETARYPAYLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2615,
-  serialized_end=2765,
+  serialized_start=2636,
+  serialized_end=2786,
 )
 
 
@@ -1378,8 +1385,8 @@ _GATEWAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2768,
-  serialized_end=2915,
+  serialized_start=2789,
+  serialized_end=2936,
 )
 
 
@@ -1416,8 +1423,8 @@ _GATEWAYBOARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2917,
-  serialized_end=2976,
+  serialized_start=2938,
+  serialized_end=2997,
 )
 
 
@@ -1447,8 +1454,8 @@ _CREATEGATEWAYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2978,
-  serialized_end=3030,
+  serialized_start=2999,
+  serialized_end=3051,
 )
 
 
@@ -1478,8 +1485,8 @@ _GETGATEWAYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3032,
-  serialized_end=3063,
+  serialized_start=3053,
+  serialized_end=3084,
 )
 
 
@@ -1537,8 +1544,8 @@ _GETGATEWAYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3066,
-  serialized_end=3313,
+  serialized_start=3087,
+  serialized_end=3334,
 )
 
 
@@ -1568,8 +1575,8 @@ _UPDATEGATEWAYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3315,
-  serialized_end=3367,
+  serialized_start=3336,
+  serialized_end=3388,
 )
 
 
@@ -1599,8 +1606,8 @@ _DELETEGATEWAYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3369,
-  serialized_end=3403,
+  serialized_start=3390,
+  serialized_end=3424,
 )
 
 
@@ -1658,8 +1665,8 @@ _GATEWAYSTATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3406,
-  serialized_end=3585,
+  serialized_start=3427,
+  serialized_end=3606,
 )
 
 
@@ -1710,8 +1717,8 @@ _GETGATEWAYSTATSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3588,
-  serialized_end=3779,
+  serialized_start=3609,
+  serialized_end=3800,
 )
 
 
@@ -1741,8 +1748,8 @@ _GETGATEWAYSTATSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3781,
-  serialized_end=3840,
+  serialized_start=3802,
+  serialized_end=3861,
 )
 
 
@@ -1807,8 +1814,8 @@ _DEVICEQUEUEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3842,
-  serialized_end=3965,
+  serialized_start=3863,
+  serialized_end=3986,
 )
 
 
@@ -1838,8 +1845,8 @@ _CREATEDEVICEQUEUEITEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3967,
-  serialized_end=4032,
+  serialized_start=3988,
+  serialized_end=4053,
 )
 
 
@@ -1869,8 +1876,8 @@ _FLUSHDEVICEQUEUEFORDEVEUIREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4034,
-  serialized_end=4085,
+  serialized_start=4055,
+  serialized_end=4106,
 )
 
 
@@ -1907,8 +1914,8 @@ _GETDEVICEQUEUEITEMSFORDEVEUIREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4087,
-  serialized_end=4161,
+  serialized_start=4108,
+  serialized_end=4182,
 )
 
 
@@ -1945,8 +1952,8 @@ _GETDEVICEQUEUEITEMSFORDEVEUIRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4163,
-  serialized_end=4258,
+  serialized_start=4184,
+  serialized_end=4279,
 )
 
 
@@ -1976,8 +1983,8 @@ _GETNEXTDOWNLINKFCNTFORDEVEUIREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4260,
-  serialized_end=4314,
+  serialized_start=4281,
+  serialized_end=4335,
 )
 
 
@@ -2007,8 +2014,8 @@ _GETNEXTDOWNLINKFCNTFORDEVEUIRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4316,
-  serialized_end=4369,
+  serialized_start=4337,
+  serialized_end=4390,
 )
 
 
@@ -2052,8 +2059,8 @@ _UPLINKFRAMELOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4371,
-  serialized_end=4478,
+  serialized_start=4392,
+  serialized_end=4499,
 )
 
 
@@ -2111,8 +2118,8 @@ _DOWNLINKFRAMELOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4481,
-  serialized_end=4636,
+  serialized_start=4502,
+  serialized_end=4657,
 )
 
 
@@ -2142,8 +2149,8 @@ _STREAMFRAMELOGSFORGATEWAYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4638,
-  serialized_end=4692,
+  serialized_start=4659,
+  serialized_end=4713,
 )
 
 
@@ -2183,8 +2190,8 @@ _STREAMFRAMELOGSFORGATEWAYRESPONSE = _descriptor.Descriptor(
       name='frame', full_name='ns.StreamFrameLogsForGatewayResponse.frame',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=4695,
-  serialized_end=4835,
+  serialized_start=4716,
+  serialized_end=4856,
 )
 
 
@@ -2214,8 +2221,8 @@ _STREAMFRAMELOGSFORDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4837,
-  serialized_end=4887,
+  serialized_start=4858,
+  serialized_end=4908,
 )
 
 
@@ -2255,8 +2262,8 @@ _STREAMFRAMELOGSFORDEVICERESPONSE = _descriptor.Descriptor(
       name='frame', full_name='ns.StreamFrameLogsForDeviceResponse.frame',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=4890,
-  serialized_end=5029,
+  serialized_start=4911,
+  serialized_end=5050,
 )
 
 
@@ -2293,8 +2300,8 @@ _GETVERSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5031,
-  serialized_end=5100,
+  serialized_start=5052,
+  serialized_end=5121,
 )
 
 
@@ -2338,8 +2345,8 @@ _GATEWAYPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5102,
-  serialized_end=5204,
+  serialized_start=5123,
+  serialized_end=5225,
 )
 
 
@@ -2397,8 +2404,8 @@ _GATEWAYPROFILEEXTRACHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5207,
-  serialized_end=5357,
+  serialized_start=5228,
+  serialized_end=5378,
 )
 
 
@@ -2428,8 +2435,8 @@ _CREATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5359,
-  serialized_end=5433,
+  serialized_start=5380,
+  serialized_end=5454,
 )
 
 
@@ -2459,8 +2466,8 @@ _CREATEGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5435,
-  serialized_end=5477,
+  serialized_start=5456,
+  serialized_end=5498,
 )
 
 
@@ -2490,8 +2497,8 @@ _GETGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5479,
-  serialized_end=5517,
+  serialized_start=5500,
+  serialized_end=5538,
 )
 
 
@@ -2535,8 +2542,8 @@ _GETGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5520,
-  serialized_end=5688,
+  serialized_start=5541,
+  serialized_end=5709,
 )
 
 
@@ -2566,8 +2573,8 @@ _UPDATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5690,
-  serialized_end=5764,
+  serialized_start=5711,
+  serialized_end=5785,
 )
 
 
@@ -2597,8 +2604,8 @@ _DELETEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5766,
-  serialized_end=5807,
+  serialized_start=5787,
+  serialized_end=5828,
 )
 
 
@@ -2691,8 +2698,8 @@ _MULTICASTGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5810,
-  serialized_end=6049,
+  serialized_start=5831,
+  serialized_end=6070,
 )
 
 
@@ -2722,8 +2729,8 @@ _CREATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6051,
-  serialized_end=6125,
+  serialized_start=6072,
+  serialized_end=6146,
 )
 
 
@@ -2753,8 +2760,8 @@ _CREATEMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6127,
-  serialized_end=6169,
+  serialized_start=6148,
+  serialized_end=6190,
 )
 
 
@@ -2784,8 +2791,8 @@ _GETMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6171,
-  serialized_end=6209,
+  serialized_start=6192,
+  serialized_end=6230,
 )
 
 
@@ -2829,8 +2836,8 @@ _GETMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6212,
-  serialized_end=6380,
+  serialized_start=6233,
+  serialized_end=6401,
 )
 
 
@@ -2860,8 +2867,8 @@ _UPDATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6382,
-  serialized_end=6456,
+  serialized_start=6403,
+  serialized_end=6477,
 )
 
 
@@ -2891,8 +2898,8 @@ _DELETEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6458,
-  serialized_end=6499,
+  serialized_start=6479,
+  serialized_end=6520,
 )
 
 
@@ -2929,8 +2936,8 @@ _ADDDEVICETOMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6501,
-  serialized_end=6580,
+  serialized_start=6522,
+  serialized_end=6601,
 )
 
 
@@ -2967,8 +2974,8 @@ _REMOVEDEVICEFROMMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6582,
-  serialized_end=6666,
+  serialized_start=6603,
+  serialized_end=6687,
 )
 
 
@@ -3019,8 +3026,8 @@ _MULTICASTQUEUEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6668,
-  serialized_end=6768,
+  serialized_start=6689,
+  serialized_end=6789,
 )
 
 
@@ -3050,8 +3057,8 @@ _ENQUEUEMULTICASTQUEUEITEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6770,
-  serialized_end=6858,
+  serialized_start=6791,
+  serialized_end=6879,
 )
 
 
@@ -3081,8 +3088,8 @@ _FLUSHMULTICASTQUEUEFORMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6860,
-  serialized_end=6933,
+  serialized_start=6881,
+  serialized_end=6954,
 )
 
 
@@ -3112,8 +3119,8 @@ _GETMULTICASTQUEUEITEMSFORMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6935,
-  serialized_end=7011,
+  serialized_start=6956,
+  serialized_end=7032,
 )
 
 
@@ -3143,8 +3150,8 @@ _GETMULTICASTQUEUEITEMSFORMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7013,
-  serialized_end=7117,
+  serialized_start=7034,
+  serialized_end=7138,
 )
 
 _CREATESERVICEPROFILEREQUEST.fields_by_name['service_profile'].message_type = chirpstack__api_dot_ns_dot_profiles__pb2._SERVICEPROFILE
@@ -3858,8 +3865,8 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=7308,
-  serialized_end=11384,
+  serialized_start=7329,
+  serialized_end=11405,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateServiceProfile',

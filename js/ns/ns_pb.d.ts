@@ -467,6 +467,9 @@ export class Device extends jspb.Message {
   getReferenceAltitude(): number;
   setReferenceAltitude(value: number): void;
 
+  getIsDisabled(): boolean;
+  setIsDisabled(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Device.AsObject;
   static toObject(includeInstance: boolean, msg: Device): Device.AsObject;
@@ -485,6 +488,7 @@ export namespace Device {
     routingProfileId: Uint8Array | string,
     skipFCntCheck: boolean,
     referenceAltitude: number,
+    isDisabled: boolean,
   }
 }
 

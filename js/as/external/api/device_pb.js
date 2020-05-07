@@ -94,7 +94,8 @@ proto.api.Device.toObject = function(includeInstance, msg) {
     skipFCntCheck: msg.getSkipFCntCheck(),
     referenceAltitude: msg.getReferenceAltitude(),
     variablesMap: (f = msg.getVariablesMap(true)) ? f.toArray() : [],
-    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
+    isDisabled: msg.getIsDisabled()
   };
 
   if (includeInstance) {
@@ -170,6 +171,10 @@ proto.api.Device.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
          });
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDisabled(value);
       break;
     default:
       reader.skipField();
@@ -265,6 +270,13 @@ proto.api.Device.prototype.serializeBinaryToWriter = function (writer) {
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getIsDisabled();
+  if (f) {
+    writer.writeBool(
+      10,
+      f
+    );
   }
 };
 
@@ -408,6 +420,23 @@ proto.api.Device.prototype.getTagsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 9, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * optional bool is_disabled = 10;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.Device.prototype.getIsDisabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 10, false));
+};
+
+
+/** @param {boolean} value  */
+proto.api.Device.prototype.setIsDisabled = function(value) {
+  jspb.Message.setField(this, 10, value);
 };
 
 

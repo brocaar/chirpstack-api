@@ -298,6 +298,9 @@ message Device {
     // (when supported by the geolocation-server) to increase geolocation
     // accuracy.
     double reference_altitude = 6;
+
+    // Device is disabled.
+    bool is_disabled = 7;
 }
 
 message CreateDeviceRequest {
