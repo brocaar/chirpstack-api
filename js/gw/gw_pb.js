@@ -7575,7 +7575,9 @@ proto.gw.TxAckStatus = {
   COLLISION_BEACON: 5,
   TX_FREQ: 6,
   TX_POWER: 7,
-  GPS_UNLOCKED: 8
+  GPS_UNLOCKED: 8,
+  QUEUE_FULL: 9,
+  INTERNAL_ERROR: 10
 };
 
 goog.object.extend(exports, proto.gw);

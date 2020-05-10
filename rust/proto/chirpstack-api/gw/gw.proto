@@ -70,6 +70,12 @@ enum TxAckStatus {
 
     // Rejected because GPS is unlocked, so GPS timestamp cannot be used.
     GPS_UNLOCKED = 8;
+
+    // Downlink queue is full.
+    QUEUE_FULL = 9;
+
+    // Internal error.
+    INTERNAL_ERROR = 10;
 }
 
 message UplinkTXInfo {
