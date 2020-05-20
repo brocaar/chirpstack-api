@@ -29,6 +29,10 @@ interface IApplicationServiceService extends grpc.ServiceDefinition<grpc.Untyped
   getMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.GetMyDevicesIntegrationRequest, as_external_api_application_pb.GetMyDevicesIntegrationResponse>;
   updateMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.UpdateMyDevicesIntegrationRequest, google_protobuf_empty_pb.Empty>;
   deleteMyDevicesIntegration: grpc.MethodDefinition<as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, google_protobuf_empty_pb.Empty>;
+  createLoRaCloudIntegration: grpc.MethodDefinition<as_external_api_application_pb.CreateLoRaCloudIntegrationRequest, google_protobuf_empty_pb.Empty>;
+  getLoRaCloudIntegration: grpc.MethodDefinition<as_external_api_application_pb.GetLoRaCloudIntegrationRequest, as_external_api_application_pb.GetLoRaCloudIntegrationResponse>;
+  updateLoRaCloudIntegration: grpc.MethodDefinition<as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest, google_protobuf_empty_pb.Empty>;
+  deleteLoRaCloudIntegration: grpc.MethodDefinition<as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest, google_protobuf_empty_pb.Empty>;
   listIntegrations: grpc.MethodDefinition<as_external_api_application_pb.ListIntegrationRequest, as_external_api_application_pb.ListIntegrationResponse>;
 }
 
@@ -99,6 +103,18 @@ export class ApplicationServiceClient extends grpc.Client {
   deleteMyDevicesIntegration(argument: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   deleteMyDevicesIntegration(argument: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   deleteMyDevicesIntegration(argument: as_external_api_application_pb.DeleteMyDevicesIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  createLoRaCloudIntegration(argument: as_external_api_application_pb.CreateLoRaCloudIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  createLoRaCloudIntegration(argument: as_external_api_application_pb.CreateLoRaCloudIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  createLoRaCloudIntegration(argument: as_external_api_application_pb.CreateLoRaCloudIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  getLoRaCloudIntegration(argument: as_external_api_application_pb.GetLoRaCloudIntegrationRequest, callback: grpc.requestCallback<as_external_api_application_pb.GetLoRaCloudIntegrationResponse>): grpc.ClientUnaryCall;
+  getLoRaCloudIntegration(argument: as_external_api_application_pb.GetLoRaCloudIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.GetLoRaCloudIntegrationResponse>): grpc.ClientUnaryCall;
+  getLoRaCloudIntegration(argument: as_external_api_application_pb.GetLoRaCloudIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.GetLoRaCloudIntegrationResponse>): grpc.ClientUnaryCall;
+  updateLoRaCloudIntegration(argument: as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  updateLoRaCloudIntegration(argument: as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  updateLoRaCloudIntegration(argument: as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteLoRaCloudIntegration(argument: as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteLoRaCloudIntegration(argument: as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  deleteLoRaCloudIntegration(argument: as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;

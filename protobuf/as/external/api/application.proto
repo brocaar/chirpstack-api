@@ -166,6 +166,35 @@ service ApplicationService {
         };
     }
 
+    // CreateLoRaCloudIntegration creates A LoRaCloud application-integration.
+    rpc CreateLoRaCloudIntegration(CreateLoRaCloudIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/applications/{integration.application_id}/integrations/loracloud"
+            body: "*"
+        };
+    }
+
+    // GetLoRaCloudIntegration returns the LoRaCloud application-integration.
+    rpc GetLoRaCloudIntegration(GetLoRaCloudIntegrationRequest) returns (GetLoRaCloudIntegrationResponse) {
+        option(google.api.http) = {
+            get: "/api/applications/{application_id}/integrations/loracloud"
+        };
+    }
+
+    // UpdateLoRaCloudIntegration updates the LoRaCloud application-integration.
+    rpc UpdateLoRaCloudIntegration(UpdateLoRaCloudIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/applications/{integration.application_id}/integrations/loracloud"
+            body: "*"
+        };
+    }
+
+    // DeleteLoRaCloudIntegration deletes the LoRaCloud application-integration.
+    rpc DeleteLoRaCloudIntegration(DeleteLoRaCloudIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/applications/{application_id}/integrations/loracloud"
+        };
+    }
 
 	// ListIntegrations lists all configured integrations.
 	rpc ListIntegrations(ListIntegrationRequest) returns (ListIntegrationResponse) {
@@ -180,6 +209,7 @@ enum IntegrationKind {
 	INFLUXDB = 1;
     THINGSBOARD = 2;
     MYDEVICES = 3;
+    LORACLOUD = 4;
 }
 
 message Application {
@@ -493,4 +523,57 @@ message UpdateMyDevicesIntegrationRequest {
 message DeleteMyDevicesIntegrationRequest {
 	// Application ID.
 	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message LoRaCloudIntegration {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+
+    // Geolocation enabled.
+    bool geolocation = 2;
+
+    // Geolocation token.
+    // This token can be obtained from the LoRa Cloud console.
+    string geolocation_token = 3;
+
+    // Geolocation buffer TTL (in seconds).
+    // When > 0, uplink RX meta-data will be stored in a buffer so that
+    // the meta-data of multiple uplinks can be used for geolocation.
+    uint32 geolocation_buffer_ttl = 4 [json_name = "geolocationBufferTTL"];
+
+    // Geolocation minimum buffer size.
+    // When > 0, geolocation will only be performed when the buffer has
+    // at least the given size.
+    uint32 geolocation_min_buffer_size = 5;
+
+    // TDOA based geolocation is enabled.
+    bool geolocation_tdoa = 6 [json_name = "geolocationTDOA"];
+
+    // RSSI based geolocation is enabled.
+    bool geolocation_rssi = 7 [json_name = "geolocationRSSI"];
+}
+
+message CreateLoRaCloudIntegrationRequest {
+    // Integration object to create.
+    LoRaCloudIntegration integration = 1;
+}
+
+message GetLoRaCloudIntegrationRequest {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetLoRaCloudIntegrationResponse {
+    // Integration object.
+    LoRaCloudIntegration integration = 1;
+}
+
+message UpdateLoRaCloudIntegrationRequest {
+    // Integration object.
+    LoRaCloudIntegration integration = 1;
+}
+
+message DeleteLoRaCloudIntegrationRequest {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
 }

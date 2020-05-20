@@ -256,6 +256,58 @@
         ]
       }
     },
+    "/api/applications/{application_id}/integrations/loracloud": {
+      "get": {
+        "summary": "GetLoRaCloudIntegration returns the LoRaCloud application-integration.",
+        "operationId": "GetLoRaCloudIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetLoRaCloudIntegrationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "delete": {
+        "summary": "DeleteLoRaCloudIntegration deletes the LoRaCloud application-integration.",
+        "operationId": "DeleteLoRaCloudIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{application_id}/integrations/mydevices": {
       "get": {
         "summary": "GetMyDevicesIntegration returns the MyDevices application-integration.",
@@ -548,6 +600,74 @@
         ]
       }
     },
+    "/api/applications/{integration.application_id}/integrations/loracloud": {
+      "post": {
+        "summary": "CreateLoRaCloudIntegration creates A LoRaCloud application-integration.",
+        "operationId": "CreateLoRaCloudIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreateLoRaCloudIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "put": {
+        "summary": "UpdateLoRaCloudIntegration updates the LoRaCloud application-integration.",
+        "operationId": "UpdateLoRaCloudIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdateLoRaCloudIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{integration.application_id}/integrations/mydevices": {
       "post": {
         "summary": "CreateMyDevicesIntegration creates a MyDevices application-integration.",
@@ -793,6 +913,15 @@
         }
       }
     },
+    "apiCreateLoRaCloudIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiLoRaCloudIntegration",
+          "description": "Integration object to create."
+        }
+      }
+    },
     "apiCreateMyDevicesIntegrationRequest": {
       "type": "object",
       "properties": {
@@ -834,6 +963,15 @@
       "properties": {
         "integration": {
           "$ref": "#/definitions/apiInfluxDBIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
+    "apiGetLoRaCloudIntegrationResponse": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiLoRaCloudIntegration",
           "description": "Integration object."
         }
       }
@@ -966,7 +1104,8 @@
         "HTTP",
         "INFLUXDB",
         "THINGSBOARD",
-        "MYDEVICES"
+        "MYDEVICES",
+        "LORACLOUD"
       ],
       "default": "HTTP"
     },
@@ -1010,6 +1149,45 @@
             "$ref": "#/definitions/apiIntegrationListItem"
           },
           "description": "Integrations within result-set."
+        }
+      }
+    },
+    "apiLoRaCloudIntegration": {
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Application ID."
+        },
+        "geolocation": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Geolocation enabled."
+        },
+        "geolocationToken": {
+          "type": "string",
+          "description": "Geolocation token.\nThis token can be obtained from the LoRa Cloud console."
+        },
+        "geolocationBufferTTL": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Geolocation buffer TTL (in seconds).\nWhen \u003e 0, uplink RX meta-data will be stored in a buffer so that\nthe meta-data of multiple uplinks can be used for geolocation."
+        },
+        "geolocationMinBufferSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Geolocation minimum buffer size.\nWhen \u003e 0, geolocation will only be performed when the buffer has\nat least the given size."
+        },
+        "geolocationTDOA": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "TDOA based geolocation is enabled."
+        },
+        "geolocationRSSI": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "RSSI based geolocation is enabled."
         }
       }
     },
@@ -1064,6 +1242,15 @@
       "properties": {
         "integration": {
           "$ref": "#/definitions/apiInfluxDBIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
+    "apiUpdateLoRaCloudIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiLoRaCloudIntegration",
           "description": "Integration object."
         }
       }

@@ -67,8 +67,11 @@ enum LocationSource {
     // Manually configured.
     CONFIG = 2;
 
-    // Geo resolver.
-    GEO_RESOLVER = 3;
+    // Geo resolver (TDOA).
+    GEO_RESOLVER_TDOA = 3;
+
+    // Geo resolver (RSSI).
+    GEO_RESOLVER_RSSI = 4;
 }
 
 message Location {

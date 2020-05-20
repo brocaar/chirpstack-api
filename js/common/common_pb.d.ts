@@ -91,7 +91,8 @@ export interface LocationSourceMap {
   UNKNOWN: 0;
   GPS: 1;
   CONFIG: 2;
-  GEO_RESOLVER: 3;
+  GEO_RESOLVER_TDOA: 3;
+  GEO_RESOLVER_RSSI: 4;
 }
 
 export const LocationSource: LocationSourceMap;

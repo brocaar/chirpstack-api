@@ -937,11 +937,162 @@ export namespace DeleteMyDevicesIntegrationRequest {
   }
 }
 
+export class LoRaCloudIntegration extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getGeolocation(): boolean;
+  setGeolocation(value: boolean): void;
+
+  getGeolocationToken(): string;
+  setGeolocationToken(value: string): void;
+
+  getGeolocationBufferTtl(): number;
+  setGeolocationBufferTtl(value: number): void;
+
+  getGeolocationMinBufferSize(): number;
+  setGeolocationMinBufferSize(value: number): void;
+
+  getGeolocationTdoa(): boolean;
+  setGeolocationTdoa(value: boolean): void;
+
+  getGeolocationRssi(): boolean;
+  setGeolocationRssi(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LoRaCloudIntegration.AsObject;
+  static toObject(includeInstance: boolean, msg: LoRaCloudIntegration): LoRaCloudIntegration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LoRaCloudIntegration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LoRaCloudIntegration;
+  static deserializeBinaryFromReader(message: LoRaCloudIntegration, reader: jspb.BinaryReader): LoRaCloudIntegration;
+}
+
+export namespace LoRaCloudIntegration {
+  export type AsObject = {
+    applicationId: number,
+    geolocation: boolean,
+    geolocationToken: string,
+    geolocationBufferTtl: number,
+    geolocationMinBufferSize: number,
+    geolocationTdoa: boolean,
+    geolocationRssi: boolean,
+  }
+}
+
+export class CreateLoRaCloudIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): LoRaCloudIntegration | undefined;
+  setIntegration(value?: LoRaCloudIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateLoRaCloudIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateLoRaCloudIntegrationRequest): CreateLoRaCloudIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateLoRaCloudIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateLoRaCloudIntegrationRequest;
+  static deserializeBinaryFromReader(message: CreateLoRaCloudIntegrationRequest, reader: jspb.BinaryReader): CreateLoRaCloudIntegrationRequest;
+}
+
+export namespace CreateLoRaCloudIntegrationRequest {
+  export type AsObject = {
+    integration?: LoRaCloudIntegration.AsObject,
+  }
+}
+
+export class GetLoRaCloudIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetLoRaCloudIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetLoRaCloudIntegrationRequest): GetLoRaCloudIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetLoRaCloudIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetLoRaCloudIntegrationRequest;
+  static deserializeBinaryFromReader(message: GetLoRaCloudIntegrationRequest, reader: jspb.BinaryReader): GetLoRaCloudIntegrationRequest;
+}
+
+export namespace GetLoRaCloudIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GetLoRaCloudIntegrationResponse extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): LoRaCloudIntegration | undefined;
+  setIntegration(value?: LoRaCloudIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetLoRaCloudIntegrationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetLoRaCloudIntegrationResponse): GetLoRaCloudIntegrationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetLoRaCloudIntegrationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetLoRaCloudIntegrationResponse;
+  static deserializeBinaryFromReader(message: GetLoRaCloudIntegrationResponse, reader: jspb.BinaryReader): GetLoRaCloudIntegrationResponse;
+}
+
+export namespace GetLoRaCloudIntegrationResponse {
+  export type AsObject = {
+    integration?: LoRaCloudIntegration.AsObject,
+  }
+}
+
+export class UpdateLoRaCloudIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): LoRaCloudIntegration | undefined;
+  setIntegration(value?: LoRaCloudIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateLoRaCloudIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateLoRaCloudIntegrationRequest): UpdateLoRaCloudIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateLoRaCloudIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateLoRaCloudIntegrationRequest;
+  static deserializeBinaryFromReader(message: UpdateLoRaCloudIntegrationRequest, reader: jspb.BinaryReader): UpdateLoRaCloudIntegrationRequest;
+}
+
+export namespace UpdateLoRaCloudIntegrationRequest {
+  export type AsObject = {
+    integration?: LoRaCloudIntegration.AsObject,
+  }
+}
+
+export class DeleteLoRaCloudIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteLoRaCloudIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteLoRaCloudIntegrationRequest): DeleteLoRaCloudIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteLoRaCloudIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteLoRaCloudIntegrationRequest;
+  static deserializeBinaryFromReader(message: DeleteLoRaCloudIntegrationRequest, reader: jspb.BinaryReader): DeleteLoRaCloudIntegrationRequest;
+}
+
+export namespace DeleteLoRaCloudIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
 export interface IntegrationKindMap {
   HTTP: 0;
   INFLUXDB: 1;
   THINGSBOARD: 2;
   MYDEVICES: 3;
+  LORACLOUD: 4;
 }
 
 export const IntegrationKind: IntegrationKindMap;

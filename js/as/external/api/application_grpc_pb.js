@@ -50,6 +50,17 @@ function deserialize_api_CreateInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_CreateLoRaCloudIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateLoRaCloudIntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreateLoRaCloudIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateLoRaCloudIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateLoRaCloudIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_CreateMyDevicesIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.CreateMyDevicesIntegrationRequest)) {
     throw new Error('Expected argument of type api.CreateMyDevicesIntegrationRequest');
@@ -103,6 +114,17 @@ function serialize_api_DeleteInfluxDBIntegrationRequest(arg) {
 
 function deserialize_api_DeleteInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeleteLoRaCloudIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeleteLoRaCloudIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteLoRaCloudIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_DeleteMyDevicesIntegrationRequest(arg) {
@@ -191,6 +213,28 @@ function serialize_api_GetInfluxDBIntegrationResponse(arg) {
 
 function deserialize_api_GetInfluxDBIntegrationResponse(buffer_arg) {
   return as_external_api_application_pb.GetInfluxDBIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetLoRaCloudIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetLoRaCloudIntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetLoRaCloudIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetLoRaCloudIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetLoRaCloudIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetLoRaCloudIntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetLoRaCloudIntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetLoRaCloudIntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetLoRaCloudIntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetLoRaCloudIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_GetMyDevicesIntegrationRequest(arg) {
@@ -312,6 +356,17 @@ function serialize_api_UpdateInfluxDBIntegrationRequest(arg) {
 
 function deserialize_api_UpdateInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.UpdateInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_UpdateLoRaCloudIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdateLoRaCloudIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdateLoRaCloudIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_UpdateMyDevicesIntegrationRequest(arg) {
@@ -599,6 +654,54 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_api_DeleteMyDevicesIntegrationRequest,
     requestDeserialize: deserialize_api_DeleteMyDevicesIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreateLoRaCloudIntegration creates A LoRaCloud application-integration.
+  createLoRaCloudIntegration: {
+    path: '/api.ApplicationService/CreateLoRaCloudIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateLoRaCloudIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreateLoRaCloudIntegrationRequest,
+    requestDeserialize: deserialize_api_CreateLoRaCloudIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetLoRaCloudIntegration returns the LoRaCloud application-integration.
+  getLoRaCloudIntegration: {
+    path: '/api.ApplicationService/GetLoRaCloudIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetLoRaCloudIntegrationRequest,
+    responseType: as_external_api_application_pb.GetLoRaCloudIntegrationResponse,
+    requestSerialize: serialize_api_GetLoRaCloudIntegrationRequest,
+    requestDeserialize: deserialize_api_GetLoRaCloudIntegrationRequest,
+    responseSerialize: serialize_api_GetLoRaCloudIntegrationResponse,
+    responseDeserialize: deserialize_api_GetLoRaCloudIntegrationResponse,
+  },
+  // UpdateLoRaCloudIntegration updates the LoRaCloud application-integration.
+  updateLoRaCloudIntegration: {
+    path: '/api.ApplicationService/UpdateLoRaCloudIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdateLoRaCloudIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdateLoRaCloudIntegrationRequest,
+    requestDeserialize: deserialize_api_UpdateLoRaCloudIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeleteLoRaCloudIntegration deletes the LoRaCloud application-integration.
+  deleteLoRaCloudIntegration: {
+    path: '/api.ApplicationService/DeleteLoRaCloudIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeleteLoRaCloudIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteLoRaCloudIntegrationRequest,
+    requestDeserialize: deserialize_api_DeleteLoRaCloudIntegrationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
