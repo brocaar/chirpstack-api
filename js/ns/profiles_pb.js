@@ -819,9 +819,7 @@ proto.ns.DeviceProfile.toObject = function(includeInstance, msg) {
     maxDutyCycle: msg.getMaxDutyCycle(),
     supportsJoin: msg.getSupportsJoin(),
     rfRegion: msg.getRfRegion(),
-    supports32bitFCnt: msg.getSupports32bitFCnt(),
-    geolocBufferTtl: msg.getGeolocBufferTtl(),
-    geolocMinBufferSize: msg.getGeolocMinBufferSize()
+    supports32bitFCnt: msg.getSupports32bitFCnt()
   };
 
   if (includeInstance) {
@@ -937,14 +935,6 @@ proto.ns.DeviceProfile.deserializeBinaryFromReader = function(msg, reader) {
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSupports32bitFCnt(value);
-      break;
-    case 21:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setGeolocBufferTtl(value);
-      break;
-    case 22:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setGeolocMinBufferSize(value);
       break;
     default:
       reader.skipField();
@@ -1121,20 +1111,6 @@ proto.ns.DeviceProfile.prototype.serializeBinaryToWriter = function (writer) {
   if (f) {
     writer.writeBool(
       20,
-      f
-    );
-  }
-  f = this.getGeolocBufferTtl();
-  if (f !== 0) {
-    writer.writeUint32(
-      21,
-      f
-    );
-  }
-  f = this.getGeolocMinBufferSize();
-  if (f !== 0) {
-    writer.writeUint32(
-      22,
       f
     );
   }
@@ -1486,36 +1462,6 @@ proto.ns.DeviceProfile.prototype.getSupports32bitFCnt = function() {
 /** @param {boolean} value  */
 proto.ns.DeviceProfile.prototype.setSupports32bitFCnt = function(value) {
   jspb.Message.setField(this, 20, value);
-};
-
-
-/**
- * optional uint32 geoloc_buffer_ttl = 21;
- * @return {number}
- */
-proto.ns.DeviceProfile.prototype.getGeolocBufferTtl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 21, 0));
-};
-
-
-/** @param {number} value  */
-proto.ns.DeviceProfile.prototype.setGeolocBufferTtl = function(value) {
-  jspb.Message.setField(this, 21, value);
-};
-
-
-/**
- * optional uint32 geoloc_min_buffer_size = 22;
- * @return {number}
- */
-proto.ns.DeviceProfile.prototype.getGeolocMinBufferSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 22, 0));
-};
-
-
-/** @param {number} value  */
-proto.ns.DeviceProfile.prototype.setGeolocMinBufferSize = function(value) {
-  jspb.Message.setField(this, 22, value);
 };
 
 

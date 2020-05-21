@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ns',
   syntax='proto3',
   serialized_options=b'Z$github.com/brocaar/chirpstack-api/ns',
-  serialized_pb=b'\n chirpstack-api/ns/profiles.proto\x12\x02ns\"\xee\x03\n\x0eServiceProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0f\n\x07ul_rate\x18\x02 \x01(\r\x12\x16\n\x0eul_bucket_size\x18\x03 \x01(\r\x12&\n\x0eul_rate_policy\x18\x04 \x01(\x0e\x32\x0e.ns.RatePolicy\x12\x0f\n\x07\x64l_rate\x18\x05 \x01(\r\x12\x16\n\x0e\x64l_bucket_size\x18\x06 \x01(\r\x12&\n\x0e\x64l_rate_policy\x18\x07 \x01(\x0e\x32\x0e.ns.RatePolicy\x12\x17\n\x0f\x61\x64\x64_gw_metadata\x18\x08 \x01(\x08\x12\x1b\n\x13\x64\x65v_status_req_freq\x18\t \x01(\r\x12!\n\x19report_dev_status_battery\x18\n \x01(\x08\x12 \n\x18report_dev_status_margin\x18\x0b \x01(\x08\x12\x0e\n\x06\x64r_min\x18\x0c \x01(\r\x12\x0e\n\x06\x64r_max\x18\r \x01(\r\x12\x14\n\x0c\x63hannel_mask\x18\x0e \x01(\x0c\x12\x12\n\npr_allowed\x18\x0f \x01(\x08\x12\x12\n\nhr_allowed\x18\x10 \x01(\x08\x12\x12\n\nra_allowed\x18\x11 \x01(\x08\x12\x13\n\x0bnwk_geo_loc\x18\x12 \x01(\x08\x12\x12\n\ntarget_per\x18\x13 \x01(\r\x12\x18\n\x10min_gw_diversity\x18\x14 \x01(\r\"\x9c\x04\n\rDeviceProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x18\n\x10supports_class_b\x18\x02 \x01(\x08\x12\x17\n\x0f\x63lass_b_timeout\x18\x03 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x04 \x01(\r\x12\x14\n\x0cping_slot_dr\x18\x05 \x01(\r\x12\x16\n\x0eping_slot_freq\x18\x06 \x01(\r\x12\x18\n\x10supports_class_c\x18\x07 \x01(\x08\x12\x17\n\x0f\x63lass_c_timeout\x18\x08 \x01(\r\x12\x13\n\x0bmac_version\x18\t \x01(\t\x12\x1b\n\x13reg_params_revision\x18\n \x01(\t\x12\x12\n\nrx_delay_1\x18\x0b \x01(\r\x12\x16\n\x0erx_dr_offset_1\x18\x0c \x01(\r\x12\x15\n\rrx_datarate_2\x18\r \x01(\r\x12\x11\n\trx_freq_2\x18\x0e \x01(\r\x12\x1c\n\x14\x66\x61\x63tory_preset_freqs\x18\x0f \x03(\r\x12\x10\n\x08max_eirp\x18\x10 \x01(\r\x12\x16\n\x0emax_duty_cycle\x18\x11 \x01(\r\x12\x15\n\rsupports_join\x18\x12 \x01(\x08\x12\x11\n\trf_region\x18\x13 \x01(\t\x12\x1c\n\x14supports_32bit_f_cnt\x18\x14 \x01(\x08\x12\x19\n\x11geoloc_buffer_ttl\x18\x15 \x01(\r\x12\x1e\n\x16geoloc_min_buffer_size\x18\x16 \x01(\r\"_\n\x0eRoutingProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\r\n\x05\x61s_id\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61_cert\x18\x03 \x01(\t\x12\x10\n\x08tls_cert\x18\x04 \x01(\t\x12\x0f\n\x07tls_key\x18\x05 \x01(\t* \n\nRatePolicy\x12\x08\n\x04\x44ROP\x10\x00\x12\x08\n\x04MARK\x10\x01\x42&Z$github.com/brocaar/chirpstack-api/nsb\x06proto3'
+  serialized_pb=b'\n chirpstack-api/ns/profiles.proto\x12\x02ns\"\xee\x03\n\x0eServiceProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0f\n\x07ul_rate\x18\x02 \x01(\r\x12\x16\n\x0eul_bucket_size\x18\x03 \x01(\r\x12&\n\x0eul_rate_policy\x18\x04 \x01(\x0e\x32\x0e.ns.RatePolicy\x12\x0f\n\x07\x64l_rate\x18\x05 \x01(\r\x12\x16\n\x0e\x64l_bucket_size\x18\x06 \x01(\r\x12&\n\x0e\x64l_rate_policy\x18\x07 \x01(\x0e\x32\x0e.ns.RatePolicy\x12\x17\n\x0f\x61\x64\x64_gw_metadata\x18\x08 \x01(\x08\x12\x1b\n\x13\x64\x65v_status_req_freq\x18\t \x01(\r\x12!\n\x19report_dev_status_battery\x18\n \x01(\x08\x12 \n\x18report_dev_status_margin\x18\x0b \x01(\x08\x12\x0e\n\x06\x64r_min\x18\x0c \x01(\r\x12\x0e\n\x06\x64r_max\x18\r \x01(\r\x12\x14\n\x0c\x63hannel_mask\x18\x0e \x01(\x0c\x12\x12\n\npr_allowed\x18\x0f \x01(\x08\x12\x12\n\nhr_allowed\x18\x10 \x01(\x08\x12\x12\n\nra_allowed\x18\x11 \x01(\x08\x12\x13\n\x0bnwk_geo_loc\x18\x12 \x01(\x08\x12\x12\n\ntarget_per\x18\x13 \x01(\r\x12\x18\n\x10min_gw_diversity\x18\x14 \x01(\r\"\xe1\x03\n\rDeviceProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x18\n\x10supports_class_b\x18\x02 \x01(\x08\x12\x17\n\x0f\x63lass_b_timeout\x18\x03 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x04 \x01(\r\x12\x14\n\x0cping_slot_dr\x18\x05 \x01(\r\x12\x16\n\x0eping_slot_freq\x18\x06 \x01(\r\x12\x18\n\x10supports_class_c\x18\x07 \x01(\x08\x12\x17\n\x0f\x63lass_c_timeout\x18\x08 \x01(\r\x12\x13\n\x0bmac_version\x18\t \x01(\t\x12\x1b\n\x13reg_params_revision\x18\n \x01(\t\x12\x12\n\nrx_delay_1\x18\x0b \x01(\r\x12\x16\n\x0erx_dr_offset_1\x18\x0c \x01(\r\x12\x15\n\rrx_datarate_2\x18\r \x01(\r\x12\x11\n\trx_freq_2\x18\x0e \x01(\r\x12\x1c\n\x14\x66\x61\x63tory_preset_freqs\x18\x0f \x03(\r\x12\x10\n\x08max_eirp\x18\x10 \x01(\r\x12\x16\n\x0emax_duty_cycle\x18\x11 \x01(\r\x12\x15\n\rsupports_join\x18\x12 \x01(\x08\x12\x11\n\trf_region\x18\x13 \x01(\t\x12\x1c\n\x14supports_32bit_f_cnt\x18\x14 \x01(\x08\"_\n\x0eRoutingProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\r\n\x05\x61s_id\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61_cert\x18\x03 \x01(\t\x12\x10\n\x08tls_cert\x18\x04 \x01(\t\x12\x0f\n\x07tls_key\x18\x05 \x01(\t* \n\nRatePolicy\x12\x08\n\x04\x44ROP\x10\x00\x12\x08\n\x04MARK\x10\x01\x42&Z$github.com/brocaar/chirpstack-api/nsb\x06proto3'
 )
 
 _RATEPOLICY = _descriptor.EnumDescriptor(
@@ -39,8 +39,8 @@ _RATEPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1177,
-  serialized_end=1209,
+  serialized_start=1118,
+  serialized_end=1150,
 )
 _sym_db.RegisterEnumDescriptor(_RATEPOLICY)
 
@@ -361,20 +361,6 @@ _DEVICEPROFILE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='geoloc_buffer_ttl', full_name='ns.DeviceProfile.geoloc_buffer_ttl', index=20,
-      number=21, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='geoloc_min_buffer_size', full_name='ns.DeviceProfile.geoloc_min_buffer_size', index=21,
-      number=22, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -388,7 +374,7 @@ _DEVICEPROFILE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=538,
-  serialized_end=1078,
+  serialized_end=1019,
 )
 
 
@@ -446,8 +432,8 @@ _ROUTINGPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1080,
-  serialized_end=1175,
+  serialized_start=1021,
+  serialized_end=1116,
 )
 
 _SERVICEPROFILE.fields_by_name['ul_rate_policy'].enum_type = _RATEPOLICY
