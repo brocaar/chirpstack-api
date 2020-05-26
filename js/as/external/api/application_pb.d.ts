@@ -959,6 +959,12 @@ export class LoRaCloudIntegration extends jspb.Message {
   getGeolocationRssi(): boolean;
   setGeolocationRssi(value: boolean): void;
 
+  getGeolocationGnss(): boolean;
+  setGeolocationGnss(value: boolean): void;
+
+  getGeolocationGnssPayloadField(): string;
+  setGeolocationGnssPayloadField(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoRaCloudIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: LoRaCloudIntegration): LoRaCloudIntegration.AsObject;
@@ -978,6 +984,8 @@ export namespace LoRaCloudIntegration {
     geolocationMinBufferSize: number,
     geolocationTdoa: boolean,
     geolocationRssi: boolean,
+    geolocationGnss: boolean,
+    geolocationGnssPayloadField: string,
   }
 }
 

@@ -551,6 +551,14 @@ message LoRaCloudIntegration {
 
     // RSSI based geolocation is enabled.
     bool geolocation_rssi = 7 [json_name = "geolocationRSSI"];
+
+    // GNSS based geolocation is enabled (LR1110).
+    bool geolocation_gnss = 8 [json_name = "geolocationGNSS"];
+
+    // GNSS payload field.
+    // This holds the name of the field in the decoded payload object which
+    // contains the GNSS payload bytes.
+    string geolocation_gnss_payload_field = 9 [json_name = "geolocationGNSSPayloadField"];
 }
 
 message CreateLoRaCloudIntegrationRequest {

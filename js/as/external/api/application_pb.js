@@ -7381,7 +7381,9 @@ proto.api.LoRaCloudIntegration.toObject = function(includeInstance, msg) {
     geolocationBufferTtl: msg.getGeolocationBufferTtl(),
     geolocationMinBufferSize: msg.getGeolocationMinBufferSize(),
     geolocationTdoa: msg.getGeolocationTdoa(),
-    geolocationRssi: msg.getGeolocationRssi()
+    geolocationRssi: msg.getGeolocationRssi(),
+    geolocationGnss: msg.getGeolocationGnss(),
+    geolocationGnssPayloadField: msg.getGeolocationGnssPayloadField()
   };
 
   if (includeInstance) {
@@ -7445,6 +7447,14 @@ proto.api.LoRaCloudIntegration.deserializeBinaryFromReader = function(msg, reade
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGeolocationRssi(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGeolocationGnss(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGeolocationGnssPayloadField(value);
       break;
     default:
       reader.skipField();
@@ -7530,6 +7540,20 @@ proto.api.LoRaCloudIntegration.prototype.serializeBinaryToWriter = function (wri
   if (f) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = this.getGeolocationGnss();
+  if (f) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
+  f = this.getGeolocationGnssPayloadField();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -7653,6 +7677,38 @@ proto.api.LoRaCloudIntegration.prototype.getGeolocationRssi = function() {
 /** @param {boolean} value  */
 proto.api.LoRaCloudIntegration.prototype.setGeolocationRssi = function(value) {
   jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * optional bool geolocation_gnss = 8;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.LoRaCloudIntegration.prototype.getGeolocationGnss = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 8, false));
+};
+
+
+/** @param {boolean} value  */
+proto.api.LoRaCloudIntegration.prototype.setGeolocationGnss = function(value) {
+  jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * optional string geolocation_gnss_payload_field = 9;
+ * @return {string}
+ */
+proto.api.LoRaCloudIntegration.prototype.getGeolocationGnssPayloadField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 9, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.LoRaCloudIntegration.prototype.setGeolocationGnssPayloadField = function(value) {
+  jspb.Message.setField(this, 9, value);
 };
 
 

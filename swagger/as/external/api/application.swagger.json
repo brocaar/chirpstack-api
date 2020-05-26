@@ -1188,6 +1188,15 @@
           "type": "boolean",
           "format": "boolean",
           "description": "RSSI based geolocation is enabled."
+        },
+        "geolocationGNSS": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "GNSS based geolocation is enabled (LR1110)."
+        },
+        "geolocationGNSSPayloadField": {
+          "type": "string",
+          "description": "GNSS payload field.\nThis holds the name of the field in the decoded payload object which\ncontains the GNSS payload bytes."
         }
       }
     },

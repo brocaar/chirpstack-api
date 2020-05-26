@@ -654,10 +654,11 @@
         "GPS",
         "CONFIG",
         "GEO_RESOLVER_TDOA",
-        "GEO_RESOLVER_RSSI"
+        "GEO_RESOLVER_RSSI",
+        "GEO_RESOLVER_RNSS"
       ],
       "default": "UNKNOWN",
-      "description": " - UNKNOWN: Unknown.\n - GPS: GPS.\n - CONFIG: Manually configured.\n - GEO_RESOLVER_TDOA: Geo resolver (TDOA).\n - GEO_RESOLVER_RSSI: Geo resolver (RSSI)."
+      "description": " - UNKNOWN: Unknown.\n - GPS: GPS.\n - CONFIG: Manually configured.\n - GEO_RESOLVER_TDOA: Geo resolver (TDOA).\n - GEO_RESOLVER_RSSI: Geo resolver (RSSI).\n - GEO_RESOLVER_RNSS: Geo resolver (GNSS)."
     },
     "commonModulation": {
       "type": "string",

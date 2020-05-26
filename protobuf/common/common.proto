@@ -72,6 +72,9 @@ enum LocationSource {
 
     // Geo resolver (RSSI).
     GEO_RESOLVER_RSSI = 4;
+
+    // Geo resolver (GNSS).
+    GEO_RESOLVER_RNSS = 5;
 }
 
 message Location {
