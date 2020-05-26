@@ -93,7 +93,7 @@ export interface LocationSourceMap {
   CONFIG: 2;
   GEO_RESOLVER_TDOA: 3;
   GEO_RESOLVER_RSSI: 4;
-  GEO_RESOLVER_RNSS: 5;
+  GEO_RESOLVER_GNSS: 5;
 }
 
 export const LocationSource: LocationSourceMap;
