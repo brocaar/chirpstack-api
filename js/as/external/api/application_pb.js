@@ -7384,7 +7384,9 @@ proto.api.LoRaCloudIntegration.toObject = function(includeInstance, msg) {
     geolocationRssi: msg.getGeolocationRssi(),
     geolocationGnss: msg.getGeolocationGnss(),
     geolocationGnssPayloadField: msg.getGeolocationGnssPayloadField(),
-    geolocationGnssUseRxTime: msg.getGeolocationGnssUseRxTime()
+    geolocationGnssUseRxTime: msg.getGeolocationGnssUseRxTime(),
+    geolocationWifi: msg.getGeolocationWifi(),
+    geolocationWifiPayloadField: msg.getGeolocationWifiPayloadField()
   };
 
   if (includeInstance) {
@@ -7460,6 +7462,14 @@ proto.api.LoRaCloudIntegration.deserializeBinaryFromReader = function(msg, reade
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGeolocationGnssUseRxTime(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGeolocationWifi(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGeolocationWifiPayloadField(value);
       break;
     default:
       reader.skipField();
@@ -7566,6 +7576,20 @@ proto.api.LoRaCloudIntegration.prototype.serializeBinaryToWriter = function (wri
   if (f) {
     writer.writeBool(
       10,
+      f
+    );
+  }
+  f = this.getGeolocationWifi();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
+    );
+  }
+  f = this.getGeolocationWifiPayloadField();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -7738,6 +7762,38 @@ proto.api.LoRaCloudIntegration.prototype.getGeolocationGnssUseRxTime = function(
 /** @param {boolean} value  */
 proto.api.LoRaCloudIntegration.prototype.setGeolocationGnssUseRxTime = function(value) {
   jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * optional bool geolocation_wifi = 11;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.LoRaCloudIntegration.prototype.getGeolocationWifi = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 11, false));
+};
+
+
+/** @param {boolean} value  */
+proto.api.LoRaCloudIntegration.prototype.setGeolocationWifi = function(value) {
+  jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * optional string geolocation_wifi_payload_field = 12;
+ * @return {string}
+ */
+proto.api.LoRaCloudIntegration.prototype.getGeolocationWifiPayloadField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.LoRaCloudIntegration.prototype.setGeolocationWifiPayloadField = function(value) {
+  jspb.Message.setField(this, 12, value);
 };
 
 

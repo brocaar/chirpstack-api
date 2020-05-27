@@ -75,6 +75,9 @@ enum LocationSource {
 
     // Geo resolver (GNSS).
     GEO_RESOLVER_GNSS = 5;
+
+    // Geo resolver (WIFI).
+    GEO_RESOLVER_WIFI = 6;
 }
 
 message Location {

@@ -524,7 +524,8 @@ proto.common.LocationSource = {
   CONFIG: 2,
   GEO_RESOLVER_TDOA: 3,
   GEO_RESOLVER_RSSI: 4,
-  GEO_RESOLVER_GNSS: 5
+  GEO_RESOLVER_GNSS: 5,
+  GEO_RESOLVER_WIFI: 6
 };
 
 goog.object.extend(exports, proto.common);

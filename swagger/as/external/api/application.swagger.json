@@ -1202,6 +1202,15 @@
           "type": "boolean",
           "format": "boolean",
           "description": "GNSS use RX time.\nIn case this is set to true, the resolver will use the RX time of the\nnetwork instead of the timestamp included in the LR1110 payload."
+        },
+        "geolocationWifi": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Wifi based geolocation is enabled."
+        },
+        "geolocationWifiPayloadField": {
+          "type": "string",
+          "title": "Wifi payload field.\nThis holds the name of the field in the decoded payload object which\ncontains an array of objects with the following fields:\n* macAddress - e.g. 01:23:45:67:89:ab\n* signalStrength - e.g. -51 (optional)"
         }
       }
     },

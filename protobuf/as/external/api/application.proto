@@ -564,6 +564,16 @@ message LoRaCloudIntegration {
     // In case this is set to true, the resolver will use the RX time of the
     // network instead of the timestamp included in the LR1110 payload.
     bool geolocation_gnss_use_rx_time = 10 [json_name = "geolocationGNSSUseRxTime"];
+
+    // Wifi based geolocation is enabled.
+    bool geolocation_wifi = 11 [json_name = "geolocationWifi"];
+
+    // Wifi payload field.
+    // This holds the name of the field in the decoded payload object which
+    // contains an array of objects with the following fields:
+    // * macAddress - e.g. 01:23:45:67:89:ab
+    // * signalStrength - e.g. -51 (optional)
+    string geolocation_wifi_payload_field = 12 [json_name = "geolocationWifiPayloadField"];
 }
 
 message CreateLoRaCloudIntegrationRequest {
