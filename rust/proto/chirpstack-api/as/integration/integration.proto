@@ -250,5 +250,10 @@ message LocationEvent {
     map<string, string> tags = 6;
 
     // Uplink IDs used for geolocation.
+    // This is set in case the geolocation is based on the uplink meta-data.
     repeated bytes uplink_ids = 7 [json_name = "uplinkIDs"];
+
+    // Frame counter (in case the geolocation is based on the payload).
+    // This is set in case the geolocation is based on the uplink payload content.
+    uint32 f_cnt = 8;
 }

@@ -7383,7 +7383,8 @@ proto.api.LoRaCloudIntegration.toObject = function(includeInstance, msg) {
     geolocationTdoa: msg.getGeolocationTdoa(),
     geolocationRssi: msg.getGeolocationRssi(),
     geolocationGnss: msg.getGeolocationGnss(),
-    geolocationGnssPayloadField: msg.getGeolocationGnssPayloadField()
+    geolocationGnssPayloadField: msg.getGeolocationGnssPayloadField(),
+    geolocationGnssUseRxTime: msg.getGeolocationGnssUseRxTime()
   };
 
   if (includeInstance) {
@@ -7455,6 +7456,10 @@ proto.api.LoRaCloudIntegration.deserializeBinaryFromReader = function(msg, reade
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setGeolocationGnssPayloadField(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGeolocationGnssUseRxTime(value);
       break;
     default:
       reader.skipField();
@@ -7554,6 +7559,13 @@ proto.api.LoRaCloudIntegration.prototype.serializeBinaryToWriter = function (wri
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = this.getGeolocationGnssUseRxTime();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -7709,6 +7721,23 @@ proto.api.LoRaCloudIntegration.prototype.getGeolocationGnssPayloadField = functi
 /** @param {string} value  */
 proto.api.LoRaCloudIntegration.prototype.setGeolocationGnssPayloadField = function(value) {
   jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * optional bool geolocation_gnss_use_rx_time = 10;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.LoRaCloudIntegration.prototype.getGeolocationGnssUseRxTime = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 10, false));
+};
+
+
+/** @param {boolean} value  */
+proto.api.LoRaCloudIntegration.prototype.setGeolocationGnssUseRxTime = function(value) {
+  jspb.Message.setField(this, 10, value);
 };
 
 

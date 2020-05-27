@@ -2608,7 +2608,8 @@ proto.integration.LocationEvent.toObject = function(includeInstance, msg) {
     devEui: msg.getDevEui_asB64(),
     location: (f = msg.getLocation()) && common_common_pb.Location.toObject(includeInstance, f),
     tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
-    uplinkIdsList: msg.getUplinkIdsList_asB64()
+    uplinkIdsList: msg.getUplinkIdsList_asB64(),
+    fCnt: msg.getFCnt()
   };
 
   if (includeInstance) {
@@ -2676,6 +2677,10 @@ proto.integration.LocationEvent.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.getUplinkIdsList().push(value);
       msg.setUplinkIdsList(msg.getUplinkIdsList());
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFCnt(value);
       break;
     default:
       reader.skipField();
@@ -2759,6 +2764,13 @@ proto.integration.LocationEvent.prototype.serializeBinaryToWriter = function (wr
   if (f.length > 0) {
     writer.writeRepeatedBytes(
       7,
+      f
+    );
+  }
+  f = this.getFCnt();
+  if (f !== 0) {
+    writer.writeUint32(
+      8,
       f
     );
   }
@@ -2948,6 +2960,21 @@ proto.integration.LocationEvent.prototype.setUplinkIdsList = function(value) {
 
 proto.integration.LocationEvent.prototype.clearUplinkIdsList = function() {
   jspb.Message.setField(this, 7, []);
+};
+
+
+/**
+ * optional uint32 f_cnt = 8;
+ * @return {number}
+ */
+proto.integration.LocationEvent.prototype.getFCnt = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 8, 0));
+};
+
+
+/** @param {number} value  */
+proto.integration.LocationEvent.prototype.setFCnt = function(value) {
+  jspb.Message.setField(this, 8, value);
 };
 
 

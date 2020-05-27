@@ -1197,6 +1197,11 @@
         "geolocationGNSSPayloadField": {
           "type": "string",
           "description": "GNSS payload field.\nThis holds the name of the field in the decoded payload object which\ncontains the GNSS payload bytes."
+        },
+        "geolocationGNSSUseRxTime": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "GNSS use RX time.\nIn case this is set to true, the resolver will use the RX time of the\nnetwork instead of the timestamp included in the LR1110 payload."
         }
       }
     },

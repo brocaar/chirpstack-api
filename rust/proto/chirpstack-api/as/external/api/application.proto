@@ -559,6 +559,11 @@ message LoRaCloudIntegration {
     // This holds the name of the field in the decoded payload object which
     // contains the GNSS payload bytes.
     string geolocation_gnss_payload_field = 9 [json_name = "geolocationGNSSPayloadField"];
+
+    // GNSS use RX time.
+    // In case this is set to true, the resolver will use the RX time of the
+    // network instead of the timestamp included in the LR1110 payload.
+    bool geolocation_gnss_use_rx_time = 10 [json_name = "geolocationGNSSUseRxTime"];
 }
 
 message CreateLoRaCloudIntegrationRequest {
