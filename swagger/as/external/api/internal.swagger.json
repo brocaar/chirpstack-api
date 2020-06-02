@@ -404,9 +404,9 @@
     "apiLoginRequest": {
       "type": "object",
       "properties": {
-        "username": {
+        "email": {
           "type": "string",
-          "description": "Username of the user."
+          "description": "Email of the user."
         },
         "password": {
           "type": "string",

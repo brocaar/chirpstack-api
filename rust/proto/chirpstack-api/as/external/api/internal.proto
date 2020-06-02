@@ -162,8 +162,8 @@ message OrganizationLink {
 }
 
 message LoginRequest {
-	// Username of the user.
-	string username = 1;
+	// Email of the user.
+	string email = 1;
 
 	// Password of the user.
 	string password = 2;

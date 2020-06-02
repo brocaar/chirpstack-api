@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
-  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/internal.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a,chirpstack-api/as_pb/external/api/user.proto\"\x84\x01\n\x06\x41PIKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"3\n\x13\x43reateAPIKeyRequest\x12\x1c\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x0b.api.APIKey\"5\n\x14\x43reateAPIKeyResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tjwt_token\x18\x02 \x01(\t\"!\n\x13\x44\x65leteAPIKeyRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x95\x01\n\x12ListAPIKeysRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"G\n\x13ListAPIKeysResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x1b\n\x06result\x18\x02 \x03(\x0b\x32\x0b.api.APIKey\"\xfb\x01\n\x10OrganizationLink\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"2\n\x0cLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\rLoginResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t\"X\n\x0fProfileResponse\x12\x17\n\x04user\x18\x01 \x01(\x0b\x32\t.api.User\x12,\n\rorganizations\x18\x03 \x03(\x0b\x32\x15.api.OrganizationLink\"D\n\x13GlobalSearchRequest\x12\x0e\n\x06search\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06offset\x18\x03 \x01(\x03\"?\n\x14GlobalSearchResponse\x12\'\n\x06result\x18\x01 \x03(\x0b\x32\x17.api.GlobalSearchResult\"\xa8\x02\n\x12GlobalSearchResult\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x04 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12$\n\x0e\x64\x65vice_dev_eui\x18\x07 \x01(\tR\x0c\x64\x65viceDevEUI\x12\x13\n\x0b\x64\x65vice_name\x18\x08 \x01(\t\x12\x1f\n\x0bgateway_mac\x18\t \x01(\tR\ngatewayMAC\x12\x14\n\x0cgateway_name\x18\n \x01(\t\"_\n\x10SettingsResponse\x12\x1f\n\x08\x62randing\x18\x02 \x01(\x0b\x32\r.api.Branding\x12*\n\x0eopenid_connect\x18\x03 \x01(\x0b\x32\x12.api.OpenIDConnect\"0\n\x08\x42randing\x12\x14\n\x0cregistration\x18\x01 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x02 \x01(\t\"R\n\rOpenIDConnect\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1b\n\tlogin_url\x18\x02 \x01(\tR\x08loginURL\x12\x13\n\x0blogin_label\x18\x03 \x01(\t\"8\n\x19OpenIDConnectLoginRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x1aOpenIDConnectLoginResponse\x12\x11\n\tjwt_token\x18\x01 \x01(\t2\xa1\x06\n\x0fInternalService\x12N\n\x05Login\x12\x11.api.LoginRequest\x1a\x12.api.LoginResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/internal/login:\x01*\x12V\n\x07Profile\x12\x16.google.protobuf.Empty\x1a\x14.api.ProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/internal/profile\x12\x61\n\x0cGlobalSearch\x12\x18.api.GlobalSearchRequest\x1a\x19.api.GlobalSearchResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/internal/search\x12\x66\n\x0c\x43reateAPIKey\x12\x18.api.CreateAPIKeyRequest\x1a\x19.api.CreateAPIKeyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/api/internal/api-keys:\x01*\x12\x65\n\x0c\x44\x65leteAPIKey\x12\x18.api.DeleteAPIKeyRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/internal/api-keys/{id}\x12`\n\x0bListAPIKeys\x12\x17.api.ListAPIKeysRequest\x1a\x18.api.ListAPIKeysResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/api-keys\x12Y\n\x08Settings\x12\x16.google.protobuf.Empty\x1a\x15.api.SettingsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/settings\x12w\n\x12OpenIDConnectLogin\x12\x1e.api.OpenIDConnectLoginRequest\x1a\x1f.api.OpenIDConnectLoginResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/internal/oidc/loginB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/internal.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a,chirpstack-api/as_pb/external/api/user.proto\"\x84\x01\n\x06\x41PIKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"3\n\x13\x43reateAPIKeyRequest\x12\x1c\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x0b.api.APIKey\"5\n\x14\x43reateAPIKeyResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tjwt_token\x18\x02 \x01(\t\"!\n\x13\x44\x65leteAPIKeyRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x95\x01\n\x12ListAPIKeysRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"G\n\x13ListAPIKeysResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x1b\n\x06result\x18\x02 \x03(\x0b\x32\x0b.api.APIKey\"\xfb\x01\n\x10OrganizationLink\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"/\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\rLoginResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t\"X\n\x0fProfileResponse\x12\x17\n\x04user\x18\x01 \x01(\x0b\x32\t.api.User\x12,\n\rorganizations\x18\x03 \x03(\x0b\x32\x15.api.OrganizationLink\"D\n\x13GlobalSearchRequest\x12\x0e\n\x06search\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06offset\x18\x03 \x01(\x03\"?\n\x14GlobalSearchResponse\x12\'\n\x06result\x18\x01 \x03(\x0b\x32\x17.api.GlobalSearchResult\"\xa8\x02\n\x12GlobalSearchResult\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x04 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12$\n\x0e\x64\x65vice_dev_eui\x18\x07 \x01(\tR\x0c\x64\x65viceDevEUI\x12\x13\n\x0b\x64\x65vice_name\x18\x08 \x01(\t\x12\x1f\n\x0bgateway_mac\x18\t \x01(\tR\ngatewayMAC\x12\x14\n\x0cgateway_name\x18\n \x01(\t\"_\n\x10SettingsResponse\x12\x1f\n\x08\x62randing\x18\x02 \x01(\x0b\x32\r.api.Branding\x12*\n\x0eopenid_connect\x18\x03 \x01(\x0b\x32\x12.api.OpenIDConnect\"0\n\x08\x42randing\x12\x14\n\x0cregistration\x18\x01 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x02 \x01(\t\"R\n\rOpenIDConnect\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1b\n\tlogin_url\x18\x02 \x01(\tR\x08loginURL\x12\x13\n\x0blogin_label\x18\x03 \x01(\t\"8\n\x19OpenIDConnectLoginRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x1aOpenIDConnectLoginResponse\x12\x11\n\tjwt_token\x18\x01 \x01(\t2\xa1\x06\n\x0fInternalService\x12N\n\x05Login\x12\x11.api.LoginRequest\x1a\x12.api.LoginResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/internal/login:\x01*\x12V\n\x07Profile\x12\x16.google.protobuf.Empty\x1a\x14.api.ProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/internal/profile\x12\x61\n\x0cGlobalSearch\x12\x18.api.GlobalSearchRequest\x1a\x19.api.GlobalSearchResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/internal/search\x12\x66\n\x0c\x43reateAPIKey\x12\x18.api.CreateAPIKeyRequest\x1a\x19.api.CreateAPIKeyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/api/internal/api-keys:\x01*\x12\x65\n\x0c\x44\x65leteAPIKey\x12\x18.api.DeleteAPIKeyRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/internal/api-keys/{id}\x12`\n\x0bListAPIKeys\x12\x17.api.ListAPIKeysRequest\x1a\x18.api.ListAPIKeysResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/api-keys\x12Y\n\x08Settings\x12\x16.google.protobuf.Empty\x1a\x15.api.SettingsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/settings\x12w\n\x12OpenIDConnectLogin\x12\x1e.api.OpenIDConnectLoginRequest\x1a\x1f.api.OpenIDConnectLoginResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/internal/oidc/loginB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.DESCRIPTOR,])
 
@@ -366,7 +366,7 @@ _LOGINREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='username', full_name='api.LoginRequest.username', index=0,
+      name='email', full_name='api.LoginRequest.email', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -392,7 +392,7 @@ _LOGINREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=952,
-  serialized_end=1002,
+  serialized_end=999,
 )
 
 
@@ -422,8 +422,8 @@ _LOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1004,
-  serialized_end=1032,
+  serialized_start=1001,
+  serialized_end=1029,
 )
 
 
@@ -460,8 +460,8 @@ _PROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1034,
-  serialized_end=1122,
+  serialized_start=1031,
+  serialized_end=1119,
 )
 
 
@@ -505,8 +505,8 @@ _GLOBALSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1124,
-  serialized_end=1192,
+  serialized_start=1121,
+  serialized_end=1189,
 )
 
 
@@ -536,8 +536,8 @@ _GLOBALSEARCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1194,
-  serialized_end=1257,
+  serialized_start=1191,
+  serialized_end=1254,
 )
 
 
@@ -630,8 +630,8 @@ _GLOBALSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1260,
-  serialized_end=1556,
+  serialized_start=1257,
+  serialized_end=1553,
 )
 
 
@@ -668,8 +668,8 @@ _SETTINGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1558,
-  serialized_end=1653,
+  serialized_start=1555,
+  serialized_end=1650,
 )
 
 
@@ -706,8 +706,8 @@ _BRANDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1655,
-  serialized_end=1703,
+  serialized_start=1652,
+  serialized_end=1700,
 )
 
 
@@ -751,8 +751,8 @@ _OPENIDCONNECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1705,
-  serialized_end=1787,
+  serialized_start=1702,
+  serialized_end=1784,
 )
 
 
@@ -789,8 +789,8 @@ _OPENIDCONNECTLOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1789,
-  serialized_end=1845,
+  serialized_start=1786,
+  serialized_end=1842,
 )
 
 
@@ -820,8 +820,8 @@ _OPENIDCONNECTLOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1847,
-  serialized_end=1894,
+  serialized_start=1844,
+  serialized_end=1891,
 )
 
 _CREATEAPIKEYREQUEST.fields_by_name['api_key'].message_type = _APIKEY
@@ -988,8 +988,8 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1897,
-  serialized_end=2698,
+  serialized_start=1894,
+  serialized_end=2695,
   methods=[
   _descriptor.MethodDescriptor(
     name='Login',

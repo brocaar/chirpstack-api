@@ -1702,7 +1702,7 @@ proto.api.LoginRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.LoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: msg.getUsername(),
+    email: msg.getEmail(),
     password: msg.getPassword()
   };
 
@@ -1742,7 +1742,7 @@ proto.api.LoginRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setEmail(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1786,7 +1786,7 @@ proto.api.LoginRequest.prototype.serializeBinary = function() {
  */
 proto.api.LoginRequest.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getUsername();
+  f = this.getEmail();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1813,16 +1813,16 @@ proto.api.LoginRequest.prototype.cloneMessage = function() {
 
 
 /**
- * optional string username = 1;
+ * optional string email = 1;
  * @return {string}
  */
-proto.api.LoginRequest.prototype.getUsername = function() {
+proto.api.LoginRequest.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
 /** @param {string} value  */
-proto.api.LoginRequest.prototype.setUsername = function(value) {
+proto.api.LoginRequest.prototype.setEmail = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
