@@ -19,6 +19,12 @@ export class Organization extends jspb.Message {
   getCanHaveGateways(): boolean;
   setCanHaveGateways(value: boolean): void;
 
+  getMaxGatewayCount(): number;
+  setMaxGatewayCount(value: number): void;
+
+  getMaxDeviceCount(): number;
+  setMaxDeviceCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Organization.AsObject;
   static toObject(includeInstance: boolean, msg: Organization): Organization.AsObject;
@@ -35,6 +41,8 @@ export namespace Organization {
     name: string,
     displayName: string,
     canHaveGateways: boolean,
+    maxGatewayCount: number,
+    maxDeviceCount: number,
   }
 }
 

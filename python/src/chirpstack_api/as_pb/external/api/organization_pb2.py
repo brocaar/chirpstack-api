@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
-  serialized_pb=b'\n4chirpstack-api/as_pb/external/api/organization.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"Y\n\x0cOrganization\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12\x19\n\x11\x63\x61n_have_gateways\x18\x04 \x01(\x08\"\xc1\x01\n\x14OrganizationListItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12\x19\n\x11\x63\x61n_have_gateways\x18\x04 \x01(\x08\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"$\n\x16GetOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\xa2\x01\n\x17GetOrganizationResponse\x12\'\n\x0corganization\x18\x01 \x01(\x0b\x32\x11.api.Organization\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"D\n\x19\x43reateOrganizationRequest\x12\'\n\x0corganization\x18\x01 \x01(\x0b\x32\x11.api.Organization\"(\n\x1a\x43reateOrganizationResponse\x12\n\n\x02id\x18\x01 \x01(\x03\"D\n\x19UpdateOrganizationRequest\x12\'\n\x0corganization\x18\x01 \x01(\x0b\x32\x11.api.Organization\"\'\n\x19\x44\x65leteOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"H\n\x17ListOrganizationRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x0e\n\x06search\x18\x03 \x01(\t\"Z\n\x18ListOrganizationResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12)\n\x06result\x18\x02 \x03(\x0b\x32\x19.api.OrganizationListItem\"\xa8\x01\n\x10OrganizationUser\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x17\n\x07user_id\x18\x02 \x01(\x03R\x06userID\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x05 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x06 \x01(\x08\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"\xe7\x01\n\x18OrganizationUserListItem\x12\x17\n\x07user_id\x18\x01 \x01(\x03R\x06userID\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"N\n\x1a\x41\x64\x64OrganizationUserRequest\x12\x30\n\x11organization_user\x18\x01 \x01(\x0b\x32\x15.api.OrganizationUser\"Q\n\x1dUpdateOrganizationUserRequest\x12\x30\n\x11organization_user\x18\x01 \x01(\x0b\x32\x15.api.OrganizationUser\"a\n\x1d\x44\x65leteOrganizationUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x17\n\x07user_id\x18\x02 \x01(\x03R\x06userID\"f\n\x1cListOrganizationUsersRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\"c\n\x1dListOrganizationUsersResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12-\n\x06result\x18\x02 \x03(\x0b\x32\x1d.api.OrganizationUserListItem\"^\n\x1aGetOrganizationUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x17\n\x07user_id\x18\x02 \x01(\x03R\x06userID\"\xaf\x01\n\x1bGetOrganizationUserResponse\x12\x30\n\x11organization_user\x18\x01 \x01(\x0b\x32\x15.api.OrganizationUser\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\xf6\t\n\x13OrganizationService\x12_\n\x04List\x12\x1c.api.ListOrganizationRequest\x1a\x1d.api.ListOrganizationResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/organizations\x12\x61\n\x03Get\x12\x1b.api.GetOrganizationRequest\x1a\x1c.api.GetOrganizationResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/organizations/{id}\x12h\n\x06\x43reate\x12\x1e.api.CreateOrganizationRequest\x1a\x1f.api.CreateOrganizationResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/organizations:\x01*\x12q\n\x06Update\x12\x1e.api.UpdateOrganizationRequest\x1a\x16.google.protobuf.Empty\"/\x82\xd3\xe4\x93\x02)\x1a$/api/organizations/{organization.id}:\x01*\x12\x61\n\x06\x44\x65lete\x12\x1e.api.DeleteOrganizationRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/api/organizations/{id}\x12\x86\x01\n\tListUsers\x12!.api.ListOrganizationUsersRequest\x1a\".api.ListOrganizationUsersResponse\"2\x82\xd3\xe4\x93\x02,\x12*/api/organizations/{organization_id}/users\x12\x8a\x01\n\x07GetUser\x12\x1f.api.GetOrganizationUserRequest\x1a .api.GetOrganizationUserResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/api/organizations/{organization_id}/users/{user_id}\x12\x8b\x01\n\x07\x41\x64\x64User\x12\x1f.api.AddOrganizationUserRequest\x1a\x16.google.protobuf.Empty\"G\x82\xd3\xe4\x93\x02\x41\"</api/organizations/{organization_user.organization_id}/users:\x01*\x12\xad\x01\n\nUpdateUser\x12\".api.UpdateOrganizationUserRequest\x1a\x16.google.protobuf.Empty\"c\x82\xd3\xe4\x93\x02]\x1aX/api/organizations/{organization_user.organization_id}/users/{organization_user.user_id}:\x01*\x12\x86\x01\n\nDeleteUser\x12\".api.DeleteOrganizationUserRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36*4/api/organizations/{organization_id}/users/{user_id}B9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n4chirpstack-api/as_pb/external/api/organization.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x8e\x01\n\x0cOrganization\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12\x19\n\x11\x63\x61n_have_gateways\x18\x04 \x01(\x08\x12\x19\n\x11max_gateway_count\x18\x05 \x01(\r\x12\x18\n\x10max_device_count\x18\x06 \x01(\r\"\xc1\x01\n\x14OrganizationListItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12\x19\n\x11\x63\x61n_have_gateways\x18\x04 \x01(\x08\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"$\n\x16GetOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\xa2\x01\n\x17GetOrganizationResponse\x12\'\n\x0corganization\x18\x01 \x01(\x0b\x32\x11.api.Organization\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"D\n\x19\x43reateOrganizationRequest\x12\'\n\x0corganization\x18\x01 \x01(\x0b\x32\x11.api.Organization\"(\n\x1a\x43reateOrganizationResponse\x12\n\n\x02id\x18\x01 \x01(\x03\"D\n\x19UpdateOrganizationRequest\x12\'\n\x0corganization\x18\x01 \x01(\x0b\x32\x11.api.Organization\"\'\n\x19\x44\x65leteOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"H\n\x17ListOrganizationRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x0e\n\x06search\x18\x03 \x01(\t\"Z\n\x18ListOrganizationResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12)\n\x06result\x18\x02 \x03(\x0b\x32\x19.api.OrganizationListItem\"\xa8\x01\n\x10OrganizationUser\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x17\n\x07user_id\x18\x02 \x01(\x03R\x06userID\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x05 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x06 \x01(\x08\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"\xe7\x01\n\x18OrganizationUserListItem\x12\x17\n\x07user_id\x18\x01 \x01(\x03R\x06userID\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"N\n\x1a\x41\x64\x64OrganizationUserRequest\x12\x30\n\x11organization_user\x18\x01 \x01(\x0b\x32\x15.api.OrganizationUser\"Q\n\x1dUpdateOrganizationUserRequest\x12\x30\n\x11organization_user\x18\x01 \x01(\x0b\x32\x15.api.OrganizationUser\"a\n\x1d\x44\x65leteOrganizationUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x17\n\x07user_id\x18\x02 \x01(\x03R\x06userID\"f\n\x1cListOrganizationUsersRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\"c\n\x1dListOrganizationUsersResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12-\n\x06result\x18\x02 \x03(\x0b\x32\x1d.api.OrganizationUserListItem\"^\n\x1aGetOrganizationUserRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x17\n\x07user_id\x18\x02 \x01(\x03R\x06userID\"\xaf\x01\n\x1bGetOrganizationUserResponse\x12\x30\n\x11organization_user\x18\x01 \x01(\x0b\x32\x15.api.OrganizationUser\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\xf6\t\n\x13OrganizationService\x12_\n\x04List\x12\x1c.api.ListOrganizationRequest\x1a\x1d.api.ListOrganizationResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/organizations\x12\x61\n\x03Get\x12\x1b.api.GetOrganizationRequest\x1a\x1c.api.GetOrganizationResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/organizations/{id}\x12h\n\x06\x43reate\x12\x1e.api.CreateOrganizationRequest\x1a\x1f.api.CreateOrganizationResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/organizations:\x01*\x12q\n\x06Update\x12\x1e.api.UpdateOrganizationRequest\x1a\x16.google.protobuf.Empty\"/\x82\xd3\xe4\x93\x02)\x1a$/api/organizations/{organization.id}:\x01*\x12\x61\n\x06\x44\x65lete\x12\x1e.api.DeleteOrganizationRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/api/organizations/{id}\x12\x86\x01\n\tListUsers\x12!.api.ListOrganizationUsersRequest\x1a\".api.ListOrganizationUsersResponse\"2\x82\xd3\xe4\x93\x02,\x12*/api/organizations/{organization_id}/users\x12\x8a\x01\n\x07GetUser\x12\x1f.api.GetOrganizationUserRequest\x1a .api.GetOrganizationUserResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/api/organizations/{organization_id}/users/{user_id}\x12\x8b\x01\n\x07\x41\x64\x64User\x12\x1f.api.AddOrganizationUserRequest\x1a\x16.google.protobuf.Empty\"G\x82\xd3\xe4\x93\x02\x41\"</api/organizations/{organization_user.organization_id}/users:\x01*\x12\xad\x01\n\nUpdateUser\x12\".api.UpdateOrganizationUserRequest\x1a\x16.google.protobuf.Empty\"c\x82\xd3\xe4\x93\x02]\x1aX/api/organizations/{organization_user.organization_id}/users/{organization_user.user_id}:\x01*\x12\x86\x01\n\nDeleteUser\x12\".api.DeleteOrganizationUserRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36*4/api/organizations/{organization_id}/users/{user_id}B9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -63,6 +63,20 @@ _ORGANIZATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_gateway_count', full_name='api.Organization.max_gateway_count', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_device_count', full_name='api.Organization.max_device_count', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -75,8 +89,8 @@ _ORGANIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=153,
-  serialized_end=242,
+  serialized_start=154,
+  serialized_end=296,
 )
 
 
@@ -141,8 +155,8 @@ _ORGANIZATIONLISTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=245,
-  serialized_end=438,
+  serialized_start=299,
+  serialized_end=492,
 )
 
 
@@ -172,8 +186,8 @@ _GETORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=440,
-  serialized_end=476,
+  serialized_start=494,
+  serialized_end=530,
 )
 
 
@@ -217,8 +231,8 @@ _GETORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=479,
-  serialized_end=641,
+  serialized_start=533,
+  serialized_end=695,
 )
 
 
@@ -248,8 +262,8 @@ _CREATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=643,
-  serialized_end=711,
+  serialized_start=697,
+  serialized_end=765,
 )
 
 
@@ -279,8 +293,8 @@ _CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=713,
-  serialized_end=753,
+  serialized_start=767,
+  serialized_end=807,
 )
 
 
@@ -310,8 +324,8 @@ _UPDATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=755,
-  serialized_end=823,
+  serialized_start=809,
+  serialized_end=877,
 )
 
 
@@ -341,8 +355,8 @@ _DELETEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=825,
-  serialized_end=864,
+  serialized_start=879,
+  serialized_end=918,
 )
 
 
@@ -386,8 +400,8 @@ _LISTORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=866,
-  serialized_end=938,
+  serialized_start=920,
+  serialized_end=992,
 )
 
 
@@ -424,8 +438,8 @@ _LISTORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=940,
-  serialized_end=1030,
+  serialized_start=994,
+  serialized_end=1084,
 )
 
 
@@ -490,8 +504,8 @@ _ORGANIZATIONUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1033,
-  serialized_end=1201,
+  serialized_start=1087,
+  serialized_end=1255,
 )
 
 
@@ -563,8 +577,8 @@ _ORGANIZATIONUSERLISTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1204,
-  serialized_end=1435,
+  serialized_start=1258,
+  serialized_end=1489,
 )
 
 
@@ -594,8 +608,8 @@ _ADDORGANIZATIONUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1437,
-  serialized_end=1515,
+  serialized_start=1491,
+  serialized_end=1569,
 )
 
 
@@ -625,8 +639,8 @@ _UPDATEORGANIZATIONUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1517,
-  serialized_end=1598,
+  serialized_start=1571,
+  serialized_end=1652,
 )
 
 
@@ -663,8 +677,8 @@ _DELETEORGANIZATIONUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1600,
-  serialized_end=1697,
+  serialized_start=1654,
+  serialized_end=1751,
 )
 
 
@@ -708,8 +722,8 @@ _LISTORGANIZATIONUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1699,
-  serialized_end=1801,
+  serialized_start=1753,
+  serialized_end=1855,
 )
 
 
@@ -746,8 +760,8 @@ _LISTORGANIZATIONUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1803,
-  serialized_end=1902,
+  serialized_start=1857,
+  serialized_end=1956,
 )
 
 
@@ -784,8 +798,8 @@ _GETORGANIZATIONUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1904,
-  serialized_end=1998,
+  serialized_start=1958,
+  serialized_end=2052,
 )
 
 
@@ -829,8 +843,8 @@ _GETORGANIZATIONUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2001,
-  serialized_end=2176,
+  serialized_start=2055,
+  serialized_end=2230,
 )
 
 _ORGANIZATIONLISTITEM.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -1012,8 +1026,8 @@ _ORGANIZATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2179,
-  serialized_end=3449,
+  serialized_start=2233,
+  serialized_end=3503,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',

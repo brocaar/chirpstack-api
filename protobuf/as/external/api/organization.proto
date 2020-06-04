@@ -98,6 +98,14 @@ message Organization {
 
 	// Can the organization create and "own" Gateways?
 	bool can_have_gateways = 4;
+
+    // Max. gateway count for organization.
+    // When set to 0, the organization can have unlimited gateways.
+    uint32 max_gateway_count = 5;
+
+    // Max. device count for organization.
+    // When set to 0, the organization can have unlimited devices.
+    uint32 max_device_count = 6;
 }
 
 message OrganizationListItem {

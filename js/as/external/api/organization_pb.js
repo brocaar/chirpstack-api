@@ -80,7 +80,9 @@ proto.api.Organization.toObject = function(includeInstance, msg) {
     id: msg.getId(),
     name: msg.getName(),
     displayName: msg.getDisplayName(),
-    canHaveGateways: msg.getCanHaveGateways()
+    canHaveGateways: msg.getCanHaveGateways(),
+    maxGatewayCount: msg.getMaxGatewayCount(),
+    maxDeviceCount: msg.getMaxDeviceCount()
   };
 
   if (includeInstance) {
@@ -132,6 +134,14 @@ proto.api.Organization.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCanHaveGateways(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setMaxGatewayCount(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setMaxDeviceCount(value);
       break;
     default:
       reader.skipField();
@@ -196,6 +206,20 @@ proto.api.Organization.prototype.serializeBinaryToWriter = function (writer) {
   if (f) {
     writer.writeBool(
       4,
+      f
+    );
+  }
+  f = this.getMaxGatewayCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      5,
+      f
+    );
+  }
+  f = this.getMaxDeviceCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      6,
       f
     );
   }
@@ -270,6 +294,36 @@ proto.api.Organization.prototype.getCanHaveGateways = function() {
 /** @param {boolean} value  */
 proto.api.Organization.prototype.setCanHaveGateways = function(value) {
   jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 max_gateway_count = 5;
+ * @return {number}
+ */
+proto.api.Organization.prototype.getMaxGatewayCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.Organization.prototype.setMaxGatewayCount = function(value) {
+  jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * optional uint32 max_device_count = 6;
+ * @return {number}
+ */
+proto.api.Organization.prototype.getMaxDeviceCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.Organization.prototype.setMaxDeviceCount = function(value) {
+  jspb.Message.setField(this, 6, value);
 };
 
 

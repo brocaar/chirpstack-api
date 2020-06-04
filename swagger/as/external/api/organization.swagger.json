@@ -479,6 +479,16 @@
           "type": "boolean",
           "format": "boolean",
           "title": "Can the organization create and \"own\" Gateways?"
+        },
+        "maxGatewayCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max. gateway count for organization.\nWhen set to 0, the organization can have unlimited gateways."
+        },
+        "maxDeviceCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max. device count for organization.\nWhen set to 0, the organization can have unlimited devices."
         }
       }
     },
