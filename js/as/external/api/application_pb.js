@@ -7386,7 +7386,10 @@ proto.api.LoRaCloudIntegration.toObject = function(includeInstance, msg) {
     geolocationGnssPayloadField: msg.getGeolocationGnssPayloadField(),
     geolocationGnssUseRxTime: msg.getGeolocationGnssUseRxTime(),
     geolocationWifi: msg.getGeolocationWifi(),
-    geolocationWifiPayloadField: msg.getGeolocationWifiPayloadField()
+    geolocationWifiPayloadField: msg.getGeolocationWifiPayloadField(),
+    das: msg.getDas(),
+    dasToken: msg.getDasToken(),
+    dasModemPort: msg.getDasModemPort()
   };
 
   if (includeInstance) {
@@ -7470,6 +7473,18 @@ proto.api.LoRaCloudIntegration.deserializeBinaryFromReader = function(msg, reade
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setGeolocationWifiPayloadField(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDas(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDasToken(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDasModemPort(value);
       break;
     default:
       reader.skipField();
@@ -7590,6 +7605,27 @@ proto.api.LoRaCloudIntegration.prototype.serializeBinaryToWriter = function (wri
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = this.getDas();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
+  f = this.getDasToken();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = this.getDasModemPort();
+  if (f !== 0) {
+    writer.writeUint32(
+      15,
       f
     );
   }
@@ -7794,6 +7830,53 @@ proto.api.LoRaCloudIntegration.prototype.getGeolocationWifiPayloadField = functi
 /** @param {string} value  */
 proto.api.LoRaCloudIntegration.prototype.setGeolocationWifiPayloadField = function(value) {
   jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * optional bool das = 13;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.LoRaCloudIntegration.prototype.getDas = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 13, false));
+};
+
+
+/** @param {boolean} value  */
+proto.api.LoRaCloudIntegration.prototype.setDas = function(value) {
+  jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * optional string das_token = 14;
+ * @return {string}
+ */
+proto.api.LoRaCloudIntegration.prototype.getDasToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 14, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.LoRaCloudIntegration.prototype.setDasToken = function(value) {
+  jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * optional uint32 das_modem_port = 15;
+ * @return {number}
+ */
+proto.api.LoRaCloudIntegration.prototype.getDasModemPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 15, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.LoRaCloudIntegration.prototype.setDasModemPort = function(value) {
+  jspb.Message.setField(this, 15, value);
 };
 
 

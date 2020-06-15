@@ -974,6 +974,15 @@ export class LoRaCloudIntegration extends jspb.Message {
   getGeolocationWifiPayloadField(): string;
   setGeolocationWifiPayloadField(value: string): void;
 
+  getDas(): boolean;
+  setDas(value: boolean): void;
+
+  getDasToken(): string;
+  setDasToken(value: string): void;
+
+  getDasModemPort(): number;
+  setDasModemPort(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoRaCloudIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: LoRaCloudIntegration): LoRaCloudIntegration.AsObject;
@@ -998,6 +1007,9 @@ export namespace LoRaCloudIntegration {
     geolocationGnssUseRxTime: boolean,
     geolocationWifi: boolean,
     geolocationWifiPayloadField: string,
+    das: boolean,
+    dasToken: string,
+    dasModemPort: number,
   }
 }
 

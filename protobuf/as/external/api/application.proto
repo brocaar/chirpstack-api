@@ -574,6 +574,18 @@ message LoRaCloudIntegration {
     // * macAddress - e.g. 01:23:45:67:89:ab
     // * signalStrength - e.g. -51 (optional)
     string geolocation_wifi_payload_field = 12 [json_name = "geolocationWifiPayloadField"];
+
+    // Device Application Services enabled.
+    bool das = 13;
+
+    // Device Application Services token.
+    // This token can be obtained from the LoRa Cloud console.
+    string das_token = 14;
+
+    // Device Application Services modem port (FPort).
+    // ChirpStack Application Server will only forward the FRMPayload to DAS
+    // when the uplink FPort is equal to this value.
+    uint32 das_modem_port = 15;
 }
 
 message CreateLoRaCloudIntegrationRequest {

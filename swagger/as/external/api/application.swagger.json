@@ -1211,6 +1211,20 @@
         "geolocationWifiPayloadField": {
           "type": "string",
           "title": "Wifi payload field.\nThis holds the name of the field in the decoded payload object which\ncontains an array of objects with the following fields:\n* macAddress - e.g. 01:23:45:67:89:ab\n* signalStrength - e.g. -51 (optional)"
+        },
+        "das": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Device Application Services enabled."
+        },
+        "dasToken": {
+          "type": "string",
+          "description": "Device Application Services token.\nThis token can be obtained from the LoRa Cloud console."
+        },
+        "dasModemPort": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Device Application Services modem port (FPort).\nChirpStack Application Server will only forward the FRMPayload to DAS\nwhen the uplink FPort is equal to this value."
         }
       }
     },
