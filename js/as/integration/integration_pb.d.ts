@@ -392,6 +392,55 @@ export namespace LocationEvent {
   }
 }
 
+export class IntegrationEvent extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getApplicationName(): string;
+  setApplicationName(value: string): void;
+
+  getDeviceName(): string;
+  setDeviceName(value: string): void;
+
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  getTagsMap(): jspb.Map<string, string>;
+  clearTagsMap(): void;
+  getIntegrationName(): string;
+  setIntegrationName(value: string): void;
+
+  getEventType(): string;
+  setEventType(value: string): void;
+
+  getObjectJson(): string;
+  setObjectJson(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IntegrationEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegrationEvent): IntegrationEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: IntegrationEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegrationEvent;
+  static deserializeBinaryFromReader(message: IntegrationEvent, reader: jspb.BinaryReader): IntegrationEvent;
+}
+
+export namespace IntegrationEvent {
+  export type AsObject = {
+    applicationId: number,
+    applicationName: string,
+    deviceName: string,
+    devEui: Uint8Array | string,
+    tagsMap: Array<[string, string]>,
+    integrationName: string,
+    eventType: string,
+    objectJson: string,
+  }
+}
+
 export interface ErrorTypeMap {
   UNKNOWN: 0;
   DOWNLINK_PAYLOAD_SIZE: 1;

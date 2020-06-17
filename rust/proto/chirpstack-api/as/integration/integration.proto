@@ -257,3 +257,32 @@ message LocationEvent {
     // This is set in case the geolocation is based on the uplink payload content.
     uint32 f_cnt = 8;
 }
+
+// IntegrationEvent is the message that can be sent by an integration.
+// It allows for sending events which are provided by an external integration
+// which are "not native" to ChirpStack.
+message IntegrationEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // User-defined device tags.
+    map<string, string> tags = 5;
+
+    // Integration name.
+    string integration_name = 6;
+
+    // Event type.
+    string event_type = 7;
+
+    // JSON string containing the event object.
+    string object_json = 8 [json_name = "objectJSON"];
+}
