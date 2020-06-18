@@ -331,6 +331,9 @@ export class HTTPIntegration extends jspb.Message {
   getTxAckNotificationUrl(): string;
   setTxAckNotificationUrl(value: string): void;
 
+  getIntegrationNotificationUrl(): string;
+  setIntegrationNotificationUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HTTPIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: HTTPIntegration): HTTPIntegration.AsObject;
@@ -352,6 +355,7 @@ export namespace HTTPIntegration {
     statusNotificationUrl: string,
     locationNotificationUrl: string,
     txAckNotificationUrl: string,
+    integrationNotificationUrl: string,
   }
 }
 

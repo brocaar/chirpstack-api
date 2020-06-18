@@ -2397,7 +2397,8 @@ proto.api.HTTPIntegration.toObject = function(includeInstance, msg) {
     errorNotificationUrl: msg.getErrorNotificationUrl(),
     statusNotificationUrl: msg.getStatusNotificationUrl(),
     locationNotificationUrl: msg.getLocationNotificationUrl(),
-    txAckNotificationUrl: msg.getTxAckNotificationUrl()
+    txAckNotificationUrl: msg.getTxAckNotificationUrl(),
+    integrationNotificationUrl: msg.getIntegrationNotificationUrl()
   };
 
   if (includeInstance) {
@@ -2471,6 +2472,10 @@ proto.api.HTTPIntegration.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setTxAckNotificationUrl(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIntegrationNotificationUrl(value);
       break;
     default:
       reader.skipField();
@@ -2571,6 +2576,13 @@ proto.api.HTTPIntegration.prototype.serializeBinaryToWriter = function (writer) 
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = this.getIntegrationNotificationUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -2726,6 +2738,21 @@ proto.api.HTTPIntegration.prototype.getTxAckNotificationUrl = function() {
 /** @param {string} value  */
 proto.api.HTTPIntegration.prototype.setTxAckNotificationUrl = function(value) {
   jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * optional string integration_notification_url = 10;
+ * @return {string}
+ */
+proto.api.HTTPIntegration.prototype.getIntegrationNotificationUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 10, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.HTTPIntegration.prototype.setIntegrationNotificationUrl = function(value) {
+  jspb.Message.setField(this, 10, value);
 };
 
 

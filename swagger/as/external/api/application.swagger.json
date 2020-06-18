@@ -1036,6 +1036,10 @@
         "txAckNotificationURL": {
           "type": "string",
           "description": "The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission)."
+        },
+        "integrationNotificationURL": {
+          "type": "string",
+          "description": "The URL to call for integration notifications."
         }
       }
     },

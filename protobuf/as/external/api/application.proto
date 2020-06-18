@@ -357,6 +357,9 @@ message HTTPIntegration {
 
     // The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission).
     string tx_ack_notification_url = 9 [json_name = "txAckNotificationURL"];
+
+    // The URL to call for integration notifications.
+    string integration_notification_url = 10 [json_name = "integrationNotificationURL"];
 }
 
 message CreateHTTPIntegrationRequest {
