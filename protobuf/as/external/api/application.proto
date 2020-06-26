@@ -7,6 +7,7 @@ option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+
 // ApplicationService is the service managing applications.
 service ApplicationService {
 	// Create creates the given application.
@@ -212,6 +213,12 @@ enum IntegrationKind {
     LORACLOUD = 4;
 }
 
+enum Marshaler {
+    JSON = 0;
+    PROTOBUF = 1;
+    JSON_V3 = 2;
+}
+
 message Application {
 	// Application ID.
 	// This will be automatically assigned on create.
@@ -338,28 +345,46 @@ message HTTPIntegration {
 	repeated HTTPIntegrationHeader headers = 2;
 
 	// The URL to call for uplink data.
+    // Deprecated: use event_endpoint_url.
 	string uplink_data_url = 3 [json_name = "uplinkDataURL"];
 
 	// The URL to call for join notifications.
+    // Deprecated: use event_endpoint_url.
 	string join_notification_url = 4 [json_name = "joinNotificationURL"];
 
 	// The URL to call for ACK notifications (for confirmed downlink data).
+    // Deprecated: use event_endpoint_url.
 	string ack_notification_url = 5 [json_name = "ackNotificationURL"];
 
 	// The URL to call for error notifications.
+    // Deprecated: use event_endpoint_url.
 	string error_notification_url = 6 [json_name = "errorNotificationURL"];
 
 	// The URL to call for device-status notifications.
+    // Deprecated: use event_endpoint_url.
 	string status_notification_url = 7 [json_name = "statusNotificationURL"];
 
 	// The URL to call for location notifications.
+    // Deprecated: use event_endpoint_url.
 	string location_notification_url = 8 [json_name = "locationNotificationURL"];
 
     // The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission).
+    // Deprecated: use event_endpoint_url.
     string tx_ack_notification_url = 9 [json_name = "txAckNotificationURL"];
 
     // The URL to call for integration notifications.
+    // Deprecated: use event_endpoint_url.
     string integration_notification_url = 10 [json_name = "integrationNotificationURL"];
+
+    // Marshaler.
+    // This defines the marshaler that is used to encode the event payload.
+    Marshaler marshaler = 11;
+
+    // Event endpoint URL.
+    // The HTTP integration will POST all events to this enpoint. The request
+    // will contain a query parameters "eventType" containing the type of the
+    // event.
+    string event_endpoint_url = 12 [json_name = "eventEndpointURL"];
 }
 
 message CreateHTTPIntegrationRequest {

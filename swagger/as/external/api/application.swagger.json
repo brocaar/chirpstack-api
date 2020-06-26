@@ -1011,35 +1011,43 @@
         },
         "uplinkDataURL": {
           "type": "string",
-          "description": "The URL to call for uplink data."
+          "description": "The URL to call for uplink data.\nDeprecated: use event_endpoint_url."
         },
         "joinNotificationURL": {
           "type": "string",
-          "description": "The URL to call for join notifications."
+          "description": "The URL to call for join notifications.\nDeprecated: use event_endpoint_url."
         },
         "ackNotificationURL": {
           "type": "string",
-          "description": "The URL to call for ACK notifications (for confirmed downlink data)."
+          "description": "The URL to call for ACK notifications (for confirmed downlink data).\nDeprecated: use event_endpoint_url."
         },
         "errorNotificationURL": {
           "type": "string",
-          "description": "The URL to call for error notifications."
+          "description": "The URL to call for error notifications.\nDeprecated: use event_endpoint_url."
         },
         "statusNotificationURL": {
           "type": "string",
-          "description": "The URL to call for device-status notifications."
+          "description": "The URL to call for device-status notifications.\nDeprecated: use event_endpoint_url."
         },
         "locationNotificationURL": {
           "type": "string",
-          "description": "The URL to call for location notifications."
+          "description": "The URL to call for location notifications.\nDeprecated: use event_endpoint_url."
         },
         "txAckNotificationURL": {
           "type": "string",
-          "description": "The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission)."
+          "description": "The URL to call for tx ack notifications (downlink acknowledged by gateway for transmission).\nDeprecated: use event_endpoint_url."
         },
         "integrationNotificationURL": {
           "type": "string",
-          "description": "The URL to call for integration notifications."
+          "description": "The URL to call for integration notifications.\nDeprecated: use event_endpoint_url."
+        },
+        "marshaler": {
+          "$ref": "#/definitions/apiMarshaler",
+          "description": "Marshaler.\nThis defines the marshaler that is used to encode the event payload."
+        },
+        "eventEndpointURL": {
+          "type": "string",
+          "description": "Event endpoint URL.\nThe HTTP integration will POST all events to this enpoint. The request\nwill contain a query parameters \"eventType\" containing the type of the\nevent."
         }
       }
     },
@@ -1231,6 +1239,15 @@
           "description": "Device Application Services modem port (FPort).\nChirpStack Application Server will only forward the FRMPayload to DAS\nwhen the uplink FPort is equal to this value."
         }
       }
+    },
+    "apiMarshaler": {
+      "type": "string",
+      "enum": [
+        "JSON",
+        "PROTOBUF",
+        "JSON_V3"
+      ],
+      "default": "JSON"
     },
     "apiMyDevicesIntegration": {
       "type": "object",

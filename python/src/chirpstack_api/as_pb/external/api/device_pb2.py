@@ -23,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n.chirpstack-api/as_pb/external/api/device.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/frameLog.proto\"\x95\x03\n\x06\x44\x65vice\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12*\n\x11\x64\x65vice_profile_id\x18\x05 \x01(\tR\x0f\x64\x65viceProfileID\x12\x18\n\x10skip_f_cnt_check\x18\x06 \x01(\x08\x12\x1a\n\x12reference_altitude\x18\x07 \x01(\x01\x12-\n\tvariables\x18\x08 \x03(\x0b\x32\x1a.api.Device.VariablesEntry\x12#\n\x04tags\x18\t \x03(\x0b\x32\x15.api.Device.TagsEntry\x12\x13\n\x0bis_disabled\x18\n \x01(\x08\x1a\x30\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xba\x03\n\x0e\x44\x65viceListItem\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12*\n\x11\x64\x65vice_profile_id\x18\x05 \x01(\tR\x0f\x64\x65viceProfileID\x12\x1b\n\x13\x64\x65vice_profile_name\x18\x06 \x01(\t\x12\x1d\n\x15\x64\x65vice_status_battery\x18\x07 \x01(\r\x12\x1c\n\x14\x64\x65vice_status_margin\x18\x08 \x01(\x05\x12+\n#device_status_external_power_source\x18\n \x01(\x08\x12/\n\'device_status_battery_level_unavailable\x18\x0b \x01(\x08\x12#\n\x1b\x64\x65vice_status_battery_level\x18\x0c \x01(\x02\x12<\n\x0clast_seen_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nlastSeenAt\"\\\n\nDeviceKeys\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0f\n\x07nwk_key\x18\x02 \x01(\t\x12\x0f\n\x07\x61pp_key\x18\x03 \x01(\t\x12\x13\n\x0bgen_app_key\x18\x04 \x01(\t\"2\n\x13\x43reateDeviceRequest\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\"+\n\x10GetDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\xcf\x01\n\x11GetDeviceResponse\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\x12<\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nlastSeenAt\x12\x1d\n\x15\x64\x65vice_status_battery\x18\x06 \x01(\r\x12\x1c\n\x14\x64\x65vice_status_margin\x18\x14 \x01(\x05\x12\"\n\x08location\x18\x15 \x01(\x0b\x32\x10.common.Location\"\xa2\x02\n\x11ListDeviceRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x0e\n\x06search\x18\x04 \x01(\t\x12,\n\x12multicast_group_id\x18\x05 \x01(\tR\x10multicastGroupID\x12,\n\x12service_profile_id\x18\x06 \x01(\tR\x10serviceProfileID\x12.\n\x04tags\x18\x07 \x03(\x0b\x32 .api.ListDeviceRequest.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"N\n\x12ListDeviceResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12#\n\x06result\x18\x02 \x03(\x0b\x32\x13.api.DeviceListItem\".\n\x13\x44\x65leteDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"2\n\x13UpdateDeviceRequest\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\"?\n\x17\x43reateDeviceKeysRequest\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"/\n\x14GetDeviceKeysRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"=\n\x15GetDeviceKeysResponse\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"?\n\x17UpdateDeviceKeysRequest\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"2\n\x17\x44\x65leteDeviceKeysRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\xd7\x01\n\x10\x44\x65viceActivation\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\t\x12\x11\n\tapp_s_key\x18\x03 \x01(\t\x12\x15\n\rnwk_s_enc_key\x18\x04 \x01(\t\x12\x17\n\x0fs_nwk_s_int_key\x18\x08 \x01(\t\x12\x17\n\x0f\x66_nwk_s_int_key\x18\t \x01(\t\x12\x10\n\x08\x66_cnt_up\x18\x05 \x01(\r\x12\x14\n\x0cn_f_cnt_down\x18\x06 \x01(\r\x12\x14\n\x0c\x61_f_cnt_down\x18\n \x01(\r\"I\n\x15\x41\x63tivateDeviceRequest\x12\x30\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x15.api.DeviceActivation\"2\n\x17\x44\x65\x61\x63tivateDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"5\n\x1aGetDeviceActivationRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"O\n\x1bGetDeviceActivationResponse\x12\x30\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x15.api.DeviceActivation\"2\n\x17GetRandomDevAddrRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\",\n\x18GetRandomDevAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\t\"7\n\x1cStreamDeviceFrameLogsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\x86\x01\n\x1dStreamDeviceFrameLogsResponse\x12+\n\x0cuplink_frame\x18\x01 \x01(\x0b\x32\x13.api.UplinkFrameLogH\x00\x12/\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x15.api.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"7\n\x1cStreamDeviceEventLogsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"P\n\x1dStreamDeviceEventLogsResponse\x12\x0c\n\x04type\x18\x01 \x01(\t\x12!\n\x0cpayload_json\x18\x02 \x01(\tR\x0bpayloadJSON2\x82\r\n\rDeviceService\x12S\n\x06\x43reate\x12\x18.api.CreateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/api/devices:\x01*\x12T\n\x03Get\x12\x15.api.GetDeviceRequest\x1a\x16.api.GetDeviceResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/devices/{dev_eui}\x12M\n\x04List\x12\x16.api.ListDeviceRequest\x1a\x17.api.ListDeviceResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/devices\x12Z\n\x06\x44\x65lete\x12\x18.api.DeleteDeviceRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/api/devices/{dev_eui}\x12\x64\n\x06Update\x12\x18.api.UpdateDeviceRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"\x1a\x1d/api/devices/{device.dev_eui}:\x01*\x12v\n\nCreateKeys\x12\x1c.api.CreateDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\"\'/api/devices/{device_keys.dev_eui}/keys:\x01*\x12\x65\n\x07GetKeys\x12\x19.api.GetDeviceKeysRequest\x1a\x1a.api.GetDeviceKeysResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/devices/{dev_eui}/keys\x12v\n\nUpdateKeys\x12\x1c.api.UpdateDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\x1a\'/api/devices/{device_keys.dev_eui}/keys:\x01*\x12g\n\nDeleteKeys\x12\x1c.api.DeleteDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/devices/{dev_eui}/keys\x12|\n\x08\x41\x63tivate\x12\x1a.api.ActivateDeviceRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36\"1/api/devices/{device_activation.dev_eui}/activate:\x01*\x12m\n\nDeactivate\x12\x1c.api.DeactivateDeviceRequest\x1a\x16.google.protobuf.Empty\")\x82\xd3\xe4\x93\x02#*!/api/devices/{dev_eui}/activation\x12}\n\rGetActivation\x12\x1f.api.GetDeviceActivationRequest\x1a .api.GetDeviceActivationResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/devices/{dev_eui}/activation\x12\x80\x01\n\x10GetRandomDevAddr\x12\x1c.api.GetRandomDevAddrRequest\x1a\x1d.api.GetRandomDevAddrResponse\"/\x82\xd3\xe4\x93\x02)\"\'/api/devices/{dev_eui}/getRandomDevAddr\x12\x81\x01\n\x0fStreamFrameLogs\x12!.api.StreamDeviceFrameLogsRequest\x1a\".api.StreamDeviceFrameLogsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/devices/{dev_eui}/frames0\x01\x12\x81\x01\n\x0fStreamEventLogs\x12!.api.StreamDeviceEventLogsRequest\x1a\".api.StreamDeviceEventLogsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/devices/{dev_eui}/events0\x01\x42\x39Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_frameLog__pb2.DESCRIPTOR,])
@@ -36,6 +37,7 @@ _DEVICE_VARIABLESENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='api.Device.VariablesEntry.key', index=0,
@@ -43,14 +45,14 @@ _DEVICE_VARIABLESENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='api.Device.VariablesEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -73,6 +75,7 @@ _DEVICE_TAGSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='api.Device.TagsEntry.key', index=0,
@@ -80,14 +83,14 @@ _DEVICE_TAGSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='api.Device.TagsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -110,6 +113,7 @@ _DEVICE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.Device.dev_eui', index=0,
@@ -117,70 +121,70 @@ _DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.Device.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.Device.application_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.Device.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_profile_id', full_name='api.Device.device_profile_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='deviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='deviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='skip_f_cnt_check', full_name='api.Device.skip_f_cnt_check', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference_altitude', full_name='api.Device.reference_altitude', index=6,
       number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='variables', full_name='api.Device.variables', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='api.Device.tags', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='is_disabled', full_name='api.Device.is_disabled', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -204,6 +208,7 @@ _DEVICELISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeviceListItem.dev_eui', index=0,
@@ -211,84 +216,84 @@ _DEVICELISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.DeviceListItem.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.DeviceListItem.application_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.DeviceListItem.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_profile_id', full_name='api.DeviceListItem.device_profile_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='deviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='deviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_profile_name', full_name='api.DeviceListItem.device_profile_name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_battery', full_name='api.DeviceListItem.device_status_battery', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_margin', full_name='api.DeviceListItem.device_status_margin', index=7,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_external_power_source', full_name='api.DeviceListItem.device_status_external_power_source', index=8,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_battery_level_unavailable', full_name='api.DeviceListItem.device_status_battery_level_unavailable', index=9,
       number=11, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_battery_level', full_name='api.DeviceListItem.device_status_battery_level', index=10,
       number=12, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='last_seen_at', full_name='api.DeviceListItem.last_seen_at', index=11,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='lastSeenAt', file=DESCRIPTOR),
+      serialized_options=None, json_name='lastSeenAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -312,6 +317,7 @@ _DEVICEKEYS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeviceKeys.dev_eui', index=0,
@@ -319,28 +325,28 @@ _DEVICEKEYS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='nwk_key', full_name='api.DeviceKeys.nwk_key', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='app_key', full_name='api.DeviceKeys.app_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gen_app_key', full_name='api.DeviceKeys.gen_app_key', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -364,6 +370,7 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device', full_name='api.CreateDeviceRequest.device', index=0,
@@ -371,7 +378,7 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -395,6 +402,7 @@ _GETDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.GetDeviceRequest.dev_eui', index=0,
@@ -402,7 +410,7 @@ _GETDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -426,6 +434,7 @@ _GETDEVICERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device', full_name='api.GetDeviceResponse.device', index=0,
@@ -433,35 +442,35 @@ _GETDEVICERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='last_seen_at', full_name='api.GetDeviceResponse.last_seen_at', index=1,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='lastSeenAt', file=DESCRIPTOR),
+      serialized_options=None, json_name='lastSeenAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_battery', full_name='api.GetDeviceResponse.device_status_battery', index=2,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_status_margin', full_name='api.GetDeviceResponse.device_status_margin', index=3,
       number=20, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location', full_name='api.GetDeviceResponse.location', index=4,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -485,6 +494,7 @@ _LISTDEVICEREQUEST_TAGSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='api.ListDeviceRequest.TagsEntry.key', index=0,
@@ -492,14 +502,14 @@ _LISTDEVICEREQUEST_TAGSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='api.ListDeviceRequest.TagsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -522,6 +532,7 @@ _LISTDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='api.ListDeviceRequest.limit', index=0,
@@ -529,49 +540,49 @@ _LISTDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='api.ListDeviceRequest.offset', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.ListDeviceRequest.application_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='api.ListDeviceRequest.search', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='api.ListDeviceRequest.multicast_group_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR),
+      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='api.ListDeviceRequest.service_profile_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='api.ListDeviceRequest.tags', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -595,6 +606,7 @@ _LISTDEVICERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListDeviceResponse.total_count', index=0,
@@ -602,14 +614,14 @@ _LISTDEVICERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListDeviceResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -633,6 +645,7 @@ _DELETEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeleteDeviceRequest.dev_eui', index=0,
@@ -640,7 +653,7 @@ _DELETEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -664,6 +677,7 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device', full_name='api.UpdateDeviceRequest.device', index=0,
@@ -671,7 +685,7 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -695,6 +709,7 @@ _CREATEDEVICEKEYSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_keys', full_name='api.CreateDeviceKeysRequest.device_keys', index=0,
@@ -702,7 +717,7 @@ _CREATEDEVICEKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -726,6 +741,7 @@ _GETDEVICEKEYSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.GetDeviceKeysRequest.dev_eui', index=0,
@@ -733,7 +749,7 @@ _GETDEVICEKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -757,6 +773,7 @@ _GETDEVICEKEYSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_keys', full_name='api.GetDeviceKeysResponse.device_keys', index=0,
@@ -764,7 +781,7 @@ _GETDEVICEKEYSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -788,6 +805,7 @@ _UPDATEDEVICEKEYSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_keys', full_name='api.UpdateDeviceKeysRequest.device_keys', index=0,
@@ -795,7 +813,7 @@ _UPDATEDEVICEKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -819,6 +837,7 @@ _DELETEDEVICEKEYSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeleteDeviceKeysRequest.dev_eui', index=0,
@@ -826,7 +845,7 @@ _DELETEDEVICEKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -850,6 +869,7 @@ _DEVICEACTIVATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeviceActivation.dev_eui', index=0,
@@ -857,63 +877,63 @@ _DEVICEACTIVATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='api.DeviceActivation.dev_addr', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='app_s_key', full_name='api.DeviceActivation.app_s_key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='nwk_s_enc_key', full_name='api.DeviceActivation.nwk_s_enc_key', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='s_nwk_s_int_key', full_name='api.DeviceActivation.s_nwk_s_int_key', index=4,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_nwk_s_int_key', full_name='api.DeviceActivation.f_nwk_s_int_key', index=5,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt_up', full_name='api.DeviceActivation.f_cnt_up', index=6,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='n_f_cnt_down', full_name='api.DeviceActivation.n_f_cnt_down', index=7,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='a_f_cnt_down', full_name='api.DeviceActivation.a_f_cnt_down', index=8,
       number=10, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -937,6 +957,7 @@ _ACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_activation', full_name='api.ActivateDeviceRequest.device_activation', index=0,
@@ -944,7 +965,7 @@ _ACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -968,6 +989,7 @@ _DEACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeactivateDeviceRequest.dev_eui', index=0,
@@ -975,7 +997,7 @@ _DEACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -999,6 +1021,7 @@ _GETDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.GetDeviceActivationRequest.dev_eui', index=0,
@@ -1006,7 +1029,7 @@ _GETDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1030,6 +1053,7 @@ _GETDEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_activation', full_name='api.GetDeviceActivationResponse.device_activation', index=0,
@@ -1037,7 +1061,7 @@ _GETDEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1061,6 +1085,7 @@ _GETRANDOMDEVADDRREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.GetRandomDevAddrRequest.dev_eui', index=0,
@@ -1068,7 +1093,7 @@ _GETRANDOMDEVADDRREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1092,6 +1117,7 @@ _GETRANDOMDEVADDRRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='api.GetRandomDevAddrResponse.dev_addr', index=0,
@@ -1099,7 +1125,7 @@ _GETRANDOMDEVADDRRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1123,6 +1149,7 @@ _STREAMDEVICEFRAMELOGSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.StreamDeviceFrameLogsRequest.dev_eui', index=0,
@@ -1130,7 +1157,7 @@ _STREAMDEVICEFRAMELOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1154,6 +1181,7 @@ _STREAMDEVICEFRAMELOGSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='uplink_frame', full_name='api.StreamDeviceFrameLogsResponse.uplink_frame', index=0,
@@ -1161,14 +1189,14 @@ _STREAMDEVICEFRAMELOGSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='downlink_frame', full_name='api.StreamDeviceFrameLogsResponse.downlink_frame', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1182,7 +1210,9 @@ _STREAMDEVICEFRAMELOGSRESPONSE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='frame', full_name='api.StreamDeviceFrameLogsResponse.frame',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=2891,
   serialized_end=3025,
@@ -1195,6 +1225,7 @@ _STREAMDEVICEEVENTLOGSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.StreamDeviceEventLogsRequest.dev_eui', index=0,
@@ -1202,7 +1233,7 @@ _STREAMDEVICEEVENTLOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1226,6 +1257,7 @@ _STREAMDEVICEEVENTLOGSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='api.StreamDeviceEventLogsResponse.type', index=0,
@@ -1233,14 +1265,14 @@ _STREAMDEVICEEVENTLOGSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='payload_json', full_name='api.StreamDeviceEventLogsResponse.payload_json', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='payloadJSON', file=DESCRIPTOR),
+      serialized_options=None, json_name='payloadJSON', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1529,6 +1561,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=3167,
   serialized_end=4833,
   methods=[
@@ -1540,6 +1573,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\021\"\014/api/devices:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1549,6 +1583,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEREQUEST,
     output_type=_GETDEVICERESPONSE,
     serialized_options=b'\202\323\344\223\002\030\022\026/api/devices/{dev_eui}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1558,6 +1593,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTDEVICEREQUEST,
     output_type=_LISTDEVICERESPONSE,
     serialized_options=b'\202\323\344\223\002\016\022\014/api/devices',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1567,6 +1603,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\030*\026/api/devices/{dev_eui}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1576,6 +1613,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\"\032\035/api/devices/{device.dev_eui}:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateKeys',
@@ -1585,6 +1623,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEDEVICEKEYSREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002,\"\'/api/devices/{device_keys.dev_eui}/keys:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetKeys',
@@ -1594,6 +1633,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEKEYSREQUEST,
     output_type=_GETDEVICEKEYSRESPONSE,
     serialized_options=b'\202\323\344\223\002\035\022\033/api/devices/{dev_eui}/keys',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateKeys',
@@ -1603,6 +1643,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEDEVICEKEYSREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002,\032\'/api/devices/{device_keys.dev_eui}/keys:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteKeys',
@@ -1612,6 +1653,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEDEVICEKEYSREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\035*\033/api/devices/{dev_eui}/keys',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Activate',
@@ -1621,6 +1663,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_ACTIVATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\0026\"1/api/devices/{device_activation.dev_eui}/activate:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Deactivate',
@@ -1630,6 +1673,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_DEACTIVATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002#*!/api/devices/{dev_eui}/activation',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetActivation',
@@ -1639,6 +1683,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEACTIVATIONREQUEST,
     output_type=_GETDEVICEACTIVATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002#\022!/api/devices/{dev_eui}/activation',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetRandomDevAddr',
@@ -1648,6 +1693,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETRANDOMDEVADDRREQUEST,
     output_type=_GETRANDOMDEVADDRRESPONSE,
     serialized_options=b'\202\323\344\223\002)\"\'/api/devices/{dev_eui}/getRandomDevAddr',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamFrameLogs',
@@ -1657,6 +1703,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMDEVICEFRAMELOGSREQUEST,
     output_type=_STREAMDEVICEFRAMELOGSRESPONSE,
     serialized_options=b'\202\323\344\223\002\037\022\035/api/devices/{dev_eui}/frames',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamEventLogs',
@@ -1666,6 +1713,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMDEVICEEVENTLOGSREQUEST,
     output_type=_STREAMDEVICEEVENTLOGSRESPONSE,
     serialized_options=b'\202\323\344\223\002\037\022\035/api/devices/{dev_eui}/events',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_DEVICESERVICE)

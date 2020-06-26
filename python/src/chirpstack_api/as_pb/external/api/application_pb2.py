@@ -21,7 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
-  serialized_pb=b'\n3chirpstack-api/as_pb/external/api/application.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xea\x01\n\x0b\x41pplication\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12,\n\x12service_profile_id\x18\x05 \x01(\tR\x10serviceProfileID\x12\x15\n\rpayload_codec\x18\x06 \x01(\t\x12\x1e\n\x16payload_encoder_script\x18\x07 \x01(\t\x12\x1e\n\x16payload_decoder_script\x18\x08 \x01(\t\"\xb9\x01\n\x13\x41pplicationListItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12,\n\x12service_profile_id\x18\x05 \x01(\tR\x10serviceProfileID\x12\x1c\n\x14service_profile_name\x18\x06 \x01(\t\"A\n\x18\x43reateApplicationRequest\x12%\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x10.api.Application\"\'\n\x19\x43reateApplicationResponse\x12\n\n\x02id\x18\x01 \x01(\x03\"#\n\x15GetApplicationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"?\n\x16GetApplicationResponse\x12%\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x10.api.Application\"A\n\x18UpdateApplicationRequest\x12%\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x10.api.Application\"&\n\x18\x44\x65leteApplicationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"p\n\x16ListApplicationRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x0e\n\x06search\x18\x04 \x01(\t\"X\n\x17ListApplicationResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12(\n\x06result\x18\x02 \x03(\x0b\x32\x18.api.ApplicationListItem\"3\n\x15HTTPIntegrationHeader\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x96\x04\n\x0fHTTPIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12+\n\x07headers\x18\x02 \x03(\x0b\x32\x1a.api.HTTPIntegrationHeader\x12&\n\x0fuplink_data_url\x18\x03 \x01(\tR\ruplinkDataURL\x12\x32\n\x15join_notification_url\x18\x04 \x01(\tR\x13joinNotificationURL\x12\x30\n\x14\x61\x63k_notification_url\x18\x05 \x01(\tR\x12\x61\x63kNotificationURL\x12\x34\n\x16\x65rror_notification_url\x18\x06 \x01(\tR\x14\x65rrorNotificationURL\x12\x36\n\x17status_notification_url\x18\x07 \x01(\tR\x15statusNotificationURL\x12:\n\x19location_notification_url\x18\x08 \x01(\tR\x17locationNotificationURL\x12\x35\n\x17tx_ack_notification_url\x18\t \x01(\tR\x14txAckNotificationURL\x12@\n\x1cintegration_notification_url\x18\n \x01(\tR\x1aintegrationNotificationURL\"I\n\x1c\x43reateHTTPIntegrationRequest\x12)\n\x0bintegration\x18\x01 \x01(\x0b\x32\x14.api.HTTPIntegration\"B\n\x19GetHTTPIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"G\n\x1aGetHTTPIntegrationResponse\x12)\n\x0bintegration\x18\x01 \x01(\x0b\x32\x14.api.HTTPIntegration\"I\n\x1cUpdateHTTPIntegrationRequest\x12)\n\x0bintegration\x18\x01 \x01(\x0b\x32\x14.api.HTTPIntegration\"E\n\x1c\x44\x65leteHTTPIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"?\n\x16ListIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"9\n\x13IntegrationListItem\x12\"\n\x04kind\x18\x01 \x01(\x0e\x32\x14.api.IntegrationKind\"X\n\x17ListIntegrationResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12(\n\x06result\x18\x02 \x03(\x0b\x32\x18.api.IntegrationListItem\"\xc8\x01\n\x13InfluxDBIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x10\n\x08\x65ndpoint\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x1d\n\x15retention_policy_name\x18\x06 \x01(\t\x12)\n\tprecision\x18\x07 \x01(\x0e\x32\x16.api.InfluxDBPrecision\"Q\n CreateInfluxDBIntegrationRequest\x12-\n\x0bintegration\x18\x01 \x01(\x0b\x32\x18.api.InfluxDBIntegration\"F\n\x1dGetInfluxDBIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"O\n\x1eGetInfluxDBIntegrationResponse\x12-\n\x0bintegration\x18\x01 \x01(\x0b\x32\x18.api.InfluxDBIntegration\"Q\n UpdateInfluxDBIntegrationRequest\x12-\n\x0bintegration\x18\x01 \x01(\x0b\x32\x18.api.InfluxDBIntegration\"I\n DeleteInfluxDBIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"O\n\x16ThingsBoardIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x0e\n\x06server\x18\x02 \x01(\t\"W\n#CreateThingsBoardIntegrationRequest\x12\x30\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1b.api.ThingsBoardIntegration\"I\n GetThingsBoardIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"U\n!GetThingsBoardIntegrationResponse\x12\x30\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1b.api.ThingsBoardIntegration\"W\n#UpdateThingsBoardIntegrationRequest\x12\x30\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1b.api.ThingsBoardIntegration\"L\n#DeleteThingsBoardIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"O\n\x14MyDevicesIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x10\n\x08\x65ndpoint\x18\x02 \x01(\t\"S\n!CreateMyDevicesIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.MyDevicesIntegration\"G\n\x1eGetMyDevicesIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"Q\n\x1fGetMyDevicesIntegrationResponse\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.MyDevicesIntegration\"S\n!UpdateMyDevicesIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.MyDevicesIntegration\"J\n!DeleteMyDevicesIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"\xf6\x04\n\x14LoRaCloudIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x13\n\x0bgeolocation\x18\x02 \x01(\x08\x12\x19\n\x11geolocation_token\x18\x03 \x01(\t\x12\x34\n\x16geolocation_buffer_ttl\x18\x04 \x01(\rR\x14geolocationBufferTTL\x12#\n\x1bgeolocation_min_buffer_size\x18\x05 \x01(\r\x12)\n\x10geolocation_tdoa\x18\x06 \x01(\x08R\x0fgeolocationTDOA\x12)\n\x10geolocation_rssi\x18\x07 \x01(\x08R\x0fgeolocationRSSI\x12)\n\x10geolocation_gnss\x18\x08 \x01(\x08R\x0fgeolocationGNSS\x12\x43\n\x1egeolocation_gnss_payload_field\x18\t \x01(\tR\x1bgeolocationGNSSPayloadField\x12>\n\x1cgeolocation_gnss_use_rx_time\x18\n \x01(\x08R\x18geolocationGNSSUseRxTime\x12)\n\x10geolocation_wifi\x18\x0b \x01(\x08R\x0fgeolocationWifi\x12\x43\n\x1egeolocation_wifi_payload_field\x18\x0c \x01(\tR\x1bgeolocationWifiPayloadField\x12\x0b\n\x03\x64\x61s\x18\r \x01(\x08\x12\x11\n\tdas_token\x18\x0e \x01(\t\x12\x16\n\x0e\x64\x61s_modem_port\x18\x0f \x01(\r\"S\n!CreateLoRaCloudIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.LoRaCloudIntegration\"G\n\x1eGetLoRaCloudIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"Q\n\x1fGetLoRaCloudIntegrationResponse\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.LoRaCloudIntegration\"S\n!UpdateLoRaCloudIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.LoRaCloudIntegration\"J\n!DeleteLoRaCloudIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID*X\n\x0fIntegrationKind\x12\x08\n\x04HTTP\x10\x00\x12\x0c\n\x08INFLUXDB\x10\x01\x12\x0f\n\x0bTHINGSBOARD\x10\x02\x12\r\n\tMYDEVICES\x10\x03\x12\r\n\tLORACLOUD\x10\x04*?\n\x11InfluxDBPrecision\x12\x06\n\x02NS\x10\x00\x12\x05\n\x01U\x10\x01\x12\x06\n\x02MS\x10\x02\x12\x05\n\x01S\x10\x03\x12\x05\n\x01M\x10\x04\x12\x05\n\x01H\x10\x05\x32\xc5\x1f\n\x12\x41pplicationService\x12\x65\n\x06\x43reate\x12\x1d.api.CreateApplicationRequest\x1a\x1e.api.CreateApplicationResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/api/applications:\x01*\x12^\n\x03Get\x12\x1a.api.GetApplicationRequest\x1a\x1b.api.GetApplicationResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/applications/{id}\x12n\n\x06Update\x12\x1d.api.UpdateApplicationRequest\x1a\x16.google.protobuf.Empty\"-\x82\xd3\xe4\x93\x02\'\x1a\"/api/applications/{application.id}:\x01*\x12_\n\x06\x44\x65lete\x12\x1d.api.DeleteApplicationRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/api/applications/{id}\x12\\\n\x04List\x12\x1b.api.ListApplicationRequest\x1a\x1c.api.ListApplicationResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/api/applications\x12\x9f\x01\n\x15\x43reateHTTPIntegration\x12!.api.CreateHTTPIntegrationRequest\x1a\x16.google.protobuf.Empty\"K\x82\xd3\xe4\x93\x02\x45\"@/api/applications/{integration.application_id}/integrations/http:\x01*\x12\x93\x01\n\x12GetHTTPIntegration\x12\x1e.api.GetHTTPIntegrationRequest\x1a\x1f.api.GetHTTPIntegrationResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/api/applications/{application_id}/integrations/http\x12\x9f\x01\n\x15UpdateHTTPIntegration\x12!.api.UpdateHTTPIntegrationRequest\x1a\x16.google.protobuf.Empty\"K\x82\xd3\xe4\x93\x02\x45\x1a@/api/applications/{integration.application_id}/integrations/http:\x01*\x12\x90\x01\n\x15\x44\x65leteHTTPIntegration\x12!.api.DeleteHTTPIntegrationRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36*4/api/applications/{application_id}/integrations/http\x12\xab\x01\n\x19\x43reateInfluxDBIntegration\x12%.api.CreateInfluxDBIntegrationRequest\x1a\x16.google.protobuf.Empty\"O\x82\xd3\xe4\x93\x02I\"D/api/applications/{integration.application_id}/integrations/influxdb:\x01*\x12\xa3\x01\n\x16GetInfluxDBIntegration\x12\".api.GetInfluxDBIntegrationRequest\x1a#.api.GetInfluxDBIntegrationResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/api/applications/{application_id}/integrations/influxdb\x12\xab\x01\n\x19UpdateInfluxDBIntegration\x12%.api.UpdateInfluxDBIntegrationRequest\x1a\x16.google.protobuf.Empty\"O\x82\xd3\xe4\x93\x02I\x1a\x44/api/applications/{integration.application_id}/integrations/influxdb:\x01*\x12\x9c\x01\n\x19\x44\x65leteInfluxDBIntegration\x12%.api.DeleteInfluxDBIntegrationRequest\x1a\x16.google.protobuf.Empty\"@\x82\xd3\xe4\x93\x02:*8/api/applications/{application_id}/integrations/influxdb\x12\xb4\x01\n\x1c\x43reateThingsBoardIntegration\x12(.api.CreateThingsBoardIntegrationRequest\x1a\x16.google.protobuf.Empty\"R\x82\xd3\xe4\x93\x02L\"G/api/applications/{integration.application_id}/integrations/thingsboard:\x01*\x12\xaf\x01\n\x19GetThingsBoardIntegration\x12%.api.GetThingsBoardIntegrationRequest\x1a&.api.GetThingsBoardIntegrationResponse\"C\x82\xd3\xe4\x93\x02=\x12;/api/applications/{application_id}/integrations/thingsboard\x12\xb4\x01\n\x1cUpdateThingsBoardIntegration\x12(.api.UpdateThingsBoardIntegrationRequest\x1a\x16.google.protobuf.Empty\"R\x82\xd3\xe4\x93\x02L\x1aG/api/applications/{integration.application_id}/integrations/thingsboard:\x01*\x12\xa5\x01\n\x1c\x44\x65leteThingsBoardIntegration\x12(.api.DeleteThingsBoardIntegrationRequest\x1a\x16.google.protobuf.Empty\"C\x82\xd3\xe4\x93\x02=*;/api/applications/{application_id}/integrations/thingsboard\x12\xae\x01\n\x1a\x43reateMyDevicesIntegration\x12&.api.CreateMyDevicesIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\"E/api/applications/{integration.application_id}/integrations/mydevices:\x01*\x12\xa7\x01\n\x17GetMyDevicesIntegration\x12#.api.GetMyDevicesIntegrationRequest\x1a$.api.GetMyDevicesIntegrationResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/api/applications/{application_id}/integrations/mydevices\x12\xae\x01\n\x1aUpdateMyDevicesIntegration\x12&.api.UpdateMyDevicesIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\x1a\x45/api/applications/{integration.application_id}/integrations/mydevices:\x01*\x12\x9f\x01\n\x1a\x44\x65leteMyDevicesIntegration\x12&.api.DeleteMyDevicesIntegrationRequest\x1a\x16.google.protobuf.Empty\"A\x82\xd3\xe4\x93\x02;*9/api/applications/{application_id}/integrations/mydevices\x12\xae\x01\n\x1a\x43reateLoRaCloudIntegration\x12&.api.CreateLoRaCloudIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\"E/api/applications/{integration.application_id}/integrations/loracloud:\x01*\x12\xa7\x01\n\x17GetLoRaCloudIntegration\x12#.api.GetLoRaCloudIntegrationRequest\x1a$.api.GetLoRaCloudIntegrationResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/api/applications/{application_id}/integrations/loracloud\x12\xae\x01\n\x1aUpdateLoRaCloudIntegration\x12&.api.UpdateLoRaCloudIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\x1a\x45/api/applications/{integration.application_id}/integrations/loracloud:\x01*\x12\x9f\x01\n\x1a\x44\x65leteLoRaCloudIntegration\x12&.api.DeleteLoRaCloudIntegrationRequest\x1a\x16.google.protobuf.Empty\"A\x82\xd3\xe4\x93\x02;*9/api/applications/{application_id}/integrations/loracloud\x12\x86\x01\n\x10ListIntegrations\x12\x1b.api.ListIntegrationRequest\x1a\x1c.api.ListIntegrationResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//api/applications/{application_id}/integrationsB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n3chirpstack-api/as_pb/external/api/application.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xea\x01\n\x0b\x41pplication\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12,\n\x12service_profile_id\x18\x05 \x01(\tR\x10serviceProfileID\x12\x15\n\rpayload_codec\x18\x06 \x01(\t\x12\x1e\n\x16payload_encoder_script\x18\x07 \x01(\t\x12\x1e\n\x16payload_decoder_script\x18\x08 \x01(\t\"\xb9\x01\n\x13\x41pplicationListItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12,\n\x12service_profile_id\x18\x05 \x01(\tR\x10serviceProfileID\x12\x1c\n\x14service_profile_name\x18\x06 \x01(\t\"A\n\x18\x43reateApplicationRequest\x12%\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x10.api.Application\"\'\n\x19\x43reateApplicationResponse\x12\n\n\x02id\x18\x01 \x01(\x03\"#\n\x15GetApplicationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"?\n\x16GetApplicationResponse\x12%\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x10.api.Application\"A\n\x18UpdateApplicationRequest\x12%\n\x0b\x61pplication\x18\x01 \x01(\x0b\x32\x10.api.Application\"&\n\x18\x44\x65leteApplicationRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"p\n\x16ListApplicationRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x0e\n\x06search\x18\x04 \x01(\t\"X\n\x17ListApplicationResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12(\n\x06result\x18\x02 \x03(\x0b\x32\x18.api.ApplicationListItem\"3\n\x15HTTPIntegrationHeader\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\xe7\x04\n\x0fHTTPIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12+\n\x07headers\x18\x02 \x03(\x0b\x32\x1a.api.HTTPIntegrationHeader\x12&\n\x0fuplink_data_url\x18\x03 \x01(\tR\ruplinkDataURL\x12\x32\n\x15join_notification_url\x18\x04 \x01(\tR\x13joinNotificationURL\x12\x30\n\x14\x61\x63k_notification_url\x18\x05 \x01(\tR\x12\x61\x63kNotificationURL\x12\x34\n\x16\x65rror_notification_url\x18\x06 \x01(\tR\x14\x65rrorNotificationURL\x12\x36\n\x17status_notification_url\x18\x07 \x01(\tR\x15statusNotificationURL\x12:\n\x19location_notification_url\x18\x08 \x01(\tR\x17locationNotificationURL\x12\x35\n\x17tx_ack_notification_url\x18\t \x01(\tR\x14txAckNotificationURL\x12@\n\x1cintegration_notification_url\x18\n \x01(\tR\x1aintegrationNotificationURL\x12!\n\tmarshaler\x18\x0b \x01(\x0e\x32\x0e.api.Marshaler\x12,\n\x12\x65vent_endpoint_url\x18\x0c \x01(\tR\x10\x65ventEndpointURL\"I\n\x1c\x43reateHTTPIntegrationRequest\x12)\n\x0bintegration\x18\x01 \x01(\x0b\x32\x14.api.HTTPIntegration\"B\n\x19GetHTTPIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"G\n\x1aGetHTTPIntegrationResponse\x12)\n\x0bintegration\x18\x01 \x01(\x0b\x32\x14.api.HTTPIntegration\"I\n\x1cUpdateHTTPIntegrationRequest\x12)\n\x0bintegration\x18\x01 \x01(\x0b\x32\x14.api.HTTPIntegration\"E\n\x1c\x44\x65leteHTTPIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"?\n\x16ListIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"9\n\x13IntegrationListItem\x12\"\n\x04kind\x18\x01 \x01(\x0e\x32\x14.api.IntegrationKind\"X\n\x17ListIntegrationResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12(\n\x06result\x18\x02 \x03(\x0b\x32\x18.api.IntegrationListItem\"\xc8\x01\n\x13InfluxDBIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x10\n\x08\x65ndpoint\x18\x02 \x01(\t\x12\n\n\x02\x64\x62\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x1d\n\x15retention_policy_name\x18\x06 \x01(\t\x12)\n\tprecision\x18\x07 \x01(\x0e\x32\x16.api.InfluxDBPrecision\"Q\n CreateInfluxDBIntegrationRequest\x12-\n\x0bintegration\x18\x01 \x01(\x0b\x32\x18.api.InfluxDBIntegration\"F\n\x1dGetInfluxDBIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"O\n\x1eGetInfluxDBIntegrationResponse\x12-\n\x0bintegration\x18\x01 \x01(\x0b\x32\x18.api.InfluxDBIntegration\"Q\n UpdateInfluxDBIntegrationRequest\x12-\n\x0bintegration\x18\x01 \x01(\x0b\x32\x18.api.InfluxDBIntegration\"I\n DeleteInfluxDBIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"O\n\x16ThingsBoardIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x0e\n\x06server\x18\x02 \x01(\t\"W\n#CreateThingsBoardIntegrationRequest\x12\x30\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1b.api.ThingsBoardIntegration\"I\n GetThingsBoardIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"U\n!GetThingsBoardIntegrationResponse\x12\x30\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1b.api.ThingsBoardIntegration\"W\n#UpdateThingsBoardIntegrationRequest\x12\x30\n\x0bintegration\x18\x01 \x01(\x0b\x32\x1b.api.ThingsBoardIntegration\"L\n#DeleteThingsBoardIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"O\n\x14MyDevicesIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x10\n\x08\x65ndpoint\x18\x02 \x01(\t\"S\n!CreateMyDevicesIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.MyDevicesIntegration\"G\n\x1eGetMyDevicesIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"Q\n\x1fGetMyDevicesIntegrationResponse\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.MyDevicesIntegration\"S\n!UpdateMyDevicesIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.MyDevicesIntegration\"J\n!DeleteMyDevicesIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"\xf6\x04\n\x14LoRaCloudIntegration\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\x12\x13\n\x0bgeolocation\x18\x02 \x01(\x08\x12\x19\n\x11geolocation_token\x18\x03 \x01(\t\x12\x34\n\x16geolocation_buffer_ttl\x18\x04 \x01(\rR\x14geolocationBufferTTL\x12#\n\x1bgeolocation_min_buffer_size\x18\x05 \x01(\r\x12)\n\x10geolocation_tdoa\x18\x06 \x01(\x08R\x0fgeolocationTDOA\x12)\n\x10geolocation_rssi\x18\x07 \x01(\x08R\x0fgeolocationRSSI\x12)\n\x10geolocation_gnss\x18\x08 \x01(\x08R\x0fgeolocationGNSS\x12\x43\n\x1egeolocation_gnss_payload_field\x18\t \x01(\tR\x1bgeolocationGNSSPayloadField\x12>\n\x1cgeolocation_gnss_use_rx_time\x18\n \x01(\x08R\x18geolocationGNSSUseRxTime\x12)\n\x10geolocation_wifi\x18\x0b \x01(\x08R\x0fgeolocationWifi\x12\x43\n\x1egeolocation_wifi_payload_field\x18\x0c \x01(\tR\x1bgeolocationWifiPayloadField\x12\x0b\n\x03\x64\x61s\x18\r \x01(\x08\x12\x11\n\tdas_token\x18\x0e \x01(\t\x12\x16\n\x0e\x64\x61s_modem_port\x18\x0f \x01(\r\"S\n!CreateLoRaCloudIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.LoRaCloudIntegration\"G\n\x1eGetLoRaCloudIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID\"Q\n\x1fGetLoRaCloudIntegrationResponse\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.LoRaCloudIntegration\"S\n!UpdateLoRaCloudIntegrationRequest\x12.\n\x0bintegration\x18\x01 \x01(\x0b\x32\x19.api.LoRaCloudIntegration\"J\n!DeleteLoRaCloudIntegrationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x03R\rapplicationID*X\n\x0fIntegrationKind\x12\x08\n\x04HTTP\x10\x00\x12\x0c\n\x08INFLUXDB\x10\x01\x12\x0f\n\x0bTHINGSBOARD\x10\x02\x12\r\n\tMYDEVICES\x10\x03\x12\r\n\tLORACLOUD\x10\x04*0\n\tMarshaler\x12\x08\n\x04JSON\x10\x00\x12\x0c\n\x08PROTOBUF\x10\x01\x12\x0b\n\x07JSON_V3\x10\x02*?\n\x11InfluxDBPrecision\x12\x06\n\x02NS\x10\x00\x12\x05\n\x01U\x10\x01\x12\x06\n\x02MS\x10\x02\x12\x05\n\x01S\x10\x03\x12\x05\n\x01M\x10\x04\x12\x05\n\x01H\x10\x05\x32\xc5\x1f\n\x12\x41pplicationService\x12\x65\n\x06\x43reate\x12\x1d.api.CreateApplicationRequest\x1a\x1e.api.CreateApplicationResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/api/applications:\x01*\x12^\n\x03Get\x12\x1a.api.GetApplicationRequest\x1a\x1b.api.GetApplicationResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/applications/{id}\x12n\n\x06Update\x12\x1d.api.UpdateApplicationRequest\x1a\x16.google.protobuf.Empty\"-\x82\xd3\xe4\x93\x02\'\x1a\"/api/applications/{application.id}:\x01*\x12_\n\x06\x44\x65lete\x12\x1d.api.DeleteApplicationRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/api/applications/{id}\x12\\\n\x04List\x12\x1b.api.ListApplicationRequest\x1a\x1c.api.ListApplicationResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/api/applications\x12\x9f\x01\n\x15\x43reateHTTPIntegration\x12!.api.CreateHTTPIntegrationRequest\x1a\x16.google.protobuf.Empty\"K\x82\xd3\xe4\x93\x02\x45\"@/api/applications/{integration.application_id}/integrations/http:\x01*\x12\x93\x01\n\x12GetHTTPIntegration\x12\x1e.api.GetHTTPIntegrationRequest\x1a\x1f.api.GetHTTPIntegrationResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/api/applications/{application_id}/integrations/http\x12\x9f\x01\n\x15UpdateHTTPIntegration\x12!.api.UpdateHTTPIntegrationRequest\x1a\x16.google.protobuf.Empty\"K\x82\xd3\xe4\x93\x02\x45\x1a@/api/applications/{integration.application_id}/integrations/http:\x01*\x12\x90\x01\n\x15\x44\x65leteHTTPIntegration\x12!.api.DeleteHTTPIntegrationRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36*4/api/applications/{application_id}/integrations/http\x12\xab\x01\n\x19\x43reateInfluxDBIntegration\x12%.api.CreateInfluxDBIntegrationRequest\x1a\x16.google.protobuf.Empty\"O\x82\xd3\xe4\x93\x02I\"D/api/applications/{integration.application_id}/integrations/influxdb:\x01*\x12\xa3\x01\n\x16GetInfluxDBIntegration\x12\".api.GetInfluxDBIntegrationRequest\x1a#.api.GetInfluxDBIntegrationResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/api/applications/{application_id}/integrations/influxdb\x12\xab\x01\n\x19UpdateInfluxDBIntegration\x12%.api.UpdateInfluxDBIntegrationRequest\x1a\x16.google.protobuf.Empty\"O\x82\xd3\xe4\x93\x02I\x1a\x44/api/applications/{integration.application_id}/integrations/influxdb:\x01*\x12\x9c\x01\n\x19\x44\x65leteInfluxDBIntegration\x12%.api.DeleteInfluxDBIntegrationRequest\x1a\x16.google.protobuf.Empty\"@\x82\xd3\xe4\x93\x02:*8/api/applications/{application_id}/integrations/influxdb\x12\xb4\x01\n\x1c\x43reateThingsBoardIntegration\x12(.api.CreateThingsBoardIntegrationRequest\x1a\x16.google.protobuf.Empty\"R\x82\xd3\xe4\x93\x02L\"G/api/applications/{integration.application_id}/integrations/thingsboard:\x01*\x12\xaf\x01\n\x19GetThingsBoardIntegration\x12%.api.GetThingsBoardIntegrationRequest\x1a&.api.GetThingsBoardIntegrationResponse\"C\x82\xd3\xe4\x93\x02=\x12;/api/applications/{application_id}/integrations/thingsboard\x12\xb4\x01\n\x1cUpdateThingsBoardIntegration\x12(.api.UpdateThingsBoardIntegrationRequest\x1a\x16.google.protobuf.Empty\"R\x82\xd3\xe4\x93\x02L\x1aG/api/applications/{integration.application_id}/integrations/thingsboard:\x01*\x12\xa5\x01\n\x1c\x44\x65leteThingsBoardIntegration\x12(.api.DeleteThingsBoardIntegrationRequest\x1a\x16.google.protobuf.Empty\"C\x82\xd3\xe4\x93\x02=*;/api/applications/{application_id}/integrations/thingsboard\x12\xae\x01\n\x1a\x43reateMyDevicesIntegration\x12&.api.CreateMyDevicesIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\"E/api/applications/{integration.application_id}/integrations/mydevices:\x01*\x12\xa7\x01\n\x17GetMyDevicesIntegration\x12#.api.GetMyDevicesIntegrationRequest\x1a$.api.GetMyDevicesIntegrationResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/api/applications/{application_id}/integrations/mydevices\x12\xae\x01\n\x1aUpdateMyDevicesIntegration\x12&.api.UpdateMyDevicesIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\x1a\x45/api/applications/{integration.application_id}/integrations/mydevices:\x01*\x12\x9f\x01\n\x1a\x44\x65leteMyDevicesIntegration\x12&.api.DeleteMyDevicesIntegrationRequest\x1a\x16.google.protobuf.Empty\"A\x82\xd3\xe4\x93\x02;*9/api/applications/{application_id}/integrations/mydevices\x12\xae\x01\n\x1a\x43reateLoRaCloudIntegration\x12&.api.CreateLoRaCloudIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\"E/api/applications/{integration.application_id}/integrations/loracloud:\x01*\x12\xa7\x01\n\x17GetLoRaCloudIntegration\x12#.api.GetLoRaCloudIntegrationRequest\x1a$.api.GetLoRaCloudIntegrationResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/api/applications/{application_id}/integrations/loracloud\x12\xae\x01\n\x1aUpdateLoRaCloudIntegration\x12&.api.UpdateLoRaCloudIntegrationRequest\x1a\x16.google.protobuf.Empty\"P\x82\xd3\xe4\x93\x02J\x1a\x45/api/applications/{integration.application_id}/integrations/loracloud:\x01*\x12\x9f\x01\n\x1a\x44\x65leteLoRaCloudIntegration\x12&.api.DeleteLoRaCloudIntegrationRequest\x1a\x16.google.protobuf.Empty\"A\x82\xd3\xe4\x93\x02;*9/api/applications/{application_id}/integrations/loracloud\x12\x86\x01\n\x10ListIntegrations\x12\x1b.api.ListIntegrationRequest\x1a\x1c.api.ListIntegrationResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//api/applications/{application_id}/integrationsB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -30,71 +31,115 @@ _INTEGRATIONKIND = _descriptor.EnumDescriptor(
   full_name='api.IntegrationKind',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='HTTP', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INFLUXDB', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='THINGSBOARD', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MYDEVICES', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='LORACLOUD', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4845,
-  serialized_end=4933,
+  serialized_start=4926,
+  serialized_end=5014,
 )
 _sym_db.RegisterEnumDescriptor(_INTEGRATIONKIND)
 
 IntegrationKind = enum_type_wrapper.EnumTypeWrapper(_INTEGRATIONKIND)
+_MARSHALER = _descriptor.EnumDescriptor(
+  name='Marshaler',
+  full_name='api.Marshaler',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='JSON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOBUF', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JSON_V3', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5016,
+  serialized_end=5064,
+)
+_sym_db.RegisterEnumDescriptor(_MARSHALER)
+
+Marshaler = enum_type_wrapper.EnumTypeWrapper(_MARSHALER)
 _INFLUXDBPRECISION = _descriptor.EnumDescriptor(
   name='InfluxDBPrecision',
   full_name='api.InfluxDBPrecision',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='NS', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='U', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MS', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='S', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='M', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='H', index=5, number=5,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4935,
-  serialized_end=4998,
+  serialized_start=5066,
+  serialized_end=5129,
 )
 _sym_db.RegisterEnumDescriptor(_INFLUXDBPRECISION)
 
@@ -104,6 +149,9 @@ INFLUXDB = 1
 THINGSBOARD = 2
 MYDEVICES = 3
 LORACLOUD = 4
+JSON = 0
+PROTOBUF = 1
+JSON_V3 = 2
 NS = 0
 U = 1
 MS = 2
@@ -119,6 +167,7 @@ _APPLICATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.Application.id', index=0,
@@ -126,56 +175,56 @@ _APPLICATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.Application.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.Application.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.Application.organization_id', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='api.Application.service_profile_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='payload_codec', full_name='api.Application.payload_codec', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='payload_encoder_script', full_name='api.Application.payload_encoder_script', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='payload_decoder_script', full_name='api.Application.payload_decoder_script', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -199,6 +248,7 @@ _APPLICATIONLISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.ApplicationListItem.id', index=0,
@@ -206,42 +256,42 @@ _APPLICATIONLISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.ApplicationListItem.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.ApplicationListItem.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ApplicationListItem.organization_id', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='api.ApplicationListItem.service_profile_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_name', full_name='api.ApplicationListItem.service_profile_name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -265,6 +315,7 @@ _CREATEAPPLICATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application', full_name='api.CreateApplicationRequest.application', index=0,
@@ -272,7 +323,7 @@ _CREATEAPPLICATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -296,6 +347,7 @@ _CREATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.CreateApplicationResponse.id', index=0,
@@ -303,7 +355,7 @@ _CREATEAPPLICATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -327,6 +379,7 @@ _GETAPPLICATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.GetApplicationRequest.id', index=0,
@@ -334,7 +387,7 @@ _GETAPPLICATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -358,6 +411,7 @@ _GETAPPLICATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application', full_name='api.GetApplicationResponse.application', index=0,
@@ -365,7 +419,7 @@ _GETAPPLICATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -389,6 +443,7 @@ _UPDATEAPPLICATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application', full_name='api.UpdateApplicationRequest.application', index=0,
@@ -396,7 +451,7 @@ _UPDATEAPPLICATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -420,6 +475,7 @@ _DELETEAPPLICATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.DeleteApplicationRequest.id', index=0,
@@ -427,7 +483,7 @@ _DELETEAPPLICATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -451,6 +507,7 @@ _LISTAPPLICATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='api.ListApplicationRequest.limit', index=0,
@@ -458,28 +515,28 @@ _LISTAPPLICATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='api.ListApplicationRequest.offset', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ListApplicationRequest.organization_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='api.ListApplicationRequest.search', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -503,6 +560,7 @@ _LISTAPPLICATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListApplicationResponse.total_count', index=0,
@@ -510,14 +568,14 @@ _LISTAPPLICATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListApplicationResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -541,6 +599,7 @@ _HTTPINTEGRATIONHEADER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='api.HTTPIntegrationHeader.key', index=0,
@@ -548,14 +607,14 @@ _HTTPINTEGRATIONHEADER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='api.HTTPIntegrationHeader.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -579,6 +638,7 @@ _HTTPINTEGRATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.HTTPIntegration.application_id', index=0,
@@ -586,70 +646,84 @@ _HTTPINTEGRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='headers', full_name='api.HTTPIntegration.headers', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='uplink_data_url', full_name='api.HTTPIntegration.uplink_data_url', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='uplinkDataURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='uplinkDataURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='join_notification_url', full_name='api.HTTPIntegration.join_notification_url', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='joinNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='joinNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ack_notification_url', full_name='api.HTTPIntegration.ack_notification_url', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='ackNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='ackNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='error_notification_url', full_name='api.HTTPIntegration.error_notification_url', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='errorNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='errorNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status_notification_url', full_name='api.HTTPIntegration.status_notification_url', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='statusNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='statusNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location_notification_url', full_name='api.HTTPIntegration.location_notification_url', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='locationNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='locationNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_ack_notification_url', full_name='api.HTTPIntegration.tx_ack_notification_url', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='txAckNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='txAckNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='integration_notification_url', full_name='api.HTTPIntegration.integration_notification_url', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='integrationNotificationURL', file=DESCRIPTOR),
+      serialized_options=None, json_name='integrationNotificationURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='marshaler', full_name='api.HTTPIntegration.marshaler', index=10,
+      number=11, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='event_endpoint_url', full_name='api.HTTPIntegration.event_endpoint_url', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='eventEndpointURL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -663,7 +737,7 @@ _HTTPINTEGRATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1119,
-  serialized_end=1653,
+  serialized_end=1734,
 )
 
 
@@ -673,6 +747,7 @@ _CREATEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.CreateHTTPIntegrationRequest.integration', index=0,
@@ -680,7 +755,7 @@ _CREATEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -693,8 +768,8 @@ _CREATEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1655,
-  serialized_end=1728,
+  serialized_start=1736,
+  serialized_end=1809,
 )
 
 
@@ -704,6 +779,7 @@ _GETHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.GetHTTPIntegrationRequest.application_id', index=0,
@@ -711,7 +787,7 @@ _GETHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -724,8 +800,8 @@ _GETHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1730,
-  serialized_end=1796,
+  serialized_start=1811,
+  serialized_end=1877,
 )
 
 
@@ -735,6 +811,7 @@ _GETHTTPINTEGRATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.GetHTTPIntegrationResponse.integration', index=0,
@@ -742,7 +819,7 @@ _GETHTTPINTEGRATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -755,8 +832,8 @@ _GETHTTPINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1798,
-  serialized_end=1869,
+  serialized_start=1879,
+  serialized_end=1950,
 )
 
 
@@ -766,6 +843,7 @@ _UPDATEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.UpdateHTTPIntegrationRequest.integration', index=0,
@@ -773,7 +851,7 @@ _UPDATEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -786,8 +864,8 @@ _UPDATEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1871,
-  serialized_end=1944,
+  serialized_start=1952,
+  serialized_end=2025,
 )
 
 
@@ -797,6 +875,7 @@ _DELETEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.DeleteHTTPIntegrationRequest.application_id', index=0,
@@ -804,7 +883,7 @@ _DELETEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -817,8 +896,8 @@ _DELETEHTTPINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1946,
-  serialized_end=2015,
+  serialized_start=2027,
+  serialized_end=2096,
 )
 
 
@@ -828,6 +907,7 @@ _LISTINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.ListIntegrationRequest.application_id', index=0,
@@ -835,7 +915,7 @@ _LISTINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -848,8 +928,8 @@ _LISTINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2017,
-  serialized_end=2080,
+  serialized_start=2098,
+  serialized_end=2161,
 )
 
 
@@ -859,6 +939,7 @@ _INTEGRATIONLISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='kind', full_name='api.IntegrationListItem.kind', index=0,
@@ -866,7 +947,7 @@ _INTEGRATIONLISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -879,8 +960,8 @@ _INTEGRATIONLISTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2082,
-  serialized_end=2139,
+  serialized_start=2163,
+  serialized_end=2220,
 )
 
 
@@ -890,6 +971,7 @@ _LISTINTEGRATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListIntegrationResponse.total_count', index=0,
@@ -897,14 +979,14 @@ _LISTINTEGRATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListIntegrationResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -917,8 +999,8 @@ _LISTINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2141,
-  serialized_end=2229,
+  serialized_start=2222,
+  serialized_end=2310,
 )
 
 
@@ -928,6 +1010,7 @@ _INFLUXDBINTEGRATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.InfluxDBIntegration.application_id', index=0,
@@ -935,49 +1018,49 @@ _INFLUXDBINTEGRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='endpoint', full_name='api.InfluxDBIntegration.endpoint', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='db', full_name='api.InfluxDBIntegration.db', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='username', full_name='api.InfluxDBIntegration.username', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='password', full_name='api.InfluxDBIntegration.password', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='retention_policy_name', full_name='api.InfluxDBIntegration.retention_policy_name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='precision', full_name='api.InfluxDBIntegration.precision', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -990,8 +1073,8 @@ _INFLUXDBINTEGRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2232,
-  serialized_end=2432,
+  serialized_start=2313,
+  serialized_end=2513,
 )
 
 
@@ -1001,6 +1084,7 @@ _CREATEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.CreateInfluxDBIntegrationRequest.integration', index=0,
@@ -1008,7 +1092,7 @@ _CREATEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1021,8 +1105,8 @@ _CREATEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2434,
-  serialized_end=2515,
+  serialized_start=2515,
+  serialized_end=2596,
 )
 
 
@@ -1032,6 +1116,7 @@ _GETINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.GetInfluxDBIntegrationRequest.application_id', index=0,
@@ -1039,7 +1124,7 @@ _GETINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1052,8 +1137,8 @@ _GETINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2517,
-  serialized_end=2587,
+  serialized_start=2598,
+  serialized_end=2668,
 )
 
 
@@ -1063,6 +1148,7 @@ _GETINFLUXDBINTEGRATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.GetInfluxDBIntegrationResponse.integration', index=0,
@@ -1070,38 +1156,7 @@ _GETINFLUXDBINTEGRATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2589,
-  serialized_end=2668,
-)
-
-
-_UPDATEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
-  name='UpdateInfluxDBIntegrationRequest',
-  full_name='api.UpdateInfluxDBIntegrationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='integration', full_name='api.UpdateInfluxDBIntegrationRequest.integration', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1115,7 +1170,39 @@ _UPDATEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2670,
-  serialized_end=2751,
+  serialized_end=2749,
+)
+
+
+_UPDATEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
+  name='UpdateInfluxDBIntegrationRequest',
+  full_name='api.UpdateInfluxDBIntegrationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='integration', full_name='api.UpdateInfluxDBIntegrationRequest.integration', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2751,
+  serialized_end=2832,
 )
 
 
@@ -1125,6 +1212,7 @@ _DELETEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.DeleteInfluxDBIntegrationRequest.application_id', index=0,
@@ -1132,7 +1220,7 @@ _DELETEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1145,8 +1233,8 @@ _DELETEINFLUXDBINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2753,
-  serialized_end=2826,
+  serialized_start=2834,
+  serialized_end=2907,
 )
 
 
@@ -1156,6 +1244,7 @@ _THINGSBOARDINTEGRATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.ThingsBoardIntegration.application_id', index=0,
@@ -1163,45 +1252,14 @@ _THINGSBOARDINTEGRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='server', full_name='api.ThingsBoardIntegration.server', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2828,
-  serialized_end=2907,
-)
-
-
-_CREATETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
-  name='CreateThingsBoardIntegrationRequest',
-  full_name='api.CreateThingsBoardIntegrationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='integration', full_name='api.CreateThingsBoardIntegrationRequest.integration', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1215,7 +1273,39 @@ _CREATETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2909,
-  serialized_end=2996,
+  serialized_end=2988,
+)
+
+
+_CREATETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
+  name='CreateThingsBoardIntegrationRequest',
+  full_name='api.CreateThingsBoardIntegrationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='integration', full_name='api.CreateThingsBoardIntegrationRequest.integration', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2990,
+  serialized_end=3077,
 )
 
 
@@ -1225,6 +1315,7 @@ _GETTHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.GetThingsBoardIntegrationRequest.application_id', index=0,
@@ -1232,7 +1323,7 @@ _GETTHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1245,8 +1336,8 @@ _GETTHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2998,
-  serialized_end=3071,
+  serialized_start=3079,
+  serialized_end=3152,
 )
 
 
@@ -1256,6 +1347,7 @@ _GETTHINGSBOARDINTEGRATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.GetThingsBoardIntegrationResponse.integration', index=0,
@@ -1263,7 +1355,7 @@ _GETTHINGSBOARDINTEGRATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1276,8 +1368,8 @@ _GETTHINGSBOARDINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3073,
-  serialized_end=3158,
+  serialized_start=3154,
+  serialized_end=3239,
 )
 
 
@@ -1287,6 +1379,7 @@ _UPDATETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.UpdateThingsBoardIntegrationRequest.integration', index=0,
@@ -1294,7 +1387,7 @@ _UPDATETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1307,8 +1400,8 @@ _UPDATETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3160,
-  serialized_end=3247,
+  serialized_start=3241,
+  serialized_end=3328,
 )
 
 
@@ -1318,6 +1411,7 @@ _DELETETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.DeleteThingsBoardIntegrationRequest.application_id', index=0,
@@ -1325,7 +1419,7 @@ _DELETETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1338,8 +1432,8 @@ _DELETETHINGSBOARDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3249,
-  serialized_end=3325,
+  serialized_start=3330,
+  serialized_end=3406,
 )
 
 
@@ -1349,6 +1443,7 @@ _MYDEVICESINTEGRATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.MyDevicesIntegration.application_id', index=0,
@@ -1356,45 +1451,14 @@ _MYDEVICESINTEGRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='endpoint', full_name='api.MyDevicesIntegration.endpoint', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3327,
-  serialized_end=3406,
-)
-
-
-_CREATEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
-  name='CreateMyDevicesIntegrationRequest',
-  full_name='api.CreateMyDevicesIntegrationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='integration', full_name='api.CreateMyDevicesIntegrationRequest.integration', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1408,7 +1472,39 @@ _CREATEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=3408,
-  serialized_end=3491,
+  serialized_end=3487,
+)
+
+
+_CREATEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
+  name='CreateMyDevicesIntegrationRequest',
+  full_name='api.CreateMyDevicesIntegrationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='integration', full_name='api.CreateMyDevicesIntegrationRequest.integration', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3489,
+  serialized_end=3572,
 )
 
 
@@ -1418,6 +1514,7 @@ _GETMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.GetMyDevicesIntegrationRequest.application_id', index=0,
@@ -1425,7 +1522,7 @@ _GETMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1438,8 +1535,8 @@ _GETMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3493,
-  serialized_end=3564,
+  serialized_start=3574,
+  serialized_end=3645,
 )
 
 
@@ -1449,6 +1546,7 @@ _GETMYDEVICESINTEGRATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.GetMyDevicesIntegrationResponse.integration', index=0,
@@ -1456,7 +1554,7 @@ _GETMYDEVICESINTEGRATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1469,8 +1567,8 @@ _GETMYDEVICESINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3566,
-  serialized_end=3647,
+  serialized_start=3647,
+  serialized_end=3728,
 )
 
 
@@ -1480,6 +1578,7 @@ _UPDATEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.UpdateMyDevicesIntegrationRequest.integration', index=0,
@@ -1487,7 +1586,7 @@ _UPDATEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1500,8 +1599,8 @@ _UPDATEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3649,
-  serialized_end=3732,
+  serialized_start=3730,
+  serialized_end=3813,
 )
 
 
@@ -1511,6 +1610,7 @@ _DELETEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.DeleteMyDevicesIntegrationRequest.application_id', index=0,
@@ -1518,7 +1618,7 @@ _DELETEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1531,8 +1631,8 @@ _DELETEMYDEVICESINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3734,
-  serialized_end=3808,
+  serialized_start=3815,
+  serialized_end=3889,
 )
 
 
@@ -1542,6 +1642,7 @@ _LORACLOUDINTEGRATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.LoRaCloudIntegration.application_id', index=0,
@@ -1549,105 +1650,105 @@ _LORACLOUDINTEGRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation', full_name='api.LoRaCloudIntegration.geolocation', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_token', full_name='api.LoRaCloudIntegration.geolocation_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_buffer_ttl', full_name='api.LoRaCloudIntegration.geolocation_buffer_ttl', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationBufferTTL', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationBufferTTL', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_min_buffer_size', full_name='api.LoRaCloudIntegration.geolocation_min_buffer_size', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_tdoa', full_name='api.LoRaCloudIntegration.geolocation_tdoa', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationTDOA', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationTDOA', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_rssi', full_name='api.LoRaCloudIntegration.geolocation_rssi', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationRSSI', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationRSSI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_gnss', full_name='api.LoRaCloudIntegration.geolocation_gnss', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationGNSS', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationGNSS', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_gnss_payload_field', full_name='api.LoRaCloudIntegration.geolocation_gnss_payload_field', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationGNSSPayloadField', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationGNSSPayloadField', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_gnss_use_rx_time', full_name='api.LoRaCloudIntegration.geolocation_gnss_use_rx_time', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationGNSSUseRxTime', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationGNSSUseRxTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_wifi', full_name='api.LoRaCloudIntegration.geolocation_wifi', index=10,
       number=11, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationWifi', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationWifi', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='geolocation_wifi_payload_field', full_name='api.LoRaCloudIntegration.geolocation_wifi_payload_field', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='geolocationWifiPayloadField', file=DESCRIPTOR),
+      serialized_options=None, json_name='geolocationWifiPayloadField', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='das', full_name='api.LoRaCloudIntegration.das', index=12,
       number=13, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='das_token', full_name='api.LoRaCloudIntegration.das_token', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='das_modem_port', full_name='api.LoRaCloudIntegration.das_modem_port', index=14,
       number=15, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1660,8 +1761,8 @@ _LORACLOUDINTEGRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3811,
-  serialized_end=4441,
+  serialized_start=3892,
+  serialized_end=4522,
 )
 
 
@@ -1671,6 +1772,7 @@ _CREATELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.CreateLoRaCloudIntegrationRequest.integration', index=0,
@@ -1678,7 +1780,7 @@ _CREATELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1691,8 +1793,8 @@ _CREATELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4443,
-  serialized_end=4526,
+  serialized_start=4524,
+  serialized_end=4607,
 )
 
 
@@ -1702,6 +1804,7 @@ _GETLORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.GetLoRaCloudIntegrationRequest.application_id', index=0,
@@ -1709,7 +1812,7 @@ _GETLORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1722,8 +1825,8 @@ _GETLORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4528,
-  serialized_end=4599,
+  serialized_start=4609,
+  serialized_end=4680,
 )
 
 
@@ -1733,6 +1836,7 @@ _GETLORACLOUDINTEGRATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.GetLoRaCloudIntegrationResponse.integration', index=0,
@@ -1740,7 +1844,7 @@ _GETLORACLOUDINTEGRATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1753,8 +1857,8 @@ _GETLORACLOUDINTEGRATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4601,
-  serialized_end=4682,
+  serialized_start=4682,
+  serialized_end=4763,
 )
 
 
@@ -1764,6 +1868,7 @@ _UPDATELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='integration', full_name='api.UpdateLoRaCloudIntegrationRequest.integration', index=0,
@@ -1771,7 +1876,7 @@ _UPDATELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1784,8 +1889,8 @@ _UPDATELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4684,
-  serialized_end=4767,
+  serialized_start=4765,
+  serialized_end=4848,
 )
 
 
@@ -1795,6 +1900,7 @@ _DELETELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='application_id', full_name='api.DeleteLoRaCloudIntegrationRequest.application_id', index=0,
@@ -1802,7 +1908,7 @@ _DELETELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='applicationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='applicationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1815,8 +1921,8 @@ _DELETELORACLOUDINTEGRATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4769,
-  serialized_end=4843,
+  serialized_start=4850,
+  serialized_end=4924,
 )
 
 _CREATEAPPLICATIONREQUEST.fields_by_name['application'].message_type = _APPLICATION
@@ -1824,6 +1930,7 @@ _GETAPPLICATIONRESPONSE.fields_by_name['application'].message_type = _APPLICATIO
 _UPDATEAPPLICATIONREQUEST.fields_by_name['application'].message_type = _APPLICATION
 _LISTAPPLICATIONRESPONSE.fields_by_name['result'].message_type = _APPLICATIONLISTITEM
 _HTTPINTEGRATION.fields_by_name['headers'].message_type = _HTTPINTEGRATIONHEADER
+_HTTPINTEGRATION.fields_by_name['marshaler'].enum_type = _MARSHALER
 _CREATEHTTPINTEGRATIONREQUEST.fields_by_name['integration'].message_type = _HTTPINTEGRATION
 _GETHTTPINTEGRATIONRESPONSE.fields_by_name['integration'].message_type = _HTTPINTEGRATION
 _UPDATEHTTPINTEGRATIONREQUEST.fields_by_name['integration'].message_type = _HTTPINTEGRATION
@@ -1887,6 +1994,7 @@ DESCRIPTOR.message_types_by_name['GetLoRaCloudIntegrationResponse'] = _GETLORACL
 DESCRIPTOR.message_types_by_name['UpdateLoRaCloudIntegrationRequest'] = _UPDATELORACLOUDINTEGRATIONREQUEST
 DESCRIPTOR.message_types_by_name['DeleteLoRaCloudIntegrationRequest'] = _DELETELORACLOUDINTEGRATIONREQUEST
 DESCRIPTOR.enum_types_by_name['IntegrationKind'] = _INTEGRATIONKIND
+DESCRIPTOR.enum_types_by_name['Marshaler'] = _MARSHALER
 DESCRIPTOR.enum_types_by_name['InfluxDBPrecision'] = _INFLUXDBPRECISION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -2207,8 +2315,9 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=5001,
-  serialized_end=9038,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=5132,
+  serialized_end=9169,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -2218,6 +2327,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEAPPLICATIONREQUEST,
     output_type=_CREATEAPPLICATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002\026\"\021/api/applications:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -2227,6 +2337,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETAPPLICATIONREQUEST,
     output_type=_GETAPPLICATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002\030\022\026/api/applications/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -2236,6 +2347,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEAPPLICATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\'\032\"/api/applications/{application.id}:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -2245,6 +2357,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEAPPLICATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\030*\026/api/applications/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -2254,6 +2367,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTAPPLICATIONREQUEST,
     output_type=_LISTAPPLICATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002\023\022\021/api/applications',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateHTTPIntegration',
@@ -2263,6 +2377,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEHTTPINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002E\"@/api/applications/{integration.application_id}/integrations/http:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetHTTPIntegration',
@@ -2272,6 +2387,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETHTTPINTEGRATIONREQUEST,
     output_type=_GETHTTPINTEGRATIONRESPONSE,
     serialized_options=b'\202\323\344\223\0026\0224/api/applications/{application_id}/integrations/http',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateHTTPIntegration',
@@ -2281,6 +2397,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEHTTPINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002E\032@/api/applications/{integration.application_id}/integrations/http:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteHTTPIntegration',
@@ -2290,6 +2407,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEHTTPINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\0026*4/api/applications/{application_id}/integrations/http',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateInfluxDBIntegration',
@@ -2299,6 +2417,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEINFLUXDBINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002I\"D/api/applications/{integration.application_id}/integrations/influxdb:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetInfluxDBIntegration',
@@ -2308,6 +2427,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETINFLUXDBINTEGRATIONREQUEST,
     output_type=_GETINFLUXDBINTEGRATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002:\0228/api/applications/{application_id}/integrations/influxdb',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateInfluxDBIntegration',
@@ -2317,6 +2437,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEINFLUXDBINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002I\032D/api/applications/{integration.application_id}/integrations/influxdb:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteInfluxDBIntegration',
@@ -2326,6 +2447,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEINFLUXDBINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002:*8/api/applications/{application_id}/integrations/influxdb',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateThingsBoardIntegration',
@@ -2335,6 +2457,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATETHINGSBOARDINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002L\"G/api/applications/{integration.application_id}/integrations/thingsboard:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetThingsBoardIntegration',
@@ -2344,6 +2467,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETTHINGSBOARDINTEGRATIONREQUEST,
     output_type=_GETTHINGSBOARDINTEGRATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002=\022;/api/applications/{application_id}/integrations/thingsboard',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateThingsBoardIntegration',
@@ -2353,6 +2477,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATETHINGSBOARDINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002L\032G/api/applications/{integration.application_id}/integrations/thingsboard:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteThingsBoardIntegration',
@@ -2362,6 +2487,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETETHINGSBOARDINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002=*;/api/applications/{application_id}/integrations/thingsboard',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateMyDevicesIntegration',
@@ -2371,6 +2497,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEMYDEVICESINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002J\"E/api/applications/{integration.application_id}/integrations/mydevices:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetMyDevicesIntegration',
@@ -2380,6 +2507,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETMYDEVICESINTEGRATIONREQUEST,
     output_type=_GETMYDEVICESINTEGRATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002;\0229/api/applications/{application_id}/integrations/mydevices',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateMyDevicesIntegration',
@@ -2389,6 +2517,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEMYDEVICESINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002J\032E/api/applications/{integration.application_id}/integrations/mydevices:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteMyDevicesIntegration',
@@ -2398,6 +2527,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEMYDEVICESINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002;*9/api/applications/{application_id}/integrations/mydevices',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateLoRaCloudIntegration',
@@ -2407,6 +2537,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATELORACLOUDINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002J\"E/api/applications/{integration.application_id}/integrations/loracloud:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetLoRaCloudIntegration',
@@ -2416,6 +2547,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETLORACLOUDINTEGRATIONREQUEST,
     output_type=_GETLORACLOUDINTEGRATIONRESPONSE,
     serialized_options=b'\202\323\344\223\002;\0229/api/applications/{application_id}/integrations/loracloud',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateLoRaCloudIntegration',
@@ -2425,6 +2557,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATELORACLOUDINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002J\032E/api/applications/{integration.application_id}/integrations/loracloud:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteLoRaCloudIntegration',
@@ -2434,6 +2567,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETELORACLOUDINTEGRATIONREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002;*9/api/applications/{application_id}/integrations/loracloud',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListIntegrations',
@@ -2443,6 +2577,7 @@ _APPLICATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTINTEGRATIONREQUEST,
     output_type=_LISTINTEGRATIONRESPONSE,
     serialized_options=b'\202\323\344\223\0021\022//api/applications/{application_id}/integrations',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_APPLICATIONSERVICE)

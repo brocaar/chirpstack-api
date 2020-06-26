@@ -23,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n/chirpstack-api/as_pb/external/api/gateway.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/frameLog.proto\"\xcf\x03\n\x07Gateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\"\n\x08location\x18\x04 \x01(\x0b\x32\x10.common.Location\x12\'\n\x0forganization_id\x18\x05 \x01(\x03R\x0eorganizationID\x12\x19\n\x11\x64iscovery_enabled\x18\x06 \x01(\x08\x12*\n\x11network_server_id\x18\x07 \x01(\x03R\x0fnetworkServerID\x12,\n\x12gateway_profile_id\x18\x08 \x01(\tR\x10gatewayProfileID\x12!\n\x06\x62oards\x18\t \x03(\x0b\x32\x11.api.GatewayBoard\x12$\n\x04tags\x18\n \x03(\x0b\x32\x16.api.Gateway.TagsEntry\x12,\n\x08metadata\x18\x0b \x03(\x0b\x32\x1a.api.Gateway.MetadataEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"C\n\x0cGatewayBoard\x12\x17\n\x07\x66pga_id\x18\x01 \x01(\tR\x06\x66pgaID\x12\x1a\n\x12\x66ine_timestamp_key\x18\x02 \x01(\t\"5\n\x14\x43reateGatewayRequest\x12\x1d\n\x07gateway\x18\x01 \x01(\x0b\x32\x0c.api.Gateway\"\x1f\n\x11GetGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xf8\x01\n\x12GetGatewayResponse\x12\x1d\n\x07gateway\x18\x01 \x01(\x0b\x32\x0c.api.Gateway\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rfirst_seen_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\"\n\x14\x44\x65leteGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\t\"l\n\x12ListGatewayRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\x12\x0e\n\x06offset\x18\x02 \x01(\x05\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x0e\n\x06search\x18\x04 \x01(\t\"\xfe\x02\n\x0fGatewayListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rfirst_seen_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0clast_seen_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x0forganization_id\x18\x06 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x07 \x01(\x03R\x0fnetworkServerID\x12\"\n\x08location\x18\n \x01(\x0b\x32\x10.common.Location\"P\n\x13ListGatewayResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12$\n\x06result\x18\x02 \x03(\x0b\x32\x14.api.GatewayListItem\"5\n\x14UpdateGatewayRequest\x12\x1d\n\x07gateway\x18\x01 \x01(\x0b\x32\x0c.api.Gateway\"\xc8\x01\n\x0cGatewayStats\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13rx_packets_received\x18\x02 \x01(\x05\x12\x33\n\x16rx_packets_received_ok\x18\x03 \x01(\x05R\x13rxPacketsReceivedOK\x12\x1b\n\x13tx_packets_received\x18\x04 \x01(\x05\x12\x1a\n\x12tx_packets_emitted\x18\x05 \x01(\x05\"\xb1\x01\n\x16GetGatewayStatsRequest\x12\x1d\n\ngateway_id\x18\x01 \x01(\tR\tgatewayID\x12\x10\n\x08interval\x18\x02 \x01(\t\x12\x33\n\x0fstart_timestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rend_timestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"<\n\x17GetGatewayStatsResponse\x12!\n\x06result\x18\x01 \x03(\x0b\x32\x11.api.GatewayStats\"\x87\x01\n\x06PingRX\x12\x1d\n\ngateway_id\x18\x01 \x01(\tR\tgatewayID\x12\x0c\n\x04rssi\x18\x02 \x01(\x05\x12\x19\n\x08lora_snr\x18\x03 \x01(\x01R\x07loRaSNR\x12\x10\n\x08latitude\x18\x04 \x01(\x01\x12\x11\n\tlongitude\x18\x05 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\x06 \x01(\x01\"3\n\x12GetLastPingRequest\x12\x1d\n\ngateway_id\x18\x01 \x01(\tR\tgatewayID\"\x8a\x01\n\x13GetLastPingResponse\x12.\n\ncreated_at\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tfrequency\x18\x02 \x01(\r\x12\n\n\x02\x64r\x18\x03 \x01(\r\x12$\n\x07ping_rx\x18\x04 \x03(\x0b\x32\x0b.api.PingRXR\x06pingRX\">\n\x1dStreamGatewayFrameLogsRequest\x12\x1d\n\ngateway_id\x18\x01 \x01(\tR\tgatewayID\"\x87\x01\n\x1eStreamGatewayFrameLogsResponse\x12+\n\x0cuplink_frame\x18\x01 \x01(\x0b\x32\x13.api.UplinkFrameLogH\x00\x12/\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x15.api.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame2\xb6\x06\n\x0eGatewayService\x12U\n\x06\x43reate\x12\x19.api.CreateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/api/gateways:\x01*\x12R\n\x03Get\x12\x16.api.GetGatewayRequest\x1a\x17.api.GetGatewayResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/gateways/{id}\x12\x62\n\x06Update\x12\x19.api.UpdateGatewayRequest\x1a\x16.google.protobuf.Empty\"%\x82\xd3\xe4\x93\x02\x1f\x1a\x1a/api/gateways/{gateway.id}:\x01*\x12W\n\x06\x44\x65lete\x12\x19.api.DeleteGatewayRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/api/gateways/{id}\x12P\n\x04List\x12\x17.api.ListGatewayRequest\x1a\x18.api.ListGatewayResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/api/gateways\x12o\n\x08GetStats\x12\x1b.api.GetGatewayStatsRequest\x1a\x1c.api.GetGatewayStatsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/gateways/{gateway_id}/stats\x12o\n\x0bGetLastPing\x12\x17.api.GetLastPingRequest\x1a\x18.api.GetLastPingResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/api/gateways/{gateway_id}/pings/last\x12\x87\x01\n\x0fStreamFrameLogs\x12\".api.StreamGatewayFrameLogsRequest\x1a#.api.StreamGatewayFrameLogsResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/gateways/{gateway_id}/frames0\x01\x42\x39Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_frameLog__pb2.DESCRIPTOR,])
@@ -36,6 +37,7 @@ _GATEWAY_TAGSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='api.Gateway.TagsEntry.key', index=0,
@@ -43,14 +45,14 @@ _GATEWAY_TAGSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='api.Gateway.TagsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -73,6 +75,7 @@ _GATEWAY_METADATAENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='api.Gateway.MetadataEntry.key', index=0,
@@ -80,14 +83,14 @@ _GATEWAY_METADATAENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='api.Gateway.MetadataEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -110,6 +113,7 @@ _GATEWAY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.Gateway.id', index=0,
@@ -117,77 +121,77 @@ _GATEWAY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.Gateway.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.Gateway.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location', full_name='api.Gateway.location', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.Gateway.organization_id', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='discovery_enabled', full_name='api.Gateway.discovery_enabled', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network_server_id', full_name='api.Gateway.network_server_id', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='networkServerID', file=DESCRIPTOR),
+      serialized_options=None, json_name='networkServerID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_profile_id', full_name='api.Gateway.gateway_profile_id', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='boards', full_name='api.Gateway.boards', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='api.Gateway.tags', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='metadata', full_name='api.Gateway.metadata', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -211,6 +215,7 @@ _GATEWAYBOARD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='fpga_id', full_name='api.GatewayBoard.fpga_id', index=0,
@@ -218,14 +223,14 @@ _GATEWAYBOARD = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='fpgaID', file=DESCRIPTOR),
+      serialized_options=None, json_name='fpgaID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='fine_timestamp_key', full_name='api.GatewayBoard.fine_timestamp_key', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -249,6 +254,7 @@ _CREATEGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway', full_name='api.CreateGatewayRequest.gateway', index=0,
@@ -256,7 +262,7 @@ _CREATEGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -280,6 +286,7 @@ _GETGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.GetGatewayRequest.id', index=0,
@@ -287,7 +294,7 @@ _GETGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -311,6 +318,7 @@ _GETGATEWAYRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway', full_name='api.GetGatewayResponse.gateway', index=0,
@@ -318,35 +326,35 @@ _GETGATEWAYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.GetGatewayResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.GetGatewayResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='first_seen_at', full_name='api.GetGatewayResponse.first_seen_at', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='last_seen_at', full_name='api.GetGatewayResponse.last_seen_at', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -370,6 +378,7 @@ _DELETEGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.DeleteGatewayRequest.id', index=0,
@@ -377,7 +386,7 @@ _DELETEGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -401,6 +410,7 @@ _LISTGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='api.ListGatewayRequest.limit', index=0,
@@ -408,28 +418,28 @@ _LISTGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='api.ListGatewayRequest.offset', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ListGatewayRequest.organization_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='api.ListGatewayRequest.search', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -453,6 +463,7 @@ _GATEWAYLISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.GatewayListItem.id', index=0,
@@ -460,70 +471,70 @@ _GATEWAYLISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.GatewayListItem.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.GatewayListItem.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.GatewayListItem.created_at', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.GatewayListItem.updated_at', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='first_seen_at', full_name='api.GatewayListItem.first_seen_at', index=5,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='last_seen_at', full_name='api.GatewayListItem.last_seen_at', index=6,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.GatewayListItem.organization_id', index=7,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network_server_id', full_name='api.GatewayListItem.network_server_id', index=8,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='networkServerID', file=DESCRIPTOR),
+      serialized_options=None, json_name='networkServerID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location', full_name='api.GatewayListItem.location', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -547,6 +558,7 @@ _LISTGATEWAYRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListGatewayResponse.total_count', index=0,
@@ -554,14 +566,14 @@ _LISTGATEWAYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListGatewayResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -585,6 +597,7 @@ _UPDATEGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway', full_name='api.UpdateGatewayRequest.gateway', index=0,
@@ -592,7 +605,7 @@ _UPDATEGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -616,6 +629,7 @@ _GATEWAYSTATS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='api.GatewayStats.timestamp', index=0,
@@ -623,35 +637,35 @@ _GATEWAYSTATS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rx_packets_received', full_name='api.GatewayStats.rx_packets_received', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rx_packets_received_ok', full_name='api.GatewayStats.rx_packets_received_ok', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='rxPacketsReceivedOK', file=DESCRIPTOR),
+      serialized_options=None, json_name='rxPacketsReceivedOK', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_packets_received', full_name='api.GatewayStats.tx_packets_received', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_packets_emitted', full_name='api.GatewayStats.tx_packets_emitted', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -675,6 +689,7 @@ _GETGATEWAYSTATSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='api.GetGatewayStatsRequest.gateway_id', index=0,
@@ -682,28 +697,28 @@ _GETGATEWAYSTATSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='interval', full_name='api.GetGatewayStatsRequest.interval', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='start_timestamp', full_name='api.GetGatewayStatsRequest.start_timestamp', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='end_timestamp', full_name='api.GetGatewayStatsRequest.end_timestamp', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -727,6 +742,7 @@ _GETGATEWAYSTATSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='result', full_name='api.GetGatewayStatsResponse.result', index=0,
@@ -734,7 +750,7 @@ _GETGATEWAYSTATSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -758,6 +774,7 @@ _PINGRX = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='api.PingRX.gateway_id', index=0,
@@ -765,42 +782,42 @@ _PINGRX = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rssi', full_name='api.PingRX.rssi', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='lora_snr', full_name='api.PingRX.lora_snr', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='loRaSNR', file=DESCRIPTOR),
+      serialized_options=None, json_name='loRaSNR', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='latitude', full_name='api.PingRX.latitude', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='longitude', full_name='api.PingRX.longitude', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='altitude', full_name='api.PingRX.altitude', index=5,
       number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -824,6 +841,7 @@ _GETLASTPINGREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='api.GetLastPingRequest.gateway_id', index=0,
@@ -831,7 +849,7 @@ _GETLASTPINGREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -855,6 +873,7 @@ _GETLASTPINGRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.GetLastPingResponse.created_at', index=0,
@@ -862,28 +881,28 @@ _GETLASTPINGRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frequency', full_name='api.GetLastPingResponse.frequency', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dr', full_name='api.GetLastPingResponse.dr', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ping_rx', full_name='api.GetLastPingResponse.ping_rx', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='pingRX', file=DESCRIPTOR),
+      serialized_options=None, json_name='pingRX', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -907,6 +926,7 @@ _STREAMGATEWAYFRAMELOGSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='api.StreamGatewayFrameLogsRequest.gateway_id', index=0,
@@ -914,7 +934,7 @@ _STREAMGATEWAYFRAMELOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -938,6 +958,7 @@ _STREAMGATEWAYFRAMELOGSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='uplink_frame', full_name='api.StreamGatewayFrameLogsResponse.uplink_frame', index=0,
@@ -945,14 +966,14 @@ _STREAMGATEWAYFRAMELOGSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='downlink_frame', full_name='api.StreamGatewayFrameLogsResponse.downlink_frame', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -966,7 +987,9 @@ _STREAMGATEWAYFRAMELOGSRESPONSE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='frame', full_name='api.StreamGatewayFrameLogsResponse.frame',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=2618,
   serialized_end=2753,
@@ -1178,6 +1201,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=2756,
   serialized_end=3578,
   methods=[
@@ -1189,6 +1213,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEGATEWAYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\022\"\r/api/gateways:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1198,6 +1223,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETGATEWAYREQUEST,
     output_type=_GETGATEWAYRESPONSE,
     serialized_options=b'\202\323\344\223\002\024\022\022/api/gateways/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1207,6 +1233,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEGATEWAYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\037\032\032/api/gateways/{gateway.id}:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1216,6 +1243,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEGATEWAYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\024*\022/api/gateways/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1225,6 +1253,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTGATEWAYREQUEST,
     output_type=_LISTGATEWAYRESPONSE,
     serialized_options=b'\202\323\344\223\002\017\022\r/api/gateways',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetStats',
@@ -1234,6 +1263,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETGATEWAYSTATSREQUEST,
     output_type=_GETGATEWAYSTATSRESPONSE,
     serialized_options=b'\202\323\344\223\002\"\022 /api/gateways/{gateway_id}/stats',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetLastPing',
@@ -1243,6 +1273,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETLASTPINGREQUEST,
     output_type=_GETLASTPINGRESPONSE,
     serialized_options=b'\202\323\344\223\002\'\022%/api/gateways/{gateway_id}/pings/last',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamFrameLogs',
@@ -1252,6 +1283,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMGATEWAYFRAMELOGSREQUEST,
     output_type=_STREAMGATEWAYFRAMELOGSRESPONSE,
     serialized_options=b'\202\323\344\223\002#\022!/api/gateways/{gateway_id}/frames',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_GATEWAYSERVICE)

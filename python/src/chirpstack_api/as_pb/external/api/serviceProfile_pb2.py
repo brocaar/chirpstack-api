@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n6chirpstack-api/as_pb/external/api/serviceProfile.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/profiles.proto\"K\n\x1b\x43reateServiceProfileRequest\x12,\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x13.api.ServiceProfile\"*\n\x1c\x43reateServiceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\t\"&\n\x18GetServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xa9\x01\n\x19GetServiceProfileResponse\x12,\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x13.api.ServiceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"K\n\x1bUpdateServiceProfileRequest\x12,\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x13.api.ServiceProfile\")\n\x1b\x44\x65leteServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"c\n\x19ListServiceProfileRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\"\x84\x02\n\x16ServiceProfileListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12*\n\x11network_server_id\x18\x04 \x01(\x03R\x0fnetworkServerID\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13network_server_name\x18\x07 \x01(\t\"^\n\x1aListServiceProfileResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12+\n\x06result\x18\x02 \x03(\x0b\x32\x1b.api.ServiceProfileListItem2\xbd\x04\n\x15ServiceProfileService\x12o\n\x06\x43reate\x12 .api.CreateServiceProfileRequest\x1a!.api.CreateServiceProfileResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/api/service-profiles:\x01*\x12h\n\x03Get\x12\x1d.api.GetServiceProfileRequest\x1a\x1e.api.GetServiceProfileResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/service-profiles/{id}\x12y\n\x06Update\x12 .api.UpdateServiceProfileRequest\x1a\x16.google.protobuf.Empty\"5\x82\xd3\xe4\x93\x02/\x1a*/api/service-profiles/{service_profile.id}:\x01*\x12\x66\n\x06\x44\x65lete\x12 .api.DeleteServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/api/service-profiles/{id}\x12\x66\n\x04List\x12\x1e.api.ListServiceProfileRequest\x1a\x1f.api.ListServiceProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/service-profilesB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_profiles__pb2.DESCRIPTOR,])
@@ -35,6 +36,7 @@ _CREATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='service_profile', full_name='api.CreateServiceProfileRequest.service_profile', index=0,
@@ -42,7 +44,7 @@ _CREATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -66,6 +68,7 @@ _CREATESERVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.CreateServiceProfileResponse.id', index=0,
@@ -73,7 +76,7 @@ _CREATESERVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -97,6 +100,7 @@ _GETSERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.GetServiceProfileRequest.id', index=0,
@@ -104,7 +108,7 @@ _GETSERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -128,6 +132,7 @@ _GETSERVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='service_profile', full_name='api.GetServiceProfileResponse.service_profile', index=0,
@@ -135,21 +140,21 @@ _GETSERVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.GetServiceProfileResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.GetServiceProfileResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -173,6 +178,7 @@ _UPDATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='service_profile', full_name='api.UpdateServiceProfileRequest.service_profile', index=0,
@@ -180,7 +186,7 @@ _UPDATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -204,6 +210,7 @@ _DELETESERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.DeleteServiceProfileRequest.id', index=0,
@@ -211,7 +218,7 @@ _DELETESERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -235,6 +242,7 @@ _LISTSERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='api.ListServiceProfileRequest.limit', index=0,
@@ -242,21 +250,21 @@ _LISTSERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='api.ListServiceProfileRequest.offset', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ListServiceProfileRequest.organization_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -280,6 +288,7 @@ _SERVICEPROFILELISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.ServiceProfileListItem.id', index=0,
@@ -287,49 +296,49 @@ _SERVICEPROFILELISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.ServiceProfileListItem.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ServiceProfileListItem.organization_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network_server_id', full_name='api.ServiceProfileListItem.network_server_id', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='networkServerID', file=DESCRIPTOR),
+      serialized_options=None, json_name='networkServerID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.ServiceProfileListItem.created_at', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.ServiceProfileListItem.updated_at', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network_server_name', full_name='api.ServiceProfileListItem.network_server_name', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -353,6 +362,7 @@ _LISTSERVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListServiceProfileResponse.total_count', index=0,
@@ -360,14 +370,14 @@ _LISTSERVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListServiceProfileResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -475,6 +485,7 @@ _SERVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=1119,
   serialized_end=1692,
   methods=[
@@ -486,6 +497,7 @@ _SERVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATESERVICEPROFILEREQUEST,
     output_type=_CREATESERVICEPROFILERESPONSE,
     serialized_options=b'\202\323\344\223\002\032\"\025/api/service-profiles:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -495,6 +507,7 @@ _SERVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETSERVICEPROFILEREQUEST,
     output_type=_GETSERVICEPROFILERESPONSE,
     serialized_options=b'\202\323\344\223\002\034\022\032/api/service-profiles/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -504,6 +517,7 @@ _SERVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATESERVICEPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002/\032*/api/service-profiles/{service_profile.id}:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -513,6 +527,7 @@ _SERVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETESERVICEPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\034*\032/api/service-profiles/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -522,6 +537,7 @@ _SERVICEPROFILESERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTSERVICEPROFILEREQUEST,
     output_type=_LISTSERVICEPROFILERESPONSE,
     serialized_options=b'\202\323\344\223\002\027\022\025/api/service-profiles',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SERVICEPROFILESERVICE)

@@ -21,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n5chirpstack-api/as_pb/external/api/networkServer.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xd2\x03\n\rNetworkServer\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06server\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61_cert\x18\x04 \x01(\t\x12\x10\n\x08tls_cert\x18\x05 \x01(\t\x12\x0f\n\x07tls_key\x18\x06 \x01(\t\x12\x35\n\x17routing_profile_ca_cert\x18\x07 \x01(\tR\x14routingProfileCACert\x12\x37\n\x18routing_profile_tls_cert\x18\x08 \x01(\tR\x15routingProfileTLSCert\x12\x35\n\x17routing_profile_tls_key\x18\t \x01(\tR\x14routingProfileTLSKey\x12!\n\x19gateway_discovery_enabled\x18\n \x01(\x08\x12\"\n\x1agateway_discovery_interval\x18\x0b \x01(\r\x12\x43\n\x1egateway_discovery_tx_frequency\x18\x0c \x01(\rR\x1bgatewayDiscoveryTXFrequency\x12\x30\n\x14gateway_discovery_dr\x18\r \x01(\rR\x12gatewayDiscoveryDR\"\xa1\x01\n\x15NetworkServerListItem\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06server\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"H\n\x1a\x43reateNetworkServerRequest\x12*\n\x0enetwork_server\x18\x01 \x01(\x0b\x32\x12.api.NetworkServer\")\n\x1b\x43reateNetworkServerResponse\x12\n\n\x02id\x18\x01 \x01(\x03\"%\n\x17GetNetworkServerRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\xc7\x01\n\x18GetNetworkServerResponse\x12*\n\x0enetwork_server\x18\x01 \x01(\x0b\x32\x12.api.NetworkServer\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x0e\n\x06region\x18\x05 \x01(\t\"H\n\x1aUpdateNetworkServerRequest\x12*\n\x0enetwork_server\x18\x01 \x01(\x0b\x32\x12.api.NetworkServer\"(\n\x1a\x44\x65leteNetworkServerRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"b\n\x18ListNetworkServerRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\"\\\n\x19ListNetworkServerResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12*\n\x06result\x18\x02 \x03(\x0b\x32\x1a.api.NetworkServerListItem2\xae\x04\n\x14NetworkServerService\x12l\n\x06\x43reate\x12\x1f.api.CreateNetworkServerRequest\x1a .api.CreateNetworkServerResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/network-servers:\x01*\x12\x65\n\x03Get\x12\x1c.api.GetNetworkServerRequest\x1a\x1d.api.GetNetworkServerResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/api/network-servers/{id}\x12v\n\x06Update\x12\x1f.api.UpdateNetworkServerRequest\x1a\x16.google.protobuf.Empty\"3\x82\xd3\xe4\x93\x02-\x1a(/api/network-servers/{network_server.id}:\x01*\x12\x64\n\x06\x44\x65lete\x12\x1f.api.DeleteNetworkServerRequest\x1a\x16.google.protobuf.Empty\"!\x82\xd3\xe4\x93\x02\x1b*\x19/api/network-servers/{id}\x12\x63\n\x04List\x12\x1d.api.ListNetworkServerRequest\x1a\x1e.api.ListNetworkServerResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/network-serversB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
@@ -34,6 +35,7 @@ _NETWORKSERVER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.NetworkServer.id', index=0,
@@ -41,91 +43,91 @@ _NETWORKSERVER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.NetworkServer.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='server', full_name='api.NetworkServer.server', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ca_cert', full_name='api.NetworkServer.ca_cert', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tls_cert', full_name='api.NetworkServer.tls_cert', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tls_key', full_name='api.NetworkServer.tls_key', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='routing_profile_ca_cert', full_name='api.NetworkServer.routing_profile_ca_cert', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='routingProfileCACert', file=DESCRIPTOR),
+      serialized_options=None, json_name='routingProfileCACert', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='routing_profile_tls_cert', full_name='api.NetworkServer.routing_profile_tls_cert', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='routingProfileTLSCert', file=DESCRIPTOR),
+      serialized_options=None, json_name='routingProfileTLSCert', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='routing_profile_tls_key', full_name='api.NetworkServer.routing_profile_tls_key', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='routingProfileTLSKey', file=DESCRIPTOR),
+      serialized_options=None, json_name='routingProfileTLSKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_discovery_enabled', full_name='api.NetworkServer.gateway_discovery_enabled', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_discovery_interval', full_name='api.NetworkServer.gateway_discovery_interval', index=10,
       number=11, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_discovery_tx_frequency', full_name='api.NetworkServer.gateway_discovery_tx_frequency', index=11,
       number=12, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayDiscoveryTXFrequency', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayDiscoveryTXFrequency', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_discovery_dr', full_name='api.NetworkServer.gateway_discovery_dr', index=12,
       number=13, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayDiscoveryDR', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayDiscoveryDR', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -149,6 +151,7 @@ _NETWORKSERVERLISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.NetworkServerListItem.id', index=0,
@@ -156,35 +159,35 @@ _NETWORKSERVERLISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.NetworkServerListItem.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='server', full_name='api.NetworkServerListItem.server', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.NetworkServerListItem.created_at', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.NetworkServerListItem.updated_at', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -208,6 +211,7 @@ _CREATENETWORKSERVERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_server', full_name='api.CreateNetworkServerRequest.network_server', index=0,
@@ -215,7 +219,7 @@ _CREATENETWORKSERVERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -239,6 +243,7 @@ _CREATENETWORKSERVERRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.CreateNetworkServerResponse.id', index=0,
@@ -246,7 +251,7 @@ _CREATENETWORKSERVERRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -270,6 +275,7 @@ _GETNETWORKSERVERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.GetNetworkServerRequest.id', index=0,
@@ -277,7 +283,7 @@ _GETNETWORKSERVERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -301,6 +307,7 @@ _GETNETWORKSERVERRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_server', full_name='api.GetNetworkServerResponse.network_server', index=0,
@@ -308,35 +315,35 @@ _GETNETWORKSERVERRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.GetNetworkServerResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.GetNetworkServerResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='api.GetNetworkServerResponse.version', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='region', full_name='api.GetNetworkServerResponse.region', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -360,6 +367,7 @@ _UPDATENETWORKSERVERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_server', full_name='api.UpdateNetworkServerRequest.network_server', index=0,
@@ -367,7 +375,7 @@ _UPDATENETWORKSERVERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -391,6 +399,7 @@ _DELETENETWORKSERVERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.DeleteNetworkServerRequest.id', index=0,
@@ -398,7 +407,7 @@ _DELETENETWORKSERVERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -422,6 +431,7 @@ _LISTNETWORKSERVERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='api.ListNetworkServerRequest.limit', index=0,
@@ -429,21 +439,21 @@ _LISTNETWORKSERVERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='api.ListNetworkServerRequest.offset', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ListNetworkServerRequest.organization_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -467,6 +477,7 @@ _LISTNETWORKSERVERRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListNetworkServerResponse.total_count', index=0,
@@ -474,14 +485,14 @@ _LISTNETWORKSERVERRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListNetworkServerResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -597,6 +608,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=1456,
   serialized_end=2014,
   methods=[
@@ -608,6 +620,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATENETWORKSERVERREQUEST,
     output_type=_CREATENETWORKSERVERRESPONSE,
     serialized_options=b'\202\323\344\223\002\031\"\024/api/network-servers:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -617,6 +630,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETNETWORKSERVERREQUEST,
     output_type=_GETNETWORKSERVERRESPONSE,
     serialized_options=b'\202\323\344\223\002\033\022\031/api/network-servers/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -626,6 +640,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATENETWORKSERVERREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002-\032(/api/network-servers/{network_server.id}:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -635,6 +650,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETENETWORKSERVERREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\033*\031/api/network-servers/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -644,6 +660,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTNETWORKSERVERREQUEST,
     output_type=_LISTNETWORKSERVERRESPONSE,
     serialized_options=b'\202\323\344\223\002\026\022\024/api/network-servers',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NETWORKSERVERSERVICE)

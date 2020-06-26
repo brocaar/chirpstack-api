@@ -49,6 +49,7 @@ goog.exportSymbol('proto.api.ListApplicationResponse', null, global);
 goog.exportSymbol('proto.api.ListIntegrationRequest', null, global);
 goog.exportSymbol('proto.api.ListIntegrationResponse', null, global);
 goog.exportSymbol('proto.api.LoRaCloudIntegration', null, global);
+goog.exportSymbol('proto.api.Marshaler', null, global);
 goog.exportSymbol('proto.api.MyDevicesIntegration', null, global);
 goog.exportSymbol('proto.api.ThingsBoardIntegration', null, global);
 goog.exportSymbol('proto.api.UpdateApplicationRequest', null, global);
@@ -2398,7 +2399,9 @@ proto.api.HTTPIntegration.toObject = function(includeInstance, msg) {
     statusNotificationUrl: msg.getStatusNotificationUrl(),
     locationNotificationUrl: msg.getLocationNotificationUrl(),
     txAckNotificationUrl: msg.getTxAckNotificationUrl(),
-    integrationNotificationUrl: msg.getIntegrationNotificationUrl()
+    integrationNotificationUrl: msg.getIntegrationNotificationUrl(),
+    marshaler: msg.getMarshaler(),
+    eventEndpointUrl: msg.getEventEndpointUrl()
   };
 
   if (includeInstance) {
@@ -2476,6 +2479,14 @@ proto.api.HTTPIntegration.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationNotificationUrl(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.api.Marshaler} */ (reader.readEnum());
+      msg.setMarshaler(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEventEndpointUrl(value);
       break;
     default:
       reader.skipField();
@@ -2583,6 +2594,20 @@ proto.api.HTTPIntegration.prototype.serializeBinaryToWriter = function (writer) 
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = this.getMarshaler();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
+    );
+  }
+  f = this.getEventEndpointUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -2753,6 +2778,36 @@ proto.api.HTTPIntegration.prototype.getIntegrationNotificationUrl = function() {
 /** @param {string} value  */
 proto.api.HTTPIntegration.prototype.setIntegrationNotificationUrl = function(value) {
   jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * optional Marshaler marshaler = 11;
+ * @return {!proto.api.Marshaler}
+ */
+proto.api.HTTPIntegration.prototype.getMarshaler = function() {
+  return /** @type {!proto.api.Marshaler} */ (jspb.Message.getFieldProto3(this, 11, 0));
+};
+
+
+/** @param {!proto.api.Marshaler} value  */
+proto.api.HTTPIntegration.prototype.setMarshaler = function(value) {
+  jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * optional string event_endpoint_url = 12;
+ * @return {string}
+ */
+proto.api.HTTPIntegration.prototype.getEventEndpointUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.HTTPIntegration.prototype.setEventEndpointUrl = function(value) {
+  jspb.Message.setField(this, 12, value);
 };
 
 
@@ -8762,6 +8817,15 @@ proto.api.IntegrationKind = {
   THINGSBOARD: 2,
   MYDEVICES: 3,
   LORACLOUD: 4
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.Marshaler = {
+  JSON: 0,
+  PROTOBUF: 1,
+  JSON_V3: 2
 };
 
 /**

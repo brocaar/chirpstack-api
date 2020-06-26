@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n6chirpstack-api/as_pb/external/api/multicastGroup.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x8a\x02\n\x0eMulticastGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07mc_addr\x18\x03 \x01(\t\x12\x14\n\x0cmc_nwk_s_key\x18\x04 \x01(\t\x12\x14\n\x0cmc_app_s_key\x18\x05 \x01(\t\x12\r\n\x05\x66_cnt\x18\x06 \x01(\r\x12+\n\ngroup_type\x18\x07 \x01(\x0e\x32\x17.api.MulticastGroupType\x12\n\n\x02\x64r\x18\x08 \x01(\r\x12\x11\n\tfrequency\x18\t \x01(\r\x12\x18\n\x10ping_slot_period\x18\n \x01(\r\x12,\n\x12service_profile_id\x18\x0b \x01(\tR\x10serviceProfileID\"~\n\x16MulticastGroupListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12,\n\x12service_profile_id\x18\x03 \x01(\tR\x10serviceProfileID\x12\x1c\n\x14service_profile_name\x18\x04 \x01(\t\"K\n\x1b\x43reateMulticastGroupRequest\x12,\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x13.api.MulticastGroup\"*\n\x1c\x43reateMulticastGroupResponse\x12\n\n\x02id\x18\x01 \x01(\t\"&\n\x18GetMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xa9\x01\n\x19GetMulticastGroupResponse\x12,\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x13.api.MulticastGroup\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"K\n\x1bUpdateMulticastGroupRequest\x12,\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x13.api.MulticastGroup\")\n\x1b\x44\x65leteMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"i\n AddDeviceToMulticastGroupRequest\x12,\n\x12multicast_group_id\x18\x01 \x01(\tR\x10multicastGroupID\x12\x17\n\x07\x64\x65v_eui\x18\x02 \x01(\tR\x06\x64\x65vEUI\"n\n%RemoveDeviceFromMulticastGroupRequest\x12,\n\x12multicast_group_id\x18\x01 \x01(\tR\x10multicastGroupID\x12\x17\n\x07\x64\x65v_eui\x18\x02 \x01(\tR\x06\x64\x65vEUI\"\xba\x01\n\x19ListMulticastGroupRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\tR\x06\x64\x65vEUI\x12,\n\x12service_profile_id\x18\x05 \x01(\tR\x10serviceProfileID\x12\x0e\n\x06search\x18\x06 \x01(\t\"^\n\x1aListMulticastGroupResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12+\n\x06result\x18\x02 \x03(\x0b\x32\x1b.api.MulticastGroupListItem\"o\n\x12MulticastQueueItem\x12,\n\x12multicast_group_id\x18\x01 \x01(\tR\x10multicastGroupID\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\"Y\n EnqueueMulticastQueueItemRequest\x12\x35\n\x14multicast_queue_item\x18\x01 \x01(\x0b\x32\x17.api.MulticastQueueItem\"2\n!EnqueueMulticastQueueItemResponse\x12\r\n\x05\x66_cnt\x18\x01 \x01(\r\"T\n$FlushMulticastGroupQueueItemsRequest\x12,\n\x12multicast_group_id\x18\x01 \x01(\tR\x10multicastGroupID\"S\n#ListMulticastGroupQueueItemsRequest\x12,\n\x12multicast_group_id\x18\x01 \x01(\tR\x10multicastGroupID\"^\n$ListMulticastGroupQueueItemsResponse\x12\x36\n\x15multicast_queue_items\x18\x01 \x03(\x0b\x32\x17.api.MulticastQueueItem*.\n\x12MulticastGroupType\x12\x0b\n\x07\x43LASS_C\x10\x00\x12\x0b\n\x07\x43LASS_B\x10\x01\x32\xba\n\n\x15MulticastGroupService\x12o\n\x06\x43reate\x12 .api.CreateMulticastGroupRequest\x1a!.api.CreateMulticastGroupResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/api/multicast-groups:\x01*\x12h\n\x03Get\x12\x1d.api.GetMulticastGroupRequest\x1a\x1e.api.GetMulticastGroupResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/multicast-groups/{id}\x12y\n\x06Update\x12 .api.UpdateMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"5\x82\xd3\xe4\x93\x02/\x1a*/api/multicast-groups/{multicast_group.id}:\x01*\x12\x66\n\x06\x44\x65lete\x12 .api.DeleteMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/api/multicast-groups/{id}\x12\x66\n\x04List\x12\x1e.api.ListMulticastGroupRequest\x1a\x1f.api.ListMulticastGroupResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/multicast-groups\x12\x89\x01\n\tAddDevice\x12%.api.AddDeviceToMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"=\x82\xd3\xe4\x93\x02\x37\"2/api/multicast-groups/{multicast_group_id}/devices:\x01*\x12\x98\x01\n\x0cRemoveDevice\x12*.api.RemoveDeviceFromMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"D\x82\xd3\xe4\x93\x02>*</api/multicast-groups/{multicast_group_id}/devices/{dev_eui}\x12\xaa\x01\n\x07\x45nqueue\x12%.api.EnqueueMulticastQueueItemRequest\x1a&.api.EnqueueMulticastQueueItemResponse\"P\x82\xd3\xe4\x93\x02J\"E/api/multicast-groups/{multicast_queue_item.multicast_group_id}/queue:\x01*\x12\x89\x01\n\nFlushQueue\x12).api.FlushMulticastGroupQueueItemsRequest\x1a\x16.google.protobuf.Empty\"8\x82\xd3\xe4\x93\x02\x32*0/api/multicast-groups/{multicast_group_id}/queue\x12\x9a\x01\n\tListQueue\x12(.api.ListMulticastGroupQueueItemsRequest\x1a).api.ListMulticastGroupQueueItemsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/api/multicast-groups/{multicast_group_id}/queueB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
@@ -31,15 +32,18 @@ _MULTICASTGROUPTYPE = _descriptor.EnumDescriptor(
   full_name='api.MulticastGroupType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='CLASS_C', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='CLASS_B', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -60,6 +64,7 @@ _MULTICASTGROUP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.MulticastGroup.id', index=0,
@@ -67,77 +72,77 @@ _MULTICASTGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.MulticastGroup.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mc_addr', full_name='api.MulticastGroup.mc_addr', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mc_nwk_s_key', full_name='api.MulticastGroup.mc_nwk_s_key', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mc_app_s_key', full_name='api.MulticastGroup.mc_app_s_key', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='api.MulticastGroup.f_cnt', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='group_type', full_name='api.MulticastGroup.group_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dr', full_name='api.MulticastGroup.dr', index=7,
       number=8, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frequency', full_name='api.MulticastGroup.frequency', index=8,
       number=9, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ping_slot_period', full_name='api.MulticastGroup.ping_slot_period', index=9,
       number=10, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='api.MulticastGroup.service_profile_id', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -161,6 +166,7 @@ _MULTICASTGROUPLISTITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.MulticastGroupListItem.id', index=0,
@@ -168,28 +174,28 @@ _MULTICASTGROUPLISTITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.MulticastGroupListItem.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='api.MulticastGroupListItem.service_profile_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_name', full_name='api.MulticastGroupListItem.service_profile_name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -213,6 +219,7 @@ _CREATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group', full_name='api.CreateMulticastGroupRequest.multicast_group', index=0,
@@ -220,7 +227,7 @@ _CREATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -244,6 +251,7 @@ _CREATEMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.CreateMulticastGroupResponse.id', index=0,
@@ -251,7 +259,7 @@ _CREATEMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -275,6 +283,7 @@ _GETMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.GetMulticastGroupRequest.id', index=0,
@@ -282,7 +291,7 @@ _GETMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -306,6 +315,7 @@ _GETMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group', full_name='api.GetMulticastGroupResponse.multicast_group', index=0,
@@ -313,21 +323,21 @@ _GETMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.GetMulticastGroupResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.GetMulticastGroupResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -351,6 +361,7 @@ _UPDATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group', full_name='api.UpdateMulticastGroupRequest.multicast_group', index=0,
@@ -358,7 +369,7 @@ _UPDATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -382,6 +393,7 @@ _DELETEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.DeleteMulticastGroupRequest.id', index=0,
@@ -389,7 +401,7 @@ _DELETEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -413,6 +425,7 @@ _ADDDEVICETOMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='api.AddDeviceToMulticastGroupRequest.multicast_group_id', index=0,
@@ -420,14 +433,14 @@ _ADDDEVICETOMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR),
+      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.AddDeviceToMulticastGroupRequest.dev_eui', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -451,6 +464,7 @@ _REMOVEDEVICEFROMMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='api.RemoveDeviceFromMulticastGroupRequest.multicast_group_id', index=0,
@@ -458,14 +472,14 @@ _REMOVEDEVICEFROMMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR),
+      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.RemoveDeviceFromMulticastGroupRequest.dev_eui', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -489,6 +503,7 @@ _LISTMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='api.ListMulticastGroupRequest.limit', index=0,
@@ -496,42 +511,42 @@ _LISTMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='offset', full_name='api.ListMulticastGroupRequest.offset', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='organization_id', full_name='api.ListMulticastGroupRequest.organization_id', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='organizationID', file=DESCRIPTOR),
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.ListMulticastGroupRequest.dev_eui', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='api.ListMulticastGroupRequest.service_profile_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR),
+      serialized_options=None, json_name='serviceProfileID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='api.ListMulticastGroupRequest.search', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -555,6 +570,7 @@ _LISTMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListMulticastGroupResponse.total_count', index=0,
@@ -562,14 +578,14 @@ _LISTMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='result', full_name='api.ListMulticastGroupResponse.result', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -593,6 +609,7 @@ _MULTICASTQUEUEITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='api.MulticastQueueItem.multicast_group_id', index=0,
@@ -600,28 +617,28 @@ _MULTICASTQUEUEITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR),
+      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='api.MulticastQueueItem.f_cnt', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_port', full_name='api.MulticastQueueItem.f_port', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='api.MulticastQueueItem.data', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -645,6 +662,7 @@ _ENQUEUEMULTICASTQUEUEITEMREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_queue_item', full_name='api.EnqueueMulticastQueueItemRequest.multicast_queue_item', index=0,
@@ -652,7 +670,7 @@ _ENQUEUEMULTICASTQUEUEITEMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -676,6 +694,7 @@ _ENQUEUEMULTICASTQUEUEITEMRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='api.EnqueueMulticastQueueItemResponse.f_cnt', index=0,
@@ -683,7 +702,7 @@ _ENQUEUEMULTICASTQUEUEITEMRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -707,6 +726,7 @@ _FLUSHMULTICASTGROUPQUEUEITEMSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='api.FlushMulticastGroupQueueItemsRequest.multicast_group_id', index=0,
@@ -714,7 +734,7 @@ _FLUSHMULTICASTGROUPQUEUEITEMSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR),
+      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -738,6 +758,7 @@ _LISTMULTICASTGROUPQUEUEITEMSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='api.ListMulticastGroupQueueItemsRequest.multicast_group_id', index=0,
@@ -745,7 +766,7 @@ _LISTMULTICASTGROUPQUEUEITEMSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR),
+      serialized_options=None, json_name='multicastGroupID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -769,6 +790,7 @@ _LISTMULTICASTGROUPQUEUEITEMSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_queue_items', full_name='api.ListMulticastGroupQueueItemsResponse.multicast_queue_items', index=0,
@@ -776,7 +798,7 @@ _LISTMULTICASTGROUPQUEUEITEMSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -958,6 +980,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=2081,
   serialized_end=3419,
   methods=[
@@ -969,6 +992,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEMULTICASTGROUPREQUEST,
     output_type=_CREATEMULTICASTGROUPRESPONSE,
     serialized_options=b'\202\323\344\223\002\032\"\025/api/multicast-groups:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -978,6 +1002,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETMULTICASTGROUPREQUEST,
     output_type=_GETMULTICASTGROUPRESPONSE,
     serialized_options=b'\202\323\344\223\002\034\022\032/api/multicast-groups/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -987,6 +1012,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002/\032*/api/multicast-groups/{multicast_group.id}:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -996,6 +1022,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\034*\032/api/multicast-groups/{id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1005,6 +1032,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTMULTICASTGROUPREQUEST,
     output_type=_LISTMULTICASTGROUPRESPONSE,
     serialized_options=b'\202\323\344\223\002\027\022\025/api/multicast-groups',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AddDevice',
@@ -1014,6 +1042,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ADDDEVICETOMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\0027\"2/api/multicast-groups/{multicast_group_id}/devices:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RemoveDevice',
@@ -1023,6 +1052,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_REMOVEDEVICEFROMMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002>*</api/multicast-groups/{multicast_group_id}/devices/{dev_eui}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Enqueue',
@@ -1032,6 +1062,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ENQUEUEMULTICASTQUEUEITEMREQUEST,
     output_type=_ENQUEUEMULTICASTQUEUEITEMRESPONSE,
     serialized_options=b'\202\323\344\223\002J\"E/api/multicast-groups/{multicast_queue_item.multicast_group_id}/queue:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='FlushQueue',
@@ -1041,6 +1072,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_FLUSHMULTICASTGROUPQUEUEITEMSREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\0022*0/api/multicast-groups/{multicast_group_id}/queue',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListQueue',
@@ -1050,6 +1082,7 @@ _MULTICASTGROUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTMULTICASTGROUPQUEUEITEMSREQUEST,
     output_type=_LISTMULTICASTGROUPQUEUEITEMSRESPONSE,
     serialized_options=b'\202\323\344\223\0022\0220/api/multicast-groups/{multicast_group_id}/queue',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_MULTICASTGROUPSERVICE)

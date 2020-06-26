@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n3chirpstack-api/as_pb/external/api/deviceQueue.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x7f\n\x0f\x44\x65viceQueueItem\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x11\n\tconfirmed\x18\x02 \x01(\x08\x12\r\n\x05\x66_cnt\x18\x06 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\x12\x13\n\x0bjson_object\x18\x05 \x01(\t\"P\n\x1d\x45nqueueDeviceQueueItemRequest\x12/\n\x11\x64\x65vice_queue_item\x18\x01 \x01(\x0b\x32\x14.api.DeviceQueueItem\"/\n\x1e\x45nqueueDeviceQueueItemResponse\x12\r\n\x05\x66_cnt\x18\x01 \x01(\r\"2\n\x17\x46lushDeviceQueueRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"J\n\x1bListDeviceQueueItemsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x12\n\ncount_only\x18\x02 \x01(\x08\"e\n\x1cListDeviceQueueItemsResponse\x12\x30\n\x12\x64\x65vice_queue_items\x18\x01 \x03(\x0b\x32\x14.api.DeviceQueueItem\x12\x13\n\x0btotal_count\x18\x02 \x01(\r2\xfc\x02\n\x12\x44\x65viceQueueService\x12\x8d\x01\n\x07\x45nqueue\x12\".api.EnqueueDeviceQueueItemRequest\x1a#.api.EnqueueDeviceQueueItemResponse\"9\x82\xd3\xe4\x93\x02\x33\"./api/devices/{device_queue_item.dev_eui}/queue:\x01*\x12\x63\n\x05\x46lush\x12\x1c.api.FlushDeviceQueueRequest\x1a\x16.google.protobuf.Empty\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/api/devices/{dev_eui}/queue\x12q\n\x04List\x12 .api.ListDeviceQueueItemsRequest\x1a!.api.ListDeviceQueueItemsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/devices/{dev_eui}/queueB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _DEVICEQUEUEITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.DeviceQueueItem.dev_eui', index=0,
@@ -40,42 +42,42 @@ _DEVICEQUEUEITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='confirmed', full_name='api.DeviceQueueItem.confirmed', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='api.DeviceQueueItem.f_cnt', index=2,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_port', full_name='api.DeviceQueueItem.f_port', index=3,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='api.DeviceQueueItem.data', index=4,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='json_object', full_name='api.DeviceQueueItem.json_object', index=5,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -99,6 +101,7 @@ _ENQUEUEDEVICEQUEUEITEMREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_queue_item', full_name='api.EnqueueDeviceQueueItemRequest.device_queue_item', index=0,
@@ -106,7 +109,7 @@ _ENQUEUEDEVICEQUEUEITEMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -130,6 +133,7 @@ _ENQUEUEDEVICEQUEUEITEMRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='api.EnqueueDeviceQueueItemResponse.f_cnt', index=0,
@@ -137,7 +141,7 @@ _ENQUEUEDEVICEQUEUEITEMRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -161,6 +165,7 @@ _FLUSHDEVICEQUEUEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.FlushDeviceQueueRequest.dev_eui', index=0,
@@ -168,7 +173,7 @@ _FLUSHDEVICEQUEUEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -192,6 +197,7 @@ _LISTDEVICEQUEUEITEMSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='api.ListDeviceQueueItemsRequest.dev_eui', index=0,
@@ -199,14 +205,14 @@ _LISTDEVICEQUEUEITEMSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='devEUI', file=DESCRIPTOR),
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='count_only', full_name='api.ListDeviceQueueItemsRequest.count_only', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -230,6 +236,7 @@ _LISTDEVICEQUEUEITEMSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_queue_items', full_name='api.ListDeviceQueueItemsResponse.device_queue_items', index=0,
@@ -237,14 +244,14 @@ _LISTDEVICEQUEUEITEMSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='total_count', full_name='api.ListDeviceQueueItemsResponse.total_count', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -322,6 +329,7 @@ _DEVICEQUEUESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=611,
   serialized_end=991,
   methods=[
@@ -333,6 +341,7 @@ _DEVICEQUEUESERVICE = _descriptor.ServiceDescriptor(
     input_type=_ENQUEUEDEVICEQUEUEITEMREQUEST,
     output_type=_ENQUEUEDEVICEQUEUEITEMRESPONSE,
     serialized_options=b'\202\323\344\223\0023\"./api/devices/{device_queue_item.dev_eui}/queue:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Flush',
@@ -342,6 +351,7 @@ _DEVICEQUEUESERVICE = _descriptor.ServiceDescriptor(
     input_type=_FLUSHDEVICEQUEUEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002\036*\034/api/devices/{dev_eui}/queue',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -351,6 +361,7 @@ _DEVICEQUEUESERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTDEVICEQUEUEITEMSREQUEST,
     output_type=_LISTDEVICEQUEUEITEMSRESPONSE,
     serialized_options=b'\202\323\344\223\002\036\022\034/api/devices/{dev_eui}/queue',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_DEVICEQUEUESERVICE)

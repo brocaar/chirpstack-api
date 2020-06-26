@@ -334,6 +334,12 @@ export class HTTPIntegration extends jspb.Message {
   getIntegrationNotificationUrl(): string;
   setIntegrationNotificationUrl(value: string): void;
 
+  getMarshaler(): MarshalerMap[keyof MarshalerMap];
+  setMarshaler(value: MarshalerMap[keyof MarshalerMap]): void;
+
+  getEventEndpointUrl(): string;
+  setEventEndpointUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HTTPIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: HTTPIntegration): HTTPIntegration.AsObject;
@@ -356,6 +362,8 @@ export namespace HTTPIntegration {
     locationNotificationUrl: string,
     txAckNotificationUrl: string,
     integrationNotificationUrl: string,
+    marshaler: MarshalerMap[keyof MarshalerMap],
+    eventEndpointUrl: string,
   }
 }
 
@@ -1132,6 +1140,14 @@ export interface IntegrationKindMap {
 }
 
 export const IntegrationKind: IntegrationKindMap;
+
+export interface MarshalerMap {
+  JSON: 0;
+  PROTOBUF: 1;
+  JSON_V3: 2;
+}
+
+export const Marshaler: MarshalerMap;
 
 export interface InfluxDBPrecisionMap {
   NS: 0;

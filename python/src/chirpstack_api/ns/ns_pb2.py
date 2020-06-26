@@ -24,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ns',
   syntax='proto3',
   serialized_options=b'Z$github.com/brocaar/chirpstack-api/ns',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n\x1a\x63hirpstack-api/ns/ns.proto\x12\x02ns\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\x1a chirpstack-api/ns/profiles.proto\"J\n\x1b\x43reateServiceProfileRequest\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\"*\n\x1c\x43reateServiceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetServiceProfileResponse\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateServiceProfileRequest\x12+\n\x0fservice_profile\x18\x01 \x01(\x0b\x32\x12.ns.ServiceProfile\")\n\x1b\x44\x65leteServiceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"J\n\x1b\x43reateRoutingProfileRequest\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\"*\n\x1c\x43reateRoutingProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetRoutingProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetRoutingProfileResponse\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateRoutingProfileRequest\x12+\n\x0frouting_profile\x18\x01 \x01(\x0b\x32\x12.ns.RoutingProfile\")\n\x1b\x44\x65leteRoutingProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"G\n\x1a\x43reateDeviceProfileRequest\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\")\n\x1b\x43reateDeviceProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"%\n\x17GetDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa5\x01\n\x18GetDeviceProfileResponse\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"G\n\x1aUpdateDeviceProfileRequest\x12)\n\x0e\x64\x65vice_profile\x18\x01 \x01(\x0b\x32\x11.ns.DeviceProfile\"(\n\x1a\x44\x65leteDeviceProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xb7\x01\n\x06\x44\x65vice\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x19\n\x11\x64\x65vice_profile_id\x18\x02 \x01(\x0c\x12\x1a\n\x12service_profile_id\x18\x03 \x01(\x0c\x12\x1a\n\x12routing_profile_id\x18\x04 \x01(\x0c\x12\x18\n\x10skip_f_cnt_check\x18\x05 \x01(\x08\x12\x1a\n\x12reference_altitude\x18\x06 \x01(\x01\x12\x13\n\x0bis_disabled\x18\x07 \x01(\x08\"1\n\x13\x43reateDeviceRequest\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\"#\n\x10GetDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\x8f\x01\n\x11GetDeviceResponse\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"1\n\x13UpdateDeviceRequest\x12\x1a\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\n.ns.Device\"&\n\x13\x44\x65leteDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\xd6\x01\n\x10\x44\x65viceActivation\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\x0c\x12\x17\n\x0fs_nwk_s_int_key\x18\x03 \x01(\x0c\x12\x17\n\x0f\x66_nwk_s_int_key\x18\x04 \x01(\x0c\x12\x15\n\rnwk_s_enc_key\x18\x05 \x01(\x0c\x12\x10\n\x08\x66_cnt_up\x18\x06 \x01(\r\x12\x14\n\x0cn_f_cnt_down\x18\x07 \x01(\r\x12\x14\n\x0c\x61_f_cnt_down\x18\x08 \x01(\r\x12\x18\n\x10skip_f_cnt_check\x18\t \x01(\x08\"H\n\x15\x41\x63tivateDeviceRequest\x12/\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x14.ns.DeviceActivation\"*\n\x17\x44\x65\x61\x63tivateDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"-\n\x1aGetDeviceActivationRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"N\n\x1bGetDeviceActivationResponse\x12/\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x14.ns.DeviceActivation\",\n\x18GetRandomDevAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\"R\n CreateMACCommandQueueItemRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x0b\n\x03\x63id\x18\x04 \x01(\r\x12\x10\n\x08\x63ommands\x18\x05 \x03(\x0c\"\x96\x01\n\x1dSendProprietaryPayloadRequest\x12\x13\n\x0bmac_payload\x18\x01 \x01(\x0c\x12\x0b\n\x03mic\x18\x02 \x01(\x0c\x12\x14\n\x0cgateway_macs\x18\x03 \x03(\x0c\x12\x1e\n\x16polarization_inversion\x18\x04 \x01(\x08\x12\x11\n\tfrequency\x18\x05 \x01(\r\x12\n\n\x02\x64r\x18\x06 \x01(\r\"\x93\x01\n\x07Gateway\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\"\n\x08location\x18\x02 \x01(\x0b\x32\x10.common.Location\x12\x1a\n\x12gateway_profile_id\x18\x03 \x01(\x0c\x12 \n\x06\x62oards\x18\x04 \x03(\x0b\x32\x10.ns.GatewayBoard\x12\x1a\n\x12routing_profile_id\x18\x05 \x01(\x0c\";\n\x0cGatewayBoard\x12\x0f\n\x07\x66pga_id\x18\x01 \x01(\x0c\x12\x1a\n\x12\x66ine_timestamp_key\x18\x02 \x01(\x0c\"4\n\x14\x43reateGatewayRequest\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\"\x1f\n\x11GetGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xf7\x01\n\x12GetGatewayResponse\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rfirst_seen_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"4\n\x14UpdateGatewayRequest\x12\x1c\n\x07gateway\x18\x01 \x01(\x0b\x32\x0b.ns.Gateway\"\"\n\x14\x44\x65leteGatewayRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xb3\x01\n\x0cGatewayStats\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13rx_packets_received\x18\x02 \x01(\x05\x12\x1e\n\x16rx_packets_received_ok\x18\x03 \x01(\x05\x12\x1b\n\x13tx_packets_received\x18\x04 \x01(\x05\x12\x1a\n\x12tx_packets_emitted\x18\x05 \x01(\x05\"\xbf\x01\n\x16GetGatewayStatsRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\x12)\n\x08interval\x18\x02 \x01(\x0e\x32\x17.ns.AggregationInterval\x12\x33\n\x0fstart_timestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rend_timestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\";\n\x17GetGatewayStatsResponse\x12 \n\x06result\x18\x01 \x03(\x0b\x32\x10.ns.GatewayStats\"{\n\x0f\x44\x65viceQueueItem\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x13\n\x0b\x66rm_payload\x18\x02 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12\x0e\n\x06\x66_port\x18\x04 \x01(\r\x12\x11\n\tconfirmed\x18\x05 \x01(\x08\x12\x10\n\x08\x64\x65v_addr\x18\x06 \x01(\x0c\"A\n\x1c\x43reateDeviceQueueItemRequest\x12!\n\x04item\x18\x01 \x01(\x0b\x32\x13.ns.DeviceQueueItem\"3\n FlushDeviceQueueForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"J\n#GetDeviceQueueItemsForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x12\n\ncount_only\x18\x02 \x01(\x08\"_\n$GetDeviceQueueItemsForDevEUIResponse\x12\"\n\x05items\x18\x01 \x03(\x0b\x32\x13.ns.DeviceQueueItem\x12\x13\n\x0btotal_count\x18\x02 \x01(\r\"6\n#GetNextDownlinkFCntForDevEUIRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"5\n$GetNextDownlinkFCntForDevEUIResponse\x12\r\n\x05\x66_cnt\x18\x01 \x01(\r\"k\n\x0eUplinkFrameLog\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"\x9b\x01\n\x10\x44ownlinkFrameLog\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12\r\n\x05token\x18\x03 \x01(\r\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12\x1d\n\ngateway_id\x18\x05 \x01(\x0cR\tgatewayID\"6\n StreamFrameLogsForGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\"\x8c\x01\n!StreamFrameLogsForGatewayResponse\x12.\n\x10uplink_frame_set\x18\x01 \x01(\x0b\x32\x12.ns.UplinkFrameLogH\x00\x12.\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x14.ns.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"2\n\x1fStreamFrameLogsForDeviceRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\"\x8b\x01\n StreamFrameLogsForDeviceResponse\x12.\n\x10uplink_frame_set\x18\x01 \x01(\x0b\x32\x12.ns.UplinkFrameLogH\x00\x12.\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x14.ns.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"E\n\x12GetVersionResponse\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x1e\n\x06region\x18\x02 \x01(\x0e\x32\x0e.common.Region\"f\n\x0eGatewayProfile\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08\x63hannels\x18\x02 \x03(\r\x12\x36\n\x0e\x65xtra_channels\x18\x03 \x03(\x0b\x32\x1e.ns.GatewayProfileExtraChannel\"\x96\x01\n\x1aGatewayProfileExtraChannel\x12&\n\nmodulation\x18\x01 \x01(\x0e\x32\x12.common.Modulation\x12\x11\n\tfrequency\x18\x02 \x01(\r\x12\x11\n\tbandwidth\x18\x03 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x04 \x01(\r\x12\x19\n\x11spreading_factors\x18\x05 \x03(\r\"J\n\x1b\x43reateGatewayProfileRequest\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\"*\n\x1c\x43reateGatewayProfileResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetGatewayProfileResponse\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateGatewayProfileRequest\x12+\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x12.ns.GatewayProfile\")\n\x1b\x44\x65leteGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xef\x01\n\x0eMulticastGroup\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0f\n\x07mc_addr\x18\x02 \x01(\x0c\x12\x14\n\x0cmc_nwk_s_key\x18\x03 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x04 \x01(\r\x12*\n\ngroup_type\x18\x05 \x01(\x0e\x32\x16.ns.MulticastGroupType\x12\n\n\x02\x64r\x18\x06 \x01(\r\x12\x11\n\tfrequency\x18\x07 \x01(\r\x12\x18\n\x10ping_slot_period\x18\x08 \x01(\r\x12\x1a\n\x12service_profile_id\x18\t \x01(\x0c\x12\x1a\n\x12routing_profile_id\x18\n \x01(\x0c\"J\n\x1b\x43reateMulticastGroupRequest\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\"*\n\x1c\x43reateMulticastGroupResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"&\n\x18GetMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x19GetMulticastGroupResponse\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"J\n\x1bUpdateMulticastGroupRequest\x12+\n\x0fmulticast_group\x18\x01 \x01(\x0b\x32\x12.ns.MulticastGroup\")\n\x1b\x44\x65leteMulticastGroupRequest\x12\n\n\x02id\x18\x01 \x01(\x0c\"O\n AddDeviceToMulticastGroupRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1a\n\x12multicast_group_id\x18\x02 \x01(\x0c\"T\n%RemoveDeviceFromMulticastGroupRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1a\n\x12multicast_group_id\x18\x02 \x01(\x0c\"d\n\x12MulticastQueueItem\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x13\n\x0b\x66rm_payload\x18\x04 \x01(\x0c\"X\n EnqueueMulticastQueueItemRequest\x12\x34\n\x14multicast_queue_item\x18\x01 \x01(\x0b\x32\x16.ns.MulticastQueueItem\"I\n+FlushMulticastQueueForMulticastGroupRequest\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\"L\n.GetMulticastQueueItemsForMulticastGroupRequest\x12\x1a\n\x12multicast_group_id\x18\x01 \x01(\x0c\"h\n/GetMulticastQueueItemsForMulticastGroupResponse\x12\x35\n\x15multicast_queue_items\x18\x01 \x03(\x0b\x32\x16.ns.MulticastQueueItem*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01*l\n\x13\x41ggregationInterval\x12\n\n\x06SECOND\x10\x00\x12\n\n\x06MINUTE\x10\x01\x12\x08\n\x04HOUR\x10\x02\x12\x07\n\x03\x44\x41Y\x10\x03\x12\x08\n\x04WEEK\x10\x04\x12\t\n\x05MONTH\x10\x05\x12\x0b\n\x07QUARTER\x10\x06\x12\x08\n\x04YEAR\x10\x07*.\n\x12MulticastGroupType\x12\x0b\n\x07\x43LASS_C\x10\x00\x12\x0b\n\x07\x43LASS_B\x10\x01\x32\xec\x1f\n\x14NetworkServerService\x12[\n\x14\x43reateServiceProfile\x12\x1f.ns.CreateServiceProfileRequest\x1a .ns.CreateServiceProfileResponse\"\x00\x12R\n\x11GetServiceProfile\x12\x1c.ns.GetServiceProfileRequest\x1a\x1d.ns.GetServiceProfileResponse\"\x00\x12Q\n\x14UpdateServiceProfile\x12\x1f.ns.UpdateServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteServiceProfile\x12\x1f.ns.DeleteServiceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x14\x43reateRoutingProfile\x12\x1f.ns.CreateRoutingProfileRequest\x1a .ns.CreateRoutingProfileResponse\"\x00\x12R\n\x11GetRoutingProfile\x12\x1c.ns.GetRoutingProfileRequest\x1a\x1d.ns.GetRoutingProfileResponse\"\x00\x12Q\n\x14UpdateRoutingProfile\x12\x1f.ns.UpdateRoutingProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteRoutingProfile\x12\x1f.ns.DeleteRoutingProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n\x13\x43reateDeviceProfile\x12\x1e.ns.CreateDeviceProfileRequest\x1a\x1f.ns.CreateDeviceProfileResponse\"\x00\x12O\n\x10GetDeviceProfile\x12\x1b.ns.GetDeviceProfileRequest\x1a\x1c.ns.GetDeviceProfileResponse\"\x00\x12O\n\x13UpdateDeviceProfile\x12\x1e.ns.UpdateDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12O\n\x13\x44\x65leteDeviceProfile\x12\x1e.ns.DeleteDeviceProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x41\n\x0c\x43reateDevice\x12\x17.ns.CreateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12:\n\tGetDevice\x12\x14.ns.GetDeviceRequest\x1a\x15.ns.GetDeviceResponse\"\x00\x12\x41\n\x0cUpdateDevice\x12\x17.ns.UpdateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x41\n\x0c\x44\x65leteDevice\x12\x17.ns.DeleteDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x45\n\x0e\x41\x63tivateDevice\x12\x19.ns.ActivateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12I\n\x10\x44\x65\x61\x63tivateDevice\x12\x1b.ns.DeactivateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n\x13GetDeviceActivation\x12\x1e.ns.GetDeviceActivationRequest\x1a\x1f.ns.GetDeviceActivationResponse\"\x00\x12S\n\x15\x43reateDeviceQueueItem\x12 .ns.CreateDeviceQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x46lushDeviceQueueForDevEUI\x12$.ns.FlushDeviceQueueForDevEUIRequest\x1a\x16.google.protobuf.Empty\"\x00\x12s\n\x1cGetDeviceQueueItemsForDevEUI\x12\'.ns.GetDeviceQueueItemsForDevEUIRequest\x1a(.ns.GetDeviceQueueItemsForDevEUIResponse\"\x00\x12s\n\x1cGetNextDownlinkFCntForDevEUI\x12\'.ns.GetNextDownlinkFCntForDevEUIRequest\x1a(.ns.GetNextDownlinkFCntForDevEUIResponse\"\x00\x12J\n\x10GetRandomDevAddr\x12\x16.google.protobuf.Empty\x1a\x1c.ns.GetRandomDevAddrResponse\"\x00\x12[\n\x19\x43reateMACCommandQueueItem\x12$.ns.CreateMACCommandQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12U\n\x16SendProprietaryPayload\x12!.ns.SendProprietaryPayloadRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x43\n\rCreateGateway\x12\x18.ns.CreateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12=\n\nGetGateway\x12\x15.ns.GetGatewayRequest\x1a\x16.ns.GetGatewayResponse\"\x00\x12\x43\n\rUpdateGateway\x12\x18.ns.UpdateGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x43\n\rDeleteGateway\x12\x18.ns.DeleteGatewayRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x14\x43reateGatewayProfile\x12\x1f.ns.CreateGatewayProfileRequest\x1a .ns.CreateGatewayProfileResponse\"\x00\x12R\n\x11GetGatewayProfile\x12\x1c.ns.GetGatewayProfileRequest\x1a\x1d.ns.GetGatewayProfileResponse\"\x00\x12Q\n\x14UpdateGatewayProfile\x12\x1f.ns.UpdateGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteGatewayProfile\x12\x1f.ns.DeleteGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\x00\x12L\n\x0fGetGatewayStats\x12\x1a.ns.GetGatewayStatsRequest\x1a\x1b.ns.GetGatewayStatsResponse\"\x00\x12l\n\x19StreamFrameLogsForGateway\x12$.ns.StreamFrameLogsForGatewayRequest\x1a%.ns.StreamFrameLogsForGatewayResponse\"\x00\x30\x01\x12i\n\x18StreamFrameLogsForDevice\x12#.ns.StreamFrameLogsForDeviceRequest\x1a$.ns.StreamFrameLogsForDeviceResponse\"\x00\x30\x01\x12[\n\x14\x43reateMulticastGroup\x12\x1f.ns.CreateMulticastGroupRequest\x1a .ns.CreateMulticastGroupResponse\"\x00\x12R\n\x11GetMulticastGroup\x12\x1c.ns.GetMulticastGroupRequest\x1a\x1d.ns.GetMulticastGroupResponse\"\x00\x12Q\n\x14UpdateMulticastGroup\x12\x1f.ns.UpdateMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12Q\n\x14\x44\x65leteMulticastGroup\x12\x1f.ns.DeleteMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x41\x64\x64\x44\x65viceToMulticastGroup\x12$.ns.AddDeviceToMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x65\n\x1eRemoveDeviceFromMulticastGroup\x12).ns.RemoveDeviceFromMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12[\n\x19\x45nqueueMulticastQueueItem\x12$.ns.EnqueueMulticastQueueItemRequest\x1a\x16.google.protobuf.Empty\"\x00\x12q\n$FlushMulticastQueueForMulticastGroup\x12/.ns.FlushMulticastQueueForMulticastGroupRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x94\x01\n\'GetMulticastQueueItemsForMulticastGroup\x12\x32.ns.GetMulticastQueueItemsForMulticastGroupRequest\x1a\x33.ns.GetMulticastQueueItemsForMulticastGroupResponse\"\x00\x12>\n\nGetVersion\x12\x16.google.protobuf.Empty\x1a\x16.ns.GetVersionResponse\"\x00\x42&Z$github.com/brocaar/chirpstack-api/nsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,chirpstack__api_dot_ns_dot_profiles__pb2.DESCRIPTOR,])
@@ -33,15 +34,18 @@ _RXWINDOW = _descriptor.EnumDescriptor(
   full_name='ns.RXWindow',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='RX1', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='RX2', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -56,39 +60,48 @@ _AGGREGATIONINTERVAL = _descriptor.EnumDescriptor(
   full_name='ns.AggregationInterval',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='SECOND', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MINUTE', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='HOUR', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='DAY', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='WEEK', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MONTH', index=5, number=5,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='QUARTER', index=6, number=6,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='YEAR', index=7, number=7,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -103,15 +116,18 @@ _MULTICASTGROUPTYPE = _descriptor.EnumDescriptor(
   full_name='ns.MulticastGroupType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='CLASS_C', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='CLASS_B', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -142,6 +158,7 @@ _CREATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='service_profile', full_name='ns.CreateServiceProfileRequest.service_profile', index=0,
@@ -149,7 +166,7 @@ _CREATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -173,6 +190,7 @@ _CREATESERVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.CreateServiceProfileResponse.id', index=0,
@@ -180,7 +198,7 @@ _CREATESERVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -204,6 +222,7 @@ _GETSERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GetServiceProfileRequest.id', index=0,
@@ -211,7 +230,7 @@ _GETSERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -235,6 +254,7 @@ _GETSERVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='service_profile', full_name='ns.GetServiceProfileResponse.service_profile', index=0,
@@ -242,21 +262,21 @@ _GETSERVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetServiceProfileResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetServiceProfileResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -280,6 +300,7 @@ _UPDATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='service_profile', full_name='ns.UpdateServiceProfileRequest.service_profile', index=0,
@@ -287,7 +308,7 @@ _UPDATESERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -311,6 +332,7 @@ _DELETESERVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.DeleteServiceProfileRequest.id', index=0,
@@ -318,7 +340,7 @@ _DELETESERVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -342,6 +364,7 @@ _CREATEROUTINGPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='routing_profile', full_name='ns.CreateRoutingProfileRequest.routing_profile', index=0,
@@ -349,7 +372,7 @@ _CREATEROUTINGPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -373,6 +396,7 @@ _CREATEROUTINGPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.CreateRoutingProfileResponse.id', index=0,
@@ -380,7 +404,7 @@ _CREATEROUTINGPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -404,6 +428,7 @@ _GETROUTINGPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GetRoutingProfileRequest.id', index=0,
@@ -411,7 +436,7 @@ _GETROUTINGPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -435,6 +460,7 @@ _GETROUTINGPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='routing_profile', full_name='ns.GetRoutingProfileResponse.routing_profile', index=0,
@@ -442,21 +468,21 @@ _GETROUTINGPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetRoutingProfileResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetRoutingProfileResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -480,6 +506,7 @@ _UPDATEROUTINGPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='routing_profile', full_name='ns.UpdateRoutingProfileRequest.routing_profile', index=0,
@@ -487,7 +514,7 @@ _UPDATEROUTINGPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -511,6 +538,7 @@ _DELETEROUTINGPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.DeleteRoutingProfileRequest.id', index=0,
@@ -518,7 +546,7 @@ _DELETEROUTINGPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -542,6 +570,7 @@ _CREATEDEVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_profile', full_name='ns.CreateDeviceProfileRequest.device_profile', index=0,
@@ -549,7 +578,7 @@ _CREATEDEVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -573,6 +602,7 @@ _CREATEDEVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.CreateDeviceProfileResponse.id', index=0,
@@ -580,7 +610,7 @@ _CREATEDEVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -604,6 +634,7 @@ _GETDEVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GetDeviceProfileRequest.id', index=0,
@@ -611,7 +642,7 @@ _GETDEVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -635,6 +666,7 @@ _GETDEVICEPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_profile', full_name='ns.GetDeviceProfileResponse.device_profile', index=0,
@@ -642,21 +674,21 @@ _GETDEVICEPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetDeviceProfileResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetDeviceProfileResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -680,6 +712,7 @@ _UPDATEDEVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_profile', full_name='ns.UpdateDeviceProfileRequest.device_profile', index=0,
@@ -687,7 +720,7 @@ _UPDATEDEVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -711,6 +744,7 @@ _DELETEDEVICEPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.DeleteDeviceProfileRequest.id', index=0,
@@ -718,7 +752,7 @@ _DELETEDEVICEPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -742,6 +776,7 @@ _DEVICE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.Device.dev_eui', index=0,
@@ -749,49 +784,49 @@ _DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='device_profile_id', full_name='ns.Device.device_profile_id', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='ns.Device.service_profile_id', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='routing_profile_id', full_name='ns.Device.routing_profile_id', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='skip_f_cnt_check', full_name='ns.Device.skip_f_cnt_check', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference_altitude', full_name='ns.Device.reference_altitude', index=5,
       number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='is_disabled', full_name='ns.Device.is_disabled', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -815,6 +850,7 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device', full_name='ns.CreateDeviceRequest.device', index=0,
@@ -822,7 +858,7 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -846,6 +882,7 @@ _GETDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.GetDeviceRequest.dev_eui', index=0,
@@ -853,7 +890,7 @@ _GETDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -877,6 +914,7 @@ _GETDEVICERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device', full_name='ns.GetDeviceResponse.device', index=0,
@@ -884,21 +922,21 @@ _GETDEVICERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetDeviceResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetDeviceResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -922,6 +960,7 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device', full_name='ns.UpdateDeviceRequest.device', index=0,
@@ -929,7 +968,7 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -953,6 +992,7 @@ _DELETEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.DeleteDeviceRequest.dev_eui', index=0,
@@ -960,7 +1000,7 @@ _DELETEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -984,6 +1024,7 @@ _DEVICEACTIVATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.DeviceActivation.dev_eui', index=0,
@@ -991,63 +1032,63 @@ _DEVICEACTIVATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='ns.DeviceActivation.dev_addr', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='s_nwk_s_int_key', full_name='ns.DeviceActivation.s_nwk_s_int_key', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_nwk_s_int_key', full_name='ns.DeviceActivation.f_nwk_s_int_key', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='nwk_s_enc_key', full_name='ns.DeviceActivation.nwk_s_enc_key', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt_up', full_name='ns.DeviceActivation.f_cnt_up', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='n_f_cnt_down', full_name='ns.DeviceActivation.n_f_cnt_down', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='a_f_cnt_down', full_name='ns.DeviceActivation.a_f_cnt_down', index=7,
       number=8, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='skip_f_cnt_check', full_name='ns.DeviceActivation.skip_f_cnt_check', index=8,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1071,6 +1112,7 @@ _ACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_activation', full_name='ns.ActivateDeviceRequest.device_activation', index=0,
@@ -1078,7 +1120,7 @@ _ACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1102,6 +1144,7 @@ _DEACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.DeactivateDeviceRequest.dev_eui', index=0,
@@ -1109,7 +1152,7 @@ _DEACTIVATEDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1133,6 +1176,7 @@ _GETDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.GetDeviceActivationRequest.dev_eui', index=0,
@@ -1140,7 +1184,7 @@ _GETDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1164,6 +1208,7 @@ _GETDEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_activation', full_name='ns.GetDeviceActivationResponse.device_activation', index=0,
@@ -1171,7 +1216,7 @@ _GETDEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1195,6 +1240,7 @@ _GETRANDOMDEVADDRRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='ns.GetRandomDevAddrResponse.dev_addr', index=0,
@@ -1202,7 +1248,7 @@ _GETRANDOMDEVADDRRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1226,6 +1272,7 @@ _CREATEMACCOMMANDQUEUEITEMREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.CreateMACCommandQueueItemRequest.dev_eui', index=0,
@@ -1233,21 +1280,21 @@ _CREATEMACCOMMANDQUEUEITEMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='cid', full_name='ns.CreateMACCommandQueueItemRequest.cid', index=1,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='commands', full_name='ns.CreateMACCommandQueueItemRequest.commands', index=2,
       number=5, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1271,6 +1318,7 @@ _SENDPROPRIETARYPAYLOADREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='mac_payload', full_name='ns.SendProprietaryPayloadRequest.mac_payload', index=0,
@@ -1278,42 +1326,42 @@ _SENDPROPRIETARYPAYLOADREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mic', full_name='ns.SendProprietaryPayloadRequest.mic', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_macs', full_name='ns.SendProprietaryPayloadRequest.gateway_macs', index=2,
       number=3, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='polarization_inversion', full_name='ns.SendProprietaryPayloadRequest.polarization_inversion', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frequency', full_name='ns.SendProprietaryPayloadRequest.frequency', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dr', full_name='ns.SendProprietaryPayloadRequest.dr', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1337,6 +1385,7 @@ _GATEWAY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.Gateway.id', index=0,
@@ -1344,35 +1393,35 @@ _GATEWAY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='location', full_name='ns.Gateway.location', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_profile_id', full_name='ns.Gateway.gateway_profile_id', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='boards', full_name='ns.Gateway.boards', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='routing_profile_id', full_name='ns.Gateway.routing_profile_id', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1396,6 +1445,7 @@ _GATEWAYBOARD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='fpga_id', full_name='ns.GatewayBoard.fpga_id', index=0,
@@ -1403,14 +1453,14 @@ _GATEWAYBOARD = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='fine_timestamp_key', full_name='ns.GatewayBoard.fine_timestamp_key', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1434,6 +1484,7 @@ _CREATEGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway', full_name='ns.CreateGatewayRequest.gateway', index=0,
@@ -1441,7 +1492,7 @@ _CREATEGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1465,6 +1516,7 @@ _GETGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GetGatewayRequest.id', index=0,
@@ -1472,7 +1524,7 @@ _GETGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1496,6 +1548,7 @@ _GETGATEWAYRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway', full_name='ns.GetGatewayResponse.gateway', index=0,
@@ -1503,35 +1556,35 @@ _GETGATEWAYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetGatewayResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetGatewayResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='first_seen_at', full_name='ns.GetGatewayResponse.first_seen_at', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='last_seen_at', full_name='ns.GetGatewayResponse.last_seen_at', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1555,6 +1608,7 @@ _UPDATEGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway', full_name='ns.UpdateGatewayRequest.gateway', index=0,
@@ -1562,7 +1616,7 @@ _UPDATEGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1586,6 +1640,7 @@ _DELETEGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.DeleteGatewayRequest.id', index=0,
@@ -1593,7 +1648,7 @@ _DELETEGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1617,6 +1672,7 @@ _GATEWAYSTATS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='ns.GatewayStats.timestamp', index=0,
@@ -1624,35 +1680,35 @@ _GATEWAYSTATS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rx_packets_received', full_name='ns.GatewayStats.rx_packets_received', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rx_packets_received_ok', full_name='ns.GatewayStats.rx_packets_received_ok', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_packets_received', full_name='ns.GatewayStats.tx_packets_received', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_packets_emitted', full_name='ns.GatewayStats.tx_packets_emitted', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1676,6 +1732,7 @@ _GETGATEWAYSTATSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='ns.GetGatewayStatsRequest.gateway_id', index=0,
@@ -1683,28 +1740,28 @@ _GETGATEWAYSTATSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='interval', full_name='ns.GetGatewayStatsRequest.interval', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='start_timestamp', full_name='ns.GetGatewayStatsRequest.start_timestamp', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='end_timestamp', full_name='ns.GetGatewayStatsRequest.end_timestamp', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1728,6 +1785,7 @@ _GETGATEWAYSTATSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='result', full_name='ns.GetGatewayStatsResponse.result', index=0,
@@ -1735,7 +1793,7 @@ _GETGATEWAYSTATSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1759,6 +1817,7 @@ _DEVICEQUEUEITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.DeviceQueueItem.dev_eui', index=0,
@@ -1766,42 +1825,42 @@ _DEVICEQUEUEITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frm_payload', full_name='ns.DeviceQueueItem.frm_payload', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='ns.DeviceQueueItem.f_cnt', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_port', full_name='ns.DeviceQueueItem.f_port', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='confirmed', full_name='ns.DeviceQueueItem.confirmed', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='ns.DeviceQueueItem.dev_addr', index=5,
       number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1825,6 +1884,7 @@ _CREATEDEVICEQUEUEITEMREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='item', full_name='ns.CreateDeviceQueueItemRequest.item', index=0,
@@ -1832,7 +1892,7 @@ _CREATEDEVICEQUEUEITEMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1856,6 +1916,7 @@ _FLUSHDEVICEQUEUEFORDEVEUIREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.FlushDeviceQueueForDevEUIRequest.dev_eui', index=0,
@@ -1863,7 +1924,7 @@ _FLUSHDEVICEQUEUEFORDEVEUIREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1887,6 +1948,7 @@ _GETDEVICEQUEUEITEMSFORDEVEUIREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.GetDeviceQueueItemsForDevEUIRequest.dev_eui', index=0,
@@ -1894,14 +1956,14 @@ _GETDEVICEQUEUEITEMSFORDEVEUIREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='count_only', full_name='ns.GetDeviceQueueItemsForDevEUIRequest.count_only', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1925,6 +1987,7 @@ _GETDEVICEQUEUEITEMSFORDEVEUIRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='items', full_name='ns.GetDeviceQueueItemsForDevEUIResponse.items', index=0,
@@ -1932,14 +1995,14 @@ _GETDEVICEQUEUEITEMSFORDEVEUIRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='total_count', full_name='ns.GetDeviceQueueItemsForDevEUIResponse.total_count', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1963,6 +2026,7 @@ _GETNEXTDOWNLINKFCNTFORDEVEUIREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.GetNextDownlinkFCntForDevEUIRequest.dev_eui', index=0,
@@ -1970,7 +2034,7 @@ _GETNEXTDOWNLINKFCNTFORDEVEUIREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1994,6 +2058,7 @@ _GETNEXTDOWNLINKFCNTFORDEVEUIRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='ns.GetNextDownlinkFCntForDevEUIResponse.f_cnt', index=0,
@@ -2001,7 +2066,7 @@ _GETNEXTDOWNLINKFCNTFORDEVEUIRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2025,6 +2090,7 @@ _UPLINKFRAMELOG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='phy_payload', full_name='ns.UplinkFrameLog.phy_payload', index=0,
@@ -2032,21 +2098,21 @@ _UPLINKFRAMELOG = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_info', full_name='ns.UplinkFrameLog.tx_info', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rx_info', full_name='ns.UplinkFrameLog.rx_info', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2070,6 +2136,7 @@ _DOWNLINKFRAMELOG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='phy_payload', full_name='ns.DownlinkFrameLog.phy_payload', index=0,
@@ -2077,35 +2144,35 @@ _DOWNLINKFRAMELOG = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tx_info', full_name='ns.DownlinkFrameLog.tx_info', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='token', full_name='ns.DownlinkFrameLog.token', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='downlink_id', full_name='ns.DownlinkFrameLog.downlink_id', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='downlinkID', file=DESCRIPTOR),
+      serialized_options=None, json_name='downlinkID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='ns.DownlinkFrameLog.gateway_id', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR),
+      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2129,6 +2196,7 @@ _STREAMFRAMELOGSFORGATEWAYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_id', full_name='ns.StreamFrameLogsForGatewayRequest.gateway_id', index=0,
@@ -2136,7 +2204,7 @@ _STREAMFRAMELOGSFORGATEWAYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2160,6 +2228,7 @@ _STREAMFRAMELOGSFORGATEWAYRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='uplink_frame_set', full_name='ns.StreamFrameLogsForGatewayResponse.uplink_frame_set', index=0,
@@ -2167,14 +2236,14 @@ _STREAMFRAMELOGSFORGATEWAYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='downlink_frame', full_name='ns.StreamFrameLogsForGatewayResponse.downlink_frame', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2188,7 +2257,9 @@ _STREAMFRAMELOGSFORGATEWAYRESPONSE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='frame', full_name='ns.StreamFrameLogsForGatewayResponse.frame',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=4716,
   serialized_end=4856,
@@ -2201,6 +2272,7 @@ _STREAMFRAMELOGSFORDEVICEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.StreamFrameLogsForDeviceRequest.dev_eui', index=0,
@@ -2208,7 +2280,7 @@ _STREAMFRAMELOGSFORDEVICEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2232,6 +2304,7 @@ _STREAMFRAMELOGSFORDEVICERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='uplink_frame_set', full_name='ns.StreamFrameLogsForDeviceResponse.uplink_frame_set', index=0,
@@ -2239,14 +2312,14 @@ _STREAMFRAMELOGSFORDEVICERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='downlink_frame', full_name='ns.StreamFrameLogsForDeviceResponse.downlink_frame', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2260,7 +2333,9 @@ _STREAMFRAMELOGSFORDEVICERESPONSE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='frame', full_name='ns.StreamFrameLogsForDeviceResponse.frame',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=4911,
   serialized_end=5050,
@@ -2273,6 +2348,7 @@ _GETVERSIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='version', full_name='ns.GetVersionResponse.version', index=0,
@@ -2280,14 +2356,14 @@ _GETVERSIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='region', full_name='ns.GetVersionResponse.region', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2311,6 +2387,7 @@ _GATEWAYPROFILE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GatewayProfile.id', index=0,
@@ -2318,21 +2395,21 @@ _GATEWAYPROFILE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='channels', full_name='ns.GatewayProfile.channels', index=1,
       number=2, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='extra_channels', full_name='ns.GatewayProfile.extra_channels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2356,6 +2433,7 @@ _GATEWAYPROFILEEXTRACHANNEL = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='modulation', full_name='ns.GatewayProfileExtraChannel.modulation', index=0,
@@ -2363,35 +2441,35 @@ _GATEWAYPROFILEEXTRACHANNEL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frequency', full_name='ns.GatewayProfileExtraChannel.frequency', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bandwidth', full_name='ns.GatewayProfileExtraChannel.bandwidth', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bitrate', full_name='ns.GatewayProfileExtraChannel.bitrate', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='spreading_factors', full_name='ns.GatewayProfileExtraChannel.spreading_factors', index=4,
       number=5, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2415,6 +2493,7 @@ _CREATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_profile', full_name='ns.CreateGatewayProfileRequest.gateway_profile', index=0,
@@ -2422,7 +2501,7 @@ _CREATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2446,6 +2525,7 @@ _CREATEGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.CreateGatewayProfileResponse.id', index=0,
@@ -2453,7 +2533,7 @@ _CREATEGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2477,6 +2557,7 @@ _GETGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GetGatewayProfileRequest.id', index=0,
@@ -2484,7 +2565,7 @@ _GETGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2508,6 +2589,7 @@ _GETGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_profile', full_name='ns.GetGatewayProfileResponse.gateway_profile', index=0,
@@ -2515,21 +2597,21 @@ _GETGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetGatewayProfileResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetGatewayProfileResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2553,6 +2635,7 @@ _UPDATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='gateway_profile', full_name='ns.UpdateGatewayProfileRequest.gateway_profile', index=0,
@@ -2560,7 +2643,7 @@ _UPDATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2584,6 +2667,7 @@ _DELETEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.DeleteGatewayProfileRequest.id', index=0,
@@ -2591,7 +2675,7 @@ _DELETEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2615,6 +2699,7 @@ _MULTICASTGROUP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.MulticastGroup.id', index=0,
@@ -2622,70 +2707,70 @@ _MULTICASTGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mc_addr', full_name='ns.MulticastGroup.mc_addr', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mc_nwk_s_key', full_name='ns.MulticastGroup.mc_nwk_s_key', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='ns.MulticastGroup.f_cnt', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='group_type', full_name='ns.MulticastGroup.group_type', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='dr', full_name='ns.MulticastGroup.dr', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frequency', full_name='ns.MulticastGroup.frequency', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ping_slot_period', full_name='ns.MulticastGroup.ping_slot_period', index=7,
       number=8, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_profile_id', full_name='ns.MulticastGroup.service_profile_id', index=8,
       number=9, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='routing_profile_id', full_name='ns.MulticastGroup.routing_profile_id', index=9,
       number=10, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2709,6 +2794,7 @@ _CREATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group', full_name='ns.CreateMulticastGroupRequest.multicast_group', index=0,
@@ -2716,7 +2802,7 @@ _CREATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2740,6 +2826,7 @@ _CREATEMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.CreateMulticastGroupResponse.id', index=0,
@@ -2747,7 +2834,7 @@ _CREATEMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2771,6 +2858,7 @@ _GETMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.GetMulticastGroupRequest.id', index=0,
@@ -2778,7 +2866,7 @@ _GETMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2802,6 +2890,7 @@ _GETMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group', full_name='ns.GetMulticastGroupResponse.multicast_group', index=0,
@@ -2809,21 +2898,21 @@ _GETMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='ns.GetMulticastGroupResponse.created_at', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='ns.GetMulticastGroupResponse.updated_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2847,6 +2936,7 @@ _UPDATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group', full_name='ns.UpdateMulticastGroupRequest.multicast_group', index=0,
@@ -2854,7 +2944,7 @@ _UPDATEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2878,6 +2968,7 @@ _DELETEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='ns.DeleteMulticastGroupRequest.id', index=0,
@@ -2885,7 +2976,7 @@ _DELETEMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2909,6 +3000,7 @@ _ADDDEVICETOMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.AddDeviceToMulticastGroupRequest.dev_eui', index=0,
@@ -2916,14 +3008,14 @@ _ADDDEVICETOMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='ns.AddDeviceToMulticastGroupRequest.multicast_group_id', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2947,6 +3039,7 @@ _REMOVEDEVICEFROMMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='ns.RemoveDeviceFromMulticastGroupRequest.dev_eui', index=0,
@@ -2954,14 +3047,14 @@ _REMOVEDEVICEFROMMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='ns.RemoveDeviceFromMulticastGroupRequest.multicast_group_id', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2985,6 +3078,7 @@ _MULTICASTQUEUEITEM = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='ns.MulticastQueueItem.multicast_group_id', index=0,
@@ -2992,28 +3086,28 @@ _MULTICASTQUEUEITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='ns.MulticastQueueItem.f_cnt', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='f_port', full_name='ns.MulticastQueueItem.f_port', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='frm_payload', full_name='ns.MulticastQueueItem.frm_payload', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3037,6 +3131,7 @@ _ENQUEUEMULTICASTQUEUEITEMREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_queue_item', full_name='ns.EnqueueMulticastQueueItemRequest.multicast_queue_item', index=0,
@@ -3044,7 +3139,7 @@ _ENQUEUEMULTICASTQUEUEITEMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3068,6 +3163,7 @@ _FLUSHMULTICASTQUEUEFORMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='ns.FlushMulticastQueueForMulticastGroupRequest.multicast_group_id', index=0,
@@ -3075,7 +3171,7 @@ _FLUSHMULTICASTQUEUEFORMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3099,6 +3195,7 @@ _GETMULTICASTQUEUEITEMSFORMULTICASTGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_group_id', full_name='ns.GetMulticastQueueItemsForMulticastGroupRequest.multicast_group_id', index=0,
@@ -3106,7 +3203,7 @@ _GETMULTICASTQUEUEITEMSFORMULTICASTGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3130,6 +3227,7 @@ _GETMULTICASTQUEUEITEMSFORMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='multicast_queue_items', full_name='ns.GetMulticastQueueItemsForMulticastGroupResponse.multicast_queue_items', index=0,
@@ -3137,7 +3235,7 @@ _GETMULTICASTQUEUEITEMSFORMULTICASTGROUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3865,6 +3963,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=7329,
   serialized_end=11405,
   methods=[
@@ -3876,6 +3975,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATESERVICEPROFILEREQUEST,
     output_type=_CREATESERVICEPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetServiceProfile',
@@ -3885,6 +3985,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETSERVICEPROFILEREQUEST,
     output_type=_GETSERVICEPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateServiceProfile',
@@ -3894,6 +3995,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATESERVICEPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteServiceProfile',
@@ -3903,6 +4005,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETESERVICEPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateRoutingProfile',
@@ -3912,6 +4015,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEROUTINGPROFILEREQUEST,
     output_type=_CREATEROUTINGPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetRoutingProfile',
@@ -3921,6 +4025,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETROUTINGPROFILEREQUEST,
     output_type=_GETROUTINGPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateRoutingProfile',
@@ -3930,6 +4035,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEROUTINGPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteRoutingProfile',
@@ -3939,6 +4045,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEROUTINGPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateDeviceProfile',
@@ -3948,6 +4055,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEDEVICEPROFILEREQUEST,
     output_type=_CREATEDEVICEPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetDeviceProfile',
@@ -3957,6 +4065,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEPROFILEREQUEST,
     output_type=_GETDEVICEPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateDeviceProfile',
@@ -3966,6 +4075,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEDEVICEPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteDeviceProfile',
@@ -3975,6 +4085,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEDEVICEPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateDevice',
@@ -3984,6 +4095,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetDevice',
@@ -3993,6 +4105,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEREQUEST,
     output_type=_GETDEVICERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateDevice',
@@ -4002,6 +4115,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteDevice',
@@ -4011,6 +4125,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ActivateDevice',
@@ -4020,6 +4135,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ACTIVATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeactivateDevice',
@@ -4029,6 +4145,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DEACTIVATEDEVICEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetDeviceActivation',
@@ -4038,6 +4155,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEACTIVATIONREQUEST,
     output_type=_GETDEVICEACTIVATIONRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateDeviceQueueItem',
@@ -4047,6 +4165,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEDEVICEQUEUEITEMREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='FlushDeviceQueueForDevEUI',
@@ -4056,6 +4175,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_FLUSHDEVICEQUEUEFORDEVEUIREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetDeviceQueueItemsForDevEUI',
@@ -4065,6 +4185,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETDEVICEQUEUEITEMSFORDEVEUIREQUEST,
     output_type=_GETDEVICEQUEUEITEMSFORDEVEUIRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetNextDownlinkFCntForDevEUI',
@@ -4074,6 +4195,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETNEXTDOWNLINKFCNTFORDEVEUIREQUEST,
     output_type=_GETNEXTDOWNLINKFCNTFORDEVEUIRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetRandomDevAddr',
@@ -4083,6 +4205,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     output_type=_GETRANDOMDEVADDRRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateMACCommandQueueItem',
@@ -4092,6 +4215,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEMACCOMMANDQUEUEITEMREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='SendProprietaryPayload',
@@ -4101,6 +4225,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_SENDPROPRIETARYPAYLOADREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateGateway',
@@ -4110,6 +4235,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEGATEWAYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetGateway',
@@ -4119,6 +4245,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETGATEWAYREQUEST,
     output_type=_GETGATEWAYRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateGateway',
@@ -4128,6 +4255,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEGATEWAYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteGateway',
@@ -4137,6 +4265,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEGATEWAYREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateGatewayProfile',
@@ -4146,6 +4275,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEGATEWAYPROFILEREQUEST,
     output_type=_CREATEGATEWAYPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetGatewayProfile',
@@ -4155,6 +4285,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETGATEWAYPROFILEREQUEST,
     output_type=_GETGATEWAYPROFILERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateGatewayProfile',
@@ -4164,6 +4295,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEGATEWAYPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteGatewayProfile',
@@ -4173,6 +4305,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEGATEWAYPROFILEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetGatewayStats',
@@ -4182,6 +4315,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETGATEWAYSTATSREQUEST,
     output_type=_GETGATEWAYSTATSRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamFrameLogsForGateway',
@@ -4191,6 +4325,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMFRAMELOGSFORGATEWAYREQUEST,
     output_type=_STREAMFRAMELOGSFORGATEWAYRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamFrameLogsForDevice',
@@ -4200,6 +4335,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMFRAMELOGSFORDEVICEREQUEST,
     output_type=_STREAMFRAMELOGSFORDEVICERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CreateMulticastGroup',
@@ -4209,6 +4345,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEMULTICASTGROUPREQUEST,
     output_type=_CREATEMULTICASTGROUPRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetMulticastGroup',
@@ -4218,6 +4355,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETMULTICASTGROUPREQUEST,
     output_type=_GETMULTICASTGROUPRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateMulticastGroup',
@@ -4227,6 +4365,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATEMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteMulticastGroup',
@@ -4236,6 +4375,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AddDeviceToMulticastGroup',
@@ -4245,6 +4385,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ADDDEVICETOMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RemoveDeviceFromMulticastGroup',
@@ -4254,6 +4395,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_REMOVEDEVICEFROMMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='EnqueueMulticastQueueItem',
@@ -4263,6 +4405,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ENQUEUEMULTICASTQUEUEITEMREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='FlushMulticastQueueForMulticastGroup',
@@ -4272,6 +4415,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_FLUSHMULTICASTQUEUEFORMULTICASTGROUPREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetMulticastQueueItemsForMulticastGroup',
@@ -4281,6 +4425,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETMULTICASTQUEUEITEMSFORMULTICASTGROUPREQUEST,
     output_type=_GETMULTICASTQUEUEITEMSFORMULTICASTGROUPRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetVersion',
@@ -4290,6 +4435,7 @@ _NETWORKSERVERSERVICE = _descriptor.ServiceDescriptor(
     input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     output_type=_GETVERSIONRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NETWORKSERVERSERVICE)
