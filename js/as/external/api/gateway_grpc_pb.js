@@ -31,6 +31,28 @@ function deserialize_api_DeleteGatewayRequest(buffer_arg) {
   return as_external_api_gateway_pb.DeleteGatewayRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_GenerateGatewayClientCertificateRequest(arg) {
+  if (!(arg instanceof as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest)) {
+    throw new Error('Expected argument of type api.GenerateGatewayClientCertificateRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GenerateGatewayClientCertificateRequest(buffer_arg) {
+  return as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GenerateGatewayClientCertificateResponse(arg) {
+  if (!(arg instanceof as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse)) {
+    throw new Error('Expected argument of type api.GenerateGatewayClientCertificateResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GenerateGatewayClientCertificateResponse(buffer_arg) {
+  return as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GetGatewayRequest(arg) {
   if (!(arg instanceof as_external_api_gateway_pb.GetGatewayRequest)) {
     throw new Error('Expected argument of type api.GetGatewayRequest');
@@ -249,6 +271,21 @@ var GatewayServiceService = exports.GatewayServiceService = {
     requestDeserialize: deserialize_api_GetLastPingRequest,
     responseSerialize: serialize_api_GetLastPingResponse,
     responseDeserialize: deserialize_api_GetLastPingResponse,
+  },
+  // GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
+  // This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+  // CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+  // certificate will have the Gateway ID as Common Name.
+  generateGatewayClientCertificate: {
+    path: '/api.GatewayService/GenerateGatewayClientCertificate',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest,
+    responseType: as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse,
+    requestSerialize: serialize_api_GenerateGatewayClientCertificateRequest,
+    requestDeserialize: deserialize_api_GenerateGatewayClientCertificateRequest,
+    responseSerialize: serialize_api_GenerateGatewayClientCertificateResponse,
+    responseDeserialize: deserialize_api_GenerateGatewayClientCertificateResponse,
   },
   // StreamFrameLogs streams the uplink and downlink frame-logs for the given gateway ID.
   // Notes:

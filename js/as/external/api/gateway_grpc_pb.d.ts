@@ -15,6 +15,7 @@ interface IGatewayServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
   list: grpc.MethodDefinition<as_external_api_gateway_pb.ListGatewayRequest, as_external_api_gateway_pb.ListGatewayResponse>;
   getStats: grpc.MethodDefinition<as_external_api_gateway_pb.GetGatewayStatsRequest, as_external_api_gateway_pb.GetGatewayStatsResponse>;
   getLastPing: grpc.MethodDefinition<as_external_api_gateway_pb.GetLastPingRequest, as_external_api_gateway_pb.GetLastPingResponse>;
+  generateGatewayClientCertificate: grpc.MethodDefinition<as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest, as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse>;
   streamFrameLogs: grpc.MethodDefinition<as_external_api_gateway_pb.StreamGatewayFrameLogsRequest, as_external_api_gateway_pb.StreamGatewayFrameLogsResponse>;
 }
 
@@ -43,6 +44,9 @@ export class GatewayServiceClient extends grpc.Client {
   getLastPing(argument: as_external_api_gateway_pb.GetLastPingRequest, callback: grpc.requestCallback<as_external_api_gateway_pb.GetLastPingResponse>): grpc.ClientUnaryCall;
   getLastPing(argument: as_external_api_gateway_pb.GetLastPingRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_gateway_pb.GetLastPingResponse>): grpc.ClientUnaryCall;
   getLastPing(argument: as_external_api_gateway_pb.GetLastPingRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_gateway_pb.GetLastPingResponse>): grpc.ClientUnaryCall;
+  generateGatewayClientCertificate(argument: as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest, callback: grpc.requestCallback<as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse>): grpc.ClientUnaryCall;
+  generateGatewayClientCertificate(argument: as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse>): grpc.ClientUnaryCall;
+  generateGatewayClientCertificate(argument: as_external_api_gateway_pb.GenerateGatewayClientCertificateRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_gateway_pb.GenerateGatewayClientCertificateResponse>): grpc.ClientUnaryCall;
   streamFrameLogs(argument: as_external_api_gateway_pb.StreamGatewayFrameLogsRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<as_external_api_gateway_pb.StreamGatewayFrameLogsResponse>;
   streamFrameLogs(argument: as_external_api_gateway_pb.StreamGatewayFrameLogsRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<as_external_api_gateway_pb.StreamGatewayFrameLogsResponse>;
 }

@@ -317,6 +317,28 @@ function deserialize_ns_FlushMulticastQueueForMulticastGroupRequest(buffer_arg) 
   return ns_ns_pb.FlushMulticastQueueForMulticastGroupRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_ns_GenerateGatewayClientCertificateRequest(arg) {
+  if (!(arg instanceof ns_ns_pb.GenerateGatewayClientCertificateRequest)) {
+    throw new Error('Expected argument of type ns.GenerateGatewayClientCertificateRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ns_GenerateGatewayClientCertificateRequest(buffer_arg) {
+  return ns_ns_pb.GenerateGatewayClientCertificateRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_ns_GenerateGatewayClientCertificateResponse(arg) {
+  if (!(arg instanceof ns_ns_pb.GenerateGatewayClientCertificateResponse)) {
+    throw new Error('Expected argument of type ns.GenerateGatewayClientCertificateResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ns_GenerateGatewayClientCertificateResponse(buffer_arg) {
+  return ns_ns_pb.GenerateGatewayClientCertificateResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_ns_GetDeviceActivationRequest(arg) {
   if (!(arg instanceof ns_ns_pb.GetDeviceActivationRequest)) {
     throw new Error('Expected argument of type ns.GetDeviceActivationRequest');
@@ -1109,6 +1131,21 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     requestDeserialize: deserialize_ns_DeleteGatewayRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
+  // This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+  // CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+  // certificate will have the Gateway ID as Common Name.
+  generateGatewayClientCertificate: {
+    path: '/ns.NetworkServerService/GenerateGatewayClientCertificate',
+    requestStream: false,
+    responseStream: false,
+    requestType: ns_ns_pb.GenerateGatewayClientCertificateRequest,
+    responseType: ns_ns_pb.GenerateGatewayClientCertificateResponse,
+    requestSerialize: serialize_ns_GenerateGatewayClientCertificateRequest,
+    requestDeserialize: deserialize_ns_GenerateGatewayClientCertificateRequest,
+    responseSerialize: serialize_ns_GenerateGatewayClientCertificateResponse,
+    responseDeserialize: deserialize_ns_GenerateGatewayClientCertificateResponse,
   },
   // CreateGatewayProfile creates the given gateway-profile.
   createGatewayProfile: {

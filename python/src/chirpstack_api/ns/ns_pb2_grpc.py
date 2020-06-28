@@ -166,6 +166,11 @@ class NetworkServerServiceStub(object):
                 request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.GenerateGatewayClientCertificate = channel.unary_unary(
+                '/ns.NetworkServerService/GenerateGatewayClientCertificate',
+                request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateResponse.FromString,
+                )
         self.CreateGatewayProfile = channel.unary_unary(
                 '/ns.NetworkServerService/CreateGatewayProfile',
                 request_serializer=chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.SerializeToString,
@@ -468,6 +473,16 @@ class NetworkServerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateGatewayClientCertificate(self, request, context):
+        """GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
+        This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+        CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+        certificate will have the Gateway ID as Common Name.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateGatewayProfile(self, request, context):
         """CreateGatewayProfile creates the given gateway-profile.
         """
@@ -741,6 +756,11 @@ def add_NetworkServerServiceServicer_to_server(servicer, server):
                     servicer.DeleteGateway,
                     request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GenerateGatewayClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateGatewayClientCertificate,
+                    request_deserializer=chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateRequest.FromString,
+                    response_serializer=chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateResponse.SerializeToString,
             ),
             'CreateGatewayProfile': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateGatewayProfile,
@@ -1315,6 +1335,22 @@ class NetworkServerService(object):
         return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/DeleteGateway',
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenerateGatewayClientCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ns.NetworkServerService/GenerateGatewayClientCertificate',
+            chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateRequest.SerializeToString,
+            chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 

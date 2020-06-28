@@ -150,6 +150,32 @@
         ]
       }
     },
+    "/api/gateways/{gateway_id}/generate-certificate": {
+      "post": {
+        "summary": "GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.\nThis endpoint can ony be used when ChirpStack Network Server is configured with a gateway\nCA certificate and key, which is used for signing the TLS certificate. The returned TLS\ncertificate will have the Gateway ID as Common Name.",
+        "operationId": "GenerateGatewayClientCertificate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGenerateGatewayClientCertificateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gateway_id",
+            "description": "Gateway ID (HEX encoded).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
     "/api/gateways/{gateway_id}/pings/last": {
       "get": {
         "summary": "GetLastPing returns the last emitted ping and gateways receiving this ping.",
@@ -455,6 +481,19 @@
           "type": "integer",
           "format": "int32",
           "description": "Packets transmitted by the gateway."
+        }
+      }
+    },
+    "apiGenerateGatewayClientCertificateResponse": {
+      "type": "object",
+      "properties": {
+        "tlsCert": {
+          "type": "string",
+          "description": "TLS certificate."
+        },
+        "tlsKey": {
+          "type": "string",
+          "description": "TLS key."
         }
       }
     },

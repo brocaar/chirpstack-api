@@ -64,6 +64,16 @@ service GatewayService {
 		};
 	}
 
+    // GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
+    // This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+    // CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+    // certificate will have the Gateway ID as Common Name.
+    rpc GenerateGatewayClientCertificate(GenerateGatewayClientCertificateRequest) returns (GenerateGatewayClientCertificateResponse) {
+        option(google.api.http) = {
+            post: "/api/gateways/{gateway_id}/generate-certificate"
+        };
+    }
+
     // StreamFrameLogs streams the uplink and downlink frame-logs for the given gateway ID.
 	// Notes:
 	//   * These are the raw LoRaWAN frames and this endpoint is intended for debugging only.
@@ -153,6 +163,20 @@ message DeleteGatewayRequest {
 	// Gateway ID (HEX encoded).
 	string id = 1;
 }
+
+message GenerateGatewayClientCertificateRequest {
+    // Gateway ID (HEX encoded).
+    string gateway_id = 1;
+}
+
+message GenerateGatewayClientCertificateResponse {
+    // TLS certificate.
+    string tls_cert = 1;
+
+    // TLS key.
+    string tls_key = 2;
+}
+
 
 message ListGatewayRequest {
 	// Max number of nodes to return in the result-set.

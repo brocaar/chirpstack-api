@@ -1076,6 +1076,56 @@ export namespace DeleteGatewayRequest {
   }
 }
 
+export class GenerateGatewayClientCertificateRequest extends jspb.Message {
+  getId(): Uint8Array | string;
+  getId_asU8(): Uint8Array;
+  getId_asB64(): string;
+  setId(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateGatewayClientCertificateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateGatewayClientCertificateRequest): GenerateGatewayClientCertificateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateGatewayClientCertificateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateGatewayClientCertificateRequest;
+  static deserializeBinaryFromReader(message: GenerateGatewayClientCertificateRequest, reader: jspb.BinaryReader): GenerateGatewayClientCertificateRequest;
+}
+
+export namespace GenerateGatewayClientCertificateRequest {
+  export type AsObject = {
+    id: Uint8Array | string,
+  }
+}
+
+export class GenerateGatewayClientCertificateResponse extends jspb.Message {
+  getTlsCert(): Uint8Array | string;
+  getTlsCert_asU8(): Uint8Array;
+  getTlsCert_asB64(): string;
+  setTlsCert(value: Uint8Array | string): void;
+
+  getTlsKey(): Uint8Array | string;
+  getTlsKey_asU8(): Uint8Array;
+  getTlsKey_asB64(): string;
+  setTlsKey(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateGatewayClientCertificateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateGatewayClientCertificateResponse): GenerateGatewayClientCertificateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateGatewayClientCertificateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateGatewayClientCertificateResponse;
+  static deserializeBinaryFromReader(message: GenerateGatewayClientCertificateResponse, reader: jspb.BinaryReader): GenerateGatewayClientCertificateResponse;
+}
+
+export namespace GenerateGatewayClientCertificateResponse {
+  export type AsObject = {
+    tlsCert: Uint8Array | string,
+    tlsKey: Uint8Array | string,
+  }
+}
+
 export class GatewayStats extends jspb.Message {
   hasTimestamp(): boolean;
   clearTimestamp(): void;

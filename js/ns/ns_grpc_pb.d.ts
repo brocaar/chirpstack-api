@@ -38,6 +38,7 @@ interface INetworkServerServiceService extends grpc.ServiceDefinition<grpc.Untyp
   getGateway: grpc.MethodDefinition<ns_ns_pb.GetGatewayRequest, ns_ns_pb.GetGatewayResponse>;
   updateGateway: grpc.MethodDefinition<ns_ns_pb.UpdateGatewayRequest, google_protobuf_empty_pb.Empty>;
   deleteGateway: grpc.MethodDefinition<ns_ns_pb.DeleteGatewayRequest, google_protobuf_empty_pb.Empty>;
+  generateGatewayClientCertificate: grpc.MethodDefinition<ns_ns_pb.GenerateGatewayClientCertificateRequest, ns_ns_pb.GenerateGatewayClientCertificateResponse>;
   createGatewayProfile: grpc.MethodDefinition<ns_ns_pb.CreateGatewayProfileRequest, ns_ns_pb.CreateGatewayProfileResponse>;
   getGatewayProfile: grpc.MethodDefinition<ns_ns_pb.GetGatewayProfileRequest, ns_ns_pb.GetGatewayProfileResponse>;
   updateGatewayProfile: grpc.MethodDefinition<ns_ns_pb.UpdateGatewayProfileRequest, google_protobuf_empty_pb.Empty>;
@@ -151,6 +152,9 @@ export class NetworkServerServiceClient extends grpc.Client {
   deleteGateway(argument: ns_ns_pb.DeleteGatewayRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   deleteGateway(argument: ns_ns_pb.DeleteGatewayRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
   deleteGateway(argument: ns_ns_pb.DeleteGatewayRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;
+  generateGatewayClientCertificate(argument: ns_ns_pb.GenerateGatewayClientCertificateRequest, callback: grpc.requestCallback<ns_ns_pb.GenerateGatewayClientCertificateResponse>): grpc.ClientUnaryCall;
+  generateGatewayClientCertificate(argument: ns_ns_pb.GenerateGatewayClientCertificateRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.GenerateGatewayClientCertificateResponse>): grpc.ClientUnaryCall;
+  generateGatewayClientCertificate(argument: ns_ns_pb.GenerateGatewayClientCertificateRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.GenerateGatewayClientCertificateResponse>): grpc.ClientUnaryCall;
   createGatewayProfile(argument: ns_ns_pb.CreateGatewayProfileRequest, callback: grpc.requestCallback<ns_ns_pb.CreateGatewayProfileResponse>): grpc.ClientUnaryCall;
   createGatewayProfile(argument: ns_ns_pb.CreateGatewayProfileRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.CreateGatewayProfileResponse>): grpc.ClientUnaryCall;
   createGatewayProfile(argument: ns_ns_pb.CreateGatewayProfileRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.CreateGatewayProfileResponse>): grpc.ClientUnaryCall;

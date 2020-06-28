@@ -104,6 +104,12 @@ service NetworkServerService {
     // DeleteGateway deletes a gateway.
     rpc DeleteGateway(DeleteGatewayRequest) returns (google.protobuf.Empty) {}
 
+    // GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
+    // This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+    // CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+    // certificate will have the Gateway ID as Common Name.
+    rpc GenerateGatewayClientCertificate(GenerateGatewayClientCertificateRequest) returns (GenerateGatewayClientCertificateResponse) {}
+
     // CreateGatewayProfile creates the given gateway-profile.
     rpc CreateGatewayProfile(CreateGatewayProfileRequest) returns (CreateGatewayProfileResponse) {}
 
@@ -487,6 +493,19 @@ message UpdateGatewayRequest {
 message DeleteGatewayRequest {
     // Gateway ID.
     bytes id = 1;
+}
+
+message GenerateGatewayClientCertificateRequest {
+    // Gateway ID.
+    bytes id = 1;
+}
+
+message GenerateGatewayClientCertificateResponse {
+    // TLS certificate.
+    bytes tls_cert = 1;
+
+    // TLS key.
+    bytes tls_key = 2;
 }
 
 enum AggregationInterval {

@@ -51,6 +51,11 @@ class GatewayServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingRequest.SerializeToString,
                 response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingResponse.FromString,
                 )
+        self.GenerateGatewayClientCertificate = channel.unary_unary(
+                '/api.GatewayService/GenerateGatewayClientCertificate',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateResponse.FromString,
+                )
         self.StreamFrameLogs = channel.unary_stream(
                 '/api.GatewayService/StreamFrameLogs',
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.StreamGatewayFrameLogsRequest.SerializeToString,
@@ -111,6 +116,16 @@ class GatewayServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateGatewayClientCertificate(self, request, context):
+        """GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
+        This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+        CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+        certificate will have the Gateway ID as Common Name.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def StreamFrameLogs(self, request, context):
         """StreamFrameLogs streams the uplink and downlink frame-logs for the given gateway ID.
         Notes:
@@ -158,6 +173,11 @@ def add_GatewayServiceServicer_to_server(servicer, server):
                     servicer.GetLastPing,
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingRequest.FromString,
                     response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingResponse.SerializeToString,
+            ),
+            'GenerateGatewayClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateGatewayClientCertificate,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateResponse.SerializeToString,
             ),
             'StreamFrameLogs': grpc.unary_stream_rpc_method_handler(
                     servicer.StreamFrameLogs,
@@ -284,6 +304,22 @@ class GatewayService(object):
         return grpc.experimental.unary_unary(request, target, '/api.GatewayService/GetLastPing',
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenerateGatewayClientCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.GatewayService/GenerateGatewayClientCertificate',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 

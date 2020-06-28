@@ -202,6 +202,50 @@ export namespace DeleteGatewayRequest {
   }
 }
 
+export class GenerateGatewayClientCertificateRequest extends jspb.Message {
+  getGatewayId(): string;
+  setGatewayId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateGatewayClientCertificateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateGatewayClientCertificateRequest): GenerateGatewayClientCertificateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateGatewayClientCertificateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateGatewayClientCertificateRequest;
+  static deserializeBinaryFromReader(message: GenerateGatewayClientCertificateRequest, reader: jspb.BinaryReader): GenerateGatewayClientCertificateRequest;
+}
+
+export namespace GenerateGatewayClientCertificateRequest {
+  export type AsObject = {
+    gatewayId: string,
+  }
+}
+
+export class GenerateGatewayClientCertificateResponse extends jspb.Message {
+  getTlsCert(): string;
+  setTlsCert(value: string): void;
+
+  getTlsKey(): string;
+  setTlsKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateGatewayClientCertificateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateGatewayClientCertificateResponse): GenerateGatewayClientCertificateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateGatewayClientCertificateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateGatewayClientCertificateResponse;
+  static deserializeBinaryFromReader(message: GenerateGatewayClientCertificateResponse, reader: jspb.BinaryReader): GenerateGatewayClientCertificateResponse;
+}
+
+export namespace GenerateGatewayClientCertificateResponse {
+  export type AsObject = {
+    tlsCert: string,
+    tlsKey: string,
+  }
+}
+
 export class ListGatewayRequest extends jspb.Message {
   getLimit(): number;
   setLimit(value: number): void;
