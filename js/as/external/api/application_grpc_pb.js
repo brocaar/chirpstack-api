@@ -6,6 +6,17 @@ var as_external_api_application_pb = require('../../../as/external/api/applicati
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
+function serialize_api_CreateAWSSNSIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateAWSSNSIntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreateAWSSNSIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateAWSSNSIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateAWSSNSIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_CreateApplicationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.CreateApplicationRequest)) {
     throw new Error('Expected argument of type api.CreateApplicationRequest');
@@ -26,6 +37,28 @@ function serialize_api_CreateApplicationResponse(arg) {
 
 function deserialize_api_CreateApplicationResponse(buffer_arg) {
   return as_external_api_application_pb.CreateApplicationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_CreateAzureServiceBusIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateAzureServiceBusIntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreateAzureServiceBusIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateAzureServiceBusIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateAzureServiceBusIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_CreateGCPPubSubIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateGCPPubSubIntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreateGCPPubSubIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateGCPPubSubIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateGCPPubSubIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_CreateHTTPIntegrationRequest(arg) {
@@ -83,6 +116,17 @@ function deserialize_api_CreateThingsBoardIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateThingsBoardIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_DeleteAWSSNSIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeleteAWSSNSIntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeleteAWSSNSIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteAWSSNSIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeleteAWSSNSIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_DeleteApplicationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.DeleteApplicationRequest)) {
     throw new Error('Expected argument of type api.DeleteApplicationRequest');
@@ -92,6 +136,28 @@ function serialize_api_DeleteApplicationRequest(arg) {
 
 function deserialize_api_DeleteApplicationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteApplicationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeleteAzureServiceBusIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeleteAzureServiceBusIntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeleteAzureServiceBusIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteAzureServiceBusIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeleteAzureServiceBusIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeleteGCPPubSubIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeleteGCPPubSubIntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeleteGCPPubSubIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteGCPPubSubIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeleteGCPPubSubIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_DeleteHTTPIntegrationRequest(arg) {
@@ -149,6 +215,28 @@ function deserialize_api_DeleteThingsBoardIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteThingsBoardIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_GetAWSSNSIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetAWSSNSIntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetAWSSNSIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetAWSSNSIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetAWSSNSIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetAWSSNSIntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetAWSSNSIntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetAWSSNSIntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetAWSSNSIntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetAWSSNSIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GetApplicationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.GetApplicationRequest)) {
     throw new Error('Expected argument of type api.GetApplicationRequest');
@@ -169,6 +257,50 @@ function serialize_api_GetApplicationResponse(arg) {
 
 function deserialize_api_GetApplicationResponse(buffer_arg) {
   return as_external_api_application_pb.GetApplicationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetAzureServiceBusIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetAzureServiceBusIntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetAzureServiceBusIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetAzureServiceBusIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetAzureServiceBusIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetAzureServiceBusIntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetAzureServiceBusIntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetAzureServiceBusIntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetAzureServiceBusIntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetAzureServiceBusIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetGCPPubSubIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetGCPPubSubIntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetGCPPubSubIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetGCPPubSubIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetGCPPubSubIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetGCPPubSubIntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetGCPPubSubIntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetGCPPubSubIntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetGCPPubSubIntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetGCPPubSubIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_GetHTTPIntegrationRequest(arg) {
@@ -325,6 +457,17 @@ function deserialize_api_ListIntegrationResponse(buffer_arg) {
   return as_external_api_application_pb.ListIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_UpdateAWSSNSIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdateAWSSNSIntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdateAWSSNSIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdateAWSSNSIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdateAWSSNSIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_UpdateApplicationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.UpdateApplicationRequest)) {
     throw new Error('Expected argument of type api.UpdateApplicationRequest');
@@ -334,6 +477,28 @@ function serialize_api_UpdateApplicationRequest(arg) {
 
 function deserialize_api_UpdateApplicationRequest(buffer_arg) {
   return as_external_api_application_pb.UpdateApplicationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_UpdateAzureServiceBusIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdateAzureServiceBusIntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdateAzureServiceBusIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdateAzureServiceBusIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdateAzureServiceBusIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_UpdateGCPPubSubIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdateGCPPubSubIntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdateGCPPubSubIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdateGCPPubSubIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdateGCPPubSubIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_UpdateHTTPIntegrationRequest(arg) {
@@ -702,6 +867,150 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_api_DeleteLoRaCloudIntegrationRequest,
     requestDeserialize: deserialize_api_DeleteLoRaCloudIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreateGCPPubSubIntegration creates a GCP PubSub application-integration.
+  createGCPPubSubIntegration: {
+    path: '/api.ApplicationService/CreateGCPPubSubIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateGCPPubSubIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreateGCPPubSubIntegrationRequest,
+    requestDeserialize: deserialize_api_CreateGCPPubSubIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetGCPPubSubIntegration returns the GCP PubSub application-integration.
+  getGCPPubSubIntegration: {
+    path: '/api.ApplicationService/GetGCPPubSubIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetGCPPubSubIntegrationRequest,
+    responseType: as_external_api_application_pb.GetGCPPubSubIntegrationResponse,
+    requestSerialize: serialize_api_GetGCPPubSubIntegrationRequest,
+    requestDeserialize: deserialize_api_GetGCPPubSubIntegrationRequest,
+    responseSerialize: serialize_api_GetGCPPubSubIntegrationResponse,
+    responseDeserialize: deserialize_api_GetGCPPubSubIntegrationResponse,
+  },
+  // UpdateGCPPubSubIntegration updates the GCP PubSub application-integration.
+  updateGCPPubSubIntegration: {
+    path: '/api.ApplicationService/UpdateGCPPubSubIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdateGCPPubSubIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdateGCPPubSubIntegrationRequest,
+    requestDeserialize: deserialize_api_UpdateGCPPubSubIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeleteGCPPubSubIntegration deletes the GCP PubSub application-integration.
+  deleteGCPPubSubIntegration: {
+    path: '/api.ApplicationService/DeleteGCPPubSubIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeleteGCPPubSubIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteGCPPubSubIntegrationRequest,
+    requestDeserialize: deserialize_api_DeleteGCPPubSubIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreateAWSSNSIntegration creates a AWS SNS application-integration.
+  createAWSSNSIntegration: {
+    path: '/api.ApplicationService/CreateAWSSNSIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateAWSSNSIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreateAWSSNSIntegrationRequest,
+    requestDeserialize: deserialize_api_CreateAWSSNSIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetAWSSNSIntegration returns the AWS SNS application-integration.
+  getAWSSNSIntegration: {
+    path: '/api.ApplicationService/GetAWSSNSIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetAWSSNSIntegrationRequest,
+    responseType: as_external_api_application_pb.GetAWSSNSIntegrationResponse,
+    requestSerialize: serialize_api_GetAWSSNSIntegrationRequest,
+    requestDeserialize: deserialize_api_GetAWSSNSIntegrationRequest,
+    responseSerialize: serialize_api_GetAWSSNSIntegrationResponse,
+    responseDeserialize: deserialize_api_GetAWSSNSIntegrationResponse,
+  },
+  // UpdateAWSSNSIntegration updates the AWS SNS application-integration.
+  updateAWSSNSIntegration: {
+    path: '/api.ApplicationService/UpdateAWSSNSIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdateAWSSNSIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdateAWSSNSIntegrationRequest,
+    requestDeserialize: deserialize_api_UpdateAWSSNSIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeleteAWSSNSIntegration deletes the AWS SNS application-integration.
+  deleteAWSSNSIntegration: {
+    path: '/api.ApplicationService/DeleteAWSSNSIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeleteAWSSNSIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteAWSSNSIntegrationRequest,
+    requestDeserialize: deserialize_api_DeleteAWSSNSIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreateAzureServiceBusIntegration creates an Azure Service-Bus application-integration.
+  createAzureServiceBusIntegration: {
+    path: '/api.ApplicationService/CreateAzureServiceBusIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateAzureServiceBusIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreateAzureServiceBusIntegrationRequest,
+    requestDeserialize: deserialize_api_CreateAzureServiceBusIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetAzureServiceBusIntegration returns the Azure Service-Bus application-integration.
+  getAzureServiceBusIntegration: {
+    path: '/api.ApplicationService/GetAzureServiceBusIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetAzureServiceBusIntegrationRequest,
+    responseType: as_external_api_application_pb.GetAzureServiceBusIntegrationResponse,
+    requestSerialize: serialize_api_GetAzureServiceBusIntegrationRequest,
+    requestDeserialize: deserialize_api_GetAzureServiceBusIntegrationRequest,
+    responseSerialize: serialize_api_GetAzureServiceBusIntegrationResponse,
+    responseDeserialize: deserialize_api_GetAzureServiceBusIntegrationResponse,
+  },
+  // UpdateAzureServiceBusIntegration updates the Azure Service-Bus application-integration.
+  updateAzureServiceBusIntegration: {
+    path: '/api.ApplicationService/UpdateAzureServiceBusIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdateAzureServiceBusIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdateAzureServiceBusIntegrationRequest,
+    requestDeserialize: deserialize_api_UpdateAzureServiceBusIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeleteAzureServiceBusIntegration deletes the Azure Service-Bus application-integration.
+  deleteAzureServiceBusIntegration: {
+    path: '/api.ApplicationService/DeleteAzureServiceBusIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeleteAzureServiceBusIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteAzureServiceBusIntegrationRequest,
+    requestDeserialize: deserialize_api_DeleteAzureServiceBusIntegrationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

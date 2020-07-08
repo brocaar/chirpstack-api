@@ -141,6 +141,66 @@ class ApplicationServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteLoRaCloudIntegrationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.CreateGCPPubSubIntegration = channel.unary_unary(
+                '/api.ApplicationService/CreateGCPPubSubIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateGCPPubSubIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetGCPPubSubIntegration = channel.unary_unary(
+                '/api.ApplicationService/GetGCPPubSubIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationResponse.FromString,
+                )
+        self.UpdateGCPPubSubIntegration = channel.unary_unary(
+                '/api.ApplicationService/UpdateGCPPubSubIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateGCPPubSubIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteGCPPubSubIntegration = channel.unary_unary(
+                '/api.ApplicationService/DeleteGCPPubSubIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteGCPPubSubIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateAWSSNSIntegration = channel.unary_unary(
+                '/api.ApplicationService/CreateAWSSNSIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAWSSNSIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetAWSSNSIntegration = channel.unary_unary(
+                '/api.ApplicationService/GetAWSSNSIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationResponse.FromString,
+                )
+        self.UpdateAWSSNSIntegration = channel.unary_unary(
+                '/api.ApplicationService/UpdateAWSSNSIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAWSSNSIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteAWSSNSIntegration = channel.unary_unary(
+                '/api.ApplicationService/DeleteAWSSNSIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAWSSNSIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateAzureServiceBusIntegration = channel.unary_unary(
+                '/api.ApplicationService/CreateAzureServiceBusIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAzureServiceBusIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetAzureServiceBusIntegration = channel.unary_unary(
+                '/api.ApplicationService/GetAzureServiceBusIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationResponse.FromString,
+                )
+        self.UpdateAzureServiceBusIntegration = channel.unary_unary(
+                '/api.ApplicationService/UpdateAzureServiceBusIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAzureServiceBusIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteAzureServiceBusIntegration = channel.unary_unary(
+                '/api.ApplicationService/DeleteAzureServiceBusIntegration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAzureServiceBusIntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ListIntegrations = channel.unary_unary(
                 '/api.ApplicationService/ListIntegrations',
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.SerializeToString,
@@ -327,6 +387,90 @@ class ApplicationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateGCPPubSubIntegration(self, request, context):
+        """CreateGCPPubSubIntegration creates a GCP PubSub application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGCPPubSubIntegration(self, request, context):
+        """GetGCPPubSubIntegration returns the GCP PubSub application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateGCPPubSubIntegration(self, request, context):
+        """UpdateGCPPubSubIntegration updates the GCP PubSub application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteGCPPubSubIntegration(self, request, context):
+        """DeleteGCPPubSubIntegration deletes the GCP PubSub application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAWSSNSIntegration(self, request, context):
+        """CreateAWSSNSIntegration creates a AWS SNS application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAWSSNSIntegration(self, request, context):
+        """GetAWSSNSIntegration returns the AWS SNS application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAWSSNSIntegration(self, request, context):
+        """UpdateAWSSNSIntegration updates the AWS SNS application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAWSSNSIntegration(self, request, context):
+        """DeleteAWSSNSIntegration deletes the AWS SNS application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAzureServiceBusIntegration(self, request, context):
+        """CreateAzureServiceBusIntegration creates an Azure Service-Bus application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAzureServiceBusIntegration(self, request, context):
+        """GetAzureServiceBusIntegration returns the Azure Service-Bus application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAzureServiceBusIntegration(self, request, context):
+        """UpdateAzureServiceBusIntegration updates the Azure Service-Bus application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAzureServiceBusIntegration(self, request, context):
+        """DeleteAzureServiceBusIntegration deletes the Azure Service-Bus application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListIntegrations(self, request, context):
         """ListIntegrations lists all configured integrations.
         """
@@ -460,6 +604,66 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
             'DeleteLoRaCloudIntegration': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLoRaCloudIntegration,
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteLoRaCloudIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateGCPPubSubIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateGCPPubSubIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateGCPPubSubIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetGCPPubSubIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGCPPubSubIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationResponse.SerializeToString,
+            ),
+            'UpdateGCPPubSubIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateGCPPubSubIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateGCPPubSubIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteGCPPubSubIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteGCPPubSubIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteGCPPubSubIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateAWSSNSIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAWSSNSIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAWSSNSIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetAWSSNSIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAWSSNSIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationResponse.SerializeToString,
+            ),
+            'UpdateAWSSNSIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAWSSNSIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAWSSNSIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteAWSSNSIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAWSSNSIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAWSSNSIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateAzureServiceBusIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAzureServiceBusIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAzureServiceBusIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetAzureServiceBusIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAzureServiceBusIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationResponse.SerializeToString,
+            ),
+            'UpdateAzureServiceBusIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAzureServiceBusIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAzureServiceBusIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteAzureServiceBusIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAzureServiceBusIntegration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAzureServiceBusIntegrationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListIntegrations': grpc.unary_unary_rpc_method_handler(
@@ -874,6 +1078,198 @@ class ApplicationService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/DeleteLoRaCloudIntegration',
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteLoRaCloudIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateGCPPubSubIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/CreateGCPPubSubIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateGCPPubSubIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGCPPubSubIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/GetGCPPubSubIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateGCPPubSubIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/UpdateGCPPubSubIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateGCPPubSubIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteGCPPubSubIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/DeleteGCPPubSubIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteGCPPubSubIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAWSSNSIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/CreateAWSSNSIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAWSSNSIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAWSSNSIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/GetAWSSNSIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAWSSNSIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/UpdateAWSSNSIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAWSSNSIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAWSSNSIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/DeleteAWSSNSIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAWSSNSIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAzureServiceBusIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/CreateAzureServiceBusIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAzureServiceBusIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAzureServiceBusIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/GetAzureServiceBusIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAzureServiceBusIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/UpdateAzureServiceBusIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAzureServiceBusIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAzureServiceBusIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/DeleteAzureServiceBusIntegration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAzureServiceBusIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

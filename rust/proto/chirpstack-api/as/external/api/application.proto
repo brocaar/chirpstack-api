@@ -197,6 +197,96 @@ service ApplicationService {
         };
     }
 
+    // CreateGCPPubSubIntegration creates a GCP PubSub application-integration.
+    rpc CreateGCPPubSubIntegration(CreateGCPPubSubIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/applications/{integration.application_id}/integrations/gcp-pub-sub"
+            body: "*"
+        };
+    }
+
+    // GetGCPPubSubIntegration returns the GCP PubSub application-integration.
+    rpc GetGCPPubSubIntegration(GetGCPPubSubIntegrationRequest) returns (GetGCPPubSubIntegrationResponse) {
+        option(google.api.http) = {
+            get: "/api/applications/{application_id}/integrations/gcp-pub-sub"
+        };
+    }
+
+    // UpdateGCPPubSubIntegration updates the GCP PubSub application-integration.
+    rpc UpdateGCPPubSubIntegration(UpdateGCPPubSubIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/applications/{integration.application_id}/integrations/gcp-pub-sub"
+            body: "*"
+        };
+    }
+
+    // DeleteGCPPubSubIntegration deletes the GCP PubSub application-integration.
+    rpc DeleteGCPPubSubIntegration(DeleteGCPPubSubIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/applications/{application_id}/integrations/gcp-pub-sub"
+        };
+    }
+
+    // CreateAWSSNSIntegration creates a AWS SNS application-integration.
+    rpc CreateAWSSNSIntegration(CreateAWSSNSIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/applications/{integration.application_id}/integrations/aws-sns"
+            body: "*"
+        };
+    }
+
+    // GetAWSSNSIntegration returns the AWS SNS application-integration.
+    rpc GetAWSSNSIntegration(GetAWSSNSIntegrationRequest) returns (GetAWSSNSIntegrationResponse) {
+        option(google.api.http) = {
+            get: "/api/applications/{application_id}/integrations/aws-sns"
+        };
+    }
+
+    // UpdateAWSSNSIntegration updates the AWS SNS application-integration.
+    rpc UpdateAWSSNSIntegration(UpdateAWSSNSIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/applications/{integration.application_id}/integrations/aws-sns"
+            body: "*"
+        };
+    }
+
+    // DeleteAWSSNSIntegration deletes the AWS SNS application-integration.
+    rpc DeleteAWSSNSIntegration(DeleteAWSSNSIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/applications/{application_id}/integrations/aws-sns"
+        };
+    }
+
+    // CreateAzureServiceBusIntegration creates an Azure Service-Bus application-integration.
+    rpc CreateAzureServiceBusIntegration(CreateAzureServiceBusIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/applications/{integration.application_id}/integrations/azure-service-bus"
+            body: "*"
+        };
+    }
+
+    // GetAzureServiceBusIntegration returns the Azure Service-Bus application-integration.
+    rpc GetAzureServiceBusIntegration(GetAzureServiceBusIntegrationRequest) returns (GetAzureServiceBusIntegrationResponse) {
+        option(google.api.http) = {
+            get: "/api/applications/{application_id}/integrations/azure-service-bus"
+        };
+    }
+
+    // UpdateAzureServiceBusIntegration updates the Azure Service-Bus application-integration.
+    rpc UpdateAzureServiceBusIntegration(UpdateAzureServiceBusIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/applications/{integration.application_id}/integrations/azure-service-bus"
+            body: "*"
+        };
+    }
+
+    // DeleteAzureServiceBusIntegration deletes the Azure Service-Bus application-integration.
+    rpc DeleteAzureServiceBusIntegration(DeleteAzureServiceBusIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/applications/{application_id}/integrations/azure-service-bus"
+        };
+    }
+
 	// ListIntegrations lists all configured integrations.
 	rpc ListIntegrations(ListIntegrationRequest) returns (ListIntegrationResponse) {
 		option(google.api.http) = {
@@ -211,6 +301,9 @@ enum IntegrationKind {
     THINGSBOARD = 2;
     MYDEVICES = 3;
     LORACLOUD = 4;
+    GCP_PUBSUB = 5;
+    AWS_SNS = 6;
+    AZURE_SERVICE_BUS = 7;
 }
 
 enum Marshaler {
@@ -639,4 +732,137 @@ message UpdateLoRaCloudIntegrationRequest {
 message DeleteLoRaCloudIntegrationRequest {
     // Application ID.
     int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GCPPubSubIntegration {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+
+    // Marshaler.
+    // This defines the marshaler that is used to encode the event payload.
+    Marshaler marshaler = 2;
+
+    // Credentials file.
+    // This IAM service-account credentials file (JSON) must have the following Pub/Sub roles:
+    // * Pub/Sub Publisher
+    string credentials_file = 3;
+
+    // Project ID.
+    string project_id = 4 [json_name = "projectID"];
+
+    // Topic name.
+    // This is the name of the Pub/Sub topic.
+    string topic_name = 5;
+}
+
+message CreateGCPPubSubIntegrationRequest {
+    // Integration object to create.
+    GCPPubSubIntegration integration = 1;
+}
+
+message GetGCPPubSubIntegrationRequest {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetGCPPubSubIntegrationResponse {
+    // Integration object.
+    GCPPubSubIntegration integration = 1;
+}
+
+message UpdateGCPPubSubIntegrationRequest {
+	// Integration object to update.
+	GCPPubSubIntegration integration = 1;
+}
+
+message DeleteGCPPubSubIntegrationRequest {
+	// The id of the application.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message AWSSNSIntegration {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+
+    // Marshaler.
+    // This defines the marshaler that is used to encode the event payload.
+    Marshaler marshaler = 2;
+
+    // AWS region.
+    string region = 3;
+
+    // AWS Access Key ID.
+    string access_key_id = 4 [json_name="accessKeyID"];
+
+    // AWS Secret Access Key.
+    string secret_access_key = 5;
+
+    // Topic ARN.
+    string topic_arn = 6 [json_name="topicARN"];
+}
+
+message CreateAWSSNSIntegrationRequest {
+    // Integration object to create.
+    AWSSNSIntegration integration = 1;
+}
+
+message GetAWSSNSIntegrationRequest {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetAWSSNSIntegrationResponse {
+    // Integration object.
+    AWSSNSIntegration integration = 1;
+}
+
+message UpdateAWSSNSIntegrationRequest {
+	// Integration object to update.
+	AWSSNSIntegration integration = 1;
+}
+
+message DeleteAWSSNSIntegrationRequest {
+	// The id of the application.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message AzureServiceBusIntegration {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+
+    // Marshaler.
+    // This defines the marshaler that is used to encode the event payload.
+    Marshaler marshaler = 2;
+
+    // Connection string.
+    string connection_string = 3;
+
+    // Publish name.
+    // This is the name of the topic or queue.
+    string publish_name = 4;
+}
+
+message CreateAzureServiceBusIntegrationRequest {
+    // Integration object to create.
+    AzureServiceBusIntegration integration = 1;
+}
+
+message GetAzureServiceBusIntegrationRequest {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetAzureServiceBusIntegrationResponse {
+    // Integration object.
+    AzureServiceBusIntegration integration = 1;
+}
+
+message UpdateAzureServiceBusIntegrationRequest {
+	// Integration object to update.
+	AzureServiceBusIntegration integration = 1;
+}
+
+message DeleteAzureServiceBusIntegrationRequest {
+	// The id of the application.
+	int64 application_id = 1 [json_name = "applicationID"];
 }

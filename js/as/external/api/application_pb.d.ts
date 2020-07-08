@@ -1131,12 +1131,441 @@ export namespace DeleteLoRaCloudIntegrationRequest {
   }
 }
 
+export class GCPPubSubIntegration extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getMarshaler(): MarshalerMap[keyof MarshalerMap];
+  setMarshaler(value: MarshalerMap[keyof MarshalerMap]): void;
+
+  getCredentialsFile(): string;
+  setCredentialsFile(value: string): void;
+
+  getProjectId(): string;
+  setProjectId(value: string): void;
+
+  getTopicName(): string;
+  setTopicName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GCPPubSubIntegration.AsObject;
+  static toObject(includeInstance: boolean, msg: GCPPubSubIntegration): GCPPubSubIntegration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GCPPubSubIntegration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GCPPubSubIntegration;
+  static deserializeBinaryFromReader(message: GCPPubSubIntegration, reader: jspb.BinaryReader): GCPPubSubIntegration;
+}
+
+export namespace GCPPubSubIntegration {
+  export type AsObject = {
+    applicationId: number,
+    marshaler: MarshalerMap[keyof MarshalerMap],
+    credentialsFile: string,
+    projectId: string,
+    topicName: string,
+  }
+}
+
+export class CreateGCPPubSubIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): GCPPubSubIntegration | undefined;
+  setIntegration(value?: GCPPubSubIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateGCPPubSubIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateGCPPubSubIntegrationRequest): CreateGCPPubSubIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateGCPPubSubIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateGCPPubSubIntegrationRequest;
+  static deserializeBinaryFromReader(message: CreateGCPPubSubIntegrationRequest, reader: jspb.BinaryReader): CreateGCPPubSubIntegrationRequest;
+}
+
+export namespace CreateGCPPubSubIntegrationRequest {
+  export type AsObject = {
+    integration?: GCPPubSubIntegration.AsObject,
+  }
+}
+
+export class GetGCPPubSubIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGCPPubSubIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGCPPubSubIntegrationRequest): GetGCPPubSubIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetGCPPubSubIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGCPPubSubIntegrationRequest;
+  static deserializeBinaryFromReader(message: GetGCPPubSubIntegrationRequest, reader: jspb.BinaryReader): GetGCPPubSubIntegrationRequest;
+}
+
+export namespace GetGCPPubSubIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GetGCPPubSubIntegrationResponse extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): GCPPubSubIntegration | undefined;
+  setIntegration(value?: GCPPubSubIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGCPPubSubIntegrationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGCPPubSubIntegrationResponse): GetGCPPubSubIntegrationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetGCPPubSubIntegrationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGCPPubSubIntegrationResponse;
+  static deserializeBinaryFromReader(message: GetGCPPubSubIntegrationResponse, reader: jspb.BinaryReader): GetGCPPubSubIntegrationResponse;
+}
+
+export namespace GetGCPPubSubIntegrationResponse {
+  export type AsObject = {
+    integration?: GCPPubSubIntegration.AsObject,
+  }
+}
+
+export class UpdateGCPPubSubIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): GCPPubSubIntegration | undefined;
+  setIntegration(value?: GCPPubSubIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateGCPPubSubIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateGCPPubSubIntegrationRequest): UpdateGCPPubSubIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateGCPPubSubIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateGCPPubSubIntegrationRequest;
+  static deserializeBinaryFromReader(message: UpdateGCPPubSubIntegrationRequest, reader: jspb.BinaryReader): UpdateGCPPubSubIntegrationRequest;
+}
+
+export namespace UpdateGCPPubSubIntegrationRequest {
+  export type AsObject = {
+    integration?: GCPPubSubIntegration.AsObject,
+  }
+}
+
+export class DeleteGCPPubSubIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteGCPPubSubIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteGCPPubSubIntegrationRequest): DeleteGCPPubSubIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteGCPPubSubIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteGCPPubSubIntegrationRequest;
+  static deserializeBinaryFromReader(message: DeleteGCPPubSubIntegrationRequest, reader: jspb.BinaryReader): DeleteGCPPubSubIntegrationRequest;
+}
+
+export namespace DeleteGCPPubSubIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class AWSSNSIntegration extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getMarshaler(): MarshalerMap[keyof MarshalerMap];
+  setMarshaler(value: MarshalerMap[keyof MarshalerMap]): void;
+
+  getRegion(): string;
+  setRegion(value: string): void;
+
+  getAccessKeyId(): string;
+  setAccessKeyId(value: string): void;
+
+  getSecretAccessKey(): string;
+  setSecretAccessKey(value: string): void;
+
+  getTopicArn(): string;
+  setTopicArn(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AWSSNSIntegration.AsObject;
+  static toObject(includeInstance: boolean, msg: AWSSNSIntegration): AWSSNSIntegration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AWSSNSIntegration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AWSSNSIntegration;
+  static deserializeBinaryFromReader(message: AWSSNSIntegration, reader: jspb.BinaryReader): AWSSNSIntegration;
+}
+
+export namespace AWSSNSIntegration {
+  export type AsObject = {
+    applicationId: number,
+    marshaler: MarshalerMap[keyof MarshalerMap],
+    region: string,
+    accessKeyId: string,
+    secretAccessKey: string,
+    topicArn: string,
+  }
+}
+
+export class CreateAWSSNSIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): AWSSNSIntegration | undefined;
+  setIntegration(value?: AWSSNSIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAWSSNSIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAWSSNSIntegrationRequest): CreateAWSSNSIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAWSSNSIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAWSSNSIntegrationRequest;
+  static deserializeBinaryFromReader(message: CreateAWSSNSIntegrationRequest, reader: jspb.BinaryReader): CreateAWSSNSIntegrationRequest;
+}
+
+export namespace CreateAWSSNSIntegrationRequest {
+  export type AsObject = {
+    integration?: AWSSNSIntegration.AsObject,
+  }
+}
+
+export class GetAWSSNSIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAWSSNSIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAWSSNSIntegrationRequest): GetAWSSNSIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAWSSNSIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAWSSNSIntegrationRequest;
+  static deserializeBinaryFromReader(message: GetAWSSNSIntegrationRequest, reader: jspb.BinaryReader): GetAWSSNSIntegrationRequest;
+}
+
+export namespace GetAWSSNSIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GetAWSSNSIntegrationResponse extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): AWSSNSIntegration | undefined;
+  setIntegration(value?: AWSSNSIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAWSSNSIntegrationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAWSSNSIntegrationResponse): GetAWSSNSIntegrationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAWSSNSIntegrationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAWSSNSIntegrationResponse;
+  static deserializeBinaryFromReader(message: GetAWSSNSIntegrationResponse, reader: jspb.BinaryReader): GetAWSSNSIntegrationResponse;
+}
+
+export namespace GetAWSSNSIntegrationResponse {
+  export type AsObject = {
+    integration?: AWSSNSIntegration.AsObject,
+  }
+}
+
+export class UpdateAWSSNSIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): AWSSNSIntegration | undefined;
+  setIntegration(value?: AWSSNSIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAWSSNSIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAWSSNSIntegrationRequest): UpdateAWSSNSIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAWSSNSIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAWSSNSIntegrationRequest;
+  static deserializeBinaryFromReader(message: UpdateAWSSNSIntegrationRequest, reader: jspb.BinaryReader): UpdateAWSSNSIntegrationRequest;
+}
+
+export namespace UpdateAWSSNSIntegrationRequest {
+  export type AsObject = {
+    integration?: AWSSNSIntegration.AsObject,
+  }
+}
+
+export class DeleteAWSSNSIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAWSSNSIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAWSSNSIntegrationRequest): DeleteAWSSNSIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAWSSNSIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAWSSNSIntegrationRequest;
+  static deserializeBinaryFromReader(message: DeleteAWSSNSIntegrationRequest, reader: jspb.BinaryReader): DeleteAWSSNSIntegrationRequest;
+}
+
+export namespace DeleteAWSSNSIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class AzureServiceBusIntegration extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getMarshaler(): MarshalerMap[keyof MarshalerMap];
+  setMarshaler(value: MarshalerMap[keyof MarshalerMap]): void;
+
+  getConnectionString(): string;
+  setConnectionString(value: string): void;
+
+  getPublishName(): string;
+  setPublishName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AzureServiceBusIntegration.AsObject;
+  static toObject(includeInstance: boolean, msg: AzureServiceBusIntegration): AzureServiceBusIntegration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AzureServiceBusIntegration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AzureServiceBusIntegration;
+  static deserializeBinaryFromReader(message: AzureServiceBusIntegration, reader: jspb.BinaryReader): AzureServiceBusIntegration;
+}
+
+export namespace AzureServiceBusIntegration {
+  export type AsObject = {
+    applicationId: number,
+    marshaler: MarshalerMap[keyof MarshalerMap],
+    connectionString: string,
+    publishName: string,
+  }
+}
+
+export class CreateAzureServiceBusIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): AzureServiceBusIntegration | undefined;
+  setIntegration(value?: AzureServiceBusIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAzureServiceBusIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAzureServiceBusIntegrationRequest): CreateAzureServiceBusIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAzureServiceBusIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAzureServiceBusIntegrationRequest;
+  static deserializeBinaryFromReader(message: CreateAzureServiceBusIntegrationRequest, reader: jspb.BinaryReader): CreateAzureServiceBusIntegrationRequest;
+}
+
+export namespace CreateAzureServiceBusIntegrationRequest {
+  export type AsObject = {
+    integration?: AzureServiceBusIntegration.AsObject,
+  }
+}
+
+export class GetAzureServiceBusIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAzureServiceBusIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAzureServiceBusIntegrationRequest): GetAzureServiceBusIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAzureServiceBusIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAzureServiceBusIntegrationRequest;
+  static deserializeBinaryFromReader(message: GetAzureServiceBusIntegrationRequest, reader: jspb.BinaryReader): GetAzureServiceBusIntegrationRequest;
+}
+
+export namespace GetAzureServiceBusIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GetAzureServiceBusIntegrationResponse extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): AzureServiceBusIntegration | undefined;
+  setIntegration(value?: AzureServiceBusIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAzureServiceBusIntegrationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAzureServiceBusIntegrationResponse): GetAzureServiceBusIntegrationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAzureServiceBusIntegrationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAzureServiceBusIntegrationResponse;
+  static deserializeBinaryFromReader(message: GetAzureServiceBusIntegrationResponse, reader: jspb.BinaryReader): GetAzureServiceBusIntegrationResponse;
+}
+
+export namespace GetAzureServiceBusIntegrationResponse {
+  export type AsObject = {
+    integration?: AzureServiceBusIntegration.AsObject,
+  }
+}
+
+export class UpdateAzureServiceBusIntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): AzureServiceBusIntegration | undefined;
+  setIntegration(value?: AzureServiceBusIntegration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAzureServiceBusIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAzureServiceBusIntegrationRequest): UpdateAzureServiceBusIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAzureServiceBusIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAzureServiceBusIntegrationRequest;
+  static deserializeBinaryFromReader(message: UpdateAzureServiceBusIntegrationRequest, reader: jspb.BinaryReader): UpdateAzureServiceBusIntegrationRequest;
+}
+
+export namespace UpdateAzureServiceBusIntegrationRequest {
+  export type AsObject = {
+    integration?: AzureServiceBusIntegration.AsObject,
+  }
+}
+
+export class DeleteAzureServiceBusIntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAzureServiceBusIntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAzureServiceBusIntegrationRequest): DeleteAzureServiceBusIntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAzureServiceBusIntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAzureServiceBusIntegrationRequest;
+  static deserializeBinaryFromReader(message: DeleteAzureServiceBusIntegrationRequest, reader: jspb.BinaryReader): DeleteAzureServiceBusIntegrationRequest;
+}
+
+export namespace DeleteAzureServiceBusIntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
 export interface IntegrationKindMap {
   HTTP: 0;
   INFLUXDB: 1;
   THINGSBOARD: 2;
   MYDEVICES: 3;
   LORACLOUD: 4;
+  GCP_PUBSUB: 5;
+  AWS_SNS: 6;
+  AZURE_SERVICE_BUS: 7;
 }
 
 export const IntegrationKind: IntegrationKindMap;

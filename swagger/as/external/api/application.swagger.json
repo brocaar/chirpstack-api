@@ -152,6 +152,162 @@
         ]
       }
     },
+    "/api/applications/{application_id}/integrations/aws-sns": {
+      "get": {
+        "summary": "GetAWSSNSIntegration returns the AWS SNS application-integration.",
+        "operationId": "GetAWSSNSIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetAWSSNSIntegrationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "delete": {
+        "summary": "DeleteAWSSNSIntegration deletes the AWS SNS application-integration.",
+        "operationId": "DeleteAWSSNSIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "The id of the application.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
+    "/api/applications/{application_id}/integrations/azure-service-bus": {
+      "get": {
+        "summary": "GetAzureServiceBusIntegration returns the Azure Service-Bus application-integration.",
+        "operationId": "GetAzureServiceBusIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetAzureServiceBusIntegrationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "delete": {
+        "summary": "DeleteAzureServiceBusIntegration deletes the Azure Service-Bus application-integration.",
+        "operationId": "DeleteAzureServiceBusIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "The id of the application.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
+    "/api/applications/{application_id}/integrations/gcp-pub-sub": {
+      "get": {
+        "summary": "GetGCPPubSubIntegration returns the GCP PubSub application-integration.",
+        "operationId": "GetGCPPubSubIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetGCPPubSubIntegrationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "delete": {
+        "summary": "DeleteGCPPubSubIntegration deletes the GCP PubSub application-integration.",
+        "operationId": "DeleteGCPPubSubIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "The id of the application.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{application_id}/integrations/http": {
       "get": {
         "summary": "GetHTTPIntegration returns the HTTP application-integration.",
@@ -457,6 +613,210 @@
             "required": true,
             "type": "string",
             "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
+    "/api/applications/{integration.application_id}/integrations/aws-sns": {
+      "post": {
+        "summary": "CreateAWSSNSIntegration creates a AWS SNS application-integration.",
+        "operationId": "CreateAWSSNSIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreateAWSSNSIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "put": {
+        "summary": "UpdateAWSSNSIntegration updates the AWS SNS application-integration.",
+        "operationId": "UpdateAWSSNSIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdateAWSSNSIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
+    "/api/applications/{integration.application_id}/integrations/azure-service-bus": {
+      "post": {
+        "summary": "CreateAzureServiceBusIntegration creates an Azure Service-Bus application-integration.",
+        "operationId": "CreateAzureServiceBusIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreateAzureServiceBusIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "put": {
+        "summary": "UpdateAzureServiceBusIntegration updates the Azure Service-Bus application-integration.",
+        "operationId": "UpdateAzureServiceBusIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdateAzureServiceBusIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
+    "/api/applications/{integration.application_id}/integrations/gcp-pub-sub": {
+      "post": {
+        "summary": "CreateGCPPubSubIntegration creates a GCP PubSub application-integration.",
+        "operationId": "CreateGCPPubSubIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreateGCPPubSubIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "put": {
+        "summary": "UpdateGCPPubSubIntegration updates the GCP PubSub application-integration.",
+        "operationId": "UpdateGCPPubSubIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdateGCPPubSubIntegrationRequest"
+            }
           }
         ],
         "tags": [
@@ -806,6 +1166,36 @@
     }
   },
   "definitions": {
+    "apiAWSSNSIntegration": {
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Application ID."
+        },
+        "marshaler": {
+          "$ref": "#/definitions/apiMarshaler",
+          "description": "Marshaler.\nThis defines the marshaler that is used to encode the event payload."
+        },
+        "region": {
+          "type": "string",
+          "description": "AWS region."
+        },
+        "accessKeyID": {
+          "type": "string",
+          "description": "AWS Access Key ID."
+        },
+        "secretAccessKey": {
+          "type": "string",
+          "description": "AWS Secret Access Key."
+        },
+        "topicARN": {
+          "type": "string",
+          "description": "Topic ARN."
+        }
+      }
+    },
     "apiApplication": {
       "type": "object",
       "properties": {
@@ -876,6 +1266,37 @@
         }
       }
     },
+    "apiAzureServiceBusIntegration": {
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Application ID."
+        },
+        "marshaler": {
+          "$ref": "#/definitions/apiMarshaler",
+          "description": "Marshaler.\nThis defines the marshaler that is used to encode the event payload."
+        },
+        "connectionString": {
+          "type": "string",
+          "description": "Connection string."
+        },
+        "publishName": {
+          "type": "string",
+          "description": "Publish name.\nThis is the name of the topic or queue."
+        }
+      }
+    },
+    "apiCreateAWSSNSIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiAWSSNSIntegration",
+          "description": "Integration object to create."
+        }
+      }
+    },
     "apiCreateApplicationRequest": {
       "type": "object",
       "properties": {
@@ -892,6 +1313,24 @@
           "type": "string",
           "format": "int64",
           "description": "Application ID."
+        }
+      }
+    },
+    "apiCreateAzureServiceBusIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiAzureServiceBusIntegration",
+          "description": "Integration object to create."
+        }
+      }
+    },
+    "apiCreateGCPPubSubIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiGCPPubSubIntegration",
+          "description": "Integration object to create."
         }
       }
     },
@@ -940,12 +1379,65 @@
         }
       }
     },
+    "apiGCPPubSubIntegration": {
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Application ID."
+        },
+        "marshaler": {
+          "$ref": "#/definitions/apiMarshaler",
+          "description": "Marshaler.\nThis defines the marshaler that is used to encode the event payload."
+        },
+        "credentialsFile": {
+          "type": "string",
+          "title": "Credentials file.\nThis IAM service-account credentials file (JSON) must have the following Pub/Sub roles:\n* Pub/Sub Publisher"
+        },
+        "projectID": {
+          "type": "string",
+          "description": "Project ID."
+        },
+        "topicName": {
+          "type": "string",
+          "description": "Topic name.\nThis is the name of the Pub/Sub topic."
+        }
+      }
+    },
+    "apiGetAWSSNSIntegrationResponse": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiAWSSNSIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
     "apiGetApplicationResponse": {
       "type": "object",
       "properties": {
         "application": {
           "$ref": "#/definitions/apiApplication",
           "description": "Application object."
+        }
+      }
+    },
+    "apiGetAzureServiceBusIntegrationResponse": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiAzureServiceBusIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
+    "apiGetGCPPubSubIntegrationResponse": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiGCPPubSubIntegration",
+          "description": "Integration object."
         }
       }
     },
@@ -1117,7 +1609,10 @@
         "INFLUXDB",
         "THINGSBOARD",
         "MYDEVICES",
-        "LORACLOUD"
+        "LORACLOUD",
+        "GCP_PUBSUB",
+        "AWS_SNS",
+        "AZURE_SERVICE_BUS"
       ],
       "default": "HTTP"
     },
@@ -1277,12 +1772,39 @@
         }
       }
     },
+    "apiUpdateAWSSNSIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiAWSSNSIntegration",
+          "description": "Integration object to update."
+        }
+      }
+    },
     "apiUpdateApplicationRequest": {
       "type": "object",
       "properties": {
         "application": {
           "$ref": "#/definitions/apiApplication",
           "description": "Application object to update."
+        }
+      }
+    },
+    "apiUpdateAzureServiceBusIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiAzureServiceBusIntegration",
+          "description": "Integration object to update."
+        }
+      }
+    },
+    "apiUpdateGCPPubSubIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiGCPPubSubIntegration",
+          "description": "Integration object to update."
         }
       }
     },
