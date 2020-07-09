@@ -506,6 +506,9 @@ message GenerateGatewayClientCertificateResponse {
 
     // TLS key.
     bytes tls_key = 2;
+
+    // CA certificate.
+    bytes ca_cert = 3;
 }
 
 enum AggregationInterval {

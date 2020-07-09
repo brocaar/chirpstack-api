@@ -1733,7 +1733,8 @@ proto.api.GenerateGatewayClientCertificateResponse.prototype.toObject = function
 proto.api.GenerateGatewayClientCertificateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     tlsCert: msg.getTlsCert(),
-    tlsKey: msg.getTlsKey()
+    tlsKey: msg.getTlsKey(),
+    caCert: msg.getCaCert()
   };
 
   if (includeInstance) {
@@ -1777,6 +1778,10 @@ proto.api.GenerateGatewayClientCertificateResponse.deserializeBinaryFromReader =
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTlsKey(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCaCert(value);
       break;
     default:
       reader.skipField();
@@ -1830,6 +1835,13 @@ proto.api.GenerateGatewayClientCertificateResponse.prototype.serializeBinaryToWr
       f
     );
   }
+  f = this.getCaCert();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1869,6 +1881,21 @@ proto.api.GenerateGatewayClientCertificateResponse.prototype.getTlsKey = functio
 /** @param {string} value  */
 proto.api.GenerateGatewayClientCertificateResponse.prototype.setTlsKey = function(value) {
   jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional string ca_cert = 3;
+ * @return {string}
+ */
+proto.api.GenerateGatewayClientCertificateResponse.prototype.getCaCert = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.GenerateGatewayClientCertificateResponse.prototype.setCaCert = function(value) {
+  jspb.Message.setField(this, 3, value);
 };
 
 

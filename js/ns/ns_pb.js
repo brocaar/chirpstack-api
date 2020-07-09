@@ -8969,7 +8969,8 @@ proto.ns.GenerateGatewayClientCertificateResponse.prototype.toObject = function(
 proto.ns.GenerateGatewayClientCertificateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     tlsCert: msg.getTlsCert_asB64(),
-    tlsKey: msg.getTlsKey_asB64()
+    tlsKey: msg.getTlsKey_asB64(),
+    caCert: msg.getCaCert_asB64()
   };
 
   if (includeInstance) {
@@ -9013,6 +9014,10 @@ proto.ns.GenerateGatewayClientCertificateResponse.deserializeBinaryFromReader = 
     case 2:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setTlsKey(value);
+      break;
+    case 3:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setCaCert(value);
       break;
     default:
       reader.skipField();
@@ -9063,6 +9068,13 @@ proto.ns.GenerateGatewayClientCertificateResponse.prototype.serializeBinaryToWri
   if (f.length > 0) {
     writer.writeBytes(
       2,
+      f
+    );
+  }
+  f = this.getCaCert_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      3,
       f
     );
   }
@@ -9153,6 +9165,45 @@ proto.ns.GenerateGatewayClientCertificateResponse.prototype.getTlsKey_asU8 = fun
 /** @param {!(string|Uint8Array)} value  */
 proto.ns.GenerateGatewayClientCertificateResponse.prototype.setTlsKey = function(value) {
   jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional bytes ca_cert = 3;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.getCaCert = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+};
+
+
+/**
+ * optional bytes ca_cert = 3;
+ * This is a type-conversion wrapper around `getCaCert()`
+ * @return {string}
+ */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.getCaCert_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getCaCert()));
+};
+
+
+/**
+ * optional bytes ca_cert = 3;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getCaCert()`
+ * @return {!Uint8Array}
+ */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.getCaCert_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getCaCert()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.setCaCert = function(value) {
+  jspb.Message.setField(this, 3, value);
 };
 
 

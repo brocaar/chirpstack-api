@@ -175,6 +175,9 @@ message GenerateGatewayClientCertificateResponse {
 
     // TLS key.
     string tls_key = 2;
+
+    // CA certificate.
+    string ca_cert = 3;
 }
 
 

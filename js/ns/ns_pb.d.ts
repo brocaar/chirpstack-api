@@ -1109,6 +1109,11 @@ export class GenerateGatewayClientCertificateResponse extends jspb.Message {
   getTlsKey_asB64(): string;
   setTlsKey(value: Uint8Array | string): void;
 
+  getCaCert(): Uint8Array | string;
+  getCaCert_asU8(): Uint8Array;
+  getCaCert_asB64(): string;
+  setCaCert(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateGatewayClientCertificateResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GenerateGatewayClientCertificateResponse): GenerateGatewayClientCertificateResponse.AsObject;
@@ -1123,6 +1128,7 @@ export namespace GenerateGatewayClientCertificateResponse {
   export type AsObject = {
     tlsCert: Uint8Array | string,
     tlsKey: Uint8Array | string,
+    caCert: Uint8Array | string,
   }
 }
 

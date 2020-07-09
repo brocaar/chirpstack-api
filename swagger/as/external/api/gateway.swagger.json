@@ -494,6 +494,10 @@
         "tlsKey": {
           "type": "string",
           "description": "TLS key."
+        },
+        "caCert": {
+          "type": "string",
+          "description": "CA certificate."
         }
       }
     },
