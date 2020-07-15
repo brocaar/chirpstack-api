@@ -451,6 +451,10 @@
         "location": {
           "$ref": "#/definitions/commonLocation",
           "description": "Location."
+        },
+        "networkServerName": {
+          "type": "string",
+          "description": "Network-server name."
         }
       }
     },

@@ -226,6 +226,9 @@ message GatewayListItem {
 
     // Location.
     common.Location location = 10;
+
+    // Network-server name.
+    string network_server_name = 11;
 }
 
 message ListGatewayResponse {

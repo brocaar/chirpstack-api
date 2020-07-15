@@ -323,6 +323,9 @@ export class GatewayListItem extends jspb.Message {
   getLocation(): common_common_pb.Location | undefined;
   setLocation(value?: common_common_pb.Location): void;
 
+  getNetworkServerName(): string;
+  setNetworkServerName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayListItem.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayListItem): GatewayListItem.AsObject;
@@ -345,6 +348,7 @@ export namespace GatewayListItem {
     organizationId: number,
     networkServerId: number,
     location?: common_common_pb.Location.AsObject,
+    networkServerName: string,
   }
 }
 

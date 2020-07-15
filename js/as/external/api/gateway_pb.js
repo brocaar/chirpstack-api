@@ -2194,7 +2194,8 @@ proto.api.GatewayListItem.toObject = function(includeInstance, msg) {
     lastSeenAt: (f = msg.getLastSeenAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     organizationId: msg.getOrganizationId(),
     networkServerId: msg.getNetworkServerId(),
-    location: (f = msg.getLocation()) && common_common_pb.Location.toObject(includeInstance, f)
+    location: (f = msg.getLocation()) && common_common_pb.Location.toObject(includeInstance, f),
+    networkServerName: msg.getNetworkServerName()
   };
 
   if (includeInstance) {
@@ -2275,6 +2276,10 @@ proto.api.GatewayListItem.deserializeBinaryFromReader = function(msg, reader) {
       var value = new common_common_pb.Location;
       reader.readMessage(value,common_common_pb.Location.deserializeBinaryFromReader);
       msg.setLocation(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNetworkServerName(value);
       break;
     default:
       reader.skipField();
@@ -2387,6 +2392,13 @@ proto.api.GatewayListItem.prototype.serializeBinaryToWriter = function (writer) 
       10,
       f,
       common_common_pb.Location.serializeBinaryToWriter
+    );
+  }
+  f = this.getNetworkServerName();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -2623,6 +2635,21 @@ proto.api.GatewayListItem.prototype.clearLocation = function() {
  */
 proto.api.GatewayListItem.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string network_server_name = 11;
+ * @return {string}
+ */
+proto.api.GatewayListItem.prototype.getNetworkServerName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 11, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.GatewayListItem.prototype.setNetworkServerName = function(value) {
+  jspb.Message.setField(this, 11, value);
 };
 
 
