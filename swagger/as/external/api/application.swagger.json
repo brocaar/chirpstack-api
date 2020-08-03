@@ -1732,6 +1732,16 @@
           "type": "integer",
           "format": "int64",
           "description": "Device Application Services modem port (FPort).\nChirpStack Application Server will only forward the FRMPayload to DAS\nwhen the uplink FPort is equal to this value."
+        },
+        "dasGNSSPort": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Device Application Services GNSS port (FPort).\nChirpStack Application Server will forward the FRMPayload to DAS when\nas GNSS payload when the uplink FPort is equal to this value."
+        },
+        "dasGNSSUseRxTime": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Device Application Services GNSS use RX time.\nIn case this is set to true, the DAS resolver will use the RX time of the\nnetwork instead of the timestamp included in the LR1110 payload."
         }
       }
     },

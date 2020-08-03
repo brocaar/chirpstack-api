@@ -707,6 +707,16 @@ message LoRaCloudIntegration {
     // ChirpStack Application Server will only forward the FRMPayload to DAS
     // when the uplink FPort is equal to this value.
     uint32 das_modem_port = 15;
+
+    // Device Application Services GNSS port (FPort).
+    // ChirpStack Application Server will forward the FRMPayload to DAS when
+    // as GNSS payload when the uplink FPort is equal to this value.
+    uint32 das_gnss_port = 16 [json_name = "dasGNSSPort"];
+
+    // Device Application Services GNSS use RX time.
+    // In case this is set to true, the DAS resolver will use the RX time of the
+    // network instead of the timestamp included in the LR1110 payload.
+    bool das_gnss_use_rx_time = 17 [json_name = "dasGNSSUseRxTime"];
 }
 
 message CreateLoRaCloudIntegrationRequest {

@@ -995,6 +995,12 @@ export class LoRaCloudIntegration extends jspb.Message {
   getDasModemPort(): number;
   setDasModemPort(value: number): void;
 
+  getDasGnssPort(): number;
+  setDasGnssPort(value: number): void;
+
+  getDasGnssUseRxTime(): boolean;
+  setDasGnssUseRxTime(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoRaCloudIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: LoRaCloudIntegration): LoRaCloudIntegration.AsObject;
@@ -1022,6 +1028,8 @@ export namespace LoRaCloudIntegration {
     das: boolean,
     dasToken: string,
     dasModemPort: number,
+    dasGnssPort: number,
+    dasGnssUseRxTime: boolean,
   }
 }
 
