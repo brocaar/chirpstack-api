@@ -56,6 +56,16 @@ class InternalServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginRequest.SerializeToString,
                 response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginResponse.FromString,
                 )
+        self.GetDevicesSummary = channel.unary_unary(
+                '/api.InternalService/GetDevicesSummary',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetDevicesSummaryRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetDevicesSummaryResponse.FromString,
+                )
+        self.GetGatewaysSummary = channel.unary_unary(
+                '/api.InternalService/GetGatewaysSummary',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetGatewaysSummaryRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetGatewaysSummaryResponse.FromString,
+                )
 
 
 class InternalServiceServicer(object):
@@ -118,6 +128,20 @@ class InternalServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDevicesSummary(self, request, context):
+        """GetDevicesSummary returns an aggregated summary of the devices.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGatewaysSummary(self, request, context):
+        """GetGatewaysSummary returns an aggregated summary of the gateways.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InternalServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -161,6 +185,16 @@ def add_InternalServiceServicer_to_server(servicer, server):
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginRequest.FromString,
                     response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginResponse.SerializeToString,
             ),
+            'GetDevicesSummary': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDevicesSummary,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetDevicesSummaryRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetDevicesSummaryResponse.SerializeToString,
+            ),
+            'GetGatewaysSummary': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGatewaysSummary,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetGatewaysSummaryRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetGatewaysSummaryResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'api.InternalService', rpc_method_handlers)
@@ -178,6 +212,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -186,7 +221,7 @@ class InternalService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.LoginRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.LoginResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Profile(request,
@@ -194,6 +229,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -202,7 +238,7 @@ class InternalService(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GlobalSearch(request,
@@ -210,6 +246,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -218,7 +255,7 @@ class InternalService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GlobalSearchResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateAPIKey(request,
@@ -226,6 +263,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -234,7 +272,7 @@ class InternalService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.CreateAPIKeyRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.CreateAPIKeyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteAPIKey(request,
@@ -242,6 +280,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -250,7 +289,7 @@ class InternalService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.DeleteAPIKeyRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListAPIKeys(request,
@@ -258,6 +297,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -266,7 +306,7 @@ class InternalService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.ListAPIKeysResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Settings(request,
@@ -274,6 +314,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -282,7 +323,7 @@ class InternalService(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.SettingsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OpenIDConnectLogin(request,
@@ -290,6 +331,7 @@ class InternalService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -298,4 +340,38 @@ class InternalService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.OpenIDConnectLoginResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDevicesSummary(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.InternalService/GetDevicesSummary',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetDevicesSummaryRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetDevicesSummaryResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGatewaysSummary(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.InternalService/GetGatewaysSummary',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetGatewaysSummaryRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_internal__pb2.GetGatewaysSummaryResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

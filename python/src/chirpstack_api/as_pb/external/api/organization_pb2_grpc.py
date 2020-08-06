@@ -212,6 +212,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -220,7 +221,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.ListOrganizationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.ListOrganizationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -228,6 +229,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -236,7 +238,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.GetOrganizationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.GetOrganizationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -244,6 +246,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -252,7 +255,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.CreateOrganizationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.CreateOrganizationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -260,6 +263,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -268,7 +272,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.UpdateOrganizationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -276,6 +280,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -284,7 +289,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.DeleteOrganizationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListUsers(request,
@@ -292,6 +297,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -300,7 +306,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.ListOrganizationUsersRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.ListOrganizationUsersResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetUser(request,
@@ -308,6 +314,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -316,7 +323,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.GetOrganizationUserRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.GetOrganizationUserResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def AddUser(request,
@@ -324,6 +331,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -332,7 +340,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.AddOrganizationUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateUser(request,
@@ -340,6 +348,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -348,7 +357,7 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.UpdateOrganizationUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteUser(request,
@@ -356,6 +365,7 @@ class OrganizationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -364,4 +374,4 @@ class OrganizationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_organization__pb2.DeleteOrganizationUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

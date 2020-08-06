@@ -16,6 +16,8 @@ interface IInternalServiceService extends grpc.ServiceDefinition<grpc.UntypedSer
   listAPIKeys: grpc.MethodDefinition<as_external_api_internal_pb.ListAPIKeysRequest, as_external_api_internal_pb.ListAPIKeysResponse>;
   settings: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, as_external_api_internal_pb.SettingsResponse>;
   openIDConnectLogin: grpc.MethodDefinition<as_external_api_internal_pb.OpenIDConnectLoginRequest, as_external_api_internal_pb.OpenIDConnectLoginResponse>;
+  getDevicesSummary: grpc.MethodDefinition<as_external_api_internal_pb.GetDevicesSummaryRequest, as_external_api_internal_pb.GetDevicesSummaryResponse>;
+  getGatewaysSummary: grpc.MethodDefinition<as_external_api_internal_pb.GetGatewaysSummaryRequest, as_external_api_internal_pb.GetGatewaysSummaryResponse>;
 }
 
 export const InternalServiceService: IInternalServiceService;
@@ -46,4 +48,10 @@ export class InternalServiceClient extends grpc.Client {
   openIDConnectLogin(argument: as_external_api_internal_pb.OpenIDConnectLoginRequest, callback: grpc.requestCallback<as_external_api_internal_pb.OpenIDConnectLoginResponse>): grpc.ClientUnaryCall;
   openIDConnectLogin(argument: as_external_api_internal_pb.OpenIDConnectLoginRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.OpenIDConnectLoginResponse>): grpc.ClientUnaryCall;
   openIDConnectLogin(argument: as_external_api_internal_pb.OpenIDConnectLoginRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.OpenIDConnectLoginResponse>): grpc.ClientUnaryCall;
+  getDevicesSummary(argument: as_external_api_internal_pb.GetDevicesSummaryRequest, callback: grpc.requestCallback<as_external_api_internal_pb.GetDevicesSummaryResponse>): grpc.ClientUnaryCall;
+  getDevicesSummary(argument: as_external_api_internal_pb.GetDevicesSummaryRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.GetDevicesSummaryResponse>): grpc.ClientUnaryCall;
+  getDevicesSummary(argument: as_external_api_internal_pb.GetDevicesSummaryRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.GetDevicesSummaryResponse>): grpc.ClientUnaryCall;
+  getGatewaysSummary(argument: as_external_api_internal_pb.GetGatewaysSummaryRequest, callback: grpc.requestCallback<as_external_api_internal_pb.GetGatewaysSummaryResponse>): grpc.ClientUnaryCall;
+  getGatewaysSummary(argument: as_external_api_internal_pb.GetGatewaysSummaryRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.GetGatewaysSummaryResponse>): grpc.ClientUnaryCall;
+  getGatewaysSummary(argument: as_external_api_internal_pb.GetGatewaysSummaryRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_internal_pb.GetGatewaysSummaryResponse>): grpc.ClientUnaryCall;
 }

@@ -76,6 +76,7 @@ class GeolocationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -84,7 +85,7 @@ class GeolocationServerService(object):
             chirpstack__api_dot_geo_dot_geo__pb2.ResolveTDOARequest.SerializeToString,
             chirpstack__api_dot_geo_dot_geo__pb2.ResolveTDOAResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ResolveMultiFrameTDOA(request,
@@ -92,6 +93,7 @@ class GeolocationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -100,4 +102,4 @@ class GeolocationServerService(object):
             chirpstack__api_dot_geo_dot_geo__pb2.ResolveMultiFrameTDOARequest.SerializeToString,
             chirpstack__api_dot_geo_dot_geo__pb2.ResolveMultiFrameTDOAResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

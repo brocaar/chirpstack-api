@@ -178,6 +178,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -186,7 +187,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.HandleUplinkDataRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleProprietaryUplink(request,
@@ -194,6 +195,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -202,7 +204,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.HandleProprietaryUplinkRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleError(request,
@@ -210,6 +212,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -218,7 +221,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.HandleErrorRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleDownlinkACK(request,
@@ -226,6 +229,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -234,7 +238,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.HandleDownlinkACKRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleGatewayStats(request,
@@ -242,6 +246,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -250,7 +255,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.HandleGatewayStatsRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleTxAck(request,
@@ -258,6 +263,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -266,7 +272,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.HandleTxAckRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SetDeviceStatus(request,
@@ -274,6 +280,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -282,7 +289,7 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.SetDeviceStatusRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SetDeviceLocation(request,
@@ -290,6 +297,7 @@ class ApplicationServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -298,4 +306,4 @@ class ApplicationServerService(object):
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.SetDeviceLocationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

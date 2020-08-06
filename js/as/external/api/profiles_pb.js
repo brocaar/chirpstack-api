@@ -9,6 +9,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.exportSymbol('proto.api.DeviceProfile', null, global);
 goog.exportSymbol('proto.api.RatePolicy', null, global);
 goog.exportSymbol('proto.api.ServiceProfile', null, global);
@@ -884,7 +885,8 @@ proto.api.DeviceProfile.toObject = function(includeInstance, msg) {
     payloadDecoderScript: msg.getPayloadDecoderScript(),
     geolocBufferTtl: msg.getGeolocBufferTtl(),
     geolocMinBufferSize: msg.getGeolocMinBufferSize(),
-    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
+    uplinkInterval: (f = msg.getUplinkInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1038,6 +1040,11 @@ proto.api.DeviceProfile.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
          });
+      break;
+    case 30:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setUplinkInterval(value);
       break;
     default:
       reader.skipField();
@@ -1276,6 +1283,14 @@ proto.api.DeviceProfile.prototype.serializeBinaryToWriter = function (writer) {
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(29, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getUplinkInterval();
+  if (f != null) {
+    writer.writeMessage(
+      30,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
   }
 };
 
@@ -1734,6 +1749,36 @@ proto.api.DeviceProfile.prototype.getTagsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 29, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * optional google.protobuf.Duration uplink_interval = 30;
+ * @return {proto.google.protobuf.Duration}
+ */
+proto.api.DeviceProfile.prototype.getUplinkInterval = function() {
+  return /** @type{proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 30));
+};
+
+
+/** @param {proto.google.protobuf.Duration|undefined} value  */
+proto.api.DeviceProfile.prototype.setUplinkInterval = function(value) {
+  jspb.Message.setWrapperField(this, 30, value);
+};
+
+
+proto.api.DeviceProfile.prototype.clearUplinkInterval = function() {
+  this.setUplinkInterval(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.api.DeviceProfile.prototype.hasUplinkInterval = function() {
+  return jspb.Message.getField(this, 30) != null;
 };
 
 

@@ -127,6 +127,7 @@ class GatewayProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -135,7 +136,7 @@ class GatewayProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.CreateGatewayProfileRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.CreateGatewayProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -143,6 +144,7 @@ class GatewayProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -151,7 +153,7 @@ class GatewayProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.GetGatewayProfileRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.GetGatewayProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -159,6 +161,7 @@ class GatewayProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -167,7 +170,7 @@ class GatewayProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.UpdateGatewayProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -175,6 +178,7 @@ class GatewayProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -183,7 +187,7 @@ class GatewayProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.DeleteGatewayProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -191,6 +195,7 @@ class GatewayProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -199,4 +204,4 @@ class GatewayProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.ListGatewayProfilesRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gatewayProfile__pb2.ListGatewayProfilesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

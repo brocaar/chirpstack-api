@@ -4,6 +4,8 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 
+import "google/protobuf/duration.proto";
+
 
 enum RatePolicy {
     // Drop
@@ -182,4 +184,10 @@ message DeviceProfile {
 
     // User defined tags.
     map<string, string> tags = 29;
+
+    // Uplink interval.
+    // This defines the expected uplink interval which the device uses for
+    // communication. When the uplink interval has expired and no uplink has
+    // been received, the device is considered inactive.
+    google.protobuf.Duration uplink_interval = 30;
 }

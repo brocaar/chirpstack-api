@@ -301,6 +301,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -309,7 +310,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.CreateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -317,6 +318,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -325,7 +327,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetDeviceRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetDeviceResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -333,6 +335,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -341,7 +344,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.ListDeviceRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.ListDeviceResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -349,6 +352,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -357,7 +361,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.DeleteDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -365,6 +369,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -373,7 +378,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.UpdateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateKeys(request,
@@ -381,6 +386,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -389,7 +395,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.CreateDeviceKeysRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetKeys(request,
@@ -397,6 +403,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -405,7 +412,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetDeviceKeysRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetDeviceKeysResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateKeys(request,
@@ -413,6 +420,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -421,7 +429,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.UpdateDeviceKeysRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteKeys(request,
@@ -429,6 +437,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -437,7 +446,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.DeleteDeviceKeysRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Activate(request,
@@ -445,6 +454,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -453,7 +463,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.ActivateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Deactivate(request,
@@ -461,6 +471,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -469,7 +480,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.DeactivateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetActivation(request,
@@ -477,6 +488,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -485,7 +497,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetDeviceActivationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetDeviceActivationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetRandomDevAddr(request,
@@ -493,6 +505,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -501,7 +514,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetRandomDevAddrRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.GetRandomDevAddrResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def StreamFrameLogs(request,
@@ -509,6 +522,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -517,7 +531,7 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.StreamDeviceFrameLogsRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.StreamDeviceFrameLogsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def StreamEventLogs(request,
@@ -525,6 +539,7 @@ class DeviceService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -533,4 +548,4 @@ class DeviceService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.StreamDeviceEventLogsRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_device__pb2.StreamDeviceEventLogsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -125,6 +125,60 @@
         ]
       }
     },
+    "/api/internal/devices/summary": {
+      "get": {
+        "summary": "GetDevicesSummary returns an aggregated summary of the devices.",
+        "operationId": "GetDevicesSummary",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetDevicesSummaryResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationID",
+            "description": "Organization ID.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "InternalService"
+        ]
+      }
+    },
+    "/api/internal/gateways/summary": {
+      "get": {
+        "summary": "GetGatewaysSummary returns an aggregated summary of the gateways.",
+        "operationId": "GetGatewaysSummary",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetGatewaysSummaryResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationID",
+            "description": "Organization ID.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "InternalService"
+        ]
+      }
+    },
     "/api/internal/login": {
       "post": {
         "summary": "Log in a user",
@@ -323,6 +377,44 @@
         "jwtToken": {
           "type": "string",
           "description": "JWT token for this API Key."
+        }
+      }
+    },
+    "apiGetDevicesSummaryResponse": {
+      "type": "object",
+      "properties": {
+        "activeCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Active count."
+        },
+        "inactiveCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Inactive count."
+        },
+        "drCount": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "per data-rate count."
+        }
+      }
+    },
+    "apiGetGatewaysSummaryResponse": {
+      "type": "object",
+      "properties": {
+        "activeCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Active count."
+        },
+        "inactiveCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Inactive count."
         }
       }
     },

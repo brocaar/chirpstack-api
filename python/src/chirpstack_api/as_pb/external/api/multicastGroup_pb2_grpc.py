@@ -212,6 +212,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -220,7 +221,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.CreateMulticastGroupRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.CreateMulticastGroupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -228,6 +229,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -236,7 +238,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.GetMulticastGroupRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.GetMulticastGroupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -244,6 +246,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -252,7 +255,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.UpdateMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -260,6 +263,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -268,7 +272,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.DeleteMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -276,6 +280,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -284,7 +289,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.ListMulticastGroupRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.ListMulticastGroupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def AddDevice(request,
@@ -292,6 +297,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -300,7 +306,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.AddDeviceToMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def RemoveDevice(request,
@@ -308,6 +314,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -316,7 +323,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.RemoveDeviceFromMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Enqueue(request,
@@ -324,6 +331,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -332,7 +340,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.EnqueueMulticastQueueItemRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.EnqueueMulticastQueueItemResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def FlushQueue(request,
@@ -340,6 +348,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -348,7 +357,7 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.FlushMulticastGroupQueueItemsRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListQueue(request,
@@ -356,6 +365,7 @@ class MulticastGroupService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -364,4 +374,4 @@ class MulticastGroupService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.ListMulticastGroupQueueItemsRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_multicastGroup__pb2.ListMulticastGroupQueueItemsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

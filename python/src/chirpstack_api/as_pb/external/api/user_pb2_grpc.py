@@ -144,6 +144,7 @@ class UserService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -152,7 +153,7 @@ class UserService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.ListUserRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.ListUserResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -160,6 +161,7 @@ class UserService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -168,7 +170,7 @@ class UserService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.GetUserRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.GetUserResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -176,6 +178,7 @@ class UserService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -184,7 +187,7 @@ class UserService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.CreateUserRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.CreateUserResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -192,6 +195,7 @@ class UserService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -200,7 +204,7 @@ class UserService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.UpdateUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -208,6 +212,7 @@ class UserService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -216,7 +221,7 @@ class UserService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.DeleteUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdatePassword(request,
@@ -224,6 +229,7 @@ class UserService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -232,4 +238,4 @@ class UserService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.UpdateUserPasswordRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

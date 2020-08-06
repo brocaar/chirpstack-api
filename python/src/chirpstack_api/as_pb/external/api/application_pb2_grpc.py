@@ -688,6 +688,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -696,7 +697,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateApplicationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateApplicationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -704,6 +705,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -712,7 +714,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetApplicationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetApplicationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -720,6 +722,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -728,7 +731,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateApplicationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -736,6 +739,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -744,7 +748,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteApplicationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -752,6 +756,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -760,7 +765,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListApplicationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListApplicationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateHTTPIntegration(request,
@@ -768,6 +773,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -776,7 +782,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateHTTPIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetHTTPIntegration(request,
@@ -784,6 +790,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -792,7 +799,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetHTTPIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetHTTPIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateHTTPIntegration(request,
@@ -800,6 +807,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -808,7 +816,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateHTTPIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteHTTPIntegration(request,
@@ -816,6 +824,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -824,7 +833,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteHTTPIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateInfluxDBIntegration(request,
@@ -832,6 +841,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -840,7 +850,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateInfluxDBIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetInfluxDBIntegration(request,
@@ -848,6 +858,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -856,7 +867,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateInfluxDBIntegration(request,
@@ -864,6 +875,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -872,7 +884,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateInfluxDBIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteInfluxDBIntegration(request,
@@ -880,6 +892,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -888,7 +901,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateThingsBoardIntegration(request,
@@ -896,6 +909,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -904,7 +918,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateThingsBoardIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetThingsBoardIntegration(request,
@@ -912,6 +926,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -920,7 +935,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetThingsBoardIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetThingsBoardIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateThingsBoardIntegration(request,
@@ -928,6 +943,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -936,7 +952,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateThingsBoardIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteThingsBoardIntegration(request,
@@ -944,6 +960,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -952,7 +969,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteThingsBoardIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateMyDevicesIntegration(request,
@@ -960,6 +977,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -968,7 +986,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateMyDevicesIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetMyDevicesIntegration(request,
@@ -976,6 +994,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -984,7 +1003,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetMyDevicesIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetMyDevicesIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateMyDevicesIntegration(request,
@@ -992,6 +1011,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1000,7 +1020,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateMyDevicesIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteMyDevicesIntegration(request,
@@ -1008,6 +1028,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1016,7 +1037,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteMyDevicesIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateLoRaCloudIntegration(request,
@@ -1024,6 +1045,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1032,7 +1054,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateLoRaCloudIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetLoRaCloudIntegration(request,
@@ -1040,6 +1062,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1048,7 +1071,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetLoRaCloudIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetLoRaCloudIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateLoRaCloudIntegration(request,
@@ -1056,6 +1079,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1064,7 +1088,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateLoRaCloudIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteLoRaCloudIntegration(request,
@@ -1072,6 +1096,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1080,7 +1105,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteLoRaCloudIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateGCPPubSubIntegration(request,
@@ -1088,6 +1113,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1096,7 +1122,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateGCPPubSubIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetGCPPubSubIntegration(request,
@@ -1104,6 +1130,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1112,7 +1139,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetGCPPubSubIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateGCPPubSubIntegration(request,
@@ -1120,6 +1147,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1128,7 +1156,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateGCPPubSubIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteGCPPubSubIntegration(request,
@@ -1136,6 +1164,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1144,7 +1173,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteGCPPubSubIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateAWSSNSIntegration(request,
@@ -1152,6 +1181,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1160,7 +1190,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAWSSNSIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetAWSSNSIntegration(request,
@@ -1168,6 +1198,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1176,7 +1207,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAWSSNSIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateAWSSNSIntegration(request,
@@ -1184,6 +1215,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1192,7 +1224,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAWSSNSIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteAWSSNSIntegration(request,
@@ -1200,6 +1232,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1208,7 +1241,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAWSSNSIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateAzureServiceBusIntegration(request,
@@ -1216,6 +1249,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1224,7 +1258,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateAzureServiceBusIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetAzureServiceBusIntegration(request,
@@ -1232,6 +1266,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1240,7 +1275,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetAzureServiceBusIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateAzureServiceBusIntegration(request,
@@ -1248,6 +1283,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1256,7 +1292,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateAzureServiceBusIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteAzureServiceBusIntegration(request,
@@ -1264,6 +1300,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1272,7 +1309,7 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteAzureServiceBusIntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListIntegrations(request,
@@ -1280,6 +1317,7 @@ class ApplicationService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1288,4 +1326,4 @@ class ApplicationService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

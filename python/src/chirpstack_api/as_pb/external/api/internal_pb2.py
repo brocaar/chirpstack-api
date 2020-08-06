@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/internal.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a,chirpstack-api/as_pb/external/api/user.proto\"\x84\x01\n\x06\x41PIKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"3\n\x13\x43reateAPIKeyRequest\x12\x1c\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x0b.api.APIKey\"5\n\x14\x43reateAPIKeyResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tjwt_token\x18\x02 \x01(\t\"!\n\x13\x44\x65leteAPIKeyRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x95\x01\n\x12ListAPIKeysRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"G\n\x13ListAPIKeysResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x1b\n\x06result\x18\x02 \x03(\x0b\x32\x0b.api.APIKey\"\xfb\x01\n\x10OrganizationLink\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"/\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\rLoginResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t\"X\n\x0fProfileResponse\x12\x17\n\x04user\x18\x01 \x01(\x0b\x32\t.api.User\x12,\n\rorganizations\x18\x03 \x03(\x0b\x32\x15.api.OrganizationLink\"D\n\x13GlobalSearchRequest\x12\x0e\n\x06search\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06offset\x18\x03 \x01(\x03\"?\n\x14GlobalSearchResponse\x12\'\n\x06result\x18\x01 \x03(\x0b\x32\x17.api.GlobalSearchResult\"\xa8\x02\n\x12GlobalSearchResult\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x04 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12$\n\x0e\x64\x65vice_dev_eui\x18\x07 \x01(\tR\x0c\x64\x65viceDevEUI\x12\x13\n\x0b\x64\x65vice_name\x18\x08 \x01(\t\x12\x1f\n\x0bgateway_mac\x18\t \x01(\tR\ngatewayMAC\x12\x14\n\x0cgateway_name\x18\n \x01(\t\"_\n\x10SettingsResponse\x12\x1f\n\x08\x62randing\x18\x02 \x01(\x0b\x32\r.api.Branding\x12*\n\x0eopenid_connect\x18\x03 \x01(\x0b\x32\x12.api.OpenIDConnect\"0\n\x08\x42randing\x12\x14\n\x0cregistration\x18\x01 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x02 \x01(\t\"R\n\rOpenIDConnect\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1b\n\tlogin_url\x18\x02 \x01(\tR\x08loginURL\x12\x13\n\x0blogin_label\x18\x03 \x01(\t\"8\n\x19OpenIDConnectLoginRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x1aOpenIDConnectLoginResponse\x12\x11\n\tjwt_token\x18\x01 \x01(\t2\xa1\x06\n\x0fInternalService\x12N\n\x05Login\x12\x11.api.LoginRequest\x1a\x12.api.LoginResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/internal/login:\x01*\x12V\n\x07Profile\x12\x16.google.protobuf.Empty\x1a\x14.api.ProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/internal/profile\x12\x61\n\x0cGlobalSearch\x12\x18.api.GlobalSearchRequest\x1a\x19.api.GlobalSearchResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/internal/search\x12\x66\n\x0c\x43reateAPIKey\x12\x18.api.CreateAPIKeyRequest\x1a\x19.api.CreateAPIKeyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/api/internal/api-keys:\x01*\x12\x65\n\x0c\x44\x65leteAPIKey\x12\x18.api.DeleteAPIKeyRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/internal/api-keys/{id}\x12`\n\x0bListAPIKeys\x12\x17.api.ListAPIKeysRequest\x1a\x18.api.ListAPIKeysResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/api-keys\x12Y\n\x08Settings\x12\x16.google.protobuf.Empty\x1a\x15.api.SettingsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/settings\x12w\n\x12OpenIDConnectLogin\x12\x1e.api.OpenIDConnectLoginRequest\x1a\x1f.api.OpenIDConnectLoginResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/internal/oidc/loginB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/internal.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a,chirpstack-api/as_pb/external/api/user.proto\"\x84\x01\n\x06\x41PIKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"3\n\x13\x43reateAPIKeyRequest\x12\x1c\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x0b.api.APIKey\"5\n\x14\x43reateAPIKeyResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tjwt_token\x18\x02 \x01(\t\"!\n\x13\x44\x65leteAPIKeyRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x95\x01\n\x12ListAPIKeysRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\'\n\x0forganization_id\x18\x04 \x01(\x03R\x0eorganizationID\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\"G\n\x13ListAPIKeysResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x1b\n\x06result\x18\x02 \x03(\x0b\x32\x0b.api.APIKey\"\xfb\x01\n\x10OrganizationLink\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x02 \x01(\t\x12\x10\n\x08is_admin\x18\x03 \x01(\x08\x12\x17\n\x0fis_device_admin\x18\x06 \x01(\x08\x12\x18\n\x10is_gateway_admin\x18\x07 \x01(\x08\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"/\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\rLoginResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t\"X\n\x0fProfileResponse\x12\x17\n\x04user\x18\x01 \x01(\x0b\x32\t.api.User\x12,\n\rorganizations\x18\x03 \x03(\x0b\x32\x15.api.OrganizationLink\"D\n\x13GlobalSearchRequest\x12\x0e\n\x06search\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06offset\x18\x03 \x01(\x03\"?\n\x14GlobalSearchResponse\x12\'\n\x06result\x18\x01 \x03(\x0b\x32\x17.api.GlobalSearchResult\"\xa8\x02\n\x12GlobalSearchResult\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\'\n\x0forganization_id\x18\x03 \x01(\x03R\x0eorganizationID\x12\x19\n\x11organization_name\x18\x04 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x05 \x01(\x03R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12$\n\x0e\x64\x65vice_dev_eui\x18\x07 \x01(\tR\x0c\x64\x65viceDevEUI\x12\x13\n\x0b\x64\x65vice_name\x18\x08 \x01(\t\x12\x1f\n\x0bgateway_mac\x18\t \x01(\tR\ngatewayMAC\x12\x14\n\x0cgateway_name\x18\n \x01(\t\"_\n\x10SettingsResponse\x12\x1f\n\x08\x62randing\x18\x02 \x01(\x0b\x32\r.api.Branding\x12*\n\x0eopenid_connect\x18\x03 \x01(\x0b\x32\x12.api.OpenIDConnect\"0\n\x08\x42randing\x12\x14\n\x0cregistration\x18\x01 \x01(\t\x12\x0e\n\x06\x66ooter\x18\x02 \x01(\t\"R\n\rOpenIDConnect\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1b\n\tlogin_url\x18\x02 \x01(\tR\x08loginURL\x12\x13\n\x0blogin_label\x18\x03 \x01(\t\"8\n\x19OpenIDConnectLoginRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\"/\n\x1aOpenIDConnectLoginResponse\x12\x11\n\tjwt_token\x18\x01 \x01(\t\"C\n\x18GetDevicesSummaryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\"\xb8\x01\n\x19GetDevicesSummaryResponse\x12\x14\n\x0c\x61\x63tive_count\x18\x01 \x01(\r\x12\x16\n\x0einactive_count\x18\x02 \x01(\r\x12=\n\x08\x64r_count\x18\x03 \x03(\x0b\x32+.api.GetDevicesSummaryResponse.DrCountEntry\x1a.\n\x0c\x44rCountEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\"D\n\x19GetGatewaysSummaryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\x03R\x0eorganizationID\"J\n\x1aGetGatewaysSummaryResponse\x12\x14\n\x0c\x61\x63tive_count\x18\x01 \x01(\r\x12\x16\n\x0einactive_count\x18\x02 \x01(\r2\x9b\x08\n\x0fInternalService\x12N\n\x05Login\x12\x11.api.LoginRequest\x1a\x12.api.LoginResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/internal/login:\x01*\x12V\n\x07Profile\x12\x16.google.protobuf.Empty\x1a\x14.api.ProfileResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/internal/profile\x12\x61\n\x0cGlobalSearch\x12\x18.api.GlobalSearchRequest\x1a\x19.api.GlobalSearchResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/internal/search\x12\x66\n\x0c\x43reateAPIKey\x12\x18.api.CreateAPIKeyRequest\x1a\x19.api.CreateAPIKeyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/api/internal/api-keys:\x01*\x12\x65\n\x0c\x44\x65leteAPIKey\x12\x18.api.DeleteAPIKeyRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/internal/api-keys/{id}\x12`\n\x0bListAPIKeys\x12\x17.api.ListAPIKeysRequest\x1a\x18.api.ListAPIKeysResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/api-keys\x12Y\n\x08Settings\x12\x16.google.protobuf.Empty\x1a\x15.api.SettingsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/internal/settings\x12w\n\x12OpenIDConnectLogin\x12\x1e.api.OpenIDConnectLoginRequest\x1a\x1f.api.OpenIDConnectLoginResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/internal/oidc/login\x12y\n\x11GetDevicesSummary\x12\x1d.api.GetDevicesSummaryRequest\x1a\x1e.api.GetDevicesSummaryResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/internal/devices/summary\x12}\n\x12GetGatewaysSummary\x12\x1e.api.GetGatewaysSummaryRequest\x1a\x1f.api.GetGatewaysSummaryResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/api/internal/gateways/summaryB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_user__pb2.DESCRIPTOR,])
 
@@ -843,6 +843,193 @@ _OPENIDCONNECTLOGINRESPONSE = _descriptor.Descriptor(
   serialized_end=1891,
 )
 
+
+_GETDEVICESSUMMARYREQUEST = _descriptor.Descriptor(
+  name='GetDevicesSummaryRequest',
+  full_name='api.GetDevicesSummaryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='api.GetDevicesSummaryRequest.organization_id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1893,
+  serialized_end=1960,
+)
+
+
+_GETDEVICESSUMMARYRESPONSE_DRCOUNTENTRY = _descriptor.Descriptor(
+  name='DrCountEntry',
+  full_name='api.GetDevicesSummaryResponse.DrCountEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.GetDevicesSummaryResponse.DrCountEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.GetDevicesSummaryResponse.DrCountEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2101,
+  serialized_end=2147,
+)
+
+_GETDEVICESSUMMARYRESPONSE = _descriptor.Descriptor(
+  name='GetDevicesSummaryResponse',
+  full_name='api.GetDevicesSummaryResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='active_count', full_name='api.GetDevicesSummaryResponse.active_count', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='inactive_count', full_name='api.GetDevicesSummaryResponse.inactive_count', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dr_count', full_name='api.GetDevicesSummaryResponse.dr_count', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_GETDEVICESSUMMARYRESPONSE_DRCOUNTENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1963,
+  serialized_end=2147,
+)
+
+
+_GETGATEWAYSSUMMARYREQUEST = _descriptor.Descriptor(
+  name='GetGatewaysSummaryRequest',
+  full_name='api.GetGatewaysSummaryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='api.GetGatewaysSummaryRequest.organization_id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2149,
+  serialized_end=2217,
+)
+
+
+_GETGATEWAYSSUMMARYRESPONSE = _descriptor.Descriptor(
+  name='GetGatewaysSummaryResponse',
+  full_name='api.GetGatewaysSummaryResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='active_count', full_name='api.GetGatewaysSummaryResponse.active_count', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='inactive_count', full_name='api.GetGatewaysSummaryResponse.inactive_count', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2219,
+  serialized_end=2293,
+)
+
 _CREATEAPIKEYREQUEST.fields_by_name['api_key'].message_type = _APIKEY
 _LISTAPIKEYSRESPONSE.fields_by_name['result'].message_type = _APIKEY
 _ORGANIZATIONLINK.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -852,6 +1039,8 @@ _PROFILERESPONSE.fields_by_name['organizations'].message_type = _ORGANIZATIONLIN
 _GLOBALSEARCHRESPONSE.fields_by_name['result'].message_type = _GLOBALSEARCHRESULT
 _SETTINGSRESPONSE.fields_by_name['branding'].message_type = _BRANDING
 _SETTINGSRESPONSE.fields_by_name['openid_connect'].message_type = _OPENIDCONNECT
+_GETDEVICESSUMMARYRESPONSE_DRCOUNTENTRY.containing_type = _GETDEVICESSUMMARYRESPONSE
+_GETDEVICESSUMMARYRESPONSE.fields_by_name['dr_count'].message_type = _GETDEVICESSUMMARYRESPONSE_DRCOUNTENTRY
 DESCRIPTOR.message_types_by_name['APIKey'] = _APIKEY
 DESCRIPTOR.message_types_by_name['CreateAPIKeyRequest'] = _CREATEAPIKEYREQUEST
 DESCRIPTOR.message_types_by_name['CreateAPIKeyResponse'] = _CREATEAPIKEYRESPONSE
@@ -870,6 +1059,10 @@ DESCRIPTOR.message_types_by_name['Branding'] = _BRANDING
 DESCRIPTOR.message_types_by_name['OpenIDConnect'] = _OPENIDCONNECT
 DESCRIPTOR.message_types_by_name['OpenIDConnectLoginRequest'] = _OPENIDCONNECTLOGINREQUEST
 DESCRIPTOR.message_types_by_name['OpenIDConnectLoginResponse'] = _OPENIDCONNECTLOGINRESPONSE
+DESCRIPTOR.message_types_by_name['GetDevicesSummaryRequest'] = _GETDEVICESSUMMARYREQUEST
+DESCRIPTOR.message_types_by_name['GetDevicesSummaryResponse'] = _GETDEVICESSUMMARYRESPONSE
+DESCRIPTOR.message_types_by_name['GetGatewaysSummaryRequest'] = _GETGATEWAYSSUMMARYREQUEST
+DESCRIPTOR.message_types_by_name['GetGatewaysSummaryResponse'] = _GETGATEWAYSSUMMARYRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 APIKey = _reflection.GeneratedProtocolMessageType('APIKey', (_message.Message,), {
@@ -998,8 +1191,45 @@ OpenIDConnectLoginResponse = _reflection.GeneratedProtocolMessageType('OpenIDCon
   })
 _sym_db.RegisterMessage(OpenIDConnectLoginResponse)
 
+GetDevicesSummaryRequest = _reflection.GeneratedProtocolMessageType('GetDevicesSummaryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEVICESSUMMARYREQUEST,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.GetDevicesSummaryRequest)
+  })
+_sym_db.RegisterMessage(GetDevicesSummaryRequest)
+
+GetDevicesSummaryResponse = _reflection.GeneratedProtocolMessageType('GetDevicesSummaryResponse', (_message.Message,), {
+
+  'DrCountEntry' : _reflection.GeneratedProtocolMessageType('DrCountEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GETDEVICESSUMMARYRESPONSE_DRCOUNTENTRY,
+    '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+    # @@protoc_insertion_point(class_scope:api.GetDevicesSummaryResponse.DrCountEntry)
+    })
+  ,
+  'DESCRIPTOR' : _GETDEVICESSUMMARYRESPONSE,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.GetDevicesSummaryResponse)
+  })
+_sym_db.RegisterMessage(GetDevicesSummaryResponse)
+_sym_db.RegisterMessage(GetDevicesSummaryResponse.DrCountEntry)
+
+GetGatewaysSummaryRequest = _reflection.GeneratedProtocolMessageType('GetGatewaysSummaryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETGATEWAYSSUMMARYREQUEST,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.GetGatewaysSummaryRequest)
+  })
+_sym_db.RegisterMessage(GetGatewaysSummaryRequest)
+
+GetGatewaysSummaryResponse = _reflection.GeneratedProtocolMessageType('GetGatewaysSummaryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETGATEWAYSSUMMARYRESPONSE,
+  '__module__' : 'chirpstack_api.as_pb.external.api.internal_pb2'
+  # @@protoc_insertion_point(class_scope:api.GetGatewaysSummaryResponse)
+  })
+_sym_db.RegisterMessage(GetGatewaysSummaryResponse)
+
 
 DESCRIPTOR._options = None
+_GETDEVICESSUMMARYRESPONSE_DRCOUNTENTRY._options = None
 
 _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   name='InternalService',
@@ -1008,8 +1238,8 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1894,
-  serialized_end=2695,
+  serialized_start=2296,
+  serialized_end=3347,
   methods=[
   _descriptor.MethodDescriptor(
     name='Login',
@@ -1089,6 +1319,26 @@ _INTERNALSERVICE = _descriptor.ServiceDescriptor(
     input_type=_OPENIDCONNECTLOGINREQUEST,
     output_type=_OPENIDCONNECTLOGINRESPONSE,
     serialized_options=b'\202\323\344\223\002\032\022\030/api/internal/oidc/login',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetDevicesSummary',
+    full_name='api.InternalService.GetDevicesSummary',
+    index=8,
+    containing_service=None,
+    input_type=_GETDEVICESSUMMARYREQUEST,
+    output_type=_GETDEVICESSUMMARYRESPONSE,
+    serialized_options=b'\202\323\344\223\002\037\022\035/api/internal/devices/summary',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetGatewaysSummary',
+    full_name='api.InternalService.GetGatewaysSummary',
+    index=9,
+    containing_service=None,
+    input_type=_GETGATEWAYSSUMMARYREQUEST,
+    output_type=_GETGATEWAYSSUMMARYRESPONSE,
+    serialized_options=b'\202\323\344\223\002 \022\036/api/internal/gateways/summary',
     create_key=_descriptor._internal_create_key,
   ),
 ])

@@ -41,6 +41,50 @@ function deserialize_api_DeleteAPIKeyRequest(buffer_arg) {
   return as_external_api_internal_pb.DeleteAPIKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_GetDevicesSummaryRequest(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.GetDevicesSummaryRequest)) {
+    throw new Error('Expected argument of type api.GetDevicesSummaryRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetDevicesSummaryRequest(buffer_arg) {
+  return as_external_api_internal_pb.GetDevicesSummaryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetDevicesSummaryResponse(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.GetDevicesSummaryResponse)) {
+    throw new Error('Expected argument of type api.GetDevicesSummaryResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetDevicesSummaryResponse(buffer_arg) {
+  return as_external_api_internal_pb.GetDevicesSummaryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetGatewaysSummaryRequest(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.GetGatewaysSummaryRequest)) {
+    throw new Error('Expected argument of type api.GetGatewaysSummaryRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetGatewaysSummaryRequest(buffer_arg) {
+  return as_external_api_internal_pb.GetGatewaysSummaryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetGatewaysSummaryResponse(arg) {
+  if (!(arg instanceof as_external_api_internal_pb.GetGatewaysSummaryResponse)) {
+    throw new Error('Expected argument of type api.GetGatewaysSummaryResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetGatewaysSummaryResponse(buffer_arg) {
+  return as_external_api_internal_pb.GetGatewaysSummaryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GlobalSearchRequest(arg) {
   if (!(arg instanceof as_external_api_internal_pb.GlobalSearchRequest)) {
     throw new Error('Expected argument of type api.GlobalSearchRequest');
@@ -260,6 +304,30 @@ var InternalServiceService = exports.InternalServiceService = {
     requestDeserialize: deserialize_api_OpenIDConnectLoginRequest,
     responseSerialize: serialize_api_OpenIDConnectLoginResponse,
     responseDeserialize: deserialize_api_OpenIDConnectLoginResponse,
+  },
+  // GetDevicesSummary returns an aggregated summary of the devices.
+  getDevicesSummary: {
+    path: '/api.InternalService/GetDevicesSummary',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_internal_pb.GetDevicesSummaryRequest,
+    responseType: as_external_api_internal_pb.GetDevicesSummaryResponse,
+    requestSerialize: serialize_api_GetDevicesSummaryRequest,
+    requestDeserialize: deserialize_api_GetDevicesSummaryRequest,
+    responseSerialize: serialize_api_GetDevicesSummaryResponse,
+    responseDeserialize: deserialize_api_GetDevicesSummaryResponse,
+  },
+  // GetGatewaysSummary returns an aggregated summary of the gateways.
+  getGatewaysSummary: {
+    path: '/api.InternalService/GetGatewaysSummary',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_internal_pb.GetGatewaysSummaryRequest,
+    responseType: as_external_api_internal_pb.GetGatewaysSummaryResponse,
+    requestSerialize: serialize_api_GetGatewaysSummaryRequest,
+    requestDeserialize: deserialize_api_GetGatewaysSummaryRequest,
+    responseSerialize: serialize_api_GetGatewaysSummaryResponse,
+    responseDeserialize: deserialize_api_GetGatewaysSummaryResponse,
   },
 };
 

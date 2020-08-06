@@ -521,3 +521,94 @@ export namespace OpenIDConnectLoginResponse {
   }
 }
 
+export class GetDevicesSummaryRequest extends jspb.Message {
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDevicesSummaryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDevicesSummaryRequest): GetDevicesSummaryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDevicesSummaryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDevicesSummaryRequest;
+  static deserializeBinaryFromReader(message: GetDevicesSummaryRequest, reader: jspb.BinaryReader): GetDevicesSummaryRequest;
+}
+
+export namespace GetDevicesSummaryRequest {
+  export type AsObject = {
+    organizationId: number,
+  }
+}
+
+export class GetDevicesSummaryResponse extends jspb.Message {
+  getActiveCount(): number;
+  setActiveCount(value: number): void;
+
+  getInactiveCount(): number;
+  setInactiveCount(value: number): void;
+
+  getDrCountMap(): jspb.Map<number, number>;
+  clearDrCountMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDevicesSummaryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDevicesSummaryResponse): GetDevicesSummaryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDevicesSummaryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDevicesSummaryResponse;
+  static deserializeBinaryFromReader(message: GetDevicesSummaryResponse, reader: jspb.BinaryReader): GetDevicesSummaryResponse;
+}
+
+export namespace GetDevicesSummaryResponse {
+  export type AsObject = {
+    activeCount: number,
+    inactiveCount: number,
+    drCountMap: Array<[number, number]>,
+  }
+}
+
+export class GetGatewaysSummaryRequest extends jspb.Message {
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGatewaysSummaryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGatewaysSummaryRequest): GetGatewaysSummaryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetGatewaysSummaryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGatewaysSummaryRequest;
+  static deserializeBinaryFromReader(message: GetGatewaysSummaryRequest, reader: jspb.BinaryReader): GetGatewaysSummaryRequest;
+}
+
+export namespace GetGatewaysSummaryRequest {
+  export type AsObject = {
+    organizationId: number,
+  }
+}
+
+export class GetGatewaysSummaryResponse extends jspb.Message {
+  getActiveCount(): number;
+  setActiveCount(value: number): void;
+
+  getInactiveCount(): number;
+  setInactiveCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetGatewaysSummaryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetGatewaysSummaryResponse): GetGatewaysSummaryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetGatewaysSummaryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetGatewaysSummaryResponse;
+  static deserializeBinaryFromReader(message: GetGatewaysSummaryResponse, reader: jspb.BinaryReader): GetGatewaysSummaryResponse;
+}
+
+export namespace GetGatewaysSummaryResponse {
+  export type AsObject = {
+    activeCount: number,
+    inactiveCount: number,
+  }
+}
+

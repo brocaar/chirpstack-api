@@ -93,6 +93,7 @@ class DeviceQueueService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -101,7 +102,7 @@ class DeviceQueueService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceQueue__pb2.EnqueueDeviceQueueItemRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceQueue__pb2.EnqueueDeviceQueueItemResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Flush(request,
@@ -109,6 +110,7 @@ class DeviceQueueService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -117,7 +119,7 @@ class DeviceQueueService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceQueue__pb2.FlushDeviceQueueRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -125,6 +127,7 @@ class DeviceQueueService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -133,4 +136,4 @@ class DeviceQueueService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceQueue__pb2.ListDeviceQueueItemsRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceQueue__pb2.ListDeviceQueueItemsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

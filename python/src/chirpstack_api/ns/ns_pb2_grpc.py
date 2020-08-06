@@ -864,6 +864,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -872,7 +873,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.CreateServiceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetServiceProfile(request,
@@ -880,6 +881,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -888,7 +890,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetServiceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateServiceProfile(request,
@@ -896,6 +898,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -904,7 +907,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateServiceProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteServiceProfile(request,
@@ -912,6 +915,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -920,7 +924,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteServiceProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateRoutingProfile(request,
@@ -928,6 +932,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -936,7 +941,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.CreateRoutingProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetRoutingProfile(request,
@@ -944,6 +949,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -952,7 +958,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetRoutingProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateRoutingProfile(request,
@@ -960,6 +966,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -968,7 +975,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateRoutingProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteRoutingProfile(request,
@@ -976,6 +983,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -984,7 +992,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteRoutingProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateDeviceProfile(request,
@@ -992,6 +1000,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1000,7 +1009,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetDeviceProfile(request,
@@ -1008,6 +1017,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1016,7 +1026,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateDeviceProfile(request,
@@ -1024,6 +1034,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1032,7 +1043,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteDeviceProfile(request,
@@ -1040,6 +1051,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1048,7 +1060,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateDevice(request,
@@ -1056,6 +1068,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1064,7 +1077,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetDevice(request,
@@ -1072,6 +1085,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1080,7 +1094,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateDevice(request,
@@ -1088,6 +1102,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1096,7 +1111,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteDevice(request,
@@ -1104,6 +1119,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1112,7 +1128,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ActivateDevice(request,
@@ -1120,6 +1136,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1128,7 +1145,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.ActivateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeactivateDevice(request,
@@ -1136,6 +1153,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1144,7 +1162,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeactivateDeviceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetDeviceActivation(request,
@@ -1152,6 +1170,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1160,7 +1179,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceActivationResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateDeviceQueueItem(request,
@@ -1168,6 +1187,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1176,7 +1196,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateDeviceQueueItemRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def FlushDeviceQueueForDevEUI(request,
@@ -1184,6 +1204,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1192,7 +1213,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.FlushDeviceQueueForDevEUIRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetDeviceQueueItemsForDevEUI(request,
@@ -1200,6 +1221,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1208,7 +1230,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetDeviceQueueItemsForDevEUIResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetNextDownlinkFCntForDevEUI(request,
@@ -1216,6 +1238,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1224,7 +1247,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetNextDownlinkFCntForDevEUIResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetRandomDevAddr(request,
@@ -1232,6 +1255,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1240,7 +1264,7 @@ class NetworkServerService(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetRandomDevAddrResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateMACCommandQueueItem(request,
@@ -1248,6 +1272,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1256,7 +1281,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateMACCommandQueueItemRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SendProprietaryPayload(request,
@@ -1264,6 +1289,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1272,7 +1298,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.SendProprietaryPayloadRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateGateway(request,
@@ -1280,6 +1306,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1288,7 +1315,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetGateway(request,
@@ -1296,6 +1323,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1304,7 +1332,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateGateway(request,
@@ -1312,6 +1340,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1320,7 +1349,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteGateway(request,
@@ -1328,6 +1357,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1336,7 +1366,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GenerateGatewayClientCertificate(request,
@@ -1344,6 +1374,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1352,7 +1383,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GenerateGatewayClientCertificateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateGatewayProfile(request,
@@ -1360,6 +1391,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1368,7 +1400,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.CreateGatewayProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetGatewayProfile(request,
@@ -1376,6 +1408,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1384,7 +1417,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateGatewayProfile(request,
@@ -1392,6 +1425,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1400,7 +1434,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateGatewayProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteGatewayProfile(request,
@@ -1408,6 +1442,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1416,7 +1451,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteGatewayProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetGatewayStats(request,
@@ -1424,6 +1459,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1432,7 +1468,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetGatewayStatsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def StreamFrameLogsForGateway(request,
@@ -1440,6 +1476,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1448,7 +1485,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForGatewayResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def StreamFrameLogsForDevice(request,
@@ -1456,6 +1493,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1464,7 +1502,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.StreamFrameLogsForDeviceResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CreateMulticastGroup(request,
@@ -1472,6 +1510,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1480,7 +1519,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.CreateMulticastGroupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetMulticastGroup(request,
@@ -1488,6 +1527,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1496,7 +1536,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastGroupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def UpdateMulticastGroup(request,
@@ -1504,6 +1544,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1512,7 +1553,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.UpdateMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeleteMulticastGroup(request,
@@ -1520,6 +1561,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1528,7 +1570,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.DeleteMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def AddDeviceToMulticastGroup(request,
@@ -1536,6 +1578,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1544,7 +1587,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.AddDeviceToMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def RemoveDeviceFromMulticastGroup(request,
@@ -1552,6 +1595,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1560,7 +1604,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.RemoveDeviceFromMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def EnqueueMulticastQueueItem(request,
@@ -1568,6 +1612,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1576,7 +1621,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.EnqueueMulticastQueueItemRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def FlushMulticastQueueForMulticastGroup(request,
@@ -1584,6 +1629,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1592,7 +1638,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.FlushMulticastQueueForMulticastGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetMulticastQueueItemsForMulticastGroup(request,
@@ -1600,6 +1646,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1608,7 +1655,7 @@ class NetworkServerService(object):
             chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupRequest.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetMulticastQueueItemsForMulticastGroupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetVersion(request,
@@ -1616,6 +1663,7 @@ class NetworkServerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1624,4 +1672,4 @@ class NetworkServerService(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             chirpstack__api_dot_ns_dot_ns__pb2.GetVersionResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

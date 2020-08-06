@@ -115,6 +115,7 @@ class NetworkControllerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -123,7 +124,7 @@ class NetworkControllerService(object):
             chirpstack__api_dot_nc_dot_nc__pb2.HandleUplinkMetaDataRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleDownlinkMetaData(request,
@@ -131,6 +132,7 @@ class NetworkControllerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -139,7 +141,7 @@ class NetworkControllerService(object):
             chirpstack__api_dot_nc_dot_nc__pb2.HandleDownlinkMetaDataRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleUplinkMACCommand(request,
@@ -147,6 +149,7 @@ class NetworkControllerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -155,7 +158,7 @@ class NetworkControllerService(object):
             chirpstack__api_dot_nc_dot_nc__pb2.HandleUplinkMACCommandRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def HandleRejectedUplinkFrameSet(request,
@@ -163,6 +166,7 @@ class NetworkControllerService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -171,4 +175,4 @@ class NetworkControllerService(object):
             chirpstack__api_dot_nc_dot_nc__pb2.HandleRejectedUplinkFrameSetRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

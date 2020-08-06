@@ -201,6 +201,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -209,7 +210,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.CreateGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -217,6 +218,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -225,7 +227,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetGatewayRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetGatewayResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -233,6 +235,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -241,7 +244,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.UpdateGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -249,6 +252,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -257,7 +261,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.DeleteGatewayRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -265,6 +269,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -273,7 +278,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.ListGatewayRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.ListGatewayResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetStats(request,
@@ -281,6 +286,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -289,7 +295,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetGatewayStatsRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetGatewayStatsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetLastPing(request,
@@ -297,6 +303,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -305,7 +312,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GetLastPingResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GenerateGatewayClientCertificate(request,
@@ -313,6 +320,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -321,7 +329,7 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.GenerateGatewayClientCertificateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def StreamFrameLogs(request,
@@ -329,6 +337,7 @@ class GatewayService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -337,4 +346,4 @@ class GatewayService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.StreamGatewayFrameLogsRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_gateway__pb2.StreamGatewayFrameLogsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

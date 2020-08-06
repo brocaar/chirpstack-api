@@ -2,6 +2,7 @@
 // file: as/external/api/profiles.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 
 export class ServiceProfile extends jspb.Message {
   getId(): string;
@@ -202,6 +203,11 @@ export class DeviceProfile extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  hasUplinkInterval(): boolean;
+  clearUplinkInterval(): void;
+  getUplinkInterval(): google_protobuf_duration_pb.Duration | undefined;
+  setUplinkInterval(value?: google_protobuf_duration_pb.Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeviceProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DeviceProfile): DeviceProfile.AsObject;
@@ -243,6 +249,7 @@ export namespace DeviceProfile {
     geolocBufferTtl: number,
     geolocMinBufferSize: number,
     tagsMap: Array<[string, string]>,
+    uplinkInterval?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

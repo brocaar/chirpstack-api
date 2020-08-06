@@ -127,6 +127,7 @@ class DeviceProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -135,7 +136,7 @@ class DeviceProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.CreateDeviceProfileRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.CreateDeviceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,
@@ -143,6 +144,7 @@ class DeviceProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -151,7 +153,7 @@ class DeviceProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.GetDeviceProfileRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.GetDeviceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -159,6 +161,7 @@ class DeviceProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -167,7 +170,7 @@ class DeviceProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.UpdateDeviceProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -175,6 +178,7 @@ class DeviceProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -183,7 +187,7 @@ class DeviceProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.DeleteDeviceProfileRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -191,6 +195,7 @@ class DeviceProfileService(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -199,4 +204,4 @@ class DeviceProfileService(object):
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.ListDeviceProfileRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_deviceProfile__pb2.ListDeviceProfileResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

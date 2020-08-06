@@ -69,6 +69,20 @@ service InternalService {
             get: "/api/internal/oidc/login"
         };
     }
+
+    // GetDevicesSummary returns an aggregated summary of the devices.
+    rpc GetDevicesSummary(GetDevicesSummaryRequest) returns (GetDevicesSummaryResponse) {
+        option(google.api.http) = {
+            get: "/api/internal/devices/summary"
+        };
+    }
+
+    // GetGatewaysSummary returns an aggregated summary of the gateways.
+    rpc GetGatewaysSummary(GetGatewaysSummaryRequest) returns (GetGatewaysSummaryResponse) {
+        option(google.api.http) = {
+            get: "/api/internal/gateways/summary"
+        };
+    }
 }
 
 message APIKey {
@@ -267,4 +281,33 @@ message OpenIDConnectLoginRequest {
 message OpenIDConnectLoginResponse {
     // JWT token to use for authentication.
     string jwt_token = 1;
+}
+
+message GetDevicesSummaryRequest {
+    // Organization ID.
+    int64 organization_id = 1 [json_name = "organizationID"];
+}
+
+message GetDevicesSummaryResponse {
+    // Active count.
+    uint32 active_count = 1;
+
+    // Inactive count.
+    uint32 inactive_count = 2;
+
+    // per data-rate count.
+    map<uint32, uint32> dr_count = 3;
+}
+
+message GetGatewaysSummaryRequest {
+    // Organization ID.
+    int64 organization_id = 1 [json_name = "organizationID"];
+}
+
+message GetGatewaysSummaryResponse {
+    // Active count.
+    uint32 active_count = 1;
+
+    // Inactive count.
+    uint32 inactive_count = 2;
 }
