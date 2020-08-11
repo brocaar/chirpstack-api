@@ -4193,7 +4193,8 @@ proto.api.GetDevicesSummaryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     activeCount: msg.getActiveCount(),
     inactiveCount: msg.getInactiveCount(),
-    drCountMap: (f = msg.getDrCountMap(true)) ? f.toArray() : []
+    drCountMap: (f = msg.getDrCountMap(true)) ? f.toArray() : [],
+    neverSeenCount: msg.getNeverSeenCount()
   };
 
   if (includeInstance) {
@@ -4243,6 +4244,10 @@ proto.api.GetDevicesSummaryResponse.deserializeBinaryFromReader = function(msg, 
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
          });
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setNeverSeenCount(value);
       break;
     default:
       reader.skipField();
@@ -4300,6 +4305,13 @@ proto.api.GetDevicesSummaryResponse.prototype.serializeBinaryToWriter = function
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
   }
+  f = this.getNeverSeenCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -4352,6 +4364,21 @@ proto.api.GetDevicesSummaryResponse.prototype.getDrCountMap = function(opt_noLaz
   return /** @type {!jspb.Map<number,number>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * optional uint32 never_seen_count = 4;
+ * @return {number}
+ */
+proto.api.GetDevicesSummaryResponse.prototype.getNeverSeenCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.GetDevicesSummaryResponse.prototype.setNeverSeenCount = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 
@@ -4561,7 +4588,8 @@ proto.api.GetGatewaysSummaryResponse.prototype.toObject = function(opt_includeIn
 proto.api.GetGatewaysSummaryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     activeCount: msg.getActiveCount(),
-    inactiveCount: msg.getInactiveCount()
+    inactiveCount: msg.getInactiveCount(),
+    neverSeenCount: msg.getNeverSeenCount()
   };
 
   if (includeInstance) {
@@ -4605,6 +4633,10 @@ proto.api.GetGatewaysSummaryResponse.deserializeBinaryFromReader = function(msg,
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setInactiveCount(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setNeverSeenCount(value);
       break;
     default:
       reader.skipField();
@@ -4658,6 +4690,13 @@ proto.api.GetGatewaysSummaryResponse.prototype.serializeBinaryToWriter = functio
       f
     );
   }
+  f = this.getNeverSeenCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -4697,6 +4736,21 @@ proto.api.GetGatewaysSummaryResponse.prototype.getInactiveCount = function() {
 /** @param {number} value  */
 proto.api.GetGatewaysSummaryResponse.prototype.setInactiveCount = function(value) {
   jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 never_seen_count = 3;
+ * @return {number}
+ */
+proto.api.GetGatewaysSummaryResponse.prototype.getNeverSeenCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.GetGatewaysSummaryResponse.prototype.setNeverSeenCount = function(value) {
+  jspb.Message.setField(this, 3, value);
 };
 
 

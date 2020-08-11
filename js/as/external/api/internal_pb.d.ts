@@ -550,6 +550,9 @@ export class GetDevicesSummaryResponse extends jspb.Message {
 
   getDrCountMap(): jspb.Map<number, number>;
   clearDrCountMap(): void;
+  getNeverSeenCount(): number;
+  setNeverSeenCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetDevicesSummaryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetDevicesSummaryResponse): GetDevicesSummaryResponse.AsObject;
@@ -565,6 +568,7 @@ export namespace GetDevicesSummaryResponse {
     activeCount: number,
     inactiveCount: number,
     drCountMap: Array<[number, number]>,
+    neverSeenCount: number,
   }
 }
 
@@ -595,6 +599,9 @@ export class GetGatewaysSummaryResponse extends jspb.Message {
   getInactiveCount(): number;
   setInactiveCount(value: number): void;
 
+  getNeverSeenCount(): number;
+  setNeverSeenCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetGatewaysSummaryResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetGatewaysSummaryResponse): GetGatewaysSummaryResponse.AsObject;
@@ -609,6 +616,7 @@ export namespace GetGatewaysSummaryResponse {
   export type AsObject = {
     activeCount: number,
     inactiveCount: number,
+    neverSeenCount: number,
   }
 }
 

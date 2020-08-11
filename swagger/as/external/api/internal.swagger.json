@@ -399,7 +399,12 @@
             "type": "integer",
             "format": "int64"
           },
-          "description": "per data-rate count."
+          "description": "per data-rate count.\nDevices that have never been seen are excluded."
+        },
+        "neverSeenCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Never seen count."
         }
       }
     },
@@ -415,6 +420,11 @@
           "type": "integer",
           "format": "int64",
           "description": "Inactive count."
+        },
+        "neverSeenCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Never seen count."
         }
       }
     },

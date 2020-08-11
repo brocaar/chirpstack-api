@@ -296,7 +296,11 @@ message GetDevicesSummaryResponse {
     uint32 inactive_count = 2;
 
     // per data-rate count.
+    // Devices that have never been seen are excluded.
     map<uint32, uint32> dr_count = 3;
+
+    // Never seen count.
+    uint32 never_seen_count = 4;
 }
 
 message GetGatewaysSummaryRequest {
@@ -310,4 +314,7 @@ message GetGatewaysSummaryResponse {
 
     // Inactive count.
     uint32 inactive_count = 2;
+
+    // Never seen count.
+    uint32 never_seen_count = 3;
 }
