@@ -1,5 +1,8 @@
 .PHONY: go swagger js rust python
 
+# foo := $(id -u):$(id -g)
+# export CURRENT_UID = foo
+
 all:
 	docker-compose up
 
@@ -17,3 +20,6 @@ rust:
 
 python:
 	docker-compose run --rm chirpstack-api-python
+
+java:
+	docker-compose run --rm chirpstack-api-java
