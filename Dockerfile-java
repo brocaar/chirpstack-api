@@ -1,35 +1,14 @@
-#FROM gradle:6.5-jdk11 AS java-requirements-base
-
-#ENV PROJECT_PATH=/grpc-java
-## RUN apk add --no-cache make git
-##RUN apt update && apt install -y make git protobuf-compiler libprotobuf-dev
-#RUN apt update && apt install -y build-essential git protobuf-compiler libprotobuf-dev
-### apt install cmake pkg-config protobuf-compiler libprotobuf-dev libgoogle-perftools-dev
-### https://github.com/grpc/grpc/issues/12404
-
-#RUN git clone -b v1.31.0 https://github.com/grpc/grpc-java.git /grpc-java
-
-## RUN mkdir -p $PROJECT_PATH
-## COPY . $PROJECT_PATH
-#WORKDIR $PROJECT_PATH/compiler
-#RUN gradle java_pluginExecutable -PskipAndroid=true
-
-## cd $GRPC_JAVA_ROOT/compiler
-
 FROM maven:3.6-jdk-8
 
 ENV PROJECT_PATH=/chirpstack-api
+
 RUN apt update && apt install -y make git protobuf-compiler libprotobuf-dev libprotobuf-java protobuf-compiler-grpc
 
 RUN wget -t 1 -O /protoc-gen-grpc-java https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.31.0/protoc-gen-grpc-java-1.31.0-linux-x86_64.exe
 RUN chmod +x /protoc-gen-grpc-java
 
-#RUN git clone https://github.com/protocolbuffers/protobuf.git /protobuf
 RUN git clone https://github.com/googleapis/googleapis.git /googleapis
 
 RUN mkdir -p PROJECT_PATH
 COPY . $PROJECT_PATH
 WORKDIR $PROJECT_PATH
-
-#COPY --from=java-requirements-base /googleapis /googleapis
-
