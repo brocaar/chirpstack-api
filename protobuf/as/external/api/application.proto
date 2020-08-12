@@ -3,6 +3,7 @@ syntax = "proto3";
 package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
+option java_package = "com.brocaar.chirpstack.api.v3.as.external.api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -417,7 +418,7 @@ message ListApplicationRequest {
 message ListApplicationResponse {
 	// Total number of applications available within the result-set.
 	int64 total_count = 1;
-	
+
 	// Applications within this result-set.
 	repeated ApplicationListItem result = 2;
 }

@@ -3,6 +3,7 @@ syntax = "proto3";
 package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
+option java_package = "com.brocaar.chirpstack.api.v3.as.external.api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -162,7 +163,7 @@ message ListFUOTADeploymentRequest {
 
     // Application ID to filter on (optional).
     int64 application_id = 3 [json_name = "applicationID"];
-    
+
     // Device EUI (HEX encoded) (optional).
     string dev_eui = 4 [json_name = "devEUI"];
 }

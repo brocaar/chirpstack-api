@@ -3,6 +3,7 @@ syntax = "proto3";
 package gw;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/gw";
+option java_package = "com.brocaar.chirpstack.api.v3.gw";
 
 import "common/common.proto";
 import "google/protobuf/timestamp.proto";
@@ -367,7 +368,7 @@ message DownlinkTXAck {
 
 message DownlinkTXAckItem {
     // The Ack status of this item.
-    TxAckStatus status = 1; 
+    TxAckStatus status = 1;
 }
 
 message GatewayConfiguration {

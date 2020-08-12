@@ -3,6 +3,7 @@ syntax = "proto3";
 package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
+option java_package = "com.brocaar.chirpstack.api.v3.as.external.api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -130,8 +131,8 @@ service DeviceService {
 
 message Device {
     // Device EUI (HEX encoded).
-    string dev_eui = 1 [json_name = "devEUI"]; 
-    
+    string dev_eui = 1 [json_name = "devEUI"];
+
     // Name of the device (if left blank, it will be set to the DevEUI).
     string name = 2;
 
@@ -173,8 +174,8 @@ message Device {
 
 message DeviceListItem {
     // Device EUI (HEX encoded).
-    string dev_eui = 1 [json_name = "devEUI"]; 
-    
+    string dev_eui = 1 [json_name = "devEUI"];
+
     // Name of the device.
     string name = 2;
 

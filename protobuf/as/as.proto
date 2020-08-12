@@ -3,6 +3,7 @@ syntax = "proto3";
 package as;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as";
+option java_package = "com.brocaar.chirpstack.api.v3.as";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
@@ -107,7 +108,7 @@ message HandleUplinkDataRequest {
     bytes data = 9;
 
     // Device activation context.
-    // 
+    //
     // This field is only set on the first uplink frame when the security
     // context has changed (e.g. a new OTAA (re)activation).
     DeviceActivationContext device_activation_context = 10;

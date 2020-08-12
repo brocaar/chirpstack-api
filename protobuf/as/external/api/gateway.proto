@@ -3,6 +3,7 @@ syntax = "proto3";
 package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
+option java_package = "com.brocaar.chirpstack.api.v3.as.external.api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -35,7 +36,7 @@ service GatewayService {
 			body: "*"
 		};
 	}
-	
+
 	// Delete deletes the gateway matching the given mac address.
 	rpc Delete(DeleteGatewayRequest) returns (google.protobuf.Empty) {
 		option (google.api.http) = {
@@ -91,7 +92,7 @@ message Gateway {
 
 	// Gateway name.
 	string name = 2;
-	
+
 	// Gateway description.
 	string description = 3;
 
@@ -145,16 +146,16 @@ message GetGatewayRequest {
 message GetGatewayResponse {
 	// Gateway object.
 	Gateway gateway = 1;
-	
+
 	// Created at timestamp.
 	google.protobuf.Timestamp created_at = 2;
-	
+
 	// Last update timestamp.
 	google.protobuf.Timestamp updated_at = 3;
-	
+
 	// First seen at timestamp.
 	google.protobuf.Timestamp first_seen_at = 4;
-	
+
 	// Last seen at timestamp.
 	google.protobuf.Timestamp last_seen_at = 5;
 };
@@ -199,16 +200,16 @@ message ListGatewayRequest {
 message GatewayListItem {
 	// Gateway ID (HEX encoded).
 	string id = 1;
-	
+
 	// A name for the gateway
 	string name = 2;
-	
+
 	// A description for the gateway
 	string description = 3;
 
 	// Create timestamp.
 	google.protobuf.Timestamp created_at = 4;
-	
+
 	// Last update timestamp.
 	google.protobuf.Timestamp updated_at = 5;
 
@@ -293,10 +294,10 @@ message PingRX {
 
 	// Latitude of the gateway -90.0 to 90.0.
 	double latitude = 4;
-	
+
 	// Longitude of the gateway -180.0 to 180.0.
 	double longitude = 5;
-	
+
 	// Altitude of the gateway in meters.
 	double altitude = 6;
 }
