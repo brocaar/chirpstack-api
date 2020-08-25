@@ -540,6 +540,10 @@
         "loginLabel": {
           "type": "string",
           "description": "Login label."
+        },
+        "logoutURL": {
+          "type": "string",
+          "description": "Logout url."
         }
       }
     },

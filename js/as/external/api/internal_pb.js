@@ -3474,7 +3474,8 @@ proto.api.OpenIDConnect.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: msg.getEnabled(),
     loginUrl: msg.getLoginUrl(),
-    loginLabel: msg.getLoginLabel()
+    loginLabel: msg.getLoginLabel(),
+    logoutUrl: msg.getLogoutUrl()
   };
 
   if (includeInstance) {
@@ -3522,6 +3523,10 @@ proto.api.OpenIDConnect.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setLoginLabel(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogoutUrl(value);
       break;
     default:
       reader.skipField();
@@ -3582,6 +3587,13 @@ proto.api.OpenIDConnect.prototype.serializeBinaryToWriter = function (writer) {
       f
     );
   }
+  f = this.getLogoutUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -3638,6 +3650,21 @@ proto.api.OpenIDConnect.prototype.getLoginLabel = function() {
 /** @param {string} value  */
 proto.api.OpenIDConnect.prototype.setLoginLabel = function(value) {
   jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional string logout_url = 4;
+ * @return {string}
+ */
+proto.api.OpenIDConnect.prototype.getLogoutUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.OpenIDConnect.prototype.setLogoutUrl = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 

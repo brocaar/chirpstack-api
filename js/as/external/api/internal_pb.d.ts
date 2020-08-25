@@ -459,6 +459,9 @@ export class OpenIDConnect extends jspb.Message {
   getLoginLabel(): string;
   setLoginLabel(value: string): void;
 
+  getLogoutUrl(): string;
+  setLogoutUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OpenIDConnect.AsObject;
   static toObject(includeInstance: boolean, msg: OpenIDConnect): OpenIDConnect.AsObject;
@@ -474,6 +477,7 @@ export namespace OpenIDConnect {
     enabled: boolean,
     loginUrl: string,
     loginLabel: string,
+    logoutUrl: string,
   }
 }
 
