@@ -1539,7 +1539,7 @@
         },
         "eventEndpointURL": {
           "type": "string",
-          "description": "Event endpoint URL.\nThe HTTP integration will POST all events to this enpoint. The request\nwill contain a query parameters \"eventType\" containing the type of the\nevent."
+          "description": "Event endpoint URL.\nThe HTTP integration will POST all events to this enpoint. The request\nwill contain a query parameters \"event\" containing the type of the\nevent."
         }
       }
     },

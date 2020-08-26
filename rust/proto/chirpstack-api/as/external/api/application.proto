@@ -475,7 +475,7 @@ message HTTPIntegration {
 
     // Event endpoint URL.
     // The HTTP integration will POST all events to this enpoint. The request
-    // will contain a query parameters "eventType" containing the type of the
+    // will contain a query parameters "event" containing the type of the
     // event.
     string event_endpoint_url = 12 [json_name = "eventEndpointURL"];
 }

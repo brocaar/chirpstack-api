@@ -772,7 +772,7 @@ type HTTPIntegration struct {
 	Marshaler Marshaler `protobuf:"varint,11,opt,name=marshaler,proto3,enum=api.Marshaler" json:"marshaler,omitempty"`
 	// Event endpoint URL.
 	// The HTTP integration will POST all events to this enpoint. The request
-	// will contain a query parameters "eventType" containing the type of the
+	// will contain a query parameters "event" containing the type of the
 	// event.
 	EventEndpointUrl     string   `protobuf:"bytes,12,opt,name=event_endpoint_url,json=eventEndpointURL,proto3" json:"event_endpoint_url,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
