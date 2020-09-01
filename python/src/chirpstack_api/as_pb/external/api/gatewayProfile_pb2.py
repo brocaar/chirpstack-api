@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from chirpstack_api.common import common_pb2 as chirpstack__api_dot_common_dot_common__pb2
 
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6chirpstack-api/as_pb/external/api/gatewayProfile.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\"\xa1\x01\n\x0eGatewayProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12*\n\x11network_server_id\x18\x03 \x01(\x03R\x0fnetworkServerID\x12\x10\n\x08\x63hannels\x18\x04 \x03(\r\x12\x37\n\x0e\x65xtra_channels\x18\x05 \x03(\x0b\x32\x1f.api.GatewayProfileExtraChannel\"\xdb\x01\n\x16GatewayProfileListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12*\n\x11network_server_id\x18\x03 \x01(\x03R\x0fnetworkServerID\x12\x1b\n\x13network_server_name\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x96\x01\n\x1aGatewayProfileExtraChannel\x12&\n\nmodulation\x18\x01 \x01(\x0e\x32\x12.common.Modulation\x12\x11\n\tfrequency\x18\x02 \x01(\r\x12\x11\n\tbandwidth\x18\x03 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x04 \x01(\r\x12\x19\n\x11spreading_factors\x18\x05 \x03(\r\"K\n\x1b\x43reateGatewayProfileRequest\x12,\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x13.api.GatewayProfile\"*\n\x1c\x43reateGatewayProfileResponse\x12\n\n\x02id\x18\x01 \x01(\t\"&\n\x18GetGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xa9\x01\n\x19GetGatewayProfileResponse\x12,\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x13.api.GatewayProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"K\n\x1bUpdateGatewayProfileRequest\x12,\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x13.api.GatewayProfile\")\n\x1b\x44\x65leteGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"g\n\x1aListGatewayProfilesRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12*\n\x11network_server_id\x18\x03 \x01(\x03R\x0fnetworkServerID\"_\n\x1bListGatewayProfilesResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12+\n\x06result\x18\x02 \x03(\x0b\x32\x1b.api.GatewayProfileListItem2\xbf\x04\n\x15GatewayProfileService\x12o\n\x06\x43reate\x12 .api.CreateGatewayProfileRequest\x1a!.api.CreateGatewayProfileResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/api/gateway-profiles:\x01*\x12h\n\x03Get\x12\x1d.api.GetGatewayProfileRequest\x1a\x1e.api.GetGatewayProfileResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/gateway-profiles/{id}\x12y\n\x06Update\x12 .api.UpdateGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"5\x82\xd3\xe4\x93\x02/\x1a*/api/gateway-profiles/{gateway_profile.id}:\x01*\x12\x66\n\x06\x44\x65lete\x12 .api.DeleteGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/api/gateway-profiles/{id}\x12h\n\x04List\x12\x1f.api.ListGatewayProfilesRequest\x1a .api.ListGatewayProfilesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/gateway-profilesB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n6chirpstack-api/as_pb/external/api/gatewayProfile.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\"\xd4\x01\n\x0eGatewayProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12*\n\x11network_server_id\x18\x03 \x01(\x03R\x0fnetworkServerID\x12\x10\n\x08\x63hannels\x18\x04 \x03(\r\x12\x37\n\x0e\x65xtra_channels\x18\x05 \x03(\x0b\x32\x1f.api.GatewayProfileExtraChannel\x12\x31\n\x0estats_interval\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xdb\x01\n\x16GatewayProfileListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12*\n\x11network_server_id\x18\x03 \x01(\x03R\x0fnetworkServerID\x12\x1b\n\x13network_server_name\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x96\x01\n\x1aGatewayProfileExtraChannel\x12&\n\nmodulation\x18\x01 \x01(\x0e\x32\x12.common.Modulation\x12\x11\n\tfrequency\x18\x02 \x01(\r\x12\x11\n\tbandwidth\x18\x03 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x04 \x01(\r\x12\x19\n\x11spreading_factors\x18\x05 \x03(\r\"K\n\x1b\x43reateGatewayProfileRequest\x12,\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x13.api.GatewayProfile\"*\n\x1c\x43reateGatewayProfileResponse\x12\n\n\x02id\x18\x01 \x01(\t\"&\n\x18GetGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xa9\x01\n\x19GetGatewayProfileResponse\x12,\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x13.api.GatewayProfile\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"K\n\x1bUpdateGatewayProfileRequest\x12,\n\x0fgateway_profile\x18\x01 \x01(\x0b\x32\x13.api.GatewayProfile\")\n\x1b\x44\x65leteGatewayProfileRequest\x12\n\n\x02id\x18\x01 \x01(\t\"g\n\x1aListGatewayProfilesRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12*\n\x11network_server_id\x18\x03 \x01(\x03R\x0fnetworkServerID\"_\n\x1bListGatewayProfilesResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12+\n\x06result\x18\x02 \x03(\x0b\x32\x1b.api.GatewayProfileListItem2\xbf\x04\n\x15GatewayProfileService\x12o\n\x06\x43reate\x12 .api.CreateGatewayProfileRequest\x1a!.api.CreateGatewayProfileResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/api/gateway-profiles:\x01*\x12h\n\x03Get\x12\x1d.api.GetGatewayProfileRequest\x1a\x1e.api.GetGatewayProfileResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/gateway-profiles/{id}\x12y\n\x06Update\x12 .api.UpdateGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"5\x82\xd3\xe4\x93\x02/\x1a*/api/gateway-profiles/{gateway_profile.id}:\x01*\x12\x66\n\x06\x44\x65lete\x12 .api.DeleteGatewayProfileRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/api/gateway-profiles/{id}\x12h\n\x04List\x12\x1f.api.ListGatewayProfilesRequest\x1a .api.ListGatewayProfilesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/gateway-profilesB9Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,])
 
 
 
@@ -73,6 +74,13 @@ _GATEWAYPROFILE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stats_interval', full_name='api.GatewayProfile.stats_interval', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -85,8 +93,8 @@ _GATEWAYPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=192,
-  serialized_end=353,
+  serialized_start=224,
+  serialized_end=436,
 )
 
 
@@ -152,8 +160,8 @@ _GATEWAYPROFILELISTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=356,
-  serialized_end=575,
+  serialized_start=439,
+  serialized_end=658,
 )
 
 
@@ -212,8 +220,8 @@ _GATEWAYPROFILEEXTRACHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=578,
-  serialized_end=728,
+  serialized_start=661,
+  serialized_end=811,
 )
 
 
@@ -244,8 +252,8 @@ _CREATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=730,
-  serialized_end=805,
+  serialized_start=813,
+  serialized_end=888,
 )
 
 
@@ -276,8 +284,8 @@ _CREATEGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=807,
-  serialized_end=849,
+  serialized_start=890,
+  serialized_end=932,
 )
 
 
@@ -308,8 +316,8 @@ _GETGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=889,
+  serialized_start=934,
+  serialized_end=972,
 )
 
 
@@ -354,8 +362,8 @@ _GETGATEWAYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=892,
-  serialized_end=1061,
+  serialized_start=975,
+  serialized_end=1144,
 )
 
 
@@ -386,8 +394,8 @@ _UPDATEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1138,
+  serialized_start=1146,
+  serialized_end=1221,
 )
 
 
@@ -418,8 +426,8 @@ _DELETEGATEWAYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1140,
-  serialized_end=1181,
+  serialized_start=1223,
+  serialized_end=1264,
 )
 
 
@@ -464,8 +472,8 @@ _LISTGATEWAYPROFILESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1183,
-  serialized_end=1286,
+  serialized_start=1266,
+  serialized_end=1369,
 )
 
 
@@ -503,11 +511,12 @@ _LISTGATEWAYPROFILESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1288,
-  serialized_end=1383,
+  serialized_start=1371,
+  serialized_end=1466,
 )
 
 _GATEWAYPROFILE.fields_by_name['extra_channels'].message_type = _GATEWAYPROFILEEXTRACHANNEL
+_GATEWAYPROFILE.fields_by_name['stats_interval'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _GATEWAYPROFILELISTITEM.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _GATEWAYPROFILELISTITEM.fields_by_name['updated_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _GATEWAYPROFILEEXTRACHANNEL.fields_by_name['modulation'].enum_type = chirpstack__api_dot_common_dot_common__pb2._MODULATION
@@ -617,8 +626,8 @@ _GATEWAYPROFILESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1386,
-  serialized_end=1961,
+  serialized_start=1469,
+  serialized_end=2044,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

@@ -11,6 +11,7 @@ var global = Function('return this')();
 
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var common_common_pb = require('../../../common/common_pb.js');
 goog.exportSymbol('proto.api.CreateGatewayProfileRequest', null, global);
@@ -82,7 +83,8 @@ proto.api.GatewayProfile.toObject = function(includeInstance, msg) {
     networkServerId: msg.getNetworkServerId(),
     channelsList: jspb.Message.getField(msg, 4),
     extraChannelsList: jspb.Message.toObjectList(msg.getExtraChannelsList(),
-    proto.api.GatewayProfileExtraChannel.toObject, includeInstance)
+    proto.api.GatewayProfileExtraChannel.toObject, includeInstance),
+    statsInterval: (f = msg.getStatsInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -140,6 +142,11 @@ proto.api.GatewayProfile.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.api.GatewayProfileExtraChannel.deserializeBinaryFromReader);
       msg.getExtraChannelsList().push(value);
       msg.setExtraChannelsList(msg.getExtraChannelsList());
+      break;
+    case 6:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setStatsInterval(value);
       break;
     default:
       reader.skipField();
@@ -213,6 +220,14 @@ proto.api.GatewayProfile.prototype.serializeBinaryToWriter = function (writer) {
       5,
       f,
       proto.api.GatewayProfileExtraChannel.serializeBinaryToWriter
+    );
+  }
+  f = this.getStatsInterval();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -314,6 +329,36 @@ proto.api.GatewayProfile.prototype.setExtraChannelsList = function(value) {
 
 proto.api.GatewayProfile.prototype.clearExtraChannelsList = function() {
   this.setExtraChannelsList([]);
+};
+
+
+/**
+ * optional google.protobuf.Duration stats_interval = 6;
+ * @return {proto.google.protobuf.Duration}
+ */
+proto.api.GatewayProfile.prototype.getStatsInterval = function() {
+  return /** @type{proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 6));
+};
+
+
+/** @param {proto.google.protobuf.Duration|undefined} value  */
+proto.api.GatewayProfile.prototype.setStatsInterval = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.api.GatewayProfile.prototype.clearStatsInterval = function() {
+  this.setStatsInterval(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.api.GatewayProfile.prototype.hasStatsInterval = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -708,6 +708,11 @@ export class GatewayConfiguration extends jspb.Message {
   setChannelsList(value: Array<ChannelConfiguration>): void;
   addChannels(value?: ChannelConfiguration, index?: number): ChannelConfiguration;
 
+  hasStatsInterval(): boolean;
+  clearStatsInterval(): void;
+  getStatsInterval(): google_protobuf_duration_pb.Duration | undefined;
+  setStatsInterval(value?: google_protobuf_duration_pb.Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayConfiguration.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayConfiguration): GatewayConfiguration.AsObject;
@@ -723,6 +728,7 @@ export namespace GatewayConfiguration {
     gatewayId: Uint8Array | string,
     version: string,
     channelsList: Array<ChannelConfiguration.AsObject>,
+    statsInterval?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as common_common_pb from "../common/common_pb";
 import * as gw_gw_pb from "../gw/gw_pb";
@@ -1646,6 +1647,11 @@ export class GatewayProfile extends jspb.Message {
   setExtraChannelsList(value: Array<GatewayProfileExtraChannel>): void;
   addExtraChannels(value?: GatewayProfileExtraChannel, index?: number): GatewayProfileExtraChannel;
 
+  hasStatsInterval(): boolean;
+  clearStatsInterval(): void;
+  getStatsInterval(): google_protobuf_duration_pb.Duration | undefined;
+  setStatsInterval(value?: google_protobuf_duration_pb.Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayProfile.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayProfile): GatewayProfile.AsObject;
@@ -1661,6 +1667,7 @@ export namespace GatewayProfile {
     id: Uint8Array | string,
     channelsList: Array<number>,
     extraChannelsList: Array<GatewayProfileExtraChannel.AsObject>,
+    statsInterval?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

@@ -4,6 +4,7 @@
 var grpc = require('grpc');
 var ns_ns_pb = require('../ns/ns_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var common_common_pb = require('../common/common_pb.js');
 var gw_gw_pb = require('../gw/gw_pb.js');

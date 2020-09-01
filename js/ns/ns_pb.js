@@ -10,6 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var common_common_pb = require('../common/common_pb.js');
 var gw_gw_pb = require('../gw/gw_pb.js');
@@ -13182,7 +13183,8 @@ proto.ns.GatewayProfile.toObject = function(includeInstance, msg) {
     id: msg.getId_asB64(),
     channelsList: jspb.Message.getField(msg, 2),
     extraChannelsList: jspb.Message.toObjectList(msg.getExtraChannelsList(),
-    proto.ns.GatewayProfileExtraChannel.toObject, includeInstance)
+    proto.ns.GatewayProfileExtraChannel.toObject, includeInstance),
+    statsInterval: (f = msg.getStatsInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13232,6 +13234,11 @@ proto.ns.GatewayProfile.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.ns.GatewayProfileExtraChannel.deserializeBinaryFromReader);
       msg.getExtraChannelsList().push(value);
       msg.setExtraChannelsList(msg.getExtraChannelsList());
+      break;
+    case 4:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setStatsInterval(value);
       break;
     default:
       reader.skipField();
@@ -13291,6 +13298,14 @@ proto.ns.GatewayProfile.prototype.serializeBinaryToWriter = function (writer) {
       3,
       f,
       proto.ns.GatewayProfileExtraChannel.serializeBinaryToWriter
+    );
+  }
+  f = this.getStatsInterval();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -13386,6 +13401,36 @@ proto.ns.GatewayProfile.prototype.setExtraChannelsList = function(value) {
 
 proto.ns.GatewayProfile.prototype.clearExtraChannelsList = function() {
   this.setExtraChannelsList([]);
+};
+
+
+/**
+ * optional google.protobuf.Duration stats_interval = 4;
+ * @return {proto.google.protobuf.Duration}
+ */
+proto.ns.GatewayProfile.prototype.getStatsInterval = function() {
+  return /** @type{proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 4));
+};
+
+
+/** @param {proto.google.protobuf.Duration|undefined} value  */
+proto.ns.GatewayProfile.prototype.setStatsInterval = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.ns.GatewayProfile.prototype.clearStatsInterval = function() {
+  this.setStatsInterval(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ns.GatewayProfile.prototype.hasStatsInterval = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

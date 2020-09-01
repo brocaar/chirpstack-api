@@ -6,6 +6,7 @@ option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/empty.proto";
 import "common/common.proto";
 
@@ -67,6 +68,11 @@ message GatewayProfile {
     // Extra channels added to the channel-configuration (in case the LoRaWAN
     // region supports adding custom channels).
     repeated GatewayProfileExtraChannel extra_channels = 5;
+
+    // Stats interval.
+    // This defines the (expected) stats interval which the gateways using this
+    // gateway-profile are using.
+    google.protobuf.Duration stats_interval = 6;
 }
 
 message GatewayProfileListItem {

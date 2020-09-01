@@ -217,6 +217,10 @@
             "$ref": "#/definitions/apiGatewayProfileExtraChannel"
           },
           "description": "Extra channels added to the channel-configuration (in case the LoRaWAN\nregion supports adding custom channels)."
+        },
+        "statsInterval": {
+          "type": "string",
+          "description": "Stats interval.\nThis defines the (expected) stats interval which the gateways using this\ngateway-profile are using."
         }
       }
     },

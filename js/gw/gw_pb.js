@@ -5327,7 +5327,8 @@ proto.gw.GatewayConfiguration.toObject = function(includeInstance, msg) {
     gatewayId: msg.getGatewayId_asB64(),
     version: msg.getVersion(),
     channelsList: jspb.Message.toObjectList(msg.getChannelsList(),
-    proto.gw.ChannelConfiguration.toObject, includeInstance)
+    proto.gw.ChannelConfiguration.toObject, includeInstance),
+    statsInterval: (f = msg.getStatsInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5377,6 +5378,11 @@ proto.gw.GatewayConfiguration.deserializeBinaryFromReader = function(msg, reader
       reader.readMessage(value,proto.gw.ChannelConfiguration.deserializeBinaryFromReader);
       msg.getChannelsList().push(value);
       msg.setChannelsList(msg.getChannelsList());
+      break;
+    case 4:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setStatsInterval(value);
       break;
     default:
       reader.skipField();
@@ -5436,6 +5442,14 @@ proto.gw.GatewayConfiguration.prototype.serializeBinaryToWriter = function (writ
       3,
       f,
       proto.gw.ChannelConfiguration.serializeBinaryToWriter
+    );
+  }
+  f = this.getStatsInterval();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -5524,6 +5538,36 @@ proto.gw.GatewayConfiguration.prototype.setChannelsList = function(value) {
 
 proto.gw.GatewayConfiguration.prototype.clearChannelsList = function() {
   this.setChannelsList([]);
+};
+
+
+/**
+ * optional google.protobuf.Duration stats_interval = 4;
+ * @return {proto.google.protobuf.Duration}
+ */
+proto.gw.GatewayConfiguration.prototype.getStatsInterval = function() {
+  return /** @type{proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 4));
+};
+
+
+/** @param {proto.google.protobuf.Duration|undefined} value  */
+proto.gw.GatewayConfiguration.prototype.setStatsInterval = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.gw.GatewayConfiguration.prototype.clearStatsInterval = function() {
+  this.setStatsInterval(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.gw.GatewayConfiguration.prototype.hasStatsInterval = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

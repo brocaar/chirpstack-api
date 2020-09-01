@@ -379,6 +379,9 @@ message GatewayConfiguration {
 
     // Channels.
     repeated ChannelConfiguration channels = 3;
+
+    // Stats interval.
+    google.protobuf.Duration stats_interval = 4;
 }
 
 message ChannelConfiguration {
