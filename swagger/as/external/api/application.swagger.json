@@ -516,6 +516,58 @@
         ]
       }
     },
+    "/api/applications/{application_id}/integrations/pilot-things": {
+      "get": {
+        "summary": "GetPilotThingsIntegration returns the Pilot Things application-integration.",
+        "operationId": "GetPilotThingsIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetPilotThingsIntegrationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "delete": {
+        "summary": "DeletePilotThingsIntegration deletes the Pilot Things application-integration.",
+        "operationId": "DeletePilotThingsIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "The id of the application.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{application_id}/integrations/thingsboard": {
       "get": {
         "summary": "GetThingsBoardIntegration returns the ThingsBoard application-integration.",
@@ -1096,6 +1148,74 @@
         ]
       }
     },
+    "/api/applications/{integration.application_id}/integrations/pilot-things": {
+      "post": {
+        "summary": "CreatePilotThingsIntegration creates an Pilot Things application-integration.",
+        "operationId": "CreatePilotThingsIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreatePilotThingsIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "put": {
+        "summary": "UpdatePilotThingsIntegration updates the Pilot Things application-integration.",
+        "operationId": "UpdatePilotThingsIntegration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdatePilotThingsIntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{integration.application_id}/integrations/thingsboard": {
       "post": {
         "summary": "CreateThingsBoardIntegration creates a ThingsBoard application-integration.",
@@ -1370,6 +1490,15 @@
         }
       }
     },
+    "apiCreatePilotThingsIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiPilotThingsIntegration",
+          "description": "Integration object to create."
+        }
+      }
+    },
     "apiCreateThingsBoardIntegrationRequest": {
       "type": "object",
       "properties": {
@@ -1473,6 +1602,15 @@
       "properties": {
         "integration": {
           "$ref": "#/definitions/apiMyDevicesIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
+    "apiGetPilotThingsIntegrationResponse": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiPilotThingsIntegration",
           "description": "Integration object."
         }
       }
@@ -1612,7 +1750,8 @@
         "LORACLOUD",
         "GCP_PUBSUB",
         "AWS_SNS",
-        "AZURE_SERVICE_BUS"
+        "AZURE_SERVICE_BUS",
+        "PILOT_THINGS"
       ],
       "default": "HTTP"
     },
@@ -1768,6 +1907,24 @@
         }
       }
     },
+    "apiPilotThingsIntegration": {
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Application ID."
+        },
+        "server": {
+          "type": "string",
+          "title": "Server URL"
+        },
+        "token": {
+          "type": "string",
+          "title": "Authentication token"
+        }
+      }
+    },
     "apiThingsBoardIntegration": {
       "type": "object",
       "properties": {
@@ -1851,6 +2008,15 @@
         "integration": {
           "$ref": "#/definitions/apiMyDevicesIntegration",
           "description": "Integration object."
+        }
+      }
+    },
+    "apiUpdatePilotThingsIntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiPilotThingsIntegration",
+          "description": "Integration object to update."
         }
       }
     },
