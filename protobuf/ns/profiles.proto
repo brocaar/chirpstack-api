@@ -3,6 +3,7 @@ syntax = "proto3";
 package ns;
 
 option go_package = "github.com/brocaar/chirpstack-api/ns";
+option java_package = "com.brocaar.chirpstack.api.ns";
 
 enum RatePolicy {
     // Drop
