@@ -43,7 +43,7 @@ services:
       - ./:/chirpstack-api
   chirpstack-api-java:
     environment:
-      - VERSION=3.7.5
+      - VERSION=3.7.7
     build:
       context: .
       dockerfile: Dockerfile-java

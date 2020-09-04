@@ -43,7 +43,7 @@ NOTE: for `chirpstack-api` you have to follow [Install](#Install) instructions
 <dependency>
   <groupId>com.brocaar</groupId>
   <artifactId>chirpstack-api</artifactId>
-  <version>3.7.5</version>
+  <version>3.7.7</version>
 </dependency>
 ```
 
