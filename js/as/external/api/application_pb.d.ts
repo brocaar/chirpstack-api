@@ -1001,6 +1001,9 @@ export class LoRaCloudIntegration extends jspb.Message {
   getDasGnssUseRxTime(): boolean;
   setDasGnssUseRxTime(value: boolean): void;
 
+  getDasStreamingGeolocWorkaround(): boolean;
+  setDasStreamingGeolocWorkaround(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoRaCloudIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: LoRaCloudIntegration): LoRaCloudIntegration.AsObject;
@@ -1030,6 +1033,7 @@ export namespace LoRaCloudIntegration {
     dasModemPort: number,
     dasGnssPort: number,
     dasGnssUseRxTime: boolean,
+    dasStreamingGeolocWorkaround: boolean,
   }
 }
 

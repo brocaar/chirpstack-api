@@ -717,6 +717,14 @@ message LoRaCloudIntegration {
     // In case this is set to true, the DAS resolver will use the RX time of the
     // network instead of the timestamp included in the LR1110 payload.
     bool das_gnss_use_rx_time = 17 [json_name = "dasGNSSUseRxTime"];
+
+    // Device Application Services streaming geoloc work-around.
+    // This is a temporarily work-around for processing streaming geolocation
+    // data. When enabled, stream records (expected in TLV format) are scanned
+    // for GNSS data (0x06 or 0x07). If found, the ChirpStack Application Server
+    // will make an additional call to the DAS API for resolving the location
+    // using the detected payload.
+    bool das_streaming_geoloc_workaround = 18;
 }
 
 message CreateLoRaCloudIntegrationRequest {
