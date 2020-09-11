@@ -3,7 +3,7 @@ syntax = "proto3";
 package gw;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/gw";
-option java_package = "io.chirpstack.api.v3.gw";
+option java_package = "io.chirpstack.api.gw";
 
 import "common/common.proto";
 import "google/protobuf/timestamp.proto";
