@@ -41,7 +41,7 @@ NOTE: for `chirpstack-api` you have to follow [Install](#Install) instructions
 </dependency>
 
 <dependency>
-  <groupId>com.brocaar</groupId>
+  <groupId>io.chirpstack</groupId>
   <artifactId>chirpstack-api</artifactId>
   <version>3.7.7</version>
 </dependency>
