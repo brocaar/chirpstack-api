@@ -7491,7 +7491,8 @@ proto.api.LoRaCloudIntegration.toObject = function(includeInstance, msg) {
     dasToken: msg.getDasToken(),
     dasModemPort: msg.getDasModemPort(),
     dasGnssPort: msg.getDasGnssPort(),
-    dasGnssUseRxTime: msg.getDasGnssUseRxTime()
+    dasGnssUseRxTime: msg.getDasGnssUseRxTime(),
+    dasStreamingGeolocWorkaround: msg.getDasStreamingGeolocWorkaround()
   };
 
   if (includeInstance) {
@@ -7595,6 +7596,10 @@ proto.api.LoRaCloudIntegration.deserializeBinaryFromReader = function(msg, reade
     case 17:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDasGnssUseRxTime(value);
+      break;
+    case 18:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDasStreamingGeolocWorkaround(value);
       break;
     default:
       reader.skipField();
@@ -7750,6 +7755,13 @@ proto.api.LoRaCloudIntegration.prototype.serializeBinaryToWriter = function (wri
   if (f) {
     writer.writeBool(
       17,
+      f
+    );
+  }
+  f = this.getDasStreamingGeolocWorkaround();
+  if (f) {
+    writer.writeBool(
+      18,
       f
     );
   }
@@ -8033,6 +8045,23 @@ proto.api.LoRaCloudIntegration.prototype.getDasGnssUseRxTime = function() {
 /** @param {boolean} value  */
 proto.api.LoRaCloudIntegration.prototype.setDasGnssUseRxTime = function(value) {
   jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * optional bool das_streaming_geoloc_workaround = 18;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.LoRaCloudIntegration.prototype.getDasStreamingGeolocWorkaround = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 18, false));
+};
+
+
+/** @param {boolean} value  */
+proto.api.LoRaCloudIntegration.prototype.setDasStreamingGeolocWorkaround = function(value) {
+  jspb.Message.setField(this, 18, value);
 };
 
 
