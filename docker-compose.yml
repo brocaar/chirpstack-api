@@ -41,3 +41,12 @@ services:
     command: bash -c "cd python && make all"
     volumes:
       - ./:/chirpstack-api
+  chirpstack-api-java:
+    environment:
+      - VERSION=3.7.8
+    build:
+      context: .
+      dockerfile: Dockerfile-java
+    command: bash -c "cd java && make all"
+    volumes:
+      - ./:/chirpstack-api

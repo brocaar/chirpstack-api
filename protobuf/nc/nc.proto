@@ -3,6 +3,7 @@ syntax = "proto3";
 package nc;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/nc";
+option java_package = "io.chirpstack.api.nc";
 
 import "google/protobuf/empty.proto";
 import "gw/gw.proto";

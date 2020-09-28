@@ -41,6 +41,14 @@ See: https://pypi.org/project/chirpstack-api/.
 
 See: https://crates.io/crates/chirpstack_api.
 
+### Java
+
+if you want install maven artifact on local repo after the build
+```bash
+sudo chown $(id -u).$(id -g) java/build/ -R && mvn -f java/build/pom.xml install
+```
+currently the build run only on Linux x86_64 due to the download of the protoc-gen-grpc-java-1.31.0-linux-x86_64.exe
+
 ## Generating client libraries
 
 These instructions require [Docker](https://docs.docker.com/install/) and
@@ -61,4 +69,7 @@ make python
 
 # only (re)generate Swagger definitions
 make swagger
+
+# only (re)generate Java definitions*
+make java -B
 ```

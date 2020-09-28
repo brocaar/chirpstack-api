@@ -17,3 +17,6 @@ rust:
 
 python:
 	docker-compose run --rm chirpstack-api-python
+
+java:
+	docker-compose run --rm chirpstack-api-java
