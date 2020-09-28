@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine AS go-requirements-base
+FROM golang:1.14-alpine AS go-requirements-base
 
 ENV PROJECT_PATH=/chirpstack-api
 RUN apk add --no-cache make git
