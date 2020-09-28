@@ -3,7 +3,7 @@ syntax = "proto3";
 package common;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/common";
-
+option java_package = "io.chirpstack.api.common";
 
 enum Modulation {
     // LoRa

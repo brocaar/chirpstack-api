@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='chirpstack-api/as_pb/external/api/frameLog.proto',
   package='api',
   syntax='proto3',
-  serialized_options=b'Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
+  serialized_options=b'\n!io.chirpstack.api.as.external.apiZ7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/frameLog.proto\x12\x03\x61pi\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"\x80\x01\n\x0eUplinkFrameLog\x12!\n\x07tx_info\x18\x01 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x02 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12(\n\x10phy_payload_json\x18\x03 \x01(\tR\x0ephyPayloadJSON\"\x80\x01\n\x10\x44ownlinkFrameLog\x12#\n\x07tx_info\x18\x01 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12(\n\x10phy_payload_json\x18\x02 \x01(\tR\x0ephyPayloadJSON\x12\x1d\n\ngateway_id\x18\x03 \x01(\tR\tgatewayID*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01\x42\x39Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/frameLog.proto\x12\x03\x61pi\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"\x80\x01\n\x0eUplinkFrameLog\x12!\n\x07tx_info\x18\x01 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x02 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12(\n\x10phy_payload_json\x18\x03 \x01(\tR\x0ephyPayloadJSON\"\x80\x01\n\x10\x44ownlinkFrameLog\x12#\n\x07tx_info\x18\x01 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12(\n\x10phy_payload_json\x18\x02 \x01(\tR\x0ephyPayloadJSON\x12\x1d\n\ngateway_id\x18\x03 \x01(\tR\tgatewayID*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01\x42\\\n!io.chirpstack.api.as.external.apiZ7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,])
 
