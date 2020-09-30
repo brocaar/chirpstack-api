@@ -8971,7 +8971,8 @@ proto.ns.GenerateGatewayClientCertificateResponse.toObject = function(includeIns
   var f, obj = {
     tlsCert: msg.getTlsCert_asB64(),
     tlsKey: msg.getTlsKey_asB64(),
-    caCert: msg.getCaCert_asB64()
+    caCert: msg.getCaCert_asB64(),
+    expiresAt: (f = msg.getExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9019,6 +9020,11 @@ proto.ns.GenerateGatewayClientCertificateResponse.deserializeBinaryFromReader = 
     case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setCaCert(value);
+      break;
+    case 4:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiresAt(value);
       break;
     default:
       reader.skipField();
@@ -9077,6 +9083,14 @@ proto.ns.GenerateGatewayClientCertificateResponse.prototype.serializeBinaryToWri
     writer.writeBytes(
       3,
       f
+    );
+  }
+  f = this.getExpiresAt();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -9205,6 +9219,36 @@ proto.ns.GenerateGatewayClientCertificateResponse.prototype.getCaCert_asU8 = fun
 /** @param {!(string|Uint8Array)} value  */
 proto.ns.GenerateGatewayClientCertificateResponse.prototype.setCaCert = function(value) {
   jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp expires_at = 4;
+ * @return {proto.google.protobuf.Timestamp}
+ */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.getExpiresAt = function() {
+  return /** @type{proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+};
+
+
+/** @param {proto.google.protobuf.Timestamp|undefined} value  */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.setExpiresAt = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.clearExpiresAt = function() {
+  this.setExpiresAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ns.GenerateGatewayClientCertificateResponse.prototype.hasExpiresAt = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

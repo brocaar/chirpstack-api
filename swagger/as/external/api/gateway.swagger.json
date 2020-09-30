@@ -502,6 +502,11 @@
         "caCert": {
           "type": "string",
           "description": "CA certificate."
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expires at defines the expiration date of the certificate."
         }
       }
     },

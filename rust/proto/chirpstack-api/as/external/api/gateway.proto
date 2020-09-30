@@ -179,6 +179,9 @@ message GenerateGatewayClientCertificateResponse {
 
     // CA certificate.
     string ca_cert = 3;
+
+    // Expires at defines the expiration date of the certificate.
+    google.protobuf.Timestamp expires_at = 4;
 }
 
 
