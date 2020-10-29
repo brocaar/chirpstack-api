@@ -1,4 +1,4 @@
-.PHONY: go swagger js rust python
+.PHONY: go swagger js rust python java
 
 all:
 	docker-compose up

@@ -3,6 +3,7 @@ syntax = "proto3";
 package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
+option java_package = "io.chirpstack.api.as.external.api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -178,6 +179,9 @@ message GenerateGatewayClientCertificateResponse {
 
     // CA certificate.
     string ca_cert = 3;
+
+    // Expires at defines the expiration date of the certificate.
+    google.protobuf.Timestamp expires_at = 4;
 }
 
 

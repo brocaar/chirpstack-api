@@ -232,6 +232,11 @@ export class GenerateGatewayClientCertificateResponse extends jspb.Message {
   getCaCert(): string;
   setCaCert(value: string): void;
 
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): void;
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateGatewayClientCertificateResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GenerateGatewayClientCertificateResponse): GenerateGatewayClientCertificateResponse.AsObject;
@@ -247,6 +252,7 @@ export namespace GenerateGatewayClientCertificateResponse {
     tlsCert: string,
     tlsKey: string,
     caCert: string,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

@@ -3,6 +3,7 @@ syntax = "proto3";
 package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
+option java_package = "io.chirpstack.api.as.external.api";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -287,6 +288,36 @@ service ApplicationService {
         };
     }
 
+    // CreatePilotThingsIntegration creates an Pilot Things application-integration.
+    rpc CreatePilotThingsIntegration(CreatePilotThingsIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/applications/{integration.application_id}/integrations/pilot-things"
+            body: "*"
+        };
+    }
+
+    // GetPilotThingsIntegration returns the Pilot Things application-integration.
+    rpc GetPilotThingsIntegration(GetPilotThingsIntegrationRequest) returns (GetPilotThingsIntegrationResponse) {
+        option(google.api.http) = {
+            get: "/api/applications/{application_id}/integrations/pilot-things"
+        };
+    }
+
+    // UpdatePilotThingsIntegration updates the Pilot Things application-integration.
+    rpc UpdatePilotThingsIntegration(UpdatePilotThingsIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/applications/{integration.application_id}/integrations/pilot-things"
+            body: "*"
+        };
+    }
+
+    // DeletePilotThingsIntegration deletes the Pilot Things application-integration.
+    rpc DeletePilotThingsIntegration(DeletePilotThingsIntegrationRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/applications/{application_id}/integrations/pilot-things"
+        };
+    }
+
 	// ListIntegrations lists all configured integrations.
 	rpc ListIntegrations(ListIntegrationRequest) returns (ListIntegrationResponse) {
 		option(google.api.http) = {
@@ -304,6 +335,7 @@ enum IntegrationKind {
     GCP_PUBSUB = 5;
     AWS_SNS = 6;
     AZURE_SERVICE_BUS = 7;
+    PILOT_THINGS = 8;
 }
 
 enum Marshaler {
@@ -881,6 +913,42 @@ message UpdateAzureServiceBusIntegrationRequest {
 }
 
 message DeleteAzureServiceBusIntegrationRequest {
+	// The id of the application.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message PilotThingsIntegration {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+
+    // Server URL
+    string server = 2;
+
+    // Authentication token
+    string token = 3;
+}
+
+message CreatePilotThingsIntegrationRequest {
+    // Integration object to create.
+    PilotThingsIntegration integration = 1;
+}
+
+message GetPilotThingsIntegrationRequest {
+	// Application ID.
+	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetPilotThingsIntegrationResponse {
+    // Integration object.
+    PilotThingsIntegration integration = 1;
+}
+
+message UpdatePilotThingsIntegrationRequest {
+	// Integration object to update.
+	PilotThingsIntegration integration = 1;
+}
+
+message DeletePilotThingsIntegrationRequest {
 	// The id of the application.
 	int64 application_id = 1 [json_name = "applicationID"];
 }

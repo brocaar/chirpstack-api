@@ -105,6 +105,17 @@ function deserialize_api_CreateMyDevicesIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_CreatePilotThingsIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreatePilotThingsIntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreatePilotThingsIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreatePilotThingsIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreatePilotThingsIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_CreateThingsBoardIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.CreateThingsBoardIntegrationRequest)) {
     throw new Error('Expected argument of type api.CreateThingsBoardIntegrationRequest');
@@ -202,6 +213,17 @@ function serialize_api_DeleteMyDevicesIntegrationRequest(arg) {
 
 function deserialize_api_DeleteMyDevicesIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeletePilotThingsIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeletePilotThingsIntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeletePilotThingsIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeletePilotThingsIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeletePilotThingsIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_DeleteThingsBoardIntegrationRequest(arg) {
@@ -391,6 +413,28 @@ function deserialize_api_GetMyDevicesIntegrationResponse(buffer_arg) {
   return as_external_api_application_pb.GetMyDevicesIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_GetPilotThingsIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetPilotThingsIntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetPilotThingsIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetPilotThingsIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetPilotThingsIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetPilotThingsIntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetPilotThingsIntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetPilotThingsIntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetPilotThingsIntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetPilotThingsIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GetThingsBoardIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.GetThingsBoardIntegrationRequest)) {
     throw new Error('Expected argument of type api.GetThingsBoardIntegrationRequest');
@@ -543,6 +587,17 @@ function serialize_api_UpdateMyDevicesIntegrationRequest(arg) {
 
 function deserialize_api_UpdateMyDevicesIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.UpdateMyDevicesIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_UpdatePilotThingsIntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdatePilotThingsIntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdatePilotThingsIntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdatePilotThingsIntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdatePilotThingsIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_UpdateThingsBoardIntegrationRequest(arg) {
@@ -1011,6 +1066,54 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_api_DeleteAzureServiceBusIntegrationRequest,
     requestDeserialize: deserialize_api_DeleteAzureServiceBusIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreatePilotThingsIntegration creates an Pilot Things application-integration.
+  createPilotThingsIntegration: {
+    path: '/api.ApplicationService/CreatePilotThingsIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreatePilotThingsIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreatePilotThingsIntegrationRequest,
+    requestDeserialize: deserialize_api_CreatePilotThingsIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetPilotThingsIntegration returns the Pilot Things application-integration.
+  getPilotThingsIntegration: {
+    path: '/api.ApplicationService/GetPilotThingsIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetPilotThingsIntegrationRequest,
+    responseType: as_external_api_application_pb.GetPilotThingsIntegrationResponse,
+    requestSerialize: serialize_api_GetPilotThingsIntegrationRequest,
+    requestDeserialize: deserialize_api_GetPilotThingsIntegrationRequest,
+    responseSerialize: serialize_api_GetPilotThingsIntegrationResponse,
+    responseDeserialize: deserialize_api_GetPilotThingsIntegrationResponse,
+  },
+  // UpdatePilotThingsIntegration updates the Pilot Things application-integration.
+  updatePilotThingsIntegration: {
+    path: '/api.ApplicationService/UpdatePilotThingsIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdatePilotThingsIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdatePilotThingsIntegrationRequest,
+    requestDeserialize: deserialize_api_UpdatePilotThingsIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeletePilotThingsIntegration deletes the Pilot Things application-integration.
+  deletePilotThingsIntegration: {
+    path: '/api.ApplicationService/DeletePilotThingsIntegration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeletePilotThingsIntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeletePilotThingsIntegrationRequest,
+    requestDeserialize: deserialize_api_DeletePilotThingsIntegrationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

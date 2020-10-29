@@ -3,6 +3,7 @@ syntax = "proto3";
 package ns;
 
 option go_package = "github.com/brocaar/chirpstack-api/ns";
+option java_package = "io.chirpstack.api.ns";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
@@ -510,6 +511,9 @@ message GenerateGatewayClientCertificateResponse {
 
     // CA certificate.
     bytes ca_cert = 3;
+
+    // Expires at defines the expiration date of the certificate.
+    google.protobuf.Timestamp expires_at = 4;
 }
 
 enum AggregationInterval {
