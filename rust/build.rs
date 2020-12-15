@@ -14,6 +14,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     std::fs::create_dir_all(out_dir.join("as")).unwrap();
     std::fs::create_dir_all(out_dir.join("ns")).unwrap();
     std::fs::create_dir_all(out_dir.join("nc")).unwrap();
+    std::fs::create_dir_all(out_dir.join("fuota")).unwrap();
 
     tonic_build::configure()
         .out_dir(out_dir.join("common"))
@@ -60,7 +61,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 "as/external/api/deviceProfile.proto",
                 "as/external/api/deviceQueue.proto",
                 "as/external/api/frameLog.proto",
-                "as/external/api/fuotaDeployment.proto",
                 "as/external/api/gateway.proto",
                 "as/external/api/gatewayProfile.proto",
                 "as/external/api/internal.proto",
@@ -84,6 +84,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .extern_path(".gw", "crate::gw")
         .compile(
             &["ns/ns.proto", "ns/profiles.proto"],
+            &[
+                proto_dir.join("chirpstack-api").to_str().unwrap(),
+                proto_dir.join("google").to_str().unwrap(),
+            ],
+        )?;
+
+    tonic_build::configure()
+        .out_dir(out_dir.join("fuota"))
+        .compile(
+            &["fuota/fuota.proto"],
             &[
                 proto_dir.join("chirpstack-api").to_str().unwrap(),
                 proto_dir.join("google").to_str().unwrap(),

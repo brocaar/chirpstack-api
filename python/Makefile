@@ -2,7 +2,7 @@ GOOGLEAPIS_PATH := "/googleapis"
 IMPORT_AS := import \"as_pb/
 PACKAGE_NAME := import \"chirpstack-api/
 
-all: requirements version pre-build common gw geo nc ns as as-integration as-external-api
+all: requirements version pre-build common gw geo nc ns fuota as as-integration as-external-api
 
 requirements:
 	pip install grpcio-tools
@@ -39,6 +39,9 @@ ns:
 	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/ns/profiles.proto
 	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/ns/ns.proto
 
+fuota:
+	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/fuota/fuota.proto
+
 as:
 	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/as_pb/as_pb.proto
 
@@ -53,7 +56,6 @@ as-external-api:
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/device.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/deviceProfile.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/deviceQueue.proto
-	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/fuotaDeployment.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/gateway.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/gatewayProfile.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/internal.proto

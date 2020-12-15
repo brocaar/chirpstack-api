@@ -3,6 +3,8 @@ pub mod common;
 pub mod gw;
 
 #[cfg(feature = "grpc_support")]
+pub mod fuota;
+#[cfg(feature = "grpc_support")]
 pub mod geo;
 #[cfg(feature = "grpc_support")]
 pub mod nc;

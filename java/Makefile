@@ -1,4 +1,4 @@
-.PHONY: requirements common gw geo nc ns as as-integration as-external-api publish
+.PHONY: requirements common gw geo nc ns as as-integration as-external-api publish fuota
 
 GOOGLEAPIS_PATH := "/googleapis"
 
@@ -7,7 +7,7 @@ PROTOC_ARGS := --plugin=protoc-gen-grpc-java=/protoc-gen-grpc-java --grpc-java_o
 
 BASE_PATH := ../protobuf
 
-all: requirements version common gw geo nc ns as as-integration as-external-api google-api publish
+all: requirements version common gw geo nc ns fuota as as-integration as-external-api google-api publish
 
 requirements:
 	rm -rf build
@@ -33,6 +33,9 @@ ns:
 	protoc -I=${BASE_PATH} -I=${BASE_PATH}/ns $(PROTOC_ARGS) ${BASE_PATH}/ns/profiles.proto
 	protoc -I=${BASE_PATH} -I=${BASE_PATH}/ns $(PROTOC_ARGS) ${BASE_PATH}/ns/ns.proto
 
+fuota:
+	protoc -I=${BASE_PATH} -I=${BASE_PATH}/fuota $(PROTOC_ARGS) ${BASE_PATH}/fuota/fuota.proto
+
 as:
 	protoc -I=${BASE_PATH} -I=${BASE_PATH}/as $(PROTOC_ARGS) ${BASE_PATH}/as/as.proto
 
@@ -46,7 +49,6 @@ as-external-api:
 	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/device.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/deviceProfile.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/deviceQueue.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/fuotaDeployment.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/gateway.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/gatewayProfile.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=${BASE_PATH} -I=${BASE_PATH}/as/external/api $(PROTOC_ARGS) ${BASE_PATH}/as/external/api/internal.proto
