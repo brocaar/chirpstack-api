@@ -5,6 +5,7 @@ package api;
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
 
+import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
@@ -324,6 +325,14 @@ service ApplicationService {
 			get: "/api/applications/{application_id}/integrations"
 		};
 	}
+
+    // GenerateMQTTIntegrationClientCertificate generates an application ID specific TLS certificate
+    // to connect to the MQTT broker.
+    rpc GenerateMQTTIntegrationClientCertificate(GenerateMQTTIntegrationClientCertificateRequest) returns (GenerateMQTTIntegrationClientCertificateResponse) {
+        option(google.api.http) = {
+            post: "/api/applications/{application_id}/integrations/mqtt/certificate"
+        };
+    }
 }
 
 enum IntegrationKind {
@@ -336,6 +345,7 @@ enum IntegrationKind {
     AWS_SNS = 6;
     AZURE_SERVICE_BUS = 7;
     PILOT_THINGS = 8;
+    MQTT_GLOBAL = 9;
 }
 
 enum Marshaler {
@@ -951,4 +961,23 @@ message UpdatePilotThingsIntegrationRequest {
 message DeletePilotThingsIntegrationRequest {
 	// The id of the application.
 	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GenerateMQTTIntegrationClientCertificateRequest {
+    // Application ID.
+    int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GenerateMQTTIntegrationClientCertificateResponse {
+    // TLS certificate.
+    string tls_cert = 1;
+
+    // TLS key.
+    string tls_key = 2;
+
+    // CA certificate.
+    string ca_cert = 3;
+
+    // Expires at defines the expiration date of the certificate.
+    google.protobuf.Timestamp expires_at = 4;
 }

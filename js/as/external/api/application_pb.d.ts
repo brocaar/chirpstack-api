@@ -2,6 +2,7 @@
 // file: as/external/api/application.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 
@@ -1703,6 +1704,60 @@ export namespace DeletePilotThingsIntegrationRequest {
   }
 }
 
+export class GenerateMQTTIntegrationClientCertificateRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateMQTTIntegrationClientCertificateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateMQTTIntegrationClientCertificateRequest): GenerateMQTTIntegrationClientCertificateRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateMQTTIntegrationClientCertificateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateMQTTIntegrationClientCertificateRequest;
+  static deserializeBinaryFromReader(message: GenerateMQTTIntegrationClientCertificateRequest, reader: jspb.BinaryReader): GenerateMQTTIntegrationClientCertificateRequest;
+}
+
+export namespace GenerateMQTTIntegrationClientCertificateRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GenerateMQTTIntegrationClientCertificateResponse extends jspb.Message {
+  getTlsCert(): string;
+  setTlsCert(value: string): void;
+
+  getTlsKey(): string;
+  setTlsKey(value: string): void;
+
+  getCaCert(): string;
+  setCaCert(value: string): void;
+
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): void;
+  getExpiresAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiresAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GenerateMQTTIntegrationClientCertificateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GenerateMQTTIntegrationClientCertificateResponse): GenerateMQTTIntegrationClientCertificateResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GenerateMQTTIntegrationClientCertificateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GenerateMQTTIntegrationClientCertificateResponse;
+  static deserializeBinaryFromReader(message: GenerateMQTTIntegrationClientCertificateResponse, reader: jspb.BinaryReader): GenerateMQTTIntegrationClientCertificateResponse;
+}
+
+export namespace GenerateMQTTIntegrationClientCertificateResponse {
+  export type AsObject = {
+    tlsCert: string,
+    tlsKey: string,
+    caCert: string,
+    expiresAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export interface IntegrationKindMap {
   HTTP: 0;
   INFLUXDB: 1;
@@ -1713,6 +1768,7 @@ export interface IntegrationKindMap {
   AWS_SNS: 6;
   AZURE_SERVICE_BUS: 7;
   PILOT_THINGS: 8;
+  MQTT_GLOBAL: 9;
 }
 
 export const IntegrationKind: IntegrationKindMap;

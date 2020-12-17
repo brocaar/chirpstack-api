@@ -464,6 +464,33 @@
         ]
       }
     },
+    "/api/applications/{application_id}/integrations/mqtt/certificate": {
+      "post": {
+        "summary": "GenerateMQTTIntegrationClientCertificate generates an application ID specific TLS certificate\nto connect to the MQTT broker.",
+        "operationId": "GenerateMQTTIntegrationClientCertificate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGenerateMQTTIntegrationClientCertificateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{application_id}/integrations/mydevices": {
       "get": {
         "summary": "GetMyDevicesIntegration returns the MyDevices application-integration.",
@@ -1534,6 +1561,28 @@
         }
       }
     },
+    "apiGenerateMQTTIntegrationClientCertificateResponse": {
+      "type": "object",
+      "properties": {
+        "tlsCert": {
+          "type": "string",
+          "description": "TLS certificate."
+        },
+        "tlsKey": {
+          "type": "string",
+          "description": "TLS key."
+        },
+        "caCert": {
+          "type": "string",
+          "description": "CA certificate."
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expires at defines the expiration date of the certificate."
+        }
+      }
+    },
     "apiGetAWSSNSIntegrationResponse": {
       "type": "object",
       "properties": {
@@ -1751,7 +1800,8 @@
         "GCP_PUBSUB",
         "AWS_SNS",
         "AZURE_SERVICE_BUS",
-        "PILOT_THINGS"
+        "PILOT_THINGS",
+        "MQTT_GLOBAL"
       ],
       "default": "HTTP"
     },
