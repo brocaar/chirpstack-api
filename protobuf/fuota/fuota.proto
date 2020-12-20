@@ -4,6 +4,7 @@ package fuota;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/fuota";
 option java_package = "io.chirpstack.api.fuota";
+option ruby_package = "ChirpStackAPI::FUOTA";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";

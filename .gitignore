@@ -13,3 +13,6 @@
 
 # java
 /java/build/
+
+# ruby
+/ruby/Gemfile.lock

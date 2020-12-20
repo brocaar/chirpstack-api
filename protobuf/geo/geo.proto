@@ -4,6 +4,7 @@ package geo;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/geo";
 option java_package = "io.chirpstack.api.geo";
+option ruby_package = "ChirpStackAPI::Geo";
 
 import "gw/gw.proto";
 import "common/common.proto";

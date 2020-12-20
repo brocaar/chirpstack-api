@@ -49,6 +49,10 @@ sudo chown $(id -u).$(id -g) java/build/ -R && mvn -f java/build/pom.xml install
 ```
 currently the build run only on Linux x86_64 due to the download of the protoc-gen-grpc-java-1.31.0-linux-x86_64.exe
 
+### Ruby
+
+See: [ruby/readme.md](ruby/readme.md)
+
 ## Generating client libraries
 
 These instructions require [Docker](https://docs.docker.com/install/) and
@@ -72,4 +76,7 @@ make swagger
 
 # only (re)generate Java definitions*
 make java -B
+
+# only (re)generate Ruby client library
+make ruby
 ```

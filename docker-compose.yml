@@ -50,3 +50,12 @@ services:
     command: bash -c "cd java && make all"
     volumes:
       - ./:/chirpstack-api
+  chirpstack-api-ruby:
+    environment:
+      - VERSION=3.9.1
+    build:
+      context: .
+      dockerfile: Dockerfile-ruby
+    command: bash -c "cd ruby && make all"
+    volumes:
+      - ./:/chirpstack-api

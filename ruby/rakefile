@@ -1,0 +1,20 @@
+require 'grpc'
+
+desc "update gem from protobuf definitions"
+task :update do
+
+  # this should be available if it has been built from the compose file
+  version = ENV["VERSION"]||"0.1.0"
+
+  File.open(File.join(File.dirname(__FILE__), "lib", "chirpstack_api", "version.rb"), "w") do |f|
+    f.puts "module ChirpStackAPI"
+    f.puts ""
+    f.puts "  VERSION=\"#{version}\""
+    f.puts ""
+    f.puts "end"
+  end
+
+  `grpc_tools_ruby_protoc -I/googleapis -I../protobuf --ruby_out=lib/chirpstack_api/protobuf --grpc_out=lib/chirpstack_api/protobuf #{Dir["../protobuf/**/*.proto"].join(" ")}`
+
+end
+

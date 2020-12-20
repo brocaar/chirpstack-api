@@ -1,0 +1,14 @@
+FROM ruby:2.7.2
+
+# Ruby already has common google types as dependency to grpc-tools gem
+# but the protoc step can't seem to resolve them without seeing the
+# original proto files
+RUN git clone https://github.com/googleapis/googleapis.git /googleapis
+
+ENV PROJECT_PATH=/chirpstack-api
+
+RUN mkdir -p $PROJECT_PATH
+COPY . $PROJECT_PATH
+WORKDIR $PROJECT_PATH
+
+RUN cd $PROJECT_PATH/ruby && bundle install
