@@ -87,6 +87,10 @@ message ServiceProfile {
     // Minimum number of receiving GWs (informative).
     uint32 min_gw_diversity = 20 [json_name = "minGWDiversity"];
 
+    // Gateways under this service-profile are private.
+    // This means that these gateways can only be used by devices under the
+    // same service-profile.
+    bool gws_private = 24 [json_name = "gwsPrivate"];
 }
 
 message DeviceProfile {

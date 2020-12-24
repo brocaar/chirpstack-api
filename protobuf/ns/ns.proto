@@ -450,6 +450,9 @@ message Gateway {
     // The routing-profile ID defines to which application-server statistical
     // data for this gateway is forwarded.
     bytes routing_profile_id = 5;
+
+    // Service-profile ID (optional).
+    bytes service_profile_id = 6;
 }
 
 message GatewayBoard {

@@ -7119,7 +7119,8 @@ proto.ns.Gateway.toObject = function(includeInstance, msg) {
     gatewayProfileId: msg.getGatewayProfileId_asB64(),
     boardsList: jspb.Message.toObjectList(msg.getBoardsList(),
     proto.ns.GatewayBoard.toObject, includeInstance),
-    routingProfileId: msg.getRoutingProfileId_asB64()
+    routingProfileId: msg.getRoutingProfileId_asB64(),
+    serviceProfileId: msg.getServiceProfileId_asB64()
   };
 
   if (includeInstance) {
@@ -7178,6 +7179,10 @@ proto.ns.Gateway.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setRoutingProfileId(value);
+      break;
+    case 6:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setServiceProfileId(value);
       break;
     default:
       reader.skipField();
@@ -7251,6 +7256,13 @@ proto.ns.Gateway.prototype.serializeBinaryToWriter = function (writer) {
   if (f.length > 0) {
     writer.writeBytes(
       5,
+      f
+    );
+  }
+  f = this.getServiceProfileId_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      6,
       f
     );
   }
@@ -7433,6 +7445,45 @@ proto.ns.Gateway.prototype.getRoutingProfileId_asU8 = function() {
 /** @param {!(string|Uint8Array)} value  */
 proto.ns.Gateway.prototype.setRoutingProfileId = function(value) {
   jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * optional bytes service_profile_id = 6;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.Gateway.prototype.getServiceProfileId = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+};
+
+
+/**
+ * optional bytes service_profile_id = 6;
+ * This is a type-conversion wrapper around `getServiceProfileId()`
+ * @return {string}
+ */
+proto.ns.Gateway.prototype.getServiceProfileId_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getServiceProfileId()));
+};
+
+
+/**
+ * optional bytes service_profile_id = 6;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getServiceProfileId()`
+ * @return {!Uint8Array}
+ */
+proto.ns.Gateway.prototype.getServiceProfileId_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getServiceProfileId()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.Gateway.prototype.setServiceProfileId = function(value) {
+  jspb.Message.setField(this, 6, value);
 };
 
 

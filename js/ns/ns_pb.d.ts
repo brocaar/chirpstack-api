@@ -895,6 +895,11 @@ export class Gateway extends jspb.Message {
   getRoutingProfileId_asB64(): string;
   setRoutingProfileId(value: Uint8Array | string): void;
 
+  getServiceProfileId(): Uint8Array | string;
+  getServiceProfileId_asU8(): Uint8Array;
+  getServiceProfileId_asB64(): string;
+  setServiceProfileId(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Gateway.AsObject;
   static toObject(includeInstance: boolean, msg: Gateway): Gateway.AsObject;
@@ -912,6 +917,7 @@ export namespace Gateway {
     gatewayProfileId: Uint8Array | string,
     boardsList: Array<GatewayBoard.AsObject>,
     routingProfileId: Uint8Array | string,
+    serviceProfileId: Uint8Array | string,
   }
 }
 

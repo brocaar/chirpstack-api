@@ -387,6 +387,10 @@
             "type": "string"
           },
           "description": "Metadata (provided by the gateway)."
+        },
+        "serviceProfileID": {
+          "type": "string",
+          "description": "Service-profile ID (UUID string, optional)."
         }
       }
     },

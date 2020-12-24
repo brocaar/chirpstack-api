@@ -51,6 +51,14 @@
             "required": false,
             "type": "string",
             "format": "int64"
+          },
+          {
+            "name": "networkServerID",
+            "description": "Network-server id to filter on.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -344,6 +352,11 @@
           "type": "integer",
           "format": "int64",
           "description": "Minimum number of receiving GWs (informative)."
+        },
+        "gwsPrivate": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Gateways under this service-profile are private.\nThis means that these gateways can only be used by devices under the\nsame service-profile."
         }
       }
     },

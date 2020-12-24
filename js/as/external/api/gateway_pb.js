@@ -98,7 +98,8 @@ proto.api.Gateway.toObject = function(includeInstance, msg) {
     boardsList: jspb.Message.toObjectList(msg.getBoardsList(),
     proto.api.GatewayBoard.toObject, includeInstance),
     tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : []
+    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : [],
+    serviceProfileId: msg.getServiceProfileId()
   };
 
   if (includeInstance) {
@@ -185,6 +186,10 @@ proto.api.Gateway.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
          });
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServiceProfileId(value);
       break;
     default:
       reader.skipField();
@@ -296,6 +301,13 @@ proto.api.Gateway.prototype.serializeBinaryToWriter = function (writer) {
   f = this.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getServiceProfileId();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
   }
 };
 
@@ -492,6 +504,21 @@ proto.api.Gateway.prototype.getMetadataMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 11, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * optional string service_profile_id = 12;
+ * @return {string}
+ */
+proto.api.Gateway.prototype.getServiceProfileId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.Gateway.prototype.setServiceProfileId = function(value) {
+  jspb.Message.setField(this, 12, value);
 };
 
 

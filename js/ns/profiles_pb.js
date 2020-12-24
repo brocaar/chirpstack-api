@@ -78,7 +78,8 @@ proto.ns.ServiceProfile.toObject = function(includeInstance, msg) {
     raAllowed: msg.getRaAllowed(),
     nwkGeoLoc: msg.getNwkGeoLoc(),
     targetPer: msg.getTargetPer(),
-    minGwDiversity: msg.getMinGwDiversity()
+    minGwDiversity: msg.getMinGwDiversity(),
+    gwsPrivate: msg.getGwsPrivate()
   };
 
   if (includeInstance) {
@@ -194,6 +195,10 @@ proto.ns.ServiceProfile.deserializeBinaryFromReader = function(msg, reader) {
     case 20:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setMinGwDiversity(value);
+      break;
+    case 21:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGwsPrivate(value);
       break;
     default:
       reader.skipField();
@@ -370,6 +375,13 @@ proto.ns.ServiceProfile.prototype.serializeBinaryToWriter = function (writer) {
   if (f !== 0) {
     writer.writeUint32(
       20,
+      f
+    );
+  }
+  f = this.getGwsPrivate();
+  if (f) {
+    writer.writeBool(
+      21,
       f
     );
   }
@@ -744,6 +756,23 @@ proto.ns.ServiceProfile.prototype.getMinGwDiversity = function() {
 /** @param {number} value  */
 proto.ns.ServiceProfile.prototype.setMinGwDiversity = function(value) {
   jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * optional bool gws_private = 21;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ns.ServiceProfile.prototype.getGwsPrivate = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 21, false));
+};
+
+
+/** @param {boolean} value  */
+proto.ns.ServiceProfile.prototype.setGwsPrivate = function(value) {
+  jspb.Message.setField(this, 21, value);
 };
 
 

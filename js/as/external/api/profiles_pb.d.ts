@@ -76,6 +76,9 @@ export class ServiceProfile extends jspb.Message {
   getMinGwDiversity(): number;
   setMinGwDiversity(value: number): void;
 
+  getGwsPrivate(): boolean;
+  setGwsPrivate(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ServiceProfile): ServiceProfile.AsObject;
@@ -111,6 +114,7 @@ export namespace ServiceProfile {
     nwkGeoLoc: boolean,
     targetPer: number,
     minGwDiversity: number,
+    gwsPrivate: boolean,
   }
 }
 
