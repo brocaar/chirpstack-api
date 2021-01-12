@@ -172,6 +172,9 @@ export class DeviceProfile extends jspb.Message {
   getSupports32bitFCnt(): boolean;
   setSupports32bitFCnt(value: boolean): void;
 
+  getAdrAlgorithmId(): string;
+  setAdrAlgorithmId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeviceProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DeviceProfile): DeviceProfile.AsObject;
@@ -204,6 +207,7 @@ export namespace DeviceProfile {
     supportsJoin: boolean,
     rfRegion: string,
     supports32bitFCnt: boolean,
+    adrAlgorithmId: string,
   }
 }
 

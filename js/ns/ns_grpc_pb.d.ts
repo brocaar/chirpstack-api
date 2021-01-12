@@ -56,6 +56,7 @@ interface INetworkServerServiceService extends grpc.ServiceDefinition<grpc.Untyp
   flushMulticastQueueForMulticastGroup: grpc.MethodDefinition<ns_ns_pb.FlushMulticastQueueForMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
   getMulticastQueueItemsForMulticastGroup: grpc.MethodDefinition<ns_ns_pb.GetMulticastQueueItemsForMulticastGroupRequest, ns_ns_pb.GetMulticastQueueItemsForMulticastGroupResponse>;
   getVersion: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, ns_ns_pb.GetVersionResponse>;
+  getADRAlgorithms: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, ns_ns_pb.GetADRAlgorithmsResponse>;
 }
 
 export const NetworkServerServiceService: INetworkServerServiceService;
@@ -204,4 +205,7 @@ export class NetworkServerServiceClient extends grpc.Client {
   getVersion(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<ns_ns_pb.GetVersionResponse>): grpc.ClientUnaryCall;
   getVersion(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.GetVersionResponse>): grpc.ClientUnaryCall;
   getVersion(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.GetVersionResponse>): grpc.ClientUnaryCall;
+  getADRAlgorithms(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<ns_ns_pb.GetADRAlgorithmsResponse>): grpc.ClientUnaryCall;
+  getADRAlgorithms(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.GetADRAlgorithmsResponse>): grpc.ClientUnaryCall;
+  getADRAlgorithms(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<ns_ns_pb.GetADRAlgorithmsResponse>): grpc.ClientUnaryCall;
 }

@@ -343,6 +343,10 @@
         "uplinkInterval": {
           "type": "string",
           "description": "Uplink interval.\nThis defines the expected uplink interval which the device uses for\ncommunication. When the uplink interval has expired and no uplink has\nbeen received, the device is considered inactive."
+        },
+        "adrAlgorithmID": {
+          "type": "string",
+          "description": "ADR algorithm ID.\nIn case this is left blank, or is configured to a non-existing ADR\nalgorithm (plugin), then it falls back to 'default'."
         }
       }
     },

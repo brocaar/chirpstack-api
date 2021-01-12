@@ -848,7 +848,8 @@ proto.ns.DeviceProfile.toObject = function(includeInstance, msg) {
     maxDutyCycle: msg.getMaxDutyCycle(),
     supportsJoin: msg.getSupportsJoin(),
     rfRegion: msg.getRfRegion(),
-    supports32bitFCnt: msg.getSupports32bitFCnt()
+    supports32bitFCnt: msg.getSupports32bitFCnt(),
+    adrAlgorithmId: msg.getAdrAlgorithmId()
   };
 
   if (includeInstance) {
@@ -964,6 +965,10 @@ proto.ns.DeviceProfile.deserializeBinaryFromReader = function(msg, reader) {
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSupports32bitFCnt(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAdrAlgorithmId(value);
       break;
     default:
       reader.skipField();
@@ -1140,6 +1145,13 @@ proto.ns.DeviceProfile.prototype.serializeBinaryToWriter = function (writer) {
   if (f) {
     writer.writeBool(
       20,
+      f
+    );
+  }
+  f = this.getAdrAlgorithmId();
+  if (f.length > 0) {
+    writer.writeString(
+      21,
       f
     );
   }
@@ -1491,6 +1503,21 @@ proto.ns.DeviceProfile.prototype.getSupports32bitFCnt = function() {
 /** @param {boolean} value  */
 proto.ns.DeviceProfile.prototype.setSupports32bitFCnt = function(value) {
   jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * optional string adr_algorithm_id = 21;
+ * @return {string}
+ */
+proto.ns.DeviceProfile.prototype.getAdrAlgorithmId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 21, ""));
+};
+
+
+/** @param {string} value  */
+proto.ns.DeviceProfile.prototype.setAdrAlgorithmId = function(value) {
+  jspb.Message.setField(this, 21, value);
 };
 
 

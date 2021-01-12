@@ -48,6 +48,13 @@ service NetworkServerService {
             get: "/api/network-servers"
         };
     }
+
+    // GetADRAlgorithms returns the available ADR algorithms.
+    rpc GetADRAlgorithms(GetADRAlgorithmsRequest) returns (GetADRAlgorithmsResponse) {
+        option(google.api.http) = {
+            get: "/api/network-servers/{network_server_id}/adr-algorithms"
+        };
+    }
 }
 
 message NetworkServer {
@@ -173,4 +180,21 @@ message ListNetworkServerResponse {
 
     // Network-servers within the result-set.
     repeated NetworkServerListItem result = 2;
+}
+
+message GetADRAlgorithmsRequest {
+    // Network-server ID.
+    int64 network_server_id = 1;
+}
+
+message GetADRAlgorithmsResponse {
+    repeated ADRAlgorithm adr_algorithms = 1; 
+}
+
+message ADRAlgorithm {
+    // ADR algorithm ID.
+    string id = 1;
+
+    // ADR algorithm name.
+    string name = 2;
 }

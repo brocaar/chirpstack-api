@@ -915,7 +915,8 @@ proto.api.DeviceProfile.toObject = function(includeInstance, msg) {
     geolocBufferTtl: msg.getGeolocBufferTtl(),
     geolocMinBufferSize: msg.getGeolocMinBufferSize(),
     tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
-    uplinkInterval: (f = msg.getUplinkInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+    uplinkInterval: (f = msg.getUplinkInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+    adrAlgorithmId: msg.getAdrAlgorithmId()
   };
 
   if (includeInstance) {
@@ -1074,6 +1075,10 @@ proto.api.DeviceProfile.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_duration_pb.Duration;
       reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
       msg.setUplinkInterval(value);
+      break;
+    case 31:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAdrAlgorithmId(value);
       break;
     default:
       reader.skipField();
@@ -1319,6 +1324,13 @@ proto.api.DeviceProfile.prototype.serializeBinaryToWriter = function (writer) {
       30,
       f,
       google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
+  }
+  f = this.getAdrAlgorithmId();
+  if (f.length > 0) {
+    writer.writeString(
+      31,
+      f
     );
   }
 };
@@ -1808,6 +1820,21 @@ proto.api.DeviceProfile.prototype.clearUplinkInterval = function() {
  */
 proto.api.DeviceProfile.prototype.hasUplinkInterval = function() {
   return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional string adr_algorithm_id = 31;
+ * @return {string}
+ */
+proto.api.DeviceProfile.prototype.getAdrAlgorithmId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 31, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.DeviceProfile.prototype.setAdrAlgorithmId = function(value) {
+  jspb.Message.setField(this, 31, value);
 };
 
 
