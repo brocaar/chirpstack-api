@@ -4,6 +4,8 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
+option java_multiple_files = true;
+option java_outer_classname = "FUOTADeploymentProto";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -163,7 +165,7 @@ message ListFUOTADeploymentRequest {
 
     // Application ID to filter on (optional).
     int64 application_id = 3 [json_name = "applicationID"];
-    
+
     // Device EUI (HEX encoded) (optional).
     string dev_eui = 4 [json_name = "devEUI"];
 }

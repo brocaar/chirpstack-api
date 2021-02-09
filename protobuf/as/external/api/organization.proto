@@ -4,6 +4,8 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
+option java_multiple_files = true;
+option java_outer_classname = "OrganizationProto";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -90,7 +92,7 @@ service OrganizationService {
 message Organization {
 	// Organization ID.
 	int64 id = 1;
-	
+
 	// Organization name.
 	string name = 2;
 
@@ -112,7 +114,7 @@ message Organization {
 message OrganizationListItem {
 	// Organization ID.
 	int64 id = 1;
-	
+
 	// Organization name.
 	string name = 2;
 
@@ -246,7 +248,7 @@ message UpdateOrganizationUserRequest {
 message DeleteOrganizationUserRequest {
 	// Organization ID.
 	int64 organization_id = 1 [json_name = "organizationID"];
-	
+
 	// User ID.
 	int64 user_id = 2 [json_name = "userID"];
 }
@@ -254,7 +256,7 @@ message DeleteOrganizationUserRequest {
 message ListOrganizationUsersRequest {
 	// Organization ID.
 	int64 organization_id = 1 [json_name = "organizationID"];
-	
+
 	// Max number of users to return in the result-set.
 	int32 limit = 2;
 
@@ -265,7 +267,7 @@ message ListOrganizationUsersRequest {
 message ListOrganizationUsersResponse {
 	// The total number of users in the organization.
 	int64 total_count = 1;
-	
+
 	repeated OrganizationUserListItem result = 2;
 }
 
