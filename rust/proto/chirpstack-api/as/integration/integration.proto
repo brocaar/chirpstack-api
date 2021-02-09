@@ -172,12 +172,9 @@ message TxAckEvent {
 
     // Gateway ID.
     bytes gateway_id = 7 [json_name = "gatewayID"];
-	
-	// Gateway name.
-    string gateway_name = 8;
 
     // TX info.
-    gw.DownlinkTXInfo tx_info = 9;
+    gw.DownlinkTXInfo tx_info = 8;
 }
 
 // ErrorEvent is the message sent when an error occurred.
