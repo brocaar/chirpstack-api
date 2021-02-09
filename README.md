@@ -45,7 +45,7 @@ See: https://crates.io/crates/chirpstack_api.
 
 if you want install maven artifact on local repo after the build
 ```bash
-sudo chown $(id -u).$(id -g) java/target/ -R && mvn -f java/pom.xml install
+sudo chown $(id -u).$(id -g) java/build/ -R && mvn -f java/build/pom.xml install
 ```
 currently the build run only on Linux x86_64 due to the download of the protoc-gen-grpc-java-1.31.0-linux-x86_64.exe
 

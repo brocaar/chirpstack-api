@@ -17,7 +17,7 @@ make java
 and then with Maven install artifact on your Local Maven Repo
 
 ```sh
-sudo chown $(id -u).$(id -g) java/target/ -R && mvn -f java/pom.xml install
+sudo chown $(id -u).$(id -g) java/build/ -R && mvn -f java/build/pom.xml install
 ```
 
 ## Usage

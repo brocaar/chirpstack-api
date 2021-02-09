@@ -17,14 +17,16 @@
 all: requirements version package
 
 requirements:
-	#rm -rf build
+	rm -rf build
+	mkdir build
+	cp pom.xml build/
 	#cp -r template build
-	#mvn -f build/pom.xml clean validate
-	mvn -f pom.xml clean validate
+	mvn -f build/pom.xml clean validate
+	#mvn -f pom.xml clean validate
 
 version:
     ifdef VERSION
-	    sed -i 's/<version>1.0-SNAPSHOT<\/version>/<version>$(VERSION)<\/version>/g' pom.xml
+	    sed -i 's/<version>1.0-SNAPSHOT<\/version>/<version>$(VERSION)<\/version>/g' build/pom.xml
     endif
 
 # common:
@@ -72,13 +74,13 @@ version:
 
 install: version
 	# install maven artifact local
-	#mvn -f build/pom.xml install
-	mvn -f pom.xml install
+	mvn -f build/pom.xml install
+	#mvn -f pom.xml install
 
 package: version
 	#TODO: maven publish
-	#mvn -f build/pom.xml package
-	mvn -f pom.xml package
+	mvn -f build/pom.xml package
+	#mvn -f pom.xml package
 
 publish: version
 	#TODO: maven publish to maven central
