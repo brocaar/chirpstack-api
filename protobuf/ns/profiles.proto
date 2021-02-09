@@ -75,6 +75,11 @@ message ServiceProfile {
 
     // Minimum number of receiving GWs (informative).
     uint32 min_gw_diversity = 20;
+
+    // Gateways under this service-profile are private.
+    // This means that these gateways can only be used by devices under the
+    // same service-profile.
+    bool gws_private = 21;
 }
 
 message DeviceProfile {
@@ -137,6 +142,11 @@ message DeviceProfile {
 
     // End-Device uses 32bit FCnt (mandatory for LoRaWAN 1.0 End-Device).
     bool supports_32bit_f_cnt = 20;
+
+    // ADR algorithm ID.
+    // In case this is left blank, or is configured to a non-existing ADR
+    // algorithm (plugin), then it falls back to 'default'.
+    string adr_algorithm_id = 21;
 }
 
 message RoutingProfile {

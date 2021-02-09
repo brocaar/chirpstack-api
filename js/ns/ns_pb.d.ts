@@ -895,6 +895,11 @@ export class Gateway extends jspb.Message {
   getRoutingProfileId_asB64(): string;
   setRoutingProfileId(value: Uint8Array | string): void;
 
+  getServiceProfileId(): Uint8Array | string;
+  getServiceProfileId_asU8(): Uint8Array;
+  getServiceProfileId_asB64(): string;
+  setServiceProfileId(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Gateway.AsObject;
   static toObject(includeInstance: boolean, msg: Gateway): Gateway.AsObject;
@@ -912,6 +917,7 @@ export namespace Gateway {
     gatewayProfileId: Uint8Array | string,
     boardsList: Array<GatewayBoard.AsObject>,
     routingProfileId: Uint8Array | string,
+    serviceProfileId: Uint8Array | string,
   }
 }
 
@@ -2246,6 +2252,52 @@ export class GetMulticastQueueItemsForMulticastGroupResponse extends jspb.Messag
 export namespace GetMulticastQueueItemsForMulticastGroupResponse {
   export type AsObject = {
     multicastQueueItemsList: Array<MulticastQueueItem.AsObject>,
+  }
+}
+
+export class GetADRAlgorithmsResponse extends jspb.Message {
+  clearAdrAlgorithmsList(): void;
+  getAdrAlgorithmsList(): Array<ADRAlgorithm>;
+  setAdrAlgorithmsList(value: Array<ADRAlgorithm>): void;
+  addAdrAlgorithms(value?: ADRAlgorithm, index?: number): ADRAlgorithm;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetADRAlgorithmsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetADRAlgorithmsResponse): GetADRAlgorithmsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetADRAlgorithmsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetADRAlgorithmsResponse;
+  static deserializeBinaryFromReader(message: GetADRAlgorithmsResponse, reader: jspb.BinaryReader): GetADRAlgorithmsResponse;
+}
+
+export namespace GetADRAlgorithmsResponse {
+  export type AsObject = {
+    adrAlgorithmsList: Array<ADRAlgorithm.AsObject>,
+  }
+}
+
+export class ADRAlgorithm extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ADRAlgorithm.AsObject;
+  static toObject(includeInstance: boolean, msg: ADRAlgorithm): ADRAlgorithm.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ADRAlgorithm, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ADRAlgorithm;
+  static deserializeBinaryFromReader(message: ADRAlgorithm, reader: jspb.BinaryReader): ADRAlgorithm;
+}
+
+export namespace ADRAlgorithm {
+  export type AsObject = {
+    id: string,
+    name: string,
   }
 }
 

@@ -226,6 +226,11 @@ class ApplicationServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.SerializeToString,
                 response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationResponse.FromString,
                 )
+        self.GenerateMQTTIntegrationClientCertificate = channel.unary_unary(
+                '/api.ApplicationService/GenerateMQTTIntegrationClientCertificate',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationClientCertificateRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationClientCertificateResponse.FromString,
+                )
 
 
 class ApplicationServiceServicer(object):
@@ -526,6 +531,14 @@ class ApplicationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateMQTTIntegrationClientCertificate(self, request, context):
+        """GenerateMQTTIntegrationClientCertificate generates an application ID specific TLS certificate
+        to connect to the MQTT broker.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ApplicationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -738,6 +751,11 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
                     servicer.ListIntegrations,
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.FromString,
                     response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationResponse.SerializeToString,
+            ),
+            'GenerateMQTTIntegrationClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateMQTTIntegrationClientCertificate,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationClientCertificateRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationClientCertificateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1461,5 +1479,22 @@ class ApplicationService(object):
         return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/ListIntegrations',
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationRequest.SerializeToString,
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.ListIntegrationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenerateMQTTIntegrationClientCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/GenerateMQTTIntegrationClientCertificate',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationClientCertificateRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GenerateMQTTIntegrationClientCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

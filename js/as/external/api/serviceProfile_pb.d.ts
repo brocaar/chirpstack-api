@@ -155,6 +155,9 @@ export class ListServiceProfileRequest extends jspb.Message {
   getOrganizationId(): number;
   setOrganizationId(value: number): void;
 
+  getNetworkServerId(): number;
+  setNetworkServerId(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListServiceProfileRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListServiceProfileRequest): ListServiceProfileRequest.AsObject;
@@ -170,6 +173,7 @@ export namespace ListServiceProfileRequest {
     limit: number,
     offset: number,
     organizationId: number,
+    networkServerId: number,
   }
 }
 

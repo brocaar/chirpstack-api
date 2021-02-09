@@ -340,6 +340,17 @@ function deserialize_ns_GenerateGatewayClientCertificateResponse(buffer_arg) {
   return ns_ns_pb.GenerateGatewayClientCertificateResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_ns_GetADRAlgorithmsResponse(arg) {
+  if (!(arg instanceof ns_ns_pb.GetADRAlgorithmsResponse)) {
+    throw new Error('Expected argument of type ns.GetADRAlgorithmsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ns_GetADRAlgorithmsResponse(buffer_arg) {
+  return ns_ns_pb.GetADRAlgorithmsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_ns_GetDeviceActivationRequest(arg) {
   if (!(arg instanceof ns_ns_pb.GetDeviceActivationRequest)) {
     throw new Error('Expected argument of type ns.GetDeviceActivationRequest');
@@ -1353,6 +1364,18 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     requestDeserialize: deserialize_google_protobuf_Empty,
     responseSerialize: serialize_ns_GetVersionResponse,
     responseDeserialize: deserialize_ns_GetVersionResponse,
+  },
+  // GetADRAlgorithms returns the available ADR algorithms.
+  getADRAlgorithms: {
+    path: '/ns.NetworkServerService/GetADRAlgorithms',
+    requestStream: false,
+    responseStream: false,
+    requestType: google_protobuf_empty_pb.Empty,
+    responseType: ns_ns_pb.GetADRAlgorithmsResponse,
+    requestSerialize: serialize_google_protobuf_Empty,
+    requestDeserialize: deserialize_google_protobuf_Empty,
+    responseSerialize: serialize_ns_GetADRAlgorithmsResponse,
+    responseDeserialize: deserialize_ns_GetADRAlgorithmsResponse,
   },
 };
 

@@ -1163,7 +1163,8 @@ proto.api.ListServiceProfileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     limit: msg.getLimit(),
     offset: msg.getOffset(),
-    organizationId: msg.getOrganizationId()
+    organizationId: msg.getOrganizationId(),
+    networkServerId: msg.getNetworkServerId()
   };
 
   if (includeInstance) {
@@ -1211,6 +1212,10 @@ proto.api.ListServiceProfileRequest.deserializeBinaryFromReader = function(msg, 
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setOrganizationId(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setNetworkServerId(value);
       break;
     default:
       reader.skipField();
@@ -1271,6 +1276,13 @@ proto.api.ListServiceProfileRequest.prototype.serializeBinaryToWriter = function
       f
     );
   }
+  f = this.getNetworkServerId();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -1325,6 +1337,21 @@ proto.api.ListServiceProfileRequest.prototype.getOrganizationId = function() {
 /** @param {number} value  */
 proto.api.ListServiceProfileRequest.prototype.setOrganizationId = function(value) {
   jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional int64 network_server_id = 4;
+ * @return {number}
+ */
+proto.api.ListServiceProfileRequest.prototype.getNetworkServerId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.ListServiceProfileRequest.prototype.setNetworkServerId = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 

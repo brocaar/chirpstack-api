@@ -98,6 +98,9 @@ message ListServiceProfileRequest{
 
     // Organization id to filter on.
     int64 organization_id = 3 [json_name = "organizationID"];
+
+    // Network-server id to filter on.
+    int64 network_server_id = 4 [json_name = "networkServerID"];
 }
 
 message ServiceProfileListItem {

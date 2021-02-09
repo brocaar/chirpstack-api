@@ -50,6 +50,7 @@ interface IApplicationServiceService extends grpc.ServiceDefinition<grpc.Untyped
   updatePilotThingsIntegration: grpc.MethodDefinition<as_external_api_application_pb.UpdatePilotThingsIntegrationRequest, google_protobuf_empty_pb.Empty>;
   deletePilotThingsIntegration: grpc.MethodDefinition<as_external_api_application_pb.DeletePilotThingsIntegrationRequest, google_protobuf_empty_pb.Empty>;
   listIntegrations: grpc.MethodDefinition<as_external_api_application_pb.ListIntegrationRequest, as_external_api_application_pb.ListIntegrationResponse>;
+  generateMQTTIntegrationClientCertificate: grpc.MethodDefinition<as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateRequest, as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateResponse>;
 }
 
 export const ApplicationServiceService: IApplicationServiceService;
@@ -182,4 +183,7 @@ export class ApplicationServiceClient extends grpc.Client {
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
   listIntegrations(argument: as_external_api_application_pb.ListIntegrationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.ListIntegrationResponse>): grpc.ClientUnaryCall;
+  generateMQTTIntegrationClientCertificate(argument: as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateRequest, callback: grpc.requestCallback<as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateResponse>): grpc.ClientUnaryCall;
+  generateMQTTIntegrationClientCertificate(argument: as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateResponse>): grpc.ClientUnaryCall;
+  generateMQTTIntegrationClientCertificate(argument: as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_application_pb.GenerateMQTTIntegrationClientCertificateResponse>): grpc.ClientUnaryCall;
 }

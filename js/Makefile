@@ -1,4 +1,4 @@
-.PHONY: requirements common gw geo nc ns as as-integration as-external-api publish
+.PHONY: requirements common gw geo nc ns as as-integration as-external-api publish fuota
 
 GOOGLEAPIS_PATH := "/googleapis"
 
@@ -7,7 +7,7 @@ PROTOC_GEN_TS_PATH := ./node_modules/.bin/protoc-gen-ts
 PROTOC_GEN_GRPC_PATH := ./node_modules/.bin/grpc_tools_node_protoc_plugin
 PROTOC_ARGS := --plugin=protoc-gen-ts=$(PROTOC_GEN_TS_PATH) --plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) --js_out=import_style=commonjs,binary:. --ts_out=service=grpc-node:. --grpc_out=.
 
-all: requirements version common gw geo nc ns as as-integration as-external-api google-api
+all: requirements version common gw geo nc ns fuota as as-integration as-external-api google-api
 
 requirements:
 	yarn install
@@ -31,6 +31,9 @@ ns:
 	protoc -I=../protobuf -I=../protobuf/ns $(PROTOC_ARGS) ../protobuf/ns/profiles.proto
 	protoc -I=../protobuf -I=../protobuf/ns $(PROTOC_ARGS) ../protobuf/ns/ns.proto
 
+fuota:
+	protoc -I=../protobuf -I=../protobuf/fuota $(PROTOC_ARGS) ../protobuf/fuota/fuota.proto
+
 as:
 	protoc -I=../protobuf -I=../protobuf/as $(PROTOC_ARGS) ../protobuf/as/as.proto
 
@@ -45,7 +48,6 @@ as-external-api:
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/device.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/deviceProfile.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/deviceQueue.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/fuotaDeployment.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/gateway.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/gatewayProfile.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/as/external/api $(PROTOC_ARGS) ../protobuf/as/external/api/internal.proto

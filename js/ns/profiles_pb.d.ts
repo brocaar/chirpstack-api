@@ -68,6 +68,9 @@ export class ServiceProfile extends jspb.Message {
   getMinGwDiversity(): number;
   setMinGwDiversity(value: number): void;
 
+  getGwsPrivate(): boolean;
+  setGwsPrivate(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ServiceProfile): ServiceProfile.AsObject;
@@ -100,6 +103,7 @@ export namespace ServiceProfile {
     nwkGeoLoc: boolean,
     targetPer: number,
     minGwDiversity: number,
+    gwsPrivate: boolean,
   }
 }
 
@@ -168,6 +172,9 @@ export class DeviceProfile extends jspb.Message {
   getSupports32bitFCnt(): boolean;
   setSupports32bitFCnt(value: boolean): void;
 
+  getAdrAlgorithmId(): string;
+  setAdrAlgorithmId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeviceProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DeviceProfile): DeviceProfile.AsObject;
@@ -200,6 +207,7 @@ export namespace DeviceProfile {
     supportsJoin: boolean,
     rfRegion: string,
     supports32bitFCnt: boolean,
+    adrAlgorithmId: string,
   }
 }
 

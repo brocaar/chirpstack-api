@@ -169,9 +169,49 @@
           "NetworkServerService"
         ]
       }
+    },
+    "/api/network-servers/{network_server_id}/adr-algorithms": {
+      "get": {
+        "summary": "GetADRAlgorithms returns the available ADR algorithms.",
+        "operationId": "GetADRAlgorithms",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetADRAlgorithmsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "network_server_id",
+            "description": "Network-server ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "NetworkServerService"
+        ]
+      }
     }
   },
   "definitions": {
+    "apiADRAlgorithm": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ADR algorithm ID."
+        },
+        "name": {
+          "type": "string",
+          "description": "ADR algorithm name."
+        }
+      }
+    },
     "apiCreateNetworkServerRequest": {
       "type": "object",
       "properties": {
@@ -188,6 +228,17 @@
           "type": "string",
           "format": "int64",
           "description": "Network-server ID."
+        }
+      }
+    },
+    "apiGetADRAlgorithmsResponse": {
+      "type": "object",
+      "properties": {
+        "adrAlgorithms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiADRAlgorithm"
+          }
         }
       }
     },

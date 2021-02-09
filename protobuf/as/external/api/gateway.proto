@@ -125,6 +125,9 @@ message Gateway {
 
     // Metadata (provided by the gateway).
     map<string, string> metadata = 11;
+
+    // Service-profile ID (UUID string, optional).
+    string service_profile_id = 12 [json_name = "serviceProfileID"];
 }
 
 message GatewayBoard {

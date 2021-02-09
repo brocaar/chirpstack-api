@@ -166,6 +166,9 @@ service NetworkServerService {
 
     // GetVersion returns the ChirpStack Network Server version.
     rpc GetVersion(google.protobuf.Empty) returns (GetVersionResponse) {}
+
+    // GetADRAlgorithms returns the available ADR algorithms.
+    rpc GetADRAlgorithms(google.protobuf.Empty) returns (GetADRAlgorithmsResponse) {}
 }
 
 enum RXWindow {
@@ -452,6 +455,9 @@ message Gateway {
     // The routing-profile ID defines to which application-server statistical
     // data for this gateway is forwarded.
     bytes routing_profile_id = 5;
+
+    // Service-profile ID (optional).
+    bytes service_profile_id = 6;
 }
 
 message GatewayBoard {
@@ -889,4 +895,16 @@ message GetMulticastQueueItemsForMulticastGroupRequest {
 
 message GetMulticastQueueItemsForMulticastGroupResponse {
     repeated MulticastQueueItem multicast_queue_items = 1;
+}
+
+message GetADRAlgorithmsResponse {
+    repeated ADRAlgorithm adr_algorithms = 1;
+}
+
+message ADRAlgorithm {
+    // ADR algorithm ID.
+    string id = 1;
+
+    // ADR algorithm name.
+    string name = 2;
 }
