@@ -357,6 +357,16 @@ export class HandleTxAckRequest extends jspb.Message {
   getFCnt(): number;
   setFCnt(value: number): void;
 
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
+  hasTxInfo(): boolean;
+  clearTxInfo(): void;
+  getTxInfo(): gw_gw_pb.DownlinkTXInfo | undefined;
+  setTxInfo(value?: gw_gw_pb.DownlinkTXInfo): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HandleTxAckRequest.AsObject;
   static toObject(includeInstance: boolean, msg: HandleTxAckRequest): HandleTxAckRequest.AsObject;
@@ -371,6 +381,8 @@ export namespace HandleTxAckRequest {
   export type AsObject = {
     devEui: Uint8Array | string,
     fCnt: number,
+    gatewayId: Uint8Array | string,
+    txInfo?: gw_gw_pb.DownlinkTXInfo.AsObject,
   }
 }
 

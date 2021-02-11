@@ -1517,7 +1517,9 @@ proto.integration.TxAckEvent.toObject = function(includeInstance, msg) {
     deviceName: msg.getDeviceName(),
     devEui: msg.getDevEui_asB64(),
     fCnt: msg.getFCnt(),
-    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : []
+    tagsMap: (f = msg.getTagsMap(true)) ? f.toArray() : [],
+    gatewayId: msg.getGatewayId_asB64(),
+    txInfo: (f = msg.getTxInfo()) && gw_gw_pb.DownlinkTXInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1579,6 +1581,15 @@ proto.integration.TxAckEvent.deserializeBinaryFromReader = function(msg, reader)
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
          });
+      break;
+    case 7:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setGatewayId(value);
+      break;
+    case 8:
+      var value = new gw_gw_pb.DownlinkTXInfo;
+      reader.readMessage(value,gw_gw_pb.DownlinkTXInfo.deserializeBinaryFromReader);
+      msg.setTxInfo(value);
       break;
     default:
       reader.skipField();
@@ -1656,6 +1667,21 @@ proto.integration.TxAckEvent.prototype.serializeBinaryToWriter = function (write
   f = this.getTagsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getGatewayId_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      7,
+      f
+    );
+  }
+  f = this.getTxInfo();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      gw_gw_pb.DownlinkTXInfo.serializeBinaryToWriter
+    );
   }
 };
 
@@ -1778,6 +1804,75 @@ proto.integration.TxAckEvent.prototype.getTagsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
+};
+
+
+/**
+ * optional bytes gateway_id = 7;
+ * @return {!(string|Uint8Array)}
+ */
+proto.integration.TxAckEvent.prototype.getGatewayId = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+};
+
+
+/**
+ * optional bytes gateway_id = 7;
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {string}
+ */
+proto.integration.TxAckEvent.prototype.getGatewayId_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getGatewayId()));
+};
+
+
+/**
+ * optional bytes gateway_id = 7;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {!Uint8Array}
+ */
+proto.integration.TxAckEvent.prototype.getGatewayId_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getGatewayId()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.integration.TxAckEvent.prototype.setGatewayId = function(value) {
+  jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * optional gw.DownlinkTXInfo tx_info = 8;
+ * @return {proto.gw.DownlinkTXInfo}
+ */
+proto.integration.TxAckEvent.prototype.getTxInfo = function() {
+  return /** @type{proto.gw.DownlinkTXInfo} */ (
+    jspb.Message.getWrapperField(this, gw_gw_pb.DownlinkTXInfo, 8));
+};
+
+
+/** @param {proto.gw.DownlinkTXInfo|undefined} value  */
+proto.integration.TxAckEvent.prototype.setTxInfo = function(value) {
+  jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+proto.integration.TxAckEvent.prototype.clearTxInfo = function() {
+  this.setTxInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.integration.TxAckEvent.prototype.hasTxInfo = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

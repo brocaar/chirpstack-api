@@ -214,6 +214,16 @@ export class TxAckEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
+  hasTxInfo(): boolean;
+  clearTxInfo(): void;
+  getTxInfo(): gw_gw_pb.DownlinkTXInfo | undefined;
+  setTxInfo(value?: gw_gw_pb.DownlinkTXInfo): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TxAckEvent.AsObject;
   static toObject(includeInstance: boolean, msg: TxAckEvent): TxAckEvent.AsObject;
@@ -232,6 +242,8 @@ export namespace TxAckEvent {
     devEui: Uint8Array | string,
     fCnt: number,
     tagsMap: Array<[string, string]>,
+    gatewayId: Uint8Array | string,
+    txInfo?: gw_gw_pb.DownlinkTXInfo.AsObject,
   }
 }
 

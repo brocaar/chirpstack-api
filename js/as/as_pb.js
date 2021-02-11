@@ -2756,7 +2756,9 @@ proto.as.HandleTxAckRequest.prototype.toObject = function(opt_includeInstance) {
 proto.as.HandleTxAckRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     devEui: msg.getDevEui_asB64(),
-    fCnt: msg.getFCnt()
+    fCnt: msg.getFCnt(),
+    gatewayId: msg.getGatewayId_asB64(),
+    txInfo: (f = msg.getTxInfo()) && gw_gw_pb.DownlinkTXInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2800,6 +2802,15 @@ proto.as.HandleTxAckRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setFCnt(value);
+      break;
+    case 3:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setGatewayId(value);
+      break;
+    case 4:
+      var value = new gw_gw_pb.DownlinkTXInfo;
+      reader.readMessage(value,gw_gw_pb.DownlinkTXInfo.deserializeBinaryFromReader);
+      msg.setTxInfo(value);
       break;
     default:
       reader.skipField();
@@ -2851,6 +2862,21 @@ proto.as.HandleTxAckRequest.prototype.serializeBinaryToWriter = function (writer
     writer.writeUint32(
       2,
       f
+    );
+  }
+  f = this.getGatewayId_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      3,
+      f
+    );
+  }
+  f = this.getTxInfo();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      gw_gw_pb.DownlinkTXInfo.serializeBinaryToWriter
     );
   }
 };
@@ -2916,6 +2942,75 @@ proto.as.HandleTxAckRequest.prototype.getFCnt = function() {
 /** @param {number} value  */
 proto.as.HandleTxAckRequest.prototype.setFCnt = function(value) {
   jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional bytes gateway_id = 3;
+ * @return {!(string|Uint8Array)}
+ */
+proto.as.HandleTxAckRequest.prototype.getGatewayId = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+};
+
+
+/**
+ * optional bytes gateway_id = 3;
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {string}
+ */
+proto.as.HandleTxAckRequest.prototype.getGatewayId_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getGatewayId()));
+};
+
+
+/**
+ * optional bytes gateway_id = 3;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getGatewayId()`
+ * @return {!Uint8Array}
+ */
+proto.as.HandleTxAckRequest.prototype.getGatewayId_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getGatewayId()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.as.HandleTxAckRequest.prototype.setGatewayId = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional gw.DownlinkTXInfo tx_info = 4;
+ * @return {proto.gw.DownlinkTXInfo}
+ */
+proto.as.HandleTxAckRequest.prototype.getTxInfo = function() {
+  return /** @type{proto.gw.DownlinkTXInfo} */ (
+    jspb.Message.getWrapperField(this, gw_gw_pb.DownlinkTXInfo, 4));
+};
+
+
+/** @param {proto.gw.DownlinkTXInfo|undefined} value  */
+proto.as.HandleTxAckRequest.prototype.setTxInfo = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.as.HandleTxAckRequest.prototype.clearTxInfo = function() {
+  this.setTxInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.as.HandleTxAckRequest.prototype.hasTxInfo = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
