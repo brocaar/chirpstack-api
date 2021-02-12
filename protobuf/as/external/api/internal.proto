@@ -4,6 +4,8 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
+option java_multiple_files = true;
+option java_outer_classname = "InternalProto";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
@@ -154,10 +156,10 @@ message ListAPIKeysResponse {
 message OrganizationLink {
     // Organization ID.
     int64 organization_id = 1 [json_name = "organizationID"];
-    
+
     // Organization name.
     string organization_name = 2;
-    
+
     // User is admin within the context of this organization.
     // There is no need to set the is_device_admin and is_gateway_admin flags.
     bool is_admin = 3;
@@ -168,10 +170,10 @@ message OrganizationLink {
 
     // User is able to modify gateways.
     bool is_gateway_admin = 7;
-    
+
     // Created at timestamp.
     google.protobuf.Timestamp created_at = 4;
-    
+
     // Last update timestamp.
 	google.protobuf.Timestamp updated_at = 5;
 }
@@ -192,7 +194,7 @@ message LoginResponse {
 message ProfileResponse {
     // User object.
     User user = 1;
-    
+
     // Organizations to which the user is associated.
     repeated OrganizationLink organizations = 3;
 }
@@ -255,7 +257,7 @@ message SettingsResponse {
 message Branding {
     // Registration html.
     string registration = 1;
-    
+
     // Footer html.
 	string footer = 2;
 }

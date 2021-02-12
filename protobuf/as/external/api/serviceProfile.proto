@@ -4,6 +4,8 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
+option java_multiple_files = true;
+option java_outer_classname = "ServiceProfileProto";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";

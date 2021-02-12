@@ -4,6 +4,8 @@ package gw;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/gw";
 option java_package = "io.chirpstack.api.gw";
+option java_multiple_files = true;
+option java_outer_classname = "GatewayProto";
 
 import "common/common.proto";
 import "google/protobuf/timestamp.proto";
@@ -368,7 +370,7 @@ message DownlinkTXAck {
 
 message DownlinkTXAckItem {
     // The Ack status of this item.
-    TxAckStatus status = 1; 
+    TxAckStatus status = 1;
 }
 
 message GatewayConfiguration {

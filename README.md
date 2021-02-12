@@ -71,5 +71,5 @@ make python
 make swagger
 
 # only (re)generate Java definitions*
-make java -B
+make java
 ```
