@@ -4,6 +4,8 @@ package api;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/external/api";
 option java_package = "io.chirpstack.api.as.external.api";
+option java_multiple_files = true;
+option java_outer_classname = "ApplicationProto";
 
 import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
@@ -459,7 +461,7 @@ message ListApplicationRequest {
 message ListApplicationResponse {
 	// Total number of applications available within the result-set.
 	int64 total_count = 1;
-	
+
 	// Applications within this result-set.
 	repeated ApplicationListItem result = 2;
 }

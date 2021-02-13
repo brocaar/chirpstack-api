@@ -171,6 +171,12 @@ message TxAckEvent {
 
     // User-defined device tags.
     map<string, string> tags = 6;
+
+    // Gateway ID.
+    bytes gateway_id = 7 [json_name = "gatewayID"];
+
+    // TX info.
+    gw.DownlinkTXInfo tx_info = 8;
 }
 
 // ErrorEvent is the message sent when an error occurred.

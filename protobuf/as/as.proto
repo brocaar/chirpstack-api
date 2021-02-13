@@ -228,4 +228,10 @@ message HandleTxAckRequest {
 
     // Downlink frame-counter.
     uint32 f_cnt = 2;
+
+    // Gateway ID.
+    bytes gateway_id = 3;
+
+    // TXInfo contains the TX related meta-data.
+    gw.DownlinkTXInfo tx_info = 4;
 }

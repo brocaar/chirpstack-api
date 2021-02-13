@@ -4,6 +4,8 @@ package nc;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/nc";
 option java_package = "io.chirpstack.api.nc";
+option java_multiple_files = true;
+option java_outer_classname = "NetworkControllerProto";
 
 import "google/protobuf/empty.proto";
 import "gw/gw.proto";

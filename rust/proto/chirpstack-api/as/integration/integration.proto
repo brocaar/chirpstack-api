@@ -4,6 +4,8 @@ package integration;
 
 option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/integration";
 option java_package = "io.chirpstack.api.as.integration";
+option java_multiple_files = true;
+option java_outer_classname = "IntegrationProto";
 
 import "common/common.proto";
 import "gw/gw.proto";
@@ -169,6 +171,12 @@ message TxAckEvent {
 
     // User-defined device tags.
     map<string, string> tags = 6;
+
+    // Gateway ID.
+    bytes gateway_id = 7 [json_name = "gatewayID"];
+
+    // TX info.
+    gw.DownlinkTXInfo tx_info = 8;
 }
 
 // ErrorEvent is the message sent when an error occurred.
