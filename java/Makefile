@@ -4,8 +4,9 @@ all: requirements version package
 
 requirements:
 	rm -rf build
-	mkdir build
+	mkdir -p build/googleapis-proto
 	cp pom.xml build/
+	cp -r /googleapis/google/api/*.proto build/googleapis-proto/
 	mvn -f build/pom.xml clean validate
 
 version:

@@ -43,7 +43,7 @@ NOTE: for `chirpstack-api` you have to follow [Install](#Install) instructions
 <dependency>
   <groupId>io.chirpstack</groupId>
   <artifactId>chirpstack-api</artifactId>
-  <version>3.8.1</version>
+  <version>3.9.3</version>
 </dependency>
 ```
 
