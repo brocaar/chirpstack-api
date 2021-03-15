@@ -1,6 +1,6 @@
 module github.com/brocaar/chirpstack-api/go/v3
 
-go 1.14
+go 1.16
 
 require (
 	github.com/golang/protobuf v1.3.5

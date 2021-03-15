@@ -47,7 +47,7 @@ const internalServiceClient = new internalService.InternalServiceClient(
 // Create and build the login request message
 const loginRequest = new internalMessages.LoginRequest();
 
-loginRequest.setUsername('username');
+loginRequest.setEmail('email');
 loginRequest.setPassword('password');
 
 // Send the login request
