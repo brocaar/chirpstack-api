@@ -74,6 +74,28 @@ function deserialize_as_HandleUplinkDataRequest(buffer_arg) {
   return as_as_pb.HandleUplinkDataRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_as_ReEncryptDeviceQueueItemsRequest(arg) {
+  if (!(arg instanceof as_as_pb.ReEncryptDeviceQueueItemsRequest)) {
+    throw new Error('Expected argument of type as.ReEncryptDeviceQueueItemsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_as_ReEncryptDeviceQueueItemsRequest(buffer_arg) {
+  return as_as_pb.ReEncryptDeviceQueueItemsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_as_ReEncryptDeviceQueueItemsResponse(arg) {
+  if (!(arg instanceof as_as_pb.ReEncryptDeviceQueueItemsResponse)) {
+    throw new Error('Expected argument of type as.ReEncryptDeviceQueueItemsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_as_ReEncryptDeviceQueueItemsResponse(buffer_arg) {
+  return as_as_pb.ReEncryptDeviceQueueItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_as_SetDeviceLocationRequest(arg) {
   if (!(arg instanceof as_as_pb.SetDeviceLocationRequest)) {
     throw new Error('Expected argument of type as.SetDeviceLocationRequest');
@@ -205,6 +227,25 @@ var ApplicationServerServiceService = exports.ApplicationServerServiceService = 
     requestDeserialize: deserialize_as_SetDeviceLocationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // ReEncryptDeviceQueueItems requests the application-server to re-encrypt
+  // the given payload items using the new parameters. This request is
+  // for example triggered when the associated frame-counter of a downlink
+  // payload will be used by a mac-layer only payload, e.g. when the NS has
+  // mac-commands (or ACKs) to send to the device and combining this with
+  // an application-layer payload would exceed the max. payload size.
+  // Note there is no requirement that the number of returned items must be
+  // equal to the number of requested items.
+  reEncryptDeviceQueueItems: {
+    path: '/as.ApplicationServerService/ReEncryptDeviceQueueItems',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_as_pb.ReEncryptDeviceQueueItemsRequest,
+    responseType: as_as_pb.ReEncryptDeviceQueueItemsResponse,
+    requestSerialize: serialize_as_ReEncryptDeviceQueueItemsRequest,
+    requestDeserialize: deserialize_as_ReEncryptDeviceQueueItemsRequest,
+    responseSerialize: serialize_as_ReEncryptDeviceQueueItemsResponse,
+    responseDeserialize: deserialize_as_ReEncryptDeviceQueueItemsResponse,
   },
 };
 

@@ -386,6 +386,134 @@ export namespace HandleTxAckRequest {
   }
 }
 
+export class ReEncryptDeviceQueueItemsRequest extends jspb.Message {
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  getDevAddr(): Uint8Array | string;
+  getDevAddr_asU8(): Uint8Array;
+  getDevAddr_asB64(): string;
+  setDevAddr(value: Uint8Array | string): void;
+
+  getFCntStart(): number;
+  setFCntStart(value: number): void;
+
+  clearItemsList(): void;
+  getItemsList(): Array<ReEncryptDeviceQueueItem>;
+  setItemsList(value: Array<ReEncryptDeviceQueueItem>): void;
+  addItems(value?: ReEncryptDeviceQueueItem, index?: number): ReEncryptDeviceQueueItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReEncryptDeviceQueueItemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ReEncryptDeviceQueueItemsRequest): ReEncryptDeviceQueueItemsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReEncryptDeviceQueueItemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReEncryptDeviceQueueItemsRequest;
+  static deserializeBinaryFromReader(message: ReEncryptDeviceQueueItemsRequest, reader: jspb.BinaryReader): ReEncryptDeviceQueueItemsRequest;
+}
+
+export namespace ReEncryptDeviceQueueItemsRequest {
+  export type AsObject = {
+    devEui: Uint8Array | string,
+    devAddr: Uint8Array | string,
+    fCntStart: number,
+    itemsList: Array<ReEncryptDeviceQueueItem.AsObject>,
+  }
+}
+
+export class ReEncryptDeviceQueueItemsResponse extends jspb.Message {
+  clearItemsList(): void;
+  getItemsList(): Array<ReEncryptedDeviceQueueItem>;
+  setItemsList(value: Array<ReEncryptedDeviceQueueItem>): void;
+  addItems(value?: ReEncryptedDeviceQueueItem, index?: number): ReEncryptedDeviceQueueItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReEncryptDeviceQueueItemsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ReEncryptDeviceQueueItemsResponse): ReEncryptDeviceQueueItemsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReEncryptDeviceQueueItemsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReEncryptDeviceQueueItemsResponse;
+  static deserializeBinaryFromReader(message: ReEncryptDeviceQueueItemsResponse, reader: jspb.BinaryReader): ReEncryptDeviceQueueItemsResponse;
+}
+
+export namespace ReEncryptDeviceQueueItemsResponse {
+  export type AsObject = {
+    itemsList: Array<ReEncryptedDeviceQueueItem.AsObject>,
+  }
+}
+
+export class ReEncryptDeviceQueueItem extends jspb.Message {
+  getFrmPayload(): Uint8Array | string;
+  getFrmPayload_asU8(): Uint8Array;
+  getFrmPayload_asB64(): string;
+  setFrmPayload(value: Uint8Array | string): void;
+
+  getFCnt(): number;
+  setFCnt(value: number): void;
+
+  getFPort(): number;
+  setFPort(value: number): void;
+
+  getConfirmed(): boolean;
+  setConfirmed(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReEncryptDeviceQueueItem.AsObject;
+  static toObject(includeInstance: boolean, msg: ReEncryptDeviceQueueItem): ReEncryptDeviceQueueItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReEncryptDeviceQueueItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReEncryptDeviceQueueItem;
+  static deserializeBinaryFromReader(message: ReEncryptDeviceQueueItem, reader: jspb.BinaryReader): ReEncryptDeviceQueueItem;
+}
+
+export namespace ReEncryptDeviceQueueItem {
+  export type AsObject = {
+    frmPayload: Uint8Array | string,
+    fCnt: number,
+    fPort: number,
+    confirmed: boolean,
+  }
+}
+
+export class ReEncryptedDeviceQueueItem extends jspb.Message {
+  getFrmPayload(): Uint8Array | string;
+  getFrmPayload_asU8(): Uint8Array;
+  getFrmPayload_asB64(): string;
+  setFrmPayload(value: Uint8Array | string): void;
+
+  getFCnt(): number;
+  setFCnt(value: number): void;
+
+  getFPort(): number;
+  setFPort(value: number): void;
+
+  getConfirmed(): boolean;
+  setConfirmed(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReEncryptedDeviceQueueItem.AsObject;
+  static toObject(includeInstance: boolean, msg: ReEncryptedDeviceQueueItem): ReEncryptedDeviceQueueItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReEncryptedDeviceQueueItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReEncryptedDeviceQueueItem;
+  static deserializeBinaryFromReader(message: ReEncryptedDeviceQueueItem, reader: jspb.BinaryReader): ReEncryptedDeviceQueueItem;
+}
+
+export namespace ReEncryptedDeviceQueueItem {
+  export type AsObject = {
+    frmPayload: Uint8Array | string,
+    fCnt: number,
+    fPort: number,
+    confirmed: boolean,
+  }
+}
+
 export interface RXWindowMap {
   RX1: 0;
   RX2: 1;
