@@ -12,6 +12,7 @@ var global = Function('return this')();
 goog.exportSymbol('proto.common.KeyEnvelope', null, global);
 goog.exportSymbol('proto.common.Location', null, global);
 goog.exportSymbol('proto.common.LocationSource', null, global);
+goog.exportSymbol('proto.common.MType', null, global);
 goog.exportSymbol('proto.common.Modulation', null, global);
 goog.exportSymbol('proto.common.Region', null, global);
 
@@ -513,6 +514,20 @@ proto.common.Region = {
   KR920: 8,
   IN865: 9,
   RU864: 10
+};
+
+/**
+ * @enum {number}
+ */
+proto.common.MType = {
+  JOINREQUEST: 0,
+  JOINACCEPT: 1,
+  UNCONFIRMEDDATAUP: 2,
+  UNCONFIRMEDDATADOWN: 3,
+  CONFIRMEDDATAUP: 4,
+  CONFIRMEDDATADOWN: 5,
+  REJOINREQUEST: 6,
+  PROPRIETARY: 7
 };
 
 /**

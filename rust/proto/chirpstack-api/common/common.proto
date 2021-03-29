@@ -47,6 +47,32 @@ enum Region {
     RU864 = 10;
 }
 
+enum MType {
+    // JoinRequest.
+    JoinRequest = 0;
+
+    // JoinAccept.
+    JoinAccept = 1;
+    
+    // UnconfirmedDataUp.
+    UnconfirmedDataUp = 2;
+
+    // UnconfirmedDataDown.
+    UnconfirmedDataDown = 3;
+
+    // ConfirmedDataUp.
+    ConfirmedDataUp = 4;
+    
+    // ConfirmedDataDown.
+    ConfirmedDataDown = 5;
+
+    // RejoinRequest.
+    RejoinRequest = 6;
+
+    // Proprietary.
+    Proprietary = 7;
+}
+
 
 message KeyEnvelope {
     // KEK label.

@@ -87,6 +87,19 @@ export interface RegionMap {
 
 export const Region: RegionMap;
 
+export interface MTypeMap {
+  JOINREQUEST: 0;
+  JOINACCEPT: 1;
+  UNCONFIRMEDDATAUP: 2;
+  UNCONFIRMEDDATADOWN: 3;
+  CONFIRMEDDATAUP: 4;
+  CONFIRMEDDATADOWN: 5;
+  REJOINREQUEST: 6;
+  PROPRIETARY: 7;
+}
+
+export const MType: MTypeMap;
+
 export interface LocationSourceMap {
   UNKNOWN: 0;
   GPS: 1;

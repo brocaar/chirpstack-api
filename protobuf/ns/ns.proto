@@ -640,6 +640,15 @@ message UplinkFrameLog {
 
     // RX meta-data.
     repeated gw.UplinkRXInfo rx_info = 3;
+
+    // Message type.
+    common.MType m_type = 4;
+
+    // Device address (optional).
+    bytes dev_addr = 5;
+
+    // Device EUI (optional).
+    bytes dev_eui = 6;
 }
 
 message DownlinkFrameLog {
@@ -658,6 +667,15 @@ message DownlinkFrameLog {
 
     // Gateway ID.
     bytes gateway_id = 5 [json_name = "gatewayID"];
+
+    // Message type.
+    common.MType m_type = 6;
+
+    // Device address (optional).
+    bytes dev_addr = 7;
+
+    // Device EUI (optional).
+    bytes dev_eui = 8;
 }
 
 message StreamFrameLogsForGatewayRequest {
