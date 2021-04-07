@@ -986,6 +986,39 @@ export namespace RawPacketForwarderCommand {
   }
 }
 
+export class ConnState extends jspb.Message {
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
+  getState(): ConnState.StateMap[keyof ConnState.StateMap];
+  setState(value: ConnState.StateMap[keyof ConnState.StateMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConnState.AsObject;
+  static toObject(includeInstance: boolean, msg: ConnState): ConnState.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConnState, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConnState;
+  static deserializeBinaryFromReader(message: ConnState, reader: jspb.BinaryReader): ConnState;
+}
+
+export namespace ConnState {
+  export type AsObject = {
+    gatewayId: Uint8Array | string,
+    state: ConnState.StateMap[keyof ConnState.StateMap],
+  }
+
+  export interface StateMap {
+    OFFLINE: 0;
+    ONLINE: 1;
+  }
+
+  export const State: StateMap;
+}
+
 export interface DownlinkTimingMap {
   IMMEDIATELY: 0;
   DELAY: 1;
