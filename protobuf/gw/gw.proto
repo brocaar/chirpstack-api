@@ -489,3 +489,16 @@ message RawPacketForwarderCommand {
     // Payload contains the raw payload.
     bytes payload = 3;
 }
+
+// ConnState contains the connection state of a gateway.
+message ConnState {
+    // Gateway ID.
+    bytes gateway_id = 1 [json_name = "gatewayID"];
+
+    enum State {
+        OFFLINE = 0;
+        ONLINE = 1;
+    }
+
+    State state = 2;
+}
