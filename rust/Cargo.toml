@@ -14,11 +14,11 @@ grpc_support = ["tonic/transport", "tonic-build/transport", "tokio"]
 rustfmt = ["tonic-build/rustfmt"]
 
 [dependencies]
-prost = "0.6"
-prost-types = "0.6.1"
+prost = "0.7"
+prost-types = "0.7"
 
-tonic = { version = "0.1", features = ["codegen"], default-features = false }
-tokio = { version = "0.2", features = ["macros"], optional = true }
+tonic = { version = "0.4", features = ["codegen", "prost"], default-features = false }
+tokio = { version = "1.5", features = ["macros"], optional = true }
 
 [build-dependencies]
-tonic-build = { version = "0.1", default-features = false }
+tonic-build = { version = "0.4", features = ["prost"], default-features = false }
