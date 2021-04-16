@@ -1,0 +1,11 @@
+name: ChirpStack API
+on: [push, pull_request]
+jobs:
+  make-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make all targets
+        run: make all
+      - name: Validate clean git state
+        run: git diff --exit-code
