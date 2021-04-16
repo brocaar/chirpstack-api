@@ -5,7 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Make all targets
-        run: make all
+      - name: go
+        run: make go
+      - name: swagger
+        run: make swagger
+      - name: js
+        run: make js
+      - name: rust
+        run: make rust
+      - name: python
+        run: make python
+      - name: java
+        run: make java
       - name: Validate clean git state
         run: git diff --exit-code
