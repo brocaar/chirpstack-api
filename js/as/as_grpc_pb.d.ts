@@ -21,6 +21,18 @@ interface IApplicationServerServiceService extends grpc.ServiceDefinition<grpc.U
 
 export const ApplicationServerServiceService: IApplicationServerServiceService;
 
+export interface IApplicationServerServiceServer extends grpc.UntypedServiceImplementation {
+  handleUplinkData: grpc.handleUnaryCall<as_as_pb.HandleUplinkDataRequest, google_protobuf_empty_pb.Empty>;
+  handleProprietaryUplink: grpc.handleUnaryCall<as_as_pb.HandleProprietaryUplinkRequest, google_protobuf_empty_pb.Empty>;
+  handleError: grpc.handleUnaryCall<as_as_pb.HandleErrorRequest, google_protobuf_empty_pb.Empty>;
+  handleDownlinkACK: grpc.handleUnaryCall<as_as_pb.HandleDownlinkACKRequest, google_protobuf_empty_pb.Empty>;
+  handleGatewayStats: grpc.handleUnaryCall<as_as_pb.HandleGatewayStatsRequest, google_protobuf_empty_pb.Empty>;
+  handleTxAck: grpc.handleUnaryCall<as_as_pb.HandleTxAckRequest, google_protobuf_empty_pb.Empty>;
+  setDeviceStatus: grpc.handleUnaryCall<as_as_pb.SetDeviceStatusRequest, google_protobuf_empty_pb.Empty>;
+  setDeviceLocation: grpc.handleUnaryCall<as_as_pb.SetDeviceLocationRequest, google_protobuf_empty_pb.Empty>;
+  reEncryptDeviceQueueItems: grpc.handleUnaryCall<as_as_pb.ReEncryptDeviceQueueItemsRequest, as_as_pb.ReEncryptDeviceQueueItemsResponse>;
+}
+
 export class ApplicationServerServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   handleUplinkData(argument: as_as_pb.HandleUplinkDataRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;

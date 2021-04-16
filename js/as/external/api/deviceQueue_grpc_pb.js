@@ -76,7 +76,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // DeviceQueueService is the service managing the downlink data queue.
 var DeviceQueueServiceService = exports.DeviceQueueServiceService = {
   // Enqueue adds the given item to the device-queue.
-  enqueue: {
+enqueue: {
     path: '/api.DeviceQueueService/Enqueue',
     requestStream: false,
     responseStream: false,
@@ -88,7 +88,7 @@ var DeviceQueueServiceService = exports.DeviceQueueServiceService = {
     responseDeserialize: deserialize_api_EnqueueDeviceQueueItemResponse,
   },
   // Flush flushes the downlink device-queue.
-  flush: {
+flush: {
     path: '/api.DeviceQueueService/Flush',
     requestStream: false,
     responseStream: false,
@@ -100,7 +100,7 @@ var DeviceQueueServiceService = exports.DeviceQueueServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // List lists the items in the device-queue.
-  list: {
+list: {
     path: '/api.DeviceQueueService/List',
     requestStream: false,
     responseStream: false,

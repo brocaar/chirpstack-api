@@ -18,6 +18,15 @@ interface IUserServiceService extends grpc.ServiceDefinition<grpc.UntypedService
 
 export const UserServiceService: IUserServiceService;
 
+export interface IUserServiceServer extends grpc.UntypedServiceImplementation {
+  list: grpc.handleUnaryCall<as_external_api_user_pb.ListUserRequest, as_external_api_user_pb.ListUserResponse>;
+  get: grpc.handleUnaryCall<as_external_api_user_pb.GetUserRequest, as_external_api_user_pb.GetUserResponse>;
+  create: grpc.handleUnaryCall<as_external_api_user_pb.CreateUserRequest, as_external_api_user_pb.CreateUserResponse>;
+  update: grpc.handleUnaryCall<as_external_api_user_pb.UpdateUserRequest, google_protobuf_empty_pb.Empty>;
+  delete: grpc.handleUnaryCall<as_external_api_user_pb.DeleteUserRequest, google_protobuf_empty_pb.Empty>;
+  updatePassword: grpc.handleUnaryCall<as_external_api_user_pb.UpdateUserPasswordRequest, google_protobuf_empty_pb.Empty>;
+}
+
 export class UserServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   list(argument: as_external_api_user_pb.ListUserRequest, callback: grpc.requestCallback<as_external_api_user_pb.ListUserResponse>): grpc.ClientUnaryCall;

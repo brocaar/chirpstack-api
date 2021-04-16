@@ -17,6 +17,14 @@ interface IServiceProfileServiceService extends grpc.ServiceDefinition<grpc.Unty
 
 export const ServiceProfileServiceService: IServiceProfileServiceService;
 
+export interface IServiceProfileServiceServer extends grpc.UntypedServiceImplementation {
+  create: grpc.handleUnaryCall<as_external_api_serviceProfile_pb.CreateServiceProfileRequest, as_external_api_serviceProfile_pb.CreateServiceProfileResponse>;
+  get: grpc.handleUnaryCall<as_external_api_serviceProfile_pb.GetServiceProfileRequest, as_external_api_serviceProfile_pb.GetServiceProfileResponse>;
+  update: grpc.handleUnaryCall<as_external_api_serviceProfile_pb.UpdateServiceProfileRequest, google_protobuf_empty_pb.Empty>;
+  delete: grpc.handleUnaryCall<as_external_api_serviceProfile_pb.DeleteServiceProfileRequest, google_protobuf_empty_pb.Empty>;
+  list: grpc.handleUnaryCall<as_external_api_serviceProfile_pb.ListServiceProfileRequest, as_external_api_serviceProfile_pb.ListServiceProfileResponse>;
+}
+
 export class ServiceProfileServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   create(argument: as_external_api_serviceProfile_pb.CreateServiceProfileRequest, callback: grpc.requestCallback<as_external_api_serviceProfile_pb.CreateServiceProfileResponse>): grpc.ClientUnaryCall;

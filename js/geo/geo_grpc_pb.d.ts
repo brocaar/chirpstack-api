@@ -13,6 +13,11 @@ interface IGeolocationServerServiceService extends grpc.ServiceDefinition<grpc.U
 
 export const GeolocationServerServiceService: IGeolocationServerServiceService;
 
+export interface IGeolocationServerServiceServer extends grpc.UntypedServiceImplementation {
+  resolveTDOA: grpc.handleUnaryCall<geo_geo_pb.ResolveTDOARequest, geo_geo_pb.ResolveTDOAResponse>;
+  resolveMultiFrameTDOA: grpc.handleUnaryCall<geo_geo_pb.ResolveMultiFrameTDOARequest, geo_geo_pb.ResolveMultiFrameTDOAResponse>;
+}
+
 export class GeolocationServerServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   resolveTDOA(argument: geo_geo_pb.ResolveTDOARequest, callback: grpc.requestCallback<geo_geo_pb.ResolveTDOAResponse>): grpc.ClientUnaryCall;

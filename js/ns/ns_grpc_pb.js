@@ -784,7 +784,7 @@ function deserialize_ns_UpdateServiceProfileRequest(buffer_arg) {
 // NetworkServerService provides the network-server API methods.
 var NetworkServerServiceService = exports.NetworkServerServiceService = {
   // CreateServiceProfile creates the given service-profile.
-  createServiceProfile: {
+createServiceProfile: {
     path: '/ns.NetworkServerService/CreateServiceProfile',
     requestStream: false,
     responseStream: false,
@@ -796,7 +796,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_CreateServiceProfileResponse,
   },
   // GetServiceProfile returns the service-profile matching the given id.
-  getServiceProfile: {
+getServiceProfile: {
     path: '/ns.NetworkServerService/GetServiceProfile',
     requestStream: false,
     responseStream: false,
@@ -808,7 +808,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetServiceProfileResponse,
   },
   // UpdateServiceProfile updates the given service-profile.
-  updateServiceProfile: {
+updateServiceProfile: {
     path: '/ns.NetworkServerService/UpdateServiceProfile',
     requestStream: false,
     responseStream: false,
@@ -820,7 +820,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteServiceProfile deletes the service-profile matching the given id.
-  deleteServiceProfile: {
+deleteServiceProfile: {
     path: '/ns.NetworkServerService/DeleteServiceProfile',
     requestStream: false,
     responseStream: false,
@@ -832,7 +832,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateRoutingProfile creates the given routing-profile.
-  createRoutingProfile: {
+createRoutingProfile: {
     path: '/ns.NetworkServerService/CreateRoutingProfile',
     requestStream: false,
     responseStream: false,
@@ -844,7 +844,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_CreateRoutingProfileResponse,
   },
   // GetRoutingProfile returns the routing-profile matching the given id.
-  getRoutingProfile: {
+getRoutingProfile: {
     path: '/ns.NetworkServerService/GetRoutingProfile',
     requestStream: false,
     responseStream: false,
@@ -856,7 +856,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetRoutingProfileResponse,
   },
   // UpdateRoutingProfile updates the given routing-profile.
-  updateRoutingProfile: {
+updateRoutingProfile: {
     path: '/ns.NetworkServerService/UpdateRoutingProfile',
     requestStream: false,
     responseStream: false,
@@ -868,7 +868,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteRoutingProfile deletes the routing-profile matching the given id.
-  deleteRoutingProfile: {
+deleteRoutingProfile: {
     path: '/ns.NetworkServerService/DeleteRoutingProfile',
     requestStream: false,
     responseStream: false,
@@ -880,7 +880,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateDeviceProfile creates the given device-profile.
-  createDeviceProfile: {
+createDeviceProfile: {
     path: '/ns.NetworkServerService/CreateDeviceProfile',
     requestStream: false,
     responseStream: false,
@@ -892,7 +892,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_CreateDeviceProfileResponse,
   },
   // GetDeviceProfile returns the device-profile matching the given id.
-  getDeviceProfile: {
+getDeviceProfile: {
     path: '/ns.NetworkServerService/GetDeviceProfile',
     requestStream: false,
     responseStream: false,
@@ -904,7 +904,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetDeviceProfileResponse,
   },
   // UpdateDeviceProfile updates the given device-profile.
-  updateDeviceProfile: {
+updateDeviceProfile: {
     path: '/ns.NetworkServerService/UpdateDeviceProfile',
     requestStream: false,
     responseStream: false,
@@ -916,7 +916,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteDeviceProfile deletes the device-profile matching the given id.
-  deleteDeviceProfile: {
+deleteDeviceProfile: {
     path: '/ns.NetworkServerService/DeleteDeviceProfile',
     requestStream: false,
     responseStream: false,
@@ -928,7 +928,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateDevice creates the given device.
-  createDevice: {
+createDevice: {
     path: '/ns.NetworkServerService/CreateDevice',
     requestStream: false,
     responseStream: false,
@@ -940,7 +940,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetDevice returns the device matching the given DevEUI.
-  getDevice: {
+getDevice: {
     path: '/ns.NetworkServerService/GetDevice',
     requestStream: false,
     responseStream: false,
@@ -952,7 +952,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetDeviceResponse,
   },
   // UpdateDevice updates the given device.
-  updateDevice: {
+updateDevice: {
     path: '/ns.NetworkServerService/UpdateDevice',
     requestStream: false,
     responseStream: false,
@@ -964,7 +964,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteDevice deletes the device matching the given DevEUI.
-  deleteDevice: {
+deleteDevice: {
     path: '/ns.NetworkServerService/DeleteDevice',
     requestStream: false,
     responseStream: false,
@@ -976,7 +976,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // ActivateDevice activates a device (ABP).
-  activateDevice: {
+activateDevice: {
     path: '/ns.NetworkServerService/ActivateDevice',
     requestStream: false,
     responseStream: false,
@@ -988,7 +988,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeactivateDevice de-activates a device.
-  deactivateDevice: {
+deactivateDevice: {
     path: '/ns.NetworkServerService/DeactivateDevice',
     requestStream: false,
     responseStream: false,
@@ -1000,7 +1000,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetDeviceActivation returns the device activation details.
-  getDeviceActivation: {
+getDeviceActivation: {
     path: '/ns.NetworkServerService/GetDeviceActivation',
     requestStream: false,
     responseStream: false,
@@ -1012,7 +1012,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetDeviceActivationResponse,
   },
   // CreateDeviceQueueItem creates the given device-queue item.
-  createDeviceQueueItem: {
+createDeviceQueueItem: {
     path: '/ns.NetworkServerService/CreateDeviceQueueItem',
     requestStream: false,
     responseStream: false,
@@ -1024,7 +1024,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // FlushDeviceQueueForDevEUI flushes the device-queue for the given DevEUI.
-  flushDeviceQueueForDevEUI: {
+flushDeviceQueueForDevEUI: {
     path: '/ns.NetworkServerService/FlushDeviceQueueForDevEUI',
     requestStream: false,
     responseStream: false,
@@ -1036,7 +1036,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetDeviceQueueItemsForDevEUI returns all device-queue items for the given DevEUI.
-  getDeviceQueueItemsForDevEUI: {
+getDeviceQueueItemsForDevEUI: {
     path: '/ns.NetworkServerService/GetDeviceQueueItemsForDevEUI',
     requestStream: false,
     responseStream: false,
@@ -1048,8 +1048,8 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetDeviceQueueItemsForDevEUIResponse,
   },
   // GetNextDownlinkFCntForDevEUI returns the next FCnt that must be used.
-  // This also takes device-queue items for the given DevEUI into consideration.
-  getNextDownlinkFCntForDevEUI: {
+// This also takes device-queue items for the given DevEUI into consideration.
+getNextDownlinkFCntForDevEUI: {
     path: '/ns.NetworkServerService/GetNextDownlinkFCntForDevEUI',
     requestStream: false,
     responseStream: false,
@@ -1061,7 +1061,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetNextDownlinkFCntForDevEUIResponse,
   },
   // GetRandomDevAddr returns a random DevAddr taking the NwkID prefix into account.
-  getRandomDevAddr: {
+getRandomDevAddr: {
     path: '/ns.NetworkServerService/GetRandomDevAddr',
     requestStream: false,
     responseStream: false,
@@ -1073,7 +1073,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetRandomDevAddrResponse,
   },
   // CreateMACCommandQueueItem adds the downlink mac-command to the queue.
-  createMACCommandQueueItem: {
+createMACCommandQueueItem: {
     path: '/ns.NetworkServerService/CreateMACCommandQueueItem',
     requestStream: false,
     responseStream: false,
@@ -1085,7 +1085,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // SendProprietaryPayload send a payload using the 'Proprietary' LoRaWAN message-type.
-  sendProprietaryPayload: {
+sendProprietaryPayload: {
     path: '/ns.NetworkServerService/SendProprietaryPayload',
     requestStream: false,
     responseStream: false,
@@ -1097,7 +1097,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateGateway creates the given gateway.
-  createGateway: {
+createGateway: {
     path: '/ns.NetworkServerService/CreateGateway',
     requestStream: false,
     responseStream: false,
@@ -1109,7 +1109,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetGateway returns data for a particular gateway.
-  getGateway: {
+getGateway: {
     path: '/ns.NetworkServerService/GetGateway',
     requestStream: false,
     responseStream: false,
@@ -1121,7 +1121,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetGatewayResponse,
   },
   // UpdateGateway updates an existing gateway.
-  updateGateway: {
+updateGateway: {
     path: '/ns.NetworkServerService/UpdateGateway',
     requestStream: false,
     responseStream: false,
@@ -1133,7 +1133,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteGateway deletes a gateway.
-  deleteGateway: {
+deleteGateway: {
     path: '/ns.NetworkServerService/DeleteGateway',
     requestStream: false,
     responseStream: false,
@@ -1145,10 +1145,10 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GenerateGatewayClientCertificate returns TLS certificate gateway authentication / authorization.
-  // This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
-  // CA certificate and key, which is used for signing the TLS certificate. The returned TLS
-  // certificate will have the Gateway ID as Common Name.
-  generateGatewayClientCertificate: {
+// This endpoint can ony be used when ChirpStack Network Server is configured with a gateway
+// CA certificate and key, which is used for signing the TLS certificate. The returned TLS
+// certificate will have the Gateway ID as Common Name.
+generateGatewayClientCertificate: {
     path: '/ns.NetworkServerService/GenerateGatewayClientCertificate',
     requestStream: false,
     responseStream: false,
@@ -1160,7 +1160,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GenerateGatewayClientCertificateResponse,
   },
   // CreateGatewayProfile creates the given gateway-profile.
-  createGatewayProfile: {
+createGatewayProfile: {
     path: '/ns.NetworkServerService/CreateGatewayProfile',
     requestStream: false,
     responseStream: false,
@@ -1172,7 +1172,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_CreateGatewayProfileResponse,
   },
   // GetGatewayProfile returns the gateway-profile given an id.
-  getGatewayProfile: {
+getGatewayProfile: {
     path: '/ns.NetworkServerService/GetGatewayProfile',
     requestStream: false,
     responseStream: false,
@@ -1184,7 +1184,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetGatewayProfileResponse,
   },
   // UpdateGatewayProfile updates the given gateway-profile.
-  updateGatewayProfile: {
+updateGatewayProfile: {
     path: '/ns.NetworkServerService/UpdateGatewayProfile',
     requestStream: false,
     responseStream: false,
@@ -1196,7 +1196,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteGatewayProfile deletes the gateway-profile matching a given id.
-  deleteGatewayProfile: {
+deleteGatewayProfile: {
     path: '/ns.NetworkServerService/DeleteGatewayProfile',
     requestStream: false,
     responseStream: false,
@@ -1208,8 +1208,8 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetGatewayStats returns stats of an existing gateway.
-  // Deprecated (stats are forwarded to Application Server API).
-  getGatewayStats: {
+// Deprecated (stats are forwarded to Application Server API).
+getGatewayStats: {
     path: '/ns.NetworkServerService/GetGatewayStats',
     requestStream: false,
     responseStream: false,
@@ -1221,7 +1221,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetGatewayStatsResponse,
   },
   // StreamFrameLogsForGateway returns a stream of frames seen by the given gateway.
-  streamFrameLogsForGateway: {
+streamFrameLogsForGateway: {
     path: '/ns.NetworkServerService/StreamFrameLogsForGateway',
     requestStream: false,
     responseStream: true,
@@ -1233,7 +1233,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_StreamFrameLogsForGatewayResponse,
   },
   // StreamFrameLogsForDevice returns a stream of frames seen by the given device.
-  streamFrameLogsForDevice: {
+streamFrameLogsForDevice: {
     path: '/ns.NetworkServerService/StreamFrameLogsForDevice',
     requestStream: false,
     responseStream: true,
@@ -1245,7 +1245,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_StreamFrameLogsForDeviceResponse,
   },
   // CreateMulticastGroup creates the given multicast-group.
-  createMulticastGroup: {
+createMulticastGroup: {
     path: '/ns.NetworkServerService/CreateMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1257,7 +1257,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_CreateMulticastGroupResponse,
   },
   // GetMulticastGroup returns the multicast-group given an id.
-  getMulticastGroup: {
+getMulticastGroup: {
     path: '/ns.NetworkServerService/GetMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1269,7 +1269,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetMulticastGroupResponse,
   },
   // UpdateMulticastGroup updates the given multicast-group.
-  updateMulticastGroup: {
+updateMulticastGroup: {
     path: '/ns.NetworkServerService/UpdateMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1281,7 +1281,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteMulticastGroup deletes a multicast-group given an id.
-  deleteMulticastGroup: {
+deleteMulticastGroup: {
     path: '/ns.NetworkServerService/DeleteMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1293,7 +1293,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // AddDeviceToMulticastGroup adds the given device to the given multicast-group.
-  addDeviceToMulticastGroup: {
+addDeviceToMulticastGroup: {
     path: '/ns.NetworkServerService/AddDeviceToMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1305,7 +1305,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // RemoveDeviceFromMulticastGroup removes the given device from the given multicast-group.
-  removeDeviceFromMulticastGroup: {
+removeDeviceFromMulticastGroup: {
     path: '/ns.NetworkServerService/RemoveDeviceFromMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1317,8 +1317,8 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // EnqueueMulticastQueueItem enqueues the given multicast queue-item and
-  // increments the frame-counter after enqueueing.
-  enqueueMulticastQueueItem: {
+// increments the frame-counter after enqueueing.
+enqueueMulticastQueueItem: {
     path: '/ns.NetworkServerService/EnqueueMulticastQueueItem',
     requestStream: false,
     responseStream: false,
@@ -1330,7 +1330,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // FlushMulticastQueueForMulticastGroup flushes the multicast device-queue given a multicast-group id.
-  flushMulticastQueueForMulticastGroup: {
+flushMulticastQueueForMulticastGroup: {
     path: '/ns.NetworkServerService/FlushMulticastQueueForMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1342,7 +1342,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetMulticastQueueItemsForMulticastGroup returns the queue-items given a multicast-group id.
-  getMulticastQueueItemsForMulticastGroup: {
+getMulticastQueueItemsForMulticastGroup: {
     path: '/ns.NetworkServerService/GetMulticastQueueItemsForMulticastGroup',
     requestStream: false,
     responseStream: false,
@@ -1354,7 +1354,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetMulticastQueueItemsForMulticastGroupResponse,
   },
   // GetVersion returns the ChirpStack Network Server version.
-  getVersion: {
+getVersion: {
     path: '/ns.NetworkServerService/GetVersion',
     requestStream: false,
     responseStream: false,
@@ -1366,7 +1366,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_ns_GetVersionResponse,
   },
   // GetADRAlgorithms returns the available ADR algorithms.
-  getADRAlgorithms: {
+getADRAlgorithms: {
     path: '/ns.NetworkServerService/GetADRAlgorithms',
     requestStream: false,
     responseStream: false,

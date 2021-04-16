@@ -27,6 +27,24 @@ interface IDeviceServiceService extends grpc.ServiceDefinition<grpc.UntypedServi
 
 export const DeviceServiceService: IDeviceServiceService;
 
+export interface IDeviceServiceServer extends grpc.UntypedServiceImplementation {
+  create: grpc.handleUnaryCall<as_external_api_device_pb.CreateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  get: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceRequest, as_external_api_device_pb.GetDeviceResponse>;
+  list: grpc.handleUnaryCall<as_external_api_device_pb.ListDeviceRequest, as_external_api_device_pb.ListDeviceResponse>;
+  delete: grpc.handleUnaryCall<as_external_api_device_pb.DeleteDeviceRequest, google_protobuf_empty_pb.Empty>;
+  update: grpc.handleUnaryCall<as_external_api_device_pb.UpdateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  createKeys: grpc.handleUnaryCall<as_external_api_device_pb.CreateDeviceKeysRequest, google_protobuf_empty_pb.Empty>;
+  getKeys: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceKeysRequest, as_external_api_device_pb.GetDeviceKeysResponse>;
+  updateKeys: grpc.handleUnaryCall<as_external_api_device_pb.UpdateDeviceKeysRequest, google_protobuf_empty_pb.Empty>;
+  deleteKeys: grpc.handleUnaryCall<as_external_api_device_pb.DeleteDeviceKeysRequest, google_protobuf_empty_pb.Empty>;
+  activate: grpc.handleUnaryCall<as_external_api_device_pb.ActivateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  deactivate: grpc.handleUnaryCall<as_external_api_device_pb.DeactivateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  getActivation: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceActivationRequest, as_external_api_device_pb.GetDeviceActivationResponse>;
+  getRandomDevAddr: grpc.handleUnaryCall<as_external_api_device_pb.GetRandomDevAddrRequest, as_external_api_device_pb.GetRandomDevAddrResponse>;
+  streamFrameLogs: grpc.handleServerStreamingCall<as_external_api_device_pb.StreamDeviceFrameLogsRequest, as_external_api_device_pb.StreamDeviceFrameLogsResponse>;
+  streamEventLogs: grpc.handleServerStreamingCall<as_external_api_device_pb.StreamDeviceEventLogsRequest, as_external_api_device_pb.StreamDeviceEventLogsResponse>;
+}
+
 export class DeviceServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   create(argument: as_external_api_device_pb.CreateDeviceRequest, callback: grpc.requestCallback<google_protobuf_empty_pb.Empty>): grpc.ClientUnaryCall;

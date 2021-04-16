@@ -77,7 +77,7 @@ function deserialize_fuota_GetDeploymentStatusResponse(buffer_arg) {
 // Note: this API considered experimental.
 var FUOTAServerServiceService = exports.FUOTAServerServiceService = {
   // CreateDeployment creates the given FUOTA deployment.
-  createDeployment: {
+createDeployment: {
     path: '/fuota.FUOTAServerService/CreateDeployment',
     requestStream: false,
     responseStream: false,
@@ -89,7 +89,7 @@ var FUOTAServerServiceService = exports.FUOTAServerServiceService = {
     responseDeserialize: deserialize_fuota_CreateDeploymentResponse,
   },
   // GetDeploymentStatus returns the FUOTA deployment status given an ID.
-  getDeploymentStatus: {
+getDeploymentStatus: {
     path: '/fuota.FUOTAServerService/GetDeploymentStatus',
     requestStream: false,
     responseStream: false,
@@ -101,7 +101,7 @@ var FUOTAServerServiceService = exports.FUOTAServerServiceService = {
     responseDeserialize: deserialize_fuota_GetDeploymentStatusResponse,
   },
   // GetDeploymentDeviceLogs returns the FUOTA logs given a deployment ID and DevEUI.
-  getDeploymentDeviceLogs: {
+getDeploymentDeviceLogs: {
     path: '/fuota.FUOTAServerService/GetDeploymentDeviceLogs',
     requestStream: false,
     responseStream: false,

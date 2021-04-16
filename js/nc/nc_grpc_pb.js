@@ -65,7 +65,7 @@ function deserialize_nc_HandleUplinkMetaDataRequest(buffer_arg) {
 // NetworkControllerService is the server to be implemeted by the network-controller.
 var NetworkControllerServiceService = exports.NetworkControllerServiceService = {
   // HandleUplinkMetaData handles uplink meta-rata.
-  handleUplinkMetaData: {
+handleUplinkMetaData: {
     path: '/nc.NetworkControllerService/HandleUplinkMetaData',
     requestStream: false,
     responseStream: false,
@@ -77,7 +77,7 @@ var NetworkControllerServiceService = exports.NetworkControllerServiceService = 
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // HandleDownlinkMetaData handles downlink meta-data.
-  handleDownlinkMetaData: {
+handleDownlinkMetaData: {
     path: '/nc.NetworkControllerService/HandleDownlinkMetaData',
     requestStream: false,
     responseStream: false,
@@ -89,10 +89,10 @@ var NetworkControllerServiceService = exports.NetworkControllerServiceService = 
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // HandleUplinkMACCommand handles an uplink mac-command.
-  // This method will only be called in case the mac-command request was
-  // enqueued throught the API or when the CID is >= 0x80 (proprietary
-  // mac-command range).
-  handleUplinkMACCommand: {
+// This method will only be called in case the mac-command request was
+// enqueued throught the API or when the CID is >= 0x80 (proprietary
+// mac-command range).
+handleUplinkMACCommand: {
     path: '/nc.NetworkControllerService/HandleUplinkMACCommand',
     requestStream: false,
     responseStream: false,
@@ -104,9 +104,9 @@ var NetworkControllerServiceService = exports.NetworkControllerServiceService = 
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // HandleRejectedUplinkFrameSet handles a rejected uplink.
-  // And uplink can be rejected in the case the device has not (yet) been
-  // provisioned, because of invalid frame-counter, MIC, ...
-  handleRejectedUplinkFrameSet: {
+// And uplink can be rejected in the case the device has not (yet) been
+// provisioned, because of invalid frame-counter, MIC, ...
+handleRejectedUplinkFrameSet: {
     path: '/nc.NetworkControllerService/HandleRejectedUplinkFrameSet',
     requestStream: false,
     responseStream: false,

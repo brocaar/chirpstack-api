@@ -111,7 +111,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // DeviceProfileService is the service managing device-profiles.
 var DeviceProfileServiceService = exports.DeviceProfileServiceService = {
   // Create creates the given device-profile.
-  create: {
+create: {
     path: '/api.DeviceProfileService/Create',
     requestStream: false,
     responseStream: false,
@@ -123,7 +123,7 @@ var DeviceProfileServiceService = exports.DeviceProfileServiceService = {
     responseDeserialize: deserialize_api_CreateDeviceProfileResponse,
   },
   // Get returns the device-profile matching the given id.
-  get: {
+get: {
     path: '/api.DeviceProfileService/Get',
     requestStream: false,
     responseStream: false,
@@ -135,7 +135,7 @@ var DeviceProfileServiceService = exports.DeviceProfileServiceService = {
     responseDeserialize: deserialize_api_GetDeviceProfileResponse,
   },
   // Update updates the given device-profile.
-  update: {
+update: {
     path: '/api.DeviceProfileService/Update',
     requestStream: false,
     responseStream: false,
@@ -147,7 +147,7 @@ var DeviceProfileServiceService = exports.DeviceProfileServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete deletes the device-profile matching the given id.
-  delete: {
+delete: {
     path: '/api.DeviceProfileService/Delete',
     requestStream: false,
     responseStream: false,
@@ -159,7 +159,7 @@ var DeviceProfileServiceService = exports.DeviceProfileServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // List lists the available device-profiles.
-  list: {
+list: {
     path: '/api.DeviceProfileService/List',
     requestStream: false,
     responseStream: false,

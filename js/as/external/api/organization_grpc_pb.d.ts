@@ -22,6 +22,19 @@ interface IOrganizationServiceService extends grpc.ServiceDefinition<grpc.Untype
 
 export const OrganizationServiceService: IOrganizationServiceService;
 
+export interface IOrganizationServiceServer extends grpc.UntypedServiceImplementation {
+  list: grpc.handleUnaryCall<as_external_api_organization_pb.ListOrganizationRequest, as_external_api_organization_pb.ListOrganizationResponse>;
+  get: grpc.handleUnaryCall<as_external_api_organization_pb.GetOrganizationRequest, as_external_api_organization_pb.GetOrganizationResponse>;
+  create: grpc.handleUnaryCall<as_external_api_organization_pb.CreateOrganizationRequest, as_external_api_organization_pb.CreateOrganizationResponse>;
+  update: grpc.handleUnaryCall<as_external_api_organization_pb.UpdateOrganizationRequest, google_protobuf_empty_pb.Empty>;
+  delete: grpc.handleUnaryCall<as_external_api_organization_pb.DeleteOrganizationRequest, google_protobuf_empty_pb.Empty>;
+  listUsers: grpc.handleUnaryCall<as_external_api_organization_pb.ListOrganizationUsersRequest, as_external_api_organization_pb.ListOrganizationUsersResponse>;
+  getUser: grpc.handleUnaryCall<as_external_api_organization_pb.GetOrganizationUserRequest, as_external_api_organization_pb.GetOrganizationUserResponse>;
+  addUser: grpc.handleUnaryCall<as_external_api_organization_pb.AddOrganizationUserRequest, google_protobuf_empty_pb.Empty>;
+  updateUser: grpc.handleUnaryCall<as_external_api_organization_pb.UpdateOrganizationUserRequest, google_protobuf_empty_pb.Empty>;
+  deleteUser: grpc.handleUnaryCall<as_external_api_organization_pb.DeleteOrganizationUserRequest, google_protobuf_empty_pb.Empty>;
+}
+
 export class OrganizationServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   list(argument: as_external_api_organization_pb.ListOrganizationRequest, callback: grpc.requestCallback<as_external_api_organization_pb.ListOrganizationResponse>): grpc.ClientUnaryCall;

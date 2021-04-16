@@ -187,7 +187,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // OrganizationService is the service managing the organization access.
 var OrganizationServiceService = exports.OrganizationServiceService = {
   // Get organization list.
-  list: {
+list: {
     path: '/api.OrganizationService/List',
     requestStream: false,
     responseStream: false,
@@ -199,7 +199,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_api_ListOrganizationResponse,
   },
   // Get data for a particular organization.
-  get: {
+get: {
     path: '/api.OrganizationService/Get',
     requestStream: false,
     responseStream: false,
@@ -211,7 +211,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_api_GetOrganizationResponse,
   },
   // Create a new organization.
-  create: {
+create: {
     path: '/api.OrganizationService/Create',
     requestStream: false,
     responseStream: false,
@@ -223,7 +223,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_api_CreateOrganizationResponse,
   },
   // Update an existing organization.
-  update: {
+update: {
     path: '/api.OrganizationService/Update',
     requestStream: false,
     responseStream: false,
@@ -235,7 +235,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete an organization.
-  delete: {
+delete: {
     path: '/api.OrganizationService/Delete',
     requestStream: false,
     responseStream: false,
@@ -247,7 +247,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Get organization's user list.
-  listUsers: {
+listUsers: {
     path: '/api.OrganizationService/ListUsers',
     requestStream: false,
     responseStream: false,
@@ -259,7 +259,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_api_ListOrganizationUsersResponse,
   },
   // Get data for a particular organization user.
-  getUser: {
+getUser: {
     path: '/api.OrganizationService/GetUser',
     requestStream: false,
     responseStream: false,
@@ -271,7 +271,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_api_GetOrganizationUserResponse,
   },
   // Add a new user to an organization.
-  addUser: {
+addUser: {
     path: '/api.OrganizationService/AddUser',
     requestStream: false,
     responseStream: false,
@@ -283,7 +283,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Update a user in an organization.
-  updateUser: {
+updateUser: {
     path: '/api.OrganizationService/UpdateUser',
     requestStream: false,
     responseStream: false,
@@ -295,7 +295,7 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete a user from an organization.
-  deleteUser: {
+deleteUser: {
     path: '/api.OrganizationService/DeleteUser',
     requestStream: false,
     responseStream: false,

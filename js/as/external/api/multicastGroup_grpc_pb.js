@@ -187,7 +187,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // MulticastGroupService is the service managing multicast-groups.
 var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
   // Create creates the given multicast-group.
-  create: {
+create: {
     path: '/api.MulticastGroupService/Create',
     requestStream: false,
     responseStream: false,
@@ -199,7 +199,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_api_CreateMulticastGroupResponse,
   },
   // Get returns a multicast-group given an ID.
-  get: {
+get: {
     path: '/api.MulticastGroupService/Get',
     requestStream: false,
     responseStream: false,
@@ -211,7 +211,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_api_GetMulticastGroupResponse,
   },
   // Update updates the given multicast-group.
-  update: {
+update: {
     path: '/api.MulticastGroupService/Update',
     requestStream: false,
     responseStream: false,
@@ -223,7 +223,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete deletes a multicast-group given an ID.
-  delete: {
+delete: {
     path: '/api.MulticastGroupService/Delete',
     requestStream: false,
     responseStream: false,
@@ -235,7 +235,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // List lists the available multicast-groups.
-  list: {
+list: {
     path: '/api.MulticastGroupService/List',
     requestStream: false,
     responseStream: false,
@@ -247,7 +247,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_api_ListMulticastGroupResponse,
   },
   // AddDevice adds the given device to the multicast-group.
-  addDevice: {
+addDevice: {
     path: '/api.MulticastGroupService/AddDevice',
     requestStream: false,
     responseStream: false,
@@ -259,7 +259,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // RemoveDevice removes the given device from the multicast-group.
-  removeDevice: {
+removeDevice: {
     path: '/api.MulticastGroupService/RemoveDevice',
     requestStream: false,
     responseStream: false,
@@ -271,7 +271,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Enqueue adds the given item to the multicast-queue.
-  enqueue: {
+enqueue: {
     path: '/api.MulticastGroupService/Enqueue',
     requestStream: false,
     responseStream: false,
@@ -283,7 +283,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_api_EnqueueMulticastQueueItemResponse,
   },
   // FlushQueue flushes the multicast-group queue.
-  flushQueue: {
+flushQueue: {
     path: '/api.MulticastGroupService/FlushQueue',
     requestStream: false,
     responseStream: false,
@@ -295,7 +295,7 @@ var MulticastGroupServiceService = exports.MulticastGroupServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // ListQueue lists the items in the multicast-group queue.
-  listQueue: {
+listQueue: {
     path: '/api.MulticastGroupService/ListQueue',
     requestStream: false,
     responseStream: false,
