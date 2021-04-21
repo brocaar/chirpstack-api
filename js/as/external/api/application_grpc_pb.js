@@ -84,6 +84,17 @@ function deserialize_api_CreateInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.CreateInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_CreateInfluxDBV2IntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.CreateInfluxDBV2IntegrationRequest)) {
+    throw new Error('Expected argument of type api.CreateInfluxDBV2IntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_CreateInfluxDBV2IntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.CreateInfluxDBV2IntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_CreateLoRaCloudIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.CreateLoRaCloudIntegrationRequest)) {
     throw new Error('Expected argument of type api.CreateLoRaCloudIntegrationRequest');
@@ -192,6 +203,17 @@ function serialize_api_DeleteInfluxDBIntegrationRequest(arg) {
 
 function deserialize_api_DeleteInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.DeleteInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_DeleteInfluxDBV2IntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.DeleteInfluxDBV2IntegrationRequest)) {
+    throw new Error('Expected argument of type api.DeleteInfluxDBV2IntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_DeleteInfluxDBV2IntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.DeleteInfluxDBV2IntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_DeleteLoRaCloudIntegrationRequest(arg) {
@@ -392,6 +414,28 @@ function deserialize_api_GetInfluxDBIntegrationResponse(buffer_arg) {
   return as_external_api_application_pb.GetInfluxDBIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_GetInfluxDBV2IntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetInfluxDBV2IntegrationRequest)) {
+    throw new Error('Expected argument of type api.GetInfluxDBV2IntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetInfluxDBV2IntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.GetInfluxDBV2IntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetInfluxDBV2IntegrationResponse(arg) {
+  if (!(arg instanceof as_external_api_application_pb.GetInfluxDBV2IntegrationResponse)) {
+    throw new Error('Expected argument of type api.GetInfluxDBV2IntegrationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetInfluxDBV2IntegrationResponse(buffer_arg) {
+  return as_external_api_application_pb.GetInfluxDBV2IntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GetLoRaCloudIntegrationRequest(arg) {
   if (!(arg instanceof as_external_api_application_pb.GetLoRaCloudIntegrationRequest)) {
     throw new Error('Expected argument of type api.GetLoRaCloudIntegrationRequest');
@@ -588,6 +632,17 @@ function serialize_api_UpdateInfluxDBIntegrationRequest(arg) {
 
 function deserialize_api_UpdateInfluxDBIntegrationRequest(buffer_arg) {
   return as_external_api_application_pb.UpdateInfluxDBIntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_UpdateInfluxDBV2IntegrationRequest(arg) {
+  if (!(arg instanceof as_external_api_application_pb.UpdateInfluxDBV2IntegrationRequest)) {
+    throw new Error('Expected argument of type api.UpdateInfluxDBV2IntegrationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_UpdateInfluxDBV2IntegrationRequest(buffer_arg) {
+  return as_external_api_application_pb.UpdateInfluxDBV2IntegrationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_api_UpdateLoRaCloudIntegrationRequest(arg) {
@@ -801,6 +856,54 @@ deleteInfluxDBIntegration: {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_api_DeleteInfluxDBIntegrationRequest,
     requestDeserialize: deserialize_api_DeleteInfluxDBIntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // CreateInfluxDBV2Integration create an InfluxDBV2 application-integration.
+createInfluxDBV2Integration: {
+    path: '/api.ApplicationService/CreateInfluxDBV2Integration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.CreateInfluxDBV2IntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_CreateInfluxDBV2IntegrationRequest,
+    requestDeserialize: deserialize_api_CreateInfluxDBV2IntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // GetInfluxDBV2Integration returns the InfluxDBV2 application-integration.
+getInfluxDBV2Integration: {
+    path: '/api.ApplicationService/GetInfluxDBV2Integration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.GetInfluxDBV2IntegrationRequest,
+    responseType: as_external_api_application_pb.GetInfluxDBV2IntegrationResponse,
+    requestSerialize: serialize_api_GetInfluxDBV2IntegrationRequest,
+    requestDeserialize: deserialize_api_GetInfluxDBV2IntegrationRequest,
+    responseSerialize: serialize_api_GetInfluxDBV2IntegrationResponse,
+    responseDeserialize: deserialize_api_GetInfluxDBV2IntegrationResponse,
+  },
+  // UpdateInfluxDBV2Integration updates the InfluxDBV2 application-integration.
+updateInfluxDBV2Integration: {
+    path: '/api.ApplicationService/UpdateInfluxDBV2Integration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.UpdateInfluxDBV2IntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_UpdateInfluxDBV2IntegrationRequest,
+    requestDeserialize: deserialize_api_UpdateInfluxDBV2IntegrationRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  // DeleteInfluxDBV2Integration deletes the InfluxDBV2 application-integration.
+deleteInfluxDBV2Integration: {
+    path: '/api.ApplicationService/DeleteInfluxDBV2Integration',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_application_pb.DeleteInfluxDBV2IntegrationRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_api_DeleteInfluxDBV2IntegrationRequest,
+    requestDeserialize: deserialize_api_DeleteInfluxDBV2IntegrationRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

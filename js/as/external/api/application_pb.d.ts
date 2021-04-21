@@ -690,6 +690,152 @@ export namespace DeleteInfluxDBIntegrationRequest {
   }
 }
 
+export class InfluxDBV2Integration extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  getHost(): string;
+  setHost(value: string): void;
+
+  getOrg(): string;
+  setOrg(value: string): void;
+
+  getBucket(): string;
+  setBucket(value: string): void;
+
+  getToken(): string;
+  setToken(value: string): void;
+
+  getPrecision(): InfluxDBPrecisionMap[keyof InfluxDBPrecisionMap];
+  setPrecision(value: InfluxDBPrecisionMap[keyof InfluxDBPrecisionMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InfluxDBV2Integration.AsObject;
+  static toObject(includeInstance: boolean, msg: InfluxDBV2Integration): InfluxDBV2Integration.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InfluxDBV2Integration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InfluxDBV2Integration;
+  static deserializeBinaryFromReader(message: InfluxDBV2Integration, reader: jspb.BinaryReader): InfluxDBV2Integration;
+}
+
+export namespace InfluxDBV2Integration {
+  export type AsObject = {
+    applicationId: number,
+    host: string,
+    org: string,
+    bucket: string,
+    token: string,
+    precision: InfluxDBPrecisionMap[keyof InfluxDBPrecisionMap],
+  }
+}
+
+export class CreateInfluxDBV2IntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): InfluxDBV2Integration | undefined;
+  setIntegration(value?: InfluxDBV2Integration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateInfluxDBV2IntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateInfluxDBV2IntegrationRequest): CreateInfluxDBV2IntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateInfluxDBV2IntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateInfluxDBV2IntegrationRequest;
+  static deserializeBinaryFromReader(message: CreateInfluxDBV2IntegrationRequest, reader: jspb.BinaryReader): CreateInfluxDBV2IntegrationRequest;
+}
+
+export namespace CreateInfluxDBV2IntegrationRequest {
+  export type AsObject = {
+    integration?: InfluxDBV2Integration.AsObject,
+  }
+}
+
+export class GetInfluxDBV2IntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInfluxDBV2IntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInfluxDBV2IntegrationRequest): GetInfluxDBV2IntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetInfluxDBV2IntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInfluxDBV2IntegrationRequest;
+  static deserializeBinaryFromReader(message: GetInfluxDBV2IntegrationRequest, reader: jspb.BinaryReader): GetInfluxDBV2IntegrationRequest;
+}
+
+export namespace GetInfluxDBV2IntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
+export class GetInfluxDBV2IntegrationResponse extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): InfluxDBV2Integration | undefined;
+  setIntegration(value?: InfluxDBV2Integration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInfluxDBV2IntegrationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInfluxDBV2IntegrationResponse): GetInfluxDBV2IntegrationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetInfluxDBV2IntegrationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInfluxDBV2IntegrationResponse;
+  static deserializeBinaryFromReader(message: GetInfluxDBV2IntegrationResponse, reader: jspb.BinaryReader): GetInfluxDBV2IntegrationResponse;
+}
+
+export namespace GetInfluxDBV2IntegrationResponse {
+  export type AsObject = {
+    integration?: InfluxDBV2Integration.AsObject,
+  }
+}
+
+export class UpdateInfluxDBV2IntegrationRequest extends jspb.Message {
+  hasIntegration(): boolean;
+  clearIntegration(): void;
+  getIntegration(): InfluxDBV2Integration | undefined;
+  setIntegration(value?: InfluxDBV2Integration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateInfluxDBV2IntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateInfluxDBV2IntegrationRequest): UpdateInfluxDBV2IntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateInfluxDBV2IntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateInfluxDBV2IntegrationRequest;
+  static deserializeBinaryFromReader(message: UpdateInfluxDBV2IntegrationRequest, reader: jspb.BinaryReader): UpdateInfluxDBV2IntegrationRequest;
+}
+
+export namespace UpdateInfluxDBV2IntegrationRequest {
+  export type AsObject = {
+    integration?: InfluxDBV2Integration.AsObject,
+  }
+}
+
+export class DeleteInfluxDBV2IntegrationRequest extends jspb.Message {
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteInfluxDBV2IntegrationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteInfluxDBV2IntegrationRequest): DeleteInfluxDBV2IntegrationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteInfluxDBV2IntegrationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteInfluxDBV2IntegrationRequest;
+  static deserializeBinaryFromReader(message: DeleteInfluxDBV2IntegrationRequest, reader: jspb.BinaryReader): DeleteInfluxDBV2IntegrationRequest;
+}
+
+export namespace DeleteInfluxDBV2IntegrationRequest {
+  export type AsObject = {
+    applicationId: number,
+  }
+}
+
 export class ThingsBoardIntegration extends jspb.Message {
   getApplicationId(): number;
   setApplicationId(value: number): void;
@@ -1769,6 +1915,7 @@ export interface IntegrationKindMap {
   AZURE_SERVICE_BUS: 7;
   PILOT_THINGS: 8;
   MQTT_GLOBAL: 9;
+  INFLUXDBV2: 10;
 }
 
 export const IntegrationKind: IntegrationKindMap;

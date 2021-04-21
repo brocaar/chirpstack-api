@@ -412,6 +412,60 @@
         ]
       }
     },
+    "/api/applications/{application_id}/integrations/influxdbV2": {
+      "delete": {
+        "summary": "DeleteInfluxDBV2Integration deletes the InfluxDBV2 application-integration.",
+        "operationId": "DeleteInfluxDBV2Integration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
+    "/api/applications/{application_id}/integrations/influxdbv2": {
+      "get": {
+        "summary": "GetInfluxDBV2Integration returns the InfluxDBV2 application-integration.",
+        "operationId": "GetInfluxDBV2Integration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetInfluxDBV2IntegrationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{application_id}/integrations/loracloud": {
       "get": {
         "summary": "GetLoRaCloudIntegration returns the LoRaCloud application-integration.",
@@ -1039,6 +1093,74 @@
         ]
       }
     },
+    "/api/applications/{integration.application_id}/integrations/influxdbv2": {
+      "post": {
+        "summary": "CreateInfluxDBV2Integration create an InfluxDBV2 application-integration.",
+        "operationId": "CreateInfluxDBV2Integration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCreateInfluxDBV2IntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      },
+      "put": {
+        "summary": "UpdateInfluxDBV2Integration updates the InfluxDBV2 application-integration.",
+        "operationId": "UpdateInfluxDBV2Integration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "integration.application_id",
+            "description": "Application ID.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdateInfluxDBV2IntegrationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ApplicationService"
+        ]
+      }
+    },
     "/api/applications/{integration.application_id}/integrations/loracloud": {
       "post": {
         "summary": "CreateLoRaCloudIntegration creates A LoRaCloud application-integration.",
@@ -1499,6 +1621,15 @@
         }
       }
     },
+    "apiCreateInfluxDBV2IntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiInfluxDBV2Integration",
+          "description": "Integration object to create."
+        }
+      }
+    },
     "apiCreateLoRaCloudIntegrationRequest": {
       "type": "object",
       "properties": {
@@ -1633,6 +1764,15 @@
       "properties": {
         "integration": {
           "$ref": "#/definitions/apiInfluxDBIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
+    "apiGetInfluxDBV2IntegrationResponse": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiInfluxDBV2Integration",
           "description": "Integration object."
         }
       }
@@ -1789,6 +1929,36 @@
       ],
       "default": "NS"
     },
+    "apiInfluxDBV2Integration": {
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string",
+          "format": "int64",
+          "description": "Application ID."
+        },
+        "host": {
+          "type": "string",
+          "description": "InfluxDBv2 URL (e.g. http://localhost:8086)."
+        },
+        "org": {
+          "type": "string",
+          "description": "InfluxDBv2 organisation name."
+        },
+        "bucket": {
+          "type": "string",
+          "description": "InfluxDBv2 bucket name."
+        },
+        "token": {
+          "type": "string",
+          "description": "InfluxDBv2 auth token."
+        },
+        "precision": {
+          "$ref": "#/definitions/apiInfluxDBPrecision",
+          "description": "InfluxDB timestamp precision."
+        }
+      }
+    },
     "apiIntegrationKind": {
       "type": "string",
       "enum": [
@@ -1801,7 +1971,8 @@
         "AWS_SNS",
         "AZURE_SERVICE_BUS",
         "PILOT_THINGS",
-        "MQTT_GLOBAL"
+        "MQTT_GLOBAL",
+        "INFLUXDBV2"
       ],
       "default": "HTTP"
     },
@@ -2044,6 +2215,15 @@
       "properties": {
         "integration": {
           "$ref": "#/definitions/apiInfluxDBIntegration",
+          "description": "Integration object."
+        }
+      }
+    },
+    "apiUpdateInfluxDBV2IntegrationRequest": {
+      "type": "object",
+      "properties": {
+        "integration": {
+          "$ref": "#/definitions/apiInfluxDBV2Integration",
           "description": "Integration object."
         }
       }
