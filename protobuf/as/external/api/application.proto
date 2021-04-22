@@ -111,6 +111,36 @@ service ApplicationService {
 		};
 	}
 
+  // CreateInfluxDBV2Integration create an InfluxDBV2 application-integration.
+  rpc CreateInfluxDBV2Integration(CreateInfluxDBV2IntegrationRequest) returns (google.protobuf.Empty) {
+    option(google.api.http) = {
+      post: "/api/applications/{integration.application_id}/integrations/influxdbv2"
+      body: "*"
+    };
+  }
+
+  // GetInfluxDBV2Integration returns the InfluxDBV2 application-integration.
+  rpc GetInfluxDBV2Integration(GetInfluxDBV2IntegrationRequest) returns (GetInfluxDBV2IntegrationResponse) {
+    option(google.api.http) = {
+      get: "/api/applications/{application_id}/integrations/influxdbv2"
+    };
+  }
+
+  // UpdateInfluxDBV2Integration updates the InfluxDBV2 application-integration.
+  rpc UpdateInfluxDBV2Integration(UpdateInfluxDBV2IntegrationRequest) returns (google.protobuf.Empty) {
+    option(google.api.http) = {
+      put: "/api/applications/{integration.application_id}/integrations/influxdbv2"
+      body: "*"
+    };
+  }
+
+  // DeleteInfluxDBV2Integration deletes the InfluxDBV2 application-integration.
+  rpc DeleteInfluxDBV2Integration(DeleteInfluxDBV2IntegrationRequest) returns (google.protobuf.Empty) {
+    option(google.api.http) = {
+      delete: "/api/applications/{application_id}/integrations/influxdbV2"
+    };
+  }
+
     // CreateThingsBoardIntegration creates a ThingsBoard application-integration.
     rpc CreateThingsBoardIntegration(CreateThingsBoardIntegrationRequest) returns (google.protobuf.Empty) {
         option(google.api.http) = {
@@ -338,16 +368,17 @@ service ApplicationService {
 }
 
 enum IntegrationKind {
-	HTTP = 0;
-	INFLUXDB = 1;
-    THINGSBOARD = 2;
-    MYDEVICES = 3;
-    LORACLOUD = 4;
-    GCP_PUBSUB = 5;
-    AWS_SNS = 6;
-    AZURE_SERVICE_BUS = 7;
-    PILOT_THINGS = 8;
-    MQTT_GLOBAL = 9;
+  HTTP = 0;
+  INFLUXDB = 1;
+  THINGSBOARD = 2;
+  MYDEVICES = 3;
+  LORACLOUD = 4;
+  GCP_PUBSUB = 5;
+  AWS_SNS = 6;
+  AZURE_SERVICE_BUS = 7;
+  PILOT_THINGS = 8;
+  MQTT_GLOBAL = 9;
+  INFLUXDBV2 = 10;
 }
 
 enum Marshaler {
@@ -622,6 +653,51 @@ message UpdateInfluxDBIntegrationRequest {
 message DeleteInfluxDBIntegrationRequest {
 	// Application ID.
 	int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message InfluxDBV2Integration {
+  // Application ID.
+  int64 application_id = 1 [json_name = "applicationID"];
+
+  // InfluxDBv2 URL (e.g. http://localhost:8086).
+  string host = 2;
+
+  // InfluxDBv2 organisation name.
+  string org = 3;
+
+  // InfluxDBv2 bucket name.
+  string bucket = 4;
+
+  // InfluxDBv2 auth token.
+  string token = 5;
+
+  // InfluxDB timestamp precision.
+  InfluxDBPrecision precision = 6;
+}
+
+message CreateInfluxDBV2IntegrationRequest {
+  // Integration object to create.
+  InfluxDBV2Integration integration = 1;
+}
+
+message GetInfluxDBV2IntegrationRequest {
+  // Application ID.
+  int64 application_id = 1 [json_name = "applicationID"];
+}
+
+message GetInfluxDBV2IntegrationResponse {
+  // Integration object.
+  InfluxDBV2Integration integration = 1;
+}
+
+message UpdateInfluxDBV2IntegrationRequest {
+  // Integration object.
+  InfluxDBV2Integration integration = 1;
+}
+
+message DeleteInfluxDBV2IntegrationRequest {
+  // Application ID.
+  int64 application_id = 1 [json_name = "applicationID"];
 }
 
 message ThingsBoardIntegration {

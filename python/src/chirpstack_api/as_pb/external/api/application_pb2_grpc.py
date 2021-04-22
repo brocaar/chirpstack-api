@@ -81,6 +81,26 @@ class ApplicationServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBIntegrationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.CreateInfluxDBV2Integration = channel.unary_unary(
+                '/api.ApplicationService/CreateInfluxDBV2Integration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateInfluxDBV2IntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetInfluxDBV2Integration = channel.unary_unary(
+                '/api.ApplicationService/GetInfluxDBV2Integration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBV2IntegrationRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBV2IntegrationResponse.FromString,
+                )
+        self.UpdateInfluxDBV2Integration = channel.unary_unary(
+                '/api.ApplicationService/UpdateInfluxDBV2Integration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateInfluxDBV2IntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DeleteInfluxDBV2Integration = channel.unary_unary(
+                '/api.ApplicationService/DeleteInfluxDBV2Integration',
+                request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBV2IntegrationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.CreateThingsBoardIntegration = channel.unary_unary(
                 '/api.ApplicationService/CreateThingsBoardIntegration',
                 request_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateThingsBoardIntegrationRequest.SerializeToString,
@@ -323,6 +343,34 @@ class ApplicationServiceServicer(object):
 
     def DeleteInfluxDBIntegration(self, request, context):
         """DeleteInfluxDBIntegration deletes the InfluxDB application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateInfluxDBV2Integration(self, request, context):
+        """CreateInfluxDBV2Integration create an InfluxDBV2 application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetInfluxDBV2Integration(self, request, context):
+        """GetInfluxDBV2Integration returns the InfluxDBV2 application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateInfluxDBV2Integration(self, request, context):
+        """UpdateInfluxDBV2Integration updates the InfluxDBV2 application-integration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteInfluxDBV2Integration(self, request, context):
+        """DeleteInfluxDBV2Integration deletes the InfluxDBV2 application-integration.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -605,6 +653,26 @@ def add_ApplicationServiceServicer_to_server(servicer, server):
             'DeleteInfluxDBIntegration': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteInfluxDBIntegration,
                     request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBIntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateInfluxDBV2Integration': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateInfluxDBV2Integration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateInfluxDBV2IntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetInfluxDBV2Integration': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInfluxDBV2Integration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBV2IntegrationRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBV2IntegrationResponse.SerializeToString,
+            ),
+            'UpdateInfluxDBV2Integration': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateInfluxDBV2Integration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateInfluxDBV2IntegrationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteInfluxDBV2Integration': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteInfluxDBV2Integration,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBV2IntegrationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'CreateThingsBoardIntegration': grpc.unary_unary_rpc_method_handler(
@@ -985,6 +1053,74 @@ class ApplicationService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/DeleteInfluxDBIntegration',
             chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBIntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateInfluxDBV2Integration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/CreateInfluxDBV2Integration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.CreateInfluxDBV2IntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetInfluxDBV2Integration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/GetInfluxDBV2Integration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBV2IntegrationRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.GetInfluxDBV2IntegrationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateInfluxDBV2Integration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/UpdateInfluxDBV2Integration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.UpdateInfluxDBV2IntegrationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteInfluxDBV2Integration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.ApplicationService/DeleteInfluxDBV2Integration',
+            chirpstack__api_dot_as__pb_dot_external_dot_api_dot_application__pb2.DeleteInfluxDBV2IntegrationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
