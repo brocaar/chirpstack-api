@@ -513,7 +513,8 @@ proto.common.Region = {
   AS923: 7,
   KR920: 8,
   IN865: 9,
-  RU864: 10
+  RU864: 10,
+  ISM2400: 11
 };
 
 /**
