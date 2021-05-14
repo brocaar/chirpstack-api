@@ -37,6 +37,12 @@ enum Region {
     // AS923
     AS923 = 7;
 
+    // AS923 with -1.80 MHz frequency offset
+    AS923_2 = 12;
+
+    // AS923 with -6.60 MHz frequency offset
+    AS923_3 = 13;
+
     // KR920
     KR920 = 8;
 
