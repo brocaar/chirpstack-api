@@ -721,10 +721,11 @@
       "type": "string",
       "enum": [
         "LORA",
-        "FSK"
+        "FSK",
+        "LR_FHSS"
       ],
       "default": "LORA",
-      "title": "- LORA: LoRa\n - FSK: FSK"
+      "title": "- LORA: LoRa\n - FSK: FSK\n - LR_FHSS: LR-FHSS"
     },
     "gwCRCStatus": {
       "type": "string",
@@ -875,6 +876,30 @@
     "gwImmediatelyTimingInfo": {
       "type": "object"
     },
+    "gwLRFHSSModulationInfo": {
+      "type": "object",
+      "properties": {
+        "occupiedBandwidth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Occupied bandwidth (OBW)."
+        },
+        "operatingChannelWidth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Operating channel width (OCW)."
+        },
+        "hoppingWidth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Hopping width (grid)."
+        },
+        "codeRate": {
+          "type": "string",
+          "description": "Code-rate."
+        }
+      }
+    },
     "gwLoRaModulationInfo": {
       "type": "object",
       "properties": {
@@ -1007,6 +1032,10 @@
         "fskModulationInfo": {
           "$ref": "#/definitions/gwFSKModulationInfo",
           "description": "FSK modulation information."
+        },
+        "lrFHSSModulationInfo": {
+          "$ref": "#/definitions/gwLRFHSSModulationInfo",
+          "description": "LR-FHSS modulation information."
         }
       }
     },

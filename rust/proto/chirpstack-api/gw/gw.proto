@@ -82,8 +82,8 @@ enum TxAckStatus {
 }
 
 message UplinkTXInfo {
-	// Frequency (Hz).
-	uint32 frequency = 1;
+    // Frequency (Hz).
+    uint32 frequency = 1;
 
     // Modulation.
     common.Modulation modulation = 2;
@@ -94,6 +94,9 @@ message UplinkTXInfo {
 
         // FSK modulation information.
         FSKModulationInfo fsk_modulation_info = 4;
+
+        // LR-FHSS modulation information.
+        LRFHSSModulationInfo lr_fhss_modulation_info = 5 [json_name = "lrFHSSModulationInfo"];
     }
 }
 
@@ -117,6 +120,20 @@ message FSKModulationInfo {
 
     // FSK datarate (bits / sec).
     uint32 datarate = 2;
+}
+
+message LRFHSSModulationInfo {
+    // Occupied bandwidth (OBW).
+    uint32 occupied_bandwidth = 1;
+
+    // Operating channel width (OCW).
+    uint32 operating_channel_width = 2;
+
+    // Hopping width (grid).
+    uint32 hopping_width = 3;
+
+    // Code-rate.
+    string code_rate = 4;
 }
 
 message EncryptedFineTimestamp {

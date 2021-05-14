@@ -68,6 +68,7 @@ export namespace Location {
 export interface ModulationMap {
   LORA: 0;
   FSK: 1;
+  LR_FHSS: 2;
 }
 
 export const Modulation: ModulationMap;
