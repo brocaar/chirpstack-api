@@ -113,14 +113,8 @@ export namespace FSKModulationInfo {
 }
 
 export class LRFHSSModulationInfo extends jspb.Message {
-  getOccupiedBandwidth(): number;
-  setOccupiedBandwidth(value: number): void;
-
   getOperatingChannelWidth(): number;
   setOperatingChannelWidth(value: number): void;
-
-  getHoppingWidth(): number;
-  setHoppingWidth(value: number): void;
 
   getCodeRate(): string;
   setCodeRate(value: string): void;
@@ -137,9 +131,7 @@ export class LRFHSSModulationInfo extends jspb.Message {
 
 export namespace LRFHSSModulationInfo {
   export type AsObject = {
-    occupiedBandwidth: number,
     operatingChannelWidth: number,
-    hoppingWidth: number,
     codeRate: string,
   }
 }

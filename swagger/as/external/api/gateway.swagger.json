@@ -879,20 +879,10 @@
     "gwLRFHSSModulationInfo": {
       "type": "object",
       "properties": {
-        "occupiedBandwidth": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Occupied bandwidth (OBW)."
-        },
         "operatingChannelWidth": {
           "type": "integer",
           "format": "int64",
-          "description": "Operating channel width (OCW)."
-        },
-        "hoppingWidth": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Hopping width (grid)."
+          "description": "Operating channel width (OCW) in Hz."
         },
         "codeRate": {
           "type": "string",

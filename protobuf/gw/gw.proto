@@ -123,14 +123,8 @@ message FSKModulationInfo {
 }
 
 message LRFHSSModulationInfo {
-    // Occupied bandwidth (OBW).
-    uint32 occupied_bandwidth = 1;
-
-    // Operating channel width (OCW).
+    // Operating channel width (OCW) in Hz.
     uint32 operating_channel_width = 2;
-
-    // Hopping width (grid).
-    uint32 hopping_width = 3;
 
     // Code-rate.
     string code_rate = 4;

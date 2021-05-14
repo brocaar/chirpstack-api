@@ -863,9 +863,7 @@ proto.gw.LRFHSSModulationInfo.prototype.toObject = function(opt_includeInstance)
  */
 proto.gw.LRFHSSModulationInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    occupiedBandwidth: msg.getOccupiedBandwidth(),
     operatingChannelWidth: msg.getOperatingChannelWidth(),
-    hoppingWidth: msg.getHoppingWidth(),
     codeRate: msg.getCodeRate()
   };
 
@@ -903,17 +901,9 @@ proto.gw.LRFHSSModulationInfo.deserializeBinaryFromReader = function(msg, reader
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setOccupiedBandwidth(value);
-      break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOperatingChannelWidth(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setHoppingWidth(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -957,24 +947,10 @@ proto.gw.LRFHSSModulationInfo.prototype.serializeBinary = function() {
  */
 proto.gw.LRFHSSModulationInfo.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getOccupiedBandwidth();
-  if (f !== 0) {
-    writer.writeUint32(
-      1,
-      f
-    );
-  }
   f = this.getOperatingChannelWidth();
   if (f !== 0) {
     writer.writeUint32(
       2,
-      f
-    );
-  }
-  f = this.getHoppingWidth();
-  if (f !== 0) {
-    writer.writeUint32(
-      3,
       f
     );
   }
@@ -998,21 +974,6 @@ proto.gw.LRFHSSModulationInfo.prototype.cloneMessage = function() {
 
 
 /**
- * optional uint32 occupied_bandwidth = 1;
- * @return {number}
- */
-proto.gw.LRFHSSModulationInfo.prototype.getOccupiedBandwidth = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
-};
-
-
-/** @param {number} value  */
-proto.gw.LRFHSSModulationInfo.prototype.setOccupiedBandwidth = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-/**
  * optional uint32 operating_channel_width = 2;
  * @return {number}
  */
@@ -1024,21 +985,6 @@ proto.gw.LRFHSSModulationInfo.prototype.getOperatingChannelWidth = function() {
 /** @param {number} value  */
 proto.gw.LRFHSSModulationInfo.prototype.setOperatingChannelWidth = function(value) {
   jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * optional uint32 hopping_width = 3;
- * @return {number}
- */
-proto.gw.LRFHSSModulationInfo.prototype.getHoppingWidth = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
-};
-
-
-/** @param {number} value  */
-proto.gw.LRFHSSModulationInfo.prototype.setHoppingWidth = function(value) {
-  jspb.Message.setField(this, 3, value);
 };
 
 
