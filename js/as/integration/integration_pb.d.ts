@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as common_common_pb from "../../common/common_pb";
 import * as gw_gw_pb from "../../gw/gw_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class UplinkEvent extends jspb.Message {
   getApplicationId(): number;
@@ -60,6 +61,11 @@ export class UplinkEvent extends jspb.Message {
   getDevAddr_asB64(): string;
   setDevAddr(value: Uint8Array | string): void;
 
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UplinkEvent.AsObject;
   static toObject(includeInstance: boolean, msg: UplinkEvent): UplinkEvent.AsObject;
@@ -87,6 +93,7 @@ export namespace UplinkEvent {
     tagsMap: Array<[string, string]>,
     confirmedUplink: boolean,
     devAddr: Uint8Array | string,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -125,6 +132,11 @@ export class JoinEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JoinEvent.AsObject;
   static toObject(includeInstance: boolean, msg: JoinEvent): JoinEvent.AsObject;
@@ -146,6 +158,7 @@ export namespace JoinEvent {
     txInfo?: gw_gw_pb.UplinkTXInfo.AsObject,
     dr: number,
     tagsMap: Array<[string, string]>,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -172,6 +185,11 @@ export class AckEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AckEvent.AsObject;
   static toObject(includeInstance: boolean, msg: AckEvent): AckEvent.AsObject;
@@ -191,6 +209,7 @@ export namespace AckEvent {
     acknowledged: boolean,
     fCnt: number,
     tagsMap: Array<[string, string]>,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -224,6 +243,11 @@ export class TxAckEvent extends jspb.Message {
   getTxInfo(): gw_gw_pb.DownlinkTXInfo | undefined;
   setTxInfo(value?: gw_gw_pb.DownlinkTXInfo): void;
 
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TxAckEvent.AsObject;
   static toObject(includeInstance: boolean, msg: TxAckEvent): TxAckEvent.AsObject;
@@ -244,6 +268,7 @@ export namespace TxAckEvent {
     tagsMap: Array<[string, string]>,
     gatewayId: Uint8Array | string,
     txInfo?: gw_gw_pb.DownlinkTXInfo.AsObject,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -273,6 +298,11 @@ export class ErrorEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ErrorEvent.AsObject;
   static toObject(includeInstance: boolean, msg: ErrorEvent): ErrorEvent.AsObject;
@@ -293,6 +323,7 @@ export namespace ErrorEvent {
     error: string,
     fCnt: number,
     tagsMap: Array<[string, string]>,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -325,6 +356,11 @@ export class StatusEvent extends jspb.Message {
 
   getTagsMap(): jspb.Map<string, string>;
   clearTagsMap(): void;
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatusEvent.AsObject;
   static toObject(includeInstance: boolean, msg: StatusEvent): StatusEvent.AsObject;
@@ -346,6 +382,7 @@ export namespace StatusEvent {
     batteryLevelUnavailable: boolean,
     batteryLevel: number,
     tagsMap: Array<[string, string]>,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -381,6 +418,11 @@ export class LocationEvent extends jspb.Message {
   getFCnt(): number;
   setFCnt(value: number): void;
 
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LocationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: LocationEvent): LocationEvent.AsObject;
@@ -401,6 +443,7 @@ export namespace LocationEvent {
     tagsMap: Array<[string, string]>,
     uplinkIdsList: Array<Uint8Array | string>,
     fCnt: number,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -430,6 +473,11 @@ export class IntegrationEvent extends jspb.Message {
   getObjectJson(): string;
   setObjectJson(value: string): void;
 
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IntegrationEvent.AsObject;
   static toObject(includeInstance: boolean, msg: IntegrationEvent): IntegrationEvent.AsObject;
@@ -450,6 +498,7 @@ export namespace IntegrationEvent {
     integrationName: string,
     eventType: string,
     objectJson: string,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
