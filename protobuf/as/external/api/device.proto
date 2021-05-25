@@ -427,4 +427,7 @@ message StreamDeviceEventLogsResponse {
 
     // The event payload in JSON encoding.
     string payload_json = 2 [json_name = "payloadJSON"];
+
+    // Published at timestamp.
+    google.protobuf.Timestamp published_at = 3;
 }

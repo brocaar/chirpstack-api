@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 
 from chirpstack_api.common import common_pb2 as chirpstack__api_dot_common_dot_common__pb2
 from chirpstack_api.gw import gw_pb2 as chirpstack__api_dot_gw_dot_gw__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n io.chirpstack.api.as.integrationB\020IntegrationProtoP\001Z6github.com/brocaar/chirpstack-api/go/v3/as/integration',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2chirpstack-api/as_pb/integration/integration.proto\x12\x0bintegration\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"\xb4\x03\n\x0bUplinkEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12!\n\x07rx_info\x18\x05 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12!\n\x07tx_info\x18\x06 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12\x0b\n\x03\x61\x64r\x18\x07 \x01(\x08\x12\n\n\x02\x64r\x18\x08 \x01(\r\x12\r\n\x05\x66_cnt\x18\t \x01(\r\x12\x0e\n\x06\x66_port\x18\n \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x0b \x01(\x0c\x12\x1f\n\x0bobject_json\x18\x0c \x01(\tR\nobjectJSON\x12\x30\n\x04tags\x18\r \x03(\x0b\x32\".integration.UplinkEvent.TagsEntry\x12\x18\n\x10\x63onfirmed_uplink\x18\x0e \x01(\x08\x12\x10\n\x08\x64\x65v_addr\x18\x0f \x01(\x0c\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbb\x02\n\tJoinEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x10\n\x08\x64\x65v_addr\x18\x05 \x01(\x0c\x12!\n\x07rx_info\x18\x06 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12!\n\x07tx_info\x18\x07 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12\n\n\x02\x64r\x18\x08 \x01(\r\x12.\n\x04tags\x18\t \x03(\x0b\x32 .integration.JoinEvent.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfa\x01\n\x08\x41\x63kEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x14\n\x0c\x61\x63knowledged\x18\x05 \x01(\x08\x12\r\n\x05\x66_cnt\x18\x06 \x01(\r\x12-\n\x04tags\x18\x07 \x03(\x0b\x32\x1f.integration.AckEvent.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xac\x02\n\nTxAckEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\r\n\x05\x66_cnt\x18\x05 \x01(\r\x12/\n\x04tags\x18\x06 \x03(\x0b\x32!.integration.TxAckEvent.TagsEntry\x12\x1d\n\ngateway_id\x18\x07 \x01(\x0cR\tgatewayID\x12#\n\x07tx_info\x18\x08 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9d\x02\n\nErrorEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12$\n\x04type\x18\x05 \x01(\x0e\x32\x16.integration.ErrorType\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\r\n\x05\x66_cnt\x18\x07 \x01(\r\x12/\n\x04tags\x18\x08 \x03(\x0b\x32!.integration.ErrorEvent.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc4\x02\n\x0bStatusEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x0e\n\x06margin\x18\x05 \x01(\x05\x12\x1d\n\x15\x65xternal_power_source\x18\x06 \x01(\x08\x12!\n\x19\x62\x61ttery_level_unavailable\x18\x07 \x01(\x08\x12\x15\n\rbattery_level\x18\x08 \x01(\x02\x12\x30\n\x04tags\x18\t \x03(\x0b\x32\".integration.StatusEvent.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb1\x02\n\rLocationEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\"\n\x08location\x18\x05 \x01(\x0b\x32\x10.common.Location\x12\x32\n\x04tags\x18\x06 \x03(\x0b\x32$.integration.LocationEvent.TagsEntry\x12\x1d\n\nuplink_ids\x18\x07 \x03(\x0cR\tuplinkIDs\x12\r\n\x05\x66_cnt\x18\x08 \x01(\r\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb4\x02\n\x10IntegrationEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x35\n\x04tags\x18\x05 \x03(\x0b\x32\'.integration.IntegrationEvent.TagsEntry\x12\x18\n\x10integration_name\x18\x06 \x01(\t\x12\x12\n\nevent_type\x18\x07 \x01(\t\x12\x1f\n\x0bobject_json\x18\x08 \x01(\tR\nobjectJSON\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01*\xd3\x01\n\tErrorType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x19\n\x15\x44OWNLINK_PAYLOAD_SIZE\x10\x01\x12\x11\n\rDOWNLINK_FCNT\x10\x02\x12\x10\n\x0cUPLINK_CODEC\x10\x03\x12\x12\n\x0e\x44OWNLINK_CODEC\x10\x04\x12\x08\n\x04OTAA\x10\x05\x12\x15\n\x11UPLINK_FCNT_RESET\x10\x06\x12\x0e\n\nUPLINK_MIC\x10\x07\x12\x1e\n\x1aUPLINK_FCNT_RETRANSMISSION\x10\x08\x12\x14\n\x10\x44OWNLINK_GATEWAY\x10\tBn\n io.chirpstack.api.as.integrationB\x10IntegrationProtoP\x01Z6github.com/brocaar/chirpstack-api/go/v3/as/integrationb\x06proto3'
+  serialized_pb=b'\n2chirpstack-api/as_pb/integration/integration.proto\x12\x0bintegration\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\x03\n\x0bUplinkEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12!\n\x07rx_info\x18\x05 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12!\n\x07tx_info\x18\x06 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12\x0b\n\x03\x61\x64r\x18\x07 \x01(\x08\x12\n\n\x02\x64r\x18\x08 \x01(\r\x12\r\n\x05\x66_cnt\x18\t \x01(\r\x12\x0e\n\x06\x66_port\x18\n \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x0b \x01(\x0c\x12\x1f\n\x0bobject_json\x18\x0c \x01(\tR\nobjectJSON\x12\x30\n\x04tags\x18\r \x03(\x0b\x32\".integration.UplinkEvent.TagsEntry\x12\x18\n\x10\x63onfirmed_uplink\x18\x0e \x01(\x08\x12\x10\n\x08\x64\x65v_addr\x18\x0f \x01(\x0c\x12\x30\n\x0cpublished_at\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xed\x02\n\tJoinEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x10\n\x08\x64\x65v_addr\x18\x05 \x01(\x0c\x12!\n\x07rx_info\x18\x06 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12!\n\x07tx_info\x18\x07 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12\n\n\x02\x64r\x18\x08 \x01(\r\x12.\n\x04tags\x18\t \x03(\x0b\x32 .integration.JoinEvent.TagsEntry\x12\x30\n\x0cpublished_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xac\x02\n\x08\x41\x63kEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x14\n\x0c\x61\x63knowledged\x18\x05 \x01(\x08\x12\r\n\x05\x66_cnt\x18\x06 \x01(\r\x12-\n\x04tags\x18\x07 \x03(\x0b\x32\x1f.integration.AckEvent.TagsEntry\x12\x30\n\x0cpublished_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xde\x02\n\nTxAckEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\r\n\x05\x66_cnt\x18\x05 \x01(\r\x12/\n\x04tags\x18\x06 \x03(\x0b\x32!.integration.TxAckEvent.TagsEntry\x12\x1d\n\ngateway_id\x18\x07 \x01(\x0cR\tgatewayID\x12#\n\x07tx_info\x18\x08 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12\x30\n\x0cpublished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcf\x02\n\nErrorEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12$\n\x04type\x18\x05 \x01(\x0e\x32\x16.integration.ErrorType\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\r\n\x05\x66_cnt\x18\x07 \x01(\r\x12/\n\x04tags\x18\x08 \x03(\x0b\x32!.integration.ErrorEvent.TagsEntry\x12\x30\n\x0cpublished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf6\x02\n\x0bStatusEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x0e\n\x06margin\x18\x05 \x01(\x05\x12\x1d\n\x15\x65xternal_power_source\x18\x06 \x01(\x08\x12!\n\x19\x62\x61ttery_level_unavailable\x18\x07 \x01(\x08\x12\x15\n\rbattery_level\x18\x08 \x01(\x02\x12\x30\n\x04tags\x18\t \x03(\x0b\x32\".integration.StatusEvent.TagsEntry\x12\x30\n\x0cpublished_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe3\x02\n\rLocationEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\"\n\x08location\x18\x05 \x01(\x0b\x32\x10.common.Location\x12\x32\n\x04tags\x18\x06 \x03(\x0b\x32$.integration.LocationEvent.TagsEntry\x12\x1d\n\nuplink_ids\x18\x07 \x03(\x0cR\tuplinkIDs\x12\r\n\x05\x66_cnt\x18\x08 \x01(\r\x12\x30\n\x0cpublished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe6\x02\n\x10IntegrationEvent\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\x04R\rapplicationID\x12\x18\n\x10\x61pplication_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x03 \x01(\t\x12\x17\n\x07\x64\x65v_eui\x18\x04 \x01(\x0cR\x06\x64\x65vEUI\x12\x35\n\x04tags\x18\x05 \x03(\x0b\x32\'.integration.IntegrationEvent.TagsEntry\x12\x18\n\x10integration_name\x18\x06 \x01(\t\x12\x12\n\nevent_type\x18\x07 \x01(\t\x12\x1f\n\x0bobject_json\x18\x08 \x01(\tR\nobjectJSON\x12\x30\n\x0cpublished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01*\xd3\x01\n\tErrorType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x19\n\x15\x44OWNLINK_PAYLOAD_SIZE\x10\x01\x12\x11\n\rDOWNLINK_FCNT\x10\x02\x12\x10\n\x0cUPLINK_CODEC\x10\x03\x12\x12\n\x0e\x44OWNLINK_CODEC\x10\x04\x12\x08\n\x04OTAA\x10\x05\x12\x15\n\x11UPLINK_FCNT_RESET\x10\x06\x12\x0e\n\nUPLINK_MIC\x10\x07\x12\x1e\n\x1aUPLINK_FCNT_RETRANSMISSION\x10\x08\x12\x14\n\x10\x44OWNLINK_GATEWAY\x10\tBn\n io.chirpstack.api.as.integrationB\x10IntegrationProtoP\x01Z6github.com/brocaar/chirpstack-api/go/v3/as/integrationb\x06proto3'
   ,
-  dependencies=[chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,])
+  dependencies=[chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 _ERRORTYPE = _descriptor.EnumDescriptor(
   name='ErrorType',
@@ -86,8 +87,8 @@ _ERRORTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2679,
-  serialized_end=2890,
+  serialized_start=3112,
+  serialized_end=3323,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORTYPE)
 
@@ -139,8 +140,8 @@ _UPLINKEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _UPLINKEVENT = _descriptor.Descriptor(
@@ -256,6 +257,13 @@ _UPLINKEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.UplinkEvent.published_at', index=15,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -268,8 +276,8 @@ _UPLINKEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=132,
-  serialized_end=568,
+  serialized_start=165,
+  serialized_end=651,
 )
 
 
@@ -307,8 +315,8 @@ _JOINEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _JOINEVENT = _descriptor.Descriptor(
@@ -382,6 +390,13 @@ _JOINEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.JoinEvent.published_at', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -394,8 +409,8 @@ _JOINEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=886,
+  serialized_start=654,
+  serialized_end=1019,
 )
 
 
@@ -433,8 +448,8 @@ _ACKEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _ACKEVENT = _descriptor.Descriptor(
@@ -494,6 +509,13 @@ _ACKEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.AckEvent.published_at', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -506,8 +528,8 @@ _ACKEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=889,
-  serialized_end=1139,
+  serialized_start=1022,
+  serialized_end=1322,
 )
 
 
@@ -545,8 +567,8 @@ _TXACKEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _TXACKEVENT = _descriptor.Descriptor(
@@ -613,6 +635,13 @@ _TXACKEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.TxAckEvent.published_at', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -625,8 +654,8 @@ _TXACKEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1142,
-  serialized_end=1442,
+  serialized_start=1325,
+  serialized_end=1675,
 )
 
 
@@ -664,8 +693,8 @@ _ERROREVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _ERROREVENT = _descriptor.Descriptor(
@@ -732,6 +761,13 @@ _ERROREVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.ErrorEvent.published_at', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -744,8 +780,8 @@ _ERROREVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1445,
-  serialized_end=1730,
+  serialized_start=1678,
+  serialized_end=2013,
 )
 
 
@@ -783,8 +819,8 @@ _STATUSEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _STATUSEVENT = _descriptor.Descriptor(
@@ -858,6 +894,13 @@ _STATUSEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.StatusEvent.published_at', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -870,8 +913,8 @@ _STATUSEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1733,
-  serialized_end=2057,
+  serialized_start=2016,
+  serialized_end=2390,
 )
 
 
@@ -909,8 +952,8 @@ _LOCATIONEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _LOCATIONEVENT = _descriptor.Descriptor(
@@ -977,6 +1020,13 @@ _LOCATIONEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.LocationEvent.published_at', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -989,8 +1039,8 @@ _LOCATIONEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2060,
-  serialized_end=2365,
+  serialized_start=2393,
+  serialized_end=2748,
 )
 
 
@@ -1028,8 +1078,8 @@ _INTEGRATIONEVENT_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=568,
+  serialized_start=608,
+  serialized_end=651,
 )
 
 _INTEGRATIONEVENT = _descriptor.Descriptor(
@@ -1096,6 +1146,13 @@ _INTEGRATIONEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='objectJSON', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='integration.IntegrationEvent.published_at', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1108,33 +1165,41 @@ _INTEGRATIONEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2368,
-  serialized_end=2676,
+  serialized_start=2751,
+  serialized_end=3109,
 )
 
 _UPLINKEVENT_TAGSENTRY.containing_type = _UPLINKEVENT
 _UPLINKEVENT.fields_by_name['rx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._UPLINKRXINFO
 _UPLINKEVENT.fields_by_name['tx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._UPLINKTXINFO
 _UPLINKEVENT.fields_by_name['tags'].message_type = _UPLINKEVENT_TAGSENTRY
+_UPLINKEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _JOINEVENT_TAGSENTRY.containing_type = _JOINEVENT
 _JOINEVENT.fields_by_name['rx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._UPLINKRXINFO
 _JOINEVENT.fields_by_name['tx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._UPLINKTXINFO
 _JOINEVENT.fields_by_name['tags'].message_type = _JOINEVENT_TAGSENTRY
+_JOINEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _ACKEVENT_TAGSENTRY.containing_type = _ACKEVENT
 _ACKEVENT.fields_by_name['tags'].message_type = _ACKEVENT_TAGSENTRY
+_ACKEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TXACKEVENT_TAGSENTRY.containing_type = _TXACKEVENT
 _TXACKEVENT.fields_by_name['tags'].message_type = _TXACKEVENT_TAGSENTRY
 _TXACKEVENT.fields_by_name['tx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._DOWNLINKTXINFO
+_TXACKEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _ERROREVENT_TAGSENTRY.containing_type = _ERROREVENT
 _ERROREVENT.fields_by_name['type'].enum_type = _ERRORTYPE
 _ERROREVENT.fields_by_name['tags'].message_type = _ERROREVENT_TAGSENTRY
+_ERROREVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _STATUSEVENT_TAGSENTRY.containing_type = _STATUSEVENT
 _STATUSEVENT.fields_by_name['tags'].message_type = _STATUSEVENT_TAGSENTRY
+_STATUSEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _LOCATIONEVENT_TAGSENTRY.containing_type = _LOCATIONEVENT
 _LOCATIONEVENT.fields_by_name['location'].message_type = chirpstack__api_dot_common_dot_common__pb2._LOCATION
 _LOCATIONEVENT.fields_by_name['tags'].message_type = _LOCATIONEVENT_TAGSENTRY
+_LOCATIONEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _INTEGRATIONEVENT_TAGSENTRY.containing_type = _INTEGRATIONEVENT
 _INTEGRATIONEVENT.fields_by_name['tags'].message_type = _INTEGRATIONEVENT_TAGSENTRY
+_INTEGRATIONEVENT.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['UplinkEvent'] = _UPLINKEVENT
 DESCRIPTOR.message_types_by_name['JoinEvent'] = _JOINEVENT
 DESCRIPTOR.message_types_by_name['AckEvent'] = _ACKEVENT

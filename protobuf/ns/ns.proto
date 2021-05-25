@@ -649,6 +649,9 @@ message UplinkFrameLog {
 
     // Device EUI (optional).
     bytes dev_eui = 6;
+
+    // Published at timestamp.
+    google.protobuf.Timestamp published_at = 7;
 }
 
 message DownlinkFrameLog {
@@ -676,6 +679,9 @@ message DownlinkFrameLog {
 
     // Device EUI (optional).
     bytes dev_eui = 8;
+
+    // Published at timestamp.
+    google.protobuf.Timestamp published_at = 9;
 }
 
 message StreamFrameLogsForGatewayRequest {

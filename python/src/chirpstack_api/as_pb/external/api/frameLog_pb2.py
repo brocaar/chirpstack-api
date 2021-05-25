@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!io.chirpstack.api.as.external.apiB\rFrameLogProtoP\001Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/frameLog.proto\x12\x03\x61pi\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"\x80\x01\n\x0eUplinkFrameLog\x12!\n\x07tx_info\x18\x01 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x02 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12(\n\x10phy_payload_json\x18\x03 \x01(\tR\x0ephyPayloadJSON\"\x80\x01\n\x10\x44ownlinkFrameLog\x12#\n\x07tx_info\x18\x01 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12(\n\x10phy_payload_json\x18\x02 \x01(\tR\x0ephyPayloadJSON\x12\x1d\n\ngateway_id\x18\x03 \x01(\tR\tgatewayID*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01\x42m\n!io.chirpstack.api.as.external.apiB\rFrameLogProtoP\x01Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n0chirpstack-api/as_pb/external/api/frameLog.proto\x12\x03\x61pi\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"\xb2\x01\n\x0eUplinkFrameLog\x12!\n\x07tx_info\x18\x01 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x02 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12(\n\x10phy_payload_json\x18\x03 \x01(\tR\x0ephyPayloadJSON\x12\x30\n\x0cpublished_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb2\x01\n\x10\x44ownlinkFrameLog\x12#\n\x07tx_info\x18\x01 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12(\n\x10phy_payload_json\x18\x02 \x01(\tR\x0ephyPayloadJSON\x12\x1d\n\ngateway_id\x18\x03 \x01(\tR\tgatewayID\x12\x30\n\x0cpublished_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01\x42m\n!io.chirpstack.api.as.external.apiB\rFrameLogProtoP\x01Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _RXWINDOW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=448,
-  serialized_end=476,
+  serialized_start=548,
+  serialized_end=576,
 )
 _sym_db.RegisterEnumDescriptor(_RXWINDOW)
 
@@ -88,6 +88,13 @@ _UPLINKFRAMELOG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='phyPayloadJSON', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='api.UplinkFrameLog.published_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -101,7 +108,7 @@ _UPLINKFRAMELOG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=187,
-  serialized_end=315,
+  serialized_end=365,
 )
 
 
@@ -134,6 +141,13 @@ _DOWNLINKFRAMELOG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='published_at', full_name='api.DownlinkFrameLog.published_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -146,13 +160,15 @@ _DOWNLINKFRAMELOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=318,
-  serialized_end=446,
+  serialized_start=368,
+  serialized_end=546,
 )
 
 _UPLINKFRAMELOG.fields_by_name['tx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._UPLINKTXINFO
 _UPLINKFRAMELOG.fields_by_name['rx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._UPLINKRXINFO
+_UPLINKFRAMELOG.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _DOWNLINKFRAMELOG.fields_by_name['tx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._DOWNLINKTXINFO
+_DOWNLINKFRAMELOG.fields_by_name['published_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['UplinkFrameLog'] = _UPLINKFRAMELOG
 DESCRIPTOR.message_types_by_name['DownlinkFrameLog'] = _DOWNLINKFRAMELOG
 DESCRIPTOR.enum_types_by_name['RXWindow'] = _RXWINDOW
