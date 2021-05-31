@@ -484,9 +484,10 @@
           "format": "int64",
           "description": "Ping-slot period.\nMandatory for Class-B multicast groups."
         },
-        "serviceProfileID": {
+        "applicationID": {
           "type": "string",
-          "description": "Service-profile ID.\nAfter creation, this can not be updated."
+          "format": "int64",
+          "description": "Application ID.\nAfter creation, this can not be updated."
         }
       }
     },
@@ -505,9 +506,10 @@
           "type": "string",
           "description": "Service-profile ID (string formatted UUID)."
         },
-        "serviceProfileName": {
+        "applicationID": {
           "type": "string",
-          "description": "Service-profile name."
+          "format": "int64",
+          "description": "Application ID."
         }
       }
     },

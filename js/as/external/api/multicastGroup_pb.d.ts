@@ -37,8 +37,8 @@ export class MulticastGroup extends jspb.Message {
   getPingSlotPeriod(): number;
   setPingSlotPeriod(value: number): void;
 
-  getServiceProfileId(): string;
-  setServiceProfileId(value: string): void;
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MulticastGroup.AsObject;
@@ -62,7 +62,7 @@ export namespace MulticastGroup {
     dr: number,
     frequency: number,
     pingSlotPeriod: number,
-    serviceProfileId: string,
+    applicationId: number,
   }
 }
 
@@ -76,8 +76,8 @@ export class MulticastGroupListItem extends jspb.Message {
   getServiceProfileId(): string;
   setServiceProfileId(value: string): void;
 
-  getServiceProfileName(): string;
-  setServiceProfileName(value: string): void;
+  getApplicationId(): number;
+  setApplicationId(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MulticastGroupListItem.AsObject;
@@ -94,7 +94,7 @@ export namespace MulticastGroupListItem {
     id: string,
     name: string,
     serviceProfileId: string,
-    serviceProfileName: string,
+    applicationId: number,
   }
 }
 

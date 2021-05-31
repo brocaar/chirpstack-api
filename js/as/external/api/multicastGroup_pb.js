@@ -87,7 +87,7 @@ proto.api.MulticastGroup.toObject = function(includeInstance, msg) {
     dr: msg.getDr(),
     frequency: msg.getFrequency(),
     pingSlotPeriod: msg.getPingSlotPeriod(),
-    serviceProfileId: msg.getServiceProfileId()
+    applicationId: msg.getApplicationId()
   };
 
   if (includeInstance) {
@@ -164,9 +164,9 @@ proto.api.MulticastGroup.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readUint32());
       msg.setPingSlotPeriod(value);
       break;
-    case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setServiceProfileId(value);
+    case 12:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setApplicationId(value);
       break;
     default:
       reader.skipField();
@@ -276,10 +276,10 @@ proto.api.MulticastGroup.prototype.serializeBinaryToWriter = function (writer) {
       f
     );
   }
-  f = this.getServiceProfileId();
-  if (f.length > 0) {
-    writer.writeString(
-      11,
+  f = this.getApplicationId();
+  if (f !== 0) {
+    writer.writeInt64(
+      12,
       f
     );
   }
@@ -446,17 +446,17 @@ proto.api.MulticastGroup.prototype.setPingSlotPeriod = function(value) {
 
 
 /**
- * optional string service_profile_id = 11;
- * @return {string}
+ * optional int64 application_id = 12;
+ * @return {number}
  */
-proto.api.MulticastGroup.prototype.getServiceProfileId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 11, ""));
+proto.api.MulticastGroup.prototype.getApplicationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 12, 0));
 };
 
 
-/** @param {string} value  */
-proto.api.MulticastGroup.prototype.setServiceProfileId = function(value) {
-  jspb.Message.setField(this, 11, value);
+/** @param {number} value  */
+proto.api.MulticastGroup.prototype.setApplicationId = function(value) {
+  jspb.Message.setField(this, 12, value);
 };
 
 
@@ -509,7 +509,7 @@ proto.api.MulticastGroupListItem.toObject = function(includeInstance, msg) {
     id: msg.getId(),
     name: msg.getName(),
     serviceProfileId: msg.getServiceProfileId(),
-    serviceProfileName: msg.getServiceProfileName()
+    applicationId: msg.getApplicationId()
   };
 
   if (includeInstance) {
@@ -558,9 +558,9 @@ proto.api.MulticastGroupListItem.deserializeBinaryFromReader = function(msg, rea
       var value = /** @type {string} */ (reader.readString());
       msg.setServiceProfileId(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setServiceProfileName(value);
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setApplicationId(value);
       break;
     default:
       reader.skipField();
@@ -621,10 +621,10 @@ proto.api.MulticastGroupListItem.prototype.serializeBinaryToWriter = function (w
       f
     );
   }
-  f = this.getServiceProfileName();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
+  f = this.getApplicationId();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
       f
     );
   }
@@ -686,17 +686,17 @@ proto.api.MulticastGroupListItem.prototype.setServiceProfileId = function(value)
 
 
 /**
- * optional string service_profile_name = 4;
- * @return {string}
+ * optional int64 application_id = 5;
+ * @return {number}
  */
-proto.api.MulticastGroupListItem.prototype.getServiceProfileName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+proto.api.MulticastGroupListItem.prototype.getApplicationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
 };
 
 
-/** @param {string} value  */
-proto.api.MulticastGroupListItem.prototype.setServiceProfileName = function(value) {
-  jspb.Message.setField(this, 4, value);
+/** @param {number} value  */
+proto.api.MulticastGroupListItem.prototype.setApplicationId = function(value) {
+  jspb.Message.setField(this, 5, value);
 };
 
 

@@ -130,9 +130,9 @@ message MulticastGroup {
     // Mandatory for Class-B multicast groups.
     uint32 ping_slot_period = 10;
 
-    // Service-profile ID.
+    // Application ID.
     // After creation, this can not be updated.
-    string service_profile_id = 11 [json_name = "serviceProfileID"];
+    int64 application_id = 12 [json_name = "applicationID"];
 }
 
 message MulticastGroupListItem {
@@ -145,8 +145,8 @@ message MulticastGroupListItem {
     // Service-profile ID (string formatted UUID).
     string service_profile_id = 3 [json_name = "serviceProfileID"];
 
-    // Service-profile name.
-    string service_profile_name = 4;
+    // Application ID.
+    int64 application_id = 5 [json_name = "applicationID"];
 }
 
 message CreateMulticastGroupRequest {
