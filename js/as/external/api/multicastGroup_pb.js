@@ -508,8 +508,8 @@ proto.api.MulticastGroupListItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: msg.getId(),
     name: msg.getName(),
-    serviceProfileId: msg.getServiceProfileId(),
-    applicationId: msg.getApplicationId()
+    applicationId: msg.getApplicationId(),
+    applicationName: msg.getApplicationName()
   };
 
   if (includeInstance) {
@@ -554,13 +554,13 @@ proto.api.MulticastGroupListItem.deserializeBinaryFromReader = function(msg, rea
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setServiceProfileId(value);
-      break;
     case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setApplicationId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationName(value);
       break;
     default:
       reader.skipField();
@@ -614,17 +614,17 @@ proto.api.MulticastGroupListItem.prototype.serializeBinaryToWriter = function (w
       f
     );
   }
-  f = this.getServiceProfileId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = this.getApplicationId();
   if (f !== 0) {
     writer.writeInt64(
       5,
+      f
+    );
+  }
+  f = this.getApplicationName();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -671,21 +671,6 @@ proto.api.MulticastGroupListItem.prototype.setName = function(value) {
 
 
 /**
- * optional string service_profile_id = 3;
- * @return {string}
- */
-proto.api.MulticastGroupListItem.prototype.getServiceProfileId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
-};
-
-
-/** @param {string} value  */
-proto.api.MulticastGroupListItem.prototype.setServiceProfileId = function(value) {
-  jspb.Message.setField(this, 3, value);
-};
-
-
-/**
  * optional int64 application_id = 5;
  * @return {number}
  */
@@ -697,6 +682,21 @@ proto.api.MulticastGroupListItem.prototype.getApplicationId = function() {
 /** @param {number} value  */
 proto.api.MulticastGroupListItem.prototype.setApplicationId = function(value) {
   jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * optional string application_name = 6;
+ * @return {string}
+ */
+proto.api.MulticastGroupListItem.prototype.getApplicationName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 6, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.MulticastGroupListItem.prototype.setApplicationName = function(value) {
+  jspb.Message.setField(this, 6, value);
 };
 
 
@@ -2215,8 +2215,8 @@ proto.api.ListMulticastGroupRequest.toObject = function(includeInstance, msg) {
     offset: msg.getOffset(),
     organizationId: msg.getOrganizationId(),
     devEui: msg.getDevEui(),
-    serviceProfileId: msg.getServiceProfileId(),
-    search: msg.getSearch()
+    search: msg.getSearch(),
+    applicationId: msg.getApplicationId()
   };
 
   if (includeInstance) {
@@ -2269,13 +2269,13 @@ proto.api.ListMulticastGroupRequest.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setDevEui(value);
       break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setServiceProfileId(value);
-      break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setSearch(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setApplicationId(value);
       break;
     default:
       reader.skipField();
@@ -2343,17 +2343,17 @@ proto.api.ListMulticastGroupRequest.prototype.serializeBinaryToWriter = function
       f
     );
   }
-  f = this.getServiceProfileId();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
   f = this.getSearch();
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = this.getApplicationId();
+  if (f !== 0) {
+    writer.writeInt64(
+      7,
       f
     );
   }
@@ -2430,21 +2430,6 @@ proto.api.ListMulticastGroupRequest.prototype.setDevEui = function(value) {
 
 
 /**
- * optional string service_profile_id = 5;
- * @return {string}
- */
-proto.api.ListMulticastGroupRequest.prototype.getServiceProfileId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
-};
-
-
-/** @param {string} value  */
-proto.api.ListMulticastGroupRequest.prototype.setServiceProfileId = function(value) {
-  jspb.Message.setField(this, 5, value);
-};
-
-
-/**
  * optional string search = 6;
  * @return {string}
  */
@@ -2456,6 +2441,21 @@ proto.api.ListMulticastGroupRequest.prototype.getSearch = function() {
 /** @param {string} value  */
 proto.api.ListMulticastGroupRequest.prototype.setSearch = function(value) {
   jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * optional int64 application_id = 7;
+ * @return {number}
+ */
+proto.api.ListMulticastGroupRequest.prototype.getApplicationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 7, 0));
+};
+
+
+/** @param {number} value  */
+proto.api.ListMulticastGroupRequest.prototype.setApplicationId = function(value) {
+  jspb.Message.setField(this, 7, value);
 };
 
 

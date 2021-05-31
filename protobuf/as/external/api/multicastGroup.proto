@@ -142,11 +142,11 @@ message MulticastGroupListItem {
     // Multicast-group name.
     string name = 2;
 
-    // Service-profile ID (string formatted UUID).
-    string service_profile_id = 3 [json_name = "serviceProfileID"];
-
     // Application ID.
     int64 application_id = 5 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 6;
 }
 
 message CreateMulticastGroupRequest {
@@ -190,8 +190,8 @@ message AddDeviceToMulticastGroupRequest {
     string multicast_group_id = 1 [json_name = "multicastGroupID"];
 
     // Device EUI (HEX encoded string).
-    // Note that the device must be under the same service-profile as the
-    // multicast-group.
+    // Note that the device and the multicast-group must share the same
+    // application ID.
     string dev_eui = 2 [json_name = "devEUI"];
 }
 
@@ -216,11 +216,11 @@ message ListMulticastGroupRequest {
     // Device EUI (HEX encoded string) to filter on.
     string dev_eui = 4 [json_name = "devEUI"];
 
-    // Service-profile ID to filter on.
-    string service_profile_id = 5 [json_name = "serviceProfileID"];
-
     // Search can be used to search on the multicast-group name.
     string search = 6;
+
+    // Application ID to filter on.
+    int64 application_id = 7 [json_name = "applicationID"];
 }
 
 message ListMulticastGroupResponse {
