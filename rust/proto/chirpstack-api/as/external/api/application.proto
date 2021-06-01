@@ -577,8 +577,8 @@ enum InfluxDBPrecision {
 }
 
 enum InfluxDBVersion {
-    V1 = 1;
-    V2 = 2;
+    INFLUXDB_1 = 0;
+    INFLUXDB_2 = 1;
 }
 
 message InfluxDBIntegration {

@@ -13884,8 +13884,8 @@ proto.api.InfluxDBPrecision = {
  * @enum {number}
  */
 proto.api.InfluxDBVersion = {
-  V1: 0,
-  V2: 1
+  INFLUXDB_1: 0,
+  INFLUXDB_2: 1
 };
 
 goog.object.extend(exports, proto.api);

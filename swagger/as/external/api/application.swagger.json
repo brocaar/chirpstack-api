@@ -1773,7 +1773,7 @@
         },
         "precision": {
           "$ref": "#/definitions/apiInfluxDBPrecision",
-          "description": "InfluxDB timestamp precision."
+          "description": "InfluxDB timestamp precision (InfluxDB v1)."
         },
         "version": {
           "$ref": "#/definitions/apiInfluxDBVersion",
@@ -1808,10 +1808,10 @@
     "apiInfluxDBVersion": {
       "type": "string",
       "enum": [
-        "V1",
-        "V2"
+        "INFLUXDB_1",
+        "INFLUXDB_2"
       ],
-      "default": "V1"
+      "default": "INFLUXDB_1"
     },
     "apiIntegrationKind": {
       "type": "string",

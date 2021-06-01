@@ -1809,8 +1809,8 @@ export interface InfluxDBPrecisionMap {
 export const InfluxDBPrecision: InfluxDBPrecisionMap;
 
 export interface InfluxDBVersionMap {
-  V1: 0;
-  V2: 1;
+  INFLUXDB_1: 0;
+  INFLUXDB_2: 1;
 }
 
 export const InfluxDBVersion: InfluxDBVersionMap;
