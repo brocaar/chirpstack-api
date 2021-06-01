@@ -17,6 +17,9 @@ import "gw/gw.proto";
 service ApplicationServerService {
     // HandleUplinkData handles uplink data received from an end-device.
     rpc HandleUplinkData(HandleUplinkDataRequest) returns (google.protobuf.Empty) {}
+    
+    // HandleDownlinkData handles downlink data sent to an end-device.
+    rpc HandleDownlinkData(HandleDownlinkDataRequest) returns (google.protobuf.Empty) {}
 
     // HandleProprietaryUplink handles proprietary uplink payloads.
     rpc HandleProprietaryUplink(HandleProprietaryUplinkRequest) returns (google.protobuf.Empty) {}
@@ -127,6 +130,39 @@ message HandleUplinkDataRequest {
 
     // Uplink was of type confirmed.
     bool confirmed_uplink = 11;
+}
+
+
+message HandleDownlinkDataRequest {
+    // DevEUI EUI (8 bytes).
+    bytes dev_eui = 1;
+
+    // Join EUI used for OTAA activation (8 bytes).
+    bytes join_eui = 2;
+
+    // Frame-counter.
+    uint32 f_cnt = 3;
+
+    // Frame port.
+    uint32 f_port = 4;
+
+    // ADR enabled.
+    bool adr = 5;
+
+    // Data-rate.
+    uint32 dr = 6;
+
+    // TX meta-data.
+    gw.DownlinkTXInfo tx_info = 7;
+
+    // Received data (encrypted).
+    bytes data = 8;
+
+    // Sending time to gateway.
+    bytes sent_at = 9;
+
+    // Uplink was of type confirmed.
+    bool confirmed_downlink = 10;
 }
 
 message HandleProprietaryUplinkRequest {

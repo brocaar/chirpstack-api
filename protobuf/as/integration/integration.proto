@@ -97,6 +97,55 @@ message UplinkEvent {
     google.protobuf.Timestamp published_at = 16;
 }
 
+// DownlinkEvent is the message sent when an downlink payload has been sent.
+message DownlinkEvent {
+    // Application ID.
+    uint64 application_id = 1 [json_name = "applicationID"];
+
+    // Application name.
+    string application_name = 2;
+
+    // Device name.
+    string device_name = 3;
+
+    // Device EUI.
+    bytes dev_eui = 4 [json_name = "devEUI"];
+
+    // TX info.
+    gw.DownlinkTXInfo tx_info = 5;
+
+    // Device has ADR bit set.
+    bool adr = 6;
+
+    // Data-rate.
+    uint32 dr = 7;
+
+    // Frame counter.
+    uint32 f_cnt = 8;
+
+    // Frame port.
+    uint32 f_port = 9;
+
+    // FRMPayload data.
+    bytes data = 10;
+
+    // JSON string containing the decoded object.
+    // Note that this is only set when a codec is configured in the Device Profile.
+    string object_json = 11 [json_name = "objectJSON"];
+
+    // User-defined device tags.
+    map<string, string> tags = 12;
+
+    // Uplink was of type confirmed.
+    bool confirmed_downlink = 13;
+
+    // Device address.
+    bytes dev_addr = 14;
+
+    // Published at timestamp.
+    google.protobuf.Timestamp published_at = 15;
+}
+
 // JoinEvent is the message sent when a device joined the network.
 // Note that this is only sent after the first received uplink after the
 // device (re)activation.
