@@ -577,8 +577,8 @@ enum InfluxDBPrecision {
 }
 
 enum InfluxDBVersion {
-    V1 = 1;
-    V2 = 2;
+    V1 = 0;
+    V2 = 1;
 }
 
 message InfluxDBIntegration {
@@ -600,7 +600,7 @@ message InfluxDBIntegration {
 	// InfluxDB retention policy name. (InfluxDB v1)
 	string retention_policy_name = 6;
 
-	// InfluxDB timestamp precision.
+	// InfluxDB timestamp precision (InfluxDB v1).
 	InfluxDBPrecision precision = 7;
 
     // InfluxDB version.

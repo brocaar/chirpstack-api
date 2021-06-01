@@ -600,7 +600,7 @@ message InfluxDBIntegration {
 	// InfluxDB retention policy name. (InfluxDB v1)
 	string retention_policy_name = 6;
 
-	// InfluxDB timestamp precision.
+	// InfluxDB timestamp precision (InfluxDB v1).
 	InfluxDBPrecision precision = 7;
 
     // InfluxDB version.
