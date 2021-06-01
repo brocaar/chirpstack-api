@@ -1757,23 +1757,39 @@
         },
         "db": {
           "type": "string",
-          "description": "InfluxDB database name."
+          "title": "InfluxDB database name. (InfluxDB v1)"
         },
         "username": {
           "type": "string",
-          "description": "InfluxDB username."
+          "title": "InfluxDB username. (InfluxDB v1)"
         },
         "password": {
           "type": "string",
-          "description": "InfluxDB password."
+          "title": "InfluxDB password. (InfluxDB v1)"
         },
         "retentionPolicyName": {
           "type": "string",
-          "description": "InfluxDB retention policy name."
+          "title": "InfluxDB retention policy name. (InfluxDB v1)"
         },
         "precision": {
           "$ref": "#/definitions/apiInfluxDBPrecision",
-          "description": "InfluxDB timestamp precision."
+          "description": "InfluxDB timestamp precision (InfluxDB v1)."
+        },
+        "version": {
+          "$ref": "#/definitions/apiInfluxDBVersion",
+          "description": "InfluxDB version."
+        },
+        "token": {
+          "type": "string",
+          "title": "Token. (InfluxDB v2)"
+        },
+        "organization": {
+          "type": "string",
+          "title": "Organization. (InfluxDB v2)"
+        },
+        "bucket": {
+          "type": "string",
+          "title": "Bucket. (InfluxDB v2)"
         }
       }
     },
@@ -1788,6 +1804,14 @@
         "H"
       ],
       "default": "NS"
+    },
+    "apiInfluxDBVersion": {
+      "type": "string",
+      "enum": [
+        "INFLUXDB_1",
+        "INFLUXDB_2"
+      ],
+      "default": "INFLUXDB_1"
     },
     "apiIntegrationKind": {
       "type": "string",

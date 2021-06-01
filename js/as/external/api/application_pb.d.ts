@@ -562,6 +562,18 @@ export class InfluxDBIntegration extends jspb.Message {
   getPrecision(): InfluxDBPrecisionMap[keyof InfluxDBPrecisionMap];
   setPrecision(value: InfluxDBPrecisionMap[keyof InfluxDBPrecisionMap]): void;
 
+  getVersion(): InfluxDBVersionMap[keyof InfluxDBVersionMap];
+  setVersion(value: InfluxDBVersionMap[keyof InfluxDBVersionMap]): void;
+
+  getToken(): string;
+  setToken(value: string): void;
+
+  getOrganization(): string;
+  setOrganization(value: string): void;
+
+  getBucket(): string;
+  setBucket(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InfluxDBIntegration.AsObject;
   static toObject(includeInstance: boolean, msg: InfluxDBIntegration): InfluxDBIntegration.AsObject;
@@ -581,6 +593,10 @@ export namespace InfluxDBIntegration {
     password: string,
     retentionPolicyName: string,
     precision: InfluxDBPrecisionMap[keyof InfluxDBPrecisionMap],
+    version: InfluxDBVersionMap[keyof InfluxDBVersionMap],
+    token: string,
+    organization: string,
+    bucket: string,
   }
 }
 
@@ -1791,4 +1807,11 @@ export interface InfluxDBPrecisionMap {
 }
 
 export const InfluxDBPrecision: InfluxDBPrecisionMap;
+
+export interface InfluxDBVersionMap {
+  INFLUXDB_1: 0;
+  INFLUXDB_2: 1;
+}
+
+export const InfluxDBVersion: InfluxDBVersionMap;
 
