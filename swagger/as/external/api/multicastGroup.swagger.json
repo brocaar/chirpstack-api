@@ -60,18 +60,19 @@
             "type": "string"
           },
           {
-            "name": "serviceProfileID",
-            "description": "Service-profile ID to filter on.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "search",
             "description": "Search can be used to search on the multicast-group name.",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "applicationID",
+            "description": "Application ID to filter on.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -350,7 +351,7 @@
         },
         "devEUI": {
           "type": "string",
-          "description": "Device EUI (HEX encoded string).\nNote that the device must be under the same service-profile as the\nmulticast-group."
+          "description": "Device EUI (HEX encoded string).\nNote that the device and the multicast-group must share the same\napplication ID."
         }
       }
     },
@@ -484,9 +485,10 @@
           "format": "int64",
           "description": "Ping-slot period.\nMandatory for Class-B multicast groups."
         },
-        "serviceProfileID": {
+        "applicationID": {
           "type": "string",
-          "description": "Service-profile ID.\nAfter creation, this can not be updated."
+          "format": "int64",
+          "description": "Application ID.\nAfter creation, this can not be updated."
         }
       }
     },
@@ -501,13 +503,14 @@
           "type": "string",
           "description": "Multicast-group name."
         },
-        "serviceProfileID": {
+        "applicationID": {
           "type": "string",
-          "description": "Service-profile ID (string formatted UUID)."
+          "format": "int64",
+          "description": "Application ID."
         },
-        "serviceProfileName": {
+        "applicationName": {
           "type": "string",
-          "description": "Service-profile name."
+          "description": "Application name."
         }
       }
     },
