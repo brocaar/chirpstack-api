@@ -124,10 +124,13 @@ message FSKModulationInfo {
 
 message LRFHSSModulationInfo {
     // Operating channel width (OCW) in Hz.
-    uint32 operating_channel_width = 2;
+    uint32 operating_channel_width = 1;
 
     // Code-rate.
-    string code_rate = 4;
+    string code_rate = 2;
+
+    // Hopping grid number of steps.
+    uint32 grid_steps = 3;
 }
 
 message EncryptedFineTimestamp {

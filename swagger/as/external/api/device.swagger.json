@@ -1040,6 +1040,11 @@
         "codeRate": {
           "type": "string",
           "description": "Code-rate."
+        },
+        "gridSteps": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Hopping grid number of steps."
         }
       }
     },

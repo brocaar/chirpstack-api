@@ -864,7 +864,8 @@ proto.gw.LRFHSSModulationInfo.prototype.toObject = function(opt_includeInstance)
 proto.gw.LRFHSSModulationInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     operatingChannelWidth: msg.getOperatingChannelWidth(),
-    codeRate: msg.getCodeRate()
+    codeRate: msg.getCodeRate(),
+    gridSteps: msg.getGridSteps()
   };
 
   if (includeInstance) {
@@ -901,13 +902,17 @@ proto.gw.LRFHSSModulationInfo.deserializeBinaryFromReader = function(msg, reader
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOperatingChannelWidth(value);
       break;
-    case 4:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setCodeRate(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setGridSteps(value);
       break;
     default:
       reader.skipField();
@@ -950,14 +955,21 @@ proto.gw.LRFHSSModulationInfo.prototype.serializeBinaryToWriter = function (writ
   f = this.getOperatingChannelWidth();
   if (f !== 0) {
     writer.writeUint32(
-      2,
+      1,
       f
     );
   }
   f = this.getCodeRate();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      2,
+      f
+    );
+  }
+  f = this.getGridSteps();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
       f
     );
   }
@@ -974,32 +986,47 @@ proto.gw.LRFHSSModulationInfo.prototype.cloneMessage = function() {
 
 
 /**
- * optional uint32 operating_channel_width = 2;
+ * optional uint32 operating_channel_width = 1;
  * @return {number}
  */
 proto.gw.LRFHSSModulationInfo.prototype.getOperatingChannelWidth = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
 };
 
 
 /** @param {number} value  */
 proto.gw.LRFHSSModulationInfo.prototype.setOperatingChannelWidth = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * optional string code_rate = 4;
+ * optional string code_rate = 2;
  * @return {string}
  */
 proto.gw.LRFHSSModulationInfo.prototype.getCodeRate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
 /** @param {string} value  */
 proto.gw.LRFHSSModulationInfo.prototype.setCodeRate = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 grid_steps = 3;
+ * @return {number}
+ */
+proto.gw.LRFHSSModulationInfo.prototype.getGridSteps = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.gw.LRFHSSModulationInfo.prototype.setGridSteps = function(value) {
+  jspb.Message.setField(this, 3, value);
 };
 
 

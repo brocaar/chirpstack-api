@@ -119,6 +119,9 @@ export class LRFHSSModulationInfo extends jspb.Message {
   getCodeRate(): string;
   setCodeRate(value: string): void;
 
+  getGridSteps(): number;
+  setGridSteps(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LRFHSSModulationInfo.AsObject;
   static toObject(includeInstance: boolean, msg: LRFHSSModulationInfo): LRFHSSModulationInfo.AsObject;
@@ -133,6 +136,7 @@ export namespace LRFHSSModulationInfo {
   export type AsObject = {
     operatingChannelWidth: number,
     codeRate: string,
+    gridSteps: number,
   }
 }
 
