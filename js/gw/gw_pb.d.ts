@@ -23,6 +23,11 @@ export class UplinkTXInfo extends jspb.Message {
   getFskModulationInfo(): FSKModulationInfo | undefined;
   setFskModulationInfo(value?: FSKModulationInfo): void;
 
+  hasLrFhssModulationInfo(): boolean;
+  clearLrFhssModulationInfo(): void;
+  getLrFhssModulationInfo(): LRFHSSModulationInfo | undefined;
+  setLrFhssModulationInfo(value?: LRFHSSModulationInfo): void;
+
   getModulationInfoCase(): UplinkTXInfo.ModulationInfoCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UplinkTXInfo.AsObject;
@@ -40,12 +45,14 @@ export namespace UplinkTXInfo {
     modulation: common_common_pb.ModulationMap[keyof common_common_pb.ModulationMap],
     loraModulationInfo?: LoRaModulationInfo.AsObject,
     fskModulationInfo?: FSKModulationInfo.AsObject,
+    lrFhssModulationInfo?: LRFHSSModulationInfo.AsObject,
   }
 
   export enum ModulationInfoCase {
     MODULATION_INFO_NOT_SET = 0,
     LORA_MODULATION_INFO = 3,
     FSK_MODULATION_INFO = 4,
+    LR_FHSS_MODULATION_INFO = 5,
   }
 }
 
@@ -102,6 +109,34 @@ export namespace FSKModulationInfo {
   export type AsObject = {
     frequencyDeviation: number,
     datarate: number,
+  }
+}
+
+export class LRFHSSModulationInfo extends jspb.Message {
+  getOperatingChannelWidth(): number;
+  setOperatingChannelWidth(value: number): void;
+
+  getCodeRate(): string;
+  setCodeRate(value: string): void;
+
+  getGridSteps(): number;
+  setGridSteps(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LRFHSSModulationInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: LRFHSSModulationInfo): LRFHSSModulationInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LRFHSSModulationInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LRFHSSModulationInfo;
+  static deserializeBinaryFromReader(message: LRFHSSModulationInfo, reader: jspb.BinaryReader): LRFHSSModulationInfo;
+}
+
+export namespace LRFHSSModulationInfo {
+  export type AsObject = {
+    operatingChannelWidth: number,
+    codeRate: string,
+    gridSteps: number,
   }
 }
 
