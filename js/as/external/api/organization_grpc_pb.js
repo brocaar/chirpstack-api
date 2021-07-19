@@ -270,7 +270,7 @@ getUser: {
     responseSerialize: serialize_api_GetOrganizationUserResponse,
     responseDeserialize: deserialize_api_GetOrganizationUserResponse,
   },
-  // Add a new user to an organization.
+  // Add a new user to an organization. The user is matched based on email, not user id.
 addUser: {
     path: '/api.OrganizationService/AddUser',
     requestStream: false,

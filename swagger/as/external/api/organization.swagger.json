@@ -282,7 +282,7 @@
     },
     "/api/organizations/{organization_user.organization_id}/users": {
       "post": {
-        "summary": "Add a new user to an organization.",
+        "summary": "Add a new user to an organization. The user is matched based on email, not user id.",
         "operationId": "AddUser",
         "responses": {
           "200": {
@@ -555,7 +555,7 @@
         },
         "email": {
           "type": "string",
-          "description": "Email (only used on get)."
+          "description": "Email (only used on get and when adding a user to an organization)."
         }
       }
     },
