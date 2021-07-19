@@ -65,7 +65,7 @@ service OrganizationService {
 		};
 	}
 
-	// Add a new user to an organization.
+	// Add a new user to an organization. The user is matched based on email, not user id.
 	rpc AddUser(AddOrganizationUserRequest) returns (google.protobuf.Empty) {
 		option(google.api.http) = {
 			post: "/api/organizations/{organization_user.organization_id}/users"
@@ -102,13 +102,13 @@ message Organization {
 	// Can the organization create and "own" Gateways?
 	bool can_have_gateways = 4;
 
-    // Max. gateway count for organization.
-    // When set to 0, the organization can have unlimited gateways.
-    uint32 max_gateway_count = 5;
+	// Max. gateway count for organization.
+	// When set to 0, the organization can have unlimited gateways.
+	uint32 max_gateway_count = 5;
 
-    // Max. device count for organization.
-    // When set to 0, the organization can have unlimited devices.
-    uint32 max_device_count = 6;
+	// Max. device count for organization.
+	// When set to 0, the organization can have unlimited devices.
+	uint32 max_device_count = 6;
 }
 
 message OrganizationListItem {
@@ -194,39 +194,39 @@ message OrganizationUser {
 	int64 user_id = 2 [json_name = "userID"];
 
 	// User is admin within the context of the organization.
-    // There is no need to set the is_device_admin and is_gateway_admin flags.
+	// There is no need to set the is_device_admin and is_gateway_admin flags.
 	bool is_admin = 3;
 
-    // User is able to modify device related resources (applications,
-    // device-profiles, devices, multicast-groups).
-    bool is_device_admin = 5;
+	// User is able to modify device related resources (applications,
+	// device-profiles, devices, multicast-groups).
+	bool is_device_admin = 5;
 
-    // User is able to modify gateways.
-    bool is_gateway_admin = 6;
+	// User is able to modify gateways.
+	bool is_gateway_admin = 6;
 
-	// Email (only used on get).
+	// Email (only used on get and when adding a user to an organization).
 	string email = 4;
 }
 
 message OrganizationUserListItem {
 	// User ID.
-    // This is not used on create, you must set the user email address
-    // associated with the user to add an user to an organization.
+	// This is not used on create, you must set the user email address
+	// associated with the user to add an user to an organization.
 	int64 user_id = 1 [json_name = "userID"];
 
 	// Email.
 	string email = 2;
 
 	// User is admin within the context of the organization.
-    // There is no need to set the is_device_admin and is_gateway_admin flags.
+	// There is no need to set the is_device_admin and is_gateway_admin flags.
 	bool is_admin = 3;
 
-    // User is able to modify device related resources (applications,
-    // device-profiles, devices, multicast-groups).
-    bool is_device_admin = 6;
+	// User is able to modify device related resources (applications,
+	// device-profiles, devices, multicast-groups).
+	bool is_device_admin = 6;
 
-    // User is able to modify gateways.
-    bool is_gateway_admin = 7;
+	// User is able to modify gateways.
+	bool is_gateway_admin = 7;
 
 	// Created at timestamp.
 	google.protobuf.Timestamp created_at = 4;
