@@ -184,6 +184,37 @@ message GatewayStats {
     // Stats ID (UUID).
     // Unique identifier for the gateway stats.
     bytes stats_id = 11 [json_name = "statsID"];
+
+    // Tx packets per frequency.
+    map<uint32, uint32> tx_packets_per_frequency = 12;
+
+    // Rx packets per frequency.
+    map<uint32, uint32> rx_packets_per_frequency = 13;
+
+    // Tx packets per modulation parameters.
+    repeated PerModulationCount tx_packets_per_modulation = 14;
+
+    // Rx packets per modulation parameters.
+    repeated PerModulationCount rx_packets_per_modulation = 15;
+
+    // Tx packets per status.
+    map<string, uint32> tx_packets_per_status = 16;
+}
+
+message PerModulationCount {
+    // Count.
+    uint32 count = 1;
+
+    oneof modulation {
+        // LoRa modulation.
+        LoRaModulationInfo lora_modulation_info = 2 [json_name = "loRaModulationInfo"];
+
+        // FSK modulation.
+        FSKModulationInfo fsk_modulation_info = 3;
+
+        // LR-FHSS modulation information.
+        LRFHSSModulationInfo lr_fhss_modulation_info = 4 [json_name = "lrFHSSModulationInfo"];
+    } 
 }
 
 message UplinkRXInfo {

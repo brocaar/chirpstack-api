@@ -36,6 +36,7 @@ goog.exportSymbol('proto.gw.ImmediatelyTimingInfo', null, global);
 goog.exportSymbol('proto.gw.LRFHSSModulationInfo', null, global);
 goog.exportSymbol('proto.gw.LoRaModulationConfig', null, global);
 goog.exportSymbol('proto.gw.LoRaModulationInfo', null, global);
+goog.exportSymbol('proto.gw.PerModulationCount', null, global);
 goog.exportSymbol('proto.gw.PlainFineTimestamp', null, global);
 goog.exportSymbol('proto.gw.RawPacketForwarderCommand', null, global);
 goog.exportSymbol('proto.gw.RawPacketForwarderEvent', null, global);
@@ -1479,12 +1480,19 @@ proto.gw.PlainFineTimestamp.prototype.hasTime = function() {
  * @constructor
  */
 proto.gw.GatewayStats = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.gw.GatewayStats.repeatedFields_, null);
 };
 goog.inherits(proto.gw.GatewayStats, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.gw.GatewayStats.displayName = 'proto.gw.GatewayStats';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.gw.GatewayStats.repeatedFields_ = [14,15];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1523,7 +1531,14 @@ proto.gw.GatewayStats.toObject = function(includeInstance, msg) {
     txPacketsReceived: msg.getTxPacketsReceived(),
     txPacketsEmitted: msg.getTxPacketsEmitted(),
     metaDataMap: (f = msg.getMetaDataMap(true)) ? f.toArray() : [],
-    statsId: msg.getStatsId_asB64()
+    statsId: msg.getStatsId_asB64(),
+    txPacketsPerFrequencyMap: (f = msg.getTxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
+    rxPacketsPerFrequencyMap: (f = msg.getRxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
+    txPacketsPerModulationList: jspb.Message.toObjectList(msg.getTxPacketsPerModulationList(),
+    proto.gw.PerModulationCount.toObject, includeInstance),
+    rxPacketsPerModulationList: jspb.Message.toObjectList(msg.getRxPacketsPerModulationList(),
+    proto.gw.PerModulationCount.toObject, includeInstance),
+    txPacketsPerStatusMap: (f = msg.getTxPacketsPerStatusMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -1607,6 +1622,36 @@ proto.gw.GatewayStats.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setStatsId(value);
+      break;
+    case 12:
+      var value = msg.getTxPacketsPerFrequencyMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 13:
+      var value = msg.getRxPacketsPerFrequencyMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 14:
+      var value = new proto.gw.PerModulationCount;
+      reader.readMessage(value,proto.gw.PerModulationCount.deserializeBinaryFromReader);
+      msg.getTxPacketsPerModulationList().push(value);
+      msg.setTxPacketsPerModulationList(msg.getTxPacketsPerModulationList());
+      break;
+    case 15:
+      var value = new proto.gw.PerModulationCount;
+      reader.readMessage(value,proto.gw.PerModulationCount.deserializeBinaryFromReader);
+      msg.getRxPacketsPerModulationList().push(value);
+      msg.setRxPacketsPerModulationList(msg.getRxPacketsPerModulationList());
+      break;
+    case 16:
+      var value = msg.getTxPacketsPerStatusMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readUint32);
+         });
       break;
     default:
       reader.skipField();
@@ -1721,6 +1766,34 @@ proto.gw.GatewayStats.prototype.serializeBinaryToWriter = function (writer) {
       11,
       f
     );
+  }
+  f = this.getTxPacketsPerFrequencyMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getRxPacketsPerFrequencyMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getTxPacketsPerModulationList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      14,
+      f,
+      proto.gw.PerModulationCount.serializeBinaryToWriter
+    );
+  }
+  f = this.getRxPacketsPerModulationList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      15,
+      f,
+      proto.gw.PerModulationCount.serializeBinaryToWriter
+    );
+  }
+  f = this.getTxPacketsPerStatusMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeUint32);
   }
 };
 
@@ -1972,6 +2045,409 @@ proto.gw.GatewayStats.prototype.getStatsId_asU8 = function() {
 /** @param {!(string|Uint8Array)} value  */
 proto.gw.GatewayStats.prototype.setStatsId = function(value) {
   jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * map<uint32, uint32> tx_packets_per_frequency = 12;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.gw.GatewayStats.prototype.getTxPacketsPerFrequencyMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> rx_packets_per_frequency = 13;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.gw.GatewayStats.prototype.getRxPacketsPerFrequencyMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * repeated PerModulationCount tx_packets_per_modulation = 14;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.gw.PerModulationCount>}
+ */
+proto.gw.GatewayStats.prototype.getTxPacketsPerModulationList = function() {
+  return /** @type{!Array.<!proto.gw.PerModulationCount>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.gw.PerModulationCount, 14));
+};
+
+
+/** @param {Array.<!proto.gw.PerModulationCount>} value  */
+proto.gw.GatewayStats.prototype.setTxPacketsPerModulationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 14, value);
+};
+
+
+proto.gw.GatewayStats.prototype.clearTxPacketsPerModulationList = function() {
+  this.setTxPacketsPerModulationList([]);
+};
+
+
+/**
+ * repeated PerModulationCount rx_packets_per_modulation = 15;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.gw.PerModulationCount>}
+ */
+proto.gw.GatewayStats.prototype.getRxPacketsPerModulationList = function() {
+  return /** @type{!Array.<!proto.gw.PerModulationCount>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.gw.PerModulationCount, 15));
+};
+
+
+/** @param {Array.<!proto.gw.PerModulationCount>} value  */
+proto.gw.GatewayStats.prototype.setRxPacketsPerModulationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 15, value);
+};
+
+
+proto.gw.GatewayStats.prototype.clearRxPacketsPerModulationList = function() {
+  this.setRxPacketsPerModulationList([]);
+};
+
+
+/**
+ * map<string, uint32> tx_packets_per_status = 16;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.gw.GatewayStats.prototype.getTxPacketsPerStatusMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
+      null));
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.gw.PerModulationCount = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.gw.PerModulationCount.oneofGroups_);
+};
+goog.inherits(proto.gw.PerModulationCount, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.gw.PerModulationCount.displayName = 'proto.gw.PerModulationCount';
+}
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.gw.PerModulationCount.oneofGroups_ = [[2,3,4]];
+
+/**
+ * @enum {number}
+ */
+proto.gw.PerModulationCount.ModulationCase = {
+  MODULATION_NOT_SET: 0,
+  LORA_MODULATION_INFO: 2,
+  FSK_MODULATION_INFO: 3,
+  LR_FHSS_MODULATION_INFO: 4
+};
+
+/**
+ * @return {proto.gw.PerModulationCount.ModulationCase}
+ */
+proto.gw.PerModulationCount.prototype.getModulationCase = function() {
+  return /** @type {proto.gw.PerModulationCount.ModulationCase} */(jspb.Message.computeOneofCase(this, proto.gw.PerModulationCount.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.gw.PerModulationCount.prototype.toObject = function(opt_includeInstance) {
+  return proto.gw.PerModulationCount.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.gw.PerModulationCount} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.gw.PerModulationCount.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    count: msg.getCount(),
+    loraModulationInfo: (f = msg.getLoraModulationInfo()) && proto.gw.LoRaModulationInfo.toObject(includeInstance, f),
+    fskModulationInfo: (f = msg.getFskModulationInfo()) && proto.gw.FSKModulationInfo.toObject(includeInstance, f),
+    lrFhssModulationInfo: (f = msg.getLrFhssModulationInfo()) && proto.gw.LRFHSSModulationInfo.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.gw.PerModulationCount}
+ */
+proto.gw.PerModulationCount.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.gw.PerModulationCount;
+  return proto.gw.PerModulationCount.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.gw.PerModulationCount} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.gw.PerModulationCount}
+ */
+proto.gw.PerModulationCount.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setCount(value);
+      break;
+    case 2:
+      var value = new proto.gw.LoRaModulationInfo;
+      reader.readMessage(value,proto.gw.LoRaModulationInfo.deserializeBinaryFromReader);
+      msg.setLoraModulationInfo(value);
+      break;
+    case 3:
+      var value = new proto.gw.FSKModulationInfo;
+      reader.readMessage(value,proto.gw.FSKModulationInfo.deserializeBinaryFromReader);
+      msg.setFskModulationInfo(value);
+      break;
+    case 4:
+      var value = new proto.gw.LRFHSSModulationInfo;
+      reader.readMessage(value,proto.gw.LRFHSSModulationInfo.deserializeBinaryFromReader);
+      msg.setLrFhssModulationInfo(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.gw.PerModulationCount} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.gw.PerModulationCount.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.gw.PerModulationCount.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.gw.PerModulationCount.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getCount();
+  if (f !== 0) {
+    writer.writeUint32(
+      1,
+      f
+    );
+  }
+  f = this.getLoraModulationInfo();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.gw.LoRaModulationInfo.serializeBinaryToWriter
+    );
+  }
+  f = this.getFskModulationInfo();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.gw.FSKModulationInfo.serializeBinaryToWriter
+    );
+  }
+  f = this.getLrFhssModulationInfo();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.gw.LRFHSSModulationInfo.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.gw.PerModulationCount} The clone.
+ */
+proto.gw.PerModulationCount.prototype.cloneMessage = function() {
+  return /** @type {!proto.gw.PerModulationCount} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional uint32 count = 1;
+ * @return {number}
+ */
+proto.gw.PerModulationCount.prototype.getCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+};
+
+
+/** @param {number} value  */
+proto.gw.PerModulationCount.prototype.setCount = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional LoRaModulationInfo lora_modulation_info = 2;
+ * @return {proto.gw.LoRaModulationInfo}
+ */
+proto.gw.PerModulationCount.prototype.getLoraModulationInfo = function() {
+  return /** @type{proto.gw.LoRaModulationInfo} */ (
+    jspb.Message.getWrapperField(this, proto.gw.LoRaModulationInfo, 2));
+};
+
+
+/** @param {proto.gw.LoRaModulationInfo|undefined} value  */
+proto.gw.PerModulationCount.prototype.setLoraModulationInfo = function(value) {
+  jspb.Message.setOneofWrapperField(this, 2, proto.gw.PerModulationCount.oneofGroups_[0], value);
+};
+
+
+proto.gw.PerModulationCount.prototype.clearLoraModulationInfo = function() {
+  this.setLoraModulationInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.gw.PerModulationCount.prototype.hasLoraModulationInfo = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional FSKModulationInfo fsk_modulation_info = 3;
+ * @return {proto.gw.FSKModulationInfo}
+ */
+proto.gw.PerModulationCount.prototype.getFskModulationInfo = function() {
+  return /** @type{proto.gw.FSKModulationInfo} */ (
+    jspb.Message.getWrapperField(this, proto.gw.FSKModulationInfo, 3));
+};
+
+
+/** @param {proto.gw.FSKModulationInfo|undefined} value  */
+proto.gw.PerModulationCount.prototype.setFskModulationInfo = function(value) {
+  jspb.Message.setOneofWrapperField(this, 3, proto.gw.PerModulationCount.oneofGroups_[0], value);
+};
+
+
+proto.gw.PerModulationCount.prototype.clearFskModulationInfo = function() {
+  this.setFskModulationInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.gw.PerModulationCount.prototype.hasFskModulationInfo = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional LRFHSSModulationInfo lr_fhss_modulation_info = 4;
+ * @return {proto.gw.LRFHSSModulationInfo}
+ */
+proto.gw.PerModulationCount.prototype.getLrFhssModulationInfo = function() {
+  return /** @type{proto.gw.LRFHSSModulationInfo} */ (
+    jspb.Message.getWrapperField(this, proto.gw.LRFHSSModulationInfo, 4));
+};
+
+
+/** @param {proto.gw.LRFHSSModulationInfo|undefined} value  */
+proto.gw.PerModulationCount.prototype.setLrFhssModulationInfo = function(value) {
+  jspb.Message.setOneofWrapperField(this, 4, proto.gw.PerModulationCount.oneofGroups_[0], value);
+};
+
+
+proto.gw.PerModulationCount.prototype.clearLrFhssModulationInfo = function() {
+  this.setLrFhssModulationInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.gw.PerModulationCount.prototype.hasLrFhssModulationInfo = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

@@ -235,6 +235,22 @@ export class GatewayStats extends jspb.Message {
   getStatsId_asB64(): string;
   setStatsId(value: Uint8Array | string): void;
 
+  getTxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearTxPacketsPerFrequencyMap(): void;
+  getRxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearRxPacketsPerFrequencyMap(): void;
+  clearTxPacketsPerModulationList(): void;
+  getTxPacketsPerModulationList(): Array<PerModulationCount>;
+  setTxPacketsPerModulationList(value: Array<PerModulationCount>): void;
+  addTxPacketsPerModulation(value?: PerModulationCount, index?: number): PerModulationCount;
+
+  clearRxPacketsPerModulationList(): void;
+  getRxPacketsPerModulationList(): Array<PerModulationCount>;
+  setRxPacketsPerModulationList(value: Array<PerModulationCount>): void;
+  addRxPacketsPerModulation(value?: PerModulationCount, index?: number): PerModulationCount;
+
+  getTxPacketsPerStatusMap(): jspb.Map<string, number>;
+  clearTxPacketsPerStatusMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayStats.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayStats): GatewayStats.AsObject;
@@ -258,6 +274,57 @@ export namespace GatewayStats {
     txPacketsEmitted: number,
     metaDataMap: Array<[string, string]>,
     statsId: Uint8Array | string,
+    txPacketsPerFrequencyMap: Array<[number, number]>,
+    rxPacketsPerFrequencyMap: Array<[number, number]>,
+    txPacketsPerModulationList: Array<PerModulationCount.AsObject>,
+    rxPacketsPerModulationList: Array<PerModulationCount.AsObject>,
+    txPacketsPerStatusMap: Array<[string, number]>,
+  }
+}
+
+export class PerModulationCount extends jspb.Message {
+  getCount(): number;
+  setCount(value: number): void;
+
+  hasLoraModulationInfo(): boolean;
+  clearLoraModulationInfo(): void;
+  getLoraModulationInfo(): LoRaModulationInfo | undefined;
+  setLoraModulationInfo(value?: LoRaModulationInfo): void;
+
+  hasFskModulationInfo(): boolean;
+  clearFskModulationInfo(): void;
+  getFskModulationInfo(): FSKModulationInfo | undefined;
+  setFskModulationInfo(value?: FSKModulationInfo): void;
+
+  hasLrFhssModulationInfo(): boolean;
+  clearLrFhssModulationInfo(): void;
+  getLrFhssModulationInfo(): LRFHSSModulationInfo | undefined;
+  setLrFhssModulationInfo(value?: LRFHSSModulationInfo): void;
+
+  getModulationCase(): PerModulationCount.ModulationCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerModulationCount.AsObject;
+  static toObject(includeInstance: boolean, msg: PerModulationCount): PerModulationCount.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerModulationCount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerModulationCount;
+  static deserializeBinaryFromReader(message: PerModulationCount, reader: jspb.BinaryReader): PerModulationCount;
+}
+
+export namespace PerModulationCount {
+  export type AsObject = {
+    count: number,
+    loraModulationInfo?: LoRaModulationInfo.AsObject,
+    fskModulationInfo?: FSKModulationInfo.AsObject,
+    lrFhssModulationInfo?: LRFHSSModulationInfo.AsObject,
+  }
+
+  export enum ModulationCase {
+    MODULATION_NOT_SET = 0,
+    LORA_MODULATION_INFO = 2,
+    FSK_MODULATION_INFO = 3,
+    LR_FHSS_MODULATION_INFO = 4,
   }
 }
 
