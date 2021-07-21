@@ -81,6 +81,19 @@ enum TxAckStatus {
     INTERNAL_ERROR = 10;
 }
 
+message Modulation {
+    oneof parameters {
+        // LoRa modulation information.
+        LoRaModulationInfo lora = 3 [json_name = "loRa"];
+
+        // FSK modulation information.
+        FSKModulationInfo fsk = 4;
+
+        // LR-FHSS modulation information.
+        LRFHSSModulationInfo lr_fhss = 5 [json_name = "lrFHSS"];
+    }
+}
+
 message UplinkTXInfo {
     // Frequency (Hz).
     uint32 frequency = 1;
@@ -202,19 +215,11 @@ message GatewayStats {
 }
 
 message PerModulationCount {
+    // Modulation.
+    Modulation modulation = 1;
+
     // Count.
-    uint32 count = 1;
-
-    oneof modulation {
-        // LoRa modulation.
-        LoRaModulationInfo lora_modulation_info = 2 [json_name = "loRaModulationInfo"];
-
-        // FSK modulation.
-        FSKModulationInfo fsk_modulation_info = 3;
-
-        // LR-FHSS modulation information.
-        LRFHSSModulationInfo lr_fhss_modulation_info = 4 [json_name = "lrFHSSModulationInfo"];
-    } 
+    uint32 count = 2;
 }
 
 message UplinkRXInfo {
