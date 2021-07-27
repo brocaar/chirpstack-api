@@ -494,6 +494,46 @@
           "type": "integer",
           "format": "int32",
           "description": "Packets transmitted by the gateway."
+        },
+        "txPacketsPerFrequency": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Tx packets per frequency."
+        },
+        "rxPacketsPerFrequency": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Rx packets per frequency."
+        },
+        "txPacketsPerDr": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Tx packets per DR."
+        },
+        "rxPacketsPerDr": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Rx packets per DR."
+        },
+        "txPacketsPerStatus": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Tx packets per status."
         }
       }
     },

@@ -3155,7 +3155,12 @@ proto.api.GatewayStats.toObject = function(includeInstance, msg) {
     rxPacketsReceived: msg.getRxPacketsReceived(),
     rxPacketsReceivedOk: msg.getRxPacketsReceivedOk(),
     txPacketsReceived: msg.getTxPacketsReceived(),
-    txPacketsEmitted: msg.getTxPacketsEmitted()
+    txPacketsEmitted: msg.getTxPacketsEmitted(),
+    txPacketsPerFrequencyMap: (f = msg.getTxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
+    rxPacketsPerFrequencyMap: (f = msg.getRxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
+    txPacketsPerDrMap: (f = msg.getTxPacketsPerDrMap(true)) ? f.toArray() : [],
+    rxPacketsPerDrMap: (f = msg.getRxPacketsPerDrMap(true)) ? f.toArray() : [],
+    txPacketsPerStatusMap: (f = msg.getTxPacketsPerStatusMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -3212,6 +3217,36 @@ proto.api.GatewayStats.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTxPacketsEmitted(value);
+      break;
+    case 6:
+      var value = msg.getTxPacketsPerFrequencyMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 7:
+      var value = msg.getRxPacketsPerFrequencyMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 8:
+      var value = msg.getTxPacketsPerDrMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 9:
+      var value = msg.getRxPacketsPerDrMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 10:
+      var value = msg.getTxPacketsPerStatusMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readUint32);
+         });
       break;
     default:
       reader.skipField();
@@ -3286,6 +3321,26 @@ proto.api.GatewayStats.prototype.serializeBinaryToWriter = function (writer) {
       5,
       f
     );
+  }
+  f = this.getTxPacketsPerFrequencyMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getRxPacketsPerFrequencyMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getTxPacketsPerDrMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getRxPacketsPerDrMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getTxPacketsPerStatusMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeUint32);
   }
 };
 
@@ -3386,6 +3441,71 @@ proto.api.GatewayStats.prototype.getTxPacketsEmitted = function() {
 /** @param {number} value  */
 proto.api.GatewayStats.prototype.setTxPacketsEmitted = function(value) {
   jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * map<uint32, uint32> tx_packets_per_frequency = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.api.GatewayStats.prototype.getTxPacketsPerFrequencyMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> rx_packets_per_frequency = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.api.GatewayStats.prototype.getRxPacketsPerFrequencyMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> tx_packets_per_dr = 8;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.api.GatewayStats.prototype.getTxPacketsPerDrMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> rx_packets_per_dr = 9;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.api.GatewayStats.prototype.getRxPacketsPerDrMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<string, uint32> tx_packets_per_status = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.api.GatewayStats.prototype.getTxPacketsPerStatusMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
 };
 
 
