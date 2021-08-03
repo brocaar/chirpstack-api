@@ -4927,12 +4927,12 @@ proto.api.DeviceStats.prototype.toObject = function(opt_includeInstance) {
 proto.api.DeviceStats.toObject = function(includeInstance, msg) {
   var f, obj = {
     timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    rxPacketsReceived: msg.getRxPacketsReceived(),
-    rxRssiAvg: msg.getRxRssiAvg(),
-    rxSnrAvg: msg.getRxSnrAvg(),
+    rxPackets: msg.getRxPackets(),
+    gwRssi: msg.getGwRssi(),
+    gwSnr: msg.getGwSnr(),
     rxPacketsPerFrequencyMap: (f = msg.getRxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
     rxPacketsPerDrMap: (f = msg.getRxPacketsPerDrMap(true)) ? f.toArray() : [],
-    errorCountMap: (f = msg.getErrorCountMap(true)) ? f.toArray() : []
+    errorsMap: (f = msg.getErrorsMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -4976,15 +4976,15 @@ proto.api.DeviceStats.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setRxPacketsReceived(value);
+      msg.setRxPackets(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setRxRssiAvg(value);
+      msg.setGwRssi(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setRxSnrAvg(value);
+      msg.setGwSnr(value);
       break;
     case 5:
       var value = msg.getRxPacketsPerFrequencyMap();
@@ -4999,7 +4999,7 @@ proto.api.DeviceStats.deserializeBinaryFromReader = function(msg, reader) {
          });
       break;
     case 7:
-      var value = msg.getErrorCountMap();
+      var value = msg.getErrorsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readUint32);
          });
@@ -5050,21 +5050,21 @@ proto.api.DeviceStats.prototype.serializeBinaryToWriter = function (writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = this.getRxPacketsReceived();
+  f = this.getRxPackets();
   if (f !== 0) {
     writer.writeUint32(
       2,
       f
     );
   }
-  f = this.getRxRssiAvg();
+  f = this.getGwRssi();
   if (f !== 0.0) {
     writer.writeFloat(
       3,
       f
     );
   }
-  f = this.getRxSnrAvg();
+  f = this.getGwSnr();
   if (f !== 0.0) {
     writer.writeFloat(
       4,
@@ -5079,7 +5079,7 @@ proto.api.DeviceStats.prototype.serializeBinaryToWriter = function (writer) {
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
   }
-  f = this.getErrorCountMap(true);
+  f = this.getErrorsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeUint32);
   }
@@ -5126,46 +5126,46 @@ proto.api.DeviceStats.prototype.hasTimestamp = function() {
 
 
 /**
- * optional uint32 rx_packets_received = 2;
+ * optional uint32 rx_packets = 2;
  * @return {number}
  */
-proto.api.DeviceStats.prototype.getRxPacketsReceived = function() {
+proto.api.DeviceStats.prototype.getRxPackets = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
 };
 
 
 /** @param {number} value  */
-proto.api.DeviceStats.prototype.setRxPacketsReceived = function(value) {
+proto.api.DeviceStats.prototype.setRxPackets = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * optional float rx_rssi_avg = 3;
+ * optional float gw_rssi = 3;
  * @return {number}
  */
-proto.api.DeviceStats.prototype.getRxRssiAvg = function() {
+proto.api.DeviceStats.prototype.getGwRssi = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
 };
 
 
 /** @param {number} value  */
-proto.api.DeviceStats.prototype.setRxRssiAvg = function(value) {
+proto.api.DeviceStats.prototype.setGwRssi = function(value) {
   jspb.Message.setField(this, 3, value);
 };
 
 
 /**
- * optional float rx_snr_avg = 4;
+ * optional float gw_snr = 4;
  * @return {number}
  */
-proto.api.DeviceStats.prototype.getRxSnrAvg = function() {
+proto.api.DeviceStats.prototype.getGwSnr = function() {
   return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
 };
 
 
 /** @param {number} value  */
-proto.api.DeviceStats.prototype.setRxSnrAvg = function(value) {
+proto.api.DeviceStats.prototype.setGwSnr = function(value) {
   jspb.Message.setField(this, 4, value);
 };
 
@@ -5197,12 +5197,12 @@ proto.api.DeviceStats.prototype.getRxPacketsPerDrMap = function(opt_noLazyCreate
 
 
 /**
- * map<string, uint32> error_count = 7;
+ * map<string, uint32> errors = 7;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
-proto.api.DeviceStats.prototype.getErrorCountMap = function(opt_noLazyCreate) {
+proto.api.DeviceStats.prototype.getErrorsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
       jspb.Message.getMapField(this, 7, opt_noLazyCreate,
       null));

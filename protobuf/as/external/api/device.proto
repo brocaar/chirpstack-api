@@ -413,13 +413,13 @@ message DeviceStats {
 	google.protobuf.Timestamp timestamp = 1;
 
     // Packets received from the device.
-    uint32 rx_packets_received = 2;
+    uint32 rx_packets = 2;
 
-    // Average RSSI.
-    float rx_rssi_avg = 3;
+    // Average RSSI (as reported by the gateway(s)).
+    float gw_rssi = 3;
 
-    // Average SNR.
-    float rx_snr_avg = 4;
+    // Average SNR (as reported by the gateway(s)).
+    float gw_snr = 4;
 
     // Packets received by frequency.
     map<uint32, uint32> rx_packets_per_frequency = 5;
@@ -428,7 +428,7 @@ message DeviceStats {
     map<uint32, uint32> rx_packets_per_dr = 6;
 
     // Error count.
-    map<string, uint32> error_count = 7;
+    map<string, uint32> errors = 7;
 }
 
 message GetDeviceStatsRequest {

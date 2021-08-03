@@ -643,21 +643,21 @@ export class DeviceStats extends jspb.Message {
   getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getRxPacketsReceived(): number;
-  setRxPacketsReceived(value: number): void;
+  getRxPackets(): number;
+  setRxPackets(value: number): void;
 
-  getRxRssiAvg(): number;
-  setRxRssiAvg(value: number): void;
+  getGwRssi(): number;
+  setGwRssi(value: number): void;
 
-  getRxSnrAvg(): number;
-  setRxSnrAvg(value: number): void;
+  getGwSnr(): number;
+  setGwSnr(value: number): void;
 
   getRxPacketsPerFrequencyMap(): jspb.Map<number, number>;
   clearRxPacketsPerFrequencyMap(): void;
   getRxPacketsPerDrMap(): jspb.Map<number, number>;
   clearRxPacketsPerDrMap(): void;
-  getErrorCountMap(): jspb.Map<string, number>;
-  clearErrorCountMap(): void;
+  getErrorsMap(): jspb.Map<string, number>;
+  clearErrorsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeviceStats.AsObject;
   static toObject(includeInstance: boolean, msg: DeviceStats): DeviceStats.AsObject;
@@ -671,12 +671,12 @@ export class DeviceStats extends jspb.Message {
 export namespace DeviceStats {
   export type AsObject = {
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    rxPacketsReceived: number,
-    rxRssiAvg: number,
-    rxSnrAvg: number,
+    rxPackets: number,
+    gwRssi: number,
+    gwSnr: number,
     rxPacketsPerFrequencyMap: Array<[number, number]>,
     rxPacketsPerDrMap: Array<[number, number]>,
-    errorCountMap: Array<[string, number]>,
+    errorsMap: Array<[string, number]>,
   }
 }
 

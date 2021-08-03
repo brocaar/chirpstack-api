@@ -731,20 +731,20 @@
           "format": "date-time",
           "description": "Timestamp of the (aggregated) measurement."
         },
-        "rxPacketsReceived": {
+        "rxPackets": {
           "type": "integer",
           "format": "int64",
           "description": "Packets received from the device."
         },
-        "rxRssiAvg": {
+        "gwRssi": {
           "type": "number",
           "format": "float",
-          "description": "Average RSSI."
+          "description": "Average RSSI (as reported by the gateway(s))."
         },
-        "rxSnrAvg": {
+        "gwSnr": {
           "type": "number",
           "format": "float",
-          "description": "Average SNR."
+          "description": "Average SNR (as reported by the gateway(s))."
         },
         "rxPacketsPerFrequency": {
           "type": "object",
@@ -762,7 +762,7 @@
           },
           "description": "Packets received by DR."
         },
-        "errorCount": {
+        "errors": {
           "type": "object",
           "additionalProperties": {
             "type": "integer",
