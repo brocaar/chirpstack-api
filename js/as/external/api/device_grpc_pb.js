@@ -141,6 +141,28 @@ function deserialize_api_GetDeviceResponse(buffer_arg) {
   return as_external_api_device_pb.GetDeviceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_api_GetDeviceStatsRequest(arg) {
+  if (!(arg instanceof as_external_api_device_pb.GetDeviceStatsRequest)) {
+    throw new Error('Expected argument of type api.GetDeviceStatsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetDeviceStatsRequest(buffer_arg) {
+  return as_external_api_device_pb.GetDeviceStatsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_api_GetDeviceStatsResponse(arg) {
+  if (!(arg instanceof as_external_api_device_pb.GetDeviceStatsResponse)) {
+    throw new Error('Expected argument of type api.GetDeviceStatsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_api_GetDeviceStatsResponse(buffer_arg) {
+  return as_external_api_device_pb.GetDeviceStatsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_api_GetRandomDevAddrRequest(arg) {
   if (!(arg instanceof as_external_api_device_pb.GetRandomDevAddrRequest)) {
     throw new Error('Expected argument of type api.GetRandomDevAddrRequest');
@@ -420,6 +442,18 @@ getRandomDevAddr: {
     requestDeserialize: deserialize_api_GetRandomDevAddrRequest,
     responseSerialize: serialize_api_GetRandomDevAddrResponse,
     responseDeserialize: deserialize_api_GetRandomDevAddrResponse,
+  },
+  // GetStats returns the device stats.
+getStats: {
+    path: '/api.DeviceService/GetStats',
+    requestStream: false,
+    responseStream: false,
+    requestType: as_external_api_device_pb.GetDeviceStatsRequest,
+    responseType: as_external_api_device_pb.GetDeviceStatsResponse,
+    requestSerialize: serialize_api_GetDeviceStatsRequest,
+    requestDeserialize: deserialize_api_GetDeviceStatsRequest,
+    responseSerialize: serialize_api_GetDeviceStatsResponse,
+    responseDeserialize: deserialize_api_GetDeviceStatsResponse,
   },
   // StreamFrameLogs streams the uplink and downlink frame-logs for the given DevEUI.
 //   * These are the raw LoRaWAN frames and this endpoint is intended for debugging only.
