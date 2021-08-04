@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!io.chirpstack.api.as.external.apiB\013DeviceProtoP\001Z7github.com/brocaar/chirpstack-api/go/v3/as/external/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.chirpstack-api/as_pb/external/api/device.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/frameLog.proto\"\x95\x03\n\x06\x44\x65vice\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12*\n\x11\x64\x65vice_profile_id\x18\x05 \x01(\tR\x0f\x64\x65viceProfileID\x12\x18\n\x10skip_f_cnt_check\x18\x06 \x01(\x08\x12\x1a\n\x12reference_altitude\x18\x07 \x01(\x01\x12-\n\tvariables\x18\x08 \x03(\x0b\x32\x1a.api.Device.VariablesEntry\x12#\n\x04tags\x18\t \x03(\x0b\x32\x15.api.Device.TagsEntry\x12\x13\n\x0bis_disabled\x18\n \x01(\x08\x1a\x30\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xba\x03\n\x0e\x44\x65viceListItem\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12*\n\x11\x64\x65vice_profile_id\x18\x05 \x01(\tR\x0f\x64\x65viceProfileID\x12\x1b\n\x13\x64\x65vice_profile_name\x18\x06 \x01(\t\x12\x1d\n\x15\x64\x65vice_status_battery\x18\x07 \x01(\r\x12\x1c\n\x14\x64\x65vice_status_margin\x18\x08 \x01(\x05\x12+\n#device_status_external_power_source\x18\n \x01(\x08\x12/\n\'device_status_battery_level_unavailable\x18\x0b \x01(\x08\x12#\n\x1b\x64\x65vice_status_battery_level\x18\x0c \x01(\x02\x12<\n\x0clast_seen_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nlastSeenAt\"\\\n\nDeviceKeys\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0f\n\x07nwk_key\x18\x02 \x01(\t\x12\x0f\n\x07\x61pp_key\x18\x03 \x01(\t\x12\x13\n\x0bgen_app_key\x18\x04 \x01(\t\"2\n\x13\x43reateDeviceRequest\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\"+\n\x10GetDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\xcf\x01\n\x11GetDeviceResponse\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\x12<\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nlastSeenAt\x12\x1d\n\x15\x64\x65vice_status_battery\x18\x06 \x01(\r\x12\x1c\n\x14\x64\x65vice_status_margin\x18\x14 \x01(\x05\x12\"\n\x08location\x18\x15 \x01(\x0b\x32\x10.common.Location\"\xa2\x02\n\x11ListDeviceRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x0e\n\x06search\x18\x04 \x01(\t\x12,\n\x12multicast_group_id\x18\x05 \x01(\tR\x10multicastGroupID\x12,\n\x12service_profile_id\x18\x06 \x01(\tR\x10serviceProfileID\x12.\n\x04tags\x18\x07 \x03(\x0b\x32 .api.ListDeviceRequest.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"N\n\x12ListDeviceResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12#\n\x06result\x18\x02 \x03(\x0b\x32\x13.api.DeviceListItem\".\n\x13\x44\x65leteDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"2\n\x13UpdateDeviceRequest\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\"?\n\x17\x43reateDeviceKeysRequest\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"/\n\x14GetDeviceKeysRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"=\n\x15GetDeviceKeysResponse\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"?\n\x17UpdateDeviceKeysRequest\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"2\n\x17\x44\x65leteDeviceKeysRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\xd7\x01\n\x10\x44\x65viceActivation\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\t\x12\x11\n\tapp_s_key\x18\x03 \x01(\t\x12\x15\n\rnwk_s_enc_key\x18\x04 \x01(\t\x12\x17\n\x0fs_nwk_s_int_key\x18\x08 \x01(\t\x12\x17\n\x0f\x66_nwk_s_int_key\x18\t \x01(\t\x12\x10\n\x08\x66_cnt_up\x18\x05 \x01(\r\x12\x14\n\x0cn_f_cnt_down\x18\x06 \x01(\r\x12\x14\n\x0c\x61_f_cnt_down\x18\n \x01(\r\"I\n\x15\x41\x63tivateDeviceRequest\x12\x30\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x15.api.DeviceActivation\"2\n\x17\x44\x65\x61\x63tivateDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"5\n\x1aGetDeviceActivationRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"O\n\x1bGetDeviceActivationResponse\x12\x30\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x15.api.DeviceActivation\"2\n\x17GetRandomDevAddrRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\",\n\x18GetRandomDevAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\t\"7\n\x1cStreamDeviceFrameLogsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\x86\x01\n\x1dStreamDeviceFrameLogsResponse\x12+\n\x0cuplink_frame\x18\x01 \x01(\x0b\x32\x13.api.UplinkFrameLogH\x00\x12/\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x15.api.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"7\n\x1cStreamDeviceEventLogsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\x82\x01\n\x1dStreamDeviceEventLogsResponse\x12\x0c\n\x04type\x18\x01 \x01(\t\x12!\n\x0cpayload_json\x18\x02 \x01(\tR\x0bpayloadJSON\x12\x30\n\x0cpublished_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x82\r\n\rDeviceService\x12S\n\x06\x43reate\x12\x18.api.CreateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/api/devices:\x01*\x12T\n\x03Get\x12\x15.api.GetDeviceRequest\x1a\x16.api.GetDeviceResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/devices/{dev_eui}\x12M\n\x04List\x12\x16.api.ListDeviceRequest\x1a\x17.api.ListDeviceResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/devices\x12Z\n\x06\x44\x65lete\x12\x18.api.DeleteDeviceRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/api/devices/{dev_eui}\x12\x64\n\x06Update\x12\x18.api.UpdateDeviceRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"\x1a\x1d/api/devices/{device.dev_eui}:\x01*\x12v\n\nCreateKeys\x12\x1c.api.CreateDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\"\'/api/devices/{device_keys.dev_eui}/keys:\x01*\x12\x65\n\x07GetKeys\x12\x19.api.GetDeviceKeysRequest\x1a\x1a.api.GetDeviceKeysResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/devices/{dev_eui}/keys\x12v\n\nUpdateKeys\x12\x1c.api.UpdateDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\x1a\'/api/devices/{device_keys.dev_eui}/keys:\x01*\x12g\n\nDeleteKeys\x12\x1c.api.DeleteDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/devices/{dev_eui}/keys\x12|\n\x08\x41\x63tivate\x12\x1a.api.ActivateDeviceRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36\"1/api/devices/{device_activation.dev_eui}/activate:\x01*\x12m\n\nDeactivate\x12\x1c.api.DeactivateDeviceRequest\x1a\x16.google.protobuf.Empty\")\x82\xd3\xe4\x93\x02#*!/api/devices/{dev_eui}/activation\x12}\n\rGetActivation\x12\x1f.api.GetDeviceActivationRequest\x1a .api.GetDeviceActivationResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/devices/{dev_eui}/activation\x12\x80\x01\n\x10GetRandomDevAddr\x12\x1c.api.GetRandomDevAddrRequest\x1a\x1d.api.GetRandomDevAddrResponse\"/\x82\xd3\xe4\x93\x02)\"\'/api/devices/{dev_eui}/getRandomDevAddr\x12\x81\x01\n\x0fStreamFrameLogs\x12!.api.StreamDeviceFrameLogsRequest\x1a\".api.StreamDeviceFrameLogsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/devices/{dev_eui}/frames0\x01\x12\x81\x01\n\x0fStreamEventLogs\x12!.api.StreamDeviceEventLogsRequest\x1a\".api.StreamDeviceEventLogsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/devices/{dev_eui}/events0\x01\x42k\n!io.chirpstack.api.as.external.apiB\x0b\x44\x65viceProtoP\x01Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
+  serialized_pb=b'\n.chirpstack-api/as_pb/external/api/device.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\"chirpstack-api/common/common.proto\x1a\x30\x63hirpstack-api/as_pb/external/api/frameLog.proto\"\x95\x03\n\x06\x44\x65vice\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12*\n\x11\x64\x65vice_profile_id\x18\x05 \x01(\tR\x0f\x64\x65viceProfileID\x12\x18\n\x10skip_f_cnt_check\x18\x06 \x01(\x08\x12\x1a\n\x12reference_altitude\x18\x07 \x01(\x01\x12-\n\tvariables\x18\x08 \x03(\x0b\x32\x1a.api.Device.VariablesEntry\x12#\n\x04tags\x18\t \x03(\x0b\x32\x15.api.Device.TagsEntry\x12\x13\n\x0bis_disabled\x18\n \x01(\x08\x1a\x30\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xba\x03\n\x0e\x44\x65viceListItem\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12*\n\x11\x64\x65vice_profile_id\x18\x05 \x01(\tR\x0f\x64\x65viceProfileID\x12\x1b\n\x13\x64\x65vice_profile_name\x18\x06 \x01(\t\x12\x1d\n\x15\x64\x65vice_status_battery\x18\x07 \x01(\r\x12\x1c\n\x14\x64\x65vice_status_margin\x18\x08 \x01(\x05\x12+\n#device_status_external_power_source\x18\n \x01(\x08\x12/\n\'device_status_battery_level_unavailable\x18\x0b \x01(\x08\x12#\n\x1b\x64\x65vice_status_battery_level\x18\x0c \x01(\x02\x12<\n\x0clast_seen_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nlastSeenAt\"\\\n\nDeviceKeys\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x0f\n\x07nwk_key\x18\x02 \x01(\t\x12\x0f\n\x07\x61pp_key\x18\x03 \x01(\t\x12\x13\n\x0bgen_app_key\x18\x04 \x01(\t\"2\n\x13\x43reateDeviceRequest\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\"+\n\x10GetDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\xcf\x01\n\x11GetDeviceResponse\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\x12<\n\x0clast_seen_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nlastSeenAt\x12\x1d\n\x15\x64\x65vice_status_battery\x18\x06 \x01(\r\x12\x1c\n\x14\x64\x65vice_status_margin\x18\x14 \x01(\x05\x12\"\n\x08location\x18\x15 \x01(\x0b\x32\x10.common.Location\"\xa2\x02\n\x11ListDeviceRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\x03R\rapplicationID\x12\x0e\n\x06search\x18\x04 \x01(\t\x12,\n\x12multicast_group_id\x18\x05 \x01(\tR\x10multicastGroupID\x12,\n\x12service_profile_id\x18\x06 \x01(\tR\x10serviceProfileID\x12.\n\x04tags\x18\x07 \x03(\x0b\x32 .api.ListDeviceRequest.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"N\n\x12ListDeviceResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12#\n\x06result\x18\x02 \x03(\x0b\x32\x13.api.DeviceListItem\".\n\x13\x44\x65leteDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"2\n\x13UpdateDeviceRequest\x12\x1b\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x0b.api.Device\"?\n\x17\x43reateDeviceKeysRequest\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"/\n\x14GetDeviceKeysRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"=\n\x15GetDeviceKeysResponse\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"?\n\x17UpdateDeviceKeysRequest\x12$\n\x0b\x64\x65vice_keys\x18\x01 \x01(\x0b\x32\x0f.api.DeviceKeys\"2\n\x17\x44\x65leteDeviceKeysRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\xd7\x01\n\x10\x44\x65viceActivation\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\t\x12\x11\n\tapp_s_key\x18\x03 \x01(\t\x12\x15\n\rnwk_s_enc_key\x18\x04 \x01(\t\x12\x17\n\x0fs_nwk_s_int_key\x18\x08 \x01(\t\x12\x17\n\x0f\x66_nwk_s_int_key\x18\t \x01(\t\x12\x10\n\x08\x66_cnt_up\x18\x05 \x01(\r\x12\x14\n\x0cn_f_cnt_down\x18\x06 \x01(\r\x12\x14\n\x0c\x61_f_cnt_down\x18\n \x01(\r\"I\n\x15\x41\x63tivateDeviceRequest\x12\x30\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x15.api.DeviceActivation\"2\n\x17\x44\x65\x61\x63tivateDeviceRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"5\n\x1aGetDeviceActivationRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"O\n\x1bGetDeviceActivationResponse\x12\x30\n\x11\x64\x65vice_activation\x18\x01 \x01(\x0b\x32\x15.api.DeviceActivation\"2\n\x17GetRandomDevAddrRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\",\n\x18GetRandomDevAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\t\"\xd3\x03\n\x0b\x44\x65viceStats\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nrx_packets\x18\x02 \x01(\r\x12\x0f\n\x07gw_rssi\x18\x03 \x01(\x02\x12\x0e\n\x06gw_snr\x18\x04 \x01(\x02\x12M\n\x18rx_packets_per_frequency\x18\x05 \x03(\x0b\x32+.api.DeviceStats.RxPacketsPerFrequencyEntry\x12?\n\x11rx_packets_per_dr\x18\x06 \x03(\x0b\x32$.api.DeviceStats.RxPacketsPerDrEntry\x12,\n\x06\x65rrors\x18\x07 \x03(\x0b\x32\x1c.api.DeviceStats.ErrorsEntry\x1a<\n\x1aRxPacketsPerFrequencyEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x35\n\x13RxPacketsPerDrEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a-\n\x0b\x45rrorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\"\xaa\x01\n\x15GetDeviceStatsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\x12\x10\n\x08interval\x18\x02 \x01(\t\x12\x33\n\x0fstart_timestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rend_timestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\":\n\x16GetDeviceStatsResponse\x12 \n\x06result\x18\x01 \x03(\x0b\x32\x10.api.DeviceStats\"7\n\x1cStreamDeviceFrameLogsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\x86\x01\n\x1dStreamDeviceFrameLogsResponse\x12+\n\x0cuplink_frame\x18\x01 \x01(\x0b\x32\x13.api.UplinkFrameLogH\x00\x12/\n\x0e\x64ownlink_frame\x18\x02 \x01(\x0b\x32\x15.api.DownlinkFrameLogH\x00\x42\x07\n\x05\x66rame\"7\n\x1cStreamDeviceEventLogsRequest\x12\x17\n\x07\x64\x65v_eui\x18\x01 \x01(\tR\x06\x64\x65vEUI\"\x82\x01\n\x1dStreamDeviceEventLogsResponse\x12\x0c\n\x04type\x18\x01 \x01(\t\x12!\n\x0cpayload_json\x18\x02 \x01(\tR\x0bpayloadJSON\x12\x30\n\x0cpublished_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\xed\r\n\rDeviceService\x12S\n\x06\x43reate\x12\x18.api.CreateDeviceRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/api/devices:\x01*\x12T\n\x03Get\x12\x15.api.GetDeviceRequest\x1a\x16.api.GetDeviceResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/api/devices/{dev_eui}\x12M\n\x04List\x12\x16.api.ListDeviceRequest\x1a\x17.api.ListDeviceResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/api/devices\x12Z\n\x06\x44\x65lete\x12\x18.api.DeleteDeviceRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/api/devices/{dev_eui}\x12\x64\n\x06Update\x12\x18.api.UpdateDeviceRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"\x1a\x1d/api/devices/{device.dev_eui}:\x01*\x12v\n\nCreateKeys\x12\x1c.api.CreateDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\"\'/api/devices/{device_keys.dev_eui}/keys:\x01*\x12\x65\n\x07GetKeys\x12\x19.api.GetDeviceKeysRequest\x1a\x1a.api.GetDeviceKeysResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/devices/{dev_eui}/keys\x12v\n\nUpdateKeys\x12\x1c.api.UpdateDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\x1a\'/api/devices/{device_keys.dev_eui}/keys:\x01*\x12g\n\nDeleteKeys\x12\x1c.api.DeleteDeviceKeysRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/api/devices/{dev_eui}/keys\x12|\n\x08\x41\x63tivate\x12\x1a.api.ActivateDeviceRequest\x1a\x16.google.protobuf.Empty\"<\x82\xd3\xe4\x93\x02\x36\"1/api/devices/{device_activation.dev_eui}/activate:\x01*\x12m\n\nDeactivate\x12\x1c.api.DeactivateDeviceRequest\x1a\x16.google.protobuf.Empty\")\x82\xd3\xe4\x93\x02#*!/api/devices/{dev_eui}/activation\x12}\n\rGetActivation\x12\x1f.api.GetDeviceActivationRequest\x1a .api.GetDeviceActivationResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/devices/{dev_eui}/activation\x12\x80\x01\n\x10GetRandomDevAddr\x12\x1c.api.GetRandomDevAddrRequest\x1a\x1d.api.GetRandomDevAddrResponse\"/\x82\xd3\xe4\x93\x02)\"\'/api/devices/{dev_eui}/getRandomDevAddr\x12i\n\x08GetStats\x12\x1a.api.GetDeviceStatsRequest\x1a\x1b.api.GetDeviceStatsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/devices/{dev_eui}/stats\x12\x81\x01\n\x0fStreamFrameLogs\x12!.api.StreamDeviceFrameLogsRequest\x1a\".api.StreamDeviceFrameLogsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/devices/{dev_eui}/frames0\x01\x12\x81\x01\n\x0fStreamEventLogs\x12!.api.StreamDeviceEventLogsRequest\x1a\".api.StreamDeviceEventLogsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/devices/{dev_eui}/events0\x01\x42k\n!io.chirpstack.api.as.external.apiB\x0b\x44\x65viceProtoP\x01Z7github.com/brocaar/chirpstack-api/go/v3/as/external/apib\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_as__pb_dot_external_dot_api_dot_frameLog__pb2.DESCRIPTOR,])
 
@@ -1143,6 +1143,279 @@ _GETRANDOMDEVADDRRESPONSE = _descriptor.Descriptor(
 )
 
 
+_DEVICESTATS_RXPACKETSPERFREQUENCYENTRY = _descriptor.Descriptor(
+  name='RxPacketsPerFrequencyEntry',
+  full_name='api.DeviceStats.RxPacketsPerFrequencyEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.DeviceStats.RxPacketsPerFrequencyEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.DeviceStats.RxPacketsPerFrequencyEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3139,
+  serialized_end=3199,
+)
+
+_DEVICESTATS_RXPACKETSPERDRENTRY = _descriptor.Descriptor(
+  name='RxPacketsPerDrEntry',
+  full_name='api.DeviceStats.RxPacketsPerDrEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.DeviceStats.RxPacketsPerDrEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.DeviceStats.RxPacketsPerDrEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3201,
+  serialized_end=3254,
+)
+
+_DEVICESTATS_ERRORSENTRY = _descriptor.Descriptor(
+  name='ErrorsEntry',
+  full_name='api.DeviceStats.ErrorsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.DeviceStats.ErrorsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.DeviceStats.ErrorsEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3256,
+  serialized_end=3301,
+)
+
+_DEVICESTATS = _descriptor.Descriptor(
+  name='DeviceStats',
+  full_name='api.DeviceStats',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='api.DeviceStats.timestamp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets', full_name='api.DeviceStats.rx_packets', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gw_rssi', full_name='api.DeviceStats.gw_rssi', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gw_snr', full_name='api.DeviceStats.gw_snr', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets_per_frequency', full_name='api.DeviceStats.rx_packets_per_frequency', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets_per_dr', full_name='api.DeviceStats.rx_packets_per_dr', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='errors', full_name='api.DeviceStats.errors', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_DEVICESTATS_RXPACKETSPERFREQUENCYENTRY, _DEVICESTATS_RXPACKETSPERDRENTRY, _DEVICESTATS_ERRORSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2834,
+  serialized_end=3301,
+)
+
+
+_GETDEVICESTATSREQUEST = _descriptor.Descriptor(
+  name='GetDeviceStatsRequest',
+  full_name='api.GetDeviceStatsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dev_eui', full_name='api.GetDeviceStatsRequest.dev_eui', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='devEUI', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='interval', full_name='api.GetDeviceStatsRequest.interval', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_timestamp', full_name='api.GetDeviceStatsRequest.start_timestamp', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='end_timestamp', full_name='api.GetDeviceStatsRequest.end_timestamp', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3304,
+  serialized_end=3474,
+)
+
+
+_GETDEVICESTATSRESPONSE = _descriptor.Descriptor(
+  name='GetDeviceStatsResponse',
+  full_name='api.GetDeviceStatsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='api.GetDeviceStatsResponse.result', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3476,
+  serialized_end=3534,
+)
+
+
 _STREAMDEVICEFRAMELOGSREQUEST = _descriptor.Descriptor(
   name='StreamDeviceFrameLogsRequest',
   full_name='api.StreamDeviceFrameLogsRequest',
@@ -1170,8 +1443,8 @@ _STREAMDEVICEFRAMELOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2833,
-  serialized_end=2888,
+  serialized_start=3536,
+  serialized_end=3591,
 )
 
 
@@ -1214,8 +1487,8 @@ _STREAMDEVICEFRAMELOGSRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2891,
-  serialized_end=3025,
+  serialized_start=3594,
+  serialized_end=3728,
 )
 
 
@@ -1246,8 +1519,8 @@ _STREAMDEVICEEVENTLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3027,
-  serialized_end=3082,
+  serialized_start=3730,
+  serialized_end=3785,
 )
 
 
@@ -1292,8 +1565,8 @@ _STREAMDEVICEEVENTLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3085,
-  serialized_end=3215,
+  serialized_start=3788,
+  serialized_end=3918,
 )
 
 _DEVICE_VARIABLESENTRY.containing_type = _DEVICE
@@ -1314,6 +1587,16 @@ _GETDEVICEKEYSRESPONSE.fields_by_name['device_keys'].message_type = _DEVICEKEYS
 _UPDATEDEVICEKEYSREQUEST.fields_by_name['device_keys'].message_type = _DEVICEKEYS
 _ACTIVATEDEVICEREQUEST.fields_by_name['device_activation'].message_type = _DEVICEACTIVATION
 _GETDEVICEACTIVATIONRESPONSE.fields_by_name['device_activation'].message_type = _DEVICEACTIVATION
+_DEVICESTATS_RXPACKETSPERFREQUENCYENTRY.containing_type = _DEVICESTATS
+_DEVICESTATS_RXPACKETSPERDRENTRY.containing_type = _DEVICESTATS
+_DEVICESTATS_ERRORSENTRY.containing_type = _DEVICESTATS
+_DEVICESTATS.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_DEVICESTATS.fields_by_name['rx_packets_per_frequency'].message_type = _DEVICESTATS_RXPACKETSPERFREQUENCYENTRY
+_DEVICESTATS.fields_by_name['rx_packets_per_dr'].message_type = _DEVICESTATS_RXPACKETSPERDRENTRY
+_DEVICESTATS.fields_by_name['errors'].message_type = _DEVICESTATS_ERRORSENTRY
+_GETDEVICESTATSREQUEST.fields_by_name['start_timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_GETDEVICESTATSREQUEST.fields_by_name['end_timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_GETDEVICESTATSRESPONSE.fields_by_name['result'].message_type = _DEVICESTATS
 _STREAMDEVICEFRAMELOGSRESPONSE.fields_by_name['uplink_frame'].message_type = chirpstack__api_dot_as__pb_dot_external_dot_api_dot_frameLog__pb2._UPLINKFRAMELOG
 _STREAMDEVICEFRAMELOGSRESPONSE.fields_by_name['downlink_frame'].message_type = chirpstack__api_dot_as__pb_dot_external_dot_api_dot_frameLog__pb2._DOWNLINKFRAMELOG
 _STREAMDEVICEFRAMELOGSRESPONSE.oneofs_by_name['frame'].fields.append(
@@ -1345,6 +1628,9 @@ DESCRIPTOR.message_types_by_name['GetDeviceActivationRequest'] = _GETDEVICEACTIV
 DESCRIPTOR.message_types_by_name['GetDeviceActivationResponse'] = _GETDEVICEACTIVATIONRESPONSE
 DESCRIPTOR.message_types_by_name['GetRandomDevAddrRequest'] = _GETRANDOMDEVADDRREQUEST
 DESCRIPTOR.message_types_by_name['GetRandomDevAddrResponse'] = _GETRANDOMDEVADDRRESPONSE
+DESCRIPTOR.message_types_by_name['DeviceStats'] = _DEVICESTATS
+DESCRIPTOR.message_types_by_name['GetDeviceStatsRequest'] = _GETDEVICESTATSREQUEST
+DESCRIPTOR.message_types_by_name['GetDeviceStatsResponse'] = _GETDEVICESTATSRESPONSE
 DESCRIPTOR.message_types_by_name['StreamDeviceFrameLogsRequest'] = _STREAMDEVICEFRAMELOGSREQUEST
 DESCRIPTOR.message_types_by_name['StreamDeviceFrameLogsResponse'] = _STREAMDEVICEFRAMELOGSRESPONSE
 DESCRIPTOR.message_types_by_name['StreamDeviceEventLogsRequest'] = _STREAMDEVICEEVENTLOGSREQUEST
@@ -1529,6 +1815,51 @@ GetRandomDevAddrResponse = _reflection.GeneratedProtocolMessageType('GetRandomDe
   })
 _sym_db.RegisterMessage(GetRandomDevAddrResponse)
 
+DeviceStats = _reflection.GeneratedProtocolMessageType('DeviceStats', (_message.Message,), {
+
+  'RxPacketsPerFrequencyEntry' : _reflection.GeneratedProtocolMessageType('RxPacketsPerFrequencyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DEVICESTATS_RXPACKETSPERFREQUENCYENTRY,
+    '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
+    # @@protoc_insertion_point(class_scope:api.DeviceStats.RxPacketsPerFrequencyEntry)
+    })
+  ,
+
+  'RxPacketsPerDrEntry' : _reflection.GeneratedProtocolMessageType('RxPacketsPerDrEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DEVICESTATS_RXPACKETSPERDRENTRY,
+    '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
+    # @@protoc_insertion_point(class_scope:api.DeviceStats.RxPacketsPerDrEntry)
+    })
+  ,
+
+  'ErrorsEntry' : _reflection.GeneratedProtocolMessageType('ErrorsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _DEVICESTATS_ERRORSENTRY,
+    '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
+    # @@protoc_insertion_point(class_scope:api.DeviceStats.ErrorsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _DEVICESTATS,
+  '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
+  # @@protoc_insertion_point(class_scope:api.DeviceStats)
+  })
+_sym_db.RegisterMessage(DeviceStats)
+_sym_db.RegisterMessage(DeviceStats.RxPacketsPerFrequencyEntry)
+_sym_db.RegisterMessage(DeviceStats.RxPacketsPerDrEntry)
+_sym_db.RegisterMessage(DeviceStats.ErrorsEntry)
+
+GetDeviceStatsRequest = _reflection.GeneratedProtocolMessageType('GetDeviceStatsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEVICESTATSREQUEST,
+  '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
+  # @@protoc_insertion_point(class_scope:api.GetDeviceStatsRequest)
+  })
+_sym_db.RegisterMessage(GetDeviceStatsRequest)
+
+GetDeviceStatsResponse = _reflection.GeneratedProtocolMessageType('GetDeviceStatsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEVICESTATSRESPONSE,
+  '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
+  # @@protoc_insertion_point(class_scope:api.GetDeviceStatsResponse)
+  })
+_sym_db.RegisterMessage(GetDeviceStatsResponse)
+
 StreamDeviceFrameLogsRequest = _reflection.GeneratedProtocolMessageType('StreamDeviceFrameLogsRequest', (_message.Message,), {
   'DESCRIPTOR' : _STREAMDEVICEFRAMELOGSREQUEST,
   '__module__' : 'chirpstack_api.as_pb.external.api.device_pb2'
@@ -1562,6 +1893,9 @@ DESCRIPTOR._options = None
 _DEVICE_VARIABLESENTRY._options = None
 _DEVICE_TAGSENTRY._options = None
 _LISTDEVICEREQUEST_TAGSENTRY._options = None
+_DEVICESTATS_RXPACKETSPERFREQUENCYENTRY._options = None
+_DEVICESTATS_RXPACKETSPERDRENTRY._options = None
+_DEVICESTATS_ERRORSENTRY._options = None
 
 _DEVICESERVICE = _descriptor.ServiceDescriptor(
   name='DeviceService',
@@ -1570,8 +1904,8 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3218,
-  serialized_end=4884,
+  serialized_start=3921,
+  serialized_end=5694,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -1704,9 +2038,19 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='GetStats',
+    full_name='api.DeviceService.GetStats',
+    index=13,
+    containing_service=None,
+    input_type=_GETDEVICESTATSREQUEST,
+    output_type=_GETDEVICESTATSRESPONSE,
+    serialized_options=b'\202\323\344\223\002\036\022\034/api/devices/{dev_eui}/stats',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='StreamFrameLogs',
     full_name='api.DeviceService.StreamFrameLogs',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_STREAMDEVICEFRAMELOGSREQUEST,
     output_type=_STREAMDEVICEFRAMELOGSRESPONSE,
@@ -1716,7 +2060,7 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='StreamEventLogs',
     full_name='api.DeviceService.StreamEventLogs',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=_STREAMDEVICEEVENTLOGSREQUEST,
     output_type=_STREAMDEVICEEVENTLOGSRESPONSE,

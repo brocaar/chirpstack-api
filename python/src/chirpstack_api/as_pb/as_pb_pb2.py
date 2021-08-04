@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.chirpstack.api.asB\026ApplicationServerProtoP\001Z*github.com/brocaar/chirpstack-api/go/v3/as',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n chirpstack-api/as_pb/as_pb.proto\x12\x02\x61s\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"S\n\x17\x44\x65viceActivationContext\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x12&\n\tapp_s_key\x18\x02 \x01(\x0b\x32\x13.common.KeyEnvelope\"\xa2\x02\n\x17HandleUplinkDataRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08join_eui\x18\x02 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12\x0e\n\x06\x66_port\x18\x04 \x01(\r\x12\x0b\n\x03\x61\x64r\x18\x05 \x01(\x08\x12\n\n\x02\x64r\x18\x06 \x01(\r\x12!\n\x07tx_info\x18\x07 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x08 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12\x0c\n\x04\x64\x61ta\x18\t \x01(\x0c\x12>\n\x19\x64\x65vice_activation_context\x18\n \x01(\x0b\x32\x1b.as.DeviceActivationContext\x12\x18\n\x10\x63onfirmed_uplink\x18\x0b \x01(\x08\"\x88\x01\n\x1eHandleProprietaryUplinkRequest\x12\x13\n\x0bmac_payload\x18\x01 \x01(\x0c\x12\x0b\n\x03mic\x18\x02 \x01(\x0c\x12!\n\x07tx_info\x18\x03 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x04 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"`\n\x12HandleErrorRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1b\n\x04type\x18\x03 \x01(\x0e\x32\r.as.ErrorType\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12\r\n\x05\x66_cnt\x18\x05 \x01(\r\"P\n\x18HandleDownlinkACKRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x14\n\x0c\x61\x63knowledged\x18\x03 \x01(\x08\"\xa3\x01\n\x16SetDeviceStatusRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x0f\n\x07\x62\x61ttery\x18\x02 \x01(\r\x12\x0e\n\x06margin\x18\x03 \x01(\x05\x12\x1d\n\x15\x65xternal_power_source\x18\x04 \x01(\x08\x12!\n\x19\x62\x61ttery_level_unavailable\x18\x05 \x01(\x08\x12\x15\n\rbattery_level\x18\x06 \x01(\x02\"c\n\x18SetDeviceLocationRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\"\n\x08location\x18\x02 \x01(\x0b\x32\x10.common.Location\x12\x12\n\nuplink_ids\x18\x03 \x03(\x0c\"\xf5\x02\n\x19HandleGatewayStatsRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\x12\x10\n\x08stats_id\x18\x02 \x01(\x0c\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\"\n\x08location\x18\x04 \x01(\x0b\x32\x10.common.Location\x12\x1b\n\x13rx_packets_received\x18\x05 \x01(\r\x12\x1e\n\x16rx_packets_received_ok\x18\x06 \x01(\r\x12\x1b\n\x13tx_packets_received\x18\x07 \x01(\r\x12\x1a\n\x12tx_packets_emitted\x18\x08 \x01(\r\x12=\n\x08metadata\x18\t \x03(\x0b\x32+.as.HandleGatewayStatsRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x12HandleTxAckRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x12\n\ngateway_id\x18\x03 \x01(\x0c\x12#\n\x07tx_info\x18\x04 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\"\x87\x01\n ReEncryptDeviceQueueItemsRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\x0c\x12\x13\n\x0b\x66_cnt_start\x18\x03 \x01(\r\x12+\n\x05items\x18\x04 \x03(\x0b\x32\x1c.as.ReEncryptDeviceQueueItem\"R\n!ReEncryptDeviceQueueItemsResponse\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.as.ReEncryptedDeviceQueueItem\"a\n\x18ReEncryptDeviceQueueItem\x12\x13\n\x0b\x66rm_payload\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x11\n\tconfirmed\x18\x04 \x01(\x08\"c\n\x1aReEncryptedDeviceQueueItem\x12\x13\n\x0b\x66rm_payload\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x11\n\tconfirmed\x18\x04 \x01(\x08*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01*\xbb\x01\n\tErrorType\x12\x0b\n\x07GENERIC\x10\x00\x12\x08\n\x04OTAA\x10\x01\x12\x16\n\x12\x44\x41TA_UP_FCNT_RESET\x10\x02\x12\x0f\n\x0b\x44\x41TA_UP_MIC\x10\x03\x12\x1a\n\x16\x44\x45VICE_QUEUE_ITEM_SIZE\x10\x04\x12\x1a\n\x16\x44\x45VICE_QUEUE_ITEM_FCNT\x10\x05\x12\x1f\n\x1b\x44\x41TA_UP_FCNT_RETRANSMISSION\x10\x06\x12\x15\n\x11\x44\x41TA_DOWN_GATEWAY\x10\x07\x32\xde\x05\n\x18\x41pplicationServerService\x12I\n\x10HandleUplinkData\x12\x1b.as.HandleUplinkDataRequest\x1a\x16.google.protobuf.Empty\"\x00\x12W\n\x17HandleProprietaryUplink\x12\".as.HandleProprietaryUplinkRequest\x1a\x16.google.protobuf.Empty\"\x00\x12?\n\x0bHandleError\x12\x16.as.HandleErrorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12K\n\x11HandleDownlinkACK\x12\x1c.as.HandleDownlinkACKRequest\x1a\x16.google.protobuf.Empty\"\x00\x12M\n\x12HandleGatewayStats\x12\x1d.as.HandleGatewayStatsRequest\x1a\x16.google.protobuf.Empty\"\x00\x12?\n\x0bHandleTxAck\x12\x16.as.HandleTxAckRequest\x1a\x16.google.protobuf.Empty\"\x00\x12G\n\x0fSetDeviceStatus\x12\x1a.as.SetDeviceStatusRequest\x1a\x16.google.protobuf.Empty\"\x00\x12K\n\x11SetDeviceLocation\x12\x1c.as.SetDeviceLocationRequest\x1a\x16.google.protobuf.Empty\"\x00\x12j\n\x19ReEncryptDeviceQueueItems\x12$.as.ReEncryptDeviceQueueItemsRequest\x1a%.as.ReEncryptDeviceQueueItemsResponse\"\x00\x42\\\n\x14io.chirpstack.api.asB\x16\x41pplicationServerProtoP\x01Z*github.com/brocaar/chirpstack-api/go/v3/asb\x06proto3'
+  serialized_pb=b'\n chirpstack-api/as_pb/as_pb.proto\x12\x02\x61s\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"chirpstack-api/common/common.proto\x1a\x1a\x63hirpstack-api/gw/gw.proto\"S\n\x17\x44\x65viceActivationContext\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x12&\n\tapp_s_key\x18\x02 \x01(\x0b\x32\x13.common.KeyEnvelope\"\xa2\x02\n\x17HandleUplinkDataRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08join_eui\x18\x02 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12\x0e\n\x06\x66_port\x18\x04 \x01(\r\x12\x0b\n\x03\x61\x64r\x18\x05 \x01(\x08\x12\n\n\x02\x64r\x18\x06 \x01(\r\x12!\n\x07tx_info\x18\x07 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x08 \x03(\x0b\x32\x10.gw.UplinkRXInfo\x12\x0c\n\x04\x64\x61ta\x18\t \x01(\x0c\x12>\n\x19\x64\x65vice_activation_context\x18\n \x01(\x0b\x32\x1b.as.DeviceActivationContext\x12\x18\n\x10\x63onfirmed_uplink\x18\x0b \x01(\x08\"\x88\x01\n\x1eHandleProprietaryUplinkRequest\x12\x13\n\x0bmac_payload\x18\x01 \x01(\x0c\x12\x0b\n\x03mic\x18\x02 \x01(\x0c\x12!\n\x07tx_info\x18\x03 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x04 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"`\n\x12HandleErrorRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x1b\n\x04type\x18\x03 \x01(\x0e\x32\r.as.ErrorType\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12\r\n\x05\x66_cnt\x18\x05 \x01(\r\"P\n\x18HandleDownlinkACKRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x14\n\x0c\x61\x63knowledged\x18\x03 \x01(\x08\"\xa3\x01\n\x16SetDeviceStatusRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x0f\n\x07\x62\x61ttery\x18\x02 \x01(\r\x12\x0e\n\x06margin\x18\x03 \x01(\x05\x12\x1d\n\x15\x65xternal_power_source\x18\x04 \x01(\x08\x12!\n\x19\x62\x61ttery_level_unavailable\x18\x05 \x01(\x08\x12\x15\n\rbattery_level\x18\x06 \x01(\x02\"c\n\x18SetDeviceLocationRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\"\n\x08location\x18\x02 \x01(\x0b\x32\x10.common.Location\x12\x12\n\nuplink_ids\x18\x03 \x03(\x0c\"\xc4\x08\n\x19HandleGatewayStatsRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\x0c\x12\x10\n\x08stats_id\x18\x02 \x01(\x0c\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\"\n\x08location\x18\x04 \x01(\x0b\x32\x10.common.Location\x12\x1b\n\x13rx_packets_received\x18\x05 \x01(\r\x12\x1e\n\x16rx_packets_received_ok\x18\x06 \x01(\r\x12\x1b\n\x13tx_packets_received\x18\x07 \x01(\r\x12\x1a\n\x12tx_packets_emitted\x18\x08 \x01(\r\x12=\n\x08metadata\x18\t \x03(\x0b\x32+.as.HandleGatewayStatsRequest.MetadataEntry\x12Z\n\x18tx_packets_per_frequency\x18\n \x03(\x0b\x32\x38.as.HandleGatewayStatsRequest.TxPacketsPerFrequencyEntry\x12Z\n\x18rx_packets_per_frequency\x18\x0b \x03(\x0b\x32\x38.as.HandleGatewayStatsRequest.RxPacketsPerFrequencyEntry\x12L\n\x11tx_packets_per_dr\x18\x0c \x03(\x0b\x32\x31.as.HandleGatewayStatsRequest.TxPacketsPerDrEntry\x12L\n\x11rx_packets_per_dr\x18\r \x03(\x0b\x32\x31.as.HandleGatewayStatsRequest.RxPacketsPerDrEntry\x12T\n\x15tx_packets_per_status\x18\x0e \x03(\x0b\x32\x35.as.HandleGatewayStatsRequest.TxPacketsPerStatusEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a<\n\x1aTxPacketsPerFrequencyEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a<\n\x1aRxPacketsPerFrequencyEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x35\n\x13TxPacketsPerDrEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x35\n\x13RxPacketsPerDrEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x39\n\x17TxPacketsPerStatusEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\"m\n\x12HandleTxAckRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x12\n\ngateway_id\x18\x03 \x01(\x0c\x12#\n\x07tx_info\x18\x04 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\"\x87\x01\n ReEncryptDeviceQueueItemsRequest\x12\x0f\n\x07\x64\x65v_eui\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x02 \x01(\x0c\x12\x13\n\x0b\x66_cnt_start\x18\x03 \x01(\r\x12+\n\x05items\x18\x04 \x03(\x0b\x32\x1c.as.ReEncryptDeviceQueueItem\"R\n!ReEncryptDeviceQueueItemsResponse\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.as.ReEncryptedDeviceQueueItem\"a\n\x18ReEncryptDeviceQueueItem\x12\x13\n\x0b\x66rm_payload\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x11\n\tconfirmed\x18\x04 \x01(\x08\"c\n\x1aReEncryptedDeviceQueueItem\x12\x13\n\x0b\x66rm_payload\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\x12\x0e\n\x06\x66_port\x18\x03 \x01(\r\x12\x11\n\tconfirmed\x18\x04 \x01(\x08*\x1c\n\x08RXWindow\x12\x07\n\x03RX1\x10\x00\x12\x07\n\x03RX2\x10\x01*\xbb\x01\n\tErrorType\x12\x0b\n\x07GENERIC\x10\x00\x12\x08\n\x04OTAA\x10\x01\x12\x16\n\x12\x44\x41TA_UP_FCNT_RESET\x10\x02\x12\x0f\n\x0b\x44\x41TA_UP_MIC\x10\x03\x12\x1a\n\x16\x44\x45VICE_QUEUE_ITEM_SIZE\x10\x04\x12\x1a\n\x16\x44\x45VICE_QUEUE_ITEM_FCNT\x10\x05\x12\x1f\n\x1b\x44\x41TA_UP_FCNT_RETRANSMISSION\x10\x06\x12\x15\n\x11\x44\x41TA_DOWN_GATEWAY\x10\x07\x32\xde\x05\n\x18\x41pplicationServerService\x12I\n\x10HandleUplinkData\x12\x1b.as.HandleUplinkDataRequest\x1a\x16.google.protobuf.Empty\"\x00\x12W\n\x17HandleProprietaryUplink\x12\".as.HandleProprietaryUplinkRequest\x1a\x16.google.protobuf.Empty\"\x00\x12?\n\x0bHandleError\x12\x16.as.HandleErrorRequest\x1a\x16.google.protobuf.Empty\"\x00\x12K\n\x11HandleDownlinkACK\x12\x1c.as.HandleDownlinkACKRequest\x1a\x16.google.protobuf.Empty\"\x00\x12M\n\x12HandleGatewayStats\x12\x1d.as.HandleGatewayStatsRequest\x1a\x16.google.protobuf.Empty\"\x00\x12?\n\x0bHandleTxAck\x12\x16.as.HandleTxAckRequest\x1a\x16.google.protobuf.Empty\"\x00\x12G\n\x0fSetDeviceStatus\x12\x1a.as.SetDeviceStatusRequest\x1a\x16.google.protobuf.Empty\"\x00\x12K\n\x11SetDeviceLocation\x12\x1c.as.SetDeviceLocationRequest\x1a\x16.google.protobuf.Empty\"\x00\x12j\n\x19ReEncryptDeviceQueueItems\x12$.as.ReEncryptDeviceQueueItemsRequest\x1a%.as.ReEncryptDeviceQueueItemsResponse\"\x00\x42\\\n\x14io.chirpstack.api.asB\x16\x41pplicationServerProtoP\x01Z*github.com/brocaar/chirpstack-api/go/v3/asb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,chirpstack__api_dot_gw_dot_gw__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _RXWINDOW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2039,
-  serialized_end=2067,
+  serialized_start=2758,
+  serialized_end=2786,
 )
 _sym_db.RegisterEnumDescriptor(_RXWINDOW)
 
@@ -104,8 +104,8 @@ _ERRORTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2070,
-  serialized_end=2257,
+  serialized_start=2789,
+  serialized_end=2976,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORTYPE)
 
@@ -563,8 +563,198 @@ _HANDLEGATEWAYSTATSREQUEST_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1457,
-  serialized_end=1504,
+  serialized_start=1883,
+  serialized_end=1930,
+)
+
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERFREQUENCYENTRY = _descriptor.Descriptor(
+  name='TxPacketsPerFrequencyEntry',
+  full_name='as.HandleGatewayStatsRequest.TxPacketsPerFrequencyEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='as.HandleGatewayStatsRequest.TxPacketsPerFrequencyEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='as.HandleGatewayStatsRequest.TxPacketsPerFrequencyEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1932,
+  serialized_end=1992,
+)
+
+_HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERFREQUENCYENTRY = _descriptor.Descriptor(
+  name='RxPacketsPerFrequencyEntry',
+  full_name='as.HandleGatewayStatsRequest.RxPacketsPerFrequencyEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='as.HandleGatewayStatsRequest.RxPacketsPerFrequencyEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='as.HandleGatewayStatsRequest.RxPacketsPerFrequencyEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1994,
+  serialized_end=2054,
+)
+
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERDRENTRY = _descriptor.Descriptor(
+  name='TxPacketsPerDrEntry',
+  full_name='as.HandleGatewayStatsRequest.TxPacketsPerDrEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='as.HandleGatewayStatsRequest.TxPacketsPerDrEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='as.HandleGatewayStatsRequest.TxPacketsPerDrEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2056,
+  serialized_end=2109,
+)
+
+_HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERDRENTRY = _descriptor.Descriptor(
+  name='RxPacketsPerDrEntry',
+  full_name='as.HandleGatewayStatsRequest.RxPacketsPerDrEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='as.HandleGatewayStatsRequest.RxPacketsPerDrEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='as.HandleGatewayStatsRequest.RxPacketsPerDrEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2111,
+  serialized_end=2164,
+)
+
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERSTATUSENTRY = _descriptor.Descriptor(
+  name='TxPacketsPerStatusEntry',
+  full_name='as.HandleGatewayStatsRequest.TxPacketsPerStatusEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='as.HandleGatewayStatsRequest.TxPacketsPerStatusEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='as.HandleGatewayStatsRequest.TxPacketsPerStatusEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2166,
+  serialized_end=2223,
 )
 
 _HANDLEGATEWAYSTATSREQUEST = _descriptor.Descriptor(
@@ -638,10 +828,45 @@ _HANDLEGATEWAYSTATSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_packets_per_frequency', full_name='as.HandleGatewayStatsRequest.tx_packets_per_frequency', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets_per_frequency', full_name='as.HandleGatewayStatsRequest.rx_packets_per_frequency', index=10,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_packets_per_dr', full_name='as.HandleGatewayStatsRequest.tx_packets_per_dr', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets_per_dr', full_name='as.HandleGatewayStatsRequest.rx_packets_per_dr', index=12,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_packets_per_status', full_name='as.HandleGatewayStatsRequest.tx_packets_per_status', index=13,
+      number=14, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_HANDLEGATEWAYSTATSREQUEST_METADATAENTRY, ],
+  nested_types=[_HANDLEGATEWAYSTATSREQUEST_METADATAENTRY, _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERFREQUENCYENTRY, _HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERFREQUENCYENTRY, _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERDRENTRY, _HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERDRENTRY, _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERSTATUSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -651,7 +876,7 @@ _HANDLEGATEWAYSTATSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1131,
-  serialized_end=1504,
+  serialized_end=2223,
 )
 
 
@@ -703,8 +928,8 @@ _HANDLETXACKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1506,
-  serialized_end=1615,
+  serialized_start=2225,
+  serialized_end=2334,
 )
 
 
@@ -756,8 +981,8 @@ _REENCRYPTDEVICEQUEUEITEMSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1618,
-  serialized_end=1753,
+  serialized_start=2337,
+  serialized_end=2472,
 )
 
 
@@ -788,8 +1013,8 @@ _REENCRYPTDEVICEQUEUEITEMSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1755,
-  serialized_end=1837,
+  serialized_start=2474,
+  serialized_end=2556,
 )
 
 
@@ -841,8 +1066,8 @@ _REENCRYPTDEVICEQUEUEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1839,
-  serialized_end=1936,
+  serialized_start=2558,
+  serialized_end=2655,
 )
 
 
@@ -894,8 +1119,8 @@ _REENCRYPTEDDEVICEQUEUEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1938,
-  serialized_end=2037,
+  serialized_start=2657,
+  serialized_end=2756,
 )
 
 _DEVICEACTIVATIONCONTEXT.fields_by_name['app_s_key'].message_type = chirpstack__api_dot_common_dot_common__pb2._KEYENVELOPE
@@ -907,9 +1132,19 @@ _HANDLEPROPRIETARYUPLINKREQUEST.fields_by_name['rx_info'].message_type = chirpst
 _HANDLEERRORREQUEST.fields_by_name['type'].enum_type = _ERRORTYPE
 _SETDEVICELOCATIONREQUEST.fields_by_name['location'].message_type = chirpstack__api_dot_common_dot_common__pb2._LOCATION
 _HANDLEGATEWAYSTATSREQUEST_METADATAENTRY.containing_type = _HANDLEGATEWAYSTATSREQUEST
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERFREQUENCYENTRY.containing_type = _HANDLEGATEWAYSTATSREQUEST
+_HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERFREQUENCYENTRY.containing_type = _HANDLEGATEWAYSTATSREQUEST
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERDRENTRY.containing_type = _HANDLEGATEWAYSTATSREQUEST
+_HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERDRENTRY.containing_type = _HANDLEGATEWAYSTATSREQUEST
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERSTATUSENTRY.containing_type = _HANDLEGATEWAYSTATSREQUEST
 _HANDLEGATEWAYSTATSREQUEST.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _HANDLEGATEWAYSTATSREQUEST.fields_by_name['location'].message_type = chirpstack__api_dot_common_dot_common__pb2._LOCATION
 _HANDLEGATEWAYSTATSREQUEST.fields_by_name['metadata'].message_type = _HANDLEGATEWAYSTATSREQUEST_METADATAENTRY
+_HANDLEGATEWAYSTATSREQUEST.fields_by_name['tx_packets_per_frequency'].message_type = _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERFREQUENCYENTRY
+_HANDLEGATEWAYSTATSREQUEST.fields_by_name['rx_packets_per_frequency'].message_type = _HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERFREQUENCYENTRY
+_HANDLEGATEWAYSTATSREQUEST.fields_by_name['tx_packets_per_dr'].message_type = _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERDRENTRY
+_HANDLEGATEWAYSTATSREQUEST.fields_by_name['rx_packets_per_dr'].message_type = _HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERDRENTRY
+_HANDLEGATEWAYSTATSREQUEST.fields_by_name['tx_packets_per_status'].message_type = _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERSTATUSENTRY
 _HANDLETXACKREQUEST.fields_by_name['tx_info'].message_type = chirpstack__api_dot_gw_dot_gw__pb2._DOWNLINKTXINFO
 _REENCRYPTDEVICEQUEUEITEMSREQUEST.fields_by_name['items'].message_type = _REENCRYPTDEVICEQUEUEITEM
 _REENCRYPTDEVICEQUEUEITEMSRESPONSE.fields_by_name['items'].message_type = _REENCRYPTEDDEVICEQUEUEITEM
@@ -987,12 +1222,52 @@ HandleGatewayStatsRequest = _reflection.GeneratedProtocolMessageType('HandleGate
     # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest.MetadataEntry)
     })
   ,
+
+  'TxPacketsPerFrequencyEntry' : _reflection.GeneratedProtocolMessageType('TxPacketsPerFrequencyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERFREQUENCYENTRY,
+    '__module__' : 'chirpstack_api.as_pb.as_pb_pb2'
+    # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest.TxPacketsPerFrequencyEntry)
+    })
+  ,
+
+  'RxPacketsPerFrequencyEntry' : _reflection.GeneratedProtocolMessageType('RxPacketsPerFrequencyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERFREQUENCYENTRY,
+    '__module__' : 'chirpstack_api.as_pb.as_pb_pb2'
+    # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest.RxPacketsPerFrequencyEntry)
+    })
+  ,
+
+  'TxPacketsPerDrEntry' : _reflection.GeneratedProtocolMessageType('TxPacketsPerDrEntry', (_message.Message,), {
+    'DESCRIPTOR' : _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERDRENTRY,
+    '__module__' : 'chirpstack_api.as_pb.as_pb_pb2'
+    # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest.TxPacketsPerDrEntry)
+    })
+  ,
+
+  'RxPacketsPerDrEntry' : _reflection.GeneratedProtocolMessageType('RxPacketsPerDrEntry', (_message.Message,), {
+    'DESCRIPTOR' : _HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERDRENTRY,
+    '__module__' : 'chirpstack_api.as_pb.as_pb_pb2'
+    # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest.RxPacketsPerDrEntry)
+    })
+  ,
+
+  'TxPacketsPerStatusEntry' : _reflection.GeneratedProtocolMessageType('TxPacketsPerStatusEntry', (_message.Message,), {
+    'DESCRIPTOR' : _HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERSTATUSENTRY,
+    '__module__' : 'chirpstack_api.as_pb.as_pb_pb2'
+    # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest.TxPacketsPerStatusEntry)
+    })
+  ,
   'DESCRIPTOR' : _HANDLEGATEWAYSTATSREQUEST,
   '__module__' : 'chirpstack_api.as_pb.as_pb_pb2'
   # @@protoc_insertion_point(class_scope:as.HandleGatewayStatsRequest)
   })
 _sym_db.RegisterMessage(HandleGatewayStatsRequest)
 _sym_db.RegisterMessage(HandleGatewayStatsRequest.MetadataEntry)
+_sym_db.RegisterMessage(HandleGatewayStatsRequest.TxPacketsPerFrequencyEntry)
+_sym_db.RegisterMessage(HandleGatewayStatsRequest.RxPacketsPerFrequencyEntry)
+_sym_db.RegisterMessage(HandleGatewayStatsRequest.TxPacketsPerDrEntry)
+_sym_db.RegisterMessage(HandleGatewayStatsRequest.RxPacketsPerDrEntry)
+_sym_db.RegisterMessage(HandleGatewayStatsRequest.TxPacketsPerStatusEntry)
 
 HandleTxAckRequest = _reflection.GeneratedProtocolMessageType('HandleTxAckRequest', (_message.Message,), {
   'DESCRIPTOR' : _HANDLETXACKREQUEST,
@@ -1032,6 +1307,11 @@ _sym_db.RegisterMessage(ReEncryptedDeviceQueueItem)
 
 DESCRIPTOR._options = None
 _HANDLEGATEWAYSTATSREQUEST_METADATAENTRY._options = None
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERFREQUENCYENTRY._options = None
+_HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERFREQUENCYENTRY._options = None
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERDRENTRY._options = None
+_HANDLEGATEWAYSTATSREQUEST_RXPACKETSPERDRENTRY._options = None
+_HANDLEGATEWAYSTATSREQUEST_TXPACKETSPERSTATUSENTRY._options = None
 
 _APPLICATIONSERVERSERVICE = _descriptor.ServiceDescriptor(
   name='ApplicationServerService',
@@ -1040,8 +1320,8 @@ _APPLICATIONSERVERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2260,
-  serialized_end=2994,
+  serialized_start=2979,
+  serialized_end=3713,
   methods=[
   _descriptor.MethodDescriptor(
     name='HandleUplinkData',

@@ -6,6 +6,48 @@ import * as common_common_pb from "../common/common_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 
+export class Modulation extends jspb.Message {
+  hasLora(): boolean;
+  clearLora(): void;
+  getLora(): LoRaModulationInfo | undefined;
+  setLora(value?: LoRaModulationInfo): void;
+
+  hasFsk(): boolean;
+  clearFsk(): void;
+  getFsk(): FSKModulationInfo | undefined;
+  setFsk(value?: FSKModulationInfo): void;
+
+  hasLrFhss(): boolean;
+  clearLrFhss(): void;
+  getLrFhss(): LRFHSSModulationInfo | undefined;
+  setLrFhss(value?: LRFHSSModulationInfo): void;
+
+  getParametersCase(): Modulation.ParametersCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Modulation.AsObject;
+  static toObject(includeInstance: boolean, msg: Modulation): Modulation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Modulation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Modulation;
+  static deserializeBinaryFromReader(message: Modulation, reader: jspb.BinaryReader): Modulation;
+}
+
+export namespace Modulation {
+  export type AsObject = {
+    lora?: LoRaModulationInfo.AsObject,
+    fsk?: FSKModulationInfo.AsObject,
+    lrFhss?: LRFHSSModulationInfo.AsObject,
+  }
+
+  export enum ParametersCase {
+    PARAMETERS_NOT_SET = 0,
+    LORA = 3,
+    FSK = 4,
+    LR_FHSS = 5,
+  }
+}
+
 export class UplinkTXInfo extends jspb.Message {
   getFrequency(): number;
   setFrequency(value: number): void;
@@ -235,6 +277,22 @@ export class GatewayStats extends jspb.Message {
   getStatsId_asB64(): string;
   setStatsId(value: Uint8Array | string): void;
 
+  getTxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearTxPacketsPerFrequencyMap(): void;
+  getRxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearRxPacketsPerFrequencyMap(): void;
+  clearTxPacketsPerModulationList(): void;
+  getTxPacketsPerModulationList(): Array<PerModulationCount>;
+  setTxPacketsPerModulationList(value: Array<PerModulationCount>): void;
+  addTxPacketsPerModulation(value?: PerModulationCount, index?: number): PerModulationCount;
+
+  clearRxPacketsPerModulationList(): void;
+  getRxPacketsPerModulationList(): Array<PerModulationCount>;
+  setRxPacketsPerModulationList(value: Array<PerModulationCount>): void;
+  addRxPacketsPerModulation(value?: PerModulationCount, index?: number): PerModulationCount;
+
+  getTxPacketsPerStatusMap(): jspb.Map<string, number>;
+  clearTxPacketsPerStatusMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayStats.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayStats): GatewayStats.AsObject;
@@ -258,6 +316,37 @@ export namespace GatewayStats {
     txPacketsEmitted: number,
     metaDataMap: Array<[string, string]>,
     statsId: Uint8Array | string,
+    txPacketsPerFrequencyMap: Array<[number, number]>,
+    rxPacketsPerFrequencyMap: Array<[number, number]>,
+    txPacketsPerModulationList: Array<PerModulationCount.AsObject>,
+    rxPacketsPerModulationList: Array<PerModulationCount.AsObject>,
+    txPacketsPerStatusMap: Array<[string, number]>,
+  }
+}
+
+export class PerModulationCount extends jspb.Message {
+  hasModulation(): boolean;
+  clearModulation(): void;
+  getModulation(): Modulation | undefined;
+  setModulation(value?: Modulation): void;
+
+  getCount(): number;
+  setCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerModulationCount.AsObject;
+  static toObject(includeInstance: boolean, msg: PerModulationCount): PerModulationCount.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerModulationCount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerModulationCount;
+  static deserializeBinaryFromReader(message: PerModulationCount, reader: jspb.BinaryReader): PerModulationCount;
+}
+
+export namespace PerModulationCount {
+  export type AsObject = {
+    modulation?: Modulation.AsObject,
+    count: number,
   }
 }
 

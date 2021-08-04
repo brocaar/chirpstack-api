@@ -428,6 +428,16 @@ export class GatewayStats extends jspb.Message {
   getTxPacketsEmitted(): number;
   setTxPacketsEmitted(value: number): void;
 
+  getTxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearTxPacketsPerFrequencyMap(): void;
+  getRxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearRxPacketsPerFrequencyMap(): void;
+  getTxPacketsPerDrMap(): jspb.Map<number, number>;
+  clearTxPacketsPerDrMap(): void;
+  getRxPacketsPerDrMap(): jspb.Map<number, number>;
+  clearRxPacketsPerDrMap(): void;
+  getTxPacketsPerStatusMap(): jspb.Map<string, number>;
+  clearTxPacketsPerStatusMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayStats.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayStats): GatewayStats.AsObject;
@@ -445,6 +455,11 @@ export namespace GatewayStats {
     rxPacketsReceivedOk: number,
     txPacketsReceived: number,
     txPacketsEmitted: number,
+    txPacketsPerFrequencyMap: Array<[number, number]>,
+    rxPacketsPerFrequencyMap: Array<[number, number]>,
+    txPacketsPerDrMap: Array<[number, number]>,
+    rxPacketsPerDrMap: Array<[number, number]>,
+    txPacketsPerStatusMap: Array<[string, number]>,
   }
 }
 

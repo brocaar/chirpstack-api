@@ -332,6 +332,55 @@
         ]
       }
     },
+    "/api/devices/{dev_eui}/stats": {
+      "get": {
+        "summary": "GetStats returns the device stats.",
+        "operationId": "GetStats",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetDeviceStatsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dev_eui",
+            "description": "DevEUI (HEX encoded).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "interval",
+            "description": "Aggregation interval.  One of \"second\", \"minute\", \"hour\", \"day\", \"week\",\n\"month\", \"quarter\", \"year\".  Case insensitive.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "startTimestamp",
+            "description": "Timestamp to start from.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endTimestamp",
+            "description": "Timestamp until to get from.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{device.dev_eui}": {
       "put": {
         "summary": "Update updates the device matching the given DevEUI.",
@@ -674,6 +723,55 @@
         }
       }
     },
+    "apiDeviceStats": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the (aggregated) measurement."
+        },
+        "rxPackets": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Packets received from the device."
+        },
+        "gwRssi": {
+          "type": "number",
+          "format": "float",
+          "description": "Average RSSI (as reported by the gateway(s))."
+        },
+        "gwSnr": {
+          "type": "number",
+          "format": "float",
+          "description": "Average SNR (as reported by the gateway(s))."
+        },
+        "rxPacketsPerFrequency": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Packets received by frequency."
+        },
+        "rxPacketsPerDr": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Packets received by DR."
+        },
+        "errors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Error count."
+        }
+      }
+    },
     "apiDownlinkFrameLog": {
       "type": "object",
       "properties": {
@@ -739,6 +837,17 @@
         "location": {
           "$ref": "#/definitions/commonLocation",
           "description": "Device location.\nThis will set when the network-server was able to resolve the location\nusing the geolocation-server."
+        }
+      }
+    },
+    "apiGetDeviceStatsResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiDeviceStats"
+          }
         }
       }
     },

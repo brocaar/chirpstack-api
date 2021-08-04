@@ -269,6 +269,21 @@ message GatewayStats {
 
 	// Packets transmitted by the gateway.
 	int32 tx_packets_emitted = 5;
+
+    // Tx packets per frequency.
+    map<uint32, uint32> tx_packets_per_frequency = 6;
+
+    // Rx packets per frequency.
+    map<uint32, uint32> rx_packets_per_frequency = 7;
+
+    // Tx packets per DR.
+    map<uint32, uint32> tx_packets_per_dr = 8;
+
+    // Rx packets per DR.
+    map<uint32, uint32> rx_packets_per_dr = 9;
+
+    // Tx packets per status.
+    map<string, uint32> tx_packets_per_status = 10;
 }
 
 message GetGatewayStatsRequest {

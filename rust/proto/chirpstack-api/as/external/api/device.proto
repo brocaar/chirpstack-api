@@ -112,6 +112,13 @@ service DeviceService {
         };
     }
 
+    // GetStats returns the device stats.
+    rpc GetStats(GetDeviceStatsRequest) returns (GetDeviceStatsResponse) {
+        option (google.api.http) = {
+            get: "/api/devices/{dev_eui}/stats"
+        };
+    }
+
     // StreamFrameLogs streams the uplink and downlink frame-logs for the given DevEUI.
 	//   * These are the raw LoRaWAN frames and this endpoint is intended for debugging only.
 	//   * This endpoint does not work from a web-browser.
@@ -399,6 +406,48 @@ message GetRandomDevAddrRequest {
 message GetRandomDevAddrResponse {
     // Device address (HEX encoded).
     string dev_addr = 1;
+}
+
+message DeviceStats {
+	// Timestamp of the (aggregated) measurement.
+	google.protobuf.Timestamp timestamp = 1;
+
+    // Packets received from the device.
+    uint32 rx_packets = 2;
+
+    // Average RSSI (as reported by the gateway(s)).
+    float gw_rssi = 3;
+
+    // Average SNR (as reported by the gateway(s)).
+    float gw_snr = 4;
+
+    // Packets received by frequency.
+    map<uint32, uint32> rx_packets_per_frequency = 5;
+
+    // Packets received by DR.
+    map<uint32, uint32> rx_packets_per_dr = 6;
+
+    // Error count.
+    map<string, uint32> errors = 7;
+}
+
+message GetDeviceStatsRequest {
+    // DevEUI (HEX encoded).
+    string dev_eui = 1 [json_name = "devEUI"];
+
+	// Aggregation interval.  One of "second", "minute", "hour", "day", "week",
+	// "month", "quarter", "year".  Case insensitive.
+	string interval = 2;
+
+	// Timestamp to start from.
+	google.protobuf.Timestamp start_timestamp = 3;
+
+	// Timestamp until to get from.
+	google.protobuf.Timestamp end_timestamp = 4;
+}
+
+message GetDeviceStatsResponse {
+    repeated DeviceStats result = 1;
 }
 
 message StreamDeviceFrameLogsRequest {
