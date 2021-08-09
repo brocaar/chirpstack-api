@@ -83,6 +83,7 @@ export interface RegionMap {
   AS923: 7;
   AS923_2: 12;
   AS923_3: 13;
+  AS923_4: 14;
   KR920: 8;
   IN865: 9;
   RU864: 10;
