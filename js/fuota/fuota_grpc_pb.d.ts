@@ -14,6 +14,12 @@ interface IFUOTAServerServiceService extends grpc.ServiceDefinition<grpc.Untyped
 
 export const FUOTAServerServiceService: IFUOTAServerServiceService;
 
+export interface IFUOTAServerServiceServer extends grpc.UntypedServiceImplementation {
+  createDeployment: grpc.handleUnaryCall<fuota_fuota_pb.CreateDeploymentRequest, fuota_fuota_pb.CreateDeploymentResponse>;
+  getDeploymentStatus: grpc.handleUnaryCall<fuota_fuota_pb.GetDeploymentStatusRequest, fuota_fuota_pb.GetDeploymentStatusResponse>;
+  getDeploymentDeviceLogs: grpc.handleUnaryCall<fuota_fuota_pb.GetDeploymentDeviceLogsRequest, fuota_fuota_pb.GetDeploymentDeviceLogsResponse>;
+}
+
 export class FUOTAServerServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   createDeployment(argument: fuota_fuota_pb.CreateDeploymentRequest, callback: grpc.requestCallback<fuota_fuota_pb.CreateDeploymentResponse>): grpc.ClientUnaryCall;

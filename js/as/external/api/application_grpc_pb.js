@@ -649,7 +649,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // ApplicationService is the service managing applications.
 var ApplicationServiceService = exports.ApplicationServiceService = {
   // Create creates the given application.
-  create: {
+create: {
     path: '/api.ApplicationService/Create',
     requestStream: false,
     responseStream: false,
@@ -661,7 +661,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_CreateApplicationResponse,
   },
   // Get returns the requested application.
-  get: {
+get: {
     path: '/api.ApplicationService/Get',
     requestStream: false,
     responseStream: false,
@@ -673,7 +673,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetApplicationResponse,
   },
   // Update updates the given application.
-  update: {
+update: {
     path: '/api.ApplicationService/Update',
     requestStream: false,
     responseStream: false,
@@ -685,7 +685,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete deletes the given application.
-  delete: {
+delete: {
     path: '/api.ApplicationService/Delete',
     requestStream: false,
     responseStream: false,
@@ -697,7 +697,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // List lists the available applications.
-  list: {
+list: {
     path: '/api.ApplicationService/List',
     requestStream: false,
     responseStream: false,
@@ -709,7 +709,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_ListApplicationResponse,
   },
   // CreateHTTPIntegration creates a HTTP application-integration.
-  createHTTPIntegration: {
+createHTTPIntegration: {
     path: '/api.ApplicationService/CreateHTTPIntegration',
     requestStream: false,
     responseStream: false,
@@ -721,7 +721,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetHTTPIntegration returns the HTTP application-integration.
-  getHTTPIntegration: {
+getHTTPIntegration: {
     path: '/api.ApplicationService/GetHTTPIntegration',
     requestStream: false,
     responseStream: false,
@@ -733,7 +733,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetHTTPIntegrationResponse,
   },
   // UpdateHTTPIntegration updates the HTTP application-integration.
-  updateHTTPIntegration: {
+updateHTTPIntegration: {
     path: '/api.ApplicationService/UpdateHTTPIntegration',
     requestStream: false,
     responseStream: false,
@@ -745,7 +745,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteIntegration deletes the HTTP application-integration.
-  deleteHTTPIntegration: {
+deleteHTTPIntegration: {
     path: '/api.ApplicationService/DeleteHTTPIntegration',
     requestStream: false,
     responseStream: false,
@@ -757,7 +757,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateInfluxDBIntegration create an InfluxDB application-integration.
-  createInfluxDBIntegration: {
+createInfluxDBIntegration: {
     path: '/api.ApplicationService/CreateInfluxDBIntegration',
     requestStream: false,
     responseStream: false,
@@ -769,7 +769,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetInfluxDBIntegration returns the InfluxDB application-integration.
-  getInfluxDBIntegration: {
+getInfluxDBIntegration: {
     path: '/api.ApplicationService/GetInfluxDBIntegration',
     requestStream: false,
     responseStream: false,
@@ -781,7 +781,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetInfluxDBIntegrationResponse,
   },
   // UpdateInfluxDBIntegration updates the InfluxDB application-integration.
-  updateInfluxDBIntegration: {
+updateInfluxDBIntegration: {
     path: '/api.ApplicationService/UpdateInfluxDBIntegration',
     requestStream: false,
     responseStream: false,
@@ -793,7 +793,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteInfluxDBIntegration deletes the InfluxDB application-integration.
-  deleteInfluxDBIntegration: {
+deleteInfluxDBIntegration: {
     path: '/api.ApplicationService/DeleteInfluxDBIntegration',
     requestStream: false,
     responseStream: false,
@@ -805,7 +805,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateThingsBoardIntegration creates a ThingsBoard application-integration.
-  createThingsBoardIntegration: {
+createThingsBoardIntegration: {
     path: '/api.ApplicationService/CreateThingsBoardIntegration',
     requestStream: false,
     responseStream: false,
@@ -817,7 +817,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetThingsBoardIntegration returns the ThingsBoard application-integration.
-  getThingsBoardIntegration: {
+getThingsBoardIntegration: {
     path: '/api.ApplicationService/GetThingsBoardIntegration',
     requestStream: false,
     responseStream: false,
@@ -829,7 +829,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetThingsBoardIntegrationResponse,
   },
   // UpdateThingsBoardIntegration updates the ThingsBoard application-integration.
-  updateThingsBoardIntegration: {
+updateThingsBoardIntegration: {
     path: '/api.ApplicationService/UpdateThingsBoardIntegration',
     requestStream: false,
     responseStream: false,
@@ -841,7 +841,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteThingsBoardIntegration deletes the ThingsBoard application-integration.
-  deleteThingsBoardIntegration: {
+deleteThingsBoardIntegration: {
     path: '/api.ApplicationService/DeleteThingsBoardIntegration',
     requestStream: false,
     responseStream: false,
@@ -853,7 +853,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateMyDevicesIntegration creates a MyDevices application-integration.
-  createMyDevicesIntegration: {
+createMyDevicesIntegration: {
     path: '/api.ApplicationService/CreateMyDevicesIntegration',
     requestStream: false,
     responseStream: false,
@@ -865,7 +865,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetMyDevicesIntegration returns the MyDevices application-integration.
-  getMyDevicesIntegration: {
+getMyDevicesIntegration: {
     path: '/api.ApplicationService/GetMyDevicesIntegration',
     requestStream: false,
     responseStream: false,
@@ -877,7 +877,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetMyDevicesIntegrationResponse,
   },
   // UpdateMyDevicesIntegration updates the MyDevices application-integration.
-  updateMyDevicesIntegration: {
+updateMyDevicesIntegration: {
     path: '/api.ApplicationService/UpdateMyDevicesIntegration',
     requestStream: false,
     responseStream: false,
@@ -889,7 +889,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteMyDevicesIntegration deletes the MyDevices application-integration.
-  deleteMyDevicesIntegration: {
+deleteMyDevicesIntegration: {
     path: '/api.ApplicationService/DeleteMyDevicesIntegration',
     requestStream: false,
     responseStream: false,
@@ -901,7 +901,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateLoRaCloudIntegration creates A LoRaCloud application-integration.
-  createLoRaCloudIntegration: {
+createLoRaCloudIntegration: {
     path: '/api.ApplicationService/CreateLoRaCloudIntegration',
     requestStream: false,
     responseStream: false,
@@ -913,7 +913,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetLoRaCloudIntegration returns the LoRaCloud application-integration.
-  getLoRaCloudIntegration: {
+getLoRaCloudIntegration: {
     path: '/api.ApplicationService/GetLoRaCloudIntegration',
     requestStream: false,
     responseStream: false,
@@ -925,7 +925,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetLoRaCloudIntegrationResponse,
   },
   // UpdateLoRaCloudIntegration updates the LoRaCloud application-integration.
-  updateLoRaCloudIntegration: {
+updateLoRaCloudIntegration: {
     path: '/api.ApplicationService/UpdateLoRaCloudIntegration',
     requestStream: false,
     responseStream: false,
@@ -937,7 +937,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteLoRaCloudIntegration deletes the LoRaCloud application-integration.
-  deleteLoRaCloudIntegration: {
+deleteLoRaCloudIntegration: {
     path: '/api.ApplicationService/DeleteLoRaCloudIntegration',
     requestStream: false,
     responseStream: false,
@@ -949,7 +949,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateGCPPubSubIntegration creates a GCP PubSub application-integration.
-  createGCPPubSubIntegration: {
+createGCPPubSubIntegration: {
     path: '/api.ApplicationService/CreateGCPPubSubIntegration',
     requestStream: false,
     responseStream: false,
@@ -961,7 +961,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetGCPPubSubIntegration returns the GCP PubSub application-integration.
-  getGCPPubSubIntegration: {
+getGCPPubSubIntegration: {
     path: '/api.ApplicationService/GetGCPPubSubIntegration',
     requestStream: false,
     responseStream: false,
@@ -973,7 +973,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetGCPPubSubIntegrationResponse,
   },
   // UpdateGCPPubSubIntegration updates the GCP PubSub application-integration.
-  updateGCPPubSubIntegration: {
+updateGCPPubSubIntegration: {
     path: '/api.ApplicationService/UpdateGCPPubSubIntegration',
     requestStream: false,
     responseStream: false,
@@ -985,7 +985,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteGCPPubSubIntegration deletes the GCP PubSub application-integration.
-  deleteGCPPubSubIntegration: {
+deleteGCPPubSubIntegration: {
     path: '/api.ApplicationService/DeleteGCPPubSubIntegration',
     requestStream: false,
     responseStream: false,
@@ -997,7 +997,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateAWSSNSIntegration creates a AWS SNS application-integration.
-  createAWSSNSIntegration: {
+createAWSSNSIntegration: {
     path: '/api.ApplicationService/CreateAWSSNSIntegration',
     requestStream: false,
     responseStream: false,
@@ -1009,7 +1009,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetAWSSNSIntegration returns the AWS SNS application-integration.
-  getAWSSNSIntegration: {
+getAWSSNSIntegration: {
     path: '/api.ApplicationService/GetAWSSNSIntegration',
     requestStream: false,
     responseStream: false,
@@ -1021,7 +1021,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetAWSSNSIntegrationResponse,
   },
   // UpdateAWSSNSIntegration updates the AWS SNS application-integration.
-  updateAWSSNSIntegration: {
+updateAWSSNSIntegration: {
     path: '/api.ApplicationService/UpdateAWSSNSIntegration',
     requestStream: false,
     responseStream: false,
@@ -1033,7 +1033,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteAWSSNSIntegration deletes the AWS SNS application-integration.
-  deleteAWSSNSIntegration: {
+deleteAWSSNSIntegration: {
     path: '/api.ApplicationService/DeleteAWSSNSIntegration',
     requestStream: false,
     responseStream: false,
@@ -1045,7 +1045,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreateAzureServiceBusIntegration creates an Azure Service-Bus application-integration.
-  createAzureServiceBusIntegration: {
+createAzureServiceBusIntegration: {
     path: '/api.ApplicationService/CreateAzureServiceBusIntegration',
     requestStream: false,
     responseStream: false,
@@ -1057,7 +1057,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetAzureServiceBusIntegration returns the Azure Service-Bus application-integration.
-  getAzureServiceBusIntegration: {
+getAzureServiceBusIntegration: {
     path: '/api.ApplicationService/GetAzureServiceBusIntegration',
     requestStream: false,
     responseStream: false,
@@ -1069,7 +1069,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetAzureServiceBusIntegrationResponse,
   },
   // UpdateAzureServiceBusIntegration updates the Azure Service-Bus application-integration.
-  updateAzureServiceBusIntegration: {
+updateAzureServiceBusIntegration: {
     path: '/api.ApplicationService/UpdateAzureServiceBusIntegration',
     requestStream: false,
     responseStream: false,
@@ -1081,7 +1081,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeleteAzureServiceBusIntegration deletes the Azure Service-Bus application-integration.
-  deleteAzureServiceBusIntegration: {
+deleteAzureServiceBusIntegration: {
     path: '/api.ApplicationService/DeleteAzureServiceBusIntegration',
     requestStream: false,
     responseStream: false,
@@ -1093,7 +1093,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // CreatePilotThingsIntegration creates an Pilot Things application-integration.
-  createPilotThingsIntegration: {
+createPilotThingsIntegration: {
     path: '/api.ApplicationService/CreatePilotThingsIntegration',
     requestStream: false,
     responseStream: false,
@@ -1105,7 +1105,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // GetPilotThingsIntegration returns the Pilot Things application-integration.
-  getPilotThingsIntegration: {
+getPilotThingsIntegration: {
     path: '/api.ApplicationService/GetPilotThingsIntegration',
     requestStream: false,
     responseStream: false,
@@ -1117,7 +1117,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_GetPilotThingsIntegrationResponse,
   },
   // UpdatePilotThingsIntegration updates the Pilot Things application-integration.
-  updatePilotThingsIntegration: {
+updatePilotThingsIntegration: {
     path: '/api.ApplicationService/UpdatePilotThingsIntegration',
     requestStream: false,
     responseStream: false,
@@ -1129,7 +1129,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // DeletePilotThingsIntegration deletes the Pilot Things application-integration.
-  deletePilotThingsIntegration: {
+deletePilotThingsIntegration: {
     path: '/api.ApplicationService/DeletePilotThingsIntegration',
     requestStream: false,
     responseStream: false,
@@ -1141,7 +1141,7 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // ListIntegrations lists all configured integrations.
-  listIntegrations: {
+listIntegrations: {
     path: '/api.ApplicationService/ListIntegrations',
     requestStream: false,
     responseStream: false,
@@ -1153,8 +1153,8 @@ var ApplicationServiceService = exports.ApplicationServiceService = {
     responseDeserialize: deserialize_api_ListIntegrationResponse,
   },
   // GenerateMQTTIntegrationClientCertificate generates an application ID specific TLS certificate
-  // to connect to the MQTT broker.
-  generateMQTTIntegrationClientCertificate: {
+// to connect to the MQTT broker.
+generateMQTTIntegrationClientCertificate: {
     path: '/api.ApplicationService/GenerateMQTTIntegrationClientCertificate',
     requestStream: false,
     responseStream: false,

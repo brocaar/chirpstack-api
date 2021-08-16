@@ -93,6 +93,9 @@ export class Deployment extends jspb.Message {
   getFragmentationDescriptor_asB64(): string;
   setFragmentationDescriptor(value: Uint8Array | string): void;
 
+  getRequestFragmentationSessionStatus(): RequestFragmentationSessionStatusMap[keyof RequestFragmentationSessionStatusMap];
+  setRequestFragmentationSessionStatus(value: RequestFragmentationSessionStatusMap[keyof RequestFragmentationSessionStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Deployment.AsObject;
   static toObject(includeInstance: boolean, msg: Deployment): Deployment.AsObject;
@@ -122,6 +125,7 @@ export namespace Deployment {
     fragmentationMatrix: number,
     fragmentationBlockAckDelay: number,
     fragmentationDescriptor: Uint8Array | string,
+    requestFragmentationSessionStatus: RequestFragmentationSessionStatusMap[keyof RequestFragmentationSessionStatusMap],
   }
 }
 
@@ -402,4 +406,12 @@ export interface MulticastGroupTypeMap {
 }
 
 export const MulticastGroupType: MulticastGroupTypeMap;
+
+export interface RequestFragmentationSessionStatusMap {
+  AFTER_FRAGMENT_ENQUEUE: 0;
+  AFTER_SESSION_TIMEOUT: 1;
+  NO_REQUEST: 2;
+}
+
+export const RequestFragmentationSessionStatus: RequestFragmentationSessionStatusMap;
 

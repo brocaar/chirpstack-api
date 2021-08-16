@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\030io.chirpstack.api.commonB\013CommonProtoP\001Z.github.com/brocaar/chirpstack-api/go/v3/common',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"chirpstack-api/common/common.proto\x12\x06\x63ommon\"1\n\x0bKeyEnvelope\x12\x11\n\tkek_label\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x65s_key\x18\x02 \x01(\x0c\"{\n\x08Location\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x01\x12&\n\x06source\x18\x04 \x01(\x0e\x32\x16.common.LocationSource\x12\x10\n\x08\x61\x63\x63uracy\x18\x05 \x01(\r*\x1f\n\nModulation\x12\x08\n\x04LORA\x10\x00\x12\x07\n\x03\x46SK\x10\x01*v\n\x06Region\x12\t\n\x05\x45U868\x10\x00\x12\t\n\x05US915\x10\x02\x12\t\n\x05\x43N779\x10\x03\x12\t\n\x05\x45U433\x10\x04\x12\t\n\x05\x41U915\x10\x05\x12\t\n\x05\x43N470\x10\x06\x12\t\n\x05\x41S923\x10\x07\x12\t\n\x05KR920\x10\x08\x12\t\n\x05IN865\x10\t\x12\t\n\x05RU864\x10\n*\x8e\x01\n\x0eLocationSource\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03GPS\x10\x01\x12\n\n\x06\x43ONFIG\x10\x02\x12\x15\n\x11GEO_RESOLVER_TDOA\x10\x03\x12\x15\n\x11GEO_RESOLVER_RSSI\x10\x04\x12\x15\n\x11GEO_RESOLVER_GNSS\x10\x05\x12\x15\n\x11GEO_RESOLVER_WIFI\x10\x06\x42Y\n\x18io.chirpstack.api.commonB\x0b\x43ommonProtoP\x01Z.github.com/brocaar/chirpstack-api/go/v3/commonb\x06proto3'
+  serialized_pb=b'\n\"chirpstack-api/common/common.proto\x12\x06\x63ommon\"1\n\x0bKeyEnvelope\x12\x11\n\tkek_label\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x65s_key\x18\x02 \x01(\x0c\"{\n\x08Location\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\x03 \x01(\x01\x12&\n\x06source\x18\x04 \x01(\x0e\x32\x16.common.LocationSource\x12\x10\n\x08\x61\x63\x63uracy\x18\x05 \x01(\r*,\n\nModulation\x12\x08\n\x04LORA\x10\x00\x12\x07\n\x03\x46SK\x10\x01\x12\x0b\n\x07LR_FHSS\x10\x02*\xaa\x01\n\x06Region\x12\t\n\x05\x45U868\x10\x00\x12\t\n\x05US915\x10\x02\x12\t\n\x05\x43N779\x10\x03\x12\t\n\x05\x45U433\x10\x04\x12\t\n\x05\x41U915\x10\x05\x12\t\n\x05\x43N470\x10\x06\x12\t\n\x05\x41S923\x10\x07\x12\x0b\n\x07\x41S923_2\x10\x0c\x12\x0b\n\x07\x41S923_3\x10\r\x12\x0b\n\x07\x41S923_4\x10\x0e\x12\t\n\x05KR920\x10\x08\x12\t\n\x05IN865\x10\t\x12\t\n\x05RU864\x10\n\x12\x0b\n\x07ISM2400\x10\x0b*\xa8\x01\n\x05MType\x12\x0f\n\x0bJoinRequest\x10\x00\x12\x0e\n\nJoinAccept\x10\x01\x12\x15\n\x11UnconfirmedDataUp\x10\x02\x12\x17\n\x13UnconfirmedDataDown\x10\x03\x12\x13\n\x0f\x43onfirmedDataUp\x10\x04\x12\x15\n\x11\x43onfirmedDataDown\x10\x05\x12\x11\n\rRejoinRequest\x10\x06\x12\x0f\n\x0bProprietary\x10\x07*\x8e\x01\n\x0eLocationSource\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03GPS\x10\x01\x12\n\n\x06\x43ONFIG\x10\x02\x12\x15\n\x11GEO_RESOLVER_TDOA\x10\x03\x12\x15\n\x11GEO_RESOLVER_RSSI\x10\x04\x12\x15\n\x11GEO_RESOLVER_GNSS\x10\x05\x12\x15\n\x11GEO_RESOLVER_WIFI\x10\x06\x42Y\n\x18io.chirpstack.api.commonB\x0b\x43ommonProtoP\x01Z.github.com/brocaar/chirpstack-api/go/v3/commonb\x06proto3'
 )
 
 _MODULATION = _descriptor.EnumDescriptor(
@@ -40,11 +40,16 @@ _MODULATION = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LR_FHSS', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=222,
-  serialized_end=253,
+  serialized_end=266,
 )
 _sym_db.RegisterEnumDescriptor(_MODULATION)
 
@@ -92,29 +97,105 @@ _REGION = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='KR920', index=7, number=8,
+      name='AS923_2', index=7, number=12,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='IN865', index=8, number=9,
+      name='AS923_3', index=8, number=13,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='RU864', index=9, number=10,
+      name='AS923_4', index=9, number=14,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='KR920', index=10, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='IN865', index=11, number=9,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RU864', index=12, number=10,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ISM2400', index=13, number=11,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=255,
-  serialized_end=373,
+  serialized_start=269,
+  serialized_end=439,
 )
 _sym_db.RegisterEnumDescriptor(_REGION)
 
 Region = enum_type_wrapper.EnumTypeWrapper(_REGION)
+_MTYPE = _descriptor.EnumDescriptor(
+  name='MType',
+  full_name='common.MType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='JoinRequest', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JoinAccept', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UnconfirmedDataUp', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UnconfirmedDataDown', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ConfirmedDataUp', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ConfirmedDataDown', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RejoinRequest', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Proprietary', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=442,
+  serialized_end=610,
+)
+_sym_db.RegisterEnumDescriptor(_MTYPE)
+
+MType = enum_type_wrapper.EnumTypeWrapper(_MTYPE)
 _LOCATIONSOURCE = _descriptor.EnumDescriptor(
   name='LocationSource',
   full_name='common.LocationSource',
@@ -160,14 +241,15 @@ _LOCATIONSOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=376,
-  serialized_end=518,
+  serialized_start=613,
+  serialized_end=755,
 )
 _sym_db.RegisterEnumDescriptor(_LOCATIONSOURCE)
 
 LocationSource = enum_type_wrapper.EnumTypeWrapper(_LOCATIONSOURCE)
 LORA = 0
 FSK = 1
+LR_FHSS = 2
 EU868 = 0
 US915 = 2
 CN779 = 3
@@ -175,9 +257,21 @@ EU433 = 4
 AU915 = 5
 CN470 = 6
 AS923 = 7
+AS923_2 = 12
+AS923_3 = 13
+AS923_4 = 14
 KR920 = 8
 IN865 = 9
 RU864 = 10
+ISM2400 = 11
+JoinRequest = 0
+JoinAccept = 1
+UnconfirmedDataUp = 2
+UnconfirmedDataDown = 3
+ConfirmedDataUp = 4
+ConfirmedDataDown = 5
+RejoinRequest = 6
+Proprietary = 7
 UNKNOWN = 0
 GPS = 1
 CONFIG = 2
@@ -291,6 +385,7 @@ DESCRIPTOR.message_types_by_name['KeyEnvelope'] = _KEYENVELOPE
 DESCRIPTOR.message_types_by_name['Location'] = _LOCATION
 DESCRIPTOR.enum_types_by_name['Modulation'] = _MODULATION
 DESCRIPTOR.enum_types_by_name['Region'] = _REGION
+DESCRIPTOR.enum_types_by_name['MType'] = _MTYPE
 DESCRIPTOR.enum_types_by_name['LocationSource'] = _LOCATIONSOURCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

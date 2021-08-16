@@ -18,6 +18,15 @@ interface INetworkServerServiceService extends grpc.ServiceDefinition<grpc.Untyp
 
 export const NetworkServerServiceService: INetworkServerServiceService;
 
+export interface INetworkServerServiceServer extends grpc.UntypedServiceImplementation {
+  create: grpc.handleUnaryCall<as_external_api_networkServer_pb.CreateNetworkServerRequest, as_external_api_networkServer_pb.CreateNetworkServerResponse>;
+  get: grpc.handleUnaryCall<as_external_api_networkServer_pb.GetNetworkServerRequest, as_external_api_networkServer_pb.GetNetworkServerResponse>;
+  update: grpc.handleUnaryCall<as_external_api_networkServer_pb.UpdateNetworkServerRequest, google_protobuf_empty_pb.Empty>;
+  delete: grpc.handleUnaryCall<as_external_api_networkServer_pb.DeleteNetworkServerRequest, google_protobuf_empty_pb.Empty>;
+  list: grpc.handleUnaryCall<as_external_api_networkServer_pb.ListNetworkServerRequest, as_external_api_networkServer_pb.ListNetworkServerResponse>;
+  getADRAlgorithms: grpc.handleUnaryCall<as_external_api_networkServer_pb.GetADRAlgorithmsRequest, as_external_api_networkServer_pb.GetADRAlgorithmsResponse>;
+}
+
 export class NetworkServerServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   create(argument: as_external_api_networkServer_pb.CreateNetworkServerRequest, callback: grpc.requestCallback<as_external_api_networkServer_pb.CreateNetworkServerResponse>): grpc.ClientUnaryCall;

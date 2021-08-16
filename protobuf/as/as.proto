@@ -38,6 +38,16 @@ service ApplicationServerService {
 
     // SetDeviceLocation updates the device-location for a device.
     rpc SetDeviceLocation(SetDeviceLocationRequest) returns (google.protobuf.Empty) {}
+
+    // ReEncryptDeviceQueueItems requests the application-server to re-encrypt
+    // the given payload items using the new parameters. This request is
+    // for example triggered when the associated frame-counter of a downlink
+    // payload will be used by a mac-layer only payload, e.g. when the NS has
+    // mac-commands (or ACKs) to send to the device and combining this with
+    // an application-layer payload would exceed the max. payload size.
+    // Note there is no requirement that the number of returned items must be
+    // equal to the number of requested items.
+    rpc ReEncryptDeviceQueueItems(ReEncryptDeviceQueueItemsRequest) returns (ReEncryptDeviceQueueItemsResponse) {}
 }
 
 enum RXWindow {
@@ -220,6 +230,21 @@ message HandleGatewayStatsRequest {
 
     // Gateway metadata.
     map<string, string> metadata = 9;
+
+    // Tx packets per frequency.
+    map<uint32, uint32> tx_packets_per_frequency = 10;
+
+    // Rx packets per frequency.
+    map<uint32, uint32> rx_packets_per_frequency = 11;
+
+    // Tx packets per DR.
+    map<uint32, uint32> tx_packets_per_dr = 12;
+
+    // Rx packets per DR.
+    map<uint32, uint32> rx_packets_per_dr = 13;
+
+    // Tx packets per status.
+    map<string, uint32> tx_packets_per_status = 14;
 }
 
 message HandleTxAckRequest {
@@ -234,4 +259,54 @@ message HandleTxAckRequest {
 
     // TXInfo contains the TX related meta-data.
     gw.DownlinkTXInfo tx_info = 4;
+}
+
+message ReEncryptDeviceQueueItemsRequest {
+    // DevEUI of the device.
+    bytes dev_eui = 1;
+
+    // Device addres.
+    // This is the device address which was used to encrypt the given
+    // payloads.
+    bytes dev_addr = 2;
+
+    // Downlink frame-counter to start with.
+    // The application-server must use this value when encrypting the first
+    // item, and increment it for each successive item.
+    uint32 f_cnt_start = 3;
+
+    // Items to re-encrypt.
+    repeated ReEncryptDeviceQueueItem items = 4;
+}
+
+message ReEncryptDeviceQueueItemsResponse {
+    repeated ReEncryptedDeviceQueueItem items = 1;
+}
+
+message ReEncryptDeviceQueueItem {
+    // The encrypted FRMPayload bytes.
+    bytes frm_payload = 1;
+
+    // The original FCnt of the payload.
+    uint32 f_cnt = 2;
+
+    // The FPort of the payload.
+    uint32 f_port = 3;
+
+    // Payload is of type confirmed.
+    bool confirmed = 4;
+}
+
+message ReEncryptedDeviceQueueItem {
+    // The re-encrypted FRMPayload bytes.
+    bytes frm_payload = 1;
+
+    // The new FCnt of the payload.
+    uint32 f_cnt = 2;
+
+    // The FPort of the payload.
+    uint32 f_port = 3;
+
+    // Payload is of type confirmed.
+    bool confirmed = 4;
 }

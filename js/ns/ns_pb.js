@@ -11607,7 +11607,11 @@ proto.ns.UplinkFrameLog.toObject = function(includeInstance, msg) {
     phyPayload: msg.getPhyPayload_asB64(),
     txInfo: (f = msg.getTxInfo()) && gw_gw_pb.UplinkTXInfo.toObject(includeInstance, f),
     rxInfoList: jspb.Message.toObjectList(msg.getRxInfoList(),
-    gw_gw_pb.UplinkRXInfo.toObject, includeInstance)
+    gw_gw_pb.UplinkRXInfo.toObject, includeInstance),
+    mType: msg.getMType(),
+    devAddr: msg.getDevAddr_asB64(),
+    devEui: msg.getDevEui_asB64(),
+    publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11658,6 +11662,23 @@ proto.ns.UplinkFrameLog.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,gw_gw_pb.UplinkRXInfo.deserializeBinaryFromReader);
       msg.getRxInfoList().push(value);
       msg.setRxInfoList(msg.getRxInfoList());
+      break;
+    case 4:
+      var value = /** @type {!proto.common.MType} */ (reader.readEnum());
+      msg.setMType(value);
+      break;
+    case 5:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevAddr(value);
+      break;
+    case 6:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevEui(value);
+      break;
+    case 7:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPublishedAt(value);
       break;
     default:
       reader.skipField();
@@ -11718,6 +11739,35 @@ proto.ns.UplinkFrameLog.prototype.serializeBinaryToWriter = function (writer) {
       3,
       f,
       gw_gw_pb.UplinkRXInfo.serializeBinaryToWriter
+    );
+  }
+  f = this.getMType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = this.getDevAddr_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      5,
+      f
+    );
+  }
+  f = this.getDevEui_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      6,
+      f
+    );
+  }
+  f = this.getPublishedAt();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -11824,6 +11874,129 @@ proto.ns.UplinkFrameLog.prototype.clearRxInfoList = function() {
 };
 
 
+/**
+ * optional common.MType m_type = 4;
+ * @return {!proto.common.MType}
+ */
+proto.ns.UplinkFrameLog.prototype.getMType = function() {
+  return /** @type {!proto.common.MType} */ (jspb.Message.getFieldProto3(this, 4, 0));
+};
+
+
+/** @param {!proto.common.MType} value  */
+proto.ns.UplinkFrameLog.prototype.setMType = function(value) {
+  jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * optional bytes dev_addr = 5;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.UplinkFrameLog.prototype.getDevAddr = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 5, ""));
+};
+
+
+/**
+ * optional bytes dev_addr = 5;
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {string}
+ */
+proto.ns.UplinkFrameLog.prototype.getDevAddr_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevAddr()));
+};
+
+
+/**
+ * optional bytes dev_addr = 5;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {!Uint8Array}
+ */
+proto.ns.UplinkFrameLog.prototype.getDevAddr_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevAddr()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.UplinkFrameLog.prototype.setDevAddr = function(value) {
+  jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * optional bytes dev_eui = 6;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.UplinkFrameLog.prototype.getDevEui = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+};
+
+
+/**
+ * optional bytes dev_eui = 6;
+ * This is a type-conversion wrapper around `getDevEui()`
+ * @return {string}
+ */
+proto.ns.UplinkFrameLog.prototype.getDevEui_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevEui()));
+};
+
+
+/**
+ * optional bytes dev_eui = 6;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevEui()`
+ * @return {!Uint8Array}
+ */
+proto.ns.UplinkFrameLog.prototype.getDevEui_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevEui()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.UplinkFrameLog.prototype.setDevEui = function(value) {
+  jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp published_at = 7;
+ * @return {proto.google.protobuf.Timestamp}
+ */
+proto.ns.UplinkFrameLog.prototype.getPublishedAt = function() {
+  return /** @type{proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+};
+
+
+/** @param {proto.google.protobuf.Timestamp|undefined} value  */
+proto.ns.UplinkFrameLog.prototype.setPublishedAt = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+proto.ns.UplinkFrameLog.prototype.clearPublishedAt = function() {
+  this.setPublishedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ns.UplinkFrameLog.prototype.hasPublishedAt = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -11874,7 +12047,11 @@ proto.ns.DownlinkFrameLog.toObject = function(includeInstance, msg) {
     txInfo: (f = msg.getTxInfo()) && gw_gw_pb.DownlinkTXInfo.toObject(includeInstance, f),
     token: msg.getToken(),
     downlinkId: msg.getDownlinkId_asB64(),
-    gatewayId: msg.getGatewayId_asB64()
+    gatewayId: msg.getGatewayId_asB64(),
+    mType: msg.getMType(),
+    devAddr: msg.getDevAddr_asB64(),
+    devEui: msg.getDevEui_asB64(),
+    publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11931,6 +12108,23 @@ proto.ns.DownlinkFrameLog.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setGatewayId(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.common.MType} */ (reader.readEnum());
+      msg.setMType(value);
+      break;
+    case 7:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevAddr(value);
+      break;
+    case 8:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevEui(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPublishedAt(value);
       break;
     default:
       reader.skipField();
@@ -12004,6 +12198,35 @@ proto.ns.DownlinkFrameLog.prototype.serializeBinaryToWriter = function (writer) 
     writer.writeBytes(
       5,
       f
+    );
+  }
+  f = this.getMType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
+      f
+    );
+  }
+  f = this.getDevAddr_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      7,
+      f
+    );
+  }
+  f = this.getDevEui_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      8,
+      f
+    );
+  }
+  f = this.getPublishedAt();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -12177,6 +12400,129 @@ proto.ns.DownlinkFrameLog.prototype.getGatewayId_asU8 = function() {
 /** @param {!(string|Uint8Array)} value  */
 proto.ns.DownlinkFrameLog.prototype.setGatewayId = function(value) {
   jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * optional common.MType m_type = 6;
+ * @return {!proto.common.MType}
+ */
+proto.ns.DownlinkFrameLog.prototype.getMType = function() {
+  return /** @type {!proto.common.MType} */ (jspb.Message.getFieldProto3(this, 6, 0));
+};
+
+
+/** @param {!proto.common.MType} value  */
+proto.ns.DownlinkFrameLog.prototype.setMType = function(value) {
+  jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * optional bytes dev_addr = 7;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.DownlinkFrameLog.prototype.getDevAddr = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+};
+
+
+/**
+ * optional bytes dev_addr = 7;
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {string}
+ */
+proto.ns.DownlinkFrameLog.prototype.getDevAddr_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevAddr()));
+};
+
+
+/**
+ * optional bytes dev_addr = 7;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {!Uint8Array}
+ */
+proto.ns.DownlinkFrameLog.prototype.getDevAddr_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevAddr()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.DownlinkFrameLog.prototype.setDevAddr = function(value) {
+  jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * optional bytes dev_eui = 8;
+ * @return {!(string|Uint8Array)}
+ */
+proto.ns.DownlinkFrameLog.prototype.getDevEui = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 8, ""));
+};
+
+
+/**
+ * optional bytes dev_eui = 8;
+ * This is a type-conversion wrapper around `getDevEui()`
+ * @return {string}
+ */
+proto.ns.DownlinkFrameLog.prototype.getDevEui_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevEui()));
+};
+
+
+/**
+ * optional bytes dev_eui = 8;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevEui()`
+ * @return {!Uint8Array}
+ */
+proto.ns.DownlinkFrameLog.prototype.getDevEui_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevEui()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.ns.DownlinkFrameLog.prototype.setDevEui = function(value) {
+  jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp published_at = 9;
+ * @return {proto.google.protobuf.Timestamp}
+ */
+proto.ns.DownlinkFrameLog.prototype.getPublishedAt = function() {
+  return /** @type{proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/** @param {proto.google.protobuf.Timestamp|undefined} value  */
+proto.ns.DownlinkFrameLog.prototype.setPublishedAt = function(value) {
+  jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+proto.ns.DownlinkFrameLog.prototype.clearPublishedAt = function() {
+  this.setPublishedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ns.DownlinkFrameLog.prototype.hasPublishedAt = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

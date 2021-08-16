@@ -13,6 +13,9 @@ enum Modulation {
 
     // FSK
     FSK = 1;
+
+    // LR-FHSS
+    LR_FHSS = 2;
 }
 
 enum Region {
@@ -37,6 +40,15 @@ enum Region {
     // AS923
     AS923 = 7;
 
+    // AS923 with -1.80 MHz frequency offset
+    AS923_2 = 12;
+
+    // AS923 with -6.60 MHz frequency offset
+    AS923_3 = 13;
+
+    // AS923 with -5.90 MHz frequency offset
+    AS923_4 = 14;
+
     // KR920
     KR920 = 8;
 
@@ -45,6 +57,35 @@ enum Region {
 
     // RU864
     RU864 = 10;
+
+    // ISM2400 (LoRaWAN 2.4 GHz)
+    ISM2400 = 11;
+}
+
+enum MType {
+    // JoinRequest.
+    JoinRequest = 0;
+
+    // JoinAccept.
+    JoinAccept = 1;
+    
+    // UnconfirmedDataUp.
+    UnconfirmedDataUp = 2;
+
+    // UnconfirmedDataDown.
+    UnconfirmedDataDown = 3;
+
+    // ConfirmedDataUp.
+    ConfirmedDataUp = 4;
+    
+    // ConfirmedDataDown.
+    ConfirmedDataDown = 5;
+
+    // RejoinRequest.
+    RejoinRequest = 6;
+
+    // Proprietary.
+    Proprietary = 7;
 }
 
 

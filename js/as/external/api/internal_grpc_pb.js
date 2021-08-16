@@ -210,7 +210,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // InternalService is the service providing API endpoints for internal usage.
 var InternalServiceService = exports.InternalServiceService = {
   // Log in a user
-  login: {
+login: {
     path: '/api.InternalService/Login',
     requestStream: false,
     responseStream: false,
@@ -222,7 +222,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_LoginResponse,
   },
   // Get the current user's profile
-  profile: {
+profile: {
     path: '/api.InternalService/Profile',
     requestStream: false,
     responseStream: false,
@@ -234,7 +234,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_ProfileResponse,
   },
   // Perform a global search.
-  globalSearch: {
+globalSearch: {
     path: '/api.InternalService/GlobalSearch',
     requestStream: false,
     responseStream: false,
@@ -246,7 +246,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_GlobalSearchResponse,
   },
   // CreateAPIKey creates the given API key.
-  createAPIKey: {
+createAPIKey: {
     path: '/api.InternalService/CreateAPIKey',
     requestStream: false,
     responseStream: false,
@@ -258,7 +258,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_CreateAPIKeyResponse,
   },
   // DeleteAPIKey deletes the API key.
-  deleteAPIKey: {
+deleteAPIKey: {
     path: '/api.InternalService/DeleteAPIKey',
     requestStream: false,
     responseStream: false,
@@ -270,7 +270,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // ListAPIKeys lists the available API keys.
-  listAPIKeys: {
+listAPIKeys: {
     path: '/api.InternalService/ListAPIKeys',
     requestStream: false,
     responseStream: false,
@@ -282,7 +282,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_ListAPIKeysResponse,
   },
   // Get the global settings.
-  settings: {
+settings: {
     path: '/api.InternalService/Settings',
     requestStream: false,
     responseStream: false,
@@ -294,7 +294,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_SettingsResponse,
   },
   // OpenID Connect login.
-  openIDConnectLogin: {
+openIDConnectLogin: {
     path: '/api.InternalService/OpenIDConnectLogin',
     requestStream: false,
     responseStream: false,
@@ -306,7 +306,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_OpenIDConnectLoginResponse,
   },
   // GetDevicesSummary returns an aggregated summary of the devices.
-  getDevicesSummary: {
+getDevicesSummary: {
     path: '/api.InternalService/GetDevicesSummary',
     requestStream: false,
     responseStream: false,
@@ -318,7 +318,7 @@ var InternalServiceService = exports.InternalServiceService = {
     responseDeserialize: deserialize_api_GetDevicesSummaryResponse,
   },
   // GetGatewaysSummary returns an aggregated summary of the gateways.
-  getGatewaysSummary: {
+getGatewaysSummary: {
     path: '/api.InternalService/GetGatewaysSummary',
     requestStream: false,
     responseStream: false,

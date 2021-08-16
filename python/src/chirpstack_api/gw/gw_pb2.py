@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.chirpstack.api.gwB\014GatewayProtoP\001Z*github.com/brocaar/chirpstack-api/go/v3/gw',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x63hirpstack-api/gw/gw.proto\x12\x02gw\x1a\"chirpstack-api/common/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"\xde\x01\n\x0cUplinkTXInfo\x12\x11\n\tfrequency\x18\x01 \x01(\r\x12&\n\nmodulation\x18\x02 \x01(\x0e\x32\x12.common.Modulation\x12J\n\x14lora_modulation_info\x18\x03 \x01(\x0b\x32\x16.gw.LoRaModulationInfoH\x00R\x12loRaModulationInfo\x12\x34\n\x13\x66sk_modulation_info\x18\x04 \x01(\x0b\x32\x15.gw.FSKModulationInfoH\x00\x42\x11\n\x0fmodulation_info\"t\n\x12LoRaModulationInfo\x12\x11\n\tbandwidth\x18\x01 \x01(\r\x12\x18\n\x10spreading_factor\x18\x02 \x01(\r\x12\x11\n\tcode_rate\x18\x03 \x01(\t\x12\x1e\n\x16polarization_inversion\x18\x04 \x01(\x08\"B\n\x11\x46SKModulationInfo\x12\x1b\n\x13\x66requency_deviation\x18\x01 \x01(\r\x12\x10\n\x08\x64\x61tarate\x18\x02 \x01(\r\"k\n\x16\x45ncryptedFineTimestamp\x12\x15\n\raes_key_index\x18\x01 \x01(\r\x12!\n\x0c\x65ncrypted_ns\x18\x02 \x01(\x0cR\x0b\x65ncryptedNS\x12\x17\n\x07\x66pga_id\x18\x03 \x01(\x0cR\x06\x66pgaID\">\n\x12PlainFineTimestamp\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa9\x03\n\x0cGatewayStats\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\n\n\x02ip\x18\t \x01(\t\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\"\n\x08location\x18\x03 \x01(\x0b\x32\x10.common.Location\x12\x16\n\x0e\x63onfig_version\x18\x04 \x01(\t\x12\x1b\n\x13rx_packets_received\x18\x05 \x01(\r\x12\x33\n\x16rx_packets_received_ok\x18\x06 \x01(\rR\x13rxPacketsReceivedOK\x12\x1b\n\x13tx_packets_received\x18\x07 \x01(\r\x12\x1a\n\x12tx_packets_emitted\x18\x08 \x01(\r\x12\x31\n\tmeta_data\x18\n \x03(\x0b\x32\x1e.gw.GatewayStats.MetaDataEntry\x12\x19\n\x08stats_id\x18\x0b \x01(\x0cR\x07statsID\x1a/\n\rMetaDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcd\x04\n\x0cUplinkRXInfo\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12J\n\x14time_since_gps_epoch\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationR\x11timeSinceGPSEpoch\x12\x0c\n\x04rssi\x18\x05 \x01(\x05\x12\x19\n\x08lora_snr\x18\x06 \x01(\x01R\x07loRaSNR\x12\x0f\n\x07\x63hannel\x18\x07 \x01(\r\x12\x10\n\x08rf_chain\x18\x08 \x01(\r\x12\r\n\x05\x62oard\x18\t \x01(\r\x12\x0f\n\x07\x61ntenna\x18\n \x01(\r\x12\"\n\x08location\x18\x0b \x01(\x0b\x32\x10.common.Location\x12\x32\n\x13\x66ine_timestamp_type\x18\x0c \x01(\x0e\x32\x15.gw.FineTimestampType\x12>\n\x18\x65ncrypted_fine_timestamp\x18\r \x01(\x0b\x32\x1a.gw.EncryptedFineTimestampH\x00\x12\x36\n\x14plain_fine_timestamp\x18\x0e \x01(\x0b\x32\x16.gw.PlainFineTimestampH\x00\x12\x0f\n\x07\x63ontext\x18\x0f \x01(\x0c\x12\x1b\n\tuplink_id\x18\x10 \x01(\x0cR\x08uplinkID\x12,\n\ncrc_status\x18\x11 \x01(\x0e\x32\r.gw.CRCStatusR\tcrcStatusB\x10\n\x0e\x66ine_timestamp\"\x9b\x04\n\x0e\x44ownlinkTXInfo\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x11\n\tfrequency\x18\x05 \x01(\r\x12\r\n\x05power\x18\x06 \x01(\x05\x12&\n\nmodulation\x18\x07 \x01(\x0e\x32\x12.common.Modulation\x12J\n\x14lora_modulation_info\x18\x08 \x01(\x0b\x32\x16.gw.LoRaModulationInfoH\x00R\x12loRaModulationInfo\x12\x34\n\x13\x66sk_modulation_info\x18\t \x01(\x0b\x32\x15.gw.FSKModulationInfoH\x00\x12\r\n\x05\x62oard\x18\n \x01(\r\x12\x0f\n\x07\x61ntenna\x18\x0b \x01(\r\x12\"\n\x06timing\x18\x0c \x01(\x0e\x32\x12.gw.DownlinkTiming\x12<\n\x17immediately_timing_info\x18\r \x01(\x0b\x32\x19.gw.ImmediatelyTimingInfoH\x01\x12\x30\n\x11\x64\x65lay_timing_info\x18\x0e \x01(\x0b\x32\x13.gw.DelayTimingInfoH\x01\x12\x37\n\x15gps_epoch_timing_info\x18\x0f \x01(\x0b\x32\x16.gw.GPSEpochTimingInfoH\x01\x12\x0f\n\x07\x63ontext\x18\x10 \x01(\x0c\x42\x11\n\x0fmodulation_infoB\r\n\x0btiming_info\"\x17\n\x15ImmediatelyTimingInfo\";\n\x0f\x44\x65layTimingInfo\x12(\n\x05\x64\x65lay\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"`\n\x12GPSEpochTimingInfo\x12J\n\x14time_since_gps_epoch\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationR\x11timeSinceGPSEpoch\"h\n\x0bUplinkFrame\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x01(\x0b\x32\x10.gw.UplinkRXInfo\"k\n\x0eUplinkFrameSet\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"\xbe\x01\n\rDownlinkFrame\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12\r\n\x05token\x18\x03 \x01(\r\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12$\n\x05items\x18\x05 \x03(\x0b\x32\x15.gw.DownlinkFrameItem\x12\x1d\n\ngateway_id\x18\x06 \x01(\x0cR\tgatewayID\"M\n\x11\x44ownlinkFrameItem\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\"\x93\x01\n\rDownlinkTXAck\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\r\n\x05token\x18\x02 \x01(\r\x12\r\n\x05\x65rror\x18\x03 \x01(\t\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12$\n\x05items\x18\x05 \x03(\x0b\x32\x15.gw.DownlinkTXAckItem\"4\n\x11\x44ownlinkTXAckItem\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.gw.TxAckStatus\"\xa5\x01\n\x14GatewayConfiguration\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x0f\n\x07version\x18\x02 \x01(\t\x12*\n\x08\x63hannels\x18\x03 \x03(\x0b\x32\x18.gw.ChannelConfiguration\x12\x31\n\x0estats_interval\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"\x96\x02\n\x14\x43hannelConfiguration\x12\x11\n\tfrequency\x18\x01 \x01(\r\x12&\n\nmodulation\x18\x02 \x01(\x0e\x32\x12.common.Modulation\x12P\n\x16lora_modulation_config\x18\x03 \x01(\x0b\x32\x18.gw.LoRaModulationConfigH\x00R\x14loRaModulationConfig\x12\x38\n\x15\x66sk_modulation_config\x18\x04 \x01(\x0b\x32\x17.gw.FSKModulationConfigH\x00\x12\r\n\x05\x62oard\x18\x05 \x01(\r\x12\x13\n\x0b\x64\x65modulator\x18\x06 \x01(\rB\x13\n\x11modulation_config\"D\n\x14LoRaModulationConfig\x12\x11\n\tbandwidth\x18\x01 \x01(\r\x12\x19\n\x11spreading_factors\x18\x02 \x03(\r\"9\n\x13\x46SKModulationConfig\x12\x11\n\tbandwidth\x18\x01 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x02 \x01(\r\"\xeb\x01\n\x19GatewayCommandExecRequest\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\x12\x16\n\x06\x45xecId\x18\x03 \x01(\x0cR\x06\x65xecID\x12\r\n\x05stdin\x18\x04 \x01(\x0c\x12\x43\n\x0b\x65nvironment\x18\x05 \x03(\x0b\x32..gw.GatewayCommandExecRequest.EnvironmentEntry\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x83\x01\n\x1aGatewayCommandExecResponse\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x17\n\x07\x65xec_id\x18\x02 \x01(\x0cR\x06\x65xecID\x12\x0e\n\x06stdout\x18\x03 \x01(\x0c\x12\x0e\n\x06stderr\x18\x04 \x01(\x0c\x12\r\n\x05\x65rror\x18\x05 \x01(\t\"`\n\x17RawPacketForwarderEvent\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x15\n\x06raw_id\x18\x02 \x01(\x0cR\x05rawID\x12\x0f\n\x07payload\x18\x03 \x01(\x0c\"b\n\x19RawPacketForwarderCommand\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x15\n\x06raw_id\x18\x02 \x01(\x0cR\x05rawID\x12\x0f\n\x07payload\x18\x03 \x01(\x0c*;\n\x0e\x44ownlinkTiming\x12\x0f\n\x0bIMMEDIATELY\x10\x00\x12\t\n\x05\x44\x45LAY\x10\x01\x12\r\n\tGPS_EPOCH\x10\x02*7\n\x11\x46ineTimestampType\x12\x08\n\x04NONE\x10\x00\x12\r\n\tENCRYPTED\x10\x01\x12\t\n\x05PLAIN\x10\x02*0\n\tCRCStatus\x12\n\n\x06NO_CRC\x10\x00\x12\x0b\n\x07\x42\x41\x44_CRC\x10\x01\x12\n\n\x06\x43RC_OK\x10\x02*\xbc\x01\n\x0bTxAckStatus\x12\x0b\n\x07IGNORED\x10\x00\x12\x06\n\x02OK\x10\x01\x12\x0c\n\x08TOO_LATE\x10\x02\x12\r\n\tTOO_EARLY\x10\x03\x12\x14\n\x10\x43OLLISION_PACKET\x10\x04\x12\x14\n\x10\x43OLLISION_BEACON\x10\x05\x12\x0b\n\x07TX_FREQ\x10\x06\x12\x0c\n\x08TX_POWER\x10\x07\x12\x10\n\x0cGPS_UNLOCKED\x10\x08\x12\x0e\n\nQUEUE_FULL\x10\t\x12\x12\n\x0eINTERNAL_ERROR\x10\nBR\n\x14io.chirpstack.api.gwB\x0cGatewayProtoP\x01Z*github.com/brocaar/chirpstack-api/go/v3/gwb\x06proto3'
+  serialized_pb=b'\n\x1a\x63hirpstack-api/gw/gw.proto\x12\x02gw\x1a\"chirpstack-api/common/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"\xa3\x01\n\nModulation\x12,\n\x04lora\x18\x03 \x01(\x0b\x32\x16.gw.LoRaModulationInfoH\x00R\x04loRa\x12$\n\x03\x66sk\x18\x04 \x01(\x0b\x32\x15.gw.FSKModulationInfoH\x00\x12\x33\n\x07lr_fhss\x18\x05 \x01(\x0b\x32\x18.gw.LRFHSSModulationInfoH\x00R\x06lrFHSSB\x0c\n\nparameters\"\xb1\x02\n\x0cUplinkTXInfo\x12\x11\n\tfrequency\x18\x01 \x01(\r\x12&\n\nmodulation\x18\x02 \x01(\x0e\x32\x12.common.Modulation\x12J\n\x14lora_modulation_info\x18\x03 \x01(\x0b\x32\x16.gw.LoRaModulationInfoH\x00R\x12loRaModulationInfo\x12\x34\n\x13\x66sk_modulation_info\x18\x04 \x01(\x0b\x32\x15.gw.FSKModulationInfoH\x00\x12Q\n\x17lr_fhss_modulation_info\x18\x05 \x01(\x0b\x32\x18.gw.LRFHSSModulationInfoH\x00R\x14lrFHSSModulationInfoB\x11\n\x0fmodulation_info\"t\n\x12LoRaModulationInfo\x12\x11\n\tbandwidth\x18\x01 \x01(\r\x12\x18\n\x10spreading_factor\x18\x02 \x01(\r\x12\x11\n\tcode_rate\x18\x03 \x01(\t\x12\x1e\n\x16polarization_inversion\x18\x04 \x01(\x08\"B\n\x11\x46SKModulationInfo\x12\x1b\n\x13\x66requency_deviation\x18\x01 \x01(\r\x12\x10\n\x08\x64\x61tarate\x18\x02 \x01(\r\"^\n\x14LRFHSSModulationInfo\x12\x1f\n\x17operating_channel_width\x18\x01 \x01(\r\x12\x11\n\tcode_rate\x18\x02 \x01(\t\x12\x12\n\ngrid_steps\x18\x03 \x01(\r\"k\n\x16\x45ncryptedFineTimestamp\x12\x15\n\raes_key_index\x18\x01 \x01(\r\x12!\n\x0c\x65ncrypted_ns\x18\x02 \x01(\x0cR\x0b\x65ncryptedNS\x12\x17\n\x07\x66pga_id\x18\x03 \x01(\x0cR\x06\x66pgaID\">\n\x12PlainFineTimestamp\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xbd\x07\n\x0cGatewayStats\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\n\n\x02ip\x18\t \x01(\t\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\"\n\x08location\x18\x03 \x01(\x0b\x32\x10.common.Location\x12\x16\n\x0e\x63onfig_version\x18\x04 \x01(\t\x12\x1b\n\x13rx_packets_received\x18\x05 \x01(\r\x12\x33\n\x16rx_packets_received_ok\x18\x06 \x01(\rR\x13rxPacketsReceivedOK\x12\x1b\n\x13tx_packets_received\x18\x07 \x01(\r\x12\x1a\n\x12tx_packets_emitted\x18\x08 \x01(\r\x12\x31\n\tmeta_data\x18\n \x03(\x0b\x32\x1e.gw.GatewayStats.MetaDataEntry\x12\x19\n\x08stats_id\x18\x0b \x01(\x0cR\x07statsID\x12M\n\x18tx_packets_per_frequency\x18\x0c \x03(\x0b\x32+.gw.GatewayStats.TxPacketsPerFrequencyEntry\x12M\n\x18rx_packets_per_frequency\x18\r \x03(\x0b\x32+.gw.GatewayStats.RxPacketsPerFrequencyEntry\x12\x39\n\x19tx_packets_per_modulation\x18\x0e \x03(\x0b\x32\x16.gw.PerModulationCount\x12\x39\n\x19rx_packets_per_modulation\x18\x0f \x03(\x0b\x32\x16.gw.PerModulationCount\x12G\n\x15tx_packets_per_status\x18\x10 \x03(\x0b\x32(.gw.GatewayStats.TxPacketsPerStatusEntry\x1a/\n\rMetaDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a<\n\x1aTxPacketsPerFrequencyEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a<\n\x1aRxPacketsPerFrequencyEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x39\n\x17TxPacketsPerStatusEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\"G\n\x12PerModulationCount\x12\"\n\nmodulation\x18\x01 \x01(\x0b\x32\x0e.gw.Modulation\x12\r\n\x05\x63ount\x18\x02 \x01(\r\"\xcd\x04\n\x0cUplinkRXInfo\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12J\n\x14time_since_gps_epoch\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationR\x11timeSinceGPSEpoch\x12\x0c\n\x04rssi\x18\x05 \x01(\x05\x12\x19\n\x08lora_snr\x18\x06 \x01(\x01R\x07loRaSNR\x12\x0f\n\x07\x63hannel\x18\x07 \x01(\r\x12\x10\n\x08rf_chain\x18\x08 \x01(\r\x12\r\n\x05\x62oard\x18\t \x01(\r\x12\x0f\n\x07\x61ntenna\x18\n \x01(\r\x12\"\n\x08location\x18\x0b \x01(\x0b\x32\x10.common.Location\x12\x32\n\x13\x66ine_timestamp_type\x18\x0c \x01(\x0e\x32\x15.gw.FineTimestampType\x12>\n\x18\x65ncrypted_fine_timestamp\x18\r \x01(\x0b\x32\x1a.gw.EncryptedFineTimestampH\x00\x12\x36\n\x14plain_fine_timestamp\x18\x0e \x01(\x0b\x32\x16.gw.PlainFineTimestampH\x00\x12\x0f\n\x07\x63ontext\x18\x0f \x01(\x0c\x12\x1b\n\tuplink_id\x18\x10 \x01(\x0cR\x08uplinkID\x12,\n\ncrc_status\x18\x11 \x01(\x0e\x32\r.gw.CRCStatusR\tcrcStatusB\x10\n\x0e\x66ine_timestamp\"\x9b\x04\n\x0e\x44ownlinkTXInfo\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x11\n\tfrequency\x18\x05 \x01(\r\x12\r\n\x05power\x18\x06 \x01(\x05\x12&\n\nmodulation\x18\x07 \x01(\x0e\x32\x12.common.Modulation\x12J\n\x14lora_modulation_info\x18\x08 \x01(\x0b\x32\x16.gw.LoRaModulationInfoH\x00R\x12loRaModulationInfo\x12\x34\n\x13\x66sk_modulation_info\x18\t \x01(\x0b\x32\x15.gw.FSKModulationInfoH\x00\x12\r\n\x05\x62oard\x18\n \x01(\r\x12\x0f\n\x07\x61ntenna\x18\x0b \x01(\r\x12\"\n\x06timing\x18\x0c \x01(\x0e\x32\x12.gw.DownlinkTiming\x12<\n\x17immediately_timing_info\x18\r \x01(\x0b\x32\x19.gw.ImmediatelyTimingInfoH\x01\x12\x30\n\x11\x64\x65lay_timing_info\x18\x0e \x01(\x0b\x32\x13.gw.DelayTimingInfoH\x01\x12\x37\n\x15gps_epoch_timing_info\x18\x0f \x01(\x0b\x32\x16.gw.GPSEpochTimingInfoH\x01\x12\x0f\n\x07\x63ontext\x18\x10 \x01(\x0c\x42\x11\n\x0fmodulation_infoB\r\n\x0btiming_info\"\x17\n\x15ImmediatelyTimingInfo\";\n\x0f\x44\x65layTimingInfo\x12(\n\x05\x64\x65lay\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"`\n\x12GPSEpochTimingInfo\x12J\n\x14time_since_gps_epoch\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationR\x11timeSinceGPSEpoch\"h\n\x0bUplinkFrame\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x01(\x0b\x32\x10.gw.UplinkRXInfo\"k\n\x0eUplinkFrameSet\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12!\n\x07tx_info\x18\x02 \x01(\x0b\x32\x10.gw.UplinkTXInfo\x12!\n\x07rx_info\x18\x03 \x03(\x0b\x32\x10.gw.UplinkRXInfo\"\xbe\x01\n\rDownlinkFrame\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\x12\r\n\x05token\x18\x03 \x01(\r\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12$\n\x05items\x18\x05 \x03(\x0b\x32\x15.gw.DownlinkFrameItem\x12\x1d\n\ngateway_id\x18\x06 \x01(\x0cR\tgatewayID\"M\n\x11\x44ownlinkFrameItem\x12\x13\n\x0bphy_payload\x18\x01 \x01(\x0c\x12#\n\x07tx_info\x18\x02 \x01(\x0b\x32\x12.gw.DownlinkTXInfo\"\x93\x01\n\rDownlinkTXAck\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\r\n\x05token\x18\x02 \x01(\r\x12\r\n\x05\x65rror\x18\x03 \x01(\t\x12\x1f\n\x0b\x64ownlink_id\x18\x04 \x01(\x0cR\ndownlinkID\x12$\n\x05items\x18\x05 \x03(\x0b\x32\x15.gw.DownlinkTXAckItem\"4\n\x11\x44ownlinkTXAckItem\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.gw.TxAckStatus\"\xa5\x01\n\x14GatewayConfiguration\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x0f\n\x07version\x18\x02 \x01(\t\x12*\n\x08\x63hannels\x18\x03 \x03(\x0b\x32\x18.gw.ChannelConfiguration\x12\x31\n\x0estats_interval\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"\x96\x02\n\x14\x43hannelConfiguration\x12\x11\n\tfrequency\x18\x01 \x01(\r\x12&\n\nmodulation\x18\x02 \x01(\x0e\x32\x12.common.Modulation\x12P\n\x16lora_modulation_config\x18\x03 \x01(\x0b\x32\x18.gw.LoRaModulationConfigH\x00R\x14loRaModulationConfig\x12\x38\n\x15\x66sk_modulation_config\x18\x04 \x01(\x0b\x32\x17.gw.FSKModulationConfigH\x00\x12\r\n\x05\x62oard\x18\x05 \x01(\r\x12\x13\n\x0b\x64\x65modulator\x18\x06 \x01(\rB\x13\n\x11modulation_config\"D\n\x14LoRaModulationConfig\x12\x11\n\tbandwidth\x18\x01 \x01(\r\x12\x19\n\x11spreading_factors\x18\x02 \x03(\r\"9\n\x13\x46SKModulationConfig\x12\x11\n\tbandwidth\x18\x01 \x01(\r\x12\x0f\n\x07\x62itrate\x18\x02 \x01(\r\"\xeb\x01\n\x19GatewayCommandExecRequest\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\x12\x16\n\x06\x45xecId\x18\x03 \x01(\x0cR\x06\x65xecID\x12\r\n\x05stdin\x18\x04 \x01(\x0c\x12\x43\n\x0b\x65nvironment\x18\x05 \x03(\x0b\x32..gw.GatewayCommandExecRequest.EnvironmentEntry\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x83\x01\n\x1aGatewayCommandExecResponse\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x17\n\x07\x65xec_id\x18\x02 \x01(\x0cR\x06\x65xecID\x12\x0e\n\x06stdout\x18\x03 \x01(\x0c\x12\x0e\n\x06stderr\x18\x04 \x01(\x0c\x12\r\n\x05\x65rror\x18\x05 \x01(\t\"`\n\x17RawPacketForwarderEvent\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x15\n\x06raw_id\x18\x02 \x01(\x0cR\x05rawID\x12\x0f\n\x07payload\x18\x03 \x01(\x0c\"b\n\x19RawPacketForwarderCommand\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\x15\n\x06raw_id\x18\x02 \x01(\x0cR\x05rawID\x12\x0f\n\x07payload\x18\x03 \x01(\x0c\"p\n\tConnState\x12\x1d\n\ngateway_id\x18\x01 \x01(\x0cR\tgatewayID\x12\"\n\x05state\x18\x02 \x01(\x0e\x32\x13.gw.ConnState.State\" \n\x05State\x12\x0b\n\x07OFFLINE\x10\x00\x12\n\n\x06ONLINE\x10\x01*;\n\x0e\x44ownlinkTiming\x12\x0f\n\x0bIMMEDIATELY\x10\x00\x12\t\n\x05\x44\x45LAY\x10\x01\x12\r\n\tGPS_EPOCH\x10\x02*7\n\x11\x46ineTimestampType\x12\x08\n\x04NONE\x10\x00\x12\r\n\tENCRYPTED\x10\x01\x12\t\n\x05PLAIN\x10\x02*0\n\tCRCStatus\x12\n\n\x06NO_CRC\x10\x00\x12\x0b\n\x07\x42\x41\x44_CRC\x10\x01\x12\n\n\x06\x43RC_OK\x10\x02*\xbc\x01\n\x0bTxAckStatus\x12\x0b\n\x07IGNORED\x10\x00\x12\x06\n\x02OK\x10\x01\x12\x0c\n\x08TOO_LATE\x10\x02\x12\r\n\tTOO_EARLY\x10\x03\x12\x14\n\x10\x43OLLISION_PACKET\x10\x04\x12\x14\n\x10\x43OLLISION_BEACON\x10\x05\x12\x0b\n\x07TX_FREQ\x10\x06\x12\x0c\n\x08TX_POWER\x10\x07\x12\x10\n\x0cGPS_UNLOCKED\x10\x08\x12\x0e\n\nQUEUE_FULL\x10\t\x12\x12\n\x0eINTERNAL_ERROR\x10\nBR\n\x14io.chirpstack.api.gwB\x0cGatewayProtoP\x01Z*github.com/brocaar/chirpstack-api/go/v3/gwb\x06proto3'
   ,
   dependencies=[chirpstack__api_dot_common_dot_common__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -52,8 +52,8 @@ _DOWNLINKTIMING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4304,
-  serialized_end=4363,
+  serialized_start=5368,
+  serialized_end=5427,
 )
 _sym_db.RegisterEnumDescriptor(_DOWNLINKTIMING)
 
@@ -83,8 +83,8 @@ _FINETIMESTAMPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4365,
-  serialized_end=4420,
+  serialized_start=5429,
+  serialized_end=5484,
 )
 _sym_db.RegisterEnumDescriptor(_FINETIMESTAMPTYPE)
 
@@ -114,8 +114,8 @@ _CRCSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4422,
-  serialized_end=4470,
+  serialized_start=5486,
+  serialized_end=5534,
 )
 _sym_db.RegisterEnumDescriptor(_CRCSTATUS)
 
@@ -185,8 +185,8 @@ _TXACKSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4473,
-  serialized_end=4661,
+  serialized_start=5537,
+  serialized_end=5725,
 )
 _sym_db.RegisterEnumDescriptor(_TXACKSTATUS)
 
@@ -212,6 +212,82 @@ GPS_UNLOCKED = 8
 QUEUE_FULL = 9
 INTERNAL_ERROR = 10
 
+
+_CONNSTATE_STATE = _descriptor.EnumDescriptor(
+  name='State',
+  full_name='gw.ConnState.State',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OFFLINE', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ONLINE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5334,
+  serialized_end=5366,
+)
+_sym_db.RegisterEnumDescriptor(_CONNSTATE_STATE)
+
+
+_MODULATION = _descriptor.Descriptor(
+  name='Modulation',
+  full_name='gw.Modulation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='lora', full_name='gw.Modulation.lora', index=0,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='loRa', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fsk', full_name='gw.Modulation.fsk', index=1,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lr_fhss', full_name='gw.Modulation.lr_fhss', index=2,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='lrFHSS', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='parameters', full_name='gw.Modulation.parameters',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=136,
+  serialized_end=299,
+)
 
 
 _UPLINKTXINFO = _descriptor.Descriptor(
@@ -250,6 +326,13 @@ _UPLINKTXINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lr_fhss_modulation_info', full_name='gw.UplinkTXInfo.lr_fhss_modulation_info', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='lrFHSSModulationInfo', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -267,8 +350,8 @@ _UPLINKTXINFO = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=136,
-  serialized_end=358,
+  serialized_start=302,
+  serialized_end=607,
 )
 
 
@@ -320,8 +403,8 @@ _LORAMODULATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=360,
-  serialized_end=476,
+  serialized_start=609,
+  serialized_end=725,
 )
 
 
@@ -359,8 +442,54 @@ _FSKMODULATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=478,
-  serialized_end=544,
+  serialized_start=727,
+  serialized_end=793,
+)
+
+
+_LRFHSSMODULATIONINFO = _descriptor.Descriptor(
+  name='LRFHSSModulationInfo',
+  full_name='gw.LRFHSSModulationInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='operating_channel_width', full_name='gw.LRFHSSModulationInfo.operating_channel_width', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='code_rate', full_name='gw.LRFHSSModulationInfo.code_rate', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='grid_steps', full_name='gw.LRFHSSModulationInfo.grid_steps', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=795,
+  serialized_end=889,
 )
 
 
@@ -405,8 +534,8 @@ _ENCRYPTEDFINETIMESTAMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=546,
-  serialized_end=653,
+  serialized_start=891,
+  serialized_end=998,
 )
 
 
@@ -437,8 +566,8 @@ _PLAINFINETIMESTAMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=655,
-  serialized_end=717,
+  serialized_start=1000,
+  serialized_end=1062,
 )
 
 
@@ -476,8 +605,122 @@ _GATEWAYSTATS_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1098,
-  serialized_end=1145,
+  serialized_start=1792,
+  serialized_end=1839,
+)
+
+_GATEWAYSTATS_TXPACKETSPERFREQUENCYENTRY = _descriptor.Descriptor(
+  name='TxPacketsPerFrequencyEntry',
+  full_name='gw.GatewayStats.TxPacketsPerFrequencyEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='gw.GatewayStats.TxPacketsPerFrequencyEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='gw.GatewayStats.TxPacketsPerFrequencyEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1841,
+  serialized_end=1901,
+)
+
+_GATEWAYSTATS_RXPACKETSPERFREQUENCYENTRY = _descriptor.Descriptor(
+  name='RxPacketsPerFrequencyEntry',
+  full_name='gw.GatewayStats.RxPacketsPerFrequencyEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='gw.GatewayStats.RxPacketsPerFrequencyEntry.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='gw.GatewayStats.RxPacketsPerFrequencyEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1903,
+  serialized_end=1963,
+)
+
+_GATEWAYSTATS_TXPACKETSPERSTATUSENTRY = _descriptor.Descriptor(
+  name='TxPacketsPerStatusEntry',
+  full_name='gw.GatewayStats.TxPacketsPerStatusEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='gw.GatewayStats.TxPacketsPerStatusEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='gw.GatewayStats.TxPacketsPerStatusEntry.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1965,
+  serialized_end=2022,
 )
 
 _GATEWAYSTATS = _descriptor.Descriptor(
@@ -565,10 +808,45 @@ _GATEWAYSTATS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='statsID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_packets_per_frequency', full_name='gw.GatewayStats.tx_packets_per_frequency', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets_per_frequency', full_name='gw.GatewayStats.rx_packets_per_frequency', index=12,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_packets_per_modulation', full_name='gw.GatewayStats.tx_packets_per_modulation', index=13,
+      number=14, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rx_packets_per_modulation', full_name='gw.GatewayStats.rx_packets_per_modulation', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_packets_per_status', full_name='gw.GatewayStats.tx_packets_per_status', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_GATEWAYSTATS_METADATAENTRY, ],
+  nested_types=[_GATEWAYSTATS_METADATAENTRY, _GATEWAYSTATS_TXPACKETSPERFREQUENCYENTRY, _GATEWAYSTATS_RXPACKETSPERFREQUENCYENTRY, _GATEWAYSTATS_TXPACKETSPERSTATUSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -577,8 +855,47 @@ _GATEWAYSTATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=720,
-  serialized_end=1145,
+  serialized_start=1065,
+  serialized_end=2022,
+)
+
+
+_PERMODULATIONCOUNT = _descriptor.Descriptor(
+  name='PerModulationCount',
+  full_name='gw.PerModulationCount',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='modulation', full_name='gw.PerModulationCount.modulation', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='count', full_name='gw.PerModulationCount.count', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2024,
+  serialized_end=2095,
 )
 
 
@@ -719,8 +1036,8 @@ _UPLINKRXINFO = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1148,
-  serialized_end=1737,
+  serialized_start=2098,
+  serialized_end=2687,
 )
 
 
@@ -845,8 +1162,8 @@ _DOWNLINKTXINFO = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1740,
-  serialized_end=2279,
+  serialized_start=2690,
+  serialized_end=3229,
 )
 
 
@@ -870,8 +1187,8 @@ _IMMEDIATELYTIMINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2281,
-  serialized_end=2304,
+  serialized_start=3231,
+  serialized_end=3254,
 )
 
 
@@ -902,8 +1219,8 @@ _DELAYTIMINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2306,
-  serialized_end=2365,
+  serialized_start=3256,
+  serialized_end=3315,
 )
 
 
@@ -934,8 +1251,8 @@ _GPSEPOCHTIMINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2367,
-  serialized_end=2463,
+  serialized_start=3317,
+  serialized_end=3413,
 )
 
 
@@ -980,8 +1297,8 @@ _UPLINKFRAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2465,
-  serialized_end=2569,
+  serialized_start=3415,
+  serialized_end=3519,
 )
 
 
@@ -1026,8 +1343,8 @@ _UPLINKFRAMESET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2571,
-  serialized_end=2678,
+  serialized_start=3521,
+  serialized_end=3628,
 )
 
 
@@ -1093,8 +1410,8 @@ _DOWNLINKFRAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2681,
-  serialized_end=2871,
+  serialized_start=3631,
+  serialized_end=3821,
 )
 
 
@@ -1132,8 +1449,8 @@ _DOWNLINKFRAMEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2873,
-  serialized_end=2950,
+  serialized_start=3823,
+  serialized_end=3900,
 )
 
 
@@ -1192,8 +1509,8 @@ _DOWNLINKTXACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2953,
-  serialized_end=3100,
+  serialized_start=3903,
+  serialized_end=4050,
 )
 
 
@@ -1224,8 +1541,8 @@ _DOWNLINKTXACKITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3102,
-  serialized_end=3154,
+  serialized_start=4052,
+  serialized_end=4104,
 )
 
 
@@ -1277,8 +1594,8 @@ _GATEWAYCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3157,
-  serialized_end=3322,
+  serialized_start=4107,
+  serialized_end=4272,
 )
 
 
@@ -1349,8 +1666,8 @@ _CHANNELCONFIGURATION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=3325,
-  serialized_end=3603,
+  serialized_start=4275,
+  serialized_end=4553,
 )
 
 
@@ -1388,8 +1705,8 @@ _LORAMODULATIONCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3605,
-  serialized_end=3673,
+  serialized_start=4555,
+  serialized_end=4623,
 )
 
 
@@ -1427,8 +1744,8 @@ _FSKMODULATIONCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3675,
-  serialized_end=3732,
+  serialized_start=4625,
+  serialized_end=4682,
 )
 
 
@@ -1466,8 +1783,8 @@ _GATEWAYCOMMANDEXECREQUEST_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3920,
-  serialized_end=3970,
+  serialized_start=4870,
+  serialized_end=4920,
 )
 
 _GATEWAYCOMMANDEXECREQUEST = _descriptor.Descriptor(
@@ -1525,8 +1842,8 @@ _GATEWAYCOMMANDEXECREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3735,
-  serialized_end=3970,
+  serialized_start=4685,
+  serialized_end=4920,
 )
 
 
@@ -1585,8 +1902,8 @@ _GATEWAYCOMMANDEXECRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3973,
-  serialized_end=4104,
+  serialized_start=4923,
+  serialized_end=5054,
 )
 
 
@@ -1631,8 +1948,8 @@ _RAWPACKETFORWARDEREVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4106,
-  serialized_end=4202,
+  serialized_start=5056,
+  serialized_end=5152,
 )
 
 
@@ -1677,24 +1994,89 @@ _RAWPACKETFORWARDERCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4204,
-  serialized_end=4302,
+  serialized_start=5154,
+  serialized_end=5252,
 )
 
+
+_CONNSTATE = _descriptor.Descriptor(
+  name='ConnState',
+  full_name='gw.ConnState',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gateway_id', full_name='gw.ConnState.gateway_id', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='gatewayID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='gw.ConnState.state', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _CONNSTATE_STATE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5254,
+  serialized_end=5366,
+)
+
+_MODULATION.fields_by_name['lora'].message_type = _LORAMODULATIONINFO
+_MODULATION.fields_by_name['fsk'].message_type = _FSKMODULATIONINFO
+_MODULATION.fields_by_name['lr_fhss'].message_type = _LRFHSSMODULATIONINFO
+_MODULATION.oneofs_by_name['parameters'].fields.append(
+  _MODULATION.fields_by_name['lora'])
+_MODULATION.fields_by_name['lora'].containing_oneof = _MODULATION.oneofs_by_name['parameters']
+_MODULATION.oneofs_by_name['parameters'].fields.append(
+  _MODULATION.fields_by_name['fsk'])
+_MODULATION.fields_by_name['fsk'].containing_oneof = _MODULATION.oneofs_by_name['parameters']
+_MODULATION.oneofs_by_name['parameters'].fields.append(
+  _MODULATION.fields_by_name['lr_fhss'])
+_MODULATION.fields_by_name['lr_fhss'].containing_oneof = _MODULATION.oneofs_by_name['parameters']
 _UPLINKTXINFO.fields_by_name['modulation'].enum_type = chirpstack__api_dot_common_dot_common__pb2._MODULATION
 _UPLINKTXINFO.fields_by_name['lora_modulation_info'].message_type = _LORAMODULATIONINFO
 _UPLINKTXINFO.fields_by_name['fsk_modulation_info'].message_type = _FSKMODULATIONINFO
+_UPLINKTXINFO.fields_by_name['lr_fhss_modulation_info'].message_type = _LRFHSSMODULATIONINFO
 _UPLINKTXINFO.oneofs_by_name['modulation_info'].fields.append(
   _UPLINKTXINFO.fields_by_name['lora_modulation_info'])
 _UPLINKTXINFO.fields_by_name['lora_modulation_info'].containing_oneof = _UPLINKTXINFO.oneofs_by_name['modulation_info']
 _UPLINKTXINFO.oneofs_by_name['modulation_info'].fields.append(
   _UPLINKTXINFO.fields_by_name['fsk_modulation_info'])
 _UPLINKTXINFO.fields_by_name['fsk_modulation_info'].containing_oneof = _UPLINKTXINFO.oneofs_by_name['modulation_info']
+_UPLINKTXINFO.oneofs_by_name['modulation_info'].fields.append(
+  _UPLINKTXINFO.fields_by_name['lr_fhss_modulation_info'])
+_UPLINKTXINFO.fields_by_name['lr_fhss_modulation_info'].containing_oneof = _UPLINKTXINFO.oneofs_by_name['modulation_info']
 _PLAINFINETIMESTAMP.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _GATEWAYSTATS_METADATAENTRY.containing_type = _GATEWAYSTATS
+_GATEWAYSTATS_TXPACKETSPERFREQUENCYENTRY.containing_type = _GATEWAYSTATS
+_GATEWAYSTATS_RXPACKETSPERFREQUENCYENTRY.containing_type = _GATEWAYSTATS
+_GATEWAYSTATS_TXPACKETSPERSTATUSENTRY.containing_type = _GATEWAYSTATS
 _GATEWAYSTATS.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _GATEWAYSTATS.fields_by_name['location'].message_type = chirpstack__api_dot_common_dot_common__pb2._LOCATION
 _GATEWAYSTATS.fields_by_name['meta_data'].message_type = _GATEWAYSTATS_METADATAENTRY
+_GATEWAYSTATS.fields_by_name['tx_packets_per_frequency'].message_type = _GATEWAYSTATS_TXPACKETSPERFREQUENCYENTRY
+_GATEWAYSTATS.fields_by_name['rx_packets_per_frequency'].message_type = _GATEWAYSTATS_RXPACKETSPERFREQUENCYENTRY
+_GATEWAYSTATS.fields_by_name['tx_packets_per_modulation'].message_type = _PERMODULATIONCOUNT
+_GATEWAYSTATS.fields_by_name['rx_packets_per_modulation'].message_type = _PERMODULATIONCOUNT
+_GATEWAYSTATS.fields_by_name['tx_packets_per_status'].message_type = _GATEWAYSTATS_TXPACKETSPERSTATUSENTRY
+_PERMODULATIONCOUNT.fields_by_name['modulation'].message_type = _MODULATION
 _UPLINKRXINFO.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _UPLINKRXINFO.fields_by_name['time_since_gps_epoch'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _UPLINKRXINFO.fields_by_name['location'].message_type = chirpstack__api_dot_common_dot_common__pb2._LOCATION
@@ -1754,12 +2136,17 @@ _CHANNELCONFIGURATION.oneofs_by_name['modulation_config'].fields.append(
 _CHANNELCONFIGURATION.fields_by_name['fsk_modulation_config'].containing_oneof = _CHANNELCONFIGURATION.oneofs_by_name['modulation_config']
 _GATEWAYCOMMANDEXECREQUEST_ENVIRONMENTENTRY.containing_type = _GATEWAYCOMMANDEXECREQUEST
 _GATEWAYCOMMANDEXECREQUEST.fields_by_name['environment'].message_type = _GATEWAYCOMMANDEXECREQUEST_ENVIRONMENTENTRY
+_CONNSTATE.fields_by_name['state'].enum_type = _CONNSTATE_STATE
+_CONNSTATE_STATE.containing_type = _CONNSTATE
+DESCRIPTOR.message_types_by_name['Modulation'] = _MODULATION
 DESCRIPTOR.message_types_by_name['UplinkTXInfo'] = _UPLINKTXINFO
 DESCRIPTOR.message_types_by_name['LoRaModulationInfo'] = _LORAMODULATIONINFO
 DESCRIPTOR.message_types_by_name['FSKModulationInfo'] = _FSKMODULATIONINFO
+DESCRIPTOR.message_types_by_name['LRFHSSModulationInfo'] = _LRFHSSMODULATIONINFO
 DESCRIPTOR.message_types_by_name['EncryptedFineTimestamp'] = _ENCRYPTEDFINETIMESTAMP
 DESCRIPTOR.message_types_by_name['PlainFineTimestamp'] = _PLAINFINETIMESTAMP
 DESCRIPTOR.message_types_by_name['GatewayStats'] = _GATEWAYSTATS
+DESCRIPTOR.message_types_by_name['PerModulationCount'] = _PERMODULATIONCOUNT
 DESCRIPTOR.message_types_by_name['UplinkRXInfo'] = _UPLINKRXINFO
 DESCRIPTOR.message_types_by_name['DownlinkTXInfo'] = _DOWNLINKTXINFO
 DESCRIPTOR.message_types_by_name['ImmediatelyTimingInfo'] = _IMMEDIATELYTIMINGINFO
@@ -1779,11 +2166,19 @@ DESCRIPTOR.message_types_by_name['GatewayCommandExecRequest'] = _GATEWAYCOMMANDE
 DESCRIPTOR.message_types_by_name['GatewayCommandExecResponse'] = _GATEWAYCOMMANDEXECRESPONSE
 DESCRIPTOR.message_types_by_name['RawPacketForwarderEvent'] = _RAWPACKETFORWARDEREVENT
 DESCRIPTOR.message_types_by_name['RawPacketForwarderCommand'] = _RAWPACKETFORWARDERCOMMAND
+DESCRIPTOR.message_types_by_name['ConnState'] = _CONNSTATE
 DESCRIPTOR.enum_types_by_name['DownlinkTiming'] = _DOWNLINKTIMING
 DESCRIPTOR.enum_types_by_name['FineTimestampType'] = _FINETIMESTAMPTYPE
 DESCRIPTOR.enum_types_by_name['CRCStatus'] = _CRCSTATUS
 DESCRIPTOR.enum_types_by_name['TxAckStatus'] = _TXACKSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Modulation = _reflection.GeneratedProtocolMessageType('Modulation', (_message.Message,), {
+  'DESCRIPTOR' : _MODULATION,
+  '__module__' : 'chirpstack_api.gw.gw_pb2'
+  # @@protoc_insertion_point(class_scope:gw.Modulation)
+  })
+_sym_db.RegisterMessage(Modulation)
 
 UplinkTXInfo = _reflection.GeneratedProtocolMessageType('UplinkTXInfo', (_message.Message,), {
   'DESCRIPTOR' : _UPLINKTXINFO,
@@ -1805,6 +2200,13 @@ FSKModulationInfo = _reflection.GeneratedProtocolMessageType('FSKModulationInfo'
   # @@protoc_insertion_point(class_scope:gw.FSKModulationInfo)
   })
 _sym_db.RegisterMessage(FSKModulationInfo)
+
+LRFHSSModulationInfo = _reflection.GeneratedProtocolMessageType('LRFHSSModulationInfo', (_message.Message,), {
+  'DESCRIPTOR' : _LRFHSSMODULATIONINFO,
+  '__module__' : 'chirpstack_api.gw.gw_pb2'
+  # @@protoc_insertion_point(class_scope:gw.LRFHSSModulationInfo)
+  })
+_sym_db.RegisterMessage(LRFHSSModulationInfo)
 
 EncryptedFineTimestamp = _reflection.GeneratedProtocolMessageType('EncryptedFineTimestamp', (_message.Message,), {
   'DESCRIPTOR' : _ENCRYPTEDFINETIMESTAMP,
@@ -1828,12 +2230,43 @@ GatewayStats = _reflection.GeneratedProtocolMessageType('GatewayStats', (_messag
     # @@protoc_insertion_point(class_scope:gw.GatewayStats.MetaDataEntry)
     })
   ,
+
+  'TxPacketsPerFrequencyEntry' : _reflection.GeneratedProtocolMessageType('TxPacketsPerFrequencyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GATEWAYSTATS_TXPACKETSPERFREQUENCYENTRY,
+    '__module__' : 'chirpstack_api.gw.gw_pb2'
+    # @@protoc_insertion_point(class_scope:gw.GatewayStats.TxPacketsPerFrequencyEntry)
+    })
+  ,
+
+  'RxPacketsPerFrequencyEntry' : _reflection.GeneratedProtocolMessageType('RxPacketsPerFrequencyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GATEWAYSTATS_RXPACKETSPERFREQUENCYENTRY,
+    '__module__' : 'chirpstack_api.gw.gw_pb2'
+    # @@protoc_insertion_point(class_scope:gw.GatewayStats.RxPacketsPerFrequencyEntry)
+    })
+  ,
+
+  'TxPacketsPerStatusEntry' : _reflection.GeneratedProtocolMessageType('TxPacketsPerStatusEntry', (_message.Message,), {
+    'DESCRIPTOR' : _GATEWAYSTATS_TXPACKETSPERSTATUSENTRY,
+    '__module__' : 'chirpstack_api.gw.gw_pb2'
+    # @@protoc_insertion_point(class_scope:gw.GatewayStats.TxPacketsPerStatusEntry)
+    })
+  ,
   'DESCRIPTOR' : _GATEWAYSTATS,
   '__module__' : 'chirpstack_api.gw.gw_pb2'
   # @@protoc_insertion_point(class_scope:gw.GatewayStats)
   })
 _sym_db.RegisterMessage(GatewayStats)
 _sym_db.RegisterMessage(GatewayStats.MetaDataEntry)
+_sym_db.RegisterMessage(GatewayStats.TxPacketsPerFrequencyEntry)
+_sym_db.RegisterMessage(GatewayStats.RxPacketsPerFrequencyEntry)
+_sym_db.RegisterMessage(GatewayStats.TxPacketsPerStatusEntry)
+
+PerModulationCount = _reflection.GeneratedProtocolMessageType('PerModulationCount', (_message.Message,), {
+  'DESCRIPTOR' : _PERMODULATIONCOUNT,
+  '__module__' : 'chirpstack_api.gw.gw_pb2'
+  # @@protoc_insertion_point(class_scope:gw.PerModulationCount)
+  })
+_sym_db.RegisterMessage(PerModulationCount)
 
 UplinkRXInfo = _reflection.GeneratedProtocolMessageType('UplinkRXInfo', (_message.Message,), {
   'DESCRIPTOR' : _UPLINKRXINFO,
@@ -1976,8 +2409,18 @@ RawPacketForwarderCommand = _reflection.GeneratedProtocolMessageType('RawPacketF
   })
 _sym_db.RegisterMessage(RawPacketForwarderCommand)
 
+ConnState = _reflection.GeneratedProtocolMessageType('ConnState', (_message.Message,), {
+  'DESCRIPTOR' : _CONNSTATE,
+  '__module__' : 'chirpstack_api.gw.gw_pb2'
+  # @@protoc_insertion_point(class_scope:gw.ConnState)
+  })
+_sym_db.RegisterMessage(ConnState)
+
 
 DESCRIPTOR._options = None
 _GATEWAYSTATS_METADATAENTRY._options = None
+_GATEWAYSTATS_TXPACKETSPERFREQUENCYENTRY._options = None
+_GATEWAYSTATS_RXPACKETSPERFREQUENCYENTRY._options = None
+_GATEWAYSTATS_TXPACKETSPERSTATUSENTRY._options = None
 _GATEWAYCOMMANDEXECREQUEST_ENVIRONMENTENTRY._options = None
 # @@protoc_insertion_point(module_scope)

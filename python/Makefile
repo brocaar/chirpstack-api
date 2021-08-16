@@ -40,7 +40,7 @@ ns:
 	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/ns/ns.proto
 
 fuota:
-	python -m grpc_tools.protoc -I=proto --python_out=src proto/chirpstack-api/fuota/fuota.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/fuota/fuota.proto
 
 as:
 	python -m grpc_tools.protoc -I=proto --python_out=src --grpc_python_out=src proto/chirpstack-api/as_pb/as_pb.proto

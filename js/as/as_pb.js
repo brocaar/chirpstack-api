@@ -22,6 +22,10 @@ goog.exportSymbol('proto.as.HandleProprietaryUplinkRequest', null, global);
 goog.exportSymbol('proto.as.HandleTxAckRequest', null, global);
 goog.exportSymbol('proto.as.HandleUplinkDataRequest', null, global);
 goog.exportSymbol('proto.as.RXWindow', null, global);
+goog.exportSymbol('proto.as.ReEncryptDeviceQueueItem', null, global);
+goog.exportSymbol('proto.as.ReEncryptDeviceQueueItemsRequest', null, global);
+goog.exportSymbol('proto.as.ReEncryptDeviceQueueItemsResponse', null, global);
+goog.exportSymbol('proto.as.ReEncryptedDeviceQueueItem', null, global);
 goog.exportSymbol('proto.as.SetDeviceLocationRequest', null, global);
 goog.exportSymbol('proto.as.SetDeviceStatusRequest', null, global);
 
@@ -2309,7 +2313,12 @@ proto.as.HandleGatewayStatsRequest.toObject = function(includeInstance, msg) {
     rxPacketsReceivedOk: msg.getRxPacketsReceivedOk(),
     txPacketsReceived: msg.getTxPacketsReceived(),
     txPacketsEmitted: msg.getTxPacketsEmitted(),
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : []
+    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : [],
+    txPacketsPerFrequencyMap: (f = msg.getTxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
+    rxPacketsPerFrequencyMap: (f = msg.getRxPacketsPerFrequencyMap(true)) ? f.toArray() : [],
+    txPacketsPerDrMap: (f = msg.getTxPacketsPerDrMap(true)) ? f.toArray() : [],
+    rxPacketsPerDrMap: (f = msg.getRxPacketsPerDrMap(true)) ? f.toArray() : [],
+    txPacketsPerStatusMap: (f = msg.getTxPacketsPerStatusMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -2384,6 +2393,36 @@ proto.as.HandleGatewayStatsRequest.deserializeBinaryFromReader = function(msg, r
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
+      break;
+    case 10:
+      var value = msg.getTxPacketsPerFrequencyMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 11:
+      var value = msg.getRxPacketsPerFrequencyMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 12:
+      var value = msg.getTxPacketsPerDrMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 13:
+      var value = msg.getRxPacketsPerDrMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readUint32);
+         });
+      break;
+    case 14:
+      var value = msg.getTxPacketsPerStatusMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readUint32);
          });
       break;
     default:
@@ -2485,6 +2524,26 @@ proto.as.HandleGatewayStatsRequest.prototype.serializeBinaryToWriter = function 
   f = this.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = this.getTxPacketsPerFrequencyMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getRxPacketsPerFrequencyMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getTxPacketsPerDrMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getRxPacketsPerDrMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeUint32, jspb.BinaryWriter.prototype.writeUint32);
+  }
+  f = this.getTxPacketsPerStatusMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeUint32);
   }
 };
 
@@ -2705,6 +2764,71 @@ proto.as.HandleGatewayStatsRequest.prototype.setTxPacketsEmitted = function(valu
 proto.as.HandleGatewayStatsRequest.prototype.getMetadataMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> tx_packets_per_frequency = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.as.HandleGatewayStatsRequest.prototype.getTxPacketsPerFrequencyMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> rx_packets_per_frequency = 11;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.as.HandleGatewayStatsRequest.prototype.getRxPacketsPerFrequencyMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> tx_packets_per_dr = 12;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.as.HandleGatewayStatsRequest.prototype.getTxPacketsPerDrMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<uint32, uint32> rx_packets_per_dr = 13;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.as.HandleGatewayStatsRequest.prototype.getRxPacketsPerDrMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * map<string, uint32> tx_packets_per_status = 14;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.as.HandleGatewayStatsRequest.prototype.getTxPacketsPerStatusMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
       null));
 };
 
@@ -3011,6 +3135,1023 @@ proto.as.HandleTxAckRequest.prototype.clearTxInfo = function() {
  */
 proto.as.HandleTxAckRequest.prototype.hasTxInfo = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.as.ReEncryptDeviceQueueItemsRequest.repeatedFields_, null);
+};
+goog.inherits(proto.as.ReEncryptDeviceQueueItemsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.as.ReEncryptDeviceQueueItemsRequest.displayName = 'proto.as.ReEncryptDeviceQueueItemsRequest';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.as.ReEncryptDeviceQueueItemsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.as.ReEncryptDeviceQueueItemsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    devEui: msg.getDevEui_asB64(),
+    devAddr: msg.getDevAddr_asB64(),
+    fCntStart: msg.getFCntStart(),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    proto.as.ReEncryptDeviceQueueItem.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.as.ReEncryptDeviceQueueItemsRequest}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.as.ReEncryptDeviceQueueItemsRequest;
+  return proto.as.ReEncryptDeviceQueueItemsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.as.ReEncryptDeviceQueueItemsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.as.ReEncryptDeviceQueueItemsRequest}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevEui(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setDevAddr(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFCntStart(value);
+      break;
+    case 4:
+      var value = new proto.as.ReEncryptDeviceQueueItem;
+      reader.readMessage(value,proto.as.ReEncryptDeviceQueueItem.deserializeBinaryFromReader);
+      msg.getItemsList().push(value);
+      msg.setItemsList(msg.getItemsList());
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.as.ReEncryptDeviceQueueItemsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getDevEui_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
+  }
+  f = this.getDevAddr_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      2,
+      f
+    );
+  }
+  f = this.getFCntStart();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+  f = this.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.as.ReEncryptDeviceQueueItem.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.as.ReEncryptDeviceQueueItemsRequest} The clone.
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.cloneMessage = function() {
+  return /** @type {!proto.as.ReEncryptDeviceQueueItemsRequest} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional bytes dev_eui = 1;
+ * @return {!(string|Uint8Array)}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getDevEui = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/**
+ * optional bytes dev_eui = 1;
+ * This is a type-conversion wrapper around `getDevEui()`
+ * @return {string}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getDevEui_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevEui()));
+};
+
+
+/**
+ * optional bytes dev_eui = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevEui()`
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getDevEui_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevEui()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.setDevEui = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional bytes dev_addr = 2;
+ * @return {!(string|Uint8Array)}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getDevAddr = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+};
+
+
+/**
+ * optional bytes dev_addr = 2;
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {string}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getDevAddr_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getDevAddr()));
+};
+
+
+/**
+ * optional bytes dev_addr = 2;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getDevAddr()`
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getDevAddr_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getDevAddr()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.setDevAddr = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 f_cnt_start = 3;
+ * @return {number}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getFCntStart = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.setFCntStart = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * repeated ReEncryptDeviceQueueItem items = 4;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.as.ReEncryptDeviceQueueItem>}
+ */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.getItemsList = function() {
+  return /** @type{!Array.<!proto.as.ReEncryptDeviceQueueItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.as.ReEncryptDeviceQueueItem, 4));
+};
+
+
+/** @param {Array.<!proto.as.ReEncryptDeviceQueueItem>} value  */
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.setItemsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+proto.as.ReEncryptDeviceQueueItemsRequest.prototype.clearItemsList = function() {
+  this.setItemsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.as.ReEncryptDeviceQueueItemsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.as.ReEncryptDeviceQueueItemsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.as.ReEncryptDeviceQueueItemsResponse.displayName = 'proto.as.ReEncryptDeviceQueueItemsResponse';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.as.ReEncryptDeviceQueueItemsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.as.ReEncryptDeviceQueueItemsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    proto.as.ReEncryptedDeviceQueueItem.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.as.ReEncryptDeviceQueueItemsResponse}
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.as.ReEncryptDeviceQueueItemsResponse;
+  return proto.as.ReEncryptDeviceQueueItemsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.as.ReEncryptDeviceQueueItemsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.as.ReEncryptDeviceQueueItemsResponse}
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.as.ReEncryptedDeviceQueueItem;
+      reader.readMessage(value,proto.as.ReEncryptedDeviceQueueItem.deserializeBinaryFromReader);
+      msg.getItemsList().push(value);
+      msg.setItemsList(msg.getItemsList());
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.as.ReEncryptDeviceQueueItemsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.as.ReEncryptedDeviceQueueItem.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.as.ReEncryptDeviceQueueItemsResponse} The clone.
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.cloneMessage = function() {
+  return /** @type {!proto.as.ReEncryptDeviceQueueItemsResponse} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * repeated ReEncryptedDeviceQueueItem items = 1;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.as.ReEncryptedDeviceQueueItem>}
+ */
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.getItemsList = function() {
+  return /** @type{!Array.<!proto.as.ReEncryptedDeviceQueueItem>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.as.ReEncryptedDeviceQueueItem, 1));
+};
+
+
+/** @param {Array.<!proto.as.ReEncryptedDeviceQueueItem>} value  */
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.setItemsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+proto.as.ReEncryptDeviceQueueItemsResponse.prototype.clearItemsList = function() {
+  this.setItemsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.as.ReEncryptDeviceQueueItem = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.as.ReEncryptDeviceQueueItem, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.as.ReEncryptDeviceQueueItem.displayName = 'proto.as.ReEncryptDeviceQueueItem';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.as.ReEncryptDeviceQueueItem.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.as.ReEncryptDeviceQueueItem} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.as.ReEncryptDeviceQueueItem.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    frmPayload: msg.getFrmPayload_asB64(),
+    fCnt: msg.getFCnt(),
+    fPort: msg.getFPort(),
+    confirmed: msg.getConfirmed()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.as.ReEncryptDeviceQueueItem}
+ */
+proto.as.ReEncryptDeviceQueueItem.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.as.ReEncryptDeviceQueueItem;
+  return proto.as.ReEncryptDeviceQueueItem.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.as.ReEncryptDeviceQueueItem} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.as.ReEncryptDeviceQueueItem}
+ */
+proto.as.ReEncryptDeviceQueueItem.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setFrmPayload(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFCnt(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFPort(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConfirmed(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.as.ReEncryptDeviceQueueItem} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptDeviceQueueItem.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getFrmPayload_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
+  }
+  f = this.getFCnt();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = this.getFPort();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+  f = this.getConfirmed();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.as.ReEncryptDeviceQueueItem} The clone.
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.cloneMessage = function() {
+  return /** @type {!proto.as.ReEncryptDeviceQueueItem} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional bytes frm_payload = 1;
+ * @return {!(string|Uint8Array)}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.getFrmPayload = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/**
+ * optional bytes frm_payload = 1;
+ * This is a type-conversion wrapper around `getFrmPayload()`
+ * @return {string}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.getFrmPayload_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getFrmPayload()));
+};
+
+
+/**
+ * optional bytes frm_payload = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getFrmPayload()`
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.getFrmPayload_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getFrmPayload()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.as.ReEncryptDeviceQueueItem.prototype.setFrmPayload = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 f_cnt = 2;
+ * @return {number}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.getFCnt = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+};
+
+
+/** @param {number} value  */
+proto.as.ReEncryptDeviceQueueItem.prototype.setFCnt = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 f_port = 3;
+ * @return {number}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.getFPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.as.ReEncryptDeviceQueueItem.prototype.setFPort = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional bool confirmed = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.as.ReEncryptDeviceQueueItem.prototype.getConfirmed = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 4, false));
+};
+
+
+/** @param {boolean} value  */
+proto.as.ReEncryptDeviceQueueItem.prototype.setConfirmed = function(value) {
+  jspb.Message.setField(this, 4, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.as.ReEncryptedDeviceQueueItem = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.as.ReEncryptedDeviceQueueItem, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.as.ReEncryptedDeviceQueueItem.displayName = 'proto.as.ReEncryptedDeviceQueueItem';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.toObject = function(opt_includeInstance) {
+  return proto.as.ReEncryptedDeviceQueueItem.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.as.ReEncryptedDeviceQueueItem} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.as.ReEncryptedDeviceQueueItem.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    frmPayload: msg.getFrmPayload_asB64(),
+    fCnt: msg.getFCnt(),
+    fPort: msg.getFPort(),
+    confirmed: msg.getConfirmed()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.as.ReEncryptedDeviceQueueItem}
+ */
+proto.as.ReEncryptedDeviceQueueItem.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.as.ReEncryptedDeviceQueueItem;
+  return proto.as.ReEncryptedDeviceQueueItem.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.as.ReEncryptedDeviceQueueItem} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.as.ReEncryptedDeviceQueueItem}
+ */
+proto.as.ReEncryptedDeviceQueueItem.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setFrmPayload(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFCnt(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFPort(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConfirmed(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.as.ReEncryptedDeviceQueueItem} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptedDeviceQueueItem.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getFrmPayload_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
+  }
+  f = this.getFCnt();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = this.getFPort();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+  f = this.getConfirmed();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.as.ReEncryptedDeviceQueueItem} The clone.
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.cloneMessage = function() {
+  return /** @type {!proto.as.ReEncryptedDeviceQueueItem} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional bytes frm_payload = 1;
+ * @return {!(string|Uint8Array)}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.getFrmPayload = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/**
+ * optional bytes frm_payload = 1;
+ * This is a type-conversion wrapper around `getFrmPayload()`
+ * @return {string}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.getFrmPayload_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getFrmPayload()));
+};
+
+
+/**
+ * optional bytes frm_payload = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getFrmPayload()`
+ * @return {!Uint8Array}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.getFrmPayload_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getFrmPayload()));
+};
+
+
+/** @param {!(string|Uint8Array)} value  */
+proto.as.ReEncryptedDeviceQueueItem.prototype.setFrmPayload = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 f_cnt = 2;
+ * @return {number}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.getFCnt = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+};
+
+
+/** @param {number} value  */
+proto.as.ReEncryptedDeviceQueueItem.prototype.setFCnt = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 f_port = 3;
+ * @return {number}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.getFPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.as.ReEncryptedDeviceQueueItem.prototype.setFPort = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional bool confirmed = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.as.ReEncryptedDeviceQueueItem.prototype.getConfirmed = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 4, false));
+};
+
+
+/** @param {boolean} value  */
+proto.as.ReEncryptedDeviceQueueItem.prototype.setConfirmed = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 

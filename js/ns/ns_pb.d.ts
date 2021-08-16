@@ -1443,6 +1443,24 @@ export class UplinkFrameLog extends jspb.Message {
   setRxInfoList(value: Array<gw_gw_pb.UplinkRXInfo>): void;
   addRxInfo(value?: gw_gw_pb.UplinkRXInfo, index?: number): gw_gw_pb.UplinkRXInfo;
 
+  getMType(): common_common_pb.MTypeMap[keyof common_common_pb.MTypeMap];
+  setMType(value: common_common_pb.MTypeMap[keyof common_common_pb.MTypeMap]): void;
+
+  getDevAddr(): Uint8Array | string;
+  getDevAddr_asU8(): Uint8Array;
+  getDevAddr_asB64(): string;
+  setDevAddr(value: Uint8Array | string): void;
+
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UplinkFrameLog.AsObject;
   static toObject(includeInstance: boolean, msg: UplinkFrameLog): UplinkFrameLog.AsObject;
@@ -1458,6 +1476,10 @@ export namespace UplinkFrameLog {
     phyPayload: Uint8Array | string,
     txInfo?: gw_gw_pb.UplinkTXInfo.AsObject,
     rxInfoList: Array<gw_gw_pb.UplinkRXInfo.AsObject>,
+    mType: common_common_pb.MTypeMap[keyof common_common_pb.MTypeMap],
+    devAddr: Uint8Array | string,
+    devEui: Uint8Array | string,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -1485,6 +1507,24 @@ export class DownlinkFrameLog extends jspb.Message {
   getGatewayId_asB64(): string;
   setGatewayId(value: Uint8Array | string): void;
 
+  getMType(): common_common_pb.MTypeMap[keyof common_common_pb.MTypeMap];
+  setMType(value: common_common_pb.MTypeMap[keyof common_common_pb.MTypeMap]): void;
+
+  getDevAddr(): Uint8Array | string;
+  getDevAddr_asU8(): Uint8Array;
+  getDevAddr_asB64(): string;
+  setDevAddr(value: Uint8Array | string): void;
+
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownlinkFrameLog.AsObject;
   static toObject(includeInstance: boolean, msg: DownlinkFrameLog): DownlinkFrameLog.AsObject;
@@ -1502,6 +1542,10 @@ export namespace DownlinkFrameLog {
     token: number,
     downlinkId: Uint8Array | string,
     gatewayId: Uint8Array | string,
+    mType: common_common_pb.MTypeMap[keyof common_common_pb.MTypeMap],
+    devAddr: Uint8Array | string,
+    devEui: Uint8Array | string,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

@@ -61,6 +61,58 @@ interface INetworkServerServiceService extends grpc.ServiceDefinition<grpc.Untyp
 
 export const NetworkServerServiceService: INetworkServerServiceService;
 
+export interface INetworkServerServiceServer extends grpc.UntypedServiceImplementation {
+  createServiceProfile: grpc.handleUnaryCall<ns_ns_pb.CreateServiceProfileRequest, ns_ns_pb.CreateServiceProfileResponse>;
+  getServiceProfile: grpc.handleUnaryCall<ns_ns_pb.GetServiceProfileRequest, ns_ns_pb.GetServiceProfileResponse>;
+  updateServiceProfile: grpc.handleUnaryCall<ns_ns_pb.UpdateServiceProfileRequest, google_protobuf_empty_pb.Empty>;
+  deleteServiceProfile: grpc.handleUnaryCall<ns_ns_pb.DeleteServiceProfileRequest, google_protobuf_empty_pb.Empty>;
+  createRoutingProfile: grpc.handleUnaryCall<ns_ns_pb.CreateRoutingProfileRequest, ns_ns_pb.CreateRoutingProfileResponse>;
+  getRoutingProfile: grpc.handleUnaryCall<ns_ns_pb.GetRoutingProfileRequest, ns_ns_pb.GetRoutingProfileResponse>;
+  updateRoutingProfile: grpc.handleUnaryCall<ns_ns_pb.UpdateRoutingProfileRequest, google_protobuf_empty_pb.Empty>;
+  deleteRoutingProfile: grpc.handleUnaryCall<ns_ns_pb.DeleteRoutingProfileRequest, google_protobuf_empty_pb.Empty>;
+  createDeviceProfile: grpc.handleUnaryCall<ns_ns_pb.CreateDeviceProfileRequest, ns_ns_pb.CreateDeviceProfileResponse>;
+  getDeviceProfile: grpc.handleUnaryCall<ns_ns_pb.GetDeviceProfileRequest, ns_ns_pb.GetDeviceProfileResponse>;
+  updateDeviceProfile: grpc.handleUnaryCall<ns_ns_pb.UpdateDeviceProfileRequest, google_protobuf_empty_pb.Empty>;
+  deleteDeviceProfile: grpc.handleUnaryCall<ns_ns_pb.DeleteDeviceProfileRequest, google_protobuf_empty_pb.Empty>;
+  createDevice: grpc.handleUnaryCall<ns_ns_pb.CreateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  getDevice: grpc.handleUnaryCall<ns_ns_pb.GetDeviceRequest, ns_ns_pb.GetDeviceResponse>;
+  updateDevice: grpc.handleUnaryCall<ns_ns_pb.UpdateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  deleteDevice: grpc.handleUnaryCall<ns_ns_pb.DeleteDeviceRequest, google_protobuf_empty_pb.Empty>;
+  activateDevice: grpc.handleUnaryCall<ns_ns_pb.ActivateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  deactivateDevice: grpc.handleUnaryCall<ns_ns_pb.DeactivateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  getDeviceActivation: grpc.handleUnaryCall<ns_ns_pb.GetDeviceActivationRequest, ns_ns_pb.GetDeviceActivationResponse>;
+  createDeviceQueueItem: grpc.handleUnaryCall<ns_ns_pb.CreateDeviceQueueItemRequest, google_protobuf_empty_pb.Empty>;
+  flushDeviceQueueForDevEUI: grpc.handleUnaryCall<ns_ns_pb.FlushDeviceQueueForDevEUIRequest, google_protobuf_empty_pb.Empty>;
+  getDeviceQueueItemsForDevEUI: grpc.handleUnaryCall<ns_ns_pb.GetDeviceQueueItemsForDevEUIRequest, ns_ns_pb.GetDeviceQueueItemsForDevEUIResponse>;
+  getNextDownlinkFCntForDevEUI: grpc.handleUnaryCall<ns_ns_pb.GetNextDownlinkFCntForDevEUIRequest, ns_ns_pb.GetNextDownlinkFCntForDevEUIResponse>;
+  getRandomDevAddr: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, ns_ns_pb.GetRandomDevAddrResponse>;
+  createMACCommandQueueItem: grpc.handleUnaryCall<ns_ns_pb.CreateMACCommandQueueItemRequest, google_protobuf_empty_pb.Empty>;
+  sendProprietaryPayload: grpc.handleUnaryCall<ns_ns_pb.SendProprietaryPayloadRequest, google_protobuf_empty_pb.Empty>;
+  createGateway: grpc.handleUnaryCall<ns_ns_pb.CreateGatewayRequest, google_protobuf_empty_pb.Empty>;
+  getGateway: grpc.handleUnaryCall<ns_ns_pb.GetGatewayRequest, ns_ns_pb.GetGatewayResponse>;
+  updateGateway: grpc.handleUnaryCall<ns_ns_pb.UpdateGatewayRequest, google_protobuf_empty_pb.Empty>;
+  deleteGateway: grpc.handleUnaryCall<ns_ns_pb.DeleteGatewayRequest, google_protobuf_empty_pb.Empty>;
+  generateGatewayClientCertificate: grpc.handleUnaryCall<ns_ns_pb.GenerateGatewayClientCertificateRequest, ns_ns_pb.GenerateGatewayClientCertificateResponse>;
+  createGatewayProfile: grpc.handleUnaryCall<ns_ns_pb.CreateGatewayProfileRequest, ns_ns_pb.CreateGatewayProfileResponse>;
+  getGatewayProfile: grpc.handleUnaryCall<ns_ns_pb.GetGatewayProfileRequest, ns_ns_pb.GetGatewayProfileResponse>;
+  updateGatewayProfile: grpc.handleUnaryCall<ns_ns_pb.UpdateGatewayProfileRequest, google_protobuf_empty_pb.Empty>;
+  deleteGatewayProfile: grpc.handleUnaryCall<ns_ns_pb.DeleteGatewayProfileRequest, google_protobuf_empty_pb.Empty>;
+  getGatewayStats: grpc.handleUnaryCall<ns_ns_pb.GetGatewayStatsRequest, ns_ns_pb.GetGatewayStatsResponse>;
+  streamFrameLogsForGateway: grpc.handleServerStreamingCall<ns_ns_pb.StreamFrameLogsForGatewayRequest, ns_ns_pb.StreamFrameLogsForGatewayResponse>;
+  streamFrameLogsForDevice: grpc.handleServerStreamingCall<ns_ns_pb.StreamFrameLogsForDeviceRequest, ns_ns_pb.StreamFrameLogsForDeviceResponse>;
+  createMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.CreateMulticastGroupRequest, ns_ns_pb.CreateMulticastGroupResponse>;
+  getMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.GetMulticastGroupRequest, ns_ns_pb.GetMulticastGroupResponse>;
+  updateMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.UpdateMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  deleteMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.DeleteMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  addDeviceToMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.AddDeviceToMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  removeDeviceFromMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.RemoveDeviceFromMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  enqueueMulticastQueueItem: grpc.handleUnaryCall<ns_ns_pb.EnqueueMulticastQueueItemRequest, google_protobuf_empty_pb.Empty>;
+  flushMulticastQueueForMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.FlushMulticastQueueForMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  getMulticastQueueItemsForMulticastGroup: grpc.handleUnaryCall<ns_ns_pb.GetMulticastQueueItemsForMulticastGroupRequest, ns_ns_pb.GetMulticastQueueItemsForMulticastGroupResponse>;
+  getVersion: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, ns_ns_pb.GetVersionResponse>;
+  getADRAlgorithms: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, ns_ns_pb.GetADRAlgorithmsResponse>;
+}
+
 export class NetworkServerServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   createServiceProfile(argument: ns_ns_pb.CreateServiceProfileRequest, callback: grpc.requestCallback<ns_ns_pb.CreateServiceProfileResponse>): grpc.ClientUnaryCall;

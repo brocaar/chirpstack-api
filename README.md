@@ -1,5 +1,7 @@
 # ChirpStack API
 
+![Tests](https://github.com/brocaar/chirpstack-api/actions/workflows/main.yml/badge.svg?branch=master)
+
 This repository contains the [Protobuf](https://developers.google.com/protocol-buffers/)
 and [gRPC](https://grpc.io/) API definitions for the [ChirpStack](https://www.chirpstack.io)
 components.

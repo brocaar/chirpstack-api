@@ -336,10 +336,11 @@
       "type": "string",
       "enum": [
         "LORA",
-        "FSK"
+        "FSK",
+        "LR_FHSS"
       ],
       "default": "LORA",
-      "title": "- LORA: LoRa\n - FSK: FSK"
+      "title": "- LORA: LoRa\n - FSK: FSK\n - LR_FHSS: LR-FHSS"
     }
   }
 }

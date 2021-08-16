@@ -31,6 +31,23 @@ enum MulticastGroupType {
     CLASS_C = 1;
 }
 
+enum RequestFragmentationSessionStatus {
+    // Enqueue the fragmentation-session status request command directly after
+    // enqueueing the fragmentation-session fragments. This is the recommended
+    // option for Class-A devices as the status request will stay in the
+    // downlink queue until the device sends its next uplink.
+    AFTER_FRAGMENT_ENQUEUE = 0;
+
+    // Enqueue the fragmentation-session status request after the multicast
+    // session-timeout. This is the recommended option for Class-B and -C
+    // devices as selecting AFTER_FRAGMENT_ENQUEUE will likely cause the NS
+    // to schedule the downlink frame during the FUOTA multicast-session.
+    AFTER_SESSION_TIMEOUT = 1;
+
+    // Do not request the fragmentation-session status.
+    NO_REQUEST = 2;
+}
+
 message DeploymentDevice {
     // DevEUI.
     bytes dev_eui = 1;
@@ -103,6 +120,9 @@ message Deployment {
 
     // Descriptor (4 bytes).
     bytes fragmentation_descriptor = 17;
+
+    // Request fragmentation session status.
+    RequestFragmentationSessionStatus request_fragmentation_session_status = 18;
 }
 
 

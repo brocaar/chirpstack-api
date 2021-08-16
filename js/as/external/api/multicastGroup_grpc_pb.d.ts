@@ -22,6 +22,19 @@ interface IMulticastGroupServiceService extends grpc.ServiceDefinition<grpc.Unty
 
 export const MulticastGroupServiceService: IMulticastGroupServiceService;
 
+export interface IMulticastGroupServiceServer extends grpc.UntypedServiceImplementation {
+  create: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.CreateMulticastGroupRequest, as_external_api_multicastGroup_pb.CreateMulticastGroupResponse>;
+  get: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.GetMulticastGroupRequest, as_external_api_multicastGroup_pb.GetMulticastGroupResponse>;
+  update: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.UpdateMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  delete: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.DeleteMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  list: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.ListMulticastGroupRequest, as_external_api_multicastGroup_pb.ListMulticastGroupResponse>;
+  addDevice: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.AddDeviceToMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  removeDevice: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.RemoveDeviceFromMulticastGroupRequest, google_protobuf_empty_pb.Empty>;
+  enqueue: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.EnqueueMulticastQueueItemRequest, as_external_api_multicastGroup_pb.EnqueueMulticastQueueItemResponse>;
+  flushQueue: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.FlushMulticastGroupQueueItemsRequest, google_protobuf_empty_pb.Empty>;
+  listQueue: grpc.handleUnaryCall<as_external_api_multicastGroup_pb.ListMulticastGroupQueueItemsRequest, as_external_api_multicastGroup_pb.ListMulticastGroupQueueItemsResponse>;
+}
+
 export class MulticastGroupServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   create(argument: as_external_api_multicastGroup_pb.CreateMulticastGroupRequest, callback: grpc.requestCallback<as_external_api_multicastGroup_pb.CreateMulticastGroupResponse>): grpc.ClientUnaryCall;

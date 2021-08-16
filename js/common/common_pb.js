@@ -12,6 +12,7 @@ var global = Function('return this')();
 goog.exportSymbol('proto.common.KeyEnvelope', null, global);
 goog.exportSymbol('proto.common.Location', null, global);
 goog.exportSymbol('proto.common.LocationSource', null, global);
+goog.exportSymbol('proto.common.MType', null, global);
 goog.exportSymbol('proto.common.Modulation', null, global);
 goog.exportSymbol('proto.common.Region', null, global);
 
@@ -496,7 +497,8 @@ proto.common.Location.prototype.setAccuracy = function(value) {
  */
 proto.common.Modulation = {
   LORA: 0,
-  FSK: 1
+  FSK: 1,
+  LR_FHSS: 2
 };
 
 /**
@@ -510,9 +512,27 @@ proto.common.Region = {
   AU915: 5,
   CN470: 6,
   AS923: 7,
+  AS923_2: 12,
+  AS923_3: 13,
+  AS923_4: 14,
   KR920: 8,
   IN865: 9,
-  RU864: 10
+  RU864: 10,
+  ISM2400: 11
+};
+
+/**
+ * @enum {number}
+ */
+proto.common.MType = {
+  JOINREQUEST: 0,
+  JOINACCEPT: 1,
+  UNCONFIRMEDDATAUP: 2,
+  UNCONFIRMEDDATADOWN: 3,
+  CONFIRMEDDATAUP: 4,
+  CONFIRMEDDATADOWN: 5,
+  REJOINREQUEST: 6,
+  PROPRIETARY: 7
 };
 
 /**

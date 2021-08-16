@@ -637,6 +637,107 @@ export namespace GetRandomDevAddrResponse {
   }
 }
 
+export class DeviceStats extends jspb.Message {
+  hasTimestamp(): boolean;
+  clearTimestamp(): void;
+  getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getRxPackets(): number;
+  setRxPackets(value: number): void;
+
+  getGwRssi(): number;
+  setGwRssi(value: number): void;
+
+  getGwSnr(): number;
+  setGwSnr(value: number): void;
+
+  getRxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearRxPacketsPerFrequencyMap(): void;
+  getRxPacketsPerDrMap(): jspb.Map<number, number>;
+  clearRxPacketsPerDrMap(): void;
+  getErrorsMap(): jspb.Map<string, number>;
+  clearErrorsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeviceStats.AsObject;
+  static toObject(includeInstance: boolean, msg: DeviceStats): DeviceStats.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeviceStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeviceStats;
+  static deserializeBinaryFromReader(message: DeviceStats, reader: jspb.BinaryReader): DeviceStats;
+}
+
+export namespace DeviceStats {
+  export type AsObject = {
+    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    rxPackets: number,
+    gwRssi: number,
+    gwSnr: number,
+    rxPacketsPerFrequencyMap: Array<[number, number]>,
+    rxPacketsPerDrMap: Array<[number, number]>,
+    errorsMap: Array<[string, number]>,
+  }
+}
+
+export class GetDeviceStatsRequest extends jspb.Message {
+  getDevEui(): string;
+  setDevEui(value: string): void;
+
+  getInterval(): string;
+  setInterval(value: string): void;
+
+  hasStartTimestamp(): boolean;
+  clearStartTimestamp(): void;
+  getStartTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasEndTimestamp(): boolean;
+  clearEndTimestamp(): void;
+  getEndTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeviceStatsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeviceStatsRequest): GetDeviceStatsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeviceStatsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeviceStatsRequest;
+  static deserializeBinaryFromReader(message: GetDeviceStatsRequest, reader: jspb.BinaryReader): GetDeviceStatsRequest;
+}
+
+export namespace GetDeviceStatsRequest {
+  export type AsObject = {
+    devEui: string,
+    interval: string,
+    startTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class GetDeviceStatsResponse extends jspb.Message {
+  clearResultList(): void;
+  getResultList(): Array<DeviceStats>;
+  setResultList(value: Array<DeviceStats>): void;
+  addResult(value?: DeviceStats, index?: number): DeviceStats;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeviceStatsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeviceStatsResponse): GetDeviceStatsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeviceStatsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeviceStatsResponse;
+  static deserializeBinaryFromReader(message: GetDeviceStatsResponse, reader: jspb.BinaryReader): GetDeviceStatsResponse;
+}
+
+export namespace GetDeviceStatsResponse {
+  export type AsObject = {
+    resultList: Array<DeviceStats.AsObject>,
+  }
+}
+
 export class StreamDeviceFrameLogsRequest extends jspb.Message {
   getDevEui(): string;
   setDevEui(value: string): void;
@@ -719,6 +820,11 @@ export class StreamDeviceEventLogsResponse extends jspb.Message {
   getPayloadJson(): string;
   setPayloadJson(value: string): void;
 
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
+  getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamDeviceEventLogsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: StreamDeviceEventLogsResponse): StreamDeviceEventLogsResponse.AsObject;
@@ -733,6 +839,7 @@ export namespace StreamDeviceEventLogsResponse {
   export type AsObject = {
     type: string,
     payloadJson: string,
+    publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

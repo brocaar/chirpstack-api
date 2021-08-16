@@ -17,6 +17,14 @@ interface IDeviceProfileServiceService extends grpc.ServiceDefinition<grpc.Untyp
 
 export const DeviceProfileServiceService: IDeviceProfileServiceService;
 
+export interface IDeviceProfileServiceServer extends grpc.UntypedServiceImplementation {
+  create: grpc.handleUnaryCall<as_external_api_deviceProfile_pb.CreateDeviceProfileRequest, as_external_api_deviceProfile_pb.CreateDeviceProfileResponse>;
+  get: grpc.handleUnaryCall<as_external_api_deviceProfile_pb.GetDeviceProfileRequest, as_external_api_deviceProfile_pb.GetDeviceProfileResponse>;
+  update: grpc.handleUnaryCall<as_external_api_deviceProfile_pb.UpdateDeviceProfileRequest, google_protobuf_empty_pb.Empty>;
+  delete: grpc.handleUnaryCall<as_external_api_deviceProfile_pb.DeleteDeviceProfileRequest, google_protobuf_empty_pb.Empty>;
+  list: grpc.handleUnaryCall<as_external_api_deviceProfile_pb.ListDeviceProfileRequest, as_external_api_deviceProfile_pb.ListDeviceProfileResponse>;
+}
+
 export class DeviceProfileServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   create(argument: as_external_api_deviceProfile_pb.CreateDeviceProfileRequest, callback: grpc.requestCallback<as_external_api_deviceProfile_pb.CreateDeviceProfileResponse>): grpc.ClientUnaryCall;

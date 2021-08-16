@@ -27,6 +27,9 @@ message UplinkFrameLog {
 
     // LoRaWAN PHYPayload.
     string phy_payload_json = 3 [json_name = "phyPayloadJSON"];
+
+    // Published at timestamp.
+    google.protobuf.Timestamp published_at = 4;
 }
 
 message DownlinkFrameLog {
@@ -38,4 +41,7 @@ message DownlinkFrameLog {
 
     // Gateway ID.
     string gateway_id = 3 [json_name = "gatewayID"];
+
+    // Published at timestamp.
+    google.protobuf.Timestamp published_at = 4;
 }

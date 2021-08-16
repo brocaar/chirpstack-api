@@ -332,6 +332,55 @@
         ]
       }
     },
+    "/api/devices/{dev_eui}/stats": {
+      "get": {
+        "summary": "GetStats returns the device stats.",
+        "operationId": "GetStats",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiGetDeviceStatsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dev_eui",
+            "description": "DevEUI (HEX encoded).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "interval",
+            "description": "Aggregation interval.  One of \"second\", \"minute\", \"hour\", \"day\", \"week\",\n\"month\", \"quarter\", \"year\".  Case insensitive.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "startTimestamp",
+            "description": "Timestamp to start from.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endTimestamp",
+            "description": "Timestamp until to get from.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{device.dev_eui}": {
       "put": {
         "summary": "Update updates the device matching the given DevEUI.",
@@ -674,6 +723,55 @@
         }
       }
     },
+    "apiDeviceStats": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the (aggregated) measurement."
+        },
+        "rxPackets": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Packets received from the device."
+        },
+        "gwRssi": {
+          "type": "number",
+          "format": "float",
+          "description": "Average RSSI (as reported by the gateway(s))."
+        },
+        "gwSnr": {
+          "type": "number",
+          "format": "float",
+          "description": "Average SNR (as reported by the gateway(s))."
+        },
+        "rxPacketsPerFrequency": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Packets received by frequency."
+        },
+        "rxPacketsPerDr": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Packets received by DR."
+        },
+        "errors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "Error count."
+        }
+      }
+    },
     "apiDownlinkFrameLog": {
       "type": "object",
       "properties": {
@@ -688,6 +786,11 @@
         "gatewayID": {
           "type": "string",
           "description": "Gateway ID."
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Published at timestamp."
         }
       }
     },
@@ -737,6 +840,17 @@
         }
       }
     },
+    "apiGetDeviceStatsResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiDeviceStats"
+          }
+        }
+      }
+    },
     "apiGetRandomDevAddrResponse": {
       "type": "object",
       "properties": {
@@ -773,6 +887,11 @@
         "payloadJSON": {
           "type": "string",
           "description": "The event payload in JSON encoding."
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Published at timestamp."
         }
       }
     },
@@ -824,6 +943,11 @@
         "phyPayloadJSON": {
           "type": "string",
           "description": "LoRaWAN PHYPayload."
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Published at timestamp."
         }
       }
     },
@@ -874,10 +998,11 @@
       "type": "string",
       "enum": [
         "LORA",
-        "FSK"
+        "FSK",
+        "LR_FHSS"
       ],
       "default": "LORA",
-      "title": "- LORA: LoRa\n - FSK: FSK"
+      "title": "- LORA: LoRa\n - FSK: FSK\n - LR_FHSS: LR-FHSS"
     },
     "gwCRCStatus": {
       "type": "string",
@@ -1028,6 +1153,25 @@
     "gwImmediatelyTimingInfo": {
       "type": "object"
     },
+    "gwLRFHSSModulationInfo": {
+      "type": "object",
+      "properties": {
+        "operatingChannelWidth": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Operating channel width (OCW) in Hz."
+        },
+        "codeRate": {
+          "type": "string",
+          "description": "Code-rate."
+        },
+        "gridSteps": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Hopping grid number of steps."
+        }
+      }
+    },
     "gwLoRaModulationInfo": {
       "type": "object",
       "properties": {
@@ -1160,6 +1304,10 @@
         "fskModulationInfo": {
           "$ref": "#/definitions/gwFSKModulationInfo",
           "description": "FSK modulation information."
+        },
+        "lrFHSSModulationInfo": {
+          "$ref": "#/definitions/gwLRFHSSModulationInfo",
+          "description": "LR-FHSS modulation information."
         }
       }
     },

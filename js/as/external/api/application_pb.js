@@ -64,6 +64,7 @@ goog.exportSymbol('proto.api.HTTPIntegration', null, global);
 goog.exportSymbol('proto.api.HTTPIntegrationHeader', null, global);
 goog.exportSymbol('proto.api.InfluxDBIntegration', null, global);
 goog.exportSymbol('proto.api.InfluxDBPrecision', null, global);
+goog.exportSymbol('proto.api.InfluxDBVersion', null, global);
 goog.exportSymbol('proto.api.IntegrationKind', null, global);
 goog.exportSymbol('proto.api.IntegrationListItem', null, global);
 goog.exportSymbol('proto.api.ListApplicationRequest', null, global);
@@ -4259,7 +4260,11 @@ proto.api.InfluxDBIntegration.toObject = function(includeInstance, msg) {
     username: msg.getUsername(),
     password: msg.getPassword(),
     retentionPolicyName: msg.getRetentionPolicyName(),
-    precision: msg.getPrecision()
+    precision: msg.getPrecision(),
+    version: msg.getVersion(),
+    token: msg.getToken(),
+    organization: msg.getOrganization(),
+    bucket: msg.getBucket()
   };
 
   if (includeInstance) {
@@ -4323,6 +4328,22 @@ proto.api.InfluxDBIntegration.deserializeBinaryFromReader = function(msg, reader
     case 7:
       var value = /** @type {!proto.api.InfluxDBPrecision} */ (reader.readEnum());
       msg.setPrecision(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.api.InfluxDBVersion} */ (reader.readEnum());
+      msg.setVersion(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrganization(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBucket(value);
       break;
     default:
       reader.skipField();
@@ -4408,6 +4429,34 @@ proto.api.InfluxDBIntegration.prototype.serializeBinaryToWriter = function (writ
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = this.getVersion();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
+      f
+    );
+  }
+  f = this.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = this.getOrganization();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = this.getBucket();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -4525,6 +4574,66 @@ proto.api.InfluxDBIntegration.prototype.getPrecision = function() {
 /** @param {!proto.api.InfluxDBPrecision} value  */
 proto.api.InfluxDBIntegration.prototype.setPrecision = function(value) {
   jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * optional InfluxDBVersion version = 8;
+ * @return {!proto.api.InfluxDBVersion}
+ */
+proto.api.InfluxDBIntegration.prototype.getVersion = function() {
+  return /** @type {!proto.api.InfluxDBVersion} */ (jspb.Message.getFieldProto3(this, 8, 0));
+};
+
+
+/** @param {!proto.api.InfluxDBVersion} value  */
+proto.api.InfluxDBIntegration.prototype.setVersion = function(value) {
+  jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * optional string token = 9;
+ * @return {string}
+ */
+proto.api.InfluxDBIntegration.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 9, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.InfluxDBIntegration.prototype.setToken = function(value) {
+  jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * optional string organization = 10;
+ * @return {string}
+ */
+proto.api.InfluxDBIntegration.prototype.getOrganization = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 10, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.InfluxDBIntegration.prototype.setOrganization = function(value) {
+  jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * optional string bucket = 11;
+ * @return {string}
+ */
+proto.api.InfluxDBIntegration.prototype.getBucket = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 11, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.InfluxDBIntegration.prototype.setBucket = function(value) {
+  jspb.Message.setField(this, 11, value);
 };
 
 
@@ -13769,6 +13878,14 @@ proto.api.InfluxDBPrecision = {
   S: 3,
   M: 4,
   H: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.InfluxDBVersion = {
+  INFLUXDB_1: 0,
+  INFLUXDB_2: 1
 };
 
 goog.object.extend(exports, proto.api);

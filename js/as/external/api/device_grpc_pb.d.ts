@@ -21,11 +21,31 @@ interface IDeviceServiceService extends grpc.ServiceDefinition<grpc.UntypedServi
   deactivate: grpc.MethodDefinition<as_external_api_device_pb.DeactivateDeviceRequest, google_protobuf_empty_pb.Empty>;
   getActivation: grpc.MethodDefinition<as_external_api_device_pb.GetDeviceActivationRequest, as_external_api_device_pb.GetDeviceActivationResponse>;
   getRandomDevAddr: grpc.MethodDefinition<as_external_api_device_pb.GetRandomDevAddrRequest, as_external_api_device_pb.GetRandomDevAddrResponse>;
+  getStats: grpc.MethodDefinition<as_external_api_device_pb.GetDeviceStatsRequest, as_external_api_device_pb.GetDeviceStatsResponse>;
   streamFrameLogs: grpc.MethodDefinition<as_external_api_device_pb.StreamDeviceFrameLogsRequest, as_external_api_device_pb.StreamDeviceFrameLogsResponse>;
   streamEventLogs: grpc.MethodDefinition<as_external_api_device_pb.StreamDeviceEventLogsRequest, as_external_api_device_pb.StreamDeviceEventLogsResponse>;
 }
 
 export const DeviceServiceService: IDeviceServiceService;
+
+export interface IDeviceServiceServer extends grpc.UntypedServiceImplementation {
+  create: grpc.handleUnaryCall<as_external_api_device_pb.CreateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  get: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceRequest, as_external_api_device_pb.GetDeviceResponse>;
+  list: grpc.handleUnaryCall<as_external_api_device_pb.ListDeviceRequest, as_external_api_device_pb.ListDeviceResponse>;
+  delete: grpc.handleUnaryCall<as_external_api_device_pb.DeleteDeviceRequest, google_protobuf_empty_pb.Empty>;
+  update: grpc.handleUnaryCall<as_external_api_device_pb.UpdateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  createKeys: grpc.handleUnaryCall<as_external_api_device_pb.CreateDeviceKeysRequest, google_protobuf_empty_pb.Empty>;
+  getKeys: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceKeysRequest, as_external_api_device_pb.GetDeviceKeysResponse>;
+  updateKeys: grpc.handleUnaryCall<as_external_api_device_pb.UpdateDeviceKeysRequest, google_protobuf_empty_pb.Empty>;
+  deleteKeys: grpc.handleUnaryCall<as_external_api_device_pb.DeleteDeviceKeysRequest, google_protobuf_empty_pb.Empty>;
+  activate: grpc.handleUnaryCall<as_external_api_device_pb.ActivateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  deactivate: grpc.handleUnaryCall<as_external_api_device_pb.DeactivateDeviceRequest, google_protobuf_empty_pb.Empty>;
+  getActivation: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceActivationRequest, as_external_api_device_pb.GetDeviceActivationResponse>;
+  getRandomDevAddr: grpc.handleUnaryCall<as_external_api_device_pb.GetRandomDevAddrRequest, as_external_api_device_pb.GetRandomDevAddrResponse>;
+  getStats: grpc.handleUnaryCall<as_external_api_device_pb.GetDeviceStatsRequest, as_external_api_device_pb.GetDeviceStatsResponse>;
+  streamFrameLogs: grpc.handleServerStreamingCall<as_external_api_device_pb.StreamDeviceFrameLogsRequest, as_external_api_device_pb.StreamDeviceFrameLogsResponse>;
+  streamEventLogs: grpc.handleServerStreamingCall<as_external_api_device_pb.StreamDeviceEventLogsRequest, as_external_api_device_pb.StreamDeviceEventLogsResponse>;
+}
 
 export class DeviceServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
@@ -68,6 +88,9 @@ export class DeviceServiceClient extends grpc.Client {
   getRandomDevAddr(argument: as_external_api_device_pb.GetRandomDevAddrRequest, callback: grpc.requestCallback<as_external_api_device_pb.GetRandomDevAddrResponse>): grpc.ClientUnaryCall;
   getRandomDevAddr(argument: as_external_api_device_pb.GetRandomDevAddrRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_device_pb.GetRandomDevAddrResponse>): grpc.ClientUnaryCall;
   getRandomDevAddr(argument: as_external_api_device_pb.GetRandomDevAddrRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_device_pb.GetRandomDevAddrResponse>): grpc.ClientUnaryCall;
+  getStats(argument: as_external_api_device_pb.GetDeviceStatsRequest, callback: grpc.requestCallback<as_external_api_device_pb.GetDeviceStatsResponse>): grpc.ClientUnaryCall;
+  getStats(argument: as_external_api_device_pb.GetDeviceStatsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_device_pb.GetDeviceStatsResponse>): grpc.ClientUnaryCall;
+  getStats(argument: as_external_api_device_pb.GetDeviceStatsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<as_external_api_device_pb.GetDeviceStatsResponse>): grpc.ClientUnaryCall;
   streamFrameLogs(argument: as_external_api_device_pb.StreamDeviceFrameLogsRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<as_external_api_device_pb.StreamDeviceFrameLogsResponse>;
   streamFrameLogs(argument: as_external_api_device_pb.StreamDeviceFrameLogsRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<as_external_api_device_pb.StreamDeviceFrameLogsResponse>;
   streamEventLogs(argument: as_external_api_device_pb.StreamDeviceEventLogsRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<as_external_api_device_pb.StreamDeviceEventLogsResponse>;

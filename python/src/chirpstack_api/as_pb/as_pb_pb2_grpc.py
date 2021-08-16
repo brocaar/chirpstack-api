@@ -56,6 +56,11 @@ class ApplicationServerServiceStub(object):
                 request_serializer=chirpstack__api_dot_as__pb_dot_as__pb__pb2.SetDeviceLocationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ReEncryptDeviceQueueItems = channel.unary_unary(
+                '/as.ApplicationServerService/ReEncryptDeviceQueueItems',
+                request_serializer=chirpstack__api_dot_as__pb_dot_as__pb__pb2.ReEncryptDeviceQueueItemsRequest.SerializeToString,
+                response_deserializer=chirpstack__api_dot_as__pb_dot_as__pb__pb2.ReEncryptDeviceQueueItemsResponse.FromString,
+                )
 
 
 class ApplicationServerServiceServicer(object):
@@ -118,6 +123,20 @@ class ApplicationServerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReEncryptDeviceQueueItems(self, request, context):
+        """ReEncryptDeviceQueueItems requests the application-server to re-encrypt
+        the given payload items using the new parameters. This request is
+        for example triggered when the associated frame-counter of a downlink
+        payload will be used by a mac-layer only payload, e.g. when the NS has
+        mac-commands (or ACKs) to send to the device and combining this with
+        an application-layer payload would exceed the max. payload size.
+        Note there is no requirement that the number of returned items must be
+        equal to the number of requested items.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ApplicationServerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -160,6 +179,11 @@ def add_ApplicationServerServiceServicer_to_server(servicer, server):
                     servicer.SetDeviceLocation,
                     request_deserializer=chirpstack__api_dot_as__pb_dot_as__pb__pb2.SetDeviceLocationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReEncryptDeviceQueueItems': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReEncryptDeviceQueueItems,
+                    request_deserializer=chirpstack__api_dot_as__pb_dot_as__pb__pb2.ReEncryptDeviceQueueItemsRequest.FromString,
+                    response_serializer=chirpstack__api_dot_as__pb_dot_as__pb__pb2.ReEncryptDeviceQueueItemsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -305,5 +329,22 @@ class ApplicationServerService(object):
         return grpc.experimental.unary_unary(request, target, '/as.ApplicationServerService/SetDeviceLocation',
             chirpstack__api_dot_as__pb_dot_as__pb__pb2.SetDeviceLocationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReEncryptDeviceQueueItems(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/as.ApplicationServerService/ReEncryptDeviceQueueItems',
+            chirpstack__api_dot_as__pb_dot_as__pb__pb2.ReEncryptDeviceQueueItemsRequest.SerializeToString,
+            chirpstack__api_dot_as__pb_dot_as__pb__pb2.ReEncryptDeviceQueueItemsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

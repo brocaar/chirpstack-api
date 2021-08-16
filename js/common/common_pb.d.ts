@@ -68,6 +68,7 @@ export namespace Location {
 export interface ModulationMap {
   LORA: 0;
   FSK: 1;
+  LR_FHSS: 2;
 }
 
 export const Modulation: ModulationMap;
@@ -80,12 +81,29 @@ export interface RegionMap {
   AU915: 5;
   CN470: 6;
   AS923: 7;
+  AS923_2: 12;
+  AS923_3: 13;
+  AS923_4: 14;
   KR920: 8;
   IN865: 9;
   RU864: 10;
+  ISM2400: 11;
 }
 
 export const Region: RegionMap;
+
+export interface MTypeMap {
+  JOINREQUEST: 0;
+  JOINACCEPT: 1;
+  UNCONFIRMEDDATAUP: 2;
+  UNCONFIRMEDDATADOWN: 3;
+  CONFIRMEDDATAUP: 4;
+  CONFIRMEDDATADOWN: 5;
+  REJOINREQUEST: 6;
+  PROPRIETARY: 7;
+}
+
+export const MType: MTypeMap;
 
 export interface LocationSourceMap {
   UNKNOWN: 0;

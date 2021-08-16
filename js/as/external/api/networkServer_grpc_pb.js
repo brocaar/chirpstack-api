@@ -132,7 +132,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // NetworkServerService is the service managing network-servers.
 var NetworkServerServiceService = exports.NetworkServerServiceService = {
   // Create creates the given network-server.
-  create: {
+create: {
     path: '/api.NetworkServerService/Create',
     requestStream: false,
     responseStream: false,
@@ -144,7 +144,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_api_CreateNetworkServerResponse,
   },
   // Get returns the network-server matching the given id.
-  get: {
+get: {
     path: '/api.NetworkServerService/Get',
     requestStream: false,
     responseStream: false,
@@ -156,7 +156,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_api_GetNetworkServerResponse,
   },
   // Update updates the given network-server.
-  update: {
+update: {
     path: '/api.NetworkServerService/Update',
     requestStream: false,
     responseStream: false,
@@ -168,7 +168,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete deletes the network-server matching the given id.
-  delete: {
+delete: {
     path: '/api.NetworkServerService/Delete',
     requestStream: false,
     responseStream: false,
@@ -180,7 +180,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // List lists the available network-servers.
-  list: {
+list: {
     path: '/api.NetworkServerService/List',
     requestStream: false,
     responseStream: false,
@@ -192,7 +192,7 @@ var NetworkServerServiceService = exports.NetworkServerServiceService = {
     responseDeserialize: deserialize_api_ListNetworkServerResponse,
   },
   // GetADRAlgorithms returns the available ADR algorithms.
-  getADRAlgorithms: {
+getADRAlgorithms: {
     path: '/api.NetworkServerService/GetADRAlgorithms',
     requestStream: false,
     responseStream: false,

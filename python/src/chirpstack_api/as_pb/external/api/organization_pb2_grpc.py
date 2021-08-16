@@ -122,7 +122,7 @@ class OrganizationServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddUser(self, request, context):
-        """Add a new user to an organization.
+        """Add a new user to an organization. The user is matched based on email, not user id.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

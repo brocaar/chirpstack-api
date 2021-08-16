@@ -111,7 +111,7 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 // ServiceProfileService is the service managing service-profiles.
 var ServiceProfileServiceService = exports.ServiceProfileServiceService = {
   // Create creates the given service-profile.
-  create: {
+create: {
     path: '/api.ServiceProfileService/Create',
     requestStream: false,
     responseStream: false,
@@ -123,7 +123,7 @@ var ServiceProfileServiceService = exports.ServiceProfileServiceService = {
     responseDeserialize: deserialize_api_CreateServiceProfileResponse,
   },
   // Get returns the service-profile matching the given id.
-  get: {
+get: {
     path: '/api.ServiceProfileService/Get',
     requestStream: false,
     responseStream: false,
@@ -135,7 +135,7 @@ var ServiceProfileServiceService = exports.ServiceProfileServiceService = {
     responseDeserialize: deserialize_api_GetServiceProfileResponse,
   },
   // Update updates the given serviceprofile.
-  update: {
+update: {
     path: '/api.ServiceProfileService/Update',
     requestStream: false,
     responseStream: false,
@@ -147,7 +147,7 @@ var ServiceProfileServiceService = exports.ServiceProfileServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Delete deletes the service-profile matching the given id.
-  delete: {
+delete: {
     path: '/api.ServiceProfileService/Delete',
     requestStream: false,
     responseStream: false,
@@ -159,7 +159,7 @@ var ServiceProfileServiceService = exports.ServiceProfileServiceService = {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // List lists the available service-profiles.
-  list: {
+list: {
     path: '/api.ServiceProfileService/List',
     requestStream: false,
     responseStream: false,

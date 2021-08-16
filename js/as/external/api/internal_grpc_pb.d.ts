@@ -22,6 +22,19 @@ interface IInternalServiceService extends grpc.ServiceDefinition<grpc.UntypedSer
 
 export const InternalServiceService: IInternalServiceService;
 
+export interface IInternalServiceServer extends grpc.UntypedServiceImplementation {
+  login: grpc.handleUnaryCall<as_external_api_internal_pb.LoginRequest, as_external_api_internal_pb.LoginResponse>;
+  profile: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, as_external_api_internal_pb.ProfileResponse>;
+  globalSearch: grpc.handleUnaryCall<as_external_api_internal_pb.GlobalSearchRequest, as_external_api_internal_pb.GlobalSearchResponse>;
+  createAPIKey: grpc.handleUnaryCall<as_external_api_internal_pb.CreateAPIKeyRequest, as_external_api_internal_pb.CreateAPIKeyResponse>;
+  deleteAPIKey: grpc.handleUnaryCall<as_external_api_internal_pb.DeleteAPIKeyRequest, google_protobuf_empty_pb.Empty>;
+  listAPIKeys: grpc.handleUnaryCall<as_external_api_internal_pb.ListAPIKeysRequest, as_external_api_internal_pb.ListAPIKeysResponse>;
+  settings: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, as_external_api_internal_pb.SettingsResponse>;
+  openIDConnectLogin: grpc.handleUnaryCall<as_external_api_internal_pb.OpenIDConnectLoginRequest, as_external_api_internal_pb.OpenIDConnectLoginResponse>;
+  getDevicesSummary: grpc.handleUnaryCall<as_external_api_internal_pb.GetDevicesSummaryRequest, as_external_api_internal_pb.GetDevicesSummaryResponse>;
+  getGatewaysSummary: grpc.handleUnaryCall<as_external_api_internal_pb.GetGatewaysSummaryRequest, as_external_api_internal_pb.GetGatewaysSummaryResponse>;
+}
+
 export class InternalServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   login(argument: as_external_api_internal_pb.LoginRequest, callback: grpc.requestCallback<as_external_api_internal_pb.LoginResponse>): grpc.ClientUnaryCall;

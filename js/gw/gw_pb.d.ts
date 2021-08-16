@@ -6,6 +6,48 @@ import * as common_common_pb from "../common/common_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 
+export class Modulation extends jspb.Message {
+  hasLora(): boolean;
+  clearLora(): void;
+  getLora(): LoRaModulationInfo | undefined;
+  setLora(value?: LoRaModulationInfo): void;
+
+  hasFsk(): boolean;
+  clearFsk(): void;
+  getFsk(): FSKModulationInfo | undefined;
+  setFsk(value?: FSKModulationInfo): void;
+
+  hasLrFhss(): boolean;
+  clearLrFhss(): void;
+  getLrFhss(): LRFHSSModulationInfo | undefined;
+  setLrFhss(value?: LRFHSSModulationInfo): void;
+
+  getParametersCase(): Modulation.ParametersCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Modulation.AsObject;
+  static toObject(includeInstance: boolean, msg: Modulation): Modulation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Modulation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Modulation;
+  static deserializeBinaryFromReader(message: Modulation, reader: jspb.BinaryReader): Modulation;
+}
+
+export namespace Modulation {
+  export type AsObject = {
+    lora?: LoRaModulationInfo.AsObject,
+    fsk?: FSKModulationInfo.AsObject,
+    lrFhss?: LRFHSSModulationInfo.AsObject,
+  }
+
+  export enum ParametersCase {
+    PARAMETERS_NOT_SET = 0,
+    LORA = 3,
+    FSK = 4,
+    LR_FHSS = 5,
+  }
+}
+
 export class UplinkTXInfo extends jspb.Message {
   getFrequency(): number;
   setFrequency(value: number): void;
@@ -22,6 +64,11 @@ export class UplinkTXInfo extends jspb.Message {
   clearFskModulationInfo(): void;
   getFskModulationInfo(): FSKModulationInfo | undefined;
   setFskModulationInfo(value?: FSKModulationInfo): void;
+
+  hasLrFhssModulationInfo(): boolean;
+  clearLrFhssModulationInfo(): void;
+  getLrFhssModulationInfo(): LRFHSSModulationInfo | undefined;
+  setLrFhssModulationInfo(value?: LRFHSSModulationInfo): void;
 
   getModulationInfoCase(): UplinkTXInfo.ModulationInfoCase;
   serializeBinary(): Uint8Array;
@@ -40,12 +87,14 @@ export namespace UplinkTXInfo {
     modulation: common_common_pb.ModulationMap[keyof common_common_pb.ModulationMap],
     loraModulationInfo?: LoRaModulationInfo.AsObject,
     fskModulationInfo?: FSKModulationInfo.AsObject,
+    lrFhssModulationInfo?: LRFHSSModulationInfo.AsObject,
   }
 
   export enum ModulationInfoCase {
     MODULATION_INFO_NOT_SET = 0,
     LORA_MODULATION_INFO = 3,
     FSK_MODULATION_INFO = 4,
+    LR_FHSS_MODULATION_INFO = 5,
   }
 }
 
@@ -102,6 +151,34 @@ export namespace FSKModulationInfo {
   export type AsObject = {
     frequencyDeviation: number,
     datarate: number,
+  }
+}
+
+export class LRFHSSModulationInfo extends jspb.Message {
+  getOperatingChannelWidth(): number;
+  setOperatingChannelWidth(value: number): void;
+
+  getCodeRate(): string;
+  setCodeRate(value: string): void;
+
+  getGridSteps(): number;
+  setGridSteps(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LRFHSSModulationInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: LRFHSSModulationInfo): LRFHSSModulationInfo.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LRFHSSModulationInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LRFHSSModulationInfo;
+  static deserializeBinaryFromReader(message: LRFHSSModulationInfo, reader: jspb.BinaryReader): LRFHSSModulationInfo;
+}
+
+export namespace LRFHSSModulationInfo {
+  export type AsObject = {
+    operatingChannelWidth: number,
+    codeRate: string,
+    gridSteps: number,
   }
 }
 
@@ -200,6 +277,22 @@ export class GatewayStats extends jspb.Message {
   getStatsId_asB64(): string;
   setStatsId(value: Uint8Array | string): void;
 
+  getTxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearTxPacketsPerFrequencyMap(): void;
+  getRxPacketsPerFrequencyMap(): jspb.Map<number, number>;
+  clearRxPacketsPerFrequencyMap(): void;
+  clearTxPacketsPerModulationList(): void;
+  getTxPacketsPerModulationList(): Array<PerModulationCount>;
+  setTxPacketsPerModulationList(value: Array<PerModulationCount>): void;
+  addTxPacketsPerModulation(value?: PerModulationCount, index?: number): PerModulationCount;
+
+  clearRxPacketsPerModulationList(): void;
+  getRxPacketsPerModulationList(): Array<PerModulationCount>;
+  setRxPacketsPerModulationList(value: Array<PerModulationCount>): void;
+  addRxPacketsPerModulation(value?: PerModulationCount, index?: number): PerModulationCount;
+
+  getTxPacketsPerStatusMap(): jspb.Map<string, number>;
+  clearTxPacketsPerStatusMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GatewayStats.AsObject;
   static toObject(includeInstance: boolean, msg: GatewayStats): GatewayStats.AsObject;
@@ -223,6 +316,37 @@ export namespace GatewayStats {
     txPacketsEmitted: number,
     metaDataMap: Array<[string, string]>,
     statsId: Uint8Array | string,
+    txPacketsPerFrequencyMap: Array<[number, number]>,
+    rxPacketsPerFrequencyMap: Array<[number, number]>,
+    txPacketsPerModulationList: Array<PerModulationCount.AsObject>,
+    rxPacketsPerModulationList: Array<PerModulationCount.AsObject>,
+    txPacketsPerStatusMap: Array<[string, number]>,
+  }
+}
+
+export class PerModulationCount extends jspb.Message {
+  hasModulation(): boolean;
+  clearModulation(): void;
+  getModulation(): Modulation | undefined;
+  setModulation(value?: Modulation): void;
+
+  getCount(): number;
+  setCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PerModulationCount.AsObject;
+  static toObject(includeInstance: boolean, msg: PerModulationCount): PerModulationCount.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PerModulationCount, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PerModulationCount;
+  static deserializeBinaryFromReader(message: PerModulationCount, reader: jspb.BinaryReader): PerModulationCount;
+}
+
+export namespace PerModulationCount {
+  export type AsObject = {
+    modulation?: Modulation.AsObject,
+    count: number,
   }
 }
 
@@ -984,6 +1108,39 @@ export namespace RawPacketForwarderCommand {
     rawId: Uint8Array | string,
     payload: Uint8Array | string,
   }
+}
+
+export class ConnState extends jspb.Message {
+  getGatewayId(): Uint8Array | string;
+  getGatewayId_asU8(): Uint8Array;
+  getGatewayId_asB64(): string;
+  setGatewayId(value: Uint8Array | string): void;
+
+  getState(): ConnState.StateMap[keyof ConnState.StateMap];
+  setState(value: ConnState.StateMap[keyof ConnState.StateMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConnState.AsObject;
+  static toObject(includeInstance: boolean, msg: ConnState): ConnState.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConnState, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConnState;
+  static deserializeBinaryFromReader(message: ConnState, reader: jspb.BinaryReader): ConnState;
+}
+
+export namespace ConnState {
+  export type AsObject = {
+    gatewayId: Uint8Array | string,
+    state: ConnState.StateMap[keyof ConnState.StateMap],
+  }
+
+  export interface StateMap {
+    OFFLINE: 0;
+    ONLINE: 1;
+  }
+
+  export const State: StateMap;
 }
 
 export interface DownlinkTimingMap {
