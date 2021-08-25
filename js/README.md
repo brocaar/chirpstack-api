@@ -33,7 +33,7 @@ This example shows how to log in to ChirpStack via the gRPC API and then create 
 JWT. This metadata could then be passed to any future requests that require authorization.
 
 ```javascript
-import * as grpc from 'grpc';
+import * as grpc from '@grpc/grpc-js';
 
 import * as internalService from '@chirpstack/chirpstack-api/as/external/api/internal_grpc_pb';
 import * as internalMessages from '@chirpstack/chirpstack-api/as/external/api/internal_pb';
