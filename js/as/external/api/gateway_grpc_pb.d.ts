@@ -5,7 +5,7 @@
 
 import * as as_external_api_gateway_pb from "../../../as/external/api/gateway_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface IGatewayServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   create: grpc.MethodDefinition<as_external_api_gateway_pb.CreateGatewayRequest, google_protobuf_empty_pb.Empty>;

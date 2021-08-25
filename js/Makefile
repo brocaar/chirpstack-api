@@ -5,7 +5,7 @@ GOOGLEAPIS_PATH := "/googleapis"
 PROTOC_PATH := ./node_modules/grpc-tools/bin/protoc
 PROTOC_GEN_TS_PATH := ./node_modules/.bin/protoc-gen-ts
 PROTOC_GEN_GRPC_PATH := ./node_modules/.bin/grpc_tools_node_protoc_plugin
-PROTOC_ARGS := --plugin=protoc-gen-ts=$(PROTOC_GEN_TS_PATH) --plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) --js_out=import_style=commonjs,binary:. --ts_out=service=grpc-node:. --grpc_out=grpc_js:.
+PROTOC_ARGS := --plugin=protoc-gen-ts=$(PROTOC_GEN_TS_PATH) --plugin=protoc-gen-grpc=$(PROTOC_GEN_GRPC_PATH) --js_out=import_style=commonjs,binary:. --ts_out=service=grpc-node,mode=grpc-js:. --grpc_out=grpc_js:.
 
 all: requirements version common gw geo nc ns fuota as as-integration as-external-api google-api
 

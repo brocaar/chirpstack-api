@@ -5,7 +5,7 @@
 
 import * as as_external_api_user_pb from "../../../as/external/api/user_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface IUserServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   list: grpc.MethodDefinition<as_external_api_user_pb.ListUserRequest, as_external_api_user_pb.ListUserResponse>;

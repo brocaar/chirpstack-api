@@ -5,7 +5,7 @@
 
 import * as ns_ns_pb from "../ns/ns_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface INetworkServerServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   createServiceProfile: grpc.MethodDefinition<ns_ns_pb.CreateServiceProfileRequest, ns_ns_pb.CreateServiceProfileResponse>;
