@@ -479,4 +479,7 @@ message StreamDeviceEventLogsResponse {
 
     // Published at timestamp.
     google.protobuf.Timestamp published_at = 3;
+
+    // Stream ID.
+    string stream_id = 4 [json_name = "streamID"];
 }

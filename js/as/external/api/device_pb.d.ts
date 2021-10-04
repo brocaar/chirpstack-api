@@ -825,6 +825,9 @@ export class StreamDeviceEventLogsResponse extends jspb.Message {
   getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getStreamId(): string;
+  setStreamId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamDeviceEventLogsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: StreamDeviceEventLogsResponse): StreamDeviceEventLogsResponse.AsObject;
@@ -840,6 +843,7 @@ export namespace StreamDeviceEventLogsResponse {
     type: string,
     payloadJson: string,
     publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    streamId: string,
   }
 }
 

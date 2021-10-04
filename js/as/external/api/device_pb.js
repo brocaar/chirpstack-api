@@ -6273,7 +6273,8 @@ proto.api.StreamDeviceEventLogsResponse.toObject = function(includeInstance, msg
   var f, obj = {
     type: msg.getType(),
     payloadJson: msg.getPayloadJson(),
-    publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    streamId: msg.getStreamId()
   };
 
   if (includeInstance) {
@@ -6322,6 +6323,10 @@ proto.api.StreamDeviceEventLogsResponse.deserializeBinaryFromReader = function(m
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setPublishedAt(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStreamId(value);
       break;
     default:
       reader.skipField();
@@ -6381,6 +6386,13 @@ proto.api.StreamDeviceEventLogsResponse.prototype.serializeBinaryToWriter = func
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = this.getStreamId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -6452,6 +6464,21 @@ proto.api.StreamDeviceEventLogsResponse.prototype.clearPublishedAt = function() 
  */
 proto.api.StreamDeviceEventLogsResponse.prototype.hasPublishedAt = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string stream_id = 4;
+ * @return {string}
+ */
+proto.api.StreamDeviceEventLogsResponse.prototype.getStreamId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+};
+
+
+/** @param {string} value  */
+proto.api.StreamDeviceEventLogsResponse.prototype.setStreamId = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 
