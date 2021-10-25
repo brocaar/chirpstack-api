@@ -97,7 +97,7 @@ message UplinkEvent {
     google.protobuf.Timestamp published_at = 16;
 
     // Device Profile UUID as string
-    string device_profile_uuid = 17;
+    string device_profile_id = 17 [json_name = "deviceProfileID"];
 
     // Device Profile name
     string device_profile_name = 18;
