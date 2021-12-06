@@ -169,6 +169,11 @@ service NetworkServerService {
 
     // GetADRAlgorithms returns the available ADR algorithms.
     rpc GetADRAlgorithms(google.protobuf.Empty) returns (GetADRAlgorithmsResponse) {}
+
+    // ClearDeviceNonces deletes the device older activation records for the given DevEUI.
+    //   * These are clear older DevNonce records from device activation records
+    //   * These clears all DevNonce records but keeps latest 20 records for maintain device activation status
+    rpc ClearDeviceNonces(ClearDeviceNoncesRequest) returns (google.protobuf.Empty) {}
 }
 
 enum RXWindow {
@@ -931,4 +936,9 @@ message ADRAlgorithm {
 
     // ADR algorithm name.
     string name = 2;
+}
+
+message ClearDeviceNoncesRequest {
+    // Device EUI (8 bytes).
+    bytes dev_eui = 1;
 }

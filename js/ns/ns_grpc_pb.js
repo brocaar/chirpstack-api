@@ -43,6 +43,17 @@ function deserialize_ns_AddDeviceToMulticastGroupRequest(buffer_arg) {
   return ns_ns_pb.AddDeviceToMulticastGroupRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_ns_ClearDeviceNoncesRequest(arg) {
+  if (!(arg instanceof ns_ns_pb.ClearDeviceNoncesRequest)) {
+    throw new Error('Expected argument of type ns.ClearDeviceNoncesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_ns_ClearDeviceNoncesRequest(buffer_arg) {
+  return ns_ns_pb.ClearDeviceNoncesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_ns_CreateDeviceProfileRequest(arg) {
   if (!(arg instanceof ns_ns_pb.CreateDeviceProfileRequest)) {
     throw new Error('Expected argument of type ns.CreateDeviceProfileRequest');
@@ -1376,6 +1387,20 @@ getADRAlgorithms: {
     requestDeserialize: deserialize_google_protobuf_Empty,
     responseSerialize: serialize_ns_GetADRAlgorithmsResponse,
     responseDeserialize: deserialize_ns_GetADRAlgorithmsResponse,
+  },
+  // ClearDeviceNonces deletes the device older activation records for the given DevEUI.
+//   * These are clear older DevNonce records from device activation records
+//   * These clears all DevNonce records but keeps latest 20 records for maintain device activation status
+clearDeviceNonces: {
+    path: '/ns.NetworkServerService/ClearDeviceNonces',
+    requestStream: false,
+    responseStream: false,
+    requestType: ns_ns_pb.ClearDeviceNoncesRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_ns_ClearDeviceNoncesRequest,
+    requestDeserialize: deserialize_ns_ClearDeviceNoncesRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
   },
 };
 
