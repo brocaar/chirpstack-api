@@ -136,6 +136,15 @@ service DeviceService {
             get: "/api/devices/{dev_eui}/events"
         };
     }
+
+    // ClearDeviceNonces deletes the device older activation records for the given DevEUI.
+    //   * These are clear older DevNonce records from device activation records in Network Server
+    //   * These clears all DevNonce records but keeps latest 20 records for maintain device activation status
+    rpc ClearDeviceNonces(ClearDeviceNoncesRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/api/devices/{dev_eui}/devnonce"
+        };
+    }
 }
 
 message Device {
@@ -482,4 +491,9 @@ message StreamDeviceEventLogsResponse {
 
     // Stream ID.
     string stream_id = 4 [json_name = "streamID"];
+}
+
+message ClearDeviceNoncesRequest {
+    // Device EUI (HEX encoded).
+    string dev_eui = 1 [json_name = "devEUI"];
 }

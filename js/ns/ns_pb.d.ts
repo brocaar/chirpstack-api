@@ -2345,6 +2345,28 @@ export namespace ADRAlgorithm {
   }
 }
 
+export class ClearDeviceNoncesRequest extends jspb.Message {
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClearDeviceNoncesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ClearDeviceNoncesRequest): ClearDeviceNoncesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClearDeviceNoncesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClearDeviceNoncesRequest;
+  static deserializeBinaryFromReader(message: ClearDeviceNoncesRequest, reader: jspb.BinaryReader): ClearDeviceNoncesRequest;
+}
+
+export namespace ClearDeviceNoncesRequest {
+  export type AsObject = {
+    devEui: Uint8Array | string,
+  }
+}
+
 export interface RXWindowMap {
   RX1: 0;
   RX2: 1;
