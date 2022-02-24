@@ -42,6 +42,7 @@ services:
     volumes:
       - ./:/chirpstack-api
   chirpstack-api-java:
+#    user: ${CURRENT_UID}
     environment:
       - VERSION=3.11.1
     build:
@@ -50,3 +51,4 @@ services:
     command: bash -c "cd java && make all"
     volumes:
       - ./:/chirpstack-api
+#      - ${HOME}/.m2:/root/.m2
