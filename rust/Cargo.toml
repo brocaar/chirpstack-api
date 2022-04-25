@@ -9,16 +9,15 @@ repository = "https://github.com/brocaar/chirpstack-api"
 version = "3.12.4"
 
 [features]
-default = ["grpc_support", "rustfmt"]
+default = ["grpc_support"]
 grpc_support = ["tonic/transport", "tonic-build/transport", "tokio"]
-rustfmt = ["tonic-build/rustfmt"]
 
 [dependencies]
-prost = "0.8"
-prost-types = "0.8"
+prost = "0.10"
+prost-types = "0.10"
 
-tokio = {version = "1.9", features = ["macros"], optional = true}
-tonic = {version = "0.5", features = ["codegen", "prost"], default-features = false}
+tokio = {version = "1.17", features = ["macros"], optional = true}
+tonic = {version = "0.7", features = ["codegen", "prost"], default-features = false}
 
 [build-dependencies]
-tonic-build = {version = "0.5", features = ["prost"], default-features = false}
+tonic-build = {version = "0.7", features = ["prost"], default-features = false}
