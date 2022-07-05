@@ -16,7 +16,7 @@ grpc_support = ["tonic/transport", "tonic-build/transport", "tokio"]
 prost = "0.10"
 prost-types = "0.10"
 
-tokio = {version = "1.17", features = ["macros"], optional = true}
+tokio = {version = "1.19", features = ["macros"], optional = true}
 tonic = {version = "0.7", features = ["codegen", "prost"], default-features = false}
 
 [build-dependencies]
