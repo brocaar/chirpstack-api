@@ -42,13 +42,14 @@ services:
     volumes:
       - ./:/chirpstack-api
   chirpstack-api-java:
-#    user: ${CURRENT_UID}
+    user: ${CURRENT_UID}
     environment:
       - VERSION=3.11.1
+      - MAVEN_CONFIG=/var/maven/.m2
     build:
       context: .
       dockerfile: Dockerfile-java
     command: bash -c "cd java && make all"
     volumes:
       - ./:/chirpstack-api
-#      - ${HOME}/.m2:/root/.m2
+      - ${CURRENT_HOME}/.m2:/var/maven/.m2
