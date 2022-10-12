@@ -4,7 +4,7 @@
 // file: geo/geo.proto
 
 import * as geo_geo_pb from "../geo/geo_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface IGeolocationServerServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   resolveTDOA: grpc.MethodDefinition<geo_geo_pb.ResolveTDOARequest, geo_geo_pb.ResolveTDOAResponse>;

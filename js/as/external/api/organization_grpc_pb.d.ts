@@ -5,7 +5,7 @@
 
 import * as as_external_api_organization_pb from "../../../as/external/api/organization_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface IOrganizationServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   list: grpc.MethodDefinition<as_external_api_organization_pb.ListOrganizationRequest, as_external_api_organization_pb.ListOrganizationResponse>;

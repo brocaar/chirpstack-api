@@ -4,7 +4,7 @@
 // file: fuota/fuota.proto
 
 import * as fuota_fuota_pb from "../fuota/fuota_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface IFUOTAServerServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   createDeployment: grpc.MethodDefinition<fuota_fuota_pb.CreateDeploymentRequest, fuota_fuota_pb.CreateDeploymentResponse>;

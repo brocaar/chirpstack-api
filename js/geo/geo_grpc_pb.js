@@ -1,7 +1,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var geo_geo_pb = require('../geo/geo_pb.js');
 var gw_gw_pb = require('../gw/gw_pb.js');
 var common_common_pb = require('../common/common_pb.js');

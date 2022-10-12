@@ -825,6 +825,9 @@ export class StreamDeviceEventLogsResponse extends jspb.Message {
   getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getStreamId(): string;
+  setStreamId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamDeviceEventLogsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: StreamDeviceEventLogsResponse): StreamDeviceEventLogsResponse.AsObject;
@@ -840,6 +843,27 @@ export namespace StreamDeviceEventLogsResponse {
     type: string,
     payloadJson: string,
     publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    streamId: string,
+  }
+}
+
+export class ClearDeviceNoncesRequest extends jspb.Message {
+  getDevEui(): string;
+  setDevEui(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ClearDeviceNoncesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ClearDeviceNoncesRequest): ClearDeviceNoncesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ClearDeviceNoncesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClearDeviceNoncesRequest;
+  static deserializeBinaryFromReader(message: ClearDeviceNoncesRequest, reader: jspb.BinaryReader): ClearDeviceNoncesRequest;
+}
+
+export namespace ClearDeviceNoncesRequest {
+  export type AsObject = {
+    devEui: string,
   }
 }
 

@@ -66,6 +66,12 @@ export class UplinkEvent extends jspb.Message {
   getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getDeviceProfileId(): string;
+  setDeviceProfileId(value: string): void;
+
+  getDeviceProfileName(): string;
+  setDeviceProfileName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UplinkEvent.AsObject;
   static toObject(includeInstance: boolean, msg: UplinkEvent): UplinkEvent.AsObject;
@@ -94,6 +100,8 @@ export namespace UplinkEvent {
     confirmedUplink: boolean,
     devAddr: Uint8Array | string,
     publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deviceProfileId: string,
+    deviceProfileName: string,
   }
 }
 
