@@ -42,6 +42,15 @@ services:
     volumes:
       - ./:/chirpstack-api
   chirpstack-api-java:
+    environment:
+      - VERSION=3.12.4
+    build:
+      context: .
+      dockerfile: Dockerfile-java
+    command: bash -c "cd java && make all"
+    volumes:
+      - ./:/chirpstack-api
+  chirpstack-api-java-current-user:
     user: ${CURRENT_UID}
     environment:
       - VERSION=3.12.4
@@ -49,7 +58,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-java
-    command: bash -c "cd java && make all"
+    command: bash -c "cd java && make -f Makefile-user all"
     volumes:
       - ./:/chirpstack-api
       - ${CURRENT_HOME}/.m2:/var/maven/.m2

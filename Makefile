@@ -19,4 +19,7 @@ python:
 	docker-compose run --rm chirpstack-api-python
 
 java:
-	CURRENT_UID="$(shell id -u):$(shell id -g)" CURRENT_HOME=$(HOME) docker-compose run --rm chirpstack-api-java
+	docker-compose run --rm chirpstack-api-java
+
+java-current-user:
+	CURRENT_UID="$(shell id -u):$(shell id -g)" CURRENT_HOME=$(HOME) docker-compose run --rm chirpstack-api-java-current-user
