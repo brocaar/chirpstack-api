@@ -11,14 +11,10 @@ ChirpStack gRPC API message and service wrappers for Java.
 An artifact is not yet public on Maven Central, you have build your own jar with
 
 ```sh
-make java
+make java-current-user
 ```  
 
-and then with Maven install artifact on your Local Maven Repo
-
-```sh
-sudo chown $(id -u).$(id -g) java/build/ -R && mvn -f java/build/pom.xml install
-```
+at the end the build process, the .jar artifact will be installed on your Local Maven Repository `$HOME/.m2`
 
 ## Usage
 
@@ -43,7 +39,7 @@ NOTE: for `chirpstack-api` you have to follow [Install](#Install) instructions
 <dependency>
   <groupId>io.chirpstack</groupId>
   <artifactId>chirpstack-api</artifactId>
-  <version>3.9.3</version>
+  <version>3.12.4</version>
 </dependency>
 ```
 
