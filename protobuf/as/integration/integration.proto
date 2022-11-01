@@ -6,6 +6,7 @@ option go_package = "github.com/brocaar/chirpstack-api/go/v3/as/integration";
 option java_package = "io.chirpstack.api.as.integration";
 option java_multiple_files = true;
 option java_outer_classname = "IntegrationProto";
+option csharp_namespace = "Chirpstack.ApplicationServer.Integration";
 
 import "common/common.proto";
 import "gw/gw.proto";

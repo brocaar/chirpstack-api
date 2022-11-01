@@ -6,6 +6,7 @@ option go_package = "github.com/brocaar/chirpstack-api/go/v3/geo";
 option java_package = "io.chirpstack.api.geo";
 option java_multiple_files = true;
 option java_outer_classname = "GeolocationServerProto";
+option csharp_namespace = "Chirpstack.Geo";
 
 import "gw/gw.proto";
 import "common/common.proto";
