@@ -6,6 +6,7 @@ option go_package = "github.com/brocaar/chirpstack-api/ns";
 option java_package = "io.chirpstack.api.ns";
 option java_multiple_files = true;
 option java_outer_classname = "ProfilesProto";
+option csharp_namespace = "Chirpstack.NetworkServer";
 
 enum RatePolicy {
     // Drop
