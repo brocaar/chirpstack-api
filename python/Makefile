@@ -1,4 +1,4 @@
-GOOGLEAPIS_PATH := "googleapis"
+GOOGLEAPIS_PATH := "/googleapis"
 IMPORT_AS := import \"as_pb/
 PACKAGE_NAME := import \"chirpstack-api/
 
@@ -30,10 +30,10 @@ gw:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src proto/chirpstack-api/gw/gw.proto
 
 geo:
-	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src proto/chirpstack-api/geo/geo.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/geo/geo.proto
 
 nc:
-	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src proto/chirpstack-api/nc/nc.proto
+	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/nc/nc.proto
 
 ns:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src proto/chirpstack-api/ns/profiles.proto
