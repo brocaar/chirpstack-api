@@ -31,20 +31,24 @@ gw:
 
 geo:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/geo/geo.proto
-
+	rm src/chirpstack_api/geo/geo_grpc.py
+	
 nc:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/nc/nc.proto
+	rm src/chirpstack_api/nc/nc_grpc.py
 
 ns:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src proto/chirpstack-api/ns/profiles.proto
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/ns/ns.proto
-
+	rm src/chirpstack_api/ns/ns_grpc.py
 
 fuota:
 	python -m grpc_tools.protoc -I grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/fuota/fuota.proto
+	rm src/chirpstack_api/fuota/fuota_grpc.py
 
 as:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src --python_grpc_out=src --mypy_grpc_out=src proto/chirpstack-api/as_pb/as_pb.proto
+	rm src/chirpstack_api/as_pb/as_pb_grpc.py
 
 as-integration:
 	python -m grpc_tools.protoc -I=proto --python_out=src --mypy_out=src proto/chirpstack-api/as_pb/integration/integration.proto
@@ -66,3 +70,5 @@ as-external-api:
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/profiles.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/serviceProfile.proto
 	$(PROTOC_GEN) proto/chirpstack-api/as_pb/external/api/user.proto
+	
+	find src/chirpstack_api/as_pb/external/api -type f -name "*grpc.py" ! -name "*pb2*.py" -delete
