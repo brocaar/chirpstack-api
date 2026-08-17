@@ -2,6 +2,9 @@
 
 ![Tests](https://github.com/brocaar/chirpstack-api/actions/workflows/main.yml/badge.svg?branch=master)
 
+**NOTE:** This repository has been archived since it provides the
+source for the ChirpStack v3 API, which is no longer maintained.
+
 This repository contains the [Protobuf](https://developers.google.com/protocol-buffers/)
 and [gRPC](https://grpc.io/) API definitions for the [ChirpStack](https://www.chirpstack.io)
 components.
